@@ -1,0 +1,360 @@
+/*------------------------------------*\
+    #ESPACE VOYAGEUR
+\*------------------------------------*/
+body.espace-voyageur {
+
+    .main {
+        background: $texture;
+        @include box-shadow(none);
+        border-bottom: none;
+
+        .big-title-wrapper {
+            display: table;
+            width: 100%;
+
+            .big-title {
+                display: table-cell;
+                vertical-align: middle;
+                width: 100%;
+                height: 150px;
+                text-align: center;
+
+                h1 {
+                    display: block;
+                    max-width: 700px;
+                    width: 90%;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+                    font-family: $dosis-serif;
+                    font-size: 36px;
+                    font-weight: 600;
+                    color: $jaune-or;
+                    text-transform: uppercase;
+                    line-height: 46px;
+                }
+
+                p {
+                    display: block;
+                    max-width: 700px;
+                    width: 90%;
+                    margin: 0 auto;
+                    margin-top: 50px;
+                    font-size: 20px;
+                    font-style: italic;
+                    color: $gris-clair;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+
+    //Form radio input styles
+    input[type="checkbox"]:not(old),
+    input[type="radio"]:not(old) {
+        display: none;
+        width: 1em;
+        height: 1em;
+        margin: 0.25em 0.5em 0.25em 0.25em;
+        padding: 0;
+        @include opacity(0);
+    }
+
+    input[type="checkbox"]:not(old) + label,
+    input[type="radio"]:not(old) + label {
+        display: inline-block;
+        min-height: 20px;
+        margin-bottom: 0;
+        line-height: 34px;
+        color: $blanc;
+        font-weight: 300;
+
+        > span {
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: middle;
+            width: 1em;
+            height: 1em;
+            margin-top: -5px;
+            margin-right: 1em;
+            border: 1px solid $gris-clair;
+            @include border-radius(50%);
+            background-color: $blanc;
+            @include transition(all 300ms ease-in-out);
+        }
+    }
+
+
+    input[type="checkbox"]:not(old):checked + label,
+    input[type="radio"]:not(old):checked + label {
+        > span {
+            background-color: $jaune-or;
+            border-color: $jaune-or;
+        }
+    }
+
+    .content {
+        padding: 0;
+
+        .submenu {
+            display: table;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+            list-style-type: none;
+
+            li {
+                display: inline-block;
+                width: 230px;
+                margin-right: 15px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                .button {
+                    width: 100%;
+                    background-color: transparent;
+                    border-color: $blanc;
+
+                    &:hover, &:focus {
+                        border-color: $jaune-or;
+                        color: $jaune-or;
+                    }
+                }
+
+                .active {
+                    border-color: $jaune-or;
+                    color: $jaune-or;
+                }
+            }
+        }
+
+        .reservations-block {
+
+            thead {
+                color: $jaune-or;
+
+                tr {
+                    td {
+                        font-size: 18px;
+                        font-style: italic;
+                        padding: 15px;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        vertical-align: middle;
+                        padding: 15px;
+                        padding-bottom: 50px;
+
+                        h3 {
+                            font-family: $open_sans;
+                            color: $jaune-or;
+                            font-size: 18px;
+                            font-weight: 600;
+                            font-style: italic;
+                        }
+
+                        p {
+                            margin: 0;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .carnets-block {
+            display: table;
+
+            .travel-logs-wrapper {
+                width: 100%;
+
+                .travel-log {
+                    display: table;
+                    width: 100%;
+                    margin-bottom: 50px;
+
+                    .image-wrapper {
+                        padding: 40% 0;
+                        background-image: url('../images/cdv1.jpg');
+                        background-position: 50% -50px;
+                        background-repeat: no-repeat;
+                    }
+
+                    .excerpt-wrapper {
+                        h1 {
+                            border-bottom: none;
+                        }
+                    }
+
+                    .buttons-wrapper {
+                        padding-top: 60px;
+                        .button {
+                            display: block;
+                            float: none;
+                            margin: 0 auto;
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .infos-block {
+            display: table;
+            text-align: center;
+            padding-bottom: 50px;
+
+            .form-group {
+                padding-top: 25px;
+                color: $blanc;
+
+                input {
+                    margin-bottom: 25px;
+                    border: $dark-border;
+
+                    &:hover, &:focus {
+                        border-color: $jaune-or;
+                    }
+                }
+
+                .change-pwd-wrapper {
+                    position: relative;
+
+                    input {
+                        width: 100%;
+                    }
+
+                    .change-pwd-button {
+                        position: absolute;
+                        top: 1px;
+                        left: 1px;
+                        padding: 15px;
+                        padding-right: 30px;
+                        color: $gris-clair;
+                        background-color: #fff;
+                        border: none;
+                        @include transition(all 300ms ease-in-out);
+
+                        &:hover, &:focus, &:active, &:visited {
+                            color: $noir;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+
+            .buttons-wrapper {
+                text-align: center;
+
+                .button {
+                    display: inline-block;
+                    float: none;
+                    width: 150px;
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+
+/*------------------------------------*\
+    #RESPONSIVE
+\*------------------------------------*/
+@media screen and (max-width: 1200px) {
+    body.espace-voyageur {
+        .main {
+            .navbar {
+                .navbar-collapse {
+                    .nav {
+                        li {
+                            a {
+                                margin: 25px auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .navbar.affix {
+                .navbar-toggle {
+                    margin: 18px 25px;
+                }
+                .navbar-collapse {
+                    .nav {
+                        li {
+                            a {
+                                margin: 25px auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    body.espace-voyageur {
+        .content {
+            .carnets-block {
+                .travel-logs-wrapper {
+                    .travel-log {
+                        .image-wrapper {
+                            padding: 32% 0;
+                            @include background-size(cover);
+                        }
+
+                        .excerpt-wrapper {
+                            text-align: center;
+                        }
+
+                        .buttons-wrapper {
+                            padding-top: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body.espace-voyageur {
+        .content {
+            .submenu {
+                li {
+                    display: block;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+
+                    &:last-child {
+                        margin-right: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body.espace-voyageur {
+        .main {
+            .caption-wrapper {
+                text-align: center;
+
+                .caption {
+                    h1 {text-align: center;}
+                    p {line-height: 18px;}
+                }
+            }
+        }
+    }
+}

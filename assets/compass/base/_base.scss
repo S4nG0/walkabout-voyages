@@ -1,0 +1,71 @@
+/*------------------------------------*\
+    #COMPASS VARIABLES
+\*------------------------------------*/
+
+$texture: url('../images/texture.png');
+$texture2: url('../images/texture2.png');
+$blanc: #fff;
+$noir: #242424;
+$gris-clair: #848484;
+$gris-clair-2: #aaa;
+$fond-blanc: #e4e4e4;
+$jaune-or: #f0c041;
+$jaune-clair: #fdf9b5;
+
+$dosis: 'Dosis', sans-serif;
+$dosis-serif: 'Dosis', serif;
+$open_sans: 'Open Sans', sans-serif;
+
+$gold-border: 1px solid $jaune-or;
+$gold-border-gras: 5px solid $jaune-or;
+$dark-border: 1px solid $noir;
+$dark-border-gras: 5px solid $noir;
+
+
+/*------------------------------------*\
+    #TRUE CODE
+\*------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+//No media query since this is the default in Bootstrap
+html,body{
+
+}
+
+a:focus, a:active,
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: 0;
+    outline : 0;
+}
+
+/*------------------------------------*\
+    #MEDIA QUERIES
+\*------------------------------------*/
+
+// Extrasmall devices (phones, 480px and up)
+@media (min-width: 480px) {
+
+}
+
+// Small devices (portrait tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Medium devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}

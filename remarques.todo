@@ -1,0 +1,18 @@
+Générales :
+  ☐ Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations'
+  ☐ Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc
+  ☐ 'background-image' quand on choppe dynamiquement les images de la BDD au lieu de 'background'
+
+Single-destination :
+  ☐ Gérer le contenu dynamiquement avec bdd !!!
+  ☐ Gérer dynamiquement les 'alt' des pictos (zone informations)
+
+Carnets list :
+  ☐ Featured : description pas qualitative : doit être de meilleure qualité si on veut que l'utilisateur soit attiré, chopper un extrait du carnet
+
+Single carnet :
+  ☐ Gérer le bug du collapse
+  ☐ Gérer les châpeau dans la BDD!
+  ☐ Revoir zone de comm : affichage en escalier pour montrer les réponses à une question (pas urgent) + gérer pagination sur les comm
+  ☐ L'image d'accueil du carnet est la même pour tous les articles : gérer ça aussi (utiliser la propriété bg-image au lieu de bg sinon on empiète sur le css)
+

@@ -1,0 +1,125 @@
+.back-to-top-wrapper {
+    display: table;
+    position: fixed;
+    z-index: 999;
+    visibility: hidden;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: $noir;
+    border: 1px solid $blanc;
+    @include border-radius(50%);
+    @include transition(all 300ms ease-in-out);
+    @include opacity(0);
+    text-align: center;
+
+    a {
+        display: table-cell;
+        vertical-align: middle;
+        color: $blanc;
+
+        .fa {
+            vertical-align: middle;
+            font-size: 1.5em;
+        }
+    }
+
+    &:hover, &:focus, &:active, &:visited {
+        border-color: $jaune-or;
+    }
+}
+
+footer {
+    background-image: url('../images/texture.png');
+    padding: 50px;
+    text-align: center;
+    color: $blanc;
+    border-top: $gold-border;
+
+    h1 {
+        color: $gris-clair;
+        line-height: 45px;
+        border-bottom: 1px solid $gris-clair;
+    }
+
+    hr {
+        margin: 10px 0 50px 0;
+        border-top-color: $gris-clair;
+    }
+
+    a {
+        color: $blanc;
+        text-decoration: none;
+        &:hover {
+            color: $jaune-or;
+        }
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer__block {
+        margin-bottom: 25px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .footer__list {
+        list-style-type: none;
+        text-align: center;
+        li {
+            margin-top: 15px;
+            @include transition(all 300ms ease-in-out);
+            .fa {
+                margin-right: 5px;
+            }
+            &:hover {
+                cursor: pointer;
+                color: $jaune-or;
+            }
+        }
+    }
+    .footer__social {
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+    .footer__copyright {
+        display: block;
+        list-style-type: none;
+        hr {
+            display: block;
+            width: 32%;
+            margin: 25px auto 25px auto;
+        }
+        li {
+            display: inline-block;
+        }
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    footer {
+        h1 {
+            font-size: 18px;
+            line-height: 29px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        .col-md-4 {
+            hr {
+                width: 50%;
+                margin: 15px auto 25px auto;
+            }
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+    }
+}

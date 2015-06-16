@@ -1,0 +1,214 @@
+/*------------------------------------*\
+    #NOTRE ESPRIT
+\*------------------------------------*/
+body.about {
+
+    .main.banner {
+        background-image: url('../images/about.jpg');
+        background-position: center 0;
+        background-repeat: no-repeat;
+    }
+
+
+    .content {
+        padding: 0;
+        text-align: center;
+    }
+
+    .story, .ambassadors {
+
+        .logo {
+            display: block;
+            margin: 50px auto;
+            width: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 300;
+        }
+
+        .lead {
+            display: block;
+            margin-top: 25px;
+            line-height: 36px;
+        }
+
+        .profile-picture {
+            margin: 50px auto 25px auto;
+            width: 100px;
+            height: 100px;
+        }
+
+        .subtitle {
+            margin-top: 25px;
+            text-transform: uppercase;
+            font-size: 95%;
+            font-weight: 400;
+            color: darken($blanc, 40%);
+        }
+    }
+
+    .story {
+
+        .lead {
+            font-size: 26px;
+        }
+    }
+
+    .ambassadors {
+        padding-bottom: 50px;
+
+        .lead {
+
+            font-size: 22px;
+        }
+    }
+
+    .spirit {
+        background: url('../images/spirit.jpg') 0 0 fixed;
+        height: 450px;
+        font-size: 16px;
+
+        .spirit-content-wrapper {
+            display: table;
+            width: 100%;
+            height: 100%;
+
+            .spirit-content {
+                display: table-cell;
+                vertical-align: middle;
+                @include opacity(0);
+
+                .lead {
+                    font-size: 36px;
+                    font-weight: 600;
+                    line-height: 46px;
+                    margin-top: 0;
+                }
+
+                p {
+                    display: block;
+                    max-width: 800px;
+                    margin: 25px auto;
+                }
+
+                h3 {
+                    font-style: italic;
+                    font-size: 24px;
+                    font-weight: 600;
+                    margin-bottom: 25px;
+                }
+
+            }
+        }
+
+        .button {
+            float: none;
+            display: inline-block;
+            margin: 0 auto;
+            background-color: transparent;
+            color: $blanc;
+            border-color: $blanc;
+            &:hover, &:focus {
+                border-color: $jaune-or;
+                color: $jaune-or;
+            }
+        }
+    }
+}
+
+/*------------------------------------*\
+    #RESPONSIVE
+\*------------------------------------*/
+@media screen and (max-width: 992px) {
+    body.about {
+
+        .main.banner {
+            background-position: -600px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body.about {
+
+        .main.banner {
+            background-position: -600px 0;
+        }
+
+        .spirit {
+
+            background-position: bottom left;
+            font-size: 16px;
+
+            .spirit-content-wrapper {
+                .spirit-content {
+
+                    .lead {
+                        font-size: 24px;
+                        line-height: 34px;
+                    }
+
+                    h3 {
+                        font-size: 20px;
+                    }
+
+                }
+            }
+            .button {
+                display: block;
+                margin: 15px auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body.about {
+
+        .story, .ambassadors {
+
+            p {
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            p.lead {
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+
+        .spirit {
+            height: 600px;
+            font-size: 14px;
+
+            .spirit-content-wrapper {
+                .spirit-content {
+
+                    .lead {
+                        font-size: 20px;
+                        line-height: 30px;
+                    }
+
+                    h3 {
+                        font-size: 18px;
+                    }
+
+                }
+            }
+            .button {
+                display: block;
+                margin: 15px auto;
+            }
+        }
+    }
+}

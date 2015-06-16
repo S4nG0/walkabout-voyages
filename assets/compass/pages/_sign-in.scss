@@ -1,0 +1,169 @@
+/*------------------------------------*\
+    #ESPACE DE CONNEXION
+\*------------------------------------*/
+body.sign-in {
+    background: $texture;
+
+    .form-group {
+        padding-top: 30px;
+        margin-bottom: 0;
+    }
+
+    label {
+        color: $jaune-or;
+        margin: 0;
+    }
+
+    input {
+        margin-top: 15px;
+    }
+
+    .button {
+        display: block;
+        float: none;
+        width: 200px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+    .main {
+        background: transparent;
+        padding-bottom: 50px;
+        border-bottom: none;
+        @include box-shadow(none);
+
+        .navbar {
+            margin-top: 0;
+            background-color: transparent;
+            border-bottom: $gold-border;
+
+            .navbar-brand {
+                .logo {
+                    width: 150px;
+                }
+            }
+
+            .navbar-toggle {
+                margin: 25px;
+            }
+
+            .navbar-collapse {
+                .nav {
+                    li {
+                        a {
+                            margin: 35px 25px 28px 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .navbar.affix {
+            background-color: rgba(33, 33, 33, 1);
+            border-bottom: 2px solid $jaune-or;
+            @include box-shadow(0 5px 20px 0 rgba(33, 33, 33, 0.30));
+        }
+
+        .caption-wrapper {
+            display: block;
+            position: relative;
+            text-align: center;
+
+            .caption {
+                display: block;
+                padding-top: 50px;
+
+                h1 {
+                    margin-bottom: 25px;
+                    font-style: 26px;
+                    line-height: 36px;
+                    font-style: normal;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+
+                p {
+                    line-height: 18px;
+                    margin: 0;
+                    margin-top: 10px;
+                }
+
+                .forgotten-pwd {
+                    display: block;
+                    font-size: 80%;
+                    color: $gris-clair;
+                }
+            }
+        }
+    }
+
+    .recover-pwd-block {
+        display: none;
+        text-align: center;
+
+        .button {
+            width: 250px;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+/*------------------------------------*\
+    #RESPONSIVE
+\*------------------------------------*/
+@media screen and (max-width: 1200px) {
+    body.sign-in {
+        .main {
+            .navbar {
+                .navbar-collapse {
+                    .nav {
+                        li {
+                            a {
+                                margin: 25px auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .navbar.affix {
+                .navbar-toggle {
+                    margin: 18px 25px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body.sign-in {
+        .main {
+            .caption-wrapper {
+                text-align: center;
+
+                .caption {
+                    h1 {text-align: center;}
+
+                    .button {
+                        display: block;
+                        margin: 0 auto;
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+
+        .recover-pwd-block {
+            width: 100%;
+
+            .button {
+                width: 200px;
+            }
+        }
+    }
+}

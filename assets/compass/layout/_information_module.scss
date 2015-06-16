@@ -1,0 +1,386 @@
+/*------------------------------------*\
+    #jQuery UI Vertical Tabs css
+\*------------------------------------*/
+.ui-tabs.ui-tabs-vertical {
+    padding: 0;
+    // width: 42em;
+    .ui-widget-header {
+        border: none;
+    }
+    .ui-tabs-nav {
+        float: left;
+        background: #CCC;
+        @include border-radius(4px 0 0 4px);
+        border-right: 1px solid gray;
+        li {
+            clear: left;
+            width: 100%;
+            margin: 0.2em 0;
+            border: 1px solid gray;
+            border-width: 1px 0 1px 1px;
+            @include border-radius(4px 0 0 4px);
+            overflow: hidden;
+            position: relative;
+            right: -2px;
+            z-index: 2;
+            a {
+                display: block;
+                width: 100%;
+                padding: 0.6em 1em;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .ui-tabs-active {
+                margin-bottom: 0.2em;
+                padding-bottom: 0;
+                border-right: 1px solid white;
+            }
+            &:last-child {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .ui-tabs-panel {
+        float: left;
+        // width: 28em;
+        border-left: 1px solid gray;
+        @include border-radius(0);
+        position: relative;
+        left: -1px;
+    }
+}
+
+/*------------------------------------*\
+    #CHANGES GO HERE
+\*------------------------------------*/
+.container-fluid.information {
+    padding: 0;
+    background-color: $blanc;
+    border-top: $gold-border;
+    border-bottom: $gold-border;
+    .information__box {
+        height: auto;
+        .information__box--list {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            border: none;
+            @include border-radius(0);
+            list-style-type: none;
+            li {
+                position: relative;
+                z-index: 100;
+                margin: 0;
+                padding: 0;
+                right: 0;
+                border: none;
+                @include border-radius(0);
+                overflow: visible;
+                a {
+                    position: relative;
+                    color: $jaune-or;
+                    padding: 0;
+                    text-align: center;
+                    .icon-wrapper {
+                        position: relative;
+                        z-index: 100;
+                        width: 100%;
+                        height: 100%;
+                        .fa {
+                            width: 100%;
+                            height: 100%;
+                            background: $noir;
+                            padding: 56px 0;
+                            font-size: 4em;
+                            @include transition(all 300ms ease-in-out);
+                        }
+                    }
+                    .arrow {
+                        position: absolute;
+                        z-index: 30;
+                        top: 68px;
+                        right: 10px;
+                        width: 30px;
+                        height: 30px;
+                        background-color: $jaune-or;
+                        opacity: 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        @include transition(all 300ms ease-in-out);
+                    }
+                    &:hover, &:focus {
+                        outline: none;
+                        .icon-wrapper {
+                            .fa {
+                                background: $jaune-or;
+                                color: $noir;
+                            }
+                        }
+                        .arrow {
+                            opacity: 1;
+                            right: -15px;
+                        }
+                    }
+                }
+                &:last-child {
+                    margin: 0;
+                }
+                &[aria-selected="true"] {
+                    a {
+                        .icon-wrapper {
+                            .fa {
+                                background: $jaune-or;
+                                color: $noir;
+                            }
+                        }
+                        .arrow {
+                            opacity: 1;
+                            right: -15px;
+                        }
+                    }
+                }
+            }
+        }
+        .information__box--content {
+            position: relative;
+            float: left;
+            padding: 0;
+            margin: 0;
+            height: 504px;
+            color: $noir;
+            .tab-content {
+                width: 100%;
+                height: 100%;
+                border: none;
+                background-color: $fond-blanc;
+                overflow: scroll;
+                #map-canvas {
+                    margin: 0;
+                    padding: 0;
+                    height: 100%;
+                }
+            }
+            .tab-content#practical-information,
+            .tab-content#dates {
+                h1 {
+                    color: $noir;
+                    border-bottom: none;
+                    padding-top: 25px;
+                    padding-bottom: 25px;
+                    padding-left: 50px;
+                    font-weight: 700;
+                }
+                .tab-content__list {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    li {
+                        display: inline-block;
+                        float: left;
+                        width: 20%;
+                        padding: 25px;
+                        img {
+                            display: block;
+                            margin: 0 auto;
+                        }
+                        p {
+                            display: block;
+                            text-align: center;
+                            text-transform: uppercase;
+                            color: $noir;
+                        }
+                    }
+                }
+                .tab-content__details {
+                    clear: both;
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0 50px;
+                    li {
+                        margin-bottom: 15px;
+                        line-height: 24px;
+                        h3 {
+                            margin-left: 10px;
+                            margin-bottom: 10px;
+                            color: $noir;
+                            font-size: 18px;
+                            font-style: italic;
+                            font-weight: 700;
+                            &:before {
+                                content:"\f138";
+                                font-family: FontAwesome;
+                                display: inline-block;
+                                width: 1em;
+                                margin-left: -1.25em;
+                                margin-right: 0.75em;
+                                font-style: normal;
+                            }
+                        }
+                        p {
+                            color: $noir;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+            .controls {
+                cursor: pointer;
+                margin-bottom: 25px;
+                margin-right: 25px;
+                padding: 4px 10px;
+                font-size: 2em;
+                text-align: center;
+                color: $jaune-or;
+                @include border-radius(4px);
+                background-color: $noir;
+                opacity: 0.6;
+                @include transition(all 300ms ease-in-out);
+                &:hover {
+                    color: $noir;
+                    background-color: $jaune-or;
+                    opacity: 1;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container-fluid.information {
+        .information__box {
+            .information__box--list {
+                width: 10%;
+            }
+            .information__box--content {
+                width: 90%;
+
+                .tab-content#practical-information {
+                    .tab-content__list {
+                        li {
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container-fluid.information {
+        .information__box {
+            .information__box--list {
+                width: 10%;
+            }
+            .information__box--content {
+                width: 90%;
+
+                .tab-content#practical-information {
+                    .tab-content__list {
+                        li {
+                            p {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container-fluid.information {
+        .information__box {
+            .information__box--list {
+                li {
+                    a {
+                        .icon-wrapper {
+                            .fa {
+                                font-size: 2em;
+                                padding: 70px 10px;
+                            }
+                        }
+                        .arrow {
+                            top: 70px;
+                            right: 0px;
+                            width: 20px;
+                            height: 20px;
+                            @include transition(all 300ms ease-in-out);
+                        }
+                        &:hover, &:focus {
+                            .arrow {
+                                right: -10px;
+                            }
+                        }
+                    }
+                    &[aria-selected="true"] {
+                        a {
+                            .arrow {
+                                right: -10px;
+                            }
+                        }
+                    }
+                }
+            }
+            .information__box--content {
+                .tab-content#practical-information {
+                    overflow: scroll;
+                    .tab-content__list {
+                        li {
+                            width: 20%;
+                            padding: 25px 10px;
+                            img {
+                                width: 50%;
+                            }
+                            p {
+                                font-size: 12px;
+                                height: 25px;
+                            }
+                        }
+                    }
+                    .tab-content__details {
+                        margin: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container-fluid.information {
+        .information__box {
+            .information__box--content {
+                .tab-content#practical-information {
+                    .tab-content__list {
+                        li {
+                            width: 33%;
+                            padding: 25px 10px;
+                            img {
+                                width: 25%;
+                            }
+                            p {
+                                font-size: 12px;
+                                height: 50px;
+                            }
+                        }
+                    }
+                    .tab-content__details {
+                        margin: 0;
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

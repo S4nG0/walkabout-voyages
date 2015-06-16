@@ -1,0 +1,104 @@
+/*------------------------------------*\
+    #CONTACT
+\*------------------------------------*/
+body.contact {
+
+    .g-recaptcha {
+        margin-top: 15px;
+    }
+
+    .main.banner {
+        background-image: url('../images/contact.jpg');
+        background-position: center 0;
+        background-repeat: no-repeat;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .contact-form {
+        padding-top: 0;
+        .row {
+            margin-top: 25px;
+            &:first-child {
+                margin-top: 50px;
+            }
+            &:last-child {
+                margin-bottom: 50px;
+            }
+            .helper {
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+            img {
+                vertical-align: middle;
+                margin: 0 auto;
+            }
+            .form-group {
+                label {
+                    margin-bottom: 0;
+                    color: $jaune-or;
+                }
+                input {
+                    margin-top: 15px;
+                    border: $dark-border;
+                    background-color: $blanc;
+                    &:focus {
+                        border-color: $jaune-or;
+                    }
+                }
+                select {
+                    display: block;
+                    width: 100%;
+                    padding: 15px;
+                    margin-top: 15px;
+                    color: $gris-clair;
+                    border-color: $noir;
+                    &:focus {
+                        outline: none;
+                    }
+                    option {
+                        color: $noir;
+                    }
+                }
+                textarea {
+                    margin-top: 15px;
+                }
+                .required {
+                    display: block;
+                    font-size: 80%;
+                    color: $gris-clair;
+                }
+
+            }
+            .button {
+                width: 125px;
+                margin-right: 0;
+                &:first-child {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+
+/*------------------------------------*\
+    #RESPONSIVE
+\*------------------------------------*/
+@media screen and (max-width: 992px) {
+    body.contact {
+        .content {
+            padding: 0;
+        }
+        .contact-form {
+            .row {
+                .form-group.telephone {
+                    margin-top: 25px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,208 @@
+//Navbar
+
+.navbar {
+    z-index: 9999;
+    margin-top: 25px;
+    margin-bottom: 0;
+    background-color: rgba(33, 33, 33, 0.50);
+    border: none;
+    @include border-radius(0);
+    .navbar-brand {
+        display: table;
+        padding: 25px;
+        .logo {
+            display: block;
+            width: 250px;
+            @include transition(300ms all ease-in-out);
+        }
+    }
+    .navbar-collapse {
+        .nav {
+            li {
+                a {
+                    margin: 55px 25px 40px 0;
+                    font-family: $dosis;
+                    font-size: 16px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    padding: 0 0 10px 0;
+                    border-bottom: 2px solid transparent;
+                    color: $jaune-or;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    @include transition(0.25s all ease-in-out);
+                    .fa{
+                        margin-right: 10px;
+                    }
+                    &:last-child {
+                        margin-right: 25px;
+                    }
+                    &:hover, &:focus {
+                        border-bottom: 2px solid $jaune-or;
+                    }
+                }
+                a.active {
+                    border-bottom: 2px solid $jaune-or;
+                }
+            }
+        }
+    }
+}
+
+.navbar-right {
+    padding: 0;
+    margin: 0;
+}
+
+//Affix
+.navbar.affix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background-color: rgba(33, 33, 33, 1);
+    // @include box-shadow(0 5px 20px 0 rgba(33, 33, 33, 0.30));
+    .navbar-brand {
+        padding: 15px 25px;
+        .logo {
+            width: 150px;
+        }
+    }
+    .navbar-collapse {
+        .nav {
+            li {
+                a {
+                    margin: 30px 25px 15px 0;
+                }
+            }
+        }
+    }
+}
+
+//Responsive
+
+@media screen and (max-width: 1200px) {
+    .navbar {
+        .navbar-toggle {
+            display: block;
+            width: 50px;
+            height: 35px;
+            padding: 6px;
+            margin: 45px 25px;
+            background-color: transparent;
+            border: 1px solid $jaune-or;
+            @include border-radius(0);
+            @include transition(all 300ms ease-in-out);
+            .fa {
+                font-size: 1.5em;
+                margin: 0 auto;
+            }
+            &:hover, &:focus, &:active {
+                cursor: pointer;
+                color: $jaune-or;
+                background-color: transparent;
+            }
+        }
+        .navbar-collapse {
+            background-color: rgba(33, 33, 33, 0.85);
+            border-top-color: $jaune-or;
+            border-bottom: 2px solid $jaune-or;
+            text-align: center;
+            .nav {
+                li {
+                    a {
+                        margin: 40px auto;
+                        width: 25%;
+                        &:last-child {
+                            margin-right: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .navbar.affix {
+        .navbar-toggle {
+            margin: 18px 25px
+        }
+        .navbar-collapse {
+            .nav {
+                li {
+                    a {
+                        margin: 25px auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        .navbar-brand {
+            .logo {
+                width: 180px;
+            }
+        }
+        .navbar-toggle {
+            margin: 35px 25px;
+        }
+        .navbar-collapse {
+            .nav {
+                li {
+                    a {
+                        width: 35%;
+                    }
+                }
+            }
+        }
+    }
+    .navbar.affix {
+        .navbar-toggle {
+            margin: 15px 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        .navbar-brand {
+            padding: 30px 25px;
+            .logo {
+                width: 150px;
+            }
+        }
+        .navbar-toggle {
+            margin: 30px 25px;
+        }
+        .navbar-collapse {
+            .nav {
+                li {
+                    a {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+    .navbar.affix {
+        .navbar-brand {
+            .logo {
+                width: 130px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .navbar {
+        .navbar-brand {
+            padding: 35px 25px;
+            .logo {
+                width: 130px;
+            }
+        }
+    }
+}
