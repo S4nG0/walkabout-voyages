@@ -3,26 +3,23 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 class="panel-title">Connexion Walkabout</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <?php echo form_open(base_url().'walkadmin/'); ?>
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    <input class="form-control" placeholder="Pseudo" name="pseudo" type="text" value="<?php echo set_value('email'); ?>" autofocus>
+                                    <?php echo form_error('pseudo'); ?>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
+                                    <input class="form-control" placeholder="Password" name="password" value="<?php echo set_value('password'); ?>" type="password">
+                                    <?php echo form_error('password'); ?>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+                                <input type="submit" class="btn btn-lg btn-success btn-block" value="Se connecter"/>
                             </fieldset>
-                        </form>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>

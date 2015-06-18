@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "accueil";
-$route['wadmin'] = "wadmin/connexion";
+$route['walkadmin'] = "walkadmin/connexion";
 $route['404_override'] = '';
 
 

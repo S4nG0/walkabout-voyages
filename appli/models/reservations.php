@@ -53,4 +53,20 @@ class Reservations extends CI_Model {
         return $nb;
     }  
     
+    public function count_en_cours(){
+        
+        $reservations = $this->db->select('*')->from($this->table)->get()->result();
+        
+        $count = 0;
+        
+        foreach($reservations as $reservation){
+            $etat = $this->db->select('etat')->from('etatreservation')->where('idReservation',$reservation->idReservation)->get()->result();
+            if($etat[0]->etat == "En cours"){
+                $count++;
+            }       
+        }
+        return $count;
+        
+    }
+    
 }

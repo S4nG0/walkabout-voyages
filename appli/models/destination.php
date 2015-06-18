@@ -22,6 +22,23 @@ class Destination extends CI_Model {
                            ->result();
         
         return $destination;
+    } 
+    
+    public function getFromName($name = ''){
+        if($name == ''){
+            return false;
+        }
+        
+        $name = urldecode($name);
+        
+        $destination = $this->db->select('*')
+                           ->from($this->table)
+                           ->like('titre', "$name")
+                           ->limit(1)
+                           ->get()
+                           ->result();
+        
+        return $destination;
     }  
     
     public function get_all(){

@@ -42,7 +42,7 @@ $page = "home";
 
                 <div class="row noPadding">
 
-                    <div class="arrow-wrapper" id="content">
+                    <div class="arrow-wrapper">
 
                         <a href="#content"><i class="fa fa-angle-down"></i></a>
 
@@ -58,7 +58,7 @@ $page = "home";
 
 
 
-    <div class="content">
+    <div class="content" id="content">
 
         <div class="container-fluid noPadding">
 
@@ -97,13 +97,13 @@ $page = "home";
 
                                         <div class="col-md-8">
 
-                                            <p>'.$actu->titre.'</p><p><span class="published">par <a href="' . base_url() . 'actus">' . $actu->admin[0]->prenom . ' ' .$actu->admin[0]->nom . '</a>, le ' . $actu->date . '' . '</span></p>
+                                            <p>'.$actu->titre.'</p><p><span class="published">par <a href="' . base_url() . 'nos_actualites">' . $actu->admin[0]->prenom . ' ' .$actu->admin[0]->nom . '</a>, le ' . $actu->date . '' . '</span></p>
 
                                         </div>
 
                                         <div class="col-md-4">
 
-                                            <a href="' . base_url() . 'actus" class="button">LIRE LA SUITE</a>
+                                            <a href="' . base_url() . 'nos_actualites" class="button">LIRE LA SUITE</a>
 
                                         </div>
 
@@ -246,7 +246,7 @@ $page = "home";
 
                 <div class="col-md-12">
 
-                    <a href="<?php echo base_url(); ?>voyage" class="block_destinations__button">Tous nos voyages</a>
+                    <a href="<?php echo base_url(); ?>destinations" class="block_destinations__button">Tous nos voyages</a>
 
                 </div>
 

@@ -8,4 +8,14 @@ if (!function_exists('connecte')) {
         }
         return true;
     }
+    
+}
+
+if(!function_exists('connecte_admin')){
+    
+    function connecte_admin($user) {
+        if($user == null){
+            redirect(base_url().'walkadmin');
+        }
+    }
 }
