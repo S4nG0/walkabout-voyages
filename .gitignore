@@ -7,3 +7,7 @@ appli/cache/*
 appli/logs/*
 !appli/logs/index.html
 !appli/logs/.htaccess
+
+appli/config/*
+!appli/config/autoload.php
+!appli/config/routes.php
