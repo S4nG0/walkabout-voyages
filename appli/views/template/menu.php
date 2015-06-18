@@ -19,11 +19,11 @@
 
             <?php if ($page == "destinations" || $page == "single-destination") { ?>
                 <li>
-                    <a class="nav_links active" href="<?php echo base_url(); ?>voyage" title="Consultez nos destinations">Nos destinations</a>
+                    <a class="nav_links active" href="<?php echo base_url(); ?>destinations" title="Consultez nos destinations">Nos destinations</a>
                 </li>
             <?php } else { ?>
                 <li>
-                    <a class="nav_links" href="<?php echo base_url(); ?>voyage" title="Consultez nos destinations">Nos destinations</a>
+                    <a class="nav_links" href="<?php echo base_url(); ?>destinations" title="Consultez nos destinations">Nos destinations</a>
                 </li>
             <?php }; ?>
 

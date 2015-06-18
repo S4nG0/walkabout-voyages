@@ -30,5 +30,14 @@ class Commentaires extends CI_Model {
         
         return $result;
     }
+    
+    public function count_non_modere(){
+        
+        $this->db->like('modere', 'false');
+        $this->db->from($this->table);
+        $result =  $this->db->count_all_results();
+        
+        return $result;
+    }
 
 }

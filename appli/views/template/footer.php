@@ -27,7 +27,7 @@
                 <div class="col-sm-4 col-md-4 footer__block">
                     <h1>Plan du site</h1>
                     <ul class="footer__list">
-                        <li><a href="<?php echo base_url(); ?>voyage">Nos destinations</a></li>
+                        <li><a href="<?php echo base_url(); ?>destinations">Nos destinations</a></li>
                         <li><a href="<?php echo base_url(); ?>carnet">Carnets de voyage</a></li>
                         <li><a href="<?php echo base_url(); ?>esprit">Notre esprit</a></li>
                         <li><a href="<?php echo base_url(); ?>contact">Nous contacter</a></li>
@@ -69,7 +69,7 @@
 <script type="text/javascript" src="<?php echo js_url('jquery') ?>"></script>
 
 <!-- Google reCaptcha -->
-<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src='<?php echo js_url('vendors/recaptcha'); ?>'></script>
 
 <!-- Vendors -->
 <script type="text/javascript" src="<?php echo js_url('vendors/bootstrap.min'); ?>"></script>

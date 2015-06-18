@@ -1,5 +1,5 @@
     <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo js_url('jquery'); ?>"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script type="text/javascript" src="<?php echo js_url('vendors/bootstrap.min'); ?>"></script>

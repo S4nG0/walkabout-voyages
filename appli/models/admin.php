@@ -21,5 +21,20 @@ class Admin extends CI_Model {
         
         return $admin;
     }
+    
+    public function getFromPseudo($pseudo = ''){
+        if($pseudo == ''){
+            return false;
+        }
+        
+        $admin = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('identifiant', $pseudo)
+                           ->limit(1)
+                           ->get()
+                           ->result();
+        
+        return $admin;
+    }
 
 }

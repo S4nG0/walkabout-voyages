@@ -3670,6 +3670,9 @@ body.about .spirit .button:hover, body.about .spirit .button:focus {
   }
 }
 @media screen and (max-width: 480px) {
+  body.about .main.banner {
+    background-position: -1200px 0;
+  }
   body.about .story p, body.about .ambassadors p {
     font-size: 14px;
     line-height: 24px;
@@ -3777,13 +3780,12 @@ body.sign-in .main .navbar.affix {
   box-shadow: 0 5px 20px 0 rgba(33, 33, 33, 0.3);
 }
 body.sign-in .main .caption-wrapper {
-  display: block;
-  position: relative;
+  position: absolute;
   text-align: center;
 }
 body.sign-in .main .caption-wrapper .caption {
-  display: block;
-  padding-top: 50px;
+  padding-top: 35px;
+  vertical-align: middle;
 }
 body.sign-in .main .caption-wrapper .caption h1 {
   margin-bottom: 25px;
@@ -3804,7 +3806,6 @@ body.sign-in .main .caption-wrapper .caption .forgotten-pwd {
   color: #848484;
 }
 body.sign-in .recover-pwd-block {
-  display: none;
   text-align: center;
 }
 body.sign-in .recover-pwd-block .button {
