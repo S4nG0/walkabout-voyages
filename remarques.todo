@@ -2,7 +2,7 @@ Générales :
   ☐ Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations'
   ☐ Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc
   ☐ 'background-image' quand on choppe dynamiquement les images de la BDD au lieu de 'background'
-  ☐ Aurélien ne bosse jamais, il saoule
+  ☐ Aurélien ne bosse jamais, il saoule sale
 
 Single-destination :
   ☐ Gérer le contenu dynamiquement avec bdd !!!
