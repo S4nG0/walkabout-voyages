@@ -1,8 +1,8 @@
 Générales :
-  ☐ Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations'
-  ☐ Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc
+  ✔ Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations' @done (15-06-21 22:57)
+  ✔ Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc @done (15-06-21 22:57)
   ☐ 'background-image' quand on choppe dynamiquement les images de la BDD au lieu de 'background'
-  ☐ Aurélien ne bosse jamais, il saoule sale
+  ✔ Aurélien ne bosse jamais, il saoule sale @done (15-06-21 22:57)
 
 Single-destination :
   ☐ Gérer le contenu dynamiquement avec bdd !!!
@@ -17,3 +17,15 @@ Single carnet :
   ☐ Revoir zone de comm : affichage en escalier pour montrer les réponses à une question (pas urgent) + gérer pagination sur les comm
   ☐ L'image d'accueil du carnet est la même pour tous les articles : gérer ça aussi (utiliser la propriété bg-image au lieu de bg sinon on empiète sur le css)
 
+Administration :
+  ✔ Connexion / Déconnexion @done (15-06-21 22:56)
+  ☐ Dashboard (à (dé)terminer)
+  ☐ Pages Commentaires, Réservations, Contact à créer et a pouvoir administrer
+
+Utilisateur :
+  ✔ Connexion / Déconnexion @done (15-06-21 22:56)
+  ☐ Profil ( modification et création )
+  ☐ Faire son interface d'administration!!!!! URGENT!
+
+Référencement :
+  ☐ A faire, URGENT!
