@@ -1,7 +1,7 @@
    <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Tableau de bord</h1>
+                <h1 class="page-header">Commentaires</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo base_url() . 'walkadmin/commentss'; ?>">
+                    <a href="<?php echo base_url() . 'walkadmin/comments'; ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Voir tout les commentaires</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo base_url() . 'walkadmin/reservations'; ?>">
+                    <a href="<?php echo base_url() . 'walkadmin/booking'; ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Voir toutes les réservations</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

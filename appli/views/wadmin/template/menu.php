@@ -45,10 +45,10 @@
                         <a href="<?php echo base_url() . 'walkadmin/dashboard'; ?>"><i class="fa fa-dashboard fa-fw"></i> Tableau de bord</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/commentaires'; ?>"><i class="fa fa-comments fa-fw"></i> Commentaires</a>
+                        <a href="<?php echo base_url() . 'walkadmin/comments'; ?>"><i class="fa fa-comments fa-fw"></i> Commentaires</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/reservations'; ?>"><i class="fa fa-shopping-cart fa-fw"></i> Réservations</a>
+                        <a href="<?php echo base_url() . 'walkadmin/booking'; ?>"><i class="fa fa-shopping-cart fa-fw"></i> Réservations</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>"><i class="fa fa-support fa-fw"></i> Contacts</a>
