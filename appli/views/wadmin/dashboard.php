@@ -1,7 +1,7 @@
    <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">Tableau de bord</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#">
+                    <a href="<?php echo base_url() . 'walkadmin/commentaires'; ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Voir tout les commentaires</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#">
+                    <a href="<?php echo base_url() . 'walkadmin/reservations'; ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Voir toutes les réservations</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -60,11 +60,11 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">13</div>
-                                <div>Support Tickets!</div>
+                                <div>Demandes de contact!</div>
                             </div>
                         </div>
                     </div>
-                    <a href="#">
+                    <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Voir toutes les demandes de contact</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -73,6 +73,10 @@
                     </a>
                 </div>
             </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            
         </div>
         <!-- /.row -->
     </div>
