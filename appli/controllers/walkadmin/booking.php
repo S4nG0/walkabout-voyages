@@ -28,7 +28,7 @@ class Booking extends CI_Controller {
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header');
         $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/comments');
+        $this->load->view('wadmin/booking');
         $this->load->view('wadmin/template/footer');
         //$this->output->enable_profiler(true);
     }
