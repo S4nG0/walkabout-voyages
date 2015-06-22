@@ -4,6 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
+    <meta name="description" content="Partez dans des contrées reculées et partagez une expérience inoubliable">
     <title>Walkabout</title>
     <link rel="icon" href="<?php echo img_url('favicon.png'); ?>" type="image/png">
     <link rel="apple-touch-icon" href="<?php echo img_url('apple-touch-icon.png'); ?>">

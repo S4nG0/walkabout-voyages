@@ -66,7 +66,7 @@ $page = "home";
 
                 <div class="col-md-6 content_block_left sameHeight">
 
-                    <h1>Notre esprit</h1>
+                    <h2>Notre esprit</h2>
 
                     <p>
 
@@ -87,7 +87,7 @@ $page = "home";
 
                 <div class="col-md-6 content_block_right sameHeight">
 
-                    <h1>Nos actualités</h1>
+                    <h2>Nos actualités</h2>
 
                     <?php
 
@@ -145,7 +145,7 @@ $page = "home";
 
                                 <div class="col-md-6 slider__item--text">
 
-                                    <h1>Carnets de voyage</h1>
+                                    <h2>Carnets de voyage</h2>
 
                                     <div class="row">
 
@@ -161,7 +161,7 @@ $page = "home";
 
                                         <div class="col-xs-12 col-md-8">
 
-                                            <h2>'.$carnet->titre.'</h2>
+                                            <h3>'.$carnet->titre.'</h3>
 
                                             <p class="published">Publié par <a href="#">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a>, le '.$carnet->date.'.</p>
 
@@ -204,7 +204,7 @@ $page = "home";
 
             <div class="row noPadding">
 
-                <h1>Nos destinations</h1>
+                <h2>Nos destinations</h2>
 
                 <ul class="block_destinations__list">
 

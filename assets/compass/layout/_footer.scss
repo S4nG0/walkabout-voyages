@@ -37,10 +37,16 @@ footer {
     color: $blanc;
     border-top: $gold-border;
 
-    h1 {
-        color: $gris-clair;
-        line-height: 45px;
+    .footer__title {
+        display: block;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
         border-bottom: 1px solid $gris-clair;
+        font-size: 26px;
+        line-height: 36px;
+        font-family: $dosis;
+        color: $gris-clair;
+        text-transform: uppercase;
     }
 
     hr {
