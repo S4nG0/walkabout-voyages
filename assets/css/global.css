@@ -2584,11 +2584,13 @@ body.list-carnet .featured-travel-log .image-wrapper {
 body.list-carnet .featured-travel-log .aside {
   padding: 25px;
 }
-body.list-carnet .featured-travel-log .aside h3 {
+body.list-carnet .featured-travel-log .aside .top-title {
+  font-size: 22px;
+  line-height: 32px;
   text-transform: uppercase;
   color: gray;
 }
-body.list-carnet .featured-travel-log .aside h1 {
+body.list-carnet .featured-travel-log .aside h2 {
   margin-top: 25px;
   padding-bottom: 15px;
   font-size: 28px;
@@ -2636,8 +2638,8 @@ body.list-carnet .content .story-block .story--image .story--bg-image {
   -webkit-background-size: cover;
   background-size: cover;
 }
-body.list-carnet .content .story-block .content-wrapper h2 {
-  color: #f0c041 !important;
+body.list-carnet .content .story-block .content-wrapper h3 {
+  text-transform: uppercase;
 }
 body.list-carnet .content .story-block .content-wrapper .details {
   display: block;
@@ -2688,6 +2690,7 @@ body.list-carnet footer {
 }
 @media screen and (max-width: 992px) {
   body.list-carnet .featured-travel-log .aside .button {
+    float: left;
     width: 75%;
   }
 }
@@ -2696,6 +2699,7 @@ body.list-carnet footer {
     text-align: center;
   }
   body.list-carnet .featured-travel-log .aside .button {
+    float: none;
     width: 50%;
   }
   body.list-carnet .see-more-block {
@@ -2710,11 +2714,11 @@ body.list-carnet footer {
   body.list-carnet .featured-travel-log .aside {
     padding-bottom: 50px;
   }
-  body.list-carnet .featured-travel-log .aside h3 {
+  body.list-carnet .featured-travel-log .aside .top-title {
     font-size: 18px;
     line-height: 28px;
   }
-  body.list-carnet .featured-travel-log .aside h1 {
+  body.list-carnet .featured-travel-log .aside h2 {
     font-size: 22px;
     line-height: 32px;
   }
@@ -2820,7 +2824,7 @@ body.list-destination .content .destination-block .text-container {
   padding: 3%;
   text-align: right;
 }
-body.list-destination .content .destination-block .text-container h1 {
+body.list-destination .content .destination-block .text-container h2 {
   font-size: 24px;
   line-height: 34px;
   font-weight: 600;
@@ -2984,7 +2988,9 @@ body.single-destination .content .introduction .introduction_description, body.s
   position: relative;
   padding: 0 25px;
 }
-body.single-destination .content .introduction .introduction_description h1, body.single-destination .content .introduction .introduction_aside h1 {
+body.single-destination .content .introduction .introduction_description h1, body.single-destination .content .introduction .introduction_description h2, body.single-destination .content .introduction .introduction_aside h1, body.single-destination .content .introduction .introduction_aside h2 {
+  font-size: 26px;
+  line-height: 36px;
   padding: 0;
   margin-bottom: 50px;
 }
@@ -3035,10 +3041,10 @@ body.single-destination .content .destination__prices,
 body.single-destination .content .destination__order {
   padding-top: 50px;
 }
-body.single-destination .content .destination__informations h1,
-body.single-destination .content .destination__map h1,
-body.single-destination .content .destination__prices h1,
-body.single-destination .content .destination__order h1 {
+body.single-destination .content .destination__informations h2,
+body.single-destination .content .destination__map h2,
+body.single-destination .content .destination__prices h2,
+body.single-destination .content .destination__order h2 {
   margin-bottom: 50px;
   text-align: center;
 }
@@ -3235,7 +3241,7 @@ body.single-destination .content .destination__order .button .fa {
 body.single-destination .content .destination__form {
   display: block;
 }
-body.single-destination .content .destination__form h1 {
+body.single-destination .content .destination__form h2 {
   margin-bottom: 50px;
   text-align: center;
 }
@@ -3255,12 +3261,12 @@ body.single-destination .travel-logs {
   padding: 50px;
   background-color: #e4e4e4;
 }
-body.single-destination .travel-logs h1 {
+body.single-destination .travel-logs h2 {
   margin-bottom: 50px;
   color: #242424;
   text-align: center;
 }
-body.single-destination .travel-logs h1:after {
+body.single-destination .travel-logs h2:after {
   background-color: #242424;
 }
 body.single-destination .travel-logs .travel-logs-slider {
@@ -3319,14 +3325,14 @@ body.single-destination .travel-logs .travel-logs-slider .travel-log .excerpt .b
   -webkit-border-radius: 0;
   border-radius: 0;
 }
-.fancybox-overlay .fancybox-skin .destination__form h1 {
+.fancybox-overlay .fancybox-skin .destination__form h2 {
   position: relative;
   margin-bottom: 50px;
   padding-bottom: 0;
   text-align: center;
   border-bottom: none;
 }
-.fancybox-overlay .fancybox-skin .destination__form h1:after {
+.fancybox-overlay .fancybox-skin .destination__form h2:after {
   content: '';
   position: absolute;
   display: block;
@@ -3513,11 +3519,15 @@ body.contact .contact-form .row .form-group .required {
   font-size: 80%;
   color: #848484;
 }
-body.contact .contact-form .row .button {
+body.contact .contact-form .row .buttons-block {
+  text-align: left;
+}
+body.contact .contact-form .row .buttons-block .button {
+  display: inline-block;
   width: 125px;
   margin-right: 0;
 }
-body.contact .contact-form .row .button:first-child {
+body.contact .contact-form .row .buttons-block .button:first-child {
   margin-right: 15px;
 }
 
@@ -3530,6 +3540,18 @@ body.contact .contact-form .row .button:first-child {
   }
   body.contact .contact-form .row .form-group.telephone {
     margin-top: 25px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body.contact .contact-form {
+    text-align: center;
+  }
+  body.contact .contact-form .row .g-recaptcha > div > div {
+    display: block;
+    margin: 0 auto;
+  }
+  body.contact .contact-form .row .buttons-block {
+    text-align: center;
   }
 }
 /*------------------------------------*\
@@ -3565,7 +3587,8 @@ body.about .story .logo, body.about .ambassadors .logo {
   margin: 50px auto;
   width: 50px;
 }
-body.about .story h1, body.about .ambassadors h1 {
+body.about .story h1, body.about .story h2, body.about .ambassadors h1, body.about .ambassadors h2 {
+  font-size: 26px;
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -3650,15 +3673,7 @@ body.about .spirit .button:hover, body.about .spirit .button:focus {
 /*------------------------------------*\
     #RESPONSIVE
 \*------------------------------------*/
-@media screen and (max-width: 992px) {
-  body.about .main.banner {
-    background-position: -600px 0;
-  }
-}
 @media screen and (max-width: 768px) {
-  body.about .main.banner {
-    background-position: -600px 0;
-  }
   body.about .spirit {
     background-position: bottom left;
     font-size: 16px;
@@ -3676,9 +3691,6 @@ body.about .spirit .button:hover, body.about .spirit .button:focus {
   }
 }
 @media screen and (max-width: 480px) {
-  body.about .main.banner {
-    background-position: -1200px 0;
-  }
   body.about .story p, body.about .ambassadors p {
     font-size: 14px;
     line-height: 24px;
@@ -3700,6 +3712,9 @@ body.about .spirit .button:hover, body.about .spirit .button:focus {
   }
   body.about .spirit .button {
     display: block;
+    width: 200px;
+    font-size: 12px;
+    line-height: 22px;
     margin: 15px auto;
   }
 }
@@ -4721,6 +4736,7 @@ h1.sep:after {
 h1.no-sep,
 h2.no-sep {
   border-bottom: none;
+  padding: 0;
 }
 
 h2 {
@@ -4729,6 +4745,26 @@ h2 {
   line-height: 36px;
   padding-bottom: 10px;
   border-bottom: 1px solid #f0c041;
+}
+
+h2.sep {
+  position: relative;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+h2.sep:after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 50%;
+  width: 100px;
+  height: 1px;
+  bottom: -15px;
+  background-color: #f0c041;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 h3 {
@@ -4852,9 +4888,9 @@ strong {
   margin: 0;
   color: #f0c041;
   font-family: "Dosis", sans-serif;
-  font-size: 26px !important;
+  font-size: 26px;
   font-style: italic;
-  line-height: 36px !important;
+  line-height: 36px;
   text-align: center;
 }
 
@@ -5395,6 +5431,8 @@ body.single-carnet .content {
   padding-bottom: 0;
 }
 .tb-article .tb-article--content .lead {
+  font-size: 26px;
+  line-height: 26px;
   padding: 50px 25px 0 25px;
   max-width: 800px;
 }
@@ -5965,7 +6003,7 @@ body.single-carnet .content {
     max-width: 300px;
     margin: 0 auto;
   }
-  body.single-carnet p.lead {
+  body.single-carnet .content .tb-article .lead {
     font-size: 20px;
     line-height: 30px;
   }

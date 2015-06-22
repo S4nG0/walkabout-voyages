@@ -17,10 +17,10 @@ $page = "contact";
             <?php
                 switch($result){
                     case "erreur mail":
-                        echo '<div class="alert alert-danger" role="alert"><strong>Erreur!</strong> Il y a eu un petit problème, votre email ne s\'est pas envoyé correctement, veuillez réessayer!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
+                        echo '<div class="alert alert-danger" role="alert"><strong>Erreur!</strong> Un erreur s\'est produite. Votre email ne s\'est pas envoyé correctement, veuillez réessayer !<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
                         break;
                     case "ok":
-                        echo '<div class="alert alert-success" role="alert"><strong>Merci!</strong> Votre mail s\'est bien envoyé, nous vous répondrons sous peu!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
+                        echo '<div class="alert alert-success" role="alert"><strong>Merci!</strong> Votre mail s\'est bien envoyé, nous vous répondrons sous peu !<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
                         break;
                 }
             ?>
@@ -31,7 +31,7 @@ $page = "contact";
                 </div>
             </div>
             <?php
-            echo form_open('contact');
+                echo form_open('contact');
             ?>
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-md-offset-2">
@@ -99,7 +99,7 @@ $page = "contact";
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3 col-md-offset-2">
+                <div class="col-md-6 col-md-offset-2">
                     <div class="form-group">
                         <label for="verification">Vérification</label>
                         <span class="required">Obligatoire</span>
@@ -114,8 +114,10 @@ $page = "contact";
             </div>
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <input class="button pull-left" type="reset" value="Annuler">
-                    <input class="button pull-left" type="submit" value="Envoyer">
+                    <div class="buttons-block">
+                        <input class="button" type="submit" value="Envoyer">
+                        <input class="button" type="reset" value="Annuler">
+                    </div>
                 </div>
             </div>
             </form>

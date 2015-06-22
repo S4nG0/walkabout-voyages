@@ -11,7 +11,7 @@ $page='destinations';
         </div>
         <div class="big-title-wrapper">
             <div class="big-title">
-                <h1 class="no-sep">Un Monde d'Expériences</h1>
+                <h1 class="no-sep">Nos destinations</h1>
                 <p>
                     Partez dans une contrée reculée,<br>et partagez votre expérience avec les autres
                 </p>
@@ -37,7 +37,7 @@ $page='destinations';
                         </div>
                         <div class="text-container">
                             <a class="no-style" href="'.base_url().'destinations/'.urlencode($destination->titre).'">
-                                <h1>'.$destination->titre.'</h1>
+                                <h2>'.$destination->titre.'</h2>
                                 <h3>'.$destination->pays[0]->nom.'&nbsp;&bull;&nbsp;'.$destination->ville.'</h3>
                                 <p>'.$destination->nom.'</p>
                                 <p class="price">À partir de <strong>'.$destination->prix_min.' € par personne</strong></p>

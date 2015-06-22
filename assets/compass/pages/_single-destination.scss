@@ -13,7 +13,9 @@ body.single-destination {
                 position: relative;
                 padding: 0 25px;
 
-                h1 {
+                h1, h2 {
+                    font-size: 26px;
+                    line-height: 36px;
                     padding: 0;
                     margin-bottom: 50px;
                 }
@@ -78,7 +80,7 @@ body.single-destination {
         .destination__order {
             padding-top: 50px;
 
-            h1 {
+            h2 {
                 margin-bottom: 50px;
                 text-align: center;
             }
@@ -275,7 +277,7 @@ body.single-destination {
         .destination__form {
             display: block;
 
-            h1 {
+            h2 {
                 margin-bottom: 50px;
                 text-align: center;
             }
@@ -301,7 +303,7 @@ body.single-destination {
         padding: 50px;
         background-color: $fond-blanc;
 
-        h1 {
+        h2 {
             margin-bottom: 50px;
             color: $noir;
             text-align: center;
@@ -379,7 +381,7 @@ body.single-destination {
 
         .destination__form {
 
-            h1 {
+            h2 {
                 position: relative;
                 margin-bottom: 50px;
                 padding-bottom: 0;

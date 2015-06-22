@@ -73,12 +73,14 @@ body.list-carnet {
         .aside {
             padding: 25px;
 
-            h3 {
+            .top-title {
+                font-size: 22px;
+                line-height: 32px;
                 text-transform: uppercase;
                 color: darken($blanc, 50%);
             }
 
-            h1 {
+            h2 {
                 margin-top: 25px;
                 padding-bottom: 15px;
                 font-size: 28px;
@@ -132,8 +134,8 @@ body.list-carnet {
 
             .content-wrapper {
 
-                h2 {
-                    color: $jaune-or !important;
+                h3 {
+                    text-transform: uppercase;
                 }
 
                 .details {
@@ -209,6 +211,7 @@ body.list-carnet {
         .featured-travel-log {
             .aside {
                 .button {
+                    float: left;
                     width: 75%;
                 }
             }
@@ -222,6 +225,7 @@ body.list-carnet {
             text-align: center;
             .aside {
                 .button {
+                    float: none;
                     width: 50%;
                 }
             }
@@ -242,12 +246,12 @@ body.list-carnet {
             .aside {
                 padding-bottom: 50px;
 
-                h3 {
+                .top-title {
                     font-size: 18px;
                     line-height: 28px;
                 }
 
-                h1 {
+                h2 {
                     font-size: 22px;
                     line-height: 32px;
                 }

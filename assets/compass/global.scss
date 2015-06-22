@@ -79,6 +79,7 @@ h1.sep {
 h1.no-sep,
 h2.no-sep {
     border-bottom: none;
+    padding: 0;
 }
 
 h2 {
@@ -87,6 +88,24 @@ h2 {
     line-height: 36px;
     padding-bottom: 10px;
     border-bottom: $gold-border;
+}
+
+h2.sep {
+    position: relative;
+    padding-bottom: 0;
+    border-bottom: none;
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 50%;
+        width: 100px;
+        height: 1px;
+        bottom: -15px;
+        background-color: $jaune-or;
+        @include translateX(-50%);
+    }
 }
 
 h3 {
@@ -203,9 +222,9 @@ strong {
     margin: 0;
     color: $jaune-or;
     font-family: $dosis;
-    font-size: 26px !important;
+    font-size: 26px;
     font-style: italic;
-    line-height: 36px !important;
+    line-height: 36px;
     text-align: center;
 }
 
@@ -750,6 +769,8 @@ body.single-carnet {
         }
 
         .lead {
+            font-size: 26px;
+            line-height: 26px;
             padding: 50px 25px 0 25px;
             max-width: 800px;
         }
@@ -1382,11 +1403,11 @@ body.single-carnet {
                     max-width: 300px;
                     margin: 0 auto;
                 }
+                .lead {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
             }
-        }
-        p.lead {
-            font-size: 20px;
-            line-height: 30px;
         }
         .container-fluid.discussion {
             .comment {

@@ -74,11 +74,17 @@ body.contact {
                 }
 
             }
-            .button {
-                width: 125px;
-                margin-right: 0;
-                &:first-child {
-                    margin-right: 15px;
+
+            .buttons-block {
+                text-align: left;
+
+                .button {
+                    display: inline-block;
+                    width: 125px;
+                    margin-right: 0;
+                    &:first-child {
+                        margin-right: 15px;
+                    }
                 }
             }
         }
@@ -97,6 +103,29 @@ body.contact {
             .row {
                 .form-group.telephone {
                     margin-top: 25px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body.contact {
+        .contact-form {
+            text-align: center;
+
+            .row {
+                .g-recaptcha {
+                    > div {
+                        > div {
+                            display: block;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+
+                .buttons-block {
+                    text-align: center;
                 }
             }
         }
