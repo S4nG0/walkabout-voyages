@@ -2431,10 +2431,16 @@ footer {
   color: #fff;
   border-top: 1px solid #f0c041;
 }
-footer h1 {
-  color: #848484;
-  line-height: 45px;
+footer .footer__title {
+  display: block;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
   border-bottom: 1px solid #848484;
+  font-size: 26px;
+  line-height: 36px;
+  font-family: "Dosis", sans-serif;
+  color: #848484;
+  text-transform: uppercase;
 }
 footer hr {
   margin: 10px 0 50px 0;
@@ -4686,8 +4692,8 @@ h1, h2, h3, h4 {
 
 h1 {
   text-transform: uppercase;
-  font-size: 26px;
-  line-height: 36px;
+  font-size: 30px;
+  line-height: 40px;
   padding-bottom: 10px;
   border-bottom: 1px solid #f0c041;
 }
@@ -4712,14 +4718,17 @@ h1.sep:after {
   transform: translateX(-50%);
 }
 
-h1.no-sep {
+h1.no-sep,
+h2.no-sep {
   border-bottom: none;
 }
 
 h2 {
   text-transform: uppercase;
-  font-size: 24px;
-  line-height: 34px;
+  font-size: 26px;
+  line-height: 36px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0c041;
 }
 
 h3 {
@@ -4843,9 +4852,9 @@ strong {
   margin: 0;
   color: #f0c041;
   font-family: "Dosis", sans-serif;
-  font-size: 26px;
+  font-size: 26px !important;
   font-style: italic;
-  line-height: 36px;
+  line-height: 36px !important;
   text-align: center;
 }
 
@@ -5165,7 +5174,7 @@ body.single-carnet .content {
 .content .content_block_right {
   padding-left: 25px;
 }
-.content .content_block_right h1 {
+.content .content_block_right h2 {
   margin-bottom: 25px;
 }
 .content .content_block_right .news {
@@ -5197,11 +5206,11 @@ body.single-carnet .content {
   right: 51%;
   bottom: 30px;
 }
-.content.travel-logs .travel-logs__slider .slider__item h1 {
+.content.travel-logs .travel-logs__slider .slider__item h2 {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-.content.travel-logs .travel-logs__slider .slider__item h2 {
+.content.travel-logs .travel-logs__slider .slider__item h3 {
   font-size: 22px;
   line-height: 32px;
 }
@@ -5260,7 +5269,7 @@ body.single-carnet .content {
   border: solid 1px #f0c041;
   color: #fff;
 }
-.content.block_destinations h1 {
+.content.block_destinations h2 {
   margin-bottom: 50px;
   padding-bottom: 0;
   text-align: center;
@@ -5351,9 +5360,10 @@ body.single-carnet .content {
   background: url("../images/destinations/ecuador2.png") 50% 25% no-repeat;
 }
 
-.tb-article {
-  font-weight: 300;
+.articles-block {
+  padding-bottom: 50px;
 }
+
 .tb-article .tb-article--title {
   padding: 50px 0 0 0;
   color: #f0c041;
@@ -5361,9 +5371,6 @@ body.single-carnet .content {
   text-transform: none;
   text-align: center;
   border-bottom: none;
-}
-.tb-article .lead {
-  padding: 50px 25px 0 25px;
 }
 .tb-article .tb-article--content {
   padding: 0;
@@ -5378,6 +5385,7 @@ body.single-carnet .content {
   padding-top: 50px;
   margin: 0 auto;
   font-size: 18px;
+  font-weight: 300;
   line-height: 30px;
 }
 .tb-article .tb-article--content p:first-child {
@@ -5385,6 +5393,10 @@ body.single-carnet .content {
 }
 .tb-article .tb-article--content p:last-child {
   padding-bottom: 0;
+}
+.tb-article .tb-article--content .lead {
+  padding: 50px 25px 0 25px;
+  max-width: 800px;
 }
 .tb-article .tb-article--content img {
   display: block;
@@ -5397,14 +5409,37 @@ body.single-carnet .content {
 
 .row[data-readmore-toggle] {
   text-align: center;
-  border-bottom: 1px solid #f0c041;
 }
 .row[data-readmore-toggle] .readMore {
+  position: relative;
   display: block;
-  margin-top: 25px;
+  margin-top: 50px;
   margin-bottom: 25px;
+  padding-top: 25px;
+}
+.row[data-readmore-toggle] .readMore:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 200px;
+  height: 1px;
+  left: 50%;
+  top: 0;
+  background-color: #848484;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -moz-transition: background-color 300ms ease-in-out;
+  -o-transition: background-color 300ms ease-in-out;
+  -webkit-transition: background-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
+}
+.row[data-readmore-toggle] .readMore:last-child {
+  margin-bottom: 0;
 }
 .row[data-readmore-toggle] .readMore a {
+  font-size: 16px;
   color: #848484;
   text-align: center;
   text-decoration: none;
@@ -5423,13 +5458,19 @@ body.single-carnet .content {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.row[data-readmore-toggle] .readMore a:hover {
+.row[data-readmore-toggle] .readMore:hover:before {
+  background-color: #f0c041;
+}
+.row[data-readmore-toggle] .readMore:hover a {
   color: #f0c041;
 }
-.row[data-readmore-toggle] .readMore a:hover .fa {
+.row[data-readmore-toggle] .readMore:hover a .fa {
   color: #f0c041;
 }
 
+.tb-article[aria-expanded="true"] + [data-readmore-toggle] .readMore:before {
+  background-color: #f0c041;
+}
 .tb-article[aria-expanded="true"] + [data-readmore-toggle] .readMore a {
   color: #f0c041;
 }
@@ -5547,10 +5588,9 @@ body.single-carnet .content {
   background: url("../images/texture.png");
   padding: 50px 0;
 }
-.container-fluid.share h1 {
+.container-fluid.share h2 {
   padding: 0;
   color: #f0c041;
-  border: none;
 }
 .container-fluid.share p {
   margin: 25px 0;
@@ -5558,7 +5598,6 @@ body.single-carnet .content {
 }
 .container-fluid.share a {
   color: #fff;
-  text-decoration: none;
   -moz-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;

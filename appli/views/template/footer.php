@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4 col-md-4 footer__block">
-                    <h1>Walkabout</h1>
+                    <span class="footer__title">Walkabout</span>
                     <ul class="footer__list">
                         <li>10 rue des piats</li>
                         <li>59200 Lille</li>
@@ -25,7 +25,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-4 col-md-4 footer__block">
-                    <h1>Plan du site</h1>
+                    <span class="footer__title">Plan du site</span>
                     <ul class="footer__list">
                         <li><a href="<?php echo base_url(); ?>destinations">Nos destinations</a></li>
                         <li><a href="<?php echo base_url(); ?>carnet">Carnets de voyage</a></li>
@@ -35,7 +35,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-4 col-md-4 footer__block">
-                    <h1>Tenez-vous informés</h1>
+                    <span class="footer__title">Tenez-vous informés</span>
                     <div class="footer__social">
                         <a class="item_fb" href="#" title="Suivez-nous sur Facebook !" target="blank">
                             <i class="fa fa-facebook"></i>

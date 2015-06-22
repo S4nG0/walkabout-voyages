@@ -77,58 +77,59 @@
 
     <div class="content" id="content">
         <div class="container-fluid noPadding">
+            <div class="articles-block">
+                <!-- begin:article -->
+                <?php
+                $i = 1;
+                foreach ($articles as $article) {
 
-            <!-- begin:article -->
-            <?php
-            $i = 1;
-            foreach ($articles as $article) {
+                    echo '<div class="row noPadding">';
+                    $photos = array();
+                    $photos = explode(';', $article->photos);
+                    array_pop($photos);
+                    $html_photo = '';
 
-                echo '<div class="row noPadding">';
-                $photos = array();
-                $photos = explode(';', $article->photos);
-                array_pop($photos);
-                $html_photo = '';
-
-                // Get the gallery photos in $photos array
-                foreach ($photos as $key => $photo) {
-                    $html_photo .= '<li>
-                        <figure>
-                            <img src="' . img_url($photo) . '" alt="photo' . $key . '">
-                            <figcaption>
-                                <div class="caption-content">
-                                    <!-- Lien vers galerie fancybox -->
-                                    <a class="fancybox" rel="group" href="' . img_url($photo) . '">
-                                        <i class="fa fa-search"></i>
-                                        <p>Agrandir l\'image</p>
-                                    </a>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    ';
-                }
-
-                echo '
-                    <article class="tb-article">
-                        <h1 class="tb-article--title">
-                            ' . $article->titre . '
-                        </h1>
-                        '.$article->texte.'
+                    // Get the gallery photos in $photos array
+                    foreach ($photos as $key => $photo) {
+                        $html_photo .= '<li>
+                            <figure>
+                                <img src="' . img_url($photo) . '" alt="photo' . $key . '">
+                                <figcaption>
+                                    <div class="caption-content">
+                                        <!-- Lien vers galerie fancybox -->
+                                        <a class="fancybox" rel="group" href="' . img_url($photo) . '">
+                                            <i class="fa fa-search"></i>
+                                            <p>Agrandir l\'image</p>
+                                        </a>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </li>
                         ';
-                if ($html_photo != '') {
-                    echo '<div class="gallery align-center">
-                <h2>Les photos liées à cet article</h2>
-                <ul class="grid">
-                ' . $html_photo . ''
-                    . '</ul></div>';
-                }
-                echo '
-                    </article>
-                            ';
-                $i++;
-            }
-            ?>
+                    }
 
+                    echo '
+                        <article class="tb-article">
+                            <h2 class="tb-article--title">
+                                ' . $article->titre . '
+                            </h2>
+                            '.$article->texte.'
+                            ';
+                    if ($html_photo != '') {
+                        echo '<div class="gallery align-center">
+                    <h2>Les photos liées à cet article</h2>
+                    <ul class="grid">
+                    ' . $html_photo . ''
+                        . '</ul></div>';
+                    }
+                    echo '
+                        </article>
+                                ';
+                    $i++;
+                }
+                ?>
+
+            </div>
         </div>
     </div>
 </div>
@@ -155,19 +156,23 @@
                         <div class="col-sm-10 col-md-6">
                             <div class="comment--content">
                                 <div class="arrow"></div>
-                                <div class="row noPadding">
-                                    <span class="username"><a href="#">' . $commentaire->user[0]->prenom . ' ' . $commentaire->user[0]->nom . '</a></span>
-                                    <span class="bull">&bull;</span>
-                                    <span class="published">Publié le ' . $commentaire->date . '</span>
-                                    <p>
-                                        ' . $commentaire->texte . '
-                                    </p>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <span class="username"><a href="#">' . $commentaire->user[0]->prenom . ' ' . $commentaire->user[0]->nom . '</a></span>
+                                        <span class="bull">&bull;</span>
+                                        <span class="published">Publié le ' . $commentaire->date . '</span>
+                                        <p>
+                                            ' . $commentaire->texte . '
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="row noPadding">
-                                    <div class="comment--reply">
-                                        <a class="reply-link" href="#comment-form">
-                                            Participez à la discussion
-                                        </a>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="comment--reply">
+                                            <a class="reply-link" href="#comment-form">
+                                                Participez à la discussion
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -237,7 +242,7 @@
 <div class="container-fluid share">
     <div class="row align-center noPadding">
         <div class="col-md-4 col-md-offset-4">
-            <h1>Vous avez aimé ce carnet ?</h1>
+            <h2 class="no-sep">Vous avez aimé ce carnet ?</h2>
             <p class="italic">Partagez-le avec vos amis !</p>
             <div class="social">
                 <a class="item_fb" href="#" target="blank">

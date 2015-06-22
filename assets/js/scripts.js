@@ -412,7 +412,7 @@ $(document).ready(function () {
     /***
      * Readmore
      */
-    $('article').readmore({
+    $('.tb-article').readmore({
         collapsedHeight: 800,
         heightMargin: 0,
         moreLink: '<div class="row noPadding"><div class="readMore"><a href="#">Lire la suite<i class="fa fa-chevron-down"></i></a></div></div>',
