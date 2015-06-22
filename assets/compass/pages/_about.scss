@@ -23,7 +23,8 @@ body.about {
             width: 50px;
         }
 
-        h1 {
+        h1, h2 {
+            font-size: 26px;
             text-align: center;
             margin-top: 50px;
             margin-bottom: 50px;
@@ -128,21 +129,9 @@ body.about {
 /*------------------------------------*\
     #RESPONSIVE
 \*------------------------------------*/
-@media screen and (max-width: 992px) {
-    body.about {
-
-        .main.banner {
-            background-position: -600px 0;
-        }
-    }
-}
 
 @media screen and (max-width: 768px) {
     body.about {
-
-        .main.banner {
-            background-position: -600px 0;
-        }
 
         .spirit {
 
@@ -173,10 +162,6 @@ body.about {
 
 @media screen and (max-width: 480px) {
     body.about {
-
-        .main.banner {
-            background-position: -1200px 0;
-        }
 
         .story, .ambassadors {
 
@@ -209,8 +194,12 @@ body.about {
 
                 }
             }
+
             .button {
                 display: block;
+                width: 200px;
+                font-size: 12px;
+                line-height: 22px;
                 margin: 15px auto;
             }
         }

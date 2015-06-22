@@ -21,7 +21,7 @@
                         </p>
                     </div>
                     <div class="col-md-4 introduction_aside sameHeight">
-                        <h1 class="no-sep">Informations</h1>
+                        <h2 class="no-sep">Informations</h2>
                         <ul id="introduction_aside--infos">
                             <?php
                                 foreach ($infos_pays[0] as $key => $value) {
@@ -70,7 +70,7 @@
             <!-- block:Infos -->
             <div class="row">
                 <div class="col-md-12 destination__informations" id="infos">
-                    <h1 class="sep">Informations générales</h1>
+                    <h2 class="sep">Informations générales</h2>
                     <ul class="info-icons">
                         <li>
                             <img src="<?php echo img_url('info-pics/climat_white.png'); ?>" alt="Climat">
@@ -167,7 +167,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="destination__map" id="map">
-                    <h1 class="sep">Localisation</h1>
+                    <h2 class="sep">Localisation</h2>
                     <div class="map-wrapper">
                         <div id="map-canvas"></div>
                     </div>
@@ -180,7 +180,7 @@
             <!-- block:Dates&Prices -->
             <div class="row">
                 <div class="col-md-12 destination__prices" id="prices">
-                    <h1 class="sep">Dates &amp; Prix</h1>
+                    <h2 class="sep">Dates &amp; Prix</h2>
                     <div class="info-details">
                         <div class="row">
                             <div class="col-md-12">
@@ -239,7 +239,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 destination__order">
-                    <h1 class="sep">Tentez l'expérience !</h1>
+                    <h2 class="sep">Tentez l'expérience !</h2>
                     <a href="<?php echo site_url('/checkout/dates/'.$destination[0]->idDestination); ?>" class="button">
                         Réservez votre place
                     </a>
@@ -256,7 +256,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="sep">Nous sommes à votre écoute !</h1>
+                        <h2 class="sep">Nous sommes à votre écoute !</h2>
                     </div>
                     <div class="col-md-4 col-md-offset-2">
                         <div class="form-group">
@@ -338,7 +338,7 @@
         <!-- block:Travel-logs -->
         <div class="travel-logs" id="travel-logs">
             <div class="container">
-                <h1 class="sep">Ont participé à ce voyage...</h1>
+                <h2 class="sep">Ont participé à ce voyage...</h2>
                 <div class="travel-logs-slider owl-carousel">
                     <?php
                     foreach ($carnets as $carnet) {
@@ -374,7 +374,7 @@
     <div class="container-fluid share">
         <div class="row align-center noPadding">
             <div class="col-md-4 col-md-offset-4">
-                <h1>Vous aimez cette destination&nbsp;?</h1>
+                <h2 class="no-sep">Vous aimez cette destination&nbsp;?</h2>
                 <p class="italic">Partagez-la avec vos amis&nbsp;!</p>
                 <div class="social">
                     <a class="item_fb" href="#" target="blank">

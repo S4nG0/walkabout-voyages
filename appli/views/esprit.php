@@ -18,7 +18,7 @@ $page = "esprit"
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <img class="img-responsive logo" src="<?php echo img_url('logo-wk-icon.png'); ?>" alt="Walkabout">
-                        <h1 class="sep">L'histoire Walkabout</h1>
+                        <h1 class="sep">Qui sommes-nous ?</h1>
                         <p>Walkabout est né d’une rencontre entre deux passionnés de voyage, au détour d’un voyage en Chine. L’un aventurier et ethnologue, a parcouru les continents pendant plus de 30 ans à la recherche de populations reculé. L’autre professionnel du voyage, fabrique des voyages clé en main et les revends aux tours opérateurs.</p>
                         <p class="lead">&laquo;&nbsp;Notre passion est animé par le partage et par l’aventure humaine que représentent les voyages que nous proposons.&nbsp;&raquo;</p>
                         <p>Walkabout est un concepteur de voyage créé pour vous proposer une autre manière de partager, nous privilégions les échanges et les rencontres tout au long du séjour.</p>
@@ -30,7 +30,7 @@ $page = "esprit"
             <div class="ambassadors">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        <h1 class="sep">Les ambassadeurs Walkabout</h1>
+                        <h2 class="sep">Les ambassadeurs Walkabout</h2>
                         <p>Rencontrez les individus qui ont permis à l'agence de se développer de devenir ce qu'elle est aujourd'hui : un partage d'expériences enrichissantes et inoubliables</p>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ $page = "esprit"
                         <div class="profile-picture">
                             <img src="<?php echo img_url('unsigned_user.jpg'); ?>" alt="Alexandre Arasté">
                         </div>
-                        <h2>Georges Cachette</h2>
+                        <h2 class="sep">Georges Cachette</h2>
                         <h3 class="subtitle">Écrivain, aventurier &amp; co-fondateur</h3>
                         <p>
                             Georges est en charge de la production de nos voyages en immersion.
@@ -52,7 +52,7 @@ $page = "esprit"
                         <div class="profile-picture">
                             <img src="<?php echo img_url('unsigned_user.jpg'); ?>" alt="Alexandre Arasté">
                         </div>
-                        <h2>Alexandre Arasté</h2>
+                        <h2 class="sep">Alexandre Arasté</h2>
                         <h3 class="subtitle">Photographe &amp; Co-fondateur</h3>
                         <p>
                             Alexandre est en charge de la vente de nos voyages en immersion.
