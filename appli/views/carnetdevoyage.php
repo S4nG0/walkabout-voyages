@@ -220,7 +220,7 @@
                             <?php echo form_error('message'); ?>
                         </div>
                         <div class="form-group col-md-3 col-md-offset-9">
-                            <input type="submit" name="submit_commentaire" value="Envoyer" id="submit_commentaire" class="button">
+                            <input type="submit" name="submit_commentaire" value="Envoyer" id="submit_commentaire" class="button black">
                         </div>
 
                         <?php
