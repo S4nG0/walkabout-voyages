@@ -3,6 +3,10 @@
 \*------------------------------------*/
 body.espace-voyageur {
 
+    .lead {
+        font-style: normal;
+    }
+
     .main {
         background: $texture;
         @include box-shadow(none);
@@ -133,6 +137,9 @@ body.espace-voyageur {
         }
 
         .reservations-block {
+
+            padding-bottom: 30px;
+
             thead {
                 color: $jaune-or;
 
@@ -171,6 +178,8 @@ body.espace-voyageur {
 
         .carnets-block {
             display: table;
+            width: 100%;
+            text-align: center;
 
             .travel-logs-wrapper {
                 width: 100%;
