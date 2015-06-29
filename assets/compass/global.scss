@@ -388,7 +388,7 @@ input[type="radio"]:not(old):checked + label {
             display: table-cell;
             vertical-align: bottom;
 
-            .lead {
+            h1 {
                 font-size: 32px;
                 font-style: italic;
                 font-weight: 600;
@@ -1053,10 +1053,6 @@ body.single-carnet {
 /*------------------------------------*\
     #TRUMPS
 \*------------------------------------*/
-.hidden {
-    display: none;
-}
-
 .align-right {
     text-align: right;
 }
@@ -1343,7 +1339,7 @@ body.single-carnet {
     .main {
         .caption-wrapper {
             .caption {
-                .lead {
+                h1 {
                     font-size: 24px;
                     line-height: 34px;
                 }
@@ -1387,7 +1383,7 @@ body.single-carnet {
                         height: 100px;
                         margin: 30px auto;
                     }
-                    .lead {
+                    h1 {
                         font-size: 26px;
                         line-height: 30px;
                     }

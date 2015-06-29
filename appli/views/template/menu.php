@@ -3,7 +3,6 @@
     <!-- Brand and toggle get grouped for better mobile display -->
 
     <div class="navbar-header">
-        <h2 class="hidden">Navigation</h2>
         <a class="navbar-brand" href="<?php echo base_url(); ?>">
             <img class="logo" src="<?php echo img_url('logo.png');?>" alt="Walkabout">
         </a>
