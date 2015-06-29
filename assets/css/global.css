@@ -1890,7 +1890,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .navbar .navbar-brand {
   display: table;
-  padding: 25px;
+  padding: 28px 25px;
 }
 .navbar .navbar-brand .logo {
   display: block;

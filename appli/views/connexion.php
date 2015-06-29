@@ -45,8 +45,8 @@
                                 <?php echo form_error('password'); ?>
                                 <p class="forgotten-pwd">
                                     Vous avez oublié votre mot de passe ? <a class="fancybox" href="#recover-pwd">Cliquez-ici</a>
-                    </div>
-                            </p>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
