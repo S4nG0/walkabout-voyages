@@ -6,49 +6,49 @@ if (!defined('BASEPATH'))
 class Destination extends CI_Model {
 
     protected $table = 'destination';
-    
-    
-    
+
+
+
     public function constructeur($id = 0){
         if($id == 0){
             return false;
         }
-        
+
         $destination = $this->db->select('*')
                            ->from($this->table)
                            ->where('idDestination', $id)
                            ->limit(1)
                            ->get()
                            ->result();
-        
+
         return $destination;
-    } 
-    
+    }
+
     public function getFromName($name = ''){
         if($name == ''){
             return false;
         }
-        
-        $name = urldecode($name);
-        
+
+        $name = str_replace('-', ' ', $name);
+
         $destination = $this->db->select('*')
                            ->from($this->table)
                            ->like('titre', "$name")
                            ->limit(1)
                            ->get()
                            ->result();
-        
+
         return $destination;
-    }  
-    
+    }
+
     public function get_all(){
-        
+
         $destinations = $this->db->select('*')
                            ->from($this->table)
                            ->get()
                            ->result();
-        
+
         return $destinations;
     }
-    
+
 }
