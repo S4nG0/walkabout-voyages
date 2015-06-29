@@ -32,7 +32,11 @@ $page = "home";
 
                     <div class="col-md-8 col-md-offset-2">
 
-                        <h1 class="no-sep">Savoir, échanger, partager et découvrir</h1>
+                        <?php if ($page == "home") : ?>
+                        <h1 class="hidden">Walkabout</h1>
+                        <?php endif; ?>
+
+                        <p class="lead">Savoir, échanger, partager et découvrir</p>
 
                         <p>S'envoler vers des terres reculées<br />vivre une expérience inoubliable</p>
 
