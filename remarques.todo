@@ -2,8 +2,9 @@ Générales :
   ☐ Auré : Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations'
   --> Plus moyen d'accèder à la page actualités depuis le footer, le lien chie complètement !
 
-  ☐ Auré : Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc
-  --> C'est pas vraiment terrible ce qui sort maintenant, on se tape une url comme ça : "http://dev.walkabout-voyages.fr/destinations/%C3%80+LA+D%C3%89COUVERTE+DES+QUECHUAS+DU+P%C3%89ROU" et pour les carnets de voyage, on a toujours l'identifiant qui est passé dans l'url =/
+  ✔ Auré : Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc @done (15-06-29 12:08) --> Corrigé par Julien (ajout d'une fonction dans code_helper.php qui transforme l'url + modif du model destinations.php)
+
+  ☐ Pour les carnets de voyage, on a toujours l'identifiant qui est passé dans l'url =/
 
   ☐ Auré : Utiliser la propriété "background-image" quand on génère des images dynamiquement par la base de données (parce que sinon le style casse, j'utilise plus les background qui regroupent toutes les propriétés, c'est chiant quand on génère du dynamisme).
 
@@ -12,14 +13,19 @@ Single-destination :
   ☐ Auré : Gérer dynamiquement les 'alt' des pictos (zone informations)
   ☐ Auré : J'ai pas trouvé comment retirer le bordel généré par CodeIgniter tout en bas x'D
   ☐ Julien : Revoir ancrage (fermeture d'un collapse)
+  ☐ Julien : ajouter bouton "Je réserve" après bouton CDV
 
 Carnets list :
   ☐ Auré : (pas urgent) sur le carnet phare, l'extrait est pas qualitatif : il doit être de meilleure qualité si on veut que l'utilisateur soit attiré, chopper un extrait du carnet
+  ☐ Auré : le bg image des carnets est pas géré dynamiquement
 
 Single carnet :
   ☐ Auré / Ju : Gérer le bug du collapse (ME SAOULE CE BUG)
   ☐ Auré : Gérer les châpeau dans la BDD (les 'p' en classe 'lead')
   ☐ Julien : revoir zone de comm : affichage en escalier pour montrer les réponses à une question (pas urgent) + gérer pagination sur les comm
+
+Notre esprit :
+  ☐ Changer les liens en bas de page
 
 Administration :
   ✔ Connexion / Déconnexion @done (15-06-21 22:56)
