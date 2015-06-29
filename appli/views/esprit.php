@@ -84,7 +84,7 @@ $page = "esprit"
                         </div>
                         <div class="row noPadding">
                             <div class="col-md-12">
-                                <a href="voyage" class="button">Découvrez les destinations</a>
+                                <a href="destinations" class="button">Découvrez les destinations</a>
                                 &nbsp;&nbsp;ou&nbsp;&nbsp;
                                 <a href="carnet" class="button">Explorez les carnets</a>
                             </div>
