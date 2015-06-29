@@ -5077,7 +5077,7 @@ input[type="radio"]:not(old):checked + label > span {
   display: table-cell;
   vertical-align: bottom;
 }
-.main .caption-wrapper .caption h1 {
+.main .caption-wrapper .caption .lead {
   font-size: 32px;
   font-style: italic;
   font-weight: 600;
@@ -5717,6 +5717,10 @@ body.single-carnet .content {
 /*------------------------------------*\
     #TRUMPS
 \*------------------------------------*/
+.hidden {
+  display: none;
+}
+
 .align-right {
   text-align: right;
 }
@@ -5959,7 +5963,7 @@ body.single-carnet .content {
     font-size: 24px;
   }
 
-  .main .caption-wrapper .caption h1 {
+  .main .caption-wrapper .caption .lead {
     font-size: 24px;
     line-height: 34px;
   }
@@ -5994,7 +5998,7 @@ body.single-carnet .content {
     height: 100px;
     margin: 30px auto;
   }
-  body.single-carnet .main .caption-wrapper .caption h1 {
+  body.single-carnet .main .caption-wrapper .caption .lead {
     font-size: 26px;
     line-height: 30px;
   }
