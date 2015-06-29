@@ -2,8 +2,9 @@ Générales :
   ☐ Auré : Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations'
   --> Plus moyen d'accèder à la page actualités depuis le footer, le lien chie complètement !
 
-  ☐ Auré : Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc
-  --> C'est pas vraiment terrible ce qui sort maintenant, on se tape une url comme ça : "http://dev.walkabout-voyages.fr/destinations/%C3%80+LA+D%C3%89COUVERTE+DES+QUECHUAS+DU+P%C3%89ROU" et pour les carnets de voyage, on a toujours l'identifiant qui est passé dans l'url =/
+  ✔ Auré : Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc @done (15-06-29 12:08) --> Corrigé par Julien (ajout d'une fonction dans code_helper.php qui transforme l'url + modif du model destinations.php)
+
+  ☐ Pour les carnets de voyage, on a toujours l'identifiant qui est passé dans l'url =/
 
   ☐ Auré : Utiliser la propriété "background-image" quand on génère des images dynamiquement par la base de données (parce que sinon le style casse, j'utilise plus les background qui regroupent toutes les propriétés, c'est chiant quand on génère du dynamisme).
 
