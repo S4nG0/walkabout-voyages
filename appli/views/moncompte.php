@@ -15,7 +15,7 @@ $page = "moncompte";
                 <div class="big-title">
                     <h1>Espace voyageur</h1>
                     <p>
-                        Bonjour <?php echo $user->prenom; ?> !
+                        Bonjour <?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span>"; ?> !
                     </p>
                 </div>
             </div>
@@ -23,20 +23,19 @@ $page = "moncompte";
     </div>
 
     <div class="content">
-        <div id="scroll-anchor"></div>
         <div class="container">
             <!-- Submenu -->
             <div class="row">
                 <div class="col-md-12">
                     <ul class="submenu">
                         <li>
-                            <a class="button active" href="#scroll-anchor" id="reservations">Mes réservations</a>
+                            <a class="button active" id="reservations">Mes réservations</a>
                         </li>
                         <li>
-                            <a class="button" href="#scroll-anchor" id="carnets">Mes carnets de voyages</a>
+                            <a class="button" id="carnets">Mes carnets de voyages</a>
                         </li>
                         <li>
-                            <a class="button" href="#scroll-anchor" id="infos">Mes coordonnées</a>
+                            <a class="button" id="infos">Mes coordonnées</a>
                         </li>
                     </ul>
                 </div>
@@ -74,11 +73,11 @@ $page = "moncompte";
                                               <td>'.$reservation->etatreservation.'</td>
                                             </tr>
                                           ';
-                                    }  
+                                    }
                                 }else{
-                                    echo '<center><h3>Il n\'y a aucune réservation enregistrée pour votre compte!</h3></center>';
+                                    echo '<p class="lead">Il n\'y a aucune réservation enregistrée pour votre compte !</p>';
                                 }
-                                
+
                                 ?>
                             </table>
                         </div>
@@ -86,9 +85,9 @@ $page = "moncompte";
                     <div class="carnets-block" id="carnets-content">
                         <div class="travel-logs-wrapper">
                             <?php
-                            
-                                if(sizeof($carnets) > 0){
-                                    foreach($carnets as $carnet){
+
+                                if (sizeof($carnets) > 0) {
+                                    foreach ($carnets as $carnet) {
                                             echo '<!-- begin:Travel-log-->
                                                 <div class="travel-log">
                                                         <div class="col-md-3">
@@ -108,30 +107,15 @@ $page = "moncompte";
                                                     </div>
                                                     <!-- endblock:Travel-log -->';
                                     }
-                                }else{
-                                    echo '<center><h3>Il n\'y a aucun carnet enregistré pour votre compte!</h3></center>';
+                                } else {
+                                    echo '<div class="travel-log">
+                                        <div class="col-md-12">
+                                            <p class="lead">Il n\'y a aucun carnet enregistré pour votre compte !</p class="lead">
+                                        </div>
+                                    </div>';
                                 }
-                            
-                            ?>
 
-                            <!-- begin:Travel-log
-                            <div class="travel-log ">
-                                <div class="col-md-3">
-                                    <div class="image-wrapper"></div>
-                                </div>
-                                <div class="col-md-6 excerpt-wrapper">
-                                    <h3>À la rencontre des Quéchuas</h3>
-                                    <p>Pérou&nbsp;&bull;&nbsp;du 25/05/15 au 10/05/15</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam eaque aspernatur praesentium cupiditate quaerat cumque vitae pariatur deleniti id mollitia...</p>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="buttons-wrapper">
-                                        <a href="single-carnet.php" class="button">Voir le carnet</a>
-                                        <a href="single-carnet.php" class="button">Modifier le carnet</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- endblock:Travel-log -->
+                            ?>
 
                         </div>
                     </div>
