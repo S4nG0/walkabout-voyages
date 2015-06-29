@@ -4410,6 +4410,9 @@ body.checkout footer {
 /*------------------------------------*\
     #ESPACE VOYAGEUR
 \*------------------------------------*/
+body.espace-voyageur .lead {
+  font-style: normal;
+}
 body.espace-voyageur .main {
   background: url("../images/texture.png");
   -moz-box-shadow: none;
@@ -4529,6 +4532,9 @@ body.espace-voyageur .content .submenu li .active {
   border-color: #f0c041;
   color: #f0c041;
 }
+body.espace-voyageur .content .reservations-block {
+  padding-bottom: 30px;
+}
 body.espace-voyageur .content .reservations-block thead {
   color: #f0c041;
 }
@@ -4555,6 +4561,8 @@ body.espace-voyageur .content .reservations-block tbody tr td p {
 }
 body.espace-voyageur .content .carnets-block {
   display: table;
+  width: 100%;
+  text-align: center;
 }
 body.espace-voyageur .content .carnets-block .travel-logs-wrapper {
   width: 100%;
