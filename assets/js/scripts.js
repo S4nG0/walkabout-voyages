@@ -223,7 +223,7 @@ function mapInitialize() {
     map.controls[google.maps.ControlPosition.BOTTOM].push(topControlDiv);
     map.controls[google.maps.ControlPosition.BOTTOM].push(bottomControlDiv);
 
-    var iconBase = '../images/marker.png';
+    var iconBase = '../assets/images/marker.png';
     var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
@@ -515,6 +515,10 @@ $(document).ready(function () {
     /***
      * User account submenu switching
      */
+
+    //Hide password recovery block in login page
+    $('#recover-pwd').hide();
+
     $('#reservations-content').show();
     $('#carnets-content').hide();
     $('#infos-content').hide();
