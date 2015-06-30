@@ -1,34 +1,36 @@
 Générales :
-  ✔ Auré : Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations' @done (15-06-30 11:31)
+  ✔ Auré : Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations' @done (15-06-30 09:53)
+  ✔ --> Plus moyen d'accèder à la page actualités depuis le footer, le lien chie complètement ! @done (15-06-30 09:56)
 
   ✔ Auré : Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc @done (15-06-29 12:08) --> Corrigé par Julien (ajout d'une fonction dans code_helper.php qui transforme l'url + modif du model destinations.php)
 
-  ✔ Pour les carnets de voyage, on a toujours l'identifiant qui est passé dans l'url =/ @done (15-06-30 11:31)
+  ✔ Pour les carnets de voyage, on a toujours l'identifiant qui est passé dans l'url =/ @done (15-06-30 10:06)
 
-  ☐ Auré : Utiliser la propriété "background-image" quand on génère des images dynamiquement par la base de données (parce que sinon le style casse, j'utilise plus les background qui regroupent toutes les propriétés, c'est chiant quand on génère du dynamisme).
+  ✔ Auré : Utiliser la propriété "background-image" quand on génère des images dynamiquement par la base de données (parce que sinon le style casse, j'utilise plus les background qui regroupent toutes les propriétés, c'est chiant quand on génère du dynamisme). @done (15-06-30 10:13)
 
 Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)
   ☐ Auré : Gérer dynamiquement les 'alt' des pictos (zone informations)
-  ☐ Auré : J'ai pas trouvé comment retirer le bordel généré par CodeIgniter tout en bas x'D
-  ☐ Julien : Revoir ancrage (fermeture d'un collapse sur CDV)
+  ✔ Auré : J'ai pas trouvé comment retirer le bordel généré par CodeIgniter tout en bas x'D @done (15-06-30 10:57)
+  ☐ Julien : Revoir ancrage (fermeture d'un collapse)
   ☐ Julien : ajouter bouton "Je réserve" après bouton CDV
 
 Carnets list :
   ☐ Auré : (pas urgent) sur le carnet phare, l'extrait est pas qualitatif : il doit être de meilleure qualité si on veut que l'utilisateur soit attiré, chopper un extrait du carnet
-  ☐ Auré : le bg image des carnets est pas géré dynamiquement
+  ✔ Auré : le bg image des carnets est pas géré dynamiquement @done (15-06-30 10:58)
 
 Single carnet :
   ☐ Auré / Ju : Gérer le bug du collapse (ME SAOULE CE BUG)
   ☐ Auré : Gérer les châpeau dans la BDD (les 'p' en classe 'lead')
   ☐ Julien : revoir zone de comm : affichage en escalier pour montrer les réponses à une question (pas urgent) + gérer pagination sur les comm
+  ✔ Auré : le bg image des carnets est pas géré dynamiquement @done (15-06-30 10:58)
 
 Notre esprit :
   ☐ Changer les liens en bas de page
 
 Administration :
   ✔ Connexion / Déconnexion @done (15-06-21 22:56)
-  ☐ Dashboard (à (dé)terminer) -> Céline s'occupe de faire la liste des fonctionnalités pour le Back Office
+  ☐ Dashboard (à (dé)terminer)
   ☐ Pages Commentaires, Réservations, Contact à créer et a pouvoir administrer
   ☐ Julien : Revoir le CSS dans ces zones : ça bug petit con de Julien !
 
