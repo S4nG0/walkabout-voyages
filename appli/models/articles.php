@@ -7,19 +7,33 @@ class Articles extends CI_Model {
 
     protected $table = 'articles';
     
-    public function constructeur($id = 0){
-        if($id == 0){
+    public function constructeur($id_article = 0){
+        if($id_article == 0){
             return false;
         }
         
-        $actu = $this->db->select('*')
+        $articles = $this->db->select('*')
                            ->from($this->table)
-                           ->where('idCarnet', $id)
-                           ->limit(4)
+                           ->where('idArticles', $id_article)
+                           ->limit(1)
                            ->get()
                            ->result();
         
-        return $actu;
+        return $articles;
+    }
+    
+    public function getFromCarnet($id_carnet = 0){
+        if($id_carnet == 0){
+            return false;
+        }
+        
+        $articles = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idCarnet', $id_carnet)
+                           ->get()
+                           ->result();
+        
+        return $articles;
     }
 
 }
