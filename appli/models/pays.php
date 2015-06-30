@@ -23,7 +23,13 @@ class Pays extends CI_Model {
     }
   
     
-    
+    public function getPays(){
+        $pays = $this->db->select('*')
+                         ->from($this->table)
+                         ->get()
+                         ->result();
+        return $pays;
+    }
     
     
     

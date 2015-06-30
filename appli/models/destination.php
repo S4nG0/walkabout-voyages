@@ -51,4 +51,12 @@ class Destination extends CI_Model {
         return $destinations;
     }
 
+    public function insertDestination($data){
+        if($data==''){
+            return false;
+        }
+        $destinations = $this->db->insert($this->table, $data);
+        return $destinations;
+    }
+
 }
