@@ -101,7 +101,7 @@ $page = "moncompte";
                                                         <div class="col-md-3">
                                                             <div class="buttons-wrapper">
                                                                 <a href="'.base_url().'carnets-de-voyage/'. slugify($carnet->titre) .'" class="button">Voir le carnet</a>
-                                                                <a href="'.base_url().'carnet/modifier/'.$carnet->idCarnetDeVoyage.'" class="button">Modifier le carnet</a>
+                                                                <a href="'.base_url().'carnets-de-voyage/modifier/'.$carnet->idCarnetDeVoyage.'" class="button">Modifier le carnet</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -142,8 +142,13 @@ $page = "moncompte";
                             <div class="col-md-6 col-md-offset-3">
                                 <h3>Changer les paramètres de la newsletter</h3>
                                 <div class="form-group">
-                                    <input type="checkbox" name="newsletter" id="newsletter" <?php if(empty($newsletter)){echo 'checked';} ?>>
-                                    <label for="newsletter"><span></span>Je ne souhaite pas recevoir les actualités Walkabout</label>
+                                    <?php if(empty($newsletter)){ ?>
+                                    <input type="checkbox" name="newsletter" id="newsletter">
+                                    <label for="newsletter"><span></span>Je souhaite recevoir les actualités Walkabout</label>
+                                    <?php }else{ ?>
+                                    <input type="checkbox" name="newsletter" id="newsletter">
+                                    <label for="newsletter"><span></span>Je ne souhaite plus recevoir les actualités Walkabout</label>
+                                    <?php } ?>
                                 </div>
                             </div>
 
