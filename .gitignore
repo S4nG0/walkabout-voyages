@@ -9,5 +9,7 @@ appli/logs/*
 !appli/logs/.htaccess
 
 appli/config/*
+!appli/config/config.php
+!appli/config/database.php
 !appli/config/autoload.php
 !appli/config/routes.php

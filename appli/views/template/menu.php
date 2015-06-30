@@ -61,13 +61,13 @@
                 if ($page == "moncompte") {
                     echo ' <li><a class="nav_links active" href="'.base_url().'deconnexion" title="Déconnexion"><i class="fa fa-sign-in"></i>Se déconnecter</a></li>';
                 } else {
-                    echo '<li><a class="nav_links" href="'.base_url().'moncompte" title="AccÃ¨dez Ã  votre compte"><i class="fa fa-sign-in"></i>Mon compte</a></li>';
+                    echo '<li><a class="nav_links" href="'.base_url().'moncompte" title="Connectez-vous !"><i class="fa fa-sign-in"></i>Mon compte</a></li>';
                 }
             } else {
                 if ($page == "account") {
-                    echo '<li><a class="nav_links active" href="'.base_url().'connexion" title="AccÃ¨dez Ã  votre compte"><i class="fa fa-sign-in"></i>Se connecter</a></li>';
+                    echo '<li><a class="nav_links active" href="'.base_url().'connexion" title="Connectez-vous !"><i class="fa fa-sign-in"></i>Se connecter</a></li>';
                 } else {
-                    echo '<li><a class="nav_links" href="'.base_url().'connexion" title="AccÃ¨dez Ã  votre compte"><i class="fa fa-sign-in"></i>Se connecter</a></li>';
+                    echo '<li><a class="nav_links" href="'.base_url().'connexion" title="Connectez-vous !"><i class="fa fa-sign-in"></i>Se connecter</a></li>';
                 }
             }; ?>
 
