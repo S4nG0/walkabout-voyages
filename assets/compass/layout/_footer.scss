@@ -106,6 +106,31 @@ footer {
     }
 }
 
+#newsletter-block {
+    display: none;
+    text-align: center;
+    margin: 35px;
+
+    label {
+        display: block;
+        margin-top: 50px;
+        color: $jaune-or;
+    }
+
+    input {
+        display: block;
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .button {
+        display: block;
+        width: 150px;
+        margin: 0 auto;
+        margin-top: 25px;
+    }
+}
+
 
 @media screen and (max-width: 992px) {
     footer {

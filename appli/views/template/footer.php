@@ -47,7 +47,7 @@
                             <i class="fa fa-google-plus"></i>
                         </a>
                     </div>
-                    <a href="#">Inscrivez-vous à notre newsletter</a>
+                    <a class="fancybox" href="#newsletter-block">Inscrivez-vous à notre newsletter</a>
                 </div>
             </div>
             <div class="row">
@@ -60,6 +60,14 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div id="newsletter-block">
+            <h2 class="sep">Inscription à la newsletter Walkabout</h2>
+            <form>
+                <label for="newsletter">Votre e-mail</label>
+                <input type="email" name="newsletter" id="newsletter" placeholder="Entrez votre e-mail...">
+                <input class="button" type="submit" value="Je m'inscris !">
+            </form>
         </div>
     </footer>
 

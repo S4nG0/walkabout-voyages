@@ -2498,6 +2498,28 @@ footer .footer__copyright li {
   display: inline-block;
 }
 
+#newsletter-block {
+  display: none;
+  text-align: center;
+  margin: 35px;
+}
+#newsletter-block label {
+  display: block;
+  margin-top: 50px;
+  color: #f0c041;
+}
+#newsletter-block input {
+  display: block;
+  margin-top: 25px;
+  text-align: center;
+}
+#newsletter-block .button {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
 @media screen and (max-width: 992px) {
   footer h1 {
     font-size: 18px;
@@ -5873,6 +5895,8 @@ body.single-carnet .content {
     text-align: center;
   }
   .content.travel-logs .travel-logs__slider .slider__item .slider__item--text {
+    padding-left: 25px;
+    padding-right: 25px;
     padding-bottom: 50px;
   }
   .content.travel-logs .travel-logs__slider .slider__item .slider__item--text .profile-picture {
