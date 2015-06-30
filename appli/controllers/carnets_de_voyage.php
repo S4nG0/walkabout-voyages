@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Carnet extends CI_Controller {
+class Carnets_de_voyage extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.

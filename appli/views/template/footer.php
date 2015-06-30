@@ -27,11 +27,11 @@
                 <div class="col-sm-4 col-md-4 footer__block">
                     <span class="footer__title">Plan du site</span>
                     <ul class="footer__list">
-                        <li><a href="<?php echo base_url(); ?>destinations">Nos destinations</a></li>
-                        <li><a href="<?php echo base_url(); ?>carnet">Carnets de voyage</a></li>
+                        <li><a href="<?php echo base_url(); ?>nos-destinations">Nos destinations</a></li>
+                        <li><a href="<?php echo base_url(); ?>carnets-de-voyage">Carnets de voyage</a></li>
                         <li><a href="<?php echo base_url(); ?>esprit">Notre esprit</a></li>
                         <li><a href="<?php echo base_url(); ?>contact">Nous contacter</a></li>
-                        <li><a href="<?php echo base_url(); ?>nos_actualites">Nos actualités</a></li>
+                        <li><a href="<?php echo base_url(); ?>nos-actualites">Nos actualités</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4 col-md-4 footer__block">

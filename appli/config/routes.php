@@ -40,6 +40,11 @@
 
 $route['default_controller'] = "accueil";
 $route['walkadmin'] = "walkadmin/connexion";
+$route['carnets-de-voyage'] = 'carnets_de_voyage';
+$route['carnets-de-voyage/(:any)'] = 'carnets_de_voyage/$1';
+$route['nos-actualites'] = 'nos_actualites';
+$route['nos-destinations'] = 'destinations';
+$route['nos-destinations/(:any)'] = 'destinations/$1';
 $route['404_override'] = '';
 
 

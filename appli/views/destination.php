@@ -358,7 +358,7 @@
                                     <p>
                                         &laquo;&nbsp;' . $carnet->description . '&nbsp;&raquo;
                                     </p>
-                                    <a class="button black" href="'.base_url().'carnet/' . $carnet->idCarnetDeVoyage . '">Feuilletez le carnet&nbsp;</a>
+                                    <a class="button black" href="'.base_url().'carnets-de-voyage/'.slugify($carnet->titre).'">Feuilletez le carnet&nbsp;</a>
                                 </div>
                             </div>
                             <!-- endblock:Travel-log -->
