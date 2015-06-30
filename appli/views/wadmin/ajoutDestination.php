@@ -31,7 +31,7 @@ if (isset($error)) {
                                     <input class="form-control" placeholder="coordonnées" name="coordonnees" type="text" >
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" name="images" type="file" multiple>
+                                    <input class="form-control" name="images[]" type="file" multiple>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" name="banner" type="file">
