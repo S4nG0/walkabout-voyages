@@ -61,6 +61,9 @@
                 <a class="button" rel="#buttons" id="prices-button">
                     Voir dates et prix
                 </a>
+                <a class="button" rel="#buttons" href="<?php echo site_url('/checkout/dates/'.$destination[0]->idDestination); ?>">
+                    Je réserve !
+                </a>
             </div>
         </div>
         <!-- endblock:Buttons -->
