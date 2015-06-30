@@ -167,7 +167,7 @@ $page = "home";
 
                                             <p>&laquo;&nbsp;'.$carnet->description.'&nbsp;&raquo;</p>
 
-                                            <a href="'.base_url().'carnet/'.$carnet->idCarnetDeVoyage.'" class="button">Feuilletez le carnet</a>
+                                            <a href="'.base_url().'carnets-de-voyage/'. slugify($carnet->titre) .'" class="button">Feuilletez le carnet</a>
 
                                         </div>
 

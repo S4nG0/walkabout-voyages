@@ -39,7 +39,7 @@ class Connexion extends CI_Controller {
                             if($this->session->userdata('voyage') != false){
                                 redirect('/checkout/identification');
                             }
-                            redirect('/accueil');
+                            redirect('/moncompte');
                             }else{
                                 $data['result'] = false;
                             }

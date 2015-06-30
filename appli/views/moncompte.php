@@ -91,7 +91,7 @@ $page = "moncompte";
                                             echo '<!-- begin:Travel-log-->
                                                 <div class="travel-log">
                                                         <div class="col-md-3">
-                                                            <div class="image-wrapper"></div>
+                                                            <div class="image-wrapper" style="background-image : url('.img_url($carnet->image_carnet).');"></div>
                                                         </div>
                                                         <div class="col-md-6 excerpt-wrapper">
                                                             <h3>'.$carnet->titre.'</h3>
@@ -100,7 +100,7 @@ $page = "moncompte";
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="buttons-wrapper">
-                                                                <a href="'.base_url().'carnet/'.$carnet->idCarnetDeVoyage.'" class="button">Voir le carnet</a>
+                                                                <a href="'.base_url().'carnets-de-voyage/'. slugify($carnet->titre) .'" class="button">Voir le carnet</a>
                                                                 <a href="'.base_url().'carnet/modifier/'.$carnet->idCarnetDeVoyage.'" class="button">Modifier le carnet</a>
                                                             </div>
                                                         </div>
@@ -142,8 +142,8 @@ $page = "moncompte";
                             <div class="col-md-6 col-md-offset-3">
                                 <h3>Changer les paramètres de la newsletter</h3>
                                 <div class="form-group">
-                                    <input type="checkbox" name="newsletter" id="newsletter">
-                                    <label for="newsletter"><span></span>Je ne souhaite plus recevoir les actualités Walkabout</label>
+                                    <input type="checkbox" name="newsletter" id="newsletter" <?php if(empty($newsletter)){echo 'checked';} ?>>
+                                    <label for="newsletter"><span></span>Je ne souhaite pas recevoir les actualités Walkabout</label>
                                 </div>
                             </div>
 
