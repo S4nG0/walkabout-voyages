@@ -20,7 +20,7 @@
 |	http://codeigniter.com/user_guide/general/routing.html
 |
 | -------------------------------------------------------------------------
-| RESERVED ROUTES  
+| RESERVED ROUTES
 | -------------------------------------------------------------------------
 |
 | There area two reserved routes:
@@ -45,6 +45,7 @@ $route['carnets-de-voyage/(:any)'] = 'carnets_de_voyage/$1';
 $route['nos-actualites'] = 'nos_actualites';
 $route['nos-destinations'] = 'destinations';
 $route['nos-destinations/(:any)'] = 'destinations/$1';
+$route['qui-sommes-nous'] = 'qui_sommes_nous';
 $route['404_override'] = '';
 
 
