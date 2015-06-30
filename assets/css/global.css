@@ -2810,6 +2810,7 @@ body.list-destination .content .destination-block .image-wrapper .image-containe
   display: block;
   width: 100%;
   min-height: 350px;
+  background-image: url("../images/voyages/default.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   -moz-background-size: cover;
