@@ -12,7 +12,7 @@
 ?>
 
 <body class="single-carnet">
-    <div class="main" id="main" data-stellar-background-ratio="0.5">
+    <div class="main" id="main" data-stellar-background-ratio="0.5" style="background-image: url('<?php echo img_url($carnet[0]->image_carnet); ?>')">
         <div class="overlay"></div>
         <div class="container-fluid noPadding">
             <!-- Navbar -->
