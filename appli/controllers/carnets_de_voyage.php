@@ -19,7 +19,7 @@ class Carnets_de_voyage extends CI_Controller {
          *
 	 */
 
-        public function load_all()
+        public function index()
 	{
             $data = array();
             $data['title'] = "Carnets de voyage";
@@ -94,17 +94,29 @@ class Carnets_de_voyage extends CI_Controller {
             $this->load->view('carnetdevoyage', $data);
             $this->load->view('template/footer');
         }
-
-        public function _remap($id)
-        {
-            if($id == 'index'){
-                $this->load_all();
-            }else{
-                $this->load_carnet($id);
+        
+        public function modifier($id = 0){
+            if($id == 0){
+                return false;
+            } 
+            $data['connecte'] = connecte($this->session->userdata('user')[0]);
+            $data['title'] = "Compte";
+            if($data['connecte'] == false){
+                redirect('/connexion');
             }
+            $data['carnet'] = $this->carnetvoyage->constructeur($id);
+            $data['user'] = $this->session->userdata('user')[0];
+            if($data['carnet'][0]->idUsers != $data['user']->idUsers){
+                redirect('/moncompte');
+            }
+            
+            $data['title'] = "Modification du carnet";
+            
+            $this->load->view('template/header', $data);
+            $this->load->view('modif_carnet', $data);
+            $this->load->view('template/footer');
         }
 
 }
-
 /* End of file carnet.php */
 /* Location: ./application/controllers/carnet.php */
