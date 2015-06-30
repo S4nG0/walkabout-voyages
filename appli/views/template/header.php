@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="<?php echo css_url('fancybox');?>">
     <link rel="stylesheet" href="<?php echo css_url('iconate.min');?>">
     <link rel="stylesheet" href="<?php echo css_url('owl.carousel');?>">
+    <link rel="stylesheet" href="<?php echo css_url('medium');?>">
 
     <!-- Custome styles -->
     <link rel="stylesheet" href="<?php echo css_url('global');?>">

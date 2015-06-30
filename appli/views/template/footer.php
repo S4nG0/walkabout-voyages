@@ -88,6 +88,7 @@
 <script type="text/javascript" src="<?php echo js_url('vendors/fancybox-min'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/dotimeout'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/iconate'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/medium.min'); ?>"></script>
 
 <!-- Site's script -->
 <script type="text/javascript" src="<?php echo js_url('scripts'); ?>"></script>
