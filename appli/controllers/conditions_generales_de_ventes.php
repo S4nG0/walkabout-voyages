@@ -20,6 +20,7 @@ class Conditions_generales_de_ventes extends CI_Controller {
 	public function index()
 	{
             $data = array();
+                $data['title'] = "Conditions générales de ventes";
             /*
              * Chargement des carnets
              * Chargement des utilisateurs du carnet
@@ -27,7 +28,7 @@ class Conditions_generales_de_ventes extends CI_Controller {
              */
              
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $this->load->view('conditions',$data);
             $this->load->view('template/footer');
             //$this->output->enable_profiler(true);

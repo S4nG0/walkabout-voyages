@@ -22,12 +22,13 @@ class Confirmation extends CI_Controller {
      */
     public function compte($email, $code) {
         $data = array();
+        $data['title'] = "Compte";
         $data['page'] = "";
         $data['connecte'] = connecte($this->session->userdata('user')[0]);
         if ($email && $code) {
             $result = $this->user->confirmation($email, $code);
             $data['result'] = $result;
-            $this->load->view('template/header');  
+            $this->load->view('template/header', $data);  
             $this->load->view('activation',$data);  
             $this->load->view('template/footer');
         } else {

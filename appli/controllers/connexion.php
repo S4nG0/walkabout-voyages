@@ -20,6 +20,7 @@ class Connexion extends CI_Controller {
 	public function index()
 	{
             $data = array();
+        $data['title'] = "Connexion";
             $data['result'] = null;
             
             if ($this->input->post() != false) {
@@ -45,7 +46,7 @@ class Connexion extends CI_Controller {
                         }else{
                             $data['result'] = "non_active";
                             $data['connecte'] = connecte($this->session->userdata('user')[0]);
-                            $this->load->view('template/header');
+                            $this->load->view('template/header', $data);
                             $this->load->view('activation',$data);
                             $this->load->view('template/footer');
                             return false;
@@ -58,7 +59,7 @@ class Connexion extends CI_Controller {
             }
             
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $this->load->view('connexion',$data);
             $this->load->view('template/footer');
             //$this->output->enable_profiler(true);

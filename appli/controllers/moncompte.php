@@ -20,6 +20,7 @@ class Moncompte extends CI_Controller {
 	public function index()
 	{
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
+            $data['title'] = "Compte";
             if($data['connecte'] == false){
                 redirect('/connexion');
             }else{
@@ -46,7 +47,7 @@ class Moncompte extends CI_Controller {
                     $carnet->voyage[0]->date_depart = conv_date($carnet->voyage[0]->date_depart);
                     $carnet->voyage[0]->date_retour = conv_date($carnet->voyage[0]->date_retour);
                 }
-                $this->load->view('template/header');
+                $this->load->view('template/header', $data);
                 $this->load->view('moncompte',$data);
                 $this->load->view('template/footer');
             }
