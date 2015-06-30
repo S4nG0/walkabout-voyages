@@ -39,11 +39,21 @@
 
             <?php if ($page == "esprit") { ?>
                 <li>
-                    <a class="nav_links active" href="<?php echo base_url(); ?>esprit" title="En savoir plus sur Walkabout">Notre esprit</a>
+                    <a class="nav_links active" href="<?php echo base_url(); ?>qui-sommes-nous" title="En savoir plus sur Walkabout">Notre esprit</a>
                 </li>
             <?php } else { ?>
                 <li>
-                    <a class="nav_links" href="<?php echo base_url(); ?>esprit" title="En savoir plus sur Walkabout">Notre esprit</a>
+                    <a class="nav_links" href="<?php echo base_url(); ?>qui-sommes-nous" title="En savoir plus sur Walkabout">Notre esprit</a>
+                </li>
+            <?php }; ?>
+
+            <?php if ($page == "actualites") { ?>
+                <li>
+                    <a class="nav_links active" href="<?php echo base_url(); ?>nos-actualites" title="Lire nos actualités">Nos actualités</a>
+                </li>
+            <?php } else { ?>
+                <li>
+                    <a class="nav_links" href="<?php echo base_url(); ?>nos-actualites" title="Lire nos actualités">Nos actualités</a>
                 </li>
             <?php }; ?>
 
