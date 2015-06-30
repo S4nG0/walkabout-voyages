@@ -77,8 +77,8 @@ class Carnet extends CI_Controller {
             $data['commentaire'] = $this->session->flashdata('commentaire');
 
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
-            $this->load->view('template/header', $data);
-            $data['carnet'] = $this->carnetvoyage->constructeur($id_carnet);
+            $data['carnet'] = $this->carnetvoyage->getFromName($id_carnet);
+            $data['title'] = $data['carnet'][0]->titre;
             $data['carnet'][0]->date = conv_date($data['carnet'][0]->date);
             $data['user'] = $this->user->constructeur($data['carnet'][0]->idUsers);
             $data['destination'] = $this->destination->constructeur($data['carnet'][0]->idDestination);
@@ -89,11 +89,13 @@ class Carnet extends CI_Controller {
                 $commentaire->date = conv_date($commentaire->date);
                 $commentaire->user = $this->user->constructeur($commentaire->idUsers);
             }
+            
+            $this->load->view('template/header', $data);
             $this->load->view('carnetdevoyage', $data);
             $this->load->view('template/footer');
         }
 
-        public function _remap($id,$id2 = '')
+        public function _remap($id)
         {
             if($id == 'index'){
                 $this->load_all();

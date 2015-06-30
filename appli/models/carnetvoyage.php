@@ -48,6 +48,23 @@ class Carnetvoyage extends CI_Model {
         
     }
     
+    public function getFromName($name = ''){
+        if($name == ''){
+            return false;
+        }
+
+        $name = str_replace('-', ' ', $name);
+
+        $destination = $this->db->select('*')
+                           ->from($this->table)
+                           ->like('titre', "$name")
+                           ->limit(1)
+                           ->get()
+                           ->result();
+
+        return $destination;
+    }
+    
     
     public function get_carnet_pagination($start,$nb){
         

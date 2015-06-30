@@ -31,7 +31,7 @@
                         <li><a href="<?php echo base_url(); ?>carnet">Carnets de voyage</a></li>
                         <li><a href="<?php echo base_url(); ?>esprit">Notre esprit</a></li>
                         <li><a href="<?php echo base_url(); ?>contact">Nous contacter</a></li>
-                        <li><a href="<?php echo base_url(); ?>actus">Nos actualités</a></li>
+                        <li><a href="<?php echo base_url(); ?>nos_actualites">Nos actualités</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4 col-md-4 footer__block">

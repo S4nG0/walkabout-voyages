@@ -26,7 +26,7 @@
             </span>
             &nbsp;&bull;&nbsp;
             <span class="pays"><?php echo $favoris->pays[0]->nom; ?></span>
-            <a class="button" href="carnet/<?php echo $favoris->idCarnetDeVoyage; ?>">Feuilleter le carnet</a>
+            <a class="button" href="carnet/<?php echo slugify($favoris->titre) ?>">Feuilleter le carnet</a>
         </div>
     </div>
 
@@ -38,14 +38,14 @@
                     echo ''. '<!-- begin:Block-travel -->
                     <div class="story-block">
                         <div class="story--image">
-                            <a href="carnet/'.$carnet->idCarnetDeVoyage.'">
+                            <a href="carnet/'. slugify($carnet->titre) .'">
                                 <div class="story--bg-image" style="background-image: url(' . img_url($carnet->image_carnet) . ');"></div>
                             </a>
                         </div>
                         <div class="content-wrapper">
                             <div class="content-inner">
-                                <a class="no-style" href="carnet/'.$carnet->idCarnetDeVoyage.'"><h3>'.$carnet->titre.'</h3></a>
-                                <a class="no-style" href="carnet/'.$carnet->idCarnetDeVoyage.'"><p>'.$carnet->description.'</p></a>
+                                <a class="no-style" href="carnet/'. slugify($carnet->titre) .'"><h3>'.$carnet->titre.'</h3></a>
+                                <a class="no-style" href="carnet/'. slugify($carnet->titre) .'"><p>'.$carnet->description.'</p></a>
                                 <div class="details">
                                     <span class="auteur"><a href="#">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a></span>
                                     &nbsp;&bull;&nbsp;

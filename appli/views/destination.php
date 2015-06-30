@@ -1,7 +1,7 @@
 <?php $page = "single-destination"; ?>
 
 <body class="single-destination">
-    <div class="main banner" style="background: url(<?php echo img_url($destination[0]->banner) ?>) !important;">
+    <div class="main banner" style="background-image: url(<?php echo img_url($destination[0]->banner) ?>) !important;">
         <div class="container-fluid noPadding">
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>
