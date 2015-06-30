@@ -44,11 +44,11 @@ $page = "moncompte";
             <div class="row">
                 <div class="col-md-12">
                     <div class="reservations-block" id="reservations-content">
-                        <div class="table-responsive">
-                            <table class="table">
                                 <?php
                                 if(sizeof($reservations) > 0){
-                                  echo '<thead>
+                                  echo '<div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
                                             <td>Destinations</td>
                                             <td>Date de réservation</td>
                                             <td>Participants</td>
@@ -72,14 +72,14 @@ $page = "moncompte";
                                               <td>'.$total.' €</td>
                                               <td>'.$reservation->etatreservation.'</td>
                                             </tr>
-                                          ';
+                                        </table>
+                                    </div>';
                                     }
                                 }else{
                                     echo '<p class="lead">Il n\'y a aucune réservation enregistrée pour votre compte !</p>';
                                 }
 
                                 ?>
-                            </table>
                         </div>
                     </div>
                     <div class="carnets-block" id="carnets-content">
