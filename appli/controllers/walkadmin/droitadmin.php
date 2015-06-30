@@ -38,7 +38,7 @@ class droitAdmin extends CI_Controller {
             $this->form_validation->set_rules('ville', '"ville"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $destination=array(
-                    "pays" => $this->input->post('pays'),
+                    "idPays" => $this->input->post('pays'),
                     "titre" => $this->input->post('titre'),
                     "description" => $this->input->post('description'),
                     "ville" => $this->input->post('ville')
@@ -62,7 +62,8 @@ class droitAdmin extends CI_Controller {
                 }
                 else{
                     $data = array('upload_data' => $this->upload->data());
-                    $destination['banner']=$data['name'];
+                    var_dump($data);
+                    $destination['banner']=$data['upload_data']['file_name'];
                     $chaine="";
                     foreach($_FILES['images'] as $key => $value){
                         if(!empty($key['name'])){
@@ -75,7 +76,7 @@ class droitAdmin extends CI_Controller {
                             }
                         }
                     }
-                    $destination['images']=$chaine;
+                    $destination['photos']=$chaine;
                     $this->destination->insertDestination($destination);
                 }
             }
