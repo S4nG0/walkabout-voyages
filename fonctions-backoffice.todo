@@ -1,0 +1,41 @@
+Modules back office à rajouter :
+  ☐ Actualités
+  ☐ Carnets de voyages
+  ☐ Destinations
+
+Module actualité :
+  ☐ rédaction d'articles
+  ☐ ajouter des photos
+  ☐ gestion boutons (liens)
+
+Module carnets de voyages :
+  ☐ modérer les carnets
+  ☐ sélectionner les carnets à la une + phrase d'accroche (home page)
+  ☐ sélectionner un carnet phare (page carnet de voyage)
+
+Module destinations :
+  ☐ ajouter une destination
+  ☐ rédaction des informations (formulaire avec : capital, monnaie, dirigeant,... l'admin rentre les infos dans le formulaire)
+  ☐ rédaction du descriptif
+  ☐ gestion des photos
+
+Informations générales : 
+  ☐ gestion des pictogrammes
+  ☐ rédaction accompagnement, déplacements, hébergement, repas&boissons
+  ☐ rédaction du déroulement du séjour (jour 1, jour 2,...)
+
+Localisation :
+  ☐ longitude et latitude
+
+Date & prix :
+  ☐ calendrier pour les dates
+  ☐ gestion des places restantes
+  ☐ check box avec les critères de "ce prix comprend" et "ce prix ne comprend pas"
+
+Module commentaires :
+  ☐ modération
+  ☐ validation
+  ☐ suppression
+
+Référencement :
+  ☐ Sur la page notre esprit enlever le H3 sur "sans plus attendre..."
