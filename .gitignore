@@ -11,8 +11,4 @@ appli/logs/*
 appli/config/config.php
 appli/config/database.php
 
-appli/config/*
-!appli/config/autoload.php
-!appli/config/routes.php
-
 .idea/
