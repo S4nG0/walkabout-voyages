@@ -8,12 +8,15 @@ Générales :
 
   ✔ Auré : Utiliser la propriété "background-image" quand on génère des images dynamiquement par la base de données (parce que sinon le style casse, j'utilise plus les background qui regroupent toutes les propriétés, c'est chiant quand on génère du dynamisme). @done (15-06-30 10:13)
 
+  ☐ Ajout newsletter en fancybox
+  ☐ Faire un breadcrumbs
+
 Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)
   ☐ Auré : Gérer dynamiquement les 'alt' des pictos (zone informations)
   ✔ Auré : J'ai pas trouvé comment retirer le bordel généré par CodeIgniter tout en bas x'D @done (15-06-30 10:57)
   ☐ Julien : Revoir ancrage (fermeture d'un collapse)
-  ☐ Julien : ajouter bouton "Je réserve" après bouton CDV
+  ✔ Julien : ajouter bouton "Je réserve" après bouton CDV @done (15-06-30 13:47)
 
 Carnets list :
   ☐ Auré : (pas urgent) sur le carnet phare, l'extrait est pas qualitatif : il doit être de meilleure qualité si on veut que l'utilisateur soit attiré, chopper un extrait du carnet
