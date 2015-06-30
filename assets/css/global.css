@@ -4557,6 +4557,9 @@ body.espace-voyageur .content .submenu li .active {
 body.espace-voyageur .content .reservations-block {
   padding-bottom: 30px;
 }
+body.espace-voyageur .content .reservations-block .lead {
+  margin-bottom: 20px;
+}
 body.espace-voyageur .content .reservations-block thead {
   color: #f0c041;
 }
