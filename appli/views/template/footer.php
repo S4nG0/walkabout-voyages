@@ -63,11 +63,11 @@
         </div>
         <div id="newsletter-block">
             <h2 class="sep">Inscription à la newsletter Walkabout</h2>
-            <form>
+            <?php echo form_open("newsletter/add") ?>
                 <label for="newsletter">Votre e-mail</label>
                 <input type="email" name="newsletter" id="newsletter" placeholder="Entrez votre e-mail...">
                 <input class="button" type="submit" value="Je m'inscris !">
-            </form>
+            <?php echo form_close(); ?>
         </div>
     </footer>
 

@@ -84,9 +84,9 @@ $page = "esprit"
                         </div>
                         <div class="row noPadding">
                             <div class="col-md-12">
-                                <a href="destinations" class="button">Découvrez les destinations</a>
+                                <a href="<?php echo base_url(); ?>nos-destinations" class="button">Découvrez les destinations</a>
                                 &nbsp;&nbsp;ou&nbsp;&nbsp;
-                                <a href="carnet" class="button">Explorez les carnets</a>
+                                <a href="<?php echo base_url(); ?>carnets-de-voyage" class="button">Explorez les carnets</a>
                             </div>
                         </div>
                     </div>

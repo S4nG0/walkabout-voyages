@@ -25,7 +25,7 @@ class Moncompte extends CI_Controller {
                 redirect('/connexion');
             }else{
                 $data['user'] = $this->session->userdata('user')[0];
-                $data['newsletter'] = $this->newsletter->constructeur($data['user']->mail);
+                $data['newsletter'] = $this->newsletters->constructeur($data['user']->mail);
                 $data['reservations'] = $this->reservations->constructeur($data['user']->idUsers);
                 if(sizeof($data['reservations']) > 0){
                     foreach( $data['reservations'] as $reservation){

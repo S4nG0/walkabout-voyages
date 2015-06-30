@@ -2,6 +2,15 @@
 
 $page = "home";
 
+switch($newsletter){
+        case "reussi":
+            echo '<script>alert("Votre inscription à notre newsletter à bien été prise en compte");</script>';
+            break;
+        case "fail":
+            echo '<script>alert("Une erreur est survenue lors de l\'enregistrement de vos préférences, veuillez contacter le service technique.");</script>';
+            break;
+    };
+
 ?>
 
 
