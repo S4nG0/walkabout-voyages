@@ -19,21 +19,21 @@
 
             <?php if ($page == "destinations" || $page == "single-destination") { ?>
                 <li>
-                    <a class="nav_links active" href="<?php echo base_url(); ?>destinations" title="Consultez nos destinations">Nos destinations</a>
+                    <a class="nav_links active" href="<?php echo base_url(); ?>nos-destinations" title="Consultez nos destinations">Nos destinations</a>
                 </li>
             <?php } else { ?>
                 <li>
-                    <a class="nav_links" href="<?php echo base_url(); ?>destinations" title="Consultez nos destinations">Nos destinations</a>
+                    <a class="nav_links" href="<?php echo base_url(); ?>nos-destinations" title="Consultez nos destinations">Nos destinations</a>
                 </li>
             <?php }; ?>
 
             <?php if ($page == "carnets" || $page == "single-carnet") { ?>
                 <li>
-                    <a class="nav_links active" href="<?php echo base_url(); ?>carnet" title="Consultez les carnets de voyages">Carnets de voyages</a>
+                    <a class="nav_links active" href="<?php echo base_url(); ?>carnets-de-voyage" title="Consultez les carnets de voyages">Carnets de voyages</a>
                 </li>
             <?php } else { ?>
                 <li>
-                    <a class="nav_links" href="<?php echo base_url(); ?>carnet" title="Consultez les carnets de voyages">Carnets de voyages</a>
+                    <a class="nav_links" href="<?php echo base_url(); ?>carnets-de-voyage" title="Consultez les carnets de voyages">Carnets de voyages</a>
                 </li>
             <?php }; ?>
 

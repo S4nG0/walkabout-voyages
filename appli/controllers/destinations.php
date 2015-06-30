@@ -53,7 +53,7 @@ class Destinations extends CI_Controller {
             $this->load->view('template/header', $data);
             $this->load->view('destination',$data);
             $this->load->view('template/footer');
-            $this->output->enable_profiler(TRUE);
+            //$this->output->enable_profiler(TRUE);
         }
         
         public function _remap($name = ''){
