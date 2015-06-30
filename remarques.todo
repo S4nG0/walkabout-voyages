@@ -1,10 +1,9 @@
 Générales :
-  ☐ Auré : Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations'
-  --> Plus moyen d'accèder à la page actualités depuis le footer, le lien chie complètement !
+  ✔ Auré : Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations' @done (15-06-30 11:31)
 
   ✔ Auré : Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc @done (15-06-29 12:08) --> Corrigé par Julien (ajout d'une fonction dans code_helper.php qui transforme l'url + modif du model destinations.php)
 
-  ☐ Pour les carnets de voyage, on a toujours l'identifiant qui est passé dans l'url =/
+  ✔ Pour les carnets de voyage, on a toujours l'identifiant qui est passé dans l'url =/ @done (15-06-30 11:31)
 
   ☐ Auré : Utiliser la propriété "background-image" quand on génère des images dynamiquement par la base de données (parce que sinon le style casse, j'utilise plus les background qui regroupent toutes les propriétés, c'est chiant quand on génère du dynamisme).
 
@@ -12,7 +11,7 @@ Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)
   ☐ Auré : Gérer dynamiquement les 'alt' des pictos (zone informations)
   ☐ Auré : J'ai pas trouvé comment retirer le bordel généré par CodeIgniter tout en bas x'D
-  ☐ Julien : Revoir ancrage (fermeture d'un collapse)
+  ☐ Julien : Revoir ancrage (fermeture d'un collapse sur CDV)
   ☐ Julien : ajouter bouton "Je réserve" après bouton CDV
 
 Carnets list :
