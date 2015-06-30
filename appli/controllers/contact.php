@@ -22,6 +22,7 @@ class Contact extends CI_Controller {
      */
     public function index() {
         $data = Array();
+        $data['title'] = "Contact";
         $data['page'] = "contact";
         $result = '';
 
@@ -83,7 +84,7 @@ class Contact extends CI_Controller {
         }
         $data['result'] = $result;
         $data['connecte'] = connecte($this->session->userdata('user')[0]);
-        $this->load->view('template/header');
+        $this->load->view('template/header', $data);
         $this->load->view('contact', $data);
         $this->load->view('template/footer');
     }

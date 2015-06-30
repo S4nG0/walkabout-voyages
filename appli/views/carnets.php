@@ -16,7 +16,7 @@
     </div>
 
     <div class="featured-travel-log">
-        <div class="col-xs-12 col-sm-6 col-md-7 image-wrapper" style='background-image: url('<?php echo img_url($favoris->image_carnet); ?>');'></div>
+        <div class="col-xs-12 col-sm-6 col-md-7 image-wrapper" style="background-image: url('<?php echo img_url($favoris->image_carnet); ?>');"></div>
         <div class="col-xs-12 col-sm-6 col-md-5 aside">
             <p class="top-title">Carnet phare</p>
             <h2 class="no-sep"><?php echo $favoris->titre; ?></h2>

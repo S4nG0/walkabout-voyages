@@ -22,8 +22,9 @@ class Carnet extends CI_Controller {
         public function load_all()
 	{
             $data = array();
+            $data['title'] = "Carnets de voyage";
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $count = $this->db->count_all('carnetdevoyage');
             /*Load des helpers et librairies*/
             $this->load->helper('form');
@@ -76,7 +77,7 @@ class Carnet extends CI_Controller {
             $data['commentaire'] = $this->session->flashdata('commentaire');
 
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $data['carnet'] = $this->carnetvoyage->constructeur($id_carnet);
             $data['carnet'][0]->date = conv_date($data['carnet'][0]->date);
             $data['user'] = $this->user->constructeur($data['carnet'][0]->idUsers);

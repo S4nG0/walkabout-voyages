@@ -22,6 +22,7 @@ class Inscription extends CI_Controller {
      */
     public function reservation() {
         $data = Array();
+        $data['title'] = "Inscription";
         $data['erreur'] = true;
         $data['connecte'] = connecte($this->session->userdata('user')[0]);
         $data['destination'] = $this->session->userdata('destination');
@@ -79,13 +80,13 @@ class Inscription extends CI_Controller {
                     $this->email->set_mailtype("html");
                     $this->email->message($result);
                     $this->email->send();
-                    $this->load->view('template/header');
+                    $this->load->view('template/header', $data);
                     $this->load->view('checkout/identification', $data);
                     $this->load->view('template/footer');
                 }
             }else{
                 $data['email'] = "";
-                $this->load->view('template/header');
+                $this->load->view('template/header', $data);
                 $this->load->view('checkout/inscription', $data);
                 $this->load->view('template/footer');
             }

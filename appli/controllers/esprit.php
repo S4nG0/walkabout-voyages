@@ -20,8 +20,9 @@ class Esprit extends CI_Controller {
 	public function index()
 	{
             $data = array();
+        $data['title'] = "Notre esprit";
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $this->load->view('esprit',$data);
             $this->load->view('template/footer');
             //$this->output->enable_profiler(true);

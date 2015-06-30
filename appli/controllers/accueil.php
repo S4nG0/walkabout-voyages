@@ -26,6 +26,7 @@ class Accueil extends CI_Controller {
              * 
              */
             $data['actus'] = $this->actualites->get_actus();
+            $data['title'] = "Accueil";
             foreach($data['actus'] as $actu){
                 $actu->date = conv_date($actu->date); 
                 $actu->admin = $this->admin->constructeur($actu->idAdministrateur);
@@ -43,7 +44,7 @@ class Accueil extends CI_Controller {
             }
             
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $this->load->view('accueil',$data);
             $this->load->view('template/footer');
             //$this->output->enable_profiler(true);

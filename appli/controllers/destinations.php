@@ -20,6 +20,7 @@ class Destinations extends CI_Controller {
 	public function index()
 	{
             $data = array();
+        $data['title'] = "Nos destinations";
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             
             $data['destinations'] = $this->destination->get_all();
@@ -27,7 +28,7 @@ class Destinations extends CI_Controller {
                 $destination->pays = $this->pays->constructeur($destination->idPays);
                 $destination->prix_min = $this->voyages->select_min_prix($destination->idDestination);
             }
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             /*Mettre le include de la page nos destinations ici*/
             $this->load->view('destinations',$data);
             $this->load->view('template/footer');
@@ -41,6 +42,7 @@ class Destinations extends CI_Controller {
             $data['infos_destination'] = $this->infos_destination->constructeur($data['destination'][0]->idDestination);
             $data['infos_complementaires'] = $this->infos_complementaires->constructeur($data['destination'][0]->idDestination);
             $data['voyages'] = $this->voyages->get_voyages_from_destination($data['destination'][0]->idDestination);
+            $data['title'] = $data['destination'][0]->titre;
             $data['carnets'] = $this->carnetvoyage->get_carnets_alea($data['destination'][0]->idDestination);
             foreach($data['carnets'] as $carnet){
                 $carnet->date = conv_date($carnet->date);
@@ -48,7 +50,7 @@ class Destinations extends CI_Controller {
             }
             //var_dump($data['carnets']);
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
-            $this->load->view('template/header');
+            $this->load->view('template/header', $data);
             $this->load->view('destination',$data);
             $this->load->view('template/footer');
             $this->output->enable_profiler(TRUE);
