@@ -8,7 +8,8 @@ Générales :
 
   ✔ Auré : Utiliser la propriété "background-image" quand on génère des images dynamiquement par la base de données (parce que sinon le style casse, j'utilise plus les background qui regroupent toutes les propriétés, c'est chiant quand on génère du dynamisme). @done (15-06-30 10:13)
 
-  ☐ Ajout newsletter en fancybox
+  ✔ Ajout newsletter en fancybox @done (15-06-30 15:43)
+  ✔ Faire l'ajout des emails des personnes dans la newsletter @done (15-06-30 15:43)
   ☐ Faire un breadcrumbs
 
 Single-destination :
@@ -29,7 +30,7 @@ Single carnet :
   ✔ Auré : le bg image des carnets est pas géré dynamiquement @done (15-06-30 10:58)
 
 Notre esprit :
-  ☐ Changer les liens en bas de page
+  ✔ Changer les liens en bas de page @done (15-06-30 15:47)
 
 Administration :
   ✔ Connexion / Déconnexion @done (15-06-21 22:56)

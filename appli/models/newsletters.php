@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Newsletter extends CI_Model {
+class Newsletters extends CI_Model {
 
     protected $table = 'newsletter';
     
@@ -18,6 +18,16 @@ class Newsletter extends CI_Model {
                            ->limit(1)
                            ->get()
                            ->result();
+        
+        return $newsletter;
+    }
+    
+     public function insert($data = ''){
+        if($data == ''){
+            return false;
+        }
+        
+        $newsletter = $this->db->insert($this->table, $data); 
         
         return $newsletter;
     }
