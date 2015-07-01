@@ -8,13 +8,13 @@ function equalheight(container) {
     var $el;
     var topPosition = 0;
 
-    $(container).each(function() {
+    $(container).each(function () {
         $el = $(this);
         $($el).height('auto')
         topPosition = $el.position().top;
 
         if (currentRowStart != topPosition) {
-            for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+            for (currentDiv = 0; currentDiv < rowDivs.length; currentDiv++) {
                 rowDivs[currentDiv].height(currentTallest);
             }
 
@@ -27,7 +27,7 @@ function equalheight(container) {
             currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
         }
 
-        for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+        for (currentDiv = 0; currentDiv < rowDivs.length; currentDiv++) {
             rowDivs[currentDiv].height(currentTallest);
         }
     });
@@ -37,9 +37,9 @@ function equalheight(container) {
  * Resize home's #main div
  */
 function magicHeight() {
-    if ( $('body').hasClass('home') || $('body').hasClass('single-carnet') || $('body').hasClass('sign-in')) {
+    if ($('body').hasClass('home') || $('body').hasClass('single-carnet') || $('body').hasClass('sign-in')) {
         $('#main').css({
-           'height': $(window).height()
+            'height': $(window).height()
         });
     }
 }
@@ -53,7 +53,7 @@ function TopControl(controlDiv, map) {
     controlText.innerHTML = '<i class="fa fa-plus noselect"></i>';
     controlDiv.appendChild(controlText);
 
-    google.maps.event.addDomListener(controlDiv, 'click', function() {
+    google.maps.event.addDomListener(controlDiv, 'click', function () {
         var currentZoom = map.getZoom();
         map.setZoom(++currentZoom);
     });
@@ -64,7 +64,7 @@ function BottomControl(controlDiv, map) {
     controlText.innerHTML = '<i class="fa fa-minus noselect"></i>';
     controlDiv.appendChild(controlText);
 
-    google.maps.event.addDomListener(controlDiv, 'click', function() {
+    google.maps.event.addDomListener(controlDiv, 'click', function () {
         var currentZoom = map.getZoom();
         map.setZoom(--currentZoom);
     });
@@ -75,7 +75,6 @@ var map;
 function mapInitialize() {
     var myLatLng = new google.maps.LatLng(-12.04, -77.04);
     var styles = {
-
     }
     var mapOptions = {
         zoom: 8,
@@ -92,7 +91,7 @@ function mapInitialize() {
             style: google.maps.ZoomControlStyle.SMALL,
             position: google.maps.ControlPosition.BOTTOM
         },
-        styles : [
+        styles: [
             {
                 "featureType": "water",
                 "elementType": "all",
@@ -237,7 +236,7 @@ $(document).ready(function () {
     /***
      * Carousel initalizers
      */
-     $.doTimeout(500, function(){
+    $.doTimeout(500, function () {
         $('.travel-logs__slider').owlCarousel({
             items: 1,
             mouseDrag: false,
@@ -246,29 +245,29 @@ $(document).ready(function () {
             responsiveRefresh: 200,
             smartSpeed: 500
         });
-     })
+    })
 
     $('.travel-logs-slider').owlCarousel({
-        responsive : {
+        responsive: {
             // breakpoint from 0 up
-            0 : {
+            0: {
                 items: 1
             },
             // breakpoint from 480 up
-            480 : {
+            480: {
                 items: 2
             },
             // breakpoint from 768 up
-            768 : {
+            768: {
                 items: 3
             },
             // breakpoint from 992 up
-            992 : {
+            992: {
                 items: 3
 
             },
             // breakpoint from 1200 up
-            1200 : {
+            1200: {
                 items: 4
             }
         },
@@ -276,41 +275,41 @@ $(document).ready(function () {
         touchDrag: true,
         dots: false,
         nav: true,
-        navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+        navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
         loop: true
     });
 
     $('.list-carnet .stories').owlCarousel({
-        responsive : {
+        responsive: {
             // breakpoint from 0 up
-            0 : {
+            0: {
                 items: 1,
                 dots: false
             },
             // breakpoint from 480 up
-            480 : {
+            480: {
                 items: 2,
                 dots: false
             },
             // breakpoint from 768 up
-            768 : {
+            768: {
                 items: 2,
                 dots: true
             },
             // breakpoint from 992 up
-            992 : {
+            992: {
                 items: 3
 
             },
             // breakpoint from 1200 up
-            1200 : {
+            1200: {
                 items: 4
             }
         },
         mouseDrag: false,
         touchDrag: true,
         nav: true,
-        navText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+        navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
         loop: true
     });
 
@@ -346,8 +345,8 @@ $(document).ready(function () {
         to: 'fa-bars',
         animation: 'fadeOutBottom'
     }
-    navbarToggle.addEventListener('click', function(){
-        if(!icon.classList.contains('fa-arrow-up')) {
+    navbarToggle.addEventListener('click', function () {
+        if (!icon.classList.contains('fa-arrow-up')) {
             iconate(icon, options);
         } else {
             iconate(icon, options2);
@@ -362,7 +361,7 @@ $(document).ready(function () {
         offset: {
             top: navHeight,
             bottom: function () {
-              return (this.bottom = $('.footer').outerHeight(true))
+                return (this.bottom = $('.footer').outerHeight(true))
             }
         }
     });
@@ -371,29 +370,29 @@ $(document).ready(function () {
      * Smooth scrolls
      */
 
-        //Home scroll
-        $('a[href=#content]').click( function() { // Au clic sur un élément
-            var page = $(this).attr('href'); // Page cible
-            var speed = 1500; // Durée de l'animation (en ms)
-            $('html, body').animate( { scrollTop: $(page).offset().top - navHeight }, speed ); // Go
-            return false;
-        });
+    //Home scroll
+    $('a[href=#content]').click(function () { // Au clic sur un élément
+        var page = $(this).attr('href'); // Page cible
+        var speed = 1500; // Durée de l'animation (en ms)
+        $('html, body').animate({scrollTop: $(page).offset().top - navHeight}, speed); // Go
+        return false;
+    });
 
-        //Destination scroll
-        $('a[href=#travel-logs]').click( function() { // Au clic sur un élément
-            var page = $(this).attr('href'); // Page cible
-            var speed = 1500; // Durée de l'animation (en ms)
-            $('html, body').animate( { scrollTop: $(page).offset().top - navHeight }, speed ); // Go
-            return false;
-        });
+    //Destination scroll
+    $('a[href=#travel-logs]').click(function () { // Au clic sur un élément
+        var page = $(this).attr('href'); // Page cible
+        var speed = 1500; // Durée de l'animation (en ms)
+        $('html, body').animate({scrollTop: $(page).offset().top - navHeight}, speed); // Go
+        return false;
+    });
 
-        //Travel-log scroll
-        $('a[href=#comment-form]').click( function() { // Au clic sur un élément
-            var page = $(this).attr('href'); // Page cible
-            var speed = 1500; // Durée de l'animation (en ms)
-            $('html, body').animate( { scrollTop: $(page).offset().top - navHeight }, speed ); // Go
-            return false;
-        });
+    //Travel-log scroll
+    $('a[href=#comment-form]').click(function () { // Au clic sur un élément
+        var page = $(this).attr('href'); // Page cible
+        var speed = 1500; // Durée de l'animation (en ms)
+        $('html, body').animate({scrollTop: $(page).offset().top - navHeight}, speed); // Go
+        return false;
+    });
 
     /***
      * Fancybox gallery
@@ -423,23 +422,23 @@ $(document).ready(function () {
     /***
      * Checkout submit and delete
      */
-    $('#add-address').on('click', function(){
+    $('#add-address').on('click', function () {
         var newAdress = $('#new-address');
         var page = $(this).attr('href');
         newAdress.fadeIn(500);
-        $('html, body').animate( { scrollTop: $(page).offset().top }, 300 );
+        $('html, body').animate({scrollTop: $(page).offset().top}, 300);
     });
 
-    $('#delete-address').on('click', function(){
+    $('#delete-address').on('click', function () {
         confirm('Êtes-vous sûr de vouloir supprimer cette adresse ?');
     });
 
     //Checkout price total
-    $('#submit_commande').on('click',function(e){
-       e.preventDefault();
-       var result = $('input[type=checkbox][name=gtc]').is(':checked');
-       if(result == true){
-           $('form').submit();
+    $('#submit_commande').on('click', function (e) {
+        e.preventDefault();
+        var result = $('input[type=checkbox][name=gtc]').is(':checked');
+        if (result == true) {
+            $('form').submit();
         }
     });
 
@@ -450,10 +449,10 @@ $(document).ready(function () {
     $('.single-destination #map').hide();
     $('.single-destination #prices').hide();
     var firstDisplay = true;
-    $('.single-destination #buttons .button').on('click', function(){
+    $('.single-destination #buttons .button').on('click', function () {
         var buttonID = $(this).attr('id');
 
-        switch(buttonID) {
+        switch (buttonID) {
 
             case 'info-button':
                 $('#info-button').addClass('active');
@@ -467,10 +466,11 @@ $(document).ready(function () {
                 $('#infos').fadeIn(300);
                 $('#map').hide();
                 $('#prices').hide();
-            break;
+                break;
 
             case 'map-button':
-                if(firstDisplay) mapInitialize();
+                if (firstDisplay)
+                    mapInitialize();
                 firstDisplay = false;
                 $('#map-button').addClass('active');
                 if ($('#info-button').hasClass('active')) {
@@ -483,7 +483,7 @@ $(document).ready(function () {
                 $('#infos').hide();
                 $('#map').fadeIn(300);
                 $('#prices').hide();
-            break;
+                break;
 
             case 'prices-button':
                 $('#prices-button').addClass('active');
@@ -497,17 +497,17 @@ $(document).ready(function () {
                 $('#infos').hide();
                 $('#map').hide();
                 $('#prices').fadeIn(300);
-            break;
+                break;
         }
     });
 
     /***
      * Single destination info-form block toggling
      */
-     $('#info_form').hide();
+    $('#info_form').hide();
     var formButton = $('.xs-only');
 
-    formButton.on('click', function(e){
+    formButton.on('click', function (e) {
         e.preventDefault();
         $('#info_form').fadeIn(300);
     });
@@ -523,10 +523,10 @@ $(document).ready(function () {
     $('#carnets-content').hide();
     $('#infos-content').hide();
 
-    $('.espace-voyageur .content .submenu .button').on('click', function(){
+    $('.espace-voyageur .content .submenu .button').on('click', function () {
         var buttonID = $(this).attr('id');
 
-        switch(buttonID) {
+        switch (buttonID) {
 
             case 'reservations':
                 $('#reservations').addClass('active');
@@ -540,7 +540,7 @@ $(document).ready(function () {
                 $('#reservations-content').fadeIn(300);
                 $('#carnets-content').hide();
                 $('#infos-content').hide();
-            break;
+                break;
 
             case 'carnets':
                 $('#carnets').addClass('active');
@@ -554,7 +554,7 @@ $(document).ready(function () {
                 $('#reservations-content').hide();
                 $('#carnets-content').fadeIn(300);
                 $('#infos-content').hide();
-            break;
+                break;
 
             case 'infos':
                 $('#infos').addClass('active');
@@ -568,7 +568,7 @@ $(document).ready(function () {
                 $('#reservations-content').hide();
                 $('#carnets-content').hide();
                 $('#infos-content').fadeIn(300);
-            break;
+                break;
         }
     });
 
@@ -577,7 +577,7 @@ $(document).ready(function () {
      */
     $('#new-password').hide();
     $('#new-password-confirmation').hide();
-    $('.change-pwd-button').on('click', function(e){
+    $('.change-pwd-button').on('click', function (e) {
         e.preventDefault();
         $(this).hide();
         $('#new-password').fadeIn(500);
@@ -591,30 +591,37 @@ $(document).ready(function () {
     var offset = 800;
     var offset_opacity = 1200;
 
-        //Hide or show button
-        $(window).scroll(function(){
-            if ($(this).scrollTop() > offset) {
-                backToTop.addClass('is-visible');
-            } else {
-                backToTop.removeClass('is-visible fade-out');
-            }
+    //Hide or show button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > offset) {
+            backToTop.addClass('is-visible');
+        } else {
+            backToTop.removeClass('is-visible fade-out');
+        }
 
-            if ($(this).scrollTop() > offset_opacity) {
-                backToTop.addClass('fade-out');
-            }
-        })
+        if ($(this).scrollTop() > offset_opacity) {
+            backToTop.addClass('fade-out');
+        }
+    })
 
-        //Smooth scroll to top
-        backToTop.on('click', function(e){
-            e.preventDefault();
-            $('html, body').animate({
-                scrollTop: 0,
-            }, 1000);
-        });
+    //Smooth scroll to top
+    backToTop.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0,
+        }, 1000);
+    });
 
     /**
      * Travel-log Editor
      */
+
+    $('h1[contenteditable=true]').keydown(function (e) {
+        // trap the return key being pressed
+        if (e.keyCode === 13) {
+            return false;
+        }
+    });
 
     var titleEditor = new MediumEditor('.medium-title-editor', {
         placeholder: {
@@ -623,103 +630,42 @@ $(document).ready(function () {
         }
     });
 
-//     $('.medium-editor-image').mediumInsert({
-//     editor: new MediumEditor('.medium-editor-image'), // (MediumEditor) Instance of MediumEditor
-//     enabled: true, // (boolean) If the plugin is enabled
-//     addons: { // (object) Addons configuration
-//     images: { // (object) Image addon configuration
-//         label: '<span class="fa fa-camera"></span>', // (string) A label for an image addon
-//         uploadScript: null, // DEPRECATED: Use fileUploadOptions instead
-//         deleteScript: 'delete.php', // (string) A relative path to a delete script
-//         preview: true, // (boolean) Show an image before it is uploaded (only in browsers that support this feature)
-//         captions: true, // (boolean) Enable captions
-//         captionPlaceholder: 'Type caption for image (optional)', // (string) Caption placeholder
-//         autoGrid: 3, // (integer) Min number of images that automatically form a grid
-//         formData: {}, // DEPRECATED: Use fileUploadOptions instead
-//         fileUploadOptions: { // (object) File upload configuration. See https://github.com/blueimp/jQuery-File-Upload/wiki/Options
-//             url: 'upload.php', // (string) A relative path to an upload script
-//             acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i // (regexp) Regexp of accepted file types
-//         },
-//         styles: { // (object) Available image styles configuration
-//             wide: { // (object) Image style configuration. Key is used as a class name added to an image, when the style is selected (.medium-insert-images-wide)
-//                 label: '<span class="fa fa-align-justify"></span>', // (string) A label for a style
-//                 added: function ($el) {}, // (function) Callback function called after the style was selected. A parameter $el is a current active paragraph (.medium-insert-active)
-//                 removed: function ($el) {} // (function) Callback function called after a different style was selected and this one was removed. A parameter $el is a current active paragraph (.medium-insert-active)
-//             },
-//             left: {
-//                 label: '<span class="fa fa-align-left"></span>'
-//             },
-//             right: {
-//                 label: '<span class="fa fa-align-right"></span>'
-//             },
-//             grid: {
-//                 label: '<span class="fa fa-th"></span>'
-//             }
-//         },
-//         actions: { // (object) Actions for an optional second toolbar
-//             remove: { // (object) Remove action configuration
-//                 label: '<span class="fa fa-times"></span>', // (string) Label for an action
-//                 clicked: function ($el) { // (function) Callback function called when an action is selected
-//                     var $event = $.Event('keydown');
+    $('.medium-editor-image').mediumInsert({
+        editor: new MediumEditor('.medium-editor-image'), // (MediumEditor) Instance of MediumEditor
+        enabled: true,
+        addons: { // (object) Addons configuration
+            images: { // (object) Image addon configuration
+                captionPlaceholder : "Insérer une légende ici",
+                fileUploadOptions : {
+                    url: 'upload',
+                    acceptFileTypes: /(.|\/)(jpe?g|png)$/i
+                },
+                messages: {
+                    acceptFileTypesError: 'Le fichier sélectionné n\'est pas un fichier supporté!',
+                    maxFileSizeError: 'Le fichier séléctionné est trop gros!'
+                },
+                uploadCompleted: function ($el, data) {
+                    
+                }
+            }
+        }
+    });
 
-//                     $event.which = 8;
-//                     $(document).trigger($event);
-//                 }
-//             }
-//         },
-//         messages: {
-//             acceptFileTypesError: 'This file is not in a supported format: ',
-//             maxFileSizeError: 'This file is too big: '
-//         },
-//         uploadCompleted: function ($el, data) {} // (function) Callback function called when upload is completed
-//     },
-//     embeds: { // (object) Embeds addon configuration
-//         label: '<span class="fa fa-youtube-play"></span>', // (string) A label for an embeds addon
-//         placeholder: 'Paste a YouTube, Vimeo, Facebook, Twitter or Instagram link and press Enter', // (string) Placeholder displayed when entering URL to embed
-//         captions: true, // (boolean) Enable captions
-//         captionPlaceholder: 'Type caption (optional)', // (string) Caption placeholder
-//         oembedProxy: 'http://medium.iframe.ly/api/oembed?iframe=1', // (string/null) URL to oEmbed proxy endpoint, such as Iframely, Embedly or your own. You are welcome to use "http://medium.iframe.ly/api/oembed?iframe=1" for your dev and testing needs, courtesy of Iframely. *Null* will make the plugin use pre-defined set of embed rules without making server calls.
-//         styles: { // (object) Available embeds styles configuration
-//             wide: { // (object) Embed style configuration. Key is used as a class name added to an embed, when the style is selected (.medium-insert-embeds-wide)
-//                 label: '<span class="fa fa-align-justify"></span>', // (string) A label for a style
-//                 added: function ($el) {}, // (function) Callback function called after the style was selected. A parameter $el is a current active paragraph (.medium-insert-active)
-//                 removed: function ($el) {} // (function) Callback function called after a different style was selected and this one was removed. A parameter $el is a current active paragraph (.medium-insert-active)
-//             },
-//             left: {
-//                 label: '<span class="fa fa-align-left"></span>'
-//             },
-//             right: {
-//                 label: '<span class="fa fa-align-right"></span>'
-//             }
-//         },
-//         actions: { // (object) Actions for an optional second toolbar
-//             remove: { // (object) Remove action configuration
-//                 label: '<span class="fa fa-times"></span>', // (string) Label for an action
-//                 clicked: function ($el) { // (function) Callback function called when an action is selected
-//                     var $event = $.Event('keydown');
+    $(window).on('resize', function () {
+        equalheight('.sameHeight');
+        magicHeight();
+    });
 
-//                     $event.which = 8;
-//                     $(document).trigger($event);
-//                 }
-//             }
-//         }
-//     }
+    $(window).scroll(function () {
+        /***
+         * Caption text in single-carnet
+         * gradual fading on scroll
+         */
+        var st = $(window).scrollTop();
+        $('.caption-wrapper').css({'opacity': (1000 - st) / 1000});
+
+        var sb = $(window).scrollTop();
+        $('.spirit-content').css({'opacity': (-650 + sb) / 1000});
+    });
 
 });
-
-$(window).on('resize', function(){
-    equalheight('.sameHeight');
-    magicHeight();
-});
-
-$(window).scroll(function(){
-    /***
-     * Caption text in single-carnet
-     * gradual fading on scroll
-     */
-    var st = $(window).scrollTop();
-    $('.caption-wrapper').css({'opacity':(1000 - st)/1000});
-
-    var sb = $(window).scrollTop();
-    $('.spirit-content').css({'opacity':(-650 + sb)/1000});
-})
