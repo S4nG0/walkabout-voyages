@@ -2,6 +2,10 @@ Modules back office à rajouter :
   ☐ Actualités
   ☐ Carnets de voyages
   ☐ Destinations
+  ✔ Ajouter un administrateur @done (15-07-01 10:32)
+  ☐ Gestion des réservations
+  ☐ Gestion des renseignements
+  ☐ Gestion des contacts
 
 Module actualité :
   ☐ rédaction d'articles
@@ -23,6 +27,7 @@ Informations générales :
   ☐ gestion des pictogrammes
   ☐ rédaction accompagnement, déplacements, hébergement, repas&boissons
   ☐ rédaction du déroulement du séjour (jour 1, jour 2,...)
+  ☐ problème d'encodage utf-8 dans le menu pour accéder au compte.
 
 Localisation :
   ☐ longitude et latitude
@@ -39,3 +44,7 @@ Module commentaires :
 
 Référencement :
   ☐ Sur la page notre esprit enlever le H3 sur "sans plus attendre..."
+
+  Checkout :
+    ☐ Impossible de valider le paiement sur la dernière phase.
+    
