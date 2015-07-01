@@ -23,8 +23,13 @@
     <link rel="stylesheet" href="<?php echo css_url('fancybox');?>">
     <link rel="stylesheet" href="<?php echo css_url('iconate.min');?>">
     <link rel="stylesheet" href="<?php echo css_url('owl.carousel');?>">
+    
+    <!--Medium editor-->
+    <link rel="stylesheet" href="<?php echo css_url('medium/medium-editor');?>">
+    <link rel="stylesheet" href="<?php echo css_url('medium/bootstrap.min');?>">
+    <link rel="stylesheet" href="<?php echo css_url('medium/medium-editor-insert-plugin.min');?>">
 
-    <!-- Custome styles -->
+    <!-- Custom styles -->
     <link rel="stylesheet" href="<?php echo css_url('global');?>">
 
 </head>

@@ -114,8 +114,6 @@ class Carnets_de_voyage extends CI_Controller {
             
             $data['articles'] = $this->articles->getFromCarnet($data['carnet'][0]->idCarnetDeVoyage);
             
-            var_dump($data);
-            
             $this->load->view('template/header', $data);
             $this->load->view('modif_carnet', $data);
             $this->load->view('template/footer');
