@@ -217,7 +217,7 @@ strong {
     }
 }
 
-.lead {
+.lead, blockquote {
     padding: 0;
     margin: 0;
     color: $jaune-or;
@@ -768,7 +768,7 @@ body.single-carnet {
             }
         }
 
-        .lead {
+        .lead, blockquote {
             font-size: 26px;
             line-height: 26px;
             padding: 50px 25px 0 25px;
@@ -1333,7 +1333,7 @@ body.single-carnet {
             }
         }
     }
-    p.lead {
+    p.lead, blockquote {
         padding: 0;
     }
 }
@@ -1409,7 +1409,7 @@ body.single-carnet {
                     max-width: 300px;
                     margin: 0 auto;
                 }
-                .lead {
+                .lead, blockquote {
                     font-size: 20px;
                     line-height: 30px;
                 }
