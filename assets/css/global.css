@@ -4438,6 +4438,21 @@ body.espace-voyageur .lead {
 body.espace-voyageur .navbar {
   margin-top: 0;
 }
+body.espace-voyageur .navbar .navbar-brand {
+  padding: 30px 25px;
+}
+body.espace-voyageur .navbar .navbar-brand .logo {
+  width: 150px;
+}
+body.espace-voyageur .navbar .navbar-toggle {
+  margin: 30px 25px;
+}
+body.espace-voyageur .navbar .navbar-collapse .nav li a {
+  margin: 40px 25px 40px 0;
+}
+body.espace-voyageur .navbar.affix .navbar-brand {
+  padding: 15px 25px;
+}
 body.espace-voyageur .main {
   background: url("../images/texture.png");
   -moz-box-shadow: none;
@@ -4476,21 +4491,32 @@ body.espace-voyageur .main .big-title-wrapper .big-title h1 {
   line-height: 46px;
   border-bottom: none;
 }
-body.espace-voyageur .main .big-title-wrapper .big-title h1[contenteditable="true"]:empty:before {
-  content: attr(placeholder);
-  position: relative;
-  display: block;
-}
 body.espace-voyageur .main .big-title-wrapper .big-title p {
   display: block;
   max-width: 700px;
   width: 90%;
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 40px;
   font-size: 20px;
   font-style: italic;
   color: #848484;
   line-height: 30px;
+}
+body.espace-voyageur .main .big-title-wrapper .big-title .button {
+  display: inline-block;
+  margin-top: 25px;
+}
+body.espace-voyageur .main .big-title-wrapper .big-title *[contenteditable="true"]:empty:before {
+  content: attr(placeholder);
+  position: relative;
+  display: block;
+  font-style: italic;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+body.espace-voyageur .main .big-title-wrapper .big-title .travel-log__description {
+  color: #fff;
+  font-style: normal;
 }
 body.espace-voyageur input[type="checkbox"]:not(old),
 body.espace-voyageur input[type="radio"]:not(old) {
@@ -4680,6 +4706,81 @@ body.espace-voyageur .content .infos-block .buttons-wrapper .button {
   width: 150px;
   margin-right: 15px;
 }
+body.espace-voyageur .content.edit-article {
+  padding: 50px 0;
+}
+body.espace-voyageur .content.edit-article .article {
+  margin-bottom: 25px;
+}
+body.espace-voyageur .content.edit-article .article:last-child {
+  margin-bottom: 0;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article {
+  display: table;
+  width: 100%;
+  padding: 25px;
+  border: 1px solid #fff;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article:hover {
+  border-color: #f0c041;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block {
+  display: table-cell;
+  vertical-align: middle;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block p {
+  margin: 0;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls {
+  text-align: right;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 1.75em;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls a i {
+  display: inline-block;
+  vertical-align: middle;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls a:hover, body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls a:focus {
+  color: #f0c041;
+}
+body.espace-voyageur .article-aside .thumbnail {
+  padding: 25px;
+  margin-top: 25px;
+  background-color: transparent;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+body.espace-voyageur .article-aside .thumbnail .caption {
+  padding: 0;
+  background-color: transparent;
+}
+body.espace-voyageur .article-aside .thumbnail .caption h3 {
+  line-height: 26px;
+  padding-bottom: 25px;
+  color: #fff;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.espace-voyageur .article-aside .thumbnail .button {
+  margin-top: 25px;
+}
+body.espace-voyageur .article-aside .thumbnail:hover {
+  border-color: #f0c041;
+}
+body.espace-voyageur .article-aside .thumbnail:hover .caption h3 {
+  color: #f0c041;
+}
 
 /*------------------------------------*\
     #RESPONSIVE
@@ -4708,6 +4809,10 @@ body.espace-voyageur .content .infos-block .buttons-wrapper .button {
   }
   body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .buttons-wrapper {
     padding-top: 25px;
+  }
+  body.espace-voyageur .content.edit-article .article-aside .button {
+    display: block;
+    width: 100%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -4932,7 +5037,7 @@ strong {
   border: 1px solid #f0c041;
 }
 
-.lead {
+.lead, blockquote {
   padding: 0;
   margin: 0;
   color: #f0c041;
@@ -5479,7 +5584,7 @@ body.single-carnet .content {
 .tb-article .tb-article--content p:last-child {
   padding-bottom: 0;
 }
-.tb-article .tb-article--content .lead {
+.tb-article .tb-article--content .lead, .tb-article .tb-article--content blockquote {
   font-size: 26px;
   line-height: 26px;
   padding: 50px 25px 0 25px;
@@ -5784,6 +5889,10 @@ body.single-carnet .content {
   margin-bottom: 0 !important;
 }
 
+.mb25 {
+  margin-bottom: 25px !important;
+}
+
 .mt25 {
   margin-top: 25px !important;
 }
@@ -5993,7 +6102,7 @@ body.single-carnet .content {
     text-align: center;
   }
 
-  p.lead {
+  p.lead, blockquote {
     padding: 0;
   }
 }
@@ -6054,7 +6163,7 @@ body.single-carnet .content {
     max-width: 300px;
     margin: 0 auto;
   }
-  body.single-carnet .content .tb-article .lead {
+  body.single-carnet .content .tb-article .lead, body.single-carnet .content .tb-article blockquote {
     font-size: 20px;
     line-height: 30px;
   }
