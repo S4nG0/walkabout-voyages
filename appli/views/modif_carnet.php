@@ -12,11 +12,15 @@ $page = "moncompte";
 
         <div class="big-title-wrapper">
             <div class="big-title">
-                <h1 class="sep" contenteditable="true" placeholder="Insérer un titre..."></h1>
+                <h1 class="sep">Titre du carnet</h1>
                 <p class="travel-log__description" contenteditable="true" placeholder="Insérer une description de votre voyage..."></p>
                 <a href="#" class="button">
                     <i class="fa fa-check-square-o"></i>
                     Enregistrer les modifications
+                </a>
+                <a class="button" href="#">
+                    <i class="fa fa-eye"></i>
+                    Voir le carnet
                 </a>
             </div>
         </div>
@@ -95,10 +99,6 @@ $page = "moncompte";
 
                 <div class="col-sm-4">
                     <div class="article-aside">
-                        <a class="button" href="#">
-                            <i class="fa fa-eye"></i>
-                            Voir le carnet
-                        </a>
                         <div class="thumbnail">
                             <div class="caption">
                                 <h3>Image de couverture</h3>
