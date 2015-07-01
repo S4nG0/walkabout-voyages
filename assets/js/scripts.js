@@ -618,7 +618,8 @@ $(document).ready(function () {
 
     var titleEditor = new MediumEditor('.medium-title-editor', {
         placeholder: {
-            text: 'Cliquez pour ajouter votre titre'
+            text: 'Cliquez pour ajouter votre titre',
+            style: 'text-align: center'
         }
     });
 

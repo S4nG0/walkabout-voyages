@@ -4474,6 +4474,12 @@ body.espace-voyageur .main .big-title-wrapper .big-title h1 {
   color: #f0c041;
   text-transform: uppercase;
   line-height: 46px;
+  border-bottom: none;
+}
+body.espace-voyageur .main .big-title-wrapper .big-title h1[contenteditable="true"]:empty:before {
+  content: attr(placeholder);
+  position: relative;
+  display: block;
 }
 body.espace-voyageur .main .big-title-wrapper .big-title p {
   display: block;
