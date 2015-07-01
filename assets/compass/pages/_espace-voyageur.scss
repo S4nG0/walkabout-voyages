@@ -46,6 +46,13 @@ body.espace-voyageur {
                     color: $jaune-or;
                     text-transform: uppercase;
                     line-height: 46px;
+                    border-bottom: none;
+                }
+
+                h1[contenteditable="true"]:empty:before {
+                    content: attr(placeholder);
+                    position: relative;
+                    display: block;
                 }
 
                 p {

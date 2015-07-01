@@ -12,7 +12,8 @@ $page = "moncompte";
 
         <div class="big-title-wrapper">
             <div class="big-title">
-                <div class="medium-title-editor"></div>
+                <h1 class="sep" contenteditable="true" placeholder="Insérer un titre"></h1>
+
             </div>
         </div>
 
