@@ -9,6 +9,34 @@ body.espace-voyageur {
 
     .navbar {
         margin-top: 0;
+
+        .navbar-brand {
+            padding: 30px 25px;
+
+            .logo {
+                width: 150px;
+            }
+        }
+
+        .navbar-toggle {
+            margin: 30px 25px;
+        }
+
+        .navbar-collapse {
+            .nav {
+                li {
+                    a {
+                        margin: 40px 25px 40px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar.affix {
+        .navbar-brand {
+            padding: 15px 25px;
+        }
     }
 
     .main {
@@ -25,6 +53,7 @@ body.espace-voyageur {
                 vertical-align: middle;
                 width: 100%;
                 height: 150px;
+                padding-bottom: 50px;
                 text-align: center;
 
                 .profile-picture {
@@ -49,22 +78,30 @@ body.espace-voyageur {
                     border-bottom: none;
                 }
 
-                h1[contenteditable="true"]:empty:before {
-                    content: attr(placeholder);
-                    position: relative;
-                    display: block;
-                }
-
                 p {
                     display: block;
                     max-width: 700px;
                     width: 90%;
                     margin: 0 auto;
-                    margin-top: 25px;
+                    margin-top: 40px;
                     font-size: 20px;
                     font-style: italic;
                     color: $gris-clair;
                     line-height: 30px;
+                }
+
+                //MODIF-CARNET
+                *[contenteditable="true"]:empty:before {
+                    content: attr(placeholder);
+                    position: relative;
+                    display: block;
+                    font-style: italic;
+                    @include opacity(0.8);
+                }
+
+                .travel-log__description {
+                    color: $blanc;
+                    font-style: normal;
                 }
             }
         }
@@ -290,6 +327,40 @@ body.espace-voyageur {
                     float: none;
                     width: 150px;
                     margin-right: 15px;
+                }
+            }
+
+        }
+
+        //MODIF-CARNET
+        .travel-log__article {
+            display: table;
+            width: 100%;
+            padding: 25px;
+            border: $gold-border;
+
+            .article-block {
+                display: table-cell;
+                vertical-align: middle;
+
+                p {
+                    margin: 0;
+                }
+            }
+
+            .article-block.controls {
+                text-align: right;
+
+                a {
+                    color: $blanc;
+                    text-decoration: none;
+                    margin-right: 15px;
+                    font-size: 1.75em;
+
+                    i {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
                 }
             }
         }
