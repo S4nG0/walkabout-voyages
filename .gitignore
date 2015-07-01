@@ -12,3 +12,4 @@ appli/config/config.php
 appli/config/database.php
 
 .idea/
+/nbproject/private/
