@@ -64,24 +64,27 @@ class droitAdmin extends CI_Controller {
                 else{
                     $data = array('upload_data' => $this->upload->data());
                     $destination['banner']=$data['upload_data']['file_name'];
-                    $chaine="";
-                    foreach ($_FILES['images'] as $fieldname => $fileObject)  //fieldname is the form field name
-                    {
-                        if (!empty($fileObject['name']))
-                        {
-                            $this->upload->initialize($config);
-                            if (!$this->upload->do_upload($fieldname)){
-                                $errors = $this->upload->display_errors();
-                                var_dump($errors);
-                            }
-                            else{
-                                $data = array('upload_data' => $this->upload->data());
-                                var_dump($data);
-                                //$chaine.="voyages/australie/".$fileObject['name'].";";
-                            }
-                        }
+                    $config =  array(
+                        'upload_path'     => './assets/images/voyages/',
+                        'upload_url'      => base_url().'/assets/images/voyages/',
+                        'allowed_types'   => "gif|jpg|png",
+                        'overwrite'       => TRUE,
+                        'max_size'        => "450000",
+                        'max_height'      => "450",
+                        'max_width'       => "1600"
+                    );
+                    $this->load->library('upload', $config);
+                    $data=array();
+                    var_dump($_FILES['images']);
+                    if($this->upload->do_multi_upload('images')) {
+                        $data = array('upload_data' => $this->upload->get_multi_upload_data());
+                    }else{
+                        echo 'echec';
                     }
-                    exit();
+                    $chaine="";
+                    for($i=0;$i<sizeof($data);$i++){
+                        $chaine.="/assets/images/voyages/".$data[$i]['file_name'].";";
+                    }
                     $destination['photos']=$chaine;
                     $this->destination->insertDestination($destination);
                 }
