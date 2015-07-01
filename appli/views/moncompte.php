@@ -14,6 +14,9 @@ $page = "moncompte";
             <div class="big-title-wrapper">
                 <div class="big-title">
                     <h1>Espace voyageur</h1>
+                    <div class="profile-picture">
+                        <img src="<?php echo img_url($user->photo); ?>" alt="<?php echo $user->prenom; ?>">
+                    </div>
                     <p>
                         Bonjour <?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span>"; ?> !
                     </p>

@@ -4435,6 +4435,9 @@ body.checkout footer {
 body.espace-voyageur .lead {
   font-style: normal;
 }
+body.espace-voyageur .navbar {
+  margin-top: 0;
+}
 body.espace-voyageur .main {
   background: url("../images/texture.png");
   -moz-box-shadow: none;
@@ -4452,6 +4455,12 @@ body.espace-voyageur .main .big-title-wrapper .big-title {
   width: 100%;
   height: 150px;
   text-align: center;
+}
+body.espace-voyageur .main .big-title-wrapper .big-title .profile-picture {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 body.espace-voyageur .main .big-title-wrapper .big-title h1 {
   display: block;
@@ -4471,7 +4480,7 @@ body.espace-voyageur .main .big-title-wrapper .big-title p {
   max-width: 700px;
   width: 90%;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 25px;
   font-size: 20px;
   font-style: italic;
   color: #848484;
@@ -4562,6 +4571,7 @@ body.espace-voyageur .content .reservations-block .lead {
 }
 body.espace-voyageur .content .reservations-block thead {
   color: #f0c041;
+  border-color: #f0c041;
 }
 body.espace-voyageur .content .reservations-block thead tr td {
   font-size: 18px;
