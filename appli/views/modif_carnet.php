@@ -12,7 +12,7 @@ $page = "moncompte";
 
         <div class="big-title-wrapper">
             <div class="big-title">
-                <h1 class="sep medium-editor-title"></h1>
+                <div class="medium-title-editor"></div>
             </div>
         </div>
 

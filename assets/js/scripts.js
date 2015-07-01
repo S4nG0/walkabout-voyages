@@ -616,9 +616,9 @@ $(document).ready(function () {
      * Travel-log Editor
      */
 
-    var titleEditor = new MediumEditor('.big-title', {
+    var titleEditor = new MediumEditor('.medium-title-editor', {
         placeholder: {
-            text: 'Votre titre'
+            text: 'Cliquez pour ajouter votre titre'
         }
     });
 

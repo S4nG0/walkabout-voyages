@@ -7,6 +7,10 @@ body.espace-voyageur {
         font-style: normal;
     }
 
+    .navbar {
+        margin-top: 0;
+    }
+
     .main {
         background: $texture;
         @include box-shadow(none);
@@ -22,6 +26,13 @@ body.espace-voyageur {
                 width: 100%;
                 height: 150px;
                 text-align: center;
+
+                .profile-picture {
+                    width: 100px;
+                    height: 100px;
+                    margin: 0 auto;
+                    margin-top: 50px;
+                }
 
                 h1 {
                     display: block;
@@ -42,7 +53,7 @@ body.espace-voyageur {
                     max-width: 700px;
                     width: 90%;
                     margin: 0 auto;
-                    margin-top: 50px;
+                    margin-top: 25px;
                     font-size: 20px;
                     font-style: italic;
                     color: $gris-clair;
@@ -146,6 +157,7 @@ body.espace-voyageur {
 
             thead {
                 color: $jaune-or;
+                border-color: $jaune-or;
 
                 tr {
                     td {
