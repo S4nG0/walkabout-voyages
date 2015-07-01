@@ -16,7 +16,7 @@ $page = "esprit"
 
             <div class="story">
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1 medium-editor">
+                    <div class="col-md-10 col-md-offset-1">
                         <img class="img-responsive logo" src="<?php echo img_url('logo-wk-icon.png'); ?>" alt="Walkabout">
                         <h1 class="sep">Qui sommes-nous ?</h1>
                         <p>Walkabout est né d’une rencontre entre deux passionnés de voyage, au détour d’un voyage en Chine. L’un aventurier et ethnologue, a parcouru les continents pendant plus de 30 ans à la recherche de populations reculé. L’autre professionnel du voyage, fabrique des voyages clé en main et les revends aux tours opérateurs.</p>
