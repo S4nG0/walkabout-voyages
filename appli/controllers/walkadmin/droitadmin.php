@@ -41,7 +41,8 @@ class droitAdmin extends CI_Controller {
                     "idPays" => $this->input->post('pays'),
                     "titre" => $this->input->post('titre'),
                     "description" => $this->input->post('description'),
-                    "ville" => $this->input->post('ville')
+                    "ville" => $this->input->post('ville'),
+                    "coordonnees" => $this->input->post('coordonnees')
                 );
                 $config =  array(
                     'upload_path'     => './assets/images/destinations/',
@@ -62,20 +63,25 @@ class droitAdmin extends CI_Controller {
                 }
                 else{
                     $data = array('upload_data' => $this->upload->data());
-                    var_dump($data);
                     $destination['banner']=$data['upload_data']['file_name'];
                     $chaine="";
-                    foreach($_FILES['images'] as $key => $value){
-                        if(!empty($key['name'])){
-                            if (!$this->upload->do_upload($key)){
-                                $error['error'] = $this->upload->display_errors();
+                    foreach ($_FILES['images'] as $fieldname => $fileObject)  //fieldname is the form field name
+                    {
+                        if (!empty($fileObject['name']))
+                        {
+                            $this->upload->initialize($config);
+                            if (!$this->upload->do_upload($fieldname)){
+                                $errors = $this->upload->display_errors();
+                                var_dump($errors);
                             }
                             else{
-                                $data[$key] = array('upload_data' => $this->upload->data());
-                                $chaine.=$data[$key].";";
+                                $data = array('upload_data' => $this->upload->data());
+                                var_dump($data);
+                                //$chaine.="voyages/australie/".$fileObject['name'].";";
                             }
                         }
                     }
+                    exit();
                     $destination['photos']=$chaine;
                     $this->destination->insertDestination($destination);
                 }

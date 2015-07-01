@@ -15,8 +15,8 @@
 |
 */
 
- // $config['base_url']	= 'http://dev.walkabout-voyages.fr/';
-$config['base_url']	= 'http://localhost/walkabout-voyage/';
+ $config['base_url']	= 'http://dev.walkabout-voyages.fr/';
+// $config['base_url']	= 'http://localhost/walkabout-voyage/';
 
 /*
 |--------------------------------------------------------------------------

@@ -16,6 +16,7 @@ Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)
   ☐ Auré : Gérer dynamiquement les 'alt' des pictos (zone informations)
   ✔ Auré : J'ai pas trouvé comment retirer le bordel généré par CodeIgniter tout en bas x'D @done (15-06-30 10:57)
+  ☐ Auré : les carnets de tous les voyages sont affichés en bas de page (or il faudrait seulement ceux du voyage sur lequel on se trouve)
   ☐ Julien : Revoir ancrage (fermeture d'un collapse)
   ✔ Julien : ajouter bouton "Je réserve" après bouton CDV @done (15-06-30 13:47)
 
