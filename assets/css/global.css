@@ -5046,6 +5046,7 @@ strong {
   font-style: italic;
   line-height: 36px;
   text-align: center;
+  border-left: none;
 }
 
 .published {
@@ -5585,7 +5586,9 @@ body.single-carnet .content {
   padding-bottom: 0;
 }
 .tb-article .tb-article--content .lead, .tb-article .tb-article--content blockquote {
+  margin: 0 auto;
   font-size: 26px;
+  font-weight: 300;
   line-height: 26px;
   padding: 50px 25px 0 25px;
   max-width: 800px;
