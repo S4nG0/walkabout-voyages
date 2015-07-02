@@ -656,6 +656,13 @@ $(document).ready(function () {
     $('.input-upload').on('change',function(){
         $('.submit-cover').click();
     });
+    
+    $('.description_submit').on('click',function(e){
+        e.preventDefault();
+        var texte = $('[name=description_p]').text();
+        $('input[name=description]').val(texte);
+        $(this).parent('form').submit();
+    });
 
     $(window).on('resize', function () {
         equalheight('.sameHeight');

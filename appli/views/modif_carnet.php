@@ -13,9 +13,11 @@ $page = "moncarnet";
         <div class="big-title-wrapper">
             <div class="big-title">
                 <h1 class="sep"><?php echo $carnet[0]->titre; ?></h1>
-                <?php echo form_open(); ?>
-                <p class="travel-log__description" contenteditable="true" name="description" placeholder="Insérer une description de votre voyage..."><?php echo $carnet[0]->description; ?></p>
-                <button type="submit" class="button">
+                <?php echo form_open(base_url()."carnets_de_voyage/modifierDescription/".slugify($carnet[0]->titre)); ?>
+                <p class="travel-log__description" contenteditable="true" name="description_p" placeholder="Insérer une description de votre voyage..."><?php echo $carnet[0]->description; ?></p>
+                <input type="hidden" name="description"/>
+                <input type="hidden" name="idcarnet" value="<?php echo $carnet[0]->idCarnetDeVoyage; ?>"/>
+                <button type="submit" class="button description_submit">
                     <i class="fa fa-check-square-o"></i>
                     Enregistrer les modifications
                 </button>

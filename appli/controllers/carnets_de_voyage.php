@@ -95,6 +95,30 @@ class Carnets_de_voyage extends CI_Controller {
             $this->load->view('template/footer');
         }
         
+        public function modifierDescription($id = ""){
+            if($id == ""){
+                return false;
+            }
+            $data['connecte'] = connecte($this->session->userdata('user')[0]);
+            $data['title'] = "Compte";
+            if($data['connecte'] == false){
+                redirect('/connexion');
+            }
+            $data['carnet'] = $this->carnetvoyage->getFromName($id);
+            $data['user'] = $this->session->userdata('user')[0];
+            if($data['carnet'][0]->idUsers != $data['user']->idUsers){
+                redirect('/moncompte');
+            }
+            $carnet = new stdClass();
+            $carnet->description = $this->input->post('description');
+            $id = $this->input->post('idcarnet');
+            
+            $this->carnetvoyage->modify($carnet,$id);
+            
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            
+        }
+        
         public function modifier($id = ""){
             if($id == ""){
                 return false;
@@ -107,7 +131,7 @@ class Carnets_de_voyage extends CI_Controller {
             $data['carnet'] = $this->carnetvoyage->getFromName($id);
             $data['user'] = $this->session->userdata('user')[0];
             if($data['carnet'][0]->idUsers != $data['user']->idUsers){
-                //redirect('/moncompte');
+                redirect('/moncompte');
             }
             
             $data['title'] = "Modification du carnet";
@@ -118,6 +142,7 @@ class Carnets_de_voyage extends CI_Controller {
             $this->load->view('modif_carnet', $data);
             $this->load->view('template/footer');
         }
+
 
 }
 /* End of file carnet.php */

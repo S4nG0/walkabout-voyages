@@ -39,14 +39,8 @@ class Upload_file extends CI_Controller {
         }
         // set the filter image types
         $config['allowed_types'] = 'jpg|jpeg|png';
-
-        //load the upload library
-        //load the upload library
-        $this->load->library('upload', $config);
-
+        //Configuration de la librairie
         $this->upload->initialize($config);
-
-        $this->upload->set_allowed_types('*');
 
         $data['upload_data'] = '';
 
@@ -66,6 +60,48 @@ class Upload_file extends CI_Controller {
         
         
         header('Location: ' . $_SERVER['HTTP_REFERER'] );
+    }
+    
+    public function user() {
+        
+        $data = array();
+        $data['user'] = $this->session->userdata('user')[0];
+        //On va chercher le nom du dossier
+        $name_folder = $data['user']->idUsers;
+        //Dossier d'upload
+        $config['upload_path'] = 'assets/images/users/'.$name_folder;
+        
+        //On vérifie si le dossier d'upload existe et si non on le crée
+        if (!file_exists($config['upload_path'])) {
+            //Création du dossier pour le carnet
+            if(!mkdir($config['upload_path'],0777,true)){
+                echo 'erreur lors de la création du dossier!';
+            }
+        }
+        
+        // set the filter image types
+        $config['allowed_types'] = 'jpg|jpeg|png';
+
+        $this->upload->initialize($config);
+
+        $data['upload_data'] = '';
+
+        //if not successful, set the error message
+        if (!$this->upload->do_upload('userimage')) {
+            $data = array('msg' => $this->upload->display_errors());
+        } else { //else, set the success message
+            $data = array('msg' => "Upload success!");
+
+            $data['upload_data'] = $this->upload->data();
+        }
+        
+        //On va mettre à jour le cranet
+        $carnet = new Stdclass();
+        $carnet->image_carnet = 'carnets/'.$name_folder.'/'.$data['upload_data']['file_name'];
+        $result = $this->carnetvoyage->modify($carnet,$_REQUEST['id_carnet']);
+        
+        
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
 }
