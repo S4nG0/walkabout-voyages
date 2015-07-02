@@ -16,7 +16,8 @@
                     <td style="width: 30%">Description</td>
                     <td>Pays</td>
                     <td>Ville</td>
-                    <td>Modifier la destination</td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
@@ -28,6 +29,7 @@
                         <td><?php echo $pays[$key]->nom ?></td>
                         <td><?php echo $pays[$key]->ville ?></td>
                         <td><input type="button" value="Modifier destination" onclick="document.location='<?php echo base_url()."walkadmin/destinationadmin/detailTravel/".$pays[$key]->idDestination ?>'"></td>
+                        <td><input type="button" value="Ajouter une date" onclick="document.location='<?php echo base_url()."walkadmin/voyageadmin/addDate/".$pays[$key]->idDestination ?>'"></td>
                     </tr>
                 <?php
                     }

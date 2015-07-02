@@ -19,7 +19,13 @@ if (isset($error)) {
                                 <div class="form-group">
                                     <select class="form-control" name="pays" autofocus>
                                         <?php foreach($pays as $paysActuel){ ?>
-                                            <option value="<?php echo $paysActuel->idPays?>"><?php echo $paysActuel->nom?></option>
+                                            <option value="<?php echo $paysActuel->idPays?>"
+                                                <?php if(isset($destination[0])){
+                                                    if($destination[0]->idPays==$paysActuel->idPays)
+                                                        echo 'selected';
+                                                } ?>>
+                                                <?php echo $paysActuel->nom?>
+                                            </option>
                                         <?php } ?>
                                     </select>
                                 </div>

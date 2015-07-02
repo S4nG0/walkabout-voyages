@@ -28,8 +28,8 @@ class Destinationadmin  extends CI_Controller{
                     "coordonnees" => $this->input->post('coordonnees')
                 );
                 $config =  array(
-                    'upload_path'     => './assets/images/destinations/',
-                    'upload_url'      => base_url().'/assets/images/destinations/',
+                    'upload_path'     => './assets/images/',
+                    'upload_url'      => base_url().'/assets/images/',
                     'allowed_types'   => "gif|jpg|png",
                     'overwrite'       => TRUE,
                     'max_size'        => "450000",
@@ -81,6 +81,7 @@ class Destinationadmin  extends CI_Controller{
     }
 
     public function ListeDestination(){
+        connecte_admin($this->session->userdata('admin'));
         $data['pays']=$this->destination->get_infos_destination();
         $this->load->view('wadmin/template/header');
         $this->load->view('wadmin/ListeDestination',$data);
