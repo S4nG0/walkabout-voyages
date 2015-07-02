@@ -342,6 +342,25 @@ body.espace-voyageur {
     .content.edit-article {
         padding: 50px 0;
 
+        .article-header {
+            display: table;
+            margin-bottom: 25px;
+
+            h2 {
+                display: inline-block;
+                margin-right: 15px;
+                vertical-align: middle;
+            }
+
+            .button {
+                display: inline-block;
+                margin-right: 0;
+                margin-left: auto;
+                vertical-align: middle;
+            }
+
+        }
+
         .article {
             margin-bottom: 25px;
 
@@ -389,6 +408,13 @@ body.espace-voyageur {
                     }
                 }
             }
+        }
+
+        .button {
+            display: block;
+            width: 100px;
+            margin-right: 0;
+            margin-left: auto;
         }
     }
 
