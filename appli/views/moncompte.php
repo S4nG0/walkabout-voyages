@@ -13,12 +13,23 @@ $page = "moncompte";
         <div class="row noPadding">
             <div class="big-title-wrapper">
                 <div class="big-title">
-                    <h1>Espace voyageur</h1>
+                    <h1 class="sep">Espace voyageur</h1>
                     <div class="profile-picture">
-                        <img src="<?php echo img_url($user->photo); ?>" alt="<?php echo $user->prenom; ?>">
+                        <figure>
+                            <img src="<?php echo img_url($user->photo); ?>" alt="<?php echo $user->prenom; ?>">
+                            <figcaption>
+                                <div class="caption-content">
+                                    <a class="file-upload" href="#">
+                                        <i class="fa fa-photo"></i>
+                                        <p>Modifier</p>
+                                        <input type="file" class="input-upload hidden" name="profile-pic-upload" id="profile-pic-upload">
+                                    </a>
+                                </div>
+                            </figcaption>
+                        </figure>
                     </div>
                     <p>
-                        Bonjour <?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span>"; ?> !
+                        Bonjour <?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span>"; ?>
                     </p>
                 </div>
             </div>
