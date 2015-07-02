@@ -469,8 +469,70 @@ body.espace-voyageur {
                 }
             }
 
-            .button {
-                margin-top: 25px;
+            figure {
+                position: relative;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    @include transition(all 300ms ease-out);
+                }
+
+                figcaption {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 25% 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(240, 192, 65, 0.85);
+                    @include opacity(0);
+                    @include transition(all 300ms ease-out);
+                    text-align: center;
+
+                    .caption-content {
+                        position: absolute;
+                        top: 60%;
+                        left: 50%;
+                        margin-top: -40px;
+                        margin-left: -100px;
+                        width: 200px;
+                        @include translate(0, 15px);
+                        @include transition(all 300ms ease-in-out);
+
+                        a {
+                            display: block;
+                            color: $noir;
+                            text-decoration: none;
+                            @include transition(300ms all ease-in-out);
+
+                            i {
+                                font-size: 24px;
+                            }
+
+                            p {
+                                margin-top: 10px;
+                                color: $noir;
+                                text-transform: uppercase;
+                                font-size: 14px;
+                                font-weight: 600;
+                                @include transition(300ms all ease-in-out);
+                            }
+                        }
+                    }
+                }
+            }
+            figure:hover {
+                img {
+                    @include scale(1.1);
+                }
+                figcaption {
+                    @include opacity(1);
+                    .caption-content {
+                        @include translate(0, 0);
+                    }
+                }
             }
 
             &:hover {
