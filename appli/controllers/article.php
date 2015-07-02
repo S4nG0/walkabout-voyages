@@ -70,7 +70,7 @@ class Article extends CI_Controller {
                 echo 'il est déjà tout en bas!';
             }
             
-            //header('Location: ' . $_SERVER['HTTP_REFERER'] );
+            header('Location: ' . $_SERVER['HTTP_REFERER'] );
         }
         
         public function up($id = 0){
@@ -102,7 +102,7 @@ class Article extends CI_Controller {
                 echo 'il est déjà tout en haut!';
             }
             
-            //header('Location: ' . $_SERVER['HTTP_REFERER'] );
+            header('Location: ' . $_SERVER['HTTP_REFERER'] );
         }
         
         public function creer($idCarnet = 0){
