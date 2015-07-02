@@ -1,5 +1,5 @@
 <?php
-$page = "moncompte";
+$page = "moncarnet";
 ?>
 
 <body class="espace-voyageur">
