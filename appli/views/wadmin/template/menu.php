@@ -51,13 +51,16 @@
                         <a href="<?php echo base_url() . 'walkadmin/booking'; ?>"><i class="fa fa-shopping-cart fa-fw"></i> Réservations</a>
                     </li>
                     <li>
+                        <a href="<?php echo base_url() . 'walkadmin/administration/ajoutAdmin'; ?>"><i class="fa fa-support fa-fw"></i> Ajouter un administrateur</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url() . 'walkadmin/destinationadmin/ajoutDestination'; ?>"><i class="fa fa-support fa-fw"></i> Ajouter une destination</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url() . 'walkadmin/destinationadmin/ListeDestination'; ?>"><i class="fa fa-support fa-fw"></i> Liste des destinations</a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>"><i class="fa fa-support fa-fw"></i> Contacts</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url() . 'walkadmin/droitadmin/ajoutAdmin'; ?>"><i class="fa fa-support fa-fw"></i> Ajout Administrateur</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url() . 'walkadmin/droitadmin/ajoutDestination'; ?>"><i class="fa fa-support fa-fw"></i> Ajout Destination</a>
                     </li>
                     <!--<li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
