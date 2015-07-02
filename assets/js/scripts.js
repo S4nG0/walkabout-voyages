@@ -651,7 +651,11 @@ $(document).ready(function () {
     $('.file-upload').on('click', function(e){
         e.preventDefault();
         $('.input-upload').click();
-    })
+    });
+    
+    $('.input-upload').on('change',function(){
+        $('.upload-cover').submit();
+    });
 
     $(window).on('resize', function () {
         equalheight('.sameHeight');
