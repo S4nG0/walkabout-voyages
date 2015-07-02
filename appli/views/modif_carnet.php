@@ -48,10 +48,10 @@ $page = "moncarnet";
                                 <p><?php echo $article->etat; ?></p>
                             </div>
                             <div class="article-block controls">
-                                <a href="#" title="Modifier">
+                                <a href="<?php echo base_url().'article/modifier/'.$article->idArticles; ?>" title="Modifier">
                                     <i class="fa fa-pencil-square-o"></i>
                                 </a>
-                                <a href="#" title="Supprimer">
+                                <a href="<?php echo base_url().'article/delete/'.$article->idArticles; ?>" title="Supprimer">
                                     <i class="fa fa-trash-o"></i>
                                 </a>
                             </div>
