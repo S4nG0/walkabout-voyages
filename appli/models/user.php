@@ -78,5 +78,16 @@ class User extends CI_Model {
         
         return $result;
     }
+    
+    public function modify($data = '', $id = 0){
+        
+        if($data == '' || $id == 0){
+            return false;
+        }
+        $result =    $this->db->where('idUsers', $id);
+                     $this->db->update($this->table, $data); 
+                     
+        return $result;
+    }
 
 }

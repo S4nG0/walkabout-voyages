@@ -9,7 +9,7 @@ $page = "moncompte";
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>
         </div>
-
+        
         <div class="row noPadding">
             <div class="big-title-wrapper">
                 <div class="big-title">
@@ -22,12 +22,15 @@ $page = "moncompte";
                                     <a class="file-upload" href="#">
                                         <i class="fa fa-photo"></i>
                                         <p>Modifier</p>
-                                        <input type="file" class="input-upload hidden" name="profile-pic-upload" id="profile-pic-upload">
                                     </a>
                                 </div>
                             </figcaption>
                         </figure>
                     </div>
+                    <?php echo form_open_multipart('/upload_file/user'); ?>
+                        <input type="file" name="userimage" class="input-upload hidden"/>
+                        <input type="submit" class="submit-cover hidden"/>
+                    <?php echo  form_close(); ?>
                     <p>
                         Bonjour <?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span>"; ?>
                     </p>
