@@ -192,6 +192,9 @@ strong {
     border: 5px solid $jaune-or;
     @include border-radius(100px);
     overflow: hidden;
+    background: #ccc;
+    opacity: 0.99;
+
     img {
         width: 100%;
     }
