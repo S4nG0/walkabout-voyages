@@ -642,11 +642,16 @@ $(document).ready(function () {
                     maxFileSizeError: 'Le fichier séléctionné est trop gros!'
                 },
                 uploadCompleted: function ($el, data) {
-                    
+
                 }
             }
         }
     });
+
+    $('.file-upload').on('click', function(e){
+        e.preventDefault();
+        $('.input-upload').click();
+    })
 
     $(window).on('resize', function () {
         equalheight('.sameHeight');
