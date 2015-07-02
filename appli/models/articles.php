@@ -66,6 +66,32 @@ class Articles extends CI_Model {
         return $articles;
     }
     
+    public function modify($data = '', $id = 0){
+        
+        if($data == '' || $id == 0){
+            return false;
+        }
+        $result =    $this->db->where('idArticles', $id);
+                     $this->db->update($this->table, $data); 
+                     
+        return $result;
+    }
+    
+    public function getCarnetFromOrdre($ordre = 0,$id_carnet = 0){
+        if($ordre == 0 || $id_carnet == 0){
+            return false;
+        }
+        
+        $article = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('ordre', $ordre)
+                           ->where('idCarnet', $id_carnet)
+                           ->get()
+                           ->result();
+        
+        return $article;
+    }
+    
     public function creer($article){
         
         $result = $this->db->insert($this->table, $article); 

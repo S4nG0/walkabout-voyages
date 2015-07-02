@@ -41,6 +41,70 @@ class Article extends CI_Controller {
             $this->load->view('template/footer');
         }
         
+        public function down($id = 0){
+            if($id == 0){
+                return false;
+            } 
+            $data['connecte'] = connecte($this->session->userdata('user')[0]);
+            if($data['connecte'] == false){
+                redirect('/connexion');
+            }
+            $data['article'] = $this->articles->constructeur($id)[0];
+            $data['user'] = $this->session->userdata('user')[0];
+            $data['carnet'] = $this->carnetvoyage->constructeur($data['article']->idCarnet);
+            if($data['carnet'][0]->idUsers != $data['user']->idUsers){
+                redirect('/moncompte');
+            }
+            
+            $data['title'] = "Up de l'article";
+            $max = $this->articles->getMaxOrdre($data['article']->idCarnet)[0]->max_order;
+            if($data['article']->ordre != $max){
+                $data['article']->ordre ++;
+                $article_down = $this->articles->getCarnetFromOrdre($data['article']->ordre,$data['article']->idCarnet)[0];
+                $article_down->ordre --;
+                
+                $this->articles->modify($data['article'],$data['article']->idArticles);
+                $this->articles->modify($article_down,$article_down->idArticles);
+                
+            }else{
+                echo 'il est déjà tout en bas!';
+            }
+            
+            //header('Location: ' . $_SERVER['HTTP_REFERER'] );
+        }
+        
+        public function up($id = 0){
+            if($id == 0){
+                return false;
+            } 
+            $data['connecte'] = connecte($this->session->userdata('user')[0]);
+            if($data['connecte'] == false){
+                redirect('/connexion');
+            }
+            $data['article'] = $this->articles->constructeur($id)[0];
+            $data['user'] = $this->session->userdata('user')[0];
+            $data['carnet'] = $this->carnetvoyage->constructeur($data['article']->idCarnet);
+            if($data['carnet'][0]->idUsers != $data['user']->idUsers){
+                redirect('/moncompte');
+            }
+            
+            $data['title'] = "Up de l'article";
+            
+            if($data['article']->ordre != 1){
+                $data['article']->ordre --;
+                $article_down = $this->articles->getCarnetFromOrdre($data['article']->ordre,$data['article']->idCarnet)[0];
+                $article_down->ordre ++;
+                
+                $this->articles->modify($data['article'],$data['article']->idArticles);
+                $this->articles->modify($article_down,$article_down->idArticles);
+                
+            }else{
+                echo 'il est déjà tout en haut!';
+            }
+            
+            //header('Location: ' . $_SERVER['HTTP_REFERER'] );
+        }
+        
         public function creer($idCarnet = 0){
             if($idCarnet == 0){
                 return false;
