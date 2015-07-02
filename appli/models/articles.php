@@ -30,6 +30,7 @@ class Articles extends CI_Model {
         $articles = $this->db->select('*')
                            ->from($this->table)
                            ->where('idCarnet', $id_carnet)
+                           ->order_by("ordre", "ASC")
                            ->get()
                            ->result();
         
