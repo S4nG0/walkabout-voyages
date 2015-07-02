@@ -4818,8 +4818,88 @@ body.espace-voyageur .article-aside .thumbnail .caption h3 {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-body.espace-voyageur .article-aside .thumbnail .button {
-  margin-top: 25px;
+body.espace-voyageur .article-aside .thumbnail figure {
+  position: relative;
+  overflow: hidden;
+}
+body.espace-voyageur .article-aside .thumbnail figure img {
+  width: 100%;
+  height: 100%;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+body.espace-voyageur .article-aside .thumbnail figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 25% 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 192, 65, 0.85);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  text-align: center;
+}
+body.espace-voyageur .article-aside .thumbnail figure figcaption .caption-content {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -100px;
+  width: 200px;
+  -moz-transform: translate(0, 15px);
+  -ms-transform: translate(0, 15px);
+  -webkit-transform: translate(0, 15px);
+  transform: translate(0, 15px);
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.espace-voyageur .article-aside .thumbnail figure figcaption .caption-content a {
+  display: block;
+  color: #242424;
+  text-decoration: none;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.espace-voyageur .article-aside .thumbnail figure figcaption .caption-content a i {
+  font-size: 24px;
+}
+body.espace-voyageur .article-aside .thumbnail figure figcaption .caption-content a p {
+  margin-top: 10px;
+  color: #242424;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.espace-voyageur .article-aside .thumbnail figure:hover img {
+  -moz-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+body.espace-voyageur .article-aside .thumbnail figure:hover figcaption {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+body.espace-voyageur .article-aside .thumbnail figure:hover figcaption .caption-content {
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 body.espace-voyageur .article-aside .thumbnail:hover {
   border-color: #f0c041;

@@ -86,7 +86,17 @@ $page = "moncarnet";
                             <div class="caption">
                                 <h3>Image de couverture</h3>
                             </div>
-                            <a class="no-style" href="#"><img src="<?php echo img_url($carnet[0]->image_carnet);  ?>" alt="Image à la une" class="img-responsive travel-log-thumbnail"></a>
+                            <figure>
+                                <img src="<?php echo img_url($carnet[0]->image_carnet);  ?>" alt="Image à la une" class="img-responsive travel-log-thumbnail">
+                                <figcaption>
+                                    <div class="caption-content">
+                                        <a href="#">
+                                            <i class="fa fa-picture-o"></i>
+                                            <p>Changer la photo</p>
+                                        </a>
+                                    </div>
+                                </figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>
