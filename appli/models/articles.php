@@ -35,5 +35,15 @@ class Articles extends CI_Model {
         
         return $articles;
     }
-
+    
+    public function delete($data = ''){
+        
+        if($data == ''){
+            return false;
+        }
+        
+        $result = $this->db->delete($this->table, array('idArticles' => $data)); 
+        
+        return $result;
+    }
 }
