@@ -95,8 +95,8 @@ class Carnets_de_voyage extends CI_Controller {
             $this->load->view('template/footer');
         }
         
-        public function modifier($id = 0){
-            if($id == 0){
+        public function modifier($id = ""){
+            if($id == ""){
                 return false;
             } 
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
@@ -104,10 +104,10 @@ class Carnets_de_voyage extends CI_Controller {
             if($data['connecte'] == false){
                 redirect('/connexion');
             }
-            $data['carnet'] = $this->carnetvoyage->constructeur($id);
+            $data['carnet'] = $this->carnetvoyage->getFromName($id);
             $data['user'] = $this->session->userdata('user')[0];
             if($data['carnet'][0]->idUsers != $data['user']->idUsers){
-                redirect('/moncompte');
+                //redirect('/moncompte');
             }
             
             $data['title'] = "Modification du carnet";

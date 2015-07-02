@@ -94,7 +94,9 @@ $page = "moncarnet";
                                             <i class="fa fa-picture-o"></i>
                                             <p>Changer la photo</p>
                                         </a>
-                                        <input type="file" name="cover-image" id="cover-image" class="input-upload hidden">
+                                        <form class="upload-cover" action="<?php echo base_url().'upload/cover'; ?>" method="post">
+                                            <input type="file" name="cover-image" id="cover-image" class="input-upload hidden">
+                                        </form>
                                     </div>
                                 </figcaption>
                             </figure>

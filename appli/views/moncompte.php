@@ -104,7 +104,7 @@ $page = "moncompte";
                                                         <div class="col-md-3">
                                                             <div class="buttons-wrapper">
                                                                 <a href="'.base_url().'carnets-de-voyage/'. slugify($carnet->titre) .'" class="button">Voir le carnet</a>
-                                                                <a href="'.base_url().'carnets-de-voyage/modifier/'.$carnet->idCarnetDeVoyage.'" class="button">Modifier le carnet</a>
+                                                                <a href="'.base_url().'carnets-de-voyage/modifier/'. slugify($carnet->titre) .'" class="button">Modifier le carnet</a>
                                                             </div>
                                                         </div>
                                                     </div>
