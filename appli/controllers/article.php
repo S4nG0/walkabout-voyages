@@ -49,13 +49,25 @@ class Article extends CI_Controller {
             if($data['connecte'] == false){
                 redirect('/connexion');
             }
+            $data['user'] = $this->session->userdata('user')[0];
             $data['carnet'] = $this->carnetvoyage->constructeur($idCarnet);
             if($data['carnet'][0]->idUsers != $data['user']->idUsers){
                 redirect('/moncompte');
             }
             
             $data['title'] = "Création de l'article";
+            $order = $this->articles->getMaxOrdre($idCarnet)[0]->max_order + 1;
             
+            $article = new stdClass();
+            $article->idCarnet = $idCarnet;
+            $article->date = date('Y-m-d');
+            $article->ordre = $order;
+            
+            $result = $this->articles->creer($article);
+            
+            if($result != false){
+                redirect('/article/modifier/'.$result);
+            }
             
         }
         
