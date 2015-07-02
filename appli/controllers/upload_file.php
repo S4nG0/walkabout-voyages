@@ -88,18 +88,22 @@ class Upload_file extends CI_Controller {
 
         //if not successful, set the error message
         if (!$this->upload->do_upload('userimage')) {
-            $data = array('msg' => $this->upload->display_errors());
+            $upload = array('msg' => $this->upload->display_errors());
         } else { //else, set the success message
-            $data = array('msg' => "Upload success!");
+            $upload = array('msg' => "Upload success!");
 
-            $data['upload_data'] = $this->upload->data();
+            $upload['upload_data'] = $this->upload->data();
         }
         
         //On va mettre à jour le cranet
-        $carnet = new Stdclass();
-        $carnet->image_carnet = 'carnets/'.$name_folder.'/'.$data['upload_data']['file_name'];
-        $result = $this->carnetvoyage->modify($carnet,$_REQUEST['id_carnet']);
+        $user = new Stdclass();
+        $user->photo = 'users/'.$name_folder.'/'.$upload['upload_data']['file_name'];
+        $result = $this->user->modify($user,$data['user']->idUsers);
         
+        //On réactualise l'utilisateur
+        $user = $this->user->constructeur($data['user']->idUsers);
+        $this->session->unset_userdata('user');
+        $this->session->set_userdata('user',$user);
         
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
