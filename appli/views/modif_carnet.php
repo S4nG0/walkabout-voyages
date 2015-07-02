@@ -34,7 +34,7 @@ $page = "moncarnet";
                 <div class="article-header">
                     <div class="col-sm-12">
                         <h2 class="no-sep">Articles</h2>
-                        <a href="#" class="button">
+                        <a href="<?php echo base_url().'article/creer/'.$carnet[0]->idCarnetDeVoyage; ?>" class="button">
                             <i class="fa fa-plus"></i>
                             Ajouter
                         </a>
