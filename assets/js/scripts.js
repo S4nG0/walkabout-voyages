@@ -624,14 +624,11 @@ $(document).ready(function () {
     });
 
     var titleEditor = new MediumEditor('.medium-title-editor', {
-        placeholder: {
-            text: 'Cliquez pour ajouter votre titre',
-            style: 'text-align: center'
-        }
+        placeholder:false
     });
 
     $('.medium-editor-image').mediumInsert({
-        editor: new MediumEditor('.medium-editor-image'), // (MediumEditor) Instance of MediumEditor
+        editor: new MediumEditor('.medium-editor-image',{placeholder:false}), // (MediumEditor) Instance of MediumEditor
         enabled: true,
         addons: { // (object) Addons configuration
             images: { // (object) Image addon configuration

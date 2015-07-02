@@ -23,8 +23,8 @@ $page = "article";
                 <!-- begin:article -->
                 <div class="row noPadding">
                     <article style="max-height: none;" class="tb-article">
-                        <div class="tb-article--content medium-editor-image">
-                            <p></p>
+                        <div class="tb-article--content medium-editor-image" placeholder="Taper le texte de l'article ici ...">
+
                         </div>
                     </article>
                 </div>
