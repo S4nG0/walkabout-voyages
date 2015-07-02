@@ -91,4 +91,15 @@ class Carnetvoyage extends CI_Model {
         
     }
     
+    public function modify($data = '', $id = 0){
+        
+        if($data == '' || $id == 0){
+            return false;
+        }
+        $result =    $this->db->where('idCarnetDeVoyage', $id);
+                     $this->db->update($this->table, $data); 
+                     
+        return $result;
+    }
+    
 }

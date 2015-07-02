@@ -654,7 +654,7 @@ $(document).ready(function () {
     });
     
     $('.input-upload').on('change',function(){
-        $('.upload-cover').submit();
+        $('.submit-cover').click();
     });
 
     $(window).on('resize', function () {
