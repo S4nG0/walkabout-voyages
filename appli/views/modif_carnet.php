@@ -90,10 +90,11 @@ $page = "moncarnet";
                                 <img src="<?php echo img_url($carnet[0]->image_carnet);  ?>" alt="Image à la une" class="img-responsive travel-log-thumbnail">
                                 <figcaption>
                                     <div class="caption-content">
-                                        <a href="#">
+                                        <a class="file-upload" href="#">
                                             <i class="fa fa-picture-o"></i>
                                             <p>Changer la photo</p>
                                         </a>
+                                        <input type="file" name="cover-image" id="cover-image" class="input-upload hidden">
                                     </div>
                                 </figcaption>
                             </figure>
