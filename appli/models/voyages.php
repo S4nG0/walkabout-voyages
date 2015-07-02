@@ -55,4 +55,11 @@ class Voyages extends CI_Model {
          
         return $prix;
     }
+
+    public function insertVoyage($data){
+        if($data=='')
+            return false;
+        $voyage= $this->db->insert($this->table,$data);
+        return $voyage;
+    }
 }
