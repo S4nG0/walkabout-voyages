@@ -4505,8 +4505,9 @@ body.espace-voyageur .main .big-title-wrapper .big-title p {
 body.espace-voyageur .main .big-title-wrapper .big-title .button {
   display: inline-block;
   margin-top: 25px;
+  margin-right: 15px;
 }
-*[contenteditable="true"]:empty:before {
+body.espace-voyageur .main .big-title-wrapper .big-title *[contenteditable="true"]:empty:before {
   content: attr(placeholder);
   position: relative;
   display: block;
@@ -5036,7 +5037,7 @@ strong {
   border: 1px solid #f0c041;
 }
 
-.lead, blockquote{
+.lead, blockquote {
   padding: 0;
   margin: 0;
   color: #f0c041;
@@ -5046,6 +5047,14 @@ strong {
   line-height: 36px;
   text-align: center;
   border-left: none;
+}
+.lead:before, blockquote:before {
+  content: '\201C';
+  position: absolute;
+}
+.lead:after, blockquote:after {
+  content: '\201D';
+  position: absolute;
 }
 
 .published {
@@ -5571,14 +5580,6 @@ body.single-carnet .content {
   display: table;
 }
 .tb-article .tb-article--content p {
-  max-width: 600px;
-  padding-top: 50px;
-  margin: 0 auto;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 30px;
-}
-.medium-editor-image {
   max-width: 600px;
   padding-top: 50px;
   margin: 0 auto;
@@ -6203,10 +6204,3 @@ body.single-carnet .content {
 }
 
 /*# sourceMappingURL=global.css.map */
-
-
-
-
-.medium-editor-image p{
-    padding-top : 0 !important;
-}
