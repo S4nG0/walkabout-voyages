@@ -4764,8 +4764,8 @@ body.espace-voyageur .content.edit-article .article .travel-log__article .articl
 }
 body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls .controls-wrapper .reorder-article {
   display: table-cell;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
   vertical-align: middle;
 }
 body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls .controls-wrapper .reorder-article a {
@@ -4779,8 +4779,8 @@ body.espace-voyageur .content.edit-article .article .travel-log__article .articl
 body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls .controls-wrapper a {
   display: table-cell;
   vertical-align: middle;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
   color: #fff;
   font-size: 1.75em;
   text-align: center;
