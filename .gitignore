@@ -1,5 +1,7 @@
 .DS_Store
 
+.sass-cache/
+
 appli/cache/*
 !appli/cache/index.html
 !appli/cache/.htaccess
