@@ -15,10 +15,10 @@ $page = "moncarnet";
                 <h1 class="sep"><?php echo $carnet[0]->titre; ?></h1>
                 <?php echo form_open(); ?>
                 <p class="travel-log__description" contenteditable="true" name="description" placeholder="Insérer une description de votre voyage..."><?php echo $carnet[0]->description; ?></p>
-                <a href="#" class="button">
+                <button type="submit" href="#" class="button">
                     <i class="fa fa-check-square-o"></i>
                     Enregistrer les modifications
-                </a>
+                </button>
                 <a class="button" href="<?php echo base_url(); ?>carnets-de-voyage/<?php echo slugify($carnet[0]->titre) ?>">
                     <i class="fa fa-eye"></i>
                     Voir le carnet
@@ -29,12 +29,23 @@ $page = "moncarnet";
     </div>
 
     <div class="content edit-article">
-        <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="article-header">
+                    <div class="col-sm-12">
+                        <h2 class="no-sep">Articles</h2>
+                        <a href="#" class="button">
+                            <i class="fa fa-plus"></i>
+                            Ajouter
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-8">
 
-                    <?php 
-                    foreach($articles as $article){ 
+                    <?php
+                    foreach($articles as $article){
                         $texte = strip_tags($article->texte);
                         $texte = substr($texte, 0, 95).' ... ' ;
                     ?>
