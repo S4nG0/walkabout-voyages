@@ -4751,20 +4751,45 @@ body.espace-voyageur .content.edit-article .article .travel-log__article .articl
 body.espace-voyageur .content.edit-article .article .travel-log__article .article-block p {
   margin: 0;
 }
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.text {
+  width: 80%;
+}
 body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls {
+  width: 20%;
   text-align: right;
 }
-body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 15px;
-  font-size: 1.75em;
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls .controls-wrapper {
+  display: table;
+  width: 100%;
 }
-body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls a i {
-  display: inline-block;
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls .controls-wrapper .reorder-article {
+  display: table-cell;
+  padding-right: 5px;
+  padding-left: 5px;
   vertical-align: middle;
 }
-body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls a:hover, body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls a:focus {
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls .controls-wrapper .reorder-article a {
+  display: block;
+  padding-right: 0;
+  padding-left: 0;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls .controls-wrapper .reorder-article a:first-child i {
+  margin-bottom: 10px;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls .controls-wrapper a {
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #fff;
+  font-size: 1.75em;
+  text-align: center;
+  text-decoration: none;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls .controls-wrapper a i {
+  display: inline-block;
+}
+body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls .controls-wrapper a:hover, body.espace-voyageur .content.edit-article .article .travel-log__article .article-block.controls .controls-wrapper a:focus {
   color: #f0c041;
 }
 body.espace-voyageur .content.edit-article .button {

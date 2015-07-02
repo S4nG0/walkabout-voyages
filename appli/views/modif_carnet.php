@@ -15,7 +15,7 @@ $page = "moncarnet";
                 <h1 class="sep"><?php echo $carnet[0]->titre; ?></h1>
                 <?php echo form_open(); ?>
                 <p class="travel-log__description" contenteditable="true" name="description" placeholder="Insérer une description de votre voyage..."><?php echo $carnet[0]->description; ?></p>
-                <button type="submit" href="#" class="button">
+                <button type="submit" class="button">
                     <i class="fa fa-check-square-o"></i>
                     Enregistrer les modifications
                 </button>
@@ -59,12 +59,18 @@ $page = "moncarnet";
                                 <p><?php echo $article->etat; ?></p>
                             </div>
                             <div class="article-block controls">
-                                <a href="<?php echo base_url().'article/modifier/'.$article->idArticles; ?>" title="Modifier">
-                                    <i class="fa fa-pencil-square-o"></i>
-                                </a>
-                                <a href="<?php echo base_url().'article/delete/'.$article->idArticles; ?>" title="Supprimer">
-                                    <i class="fa fa-trash-o"></i>
-                                </a>
+                                <div class="controls-wrapper">
+                                    <div class="reorder-article">
+                                        <a href="#" title="Remonter l'article"><i class="fa fa-chevron-up"></i></a>
+                                        <a href="#" title="Descendre l'article"><i class="fa fa-chevron-down"></i></a>
+                                    </div>
+                                    <a href="<?php echo base_url().'article/modifier/'.$article->idArticles; ?>" title="Modifier">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="<?php echo base_url().'article/delete/'.$article->idArticles; ?>" title="Supprimer">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

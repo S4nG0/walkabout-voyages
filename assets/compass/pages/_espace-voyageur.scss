@@ -388,24 +388,57 @@ body.espace-voyageur {
                     }
                 }
 
+                .article-block.text {
+                    width: 80%;
+                }
+
                 .article-block.controls {
+                    width: 20%;
                     text-align: right;
 
-                    a {
-                        color: $blanc;
-                        text-decoration: none;
-                        margin-right: 15px;
-                        font-size: 1.75em;
+                    .controls-wrapper {
+                        display: table;
+                        width: 100%;
 
-                        i {
-                            display: inline-block;
+                        .reorder-article {
+                            display: table-cell;
+                            padding-right: 5px;
+                            padding-left: 5px;
                             vertical-align: middle;
+
+                            a {
+                                display: block;
+                                padding-right: 0;
+                                padding-left: 0;
+
+                                &:first-child {
+                                    i {
+                                        margin-bottom: 10px;
+                                    }
+                                }
+                            }
                         }
 
-                        &:hover, &:focus {
-                            color: $jaune-or;
+                        a {
+                            display: table-cell;
+                            vertical-align: middle;
+                            padding-right: 10px;
+                            padding-left: 10px;
+                            color: $blanc;
+                            font-size: 1.75em;
+                            text-align: center;
+                            text-decoration: none;
+
+                            i {
+                                display: inline-block;
+                            }
+
+                            &:hover, &:focus {
+                                color: $jaune-or;
+                            }
                         }
                     }
+
                 }
             }
         }
