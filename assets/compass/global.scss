@@ -227,6 +227,16 @@ strong {
     line-height: 36px;
     text-align: center;
     border-left: none;
+
+    &:before {
+        content: '\201C';
+        position: absolute;
+    }
+
+    &:after {
+        content: '\201D';
+        position: absolute;
+    }
 }
 
 .published {
