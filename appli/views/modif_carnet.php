@@ -61,8 +61,8 @@ $page = "moncarnet";
                             <div class="article-block controls">
                                 <div class="controls-wrapper">
                                     <div class="reorder-article">
-                                        <a href="#" title="Remonter l'article"><i class="fa fa-chevron-up"></i></a>
-                                        <a href="#" title="Descendre l'article"><i class="fa fa-chevron-down"></i></a>
+                                        <a href="<?php echo base_url().'article/up/'.$article->idArticles; ?>" title="Remonter l'article"><i class="fa fa-chevron-up"></i></a>
+                                        <a href="<?php echo base_url().'article/down/'.$article->idArticles; ?>" title="Descendre l'article"><i class="fa fa-chevron-down"></i></a>
                                     </div>
                                     <a href="<?php echo base_url().'article/modifier/'.$article->idArticles; ?>" title="Modifier">
                                         <i class="fa fa-pencil"></i>
