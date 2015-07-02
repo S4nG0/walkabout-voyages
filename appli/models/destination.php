@@ -51,12 +51,32 @@ class Destination extends CI_Model {
         return $destinations;
     }
 
+    public function get_infos_destination(){
+
+        $destinations = $this->db->select('*')
+            ->from($this->table)
+            ->join('pays','destination.idPays=pays.idPays')
+            ->get()
+            ->result();
+
+        return $destinations;
+    }
+
     public function insertDestination($data){
         if($data==''){
             return false;
         }
         $destinations = $this->db->insert($this->table, $data);
         return $destinations;
+    }
+
+    public function updateDestination($idDestination=0,$data=''){
+        if($data=='' || $idDestination==0){
+            return false;
+        }
+        $this->db->where('idDestination',$idDestination);
+        $destination=$this->db->update($this->table,$data);
+        return $destination;
     }
 
 }
