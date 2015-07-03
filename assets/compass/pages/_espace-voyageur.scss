@@ -658,8 +658,10 @@ body.espace-voyageur {
                     position: relative;
 
                     .medium-insert-buttons {
+                        position: absolute;
                         width: 100%;
-                        padding-top: 15px;
+                        padding-top: 18px;
+                        @include translateX(41%);
 
                         .medium-insert-buttons-show {
                             display: table-cell;
@@ -667,7 +669,7 @@ body.espace-voyageur {
                             width: 45px;
                             height: 45px;
                             @include border-radius(50%);
-                            background-color: transparent;
+                            background-color: $noir;
                             border-color: $blanc;
                             color: $blanc;
                             text-decoration: none;
@@ -680,11 +682,14 @@ body.espace-voyageur {
                         }
 
                         .medium-insert-buttons-addons {
+                            top: -45px;
+
                             .medium-insert-action {
                                 display: table;
                                 width: 45px;
                                 height: 45px;
                                 @include border-radius(50%);
+                                background-color: $noir;
                                 border-color: $blanc;
                                 color: $blanc;
                                 text-decoration: none;

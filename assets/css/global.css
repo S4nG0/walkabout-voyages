@@ -4996,8 +4996,13 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
   position: relative;
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin .medium-insert-buttons {
+  position: absolute;
   width: 100%;
-  padding-top: 15px;
+  padding-top: 18px;
+  -moz-transform: translateX(41%);
+  -ms-transform: translateX(41%);
+  -webkit-transform: translateX(41%);
+  transform: translateX(41%);
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-show {
   display: table-cell;
@@ -5007,7 +5012,7 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  background-color: transparent;
+  background-color: #242424;
   border-color: #fff;
   color: #fff;
   text-decoration: none;
@@ -5020,6 +5025,9 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
   color: #f0c041;
   border-color: #f0c041;
 }
+body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-addons {
+  top: -45px;
+}
 body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-addons .medium-insert-action {
   display: table;
   width: 45px;
@@ -5027,6 +5035,7 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  background-color: #242424;
   border-color: #fff;
   color: #fff;
   text-decoration: none;
