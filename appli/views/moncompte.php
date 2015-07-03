@@ -31,6 +31,7 @@ $page = "moncompte";
                         <input type="file" name="userimage" class="input-upload hidden"/>
                         <input type="submit" class="submit-cover hidden"/>
                     <?php echo  form_close(); ?>
+                        <span><?php if(gettype($upload) != "boolean")echo '<script> alert("'.strip_tags (html_entity_decode($upload)).'"); </script>';?></span>
                     <p>
                         Bonjour <?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span>"; ?>
                     </p>
@@ -108,7 +109,7 @@ $page = "moncompte";
                                             echo '<!-- begin:Travel-log-->
                                                 <div class="travel-log">
                                                         <div class="col-md-3">
-                                                            <div class="image-wrapper" style="background-image : url('.img_url($carnet->image_carnet).');"></div>
+                                                            <div class="image-wrapper" style="background-image : url('.img_url($carnet->image_carnet).');background-size:cover;"></div>
                                                         </div>
                                                         <div class="col-md-6 excerpt-wrapper">
                                                             <h3>'.$carnet->titre.'</h3>

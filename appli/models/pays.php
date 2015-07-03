@@ -31,6 +31,18 @@ class Pays extends CI_Model {
         return $pays;
     }
     
-    
-    
+    public function insertPays($data){
+        if($data=='')
+            return false;
+        $pays=$this->db->insert($this->table,$data);
+        return $pays;
+    }
+
+    public function updatePays($idPays,$data){
+        if($data=='')
+            return false;
+        $this->db->where('idPays',$idPays);
+        $pays=$this->db->update($this->table,$data);
+        return $pays;
+    }
 }

@@ -22,7 +22,24 @@ class Reservations extends CI_Model {
         
         return $reservations;
     }  
-    
+
+    public function getReservationAdmin($id= 0){
+        if($id == 0){
+            return false;
+        }
+
+        $reservations = $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays')
+            ->from($this->table)
+            ->join('voyage','reservation.idVoyage=voyage.idVoyage')
+            ->join('destination','destination.idDestination=voyage.idDestination')
+            ->join('pays','destination.idPays=pays.idPays')
+            ->where('idUsers', $id)
+            ->get()
+            ->result();
+
+        return $reservations;
+    }
+
     public function insert($data = ''){
         if($data == ''){
             return false;

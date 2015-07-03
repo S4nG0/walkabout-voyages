@@ -53,11 +53,9 @@ class Carnetvoyage extends CI_Model {
             return false;
         }
 
-        $name = str_replace('-', ' ', $name);
-
         $destination = $this->db->select('*')
                            ->from($this->table)
-                           ->like('titre', "$name")
+                           ->like('url', "$name")
                            ->limit(1)
                            ->get()
                            ->result();
@@ -89,6 +87,18 @@ class Carnetvoyage extends CI_Model {
             
         return $carnets;
         
+    }
+
+    public function get_carnet_for_user_join_destination($id=''){
+
+        $carnets = $this->db->select('carnetdevoyage.*,destination.nom AS nomDestination')
+            ->from($this->table)
+            ->join('destination','carnetdevoyage.idDestination=destination.idDestination')
+            ->where('idUsers', $id)
+            ->get()
+            ->result();
+
+        return $carnets;
     }
     
     public function modify($data = '', $id = 0){
