@@ -23,6 +23,7 @@ class Destinationadmin  extends CI_Controller{
                 $destination=array(
                     "idPays" => $this->input->post('pays'),
                     "titre" => $this->input->post('titre'),
+                    "url" => slugify($this->input->post('titre')),
                     "description" => $this->input->post('description'),
                     "ville" => $this->input->post('ville'),
                     "coordonnees" => $this->input->post('coordonnees')
