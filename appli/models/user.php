@@ -36,6 +36,15 @@ class User extends CI_Model {
         
         return $user;
     }
+
+    public function getAllUsers(){
+
+        $user = $this->db->select('*')
+                         ->from($this->table)
+                         ->get()
+                         ->result();
+        return $user;
+    }
     
     public function insert($data = ''){
         if($data == ''){

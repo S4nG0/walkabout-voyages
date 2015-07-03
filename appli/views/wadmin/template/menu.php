@@ -66,6 +66,9 @@
                         <a href="<?php echo base_url() . 'walkadmin/paysadministration/listePays'; ?>"><i class="fa fa-support fa-fw"></i> Liste des pays</a>
                     </li>
                     <li>
+                        <a href="<?php echo base_url() . 'walkadmin/utilisateuradministration/listeUser'; ?>"><i class="fa fa-support fa-fw"></i> Liste des utilisateurs</a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>"><i class="fa fa-support fa-fw"></i> Contacts</a>
                     </li>
 
