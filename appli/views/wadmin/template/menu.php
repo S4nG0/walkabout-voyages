@@ -60,6 +60,12 @@
                         <a href="<?php echo base_url() . 'walkadmin/destinationadmin/ListeDestination'; ?>"><i class="fa fa-support fa-fw"></i> Liste des destinations</a>
                     </li>
                     <li>
+                        <a href="<?php echo base_url() . 'walkadmin/paysadministration/addPays'; ?>"><i class="fa fa-support fa-fw"></i> Ajouter un pays</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url() . 'walkadmin/paysadministration/listePays'; ?>"><i class="fa fa-support fa-fw"></i> Liste des pays</a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>"><i class="fa fa-support fa-fw"></i> Contacts</a>
                     </li>
 

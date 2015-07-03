@@ -40,7 +40,9 @@ class Destinationadmin  extends CI_Controller{
                 if ( ! $this->upload->do_upload('banner')){
                     $data['error'] =$this->upload->display_errors();
                     $data['pays']=$this->pays->getPays();
+                    $data['admin'] = $this->session->userdata('admin');
                     $this->load->view('wadmin/template/header');
+                    $this->load->view('wadmin/template/menu', $data);
                     $this->load->view('wadmin/ajoutDestination',$data);
                     $this->load->view('wadmin/template/footer');
                 }
@@ -75,7 +77,9 @@ class Destinationadmin  extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         $data['pays']=$this->pays->getPays();
         $data['page']="add_travel";
+        $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/ajoutDestination',$data);
         $this->load->view('wadmin/template/footer');
     }
@@ -114,7 +118,9 @@ class Destinationadmin  extends CI_Controller{
             $data['pays']=$this->pays->getPays();
             $data['idDestination']=$idDestination;
             $data['page']="modif_travel";
+            $data['admin'] = $this->session->userdata('admin');
             $this->load->view('wadmin/template/header');
+            $this->load->view('wadmin/template/menu', $data);
             $this->load->view('wadmin/ajoutDestination',$data);
             $this->load->view('wadmin/template/footer');
         }
