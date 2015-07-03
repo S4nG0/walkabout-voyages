@@ -21,6 +21,7 @@ class Moncompte extends CI_Controller {
 	{
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $data['title'] = "Compte";
+            $data['upload'] = $this->session->flashdata('upload');
             if($data['connecte'] == false){
                 redirect('/connexion');
             }else{

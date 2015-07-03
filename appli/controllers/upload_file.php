@@ -70,6 +70,8 @@ class Upload_file extends CI_Controller {
         $name_folder = $data['user']->idUsers;
         //Dossier d'upload
         $config['upload_path'] = 'assets/images/users/'.$name_folder;
+        $config['max_width']  = '800';
+        $config['max_height']  = '800';
         
         //On vérifie si le dossier d'upload existe et si non on le crée
         if (!file_exists($config['upload_path'])) {
@@ -88,22 +90,22 @@ class Upload_file extends CI_Controller {
 
         //if not successful, set the error message
         if (!$this->upload->do_upload('userimage')) {
-            $upload = array('msg' => $this->upload->display_errors());
+            $this->session->set_flashdata('upload', $this->upload->display_errors());
         } else { //else, set the success message
-            $upload = array('msg' => "Upload success!");
+            $this->session->set_flashdata('upload', true);
 
             $upload['upload_data'] = $this->upload->data();
+            
+            //On va mettre à jour le cranet
+            $user = new Stdclass();
+            $user->photo = 'users/'.$name_folder.'/'.$upload['upload_data']['file_name'];
+            $result = $this->user->modify($user,$data['user']->idUsers);
+
+            //On réactualise l'utilisateur
+            $user = $this->user->constructeur($data['user']->idUsers);
+            $this->session->unset_userdata('user');
+            $this->session->set_userdata('user',$user);
         }
-        
-        //On va mettre à jour le cranet
-        $user = new Stdclass();
-        $user->photo = 'users/'.$name_folder.'/'.$upload['upload_data']['file_name'];
-        $result = $this->user->modify($user,$data['user']->idUsers);
-        
-        //On réactualise l'utilisateur
-        $user = $this->user->constructeur($data['user']->idUsers);
-        $this->session->unset_userdata('user');
-        $this->session->set_userdata('user',$user);
         
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }

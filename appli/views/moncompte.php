@@ -31,6 +31,7 @@ $page = "moncompte";
                         <input type="file" name="userimage" class="input-upload hidden"/>
                         <input type="submit" class="submit-cover hidden"/>
                     <?php echo  form_close(); ?>
+                        <span><?php if(gettype($upload) != "boolean")echo '<script> alert("'.strip_tags (html_entity_decode($upload)).'"); </script>';?></span>
                     <p>
                         Bonjour <?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span>"; ?>
                     </p>
