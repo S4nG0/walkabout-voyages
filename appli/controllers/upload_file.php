@@ -29,6 +29,8 @@ class Upload_file extends CI_Controller {
         
         //Dossier d'upload
         $config['upload_path'] = 'assets/images/carnets/'.$name_folder;
+        $config['min_width']  = '1200';
+        $config['min_height']  = '600';
         
         //On vérifie si le dossier d'upload existe et si non on le crée
         if (!file_exists($config['upload_path'])) {
@@ -46,17 +48,18 @@ class Upload_file extends CI_Controller {
 
         //if not successful, set the error message
         if (!$this->upload->do_upload('coverimage')) {
-            $data = array('msg' => $this->upload->display_errors());
+            $this->session->set_flashdata('upload', $this->upload->display_errors());
         } else { //else, set the success message
-            $data = array('msg' => "Upload success!");
-
+            $this->session->set_flashdata('upload', true);
+        
+            //On va mettre à jour le cranet
+            $carnet = new Stdclass();
+            $carnet->image_carnet = 'carnets/'.$name_folder.'/'.$data['upload_data']['file_name'];
+            $result = $this->carnetvoyage->modify($carnet,$_REQUEST['id_carnet']);
+        
             $data['upload_data'] = $this->upload->data();
         }
         
-        //On va mettre à jour le cranet
-        $carnet = new Stdclass();
-        $carnet->image_carnet = 'carnets/'.$name_folder.'/'.$data['upload_data']['file_name'];
-        $result = $this->carnetvoyage->modify($carnet,$_REQUEST['id_carnet']);
         
         
         header('Location: ' . $_SERVER['HTTP_REFERER'] );
