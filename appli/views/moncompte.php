@@ -108,7 +108,7 @@ $page = "moncompte";
                                             echo '<!-- begin:Travel-log-->
                                                 <div class="travel-log">
                                                         <div class="col-md-3">
-                                                            <div class="image-wrapper" style="background-image : url('.img_url($carnet->image_carnet).');"></div>
+                                                            <div class="image-wrapper" style="background-image : url('.img_url($carnet->image_carnet).');background-size:cover;"></div>
                                                         </div>
                                                         <div class="col-md-6 excerpt-wrapper">
                                                             <h3>'.$carnet->titre.'</h3>
