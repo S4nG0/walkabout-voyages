@@ -3,7 +3,7 @@ $page = "article";
 ?>
 
 <body class="espace-voyageur">
-    <?php echo form_open(base_url().'article/modifier/'.$article[0]->idArticles); ?>
+    <?php echo form_open_multipart(base_url().'article/modifier/'.$article[0]->idArticles); ?>
     <div class="main">
         <div class="container-fluid noPadding">
             <!-- Navbar -->
@@ -24,7 +24,7 @@ $page = "article";
             <div class="article-block">
                 <!-- begin:article -->
                 <div class="row noPadding content--article">
-                    <article class="tb-article">
+                    <article class="tb-article modif--article">
                         <div class="tb-article--content medium-editor-image" placeholder="Cliquez pour commencez à écrire...">
                             <?php echo $article[0]->texte; ?>
                         </div>

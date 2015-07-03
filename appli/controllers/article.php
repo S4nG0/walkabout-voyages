@@ -33,7 +33,7 @@ class Article extends CI_Controller {
             if($this->form_validation->run()){
                 $article = new stdClass();
                 $article->titre = $this->input->post('titre');
-                $article->texte = $this->input->post('content');
+                $article->texte = htmlspecialchars_decode($this->input->post('content'));
                 $this->articles->modify($article,$id);
                 redirect($_SERVER["HTTP_REFERER"]);
             }
@@ -166,6 +166,61 @@ class Article extends CI_Controller {
             $result = $this->articles->delete($id);
             
             header('Location: ' . $_SERVER['HTTP_REFERER'] );
+        }
+        
+        public function add_image($id = 0){
+            if($id == 0){
+                return false;
+            }
+            
+            $data['article'] = $this->articles->constructeur($id);
+            $data['carnet'] = $this->carnetvoyage->constructeur($data['article'][0]->idCarnet);
+            
+            $upload_path = 'assets/images/carnets/'.  slugify($data['carnet'][0]->titre).'/articles/';
+            
+            //On vérifie si le dossier d'upload existe et si non on le crée
+            if (!file_exists($upload_path)) {
+                //Création du dossier pour le carnet
+                
+                if(!mkdir($upload_path)){
+                    echo 'erreur lors de la création du dossier!';
+                }
+            }
+            $extension = explode('.',$_FILES['files']['name'][0])[1];
+            // set the filter image types
+            $allowed_types = ['jpg','jpeg','png'];
+            $file = $upload_path . $_FILES["files"]["name"][0];
+            
+            //On vérifie si ca existe!
+            $i = 1;
+            if(file_exists($file)){
+                $extension = explode('.',$file)[1];
+                $name = explode('.',$file)[0];
+                do{
+                    $file = $name.'('.$i.').'.$extension;
+                    $i++;
+                }while(file_exists($file));
+            }
+            
+            if(in_array($extension, $allowed_types)){
+                //On va gérer l'upload!
+                if (move_uploaded_file($_FILES["files"]["tmp_name"][0], $file)) {
+                    
+//                    $files = array();
+//                    $files[0] = array();
+//                    $files[0]['url'] = $file;
+//                    echo json_encode($files);
+                    
+                    $json = new stdClass();
+                    $json->files = array();
+                    $json->files[0] = array();
+                    $json->files[0]['url'] = $file;
+                    echo json_encode($json);
+                }
+            }else{
+                return false;
+            }
+            
         }
 
 }
