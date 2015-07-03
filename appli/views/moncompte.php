@@ -9,13 +9,13 @@ $page = "moncompte";
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>
         </div>
-        
+
         <div class="row noPadding">
             <div class="big-title-wrapper">
                 <div class="big-title">
                     <h1 class="sep">Espace voyageur</h1>
                     <div class="profile-picture">
-                        <figure>
+                        <figure class="effect">
                             <img src="<?php echo img_url($user->photo); ?>" alt="<?php echo $user->prenom; ?>">
                             <figcaption>
                                 <div class="caption-content">

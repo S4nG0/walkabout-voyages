@@ -11,7 +11,11 @@ Générales :
   ✔ Ajout newsletter en fancybox @done (15-06-30 15:43)
   ✔ Faire l'ajout des emails des personnes dans la newsletter @done (15-06-30 15:43)
   ☐ Faire un breadcrumbs
+<<<<<<< HEAD
+  ☐ Localiser les fichiers (pour la présentation au cas où)
+=======
   ☐ Faire l'envoi d'email pour l'oubli de mot de passe
+>>>>>>> 3748b9a36e0bf978ac88c35983eef5a4669228a0
 
 Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)
@@ -48,6 +52,12 @@ Utilisateur :
 
 Modif-carnet :
   ☐ Placeholder bug sur Firefox
+
+Espace de connexion :
+  ☐ Revoir profile pic
+  ☐ Revoir dépliage de la navbar
+
+
 
 Référencement :
   ✔ A faire, URGENT! --> Aurélien : je m'en occupe :3 @done (15-07-03 11:34)
