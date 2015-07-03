@@ -53,11 +53,9 @@ class Carnetvoyage extends CI_Model {
             return false;
         }
 
-        $name = str_replace('-', ' ', $name);
-
         $destination = $this->db->select('*')
                            ->from($this->table)
-                           ->like('titre', "$name")
+                           ->like('url', "$name")
                            ->limit(1)
                            ->get()
                            ->result();
