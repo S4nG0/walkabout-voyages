@@ -79,7 +79,7 @@ class Carnetvoyage extends CI_Model {
     
     public function get_carnet_for_user($id=''){
         
-        $carnets = $this->db->select('carnetdevoyage.*,destination.nom AS nomDestination')
+        $carnets = $this->db->select('*')
                            ->from($this->table)
                            ->where('idUsers', $id)
                            ->get()
