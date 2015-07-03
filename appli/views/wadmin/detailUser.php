@@ -58,6 +58,7 @@
             </div>
         </div>
     </div>
+    <?php if(count($reservation) >0){ ?>
     <div class="row">
         <div class="col-md-10 col-md-offset-2">
             <div class="panel panel-default">
@@ -79,13 +80,13 @@
                             <tbody>
                             <?php foreach($reservation as $key=>$value){ ?>
                                 <tr>
-                                    <td style="padding-right: 20px"><?php if(isset($reservation[$key])) echo $reservation[$key]->nom ?></td>
-                                    <td style="padding-right: 20px"><?php if(isset($reservation[$key])) echo $reservation[$key]->titre ?></td>
-                                    <td style="padding-right: 20px"><?php if(isset($reservation[$key])) echo $reservation[$key]->date_depart ?></td>
-                                    <td style="padding-right: 20px"><?php if(isset($reservation[$key])) echo $reservation[$key]->date_retour ?></td>
-                                    <td style="padding-right: 20px"><?php if(isset($reservation[$key])) echo $reservation[$key]->ville ?></td>
-                                    <td style="padding-right: 20px"><?php if(isset($reservation[$key])) echo $reservation[$key]->nomPays ?></td>
-                                    <td style="padding-right: 20px"><?php if(isset($reservation[$key])) echo $reservation[$key]->prix ?></td>
+                                    <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->nom ?></a></td>
+                                    <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->titre ?></a></td>
+                                    <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->date_depart ?></a></td>
+                                    <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->date_retour ?></a></td>
+                                    <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->ville ?></a></td>
+                                    <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->nomPays ?></a></td>
+                                    <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->prix ?></a></td>
                                 </tr>
                             <?php } ?>
                             </tbody>
@@ -95,6 +96,7 @@
             </div>
         </div>
     </div>
+    <?php } if(count($carnet)>0){ ?>
     <div class="row">
         <div class="col-md-10 col-md-offset-2">
             <div class="panel panel-default">
@@ -114,11 +116,11 @@
                             <tbody>
                                 <?php foreach($carnet as $key=>$value){ ?>
                                     <tr>
-                                        <td style="padding-right: 20px"><?php if(isset($carnet[$key])) echo $carnet[$key]->titre ?></td>
-                                        <td style="padding-right: 20px"><?php if(isset($carnet[$key])) echo $carnet[$key]->description ?></td>
-                                        <td style="padding-right: 20px"><?php if(isset($carnet[$key])) echo $carnet[$key]->date ?></td>
-                                        <td style="padding-right: 20px"><?php if(isset($carnet[$key])) echo $carnet[$key]->nomDestination ?></td>
-                                        <td style="padding-right: 20px"><?php if(isset($carnet[$key]) && $carnet[$key]->publie == "true") echo 'publié'; else echo 'non publié'; ?></td>
+                                        <td style="padding-right: 20px"><a href="<?php echo base_url().'carnets-de-voyage/'. slugify($carnet[$key]->titre) ?>"><?php if(isset($carnet[$key])) echo $carnet[$key]->titre ?></a></td>
+                                        <td style="padding-right: 20px"><a href="<?php echo base_url().'carnets-de-voyage/'. slugify($carnet[$key]->titre) ?>"><?php if(isset($carnet[$key])) echo $carnet[$key]->description ?></a></td>
+                                        <td style="padding-right: 20px"><a href="<?php echo base_url().'carnets-de-voyage/'. slugify($carnet[$key]->titre) ?>"><?php if(isset($carnet[$key])) echo $carnet[$key]->date ?></a></td>
+                                        <td style="padding-right: 20px"><a href="<?php echo base_url().'carnets-de-voyage/'. slugify($carnet[$key]->titre) ?>"><?php if(isset($carnet[$key])) echo $carnet[$key]->nomDestination ?></a></td>
+                                        <td style="padding-right: 20px"><a href="<?php echo base_url().'carnets-de-voyage/'. slugify($carnet[$key]->titre) ?>"><?php if(isset($carnet[$key]) && $carnet[$key]->publie == "true") echo 'publié'; else echo 'non publié'; ?></a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -128,4 +130,5 @@
             </div>
         </div>
     </div>
+    <?php } ?>
 </div>
