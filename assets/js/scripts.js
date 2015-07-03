@@ -233,6 +233,9 @@ function mapInitialize() {
 
 $(document).ready(function () {
 
+    //var base_url = "http://localhost/walkabout-voyages/";
+    var base_url = "http://localhost/walkabout-voyages/";
+
     /***
      * Carousel initalizers
      */
@@ -622,19 +625,25 @@ $(document).ready(function () {
             return false;
         }
     });
-
-    $('.medium-editor-image').mediumInsert({
-        editor: new MediumEditor('.medium-editor-image', {
+    
+    var editor = new MediumEditor('.modif--article .medium-editor-image', {
             placeholder: {
                 text: "Cliquez pour commencez à écrire..."
             }
-        }),
+        });
+        
+    var url = document.location.href;
+    url = url.split('/');
+    var id_article = url[url.length - 1];
+        
+    $('.modif--article .medium-editor-image').mediumInsert({
+        editor: editor,
         enabled: true,
         addons: {
             images: {
                 captionPlaceholder : "Insérer une légende ici",
                 fileUploadOptions : {
-                    url: 'upload',
+                    url: base_url+'article/add_image/'+id_article,
                     acceptFileTypes: /(.|\/)(jpe?g|png)$/i
                 },
                 messages: {
@@ -675,7 +684,7 @@ $(document).ready(function () {
             alert('Le titre de l\'article ne peut pas être vide!');
             return false;
         }
-        var content = $('.content--article').text();
+        var content = editor.serialize()["element-0"].value;
         if(content.trim() == ""){
             $('.content--article').css({'border' :'solid 1px red'});
             alert('Le contenu de l\'article ne peut pas être vide!');
