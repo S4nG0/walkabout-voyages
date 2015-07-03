@@ -31,10 +31,10 @@ $page = "moncarnet";
 
     </div>
 
-    <div class="content edit-article">
+    <div class="content edit-travel-log">
         <div class="container">
             <div class="row">
-                <div class="article-header">
+                <div class="travel-log-header">
                     <div class="col-sm-12">
                         <h2 class="no-sep">Articles</h2>
                         <a href="<?php echo base_url().'article/creer/'.$carnet[0]->idCarnetDeVoyage; ?>" class="button">
@@ -84,12 +84,12 @@ $page = "moncarnet";
                 </div>
 
                 <div class="col-sm-4">
-                    <div class="article-aside">
+                    <div class="travel-log-aside">
                         <div class="thumbnail">
                             <div class="caption">
                                 <h3>Image de couverture</h3>
                             </div>
-                            <figure>
+                            <figure class="effect">
                                 <img src="<?php echo img_url($carnet[0]->image_carnet);  ?>" alt="Image à la une" class="img-responsive travel-log-thumbnail">
                                 <figcaption>
                                     <div class="caption-content">
@@ -107,7 +107,7 @@ $page = "moncarnet";
                         <input type="hidden" name="id_carnet" value="<?php echo $carnet[0]->idCarnetDeVoyage; ?>"/>
                         <input type="submit" class="submit-cover hidden"/>
                     <?php echo  form_close(); ?>
-                </div>                
+                </div>
             </div>
         </div>
     </div>

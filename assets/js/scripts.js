@@ -623,23 +623,23 @@ $(document).ready(function () {
         }
     });
 
-    var titleEditor = new MediumEditor('.medium-title-editor', {
-        placeholder:false
-    });
-
     $('.medium-editor-image').mediumInsert({
-        editor: new MediumEditor('.medium-editor-image',{placeholder:false}), // (MediumEditor) Instance of MediumEditor
+        editor: new MediumEditor('.medium-editor-image', {
+            placeholder: {
+                text: "Cliquez pour commencez à écrire..."
+            }
+        }),
         enabled: true,
-        addons: { // (object) Addons configuration
-            images: { // (object) Image addon configuration
+        addons: {
+            images: {
                 captionPlaceholder : "Insérer une légende ici",
                 fileUploadOptions : {
                     url: 'upload',
                     acceptFileTypes: /(.|\/)(jpe?g|png)$/i
                 },
                 messages: {
-                    acceptFileTypesError: 'Le fichier sélectionné n\'est pas un fichier supporté!',
-                    maxFileSizeError: 'Le fichier séléctionné est trop gros!'
+                    acceptFileTypesError: 'L\'extension du fichier choisi n\'est pas supportée !',
+                    maxFileSizeError: 'Le poids du fichier choisi est trop lourd !'
                 },
                 uploadCompleted: function ($el, data) {
 
@@ -647,15 +647,16 @@ $(document).ready(function () {
             }
         }
     });
+
     $('.file-upload').on('click', function(e){
         e.preventDefault();
         $('.input-upload').click();
     });
-    
+
     $('.input-upload').on('change',function(){
         $('.submit-cover').click();
     });
-    
+
     $('.description_submit').on('click',function(e){
         e.preventDefault();
         var texte = $('[name=description_p]').text();
