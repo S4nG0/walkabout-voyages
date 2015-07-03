@@ -41,6 +41,8 @@ class Utilisateuradministration extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         $data['user']=$this->user->constructeur($idUsers);
         $data['admin'] = $this->session->userdata('admin');
+        $data['reservation'] = $this->reservations->getReservationAdmin($idUsers);
+        $data['carnet'] = $this->carnetvoyage->get_carnet_for_user_join_destination($idUsers);
         $this->load->view('wadmin/template/header');
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/detailUser',$data);
