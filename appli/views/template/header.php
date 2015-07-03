@@ -8,6 +8,7 @@
     <title><?php echo "$title - Walkabout"; ?></title>
     <link rel="icon" href="<?php echo img_url('favicon.png'); ?>" type="image/png">
     <link rel="apple-touch-icon" href="<?php echo img_url('apple-touch-icon.png'); ?>">
+    <link rel="alternate" hreflang="fr" href="http://fr.walkabout-voyages.fr/" />
 
     <!-- Viewport -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
