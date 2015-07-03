@@ -24,7 +24,9 @@ class Administration extends CI_Controller {
             }
         }
         connecte_admin($this->session->userdata('admin'));
+        $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/ajoutAdmin');
         $this->load->view('wadmin/template/footer');
     }
