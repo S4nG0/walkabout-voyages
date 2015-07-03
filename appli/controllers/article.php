@@ -27,18 +27,30 @@ class Article extends CI_Controller {
             if($data['connecte'] == false){
                 redirect('/connexion');
             }
-            $data['article'] = $this->articles->constructeur($id);
-            $data['user'] = $this->session->userdata('user')[0];
-            $data['carnet'] = $this->carnetvoyage->constructeur($data['article'][0]->idCarnet);
-            if($data['carnet'][0]->idUsers != $data['user']->idUsers){
-                redirect('/moncompte');
+            $this->form_validation->set_rules('titre','"Titre"', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('content','"Contenu"', 'trim|required|xss_clean');
+            
+            if($this->form_validation->run()){
+                $article = new stdClass();
+                $article->titre = $this->input->post('titre');
+                $article->texte = $this->input->post('content');
+                $this->articles->modify($article,$id);
+                redirect($_SERVER["HTTP_REFERER"]);
             }
-            
-            $data['title'] = "Modification de l'article";
-            
-            $this->load->view('template/header', $data);
-            $this->load->view('modif_article', $data);
-            $this->load->view('template/footer');
+            else{
+                $data['article'] = $this->articles->constructeur($id);
+                $data['user'] = $this->session->userdata('user')[0];
+                $data['carnet'] = $this->carnetvoyage->constructeur($data['article'][0]->idCarnet);
+                if($data['carnet'][0]->idUsers != $data['user']->idUsers){
+                    redirect('/moncompte');
+                }
+
+                $data['title'] = "Modification de l'article";
+
+                $this->load->view('template/header', $data);
+                $this->load->view('modif_article', $data);
+                $this->load->view('template/footer');
+            }            
         }
         
         public function down($id = 0){
