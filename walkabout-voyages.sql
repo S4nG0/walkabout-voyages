@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 03 Juillet 2015 à 09:33
+-- Généré le :  Ven 03 Juillet 2015 à 14:11
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `wa__articles` (
   `etat` varchar(50) NOT NULL DEFAULT 'Brouillon',
   PRIMARY KEY (`idArticles`),
   KEY `idCarnet` (`idCarnet`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `wa__articles`
@@ -105,6 +105,7 @@ CREATE TABLE IF NOT EXISTS `wa__carnetdevoyage` (
   `date` date NOT NULL,
   `publie` varchar(5) NOT NULL,
   `titre` varchar(100) DEFAULT NULL,
+  `url` varchar(500) NOT NULL,
   `description` varchar(500) NOT NULL,
   `idUsers` int(11) NOT NULL,
   `idVoyage` int(11) NOT NULL,
@@ -122,13 +123,13 @@ CREATE TABLE IF NOT EXISTS `wa__carnetdevoyage` (
 -- Contenu de la table `wa__carnetdevoyage`
 --
 
-INSERT INTO `wa__carnetdevoyage` (`idCarnetDeVoyage`, `date`, `publie`, `titre`, `description`, `idUsers`, `idVoyage`, `idDestination`, `image_carnet`, `favoris`) VALUES
-(1, '2015-03-05', 'true', 'Mon aventure chez les Quéchuas', 'J''ai passé une merveilleuse expérience durant ce séjour!', 12, 1, 1, 'carnets/mon-aventure-chez-les-quechuas/yaxhacoucherdesoleil.jpg', 'false'),
-(2, '2015-03-05', 'true', 'Moi chez les péruviens', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 12, 2, 1, 'carnets/moi-chez-les-peruviens/machu-picchu-dc3a9couverte-porte-secrete-tresor-perou1.jpg', 'true'),
-(3, '2015-03-05', 'true', 'Mon expérience Péruvienne', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'cdv1.jpg', 'false'),
-(4, '2015-03-05', 'true', 'Mon aventure au Pérou', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'carnets/peru.jpg', 'false'),
-(5, '2015-06-24', 'true', 'Immersion dans une culture oubliée', 'Voyage à la découverte de la fascinante culture des Incas', 12, 2, 1, 'voyages/perou/banner-list.jpg', 'false'),
-(6, '2015-06-16', 'true', 'Périple chez les danseurs Nyau', 'Mon voyage chez les danseurs Nyau de Mozambique', 12, 2, 1, 'voyages/mozambique/dest-img.jpg', 'false');
+INSERT INTO `wa__carnetdevoyage` (`idCarnetDeVoyage`, `date`, `publie`, `titre`, `url`, `description`, `idUsers`, `idVoyage`, `idDestination`, `image_carnet`, `favoris`) VALUES
+(1, '2015-03-05', 'true', 'Mon aventure chez les Quéchuas', 'mon-aventure-chez-les-quechuas', 'J''ai passé une merveilleuse expérience durant ce séjour!', 12, 1, 1, 'carnets/mon-aventure-chez-les-quechuas/yaxhacoucherdesoleil.jpg', 'false'),
+(2, '2015-03-05', 'true', 'Moi chez les péruviens', 'moi-chez-les-peruviens', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 12, 2, 1, 'carnets/moi-chez-les-peruviens/9A817D230A2645BF901C2465D269BB53.jpg', 'true'),
+(3, '2015-03-05', 'true', 'Mon expérience Péruvienne', 'mon-experience-peruvienne', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'cdv1.jpg', 'false'),
+(4, '2015-03-05', 'true', 'Mon aventure au Pérou', 'mon-aventure-au-perou', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'carnets/peru.jpg', 'false'),
+(5, '2015-06-24', 'true', 'Immersion dans une culture oubliée', 'immersion-dans-une-culture-oubliee', 'Voyage à la découverte de la fascinante culture des Incas', 12, 2, 1, 'voyages/perou/banner-list.jpg', 'false'),
+(6, '2015-06-16', 'true', 'Périple chez les danseurs Nyau', 'periple-chez-les-danseurs-nyau', 'Mon voyage chez les danseurs Nyau de Mozambique', 12, 2, 1, 'voyages/mozambique/dest-img.jpg', 'false');
 
 -- --------------------------------------------------------
 
@@ -209,6 +210,7 @@ CREATE TABLE IF NOT EXISTS `wa__destination` (
   `idDestination` int(11) NOT NULL AUTO_INCREMENT,
   `idPays` int(11) NOT NULL,
   `titre` varchar(100) NOT NULL,
+  `url` varchar(500) NOT NULL,
   `nom` varchar(45) NOT NULL,
   `description` longtext NOT NULL,
   `ville` varchar(100) DEFAULT NULL,
@@ -223,9 +225,9 @@ CREATE TABLE IF NOT EXISTS `wa__destination` (
 -- Contenu de la table `wa__destination`
 --
 
-INSERT INTO `wa__destination` (`idDestination`, `idPays`, `titre`, `nom`, `description`, `ville`, `coordonnees`, `photos`, `banner`) VALUES
-(1, 3, 'À la découverte des Quéchuas du Pérou', 'Voyage à Lima', 'Dans les montagnes, les Quechuas élèvent traditionnellement des lamas et des alpagas pour leur laine et leur viande.\n                                Ces animaux vivent en haute altitude ce qui oblige les hommes à s’établir sur des terres arides où rien ne pousse ou presque.\n                                Pourtant, les Quechuas sont également agriculteurs. Ils réussissent l’exploit de cultiver un véritable trésor : la pomme de terre.\n                                Plus qu’un aliment, la pomme de terre est l’emblème de la culture andine, elle symbolise la fertilité. Certaines sont même sacrées.\n                                Elles sont offertes à la Pachamama, « la terre mère », pour la remercier de ses bienfaits et implorer sa protection\n                                pour la récolte à venir.\n                                <br /><br />\n                                Au quotidien, les Quechuas vénèrent la nature sous toutes ses formes. Pour eux, les montagnes sont des Dieux et\n                                ils n’hésitent pas à effectuer un long voyage et à gravir des sommets vertigineux pour recueillir la glace sacrée\n                                qui bénira leur troupeau et leur terre.\n                                <br /><br />\n                                Faites l’expérience de leur culture en vous y immergeant  !', 'Lima', '-12.04,-77.04', 'voyages/perou/01.jpg;voyages/perou/04.jpg;voyages/perou/03.jpg;voyages/perou/02.jpg;voyages/perou/05.jpg;', 'voyages/perou/dest-img.jpg'),
-(2, 3, 'Les incas, une culture oubliée', 'Voyage chez les incas', 'La civilisation inca est une civilisation précolombienne du groupe andin. Elle prend naissance au début du XIIIe siècle dans le bassin de Cuzco dans l''actuel Pérou et se développe ensuite le long de l''océan Pacifique et de la cordillère des Andes, couvrant la partie occidentale de l''Amérique du Sud. À son apogée, elle s''étend de la Colombie jusqu''à l''Argentine et au Chili, par-delà l''Équateur, le Pérou et la Bolivie.\r\n\r\nElle est à l''origine de l''empire inca, l''un des trois grands empires de l''Amérique précolombienne. Cet empire avait pour chef suprême le Sapa Inca. L''empire inca fut conquis par les conquistadors espagnols sous les ordres de Francisco Pizarro à partir de 1532.\r\n\r\nL''une des grandes singularités de cet empire fut d''avoir intégré, dans une organisation étatique originale, la multiplicité socioculturelle des populations hétérogènes qui le composaient.', 'Cuzco', '-13.31, -71.58  ', 'voyages/incas/01.jpg;voyages/incas/02.jpg;voyages/incas/03.jpg;', 'voyages/incas/banner-list.jpg');
+INSERT INTO `wa__destination` (`idDestination`, `idPays`, `titre`, `url`, `nom`, `description`, `ville`, `coordonnees`, `photos`, `banner`) VALUES
+(1, 3, 'À la découverte des Quéchuas du Pérou', 'a-la-decouverte-des-quechuas-du-perou', 'Voyage à Lima', 'Dans les montagnes, les Quechuas élèvent traditionnellement des lamas et des alpagas pour leur laine et leur viande.\n                                Ces animaux vivent en haute altitude ce qui oblige les hommes à s’établir sur des terres arides où rien ne pousse ou presque.\n                                Pourtant, les Quechuas sont également agriculteurs. Ils réussissent l’exploit de cultiver un véritable trésor : la pomme de terre.\n                                Plus qu’un aliment, la pomme de terre est l’emblème de la culture andine, elle symbolise la fertilité. Certaines sont même sacrées.\n                                Elles sont offertes à la Pachamama, « la terre mère », pour la remercier de ses bienfaits et implorer sa protection\n                                pour la récolte à venir.\n                                <br /><br />\n                                Au quotidien, les Quechuas vénèrent la nature sous toutes ses formes. Pour eux, les montagnes sont des Dieux et\n                                ils n’hésitent pas à effectuer un long voyage et à gravir des sommets vertigineux pour recueillir la glace sacrée\n                                qui bénira leur troupeau et leur terre.\n                                <br /><br />\n                                Faites l’expérience de leur culture en vous y immergeant  !', 'Lima', '-12.04,-77.04', 'voyages/perou/01.jpg;voyages/perou/04.jpg;voyages/perou/03.jpg;voyages/perou/02.jpg;voyages/perou/05.jpg;', 'voyages/perou/dest-img.jpg'),
+(2, 3, 'Les incas, une culture oubliée', 'les-incas-une-culture-oubliee', 'Voyage chez les incas', 'La civilisation inca est une civilisation précolombienne du groupe andin. Elle prend naissance au début du XIIIe siècle dans le bassin de Cuzco dans l''actuel Pérou et se développe ensuite le long de l''océan Pacifique et de la cordillère des Andes, couvrant la partie occidentale de l''Amérique du Sud. À son apogée, elle s''étend de la Colombie jusqu''à l''Argentine et au Chili, par-delà l''Équateur, le Pérou et la Bolivie.\r\n\r\nElle est à l''origine de l''empire inca, l''un des trois grands empires de l''Amérique précolombienne. Cet empire avait pour chef suprême le Sapa Inca. L''empire inca fut conquis par les conquistadors espagnols sous les ordres de Francisco Pizarro à partir de 1532.\r\n\r\nL''une des grandes singularités de cet empire fut d''avoir intégré, dans une organisation étatique originale, la multiplicité socioculturelle des populations hétérogènes qui le composaient.', 'Cuzco', '-13.31, -71.58  ', 'voyages/incas/01.jpg;voyages/incas/02.jpg;voyages/incas/03.jpg;', 'voyages/incas/banner-list.jpg');
 
 -- --------------------------------------------------------
 
@@ -239,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `wa__etatreservation` (
   `etat` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`idEtatReservation`),
   KEY `idReservation` (`idReservation`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `wa__etatreservation`
@@ -250,7 +252,8 @@ INSERT INTO `wa__etatreservation` (`idEtatReservation`, `idReservation`, `etat`)
 (2, 14, 'En cours'),
 (3, 9, 'En cours'),
 (4, 15, 'En cours'),
-(7, 19, 'En cours');
+(7, 19, 'En cours'),
+(8, 20, 'En cours');
 
 -- --------------------------------------------------------
 
@@ -436,7 +439,7 @@ CREATE TABLE IF NOT EXISTS `wa__reservation` (
   PRIMARY KEY (`idReservation`),
   KEY `idVoyage` (`idVoyage`),
   KEY `idUsers` (`idUsers`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Contenu de la table `wa__reservation`
@@ -447,7 +450,8 @@ INSERT INTO `wa__reservation` (`idReservation`, `idVoyage`, `idUsers`, `nb_perso
 (9, 2, 2, 4, '2015-01-25'),
 (14, 2, 1, 2, '2015-05-27'),
 (15, 2, 12, 2, '2015-05-27'),
-(19, 2, 15, 1, '2015-05-27');
+(19, 2, 15, 1, '2015-05-27'),
+(20, 1, 12, 2, '2015-07-03');
 
 -- --------------------------------------------------------
 
@@ -470,8 +474,8 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('1eb92499f8b0550afbdea1cdab684540', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0', 1435857055, 'a:2:{s:9:"user_data";s:0:"";s:4:"user";a:1:{i:0;O:8:"stdClass":17:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:28:"users/12/Voyage_etranger.jpg";}}}'),
-('2bb573e34512cb20a0c628694d005ab9', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0', 1435908776, 'a:2:{s:9:"user_data";s:0:"";s:4:"user";a:1:{i:0;O:8:"stdClass":17:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:28:"users/12/Voyage_etranger.jpg";}}}');
+('b9dea3328947e5a587f12da8cb733b9b', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36', 1435915410, 'a:1:{s:9:"user_data";s:0:"";}'),
+('117e296069a103acbe2900762a3359d3', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0', 1435917947, 'a:3:{s:9:"user_data";s:0:"";s:4:"user";a:1:{i:0;O:8:"stdClass":17:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:28:"users/12/Voyage_etranger.jpg";}}s:5:"admin";a:1:{i:0;O:8:"stdClass":5:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}');
 
 -- --------------------------------------------------------
 
