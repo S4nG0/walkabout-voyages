@@ -8,6 +8,7 @@
 @import "base/mixins";
 @import "module/font-awesome";
 @import "module/gallery";
+@import "layout/medium-editor-styling";
 @import "layout/navbar";
 @import "layout/information_module";
 @import "layout/footer";
@@ -232,20 +233,20 @@ strong {
     text-align: center;
     border-left: none;
 
-    &:before, &:after {
-        position: absolute;
-        width: 25px;
-        height: 25px;
-        font-size: 2.2em;
-    }
+    // &:before, &:after {
+    //     position: absolute;
+    //     width: 25px;
+    //     height: 25px;
+    //     font-size: 2.2em;
+    // }
 
-    &:before {
-        content: '\201C';
-    }
+    // &:before {
+    //     content: '\201C';
+    // }
 
-    &:after {
-        content: '\201D';
-    }
+    // &:after {
+    //     content: '\201D';
+    // }
 }
 
 .published {

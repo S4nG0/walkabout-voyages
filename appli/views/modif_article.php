@@ -25,8 +25,10 @@ $page = "article";
                 <!-- begin:article -->
                 <div class="row noPadding content--article">
                     <article class="tb-article">
-                        <div class="tb-article--content medium-editor-image" placeholder="Cliquez pour commencez à écrire...">
-                            <?php echo $article[0]->texte; ?>
+                        <div class="tb-article--content" placeholder="Cliquez pour commencez à écrire...">
+                            <div class="medium-editor-start medium-editor-image">
+                                <?php echo $article[0]->texte; ?>
+                            </div>
                         </div>
                     </article>
                 </div>

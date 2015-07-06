@@ -1878,6 +1878,32 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     min-height: 100%;
   }
 }
+.medium-editor-toolbar {
+  background-color: #242424;
+  border-color: #f0c041;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.medium-editor-toolbar .medium-editor-action {
+  border: none;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.medium-editor-toolbar .medium-editor-action:hover, .medium-editor-toolbar .medium-editor-action:focus {
+  color: #242424;
+  background-color: #f0c041;
+}
+.medium-editor-toolbar .medium-editor-action.medium-editor-button-active {
+  color: #242424;
+  background-color: #f0c041;
+}
+.medium-editor-toolbar.medium-toolbar-arrow-under:after {
+  border-color: #f0c041 transparent transparent;
+}
+
 .navbar {
   z-index: 9999;
   margin-top: 25px;
@@ -4453,6 +4479,12 @@ body.espace-voyageur .navbar .navbar-collapse .nav li a {
 body.espace-voyageur .navbar.affix .navbar-brand {
   padding: 15px 25px;
 }
+body.espace-voyageur .navbar.affix .navbar-brand .logo {
+  width: 150px;
+}
+body.espace-voyageur .navbar.affix .navbar-collapse .nav li a {
+  margin: 30px 25px 15px 0;
+}
 body.espace-voyageur .main {
   background: url("../images/texture.png");
   -moz-box-shadow: none;
@@ -4515,12 +4547,16 @@ body.espace-voyageur .main .big-title-wrapper .big-title h2 {
   padding: 25px;
   margin: 0 auto;
   text-transform: none;
+  outline: 1px solid #f0c041;
+  -moz-transition: box-shadow 300ms ease-in-out;
+  -o-transition: box-shadow 300ms ease-in-out;
+  -webkit-transition: box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out;
 }
 body.espace-voyageur .main .big-title-wrapper .big-title h2:focus {
-  outline: 1px solid #f0c041;
-  -moz-box-shadow: 0 0 15px 0 rgba(240, 192, 65, 0.6);
-  -webkit-box-shadow: 0 0 15px 0 rgba(240, 192, 65, 0.6);
-  box-shadow: 0 0 15px 0 rgba(240, 192, 65, 0.6);
+  -moz-box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
+  -webkit-box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
+  box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
 }
 body.espace-voyageur .main .big-title-wrapper .big-title p {
   display: block;
@@ -4869,8 +4905,8 @@ body.espace-voyageur .content.edit-travel-log .article .travel-log__article .art
 }
 body.espace-voyageur .content.edit-travel-log .article .travel-log__article .article-block.controls .controls-wrapper .reorder-article {
   display: table-cell;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
   vertical-align: middle;
 }
 body.espace-voyageur .content.edit-travel-log .article .travel-log__article .article-block.controls .controls-wrapper .reorder-article a {
@@ -4951,22 +4987,36 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .tb-articl
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
+body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content .medium-editor-start {
+  max-width: 600px;
+  margin: 0 auto;
+}
 body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content:focus p {
-  outline: 1px solid #f0c041;
-  -moz-box-shadow: 0 0 15px 0 rgba(240, 192, 65, 0.6);
-  -webkit-box-shadow: 0 0 15px 0 rgba(240, 192, 65, 0.6);
-  box-shadow: 0 0 15px 0 rgba(240, 192, 65, 0.6);
+  -moz-box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
+  -webkit-box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
+  box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content p {
+  margin-top: 25px;
   padding: 25px;
   max-width: 600px;
+  outline: 1px solid #f0c041;
+  -moz-transition: box-shadow 300ms ease-in-out;
+  -o-transition: box-shadow 300ms ease-in-out;
+  -webkit-transition: box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out;
+}
+body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content figure {
+  margin-top: 25px;
+}
+body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content figure img {
+  padding: 0;
+}
+body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content figure img.medium-insert-image-active {
+  outline: 1px solid #f0c041;
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content blockquote {
   padding: 0;
-}
-body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content figure {
-  padding-top: 0;
-  margin-top: 50px;
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content.medium-editor-image.medium-editor-insert-plugin.medium-editor-placeholder:before, body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content.medium-editor-image.medium-editor-insert-plugin.medium-editor-placeholder:empty:before {
   content: attr(placeholder);
@@ -4992,17 +5042,9 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .tb-articl
 body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content.medium-editor-image.medium-editor-insert-plugin.medium-editor-placeholder:after {
   display: none;
 }
-body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin {
-  position: relative;
-}
-body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin .medium-insert-buttons {
-  position: absolute;
-  width: 100%;
-  padding-top: 18px;
-  -moz-transform: translateX(41%);
-  -ms-transform: translateX(41%);
-  -webkit-transform: translateX(41%);
-  transform: translateX(41%);
+body.espace-voyageur .content.edit-article .article-block .tb-article .medium-insert-images.medium-insert-images-grid,
+body.espace-voyageur .content.edit-article .article-block .tb-article .medium-insert-images-grid.mediumInsert {
+  margin: 0;
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin .medium-insert-buttons .medium-insert-buttons-show {
   display: table-cell;
@@ -5336,18 +5378,6 @@ strong {
   line-height: 36px;
   text-align: center;
   border-left: none;
-}
-.lead:before, .lead:after, blockquote:before, blockquote:after {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  font-size: 2.2em;
-}
-.lead:before, blockquote:before {
-  content: '\201C';
-}
-.lead:after, blockquote:after {
-  content: '\201D';
 }
 
 .published {

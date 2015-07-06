@@ -1,21 +1,18 @@
 Générales :
   ✔ Auré : Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations' @done (15-06-30 09:53)
   ✔ --> Plus moyen d'accèder à la page actualités depuis le footer, le lien chie complètement ! @done (15-06-30 09:56)
-
   ✔ Auré : Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc @done (15-06-29 12:08) --> Corrigé par Julien (ajout d'une fonction dans code_helper.php qui transforme l'url + modif du model destinations.php)
-
   ✔ Pour les carnets de voyage, on a toujours l'identifiant qui est passé dans l'url =/ @done (15-06-30 10:06)
-
   ✔ Auré : Utiliser la propriété "background-image" quand on génère des images dynamiquement par la base de données (parce que sinon le style casse, j'utilise plus les background qui regroupent toutes les propriétés, c'est chiant quand on génère du dynamisme). @done (15-06-30 10:13)
-
   ✔ Ajout newsletter en fancybox @done (15-06-30 15:43)
   ✔ Faire l'ajout des emails des personnes dans la newsletter @done (15-06-30 15:43)
-  ☐ Faire un breadcrumbs
-<<<<<<< HEAD
+
+
+  ☐ Faire un breadcrumbs (pour le référencement)
   ☐ Localiser les fichiers (pour la présentation au cas où)
-=======
   ☐ Faire l'envoi d'email pour l'oubli de mot de passe
->>>>>>> 3748b9a36e0bf978ac88c35983eef5a4669228a0
+  ☐ Faire une page cible user (avec l'ensemble de ses carnets)
+  ☐ Faire la page avec tous les carnets
 
 Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)
@@ -52,6 +49,11 @@ Utilisateur :
 
 Modif-carnet :
   ☐ Placeholder bug sur Firefox
+
+Modif-article :
+  ☐ Retirer le choix d'alignement à gauche et à droite des images insérées (ça sert à rien), laisser juste les options "justifier" et en mode "grid"
+  ☐ Quand on ajoute une image, le texte revient pas automatiquement à la ligne -> quand on écrit du texte direct après avoir ajouté une image, ça l'écrit en dehors dans une div à part (trop chiant lol).
+  ☐ Quand on ajoute plusieurs images, ça fait ramer à mort (je sais pas si c'est dû aux erreurs qui ressortent (check la console))
 
 Espace de connexion :
   ☐ Revoir profile pic

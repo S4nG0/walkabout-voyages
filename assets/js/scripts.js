@@ -632,17 +632,14 @@ $(document).ready(function () {
         enabled: true,
         addons: {
             images: {
-                captionPlaceholder : "Insérer une légende ici",
+                captions: false,
                 fileUploadOptions : {
-                    url: 'upload',
+                    url: 'upload.php',
                     acceptFileTypes: /(.|\/)(jpe?g|png)$/i
                 },
                 messages: {
                     acceptFileTypesError: 'L\'extension du fichier choisi n\'est pas supportée !',
                     maxFileSizeError: 'Le poids du fichier choisi est trop lourd !'
-                },
-                uploadCompleted: function ($el, data) {
-
                 }
             }
         }
@@ -663,8 +660,8 @@ $(document).ready(function () {
         $('input[name=description]').val(texte);
         $(this).parent('form').submit();
     });
-    
-    //Récupération du formulaire de la modification d'article!
+
+    //Récupération du formulaire de la modification d'article
     $('.submit--article').on('click',function(e){
         e.preventDefault();
         $('.titre--article').css({'border' :'none'});
@@ -681,7 +678,7 @@ $(document).ready(function () {
             alert('Le contenu de l\'article ne peut pas être vide!');
             return false;
         }
-        //On ajoute le titre et le content dans les input correpondant!
+        //On ajoute le titre et le content dans les input correpondant
         $('input[name=titre]').val(titre);
         $('input[name=content]').val(content);
         $('form').submit();
