@@ -634,7 +634,7 @@ $(document).ready(function () {
             images: {
                 captions: false,
                 fileUploadOptions : {
-                    url: 'upload.php',
+                    url: 'upload',
                     acceptFileTypes: /(.|\/)(jpe?g|png)$/i
                 },
                 messages: {

@@ -45,22 +45,17 @@ class Upload_file extends CI_Controller {
         $this->upload->initialize($config);
 
         $data['upload_data'] = '';
-
         //if not successful, set the error message
         if (!$this->upload->do_upload('coverimage')) {
             $this->session->set_flashdata('upload', $this->upload->display_errors());
         } else { //else, set the success message
             $this->session->set_flashdata('upload', true);
-        
+            $data['upload_data'] = $this->upload->data();
             //On va mettre à jour le cranet
             $carnet = new Stdclass();
             $carnet->image_carnet = 'carnets/'.$name_folder.'/'.$data['upload_data']['file_name'];
             $result = $this->carnetvoyage->modify($carnet,$_REQUEST['id_carnet']);
-        
-            $data['upload_data'] = $this->upload->data();
         }
-        
-        
         
         header('Location: ' . $_SERVER['HTTP_REFERER'] );
     }
