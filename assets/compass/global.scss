@@ -234,17 +234,19 @@ strong {
 
     &:before, &:after {
         position: absolute;
-        width: 25px;
-        height: 25px;
+        @include border-radius(100%);
         font-size: 2.2em;
     }
 
     &:before {
         content: '\201C';
+        left: 20px;
     }
 
     &:after {
         content: '\201D';
+        right: 30px;
+        bottom: -20px;
     }
 }
 
