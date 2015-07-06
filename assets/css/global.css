@@ -6488,6 +6488,12 @@ body.single-carnet .content {
   p.lead, blockquote {
     padding: 0;
   }
+  p.lead:before, blockquote:before {
+    left: 0;
+  }
+  p.lead:after, blockquote:after {
+    bottom: -30px;
+  }
 }
 @media screen and (max-width: 480px) {
   h1, h2, h3 {
