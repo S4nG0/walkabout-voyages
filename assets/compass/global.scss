@@ -8,6 +8,7 @@
 @import "base/mixins";
 @import "module/font-awesome";
 @import "module/gallery";
+@import "layout/medium-editor-styling";
 @import "layout/navbar";
 @import "layout/information_module";
 @import "layout/footer";
@@ -231,23 +232,6 @@ strong {
     line-height: 36px;
     text-align: center;
     border-left: none;
-
-    &:before, &:after {
-        position: absolute;
-        @include border-radius(100%);
-        font-size: 2.2em;
-    }
-
-    &:before {
-        content: '\201C';
-        left: 20px;
-    }
-
-    &:after {
-        content: '\201D';
-        right: 30px;
-        bottom: -20px;
-    }
 }
 
 .published {

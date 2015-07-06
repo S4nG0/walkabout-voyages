@@ -36,6 +36,19 @@ body.espace-voyageur {
     .navbar.affix {
         .navbar-brand {
             padding: 15px 25px;
+            .logo {
+                width: 150px;
+            }
+        }
+
+        .navbar-collapse {
+            .nav {
+                li {
+                    a {
+                        margin: 30px 25px 15px 0;
+                    }
+                }
+            }
         }
     }
 
@@ -106,10 +119,11 @@ body.espace-voyageur {
                     padding: 25px;
                     margin: 0 auto;
                     text-transform: none;
+                    outline: 1px solid $jaune-or;
+                    @include transition(box-shadow 300ms ease-in-out);
 
                     &:focus {
-                        outline: 1px solid $jaune-or;
-                        @include box-shadow(0 0 15px 0 rgba(240, 192, 65, 0.6));
+                        @include box-shadow(0 0 10px 0 rgba(240, 192, 65, 0.6));
                     }
                 }
 
@@ -501,8 +515,8 @@ body.espace-voyageur {
 
                         .reorder-article {
                             display: table-cell;
-                            padding-right: 5px;
-                            padding-left: 5px;
+                            padding-right: 10px;
+                            padding-left: 10px;
                             vertical-align: middle;
 
                             a {
@@ -606,25 +620,39 @@ body.espace-voyageur {
                     margin-bottom: 50px;
                     @include transition(all 300ms ease-in-out);
 
+                    .medium-editor-start {
+                        max-width: 600px;
+                        margin: 0 auto;
+                    }
+
                     &:focus {
                         p {
-                            outline: 1px solid $jaune-or;
-                            @include box-shadow(0 0 15px 0 rgba(240, 192, 65, 0.6));
+                            @include box-shadow(0 0 10px 0 rgba(240, 192, 65, 0.6));
                         }
                     }
 
                     p {
+                        margin-top: 25px;
                         padding: 25px;
                         max-width: 600px;
+                        outline: 1px solid $jaune-or;
+                        @include transition(box-shadow 300ms ease-in-out);
+                    }
+
+                    figure {
+                        margin-top: 25px;
+
+                        img {
+                            padding: 0;
+
+                            &.medium-insert-image-active {
+                                outline: 1px solid $jaune-or;
+                            }
+                        }
                     }
 
                     blockquote {
                         padding: 0;
-                    }
-
-                    figure {
-                        padding-top: 0;
-                        margin-top: 50px;
                     }
                 }
 
@@ -633,7 +661,6 @@ body.espace-voyageur {
                     &:empty:before {
                         content: attr(placeholder);
                         position: absolute;
-                        // display: block;
                         max-width: 700px;
                         left: 50%;
                         @include translateX(-50%);
@@ -654,14 +681,14 @@ body.espace-voyageur {
                     }
                 }
 
+                .medium-insert-images.medium-insert-images-grid,
+                .medium-insert-images-grid.mediumInsert {
+                    margin: 0;
+                }
+
                 .medium-editor-insert-plugin {
-                    position: relative;
 
                     .medium-insert-buttons {
-                        position: absolute;
-                        width: 100%;
-                        padding-top: 18px;
-                        @include translateX(41%);
 
                         .medium-insert-buttons-show {
                             display: table-cell;
