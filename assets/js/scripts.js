@@ -232,6 +232,9 @@ function mapInitialize() {
 }
 
 $(document).ready(function () {
+    
+    //var base_url = "http://localhost/walkabout-voyages/";
+    var base_url = "http://localhost/walkabout-voyages/";
 
     /***
      * Carousel initalizers
@@ -622,6 +625,10 @@ $(document).ready(function () {
             return false;
         }
     });
+    
+    var url = document.location.href;
+    url = url.split('/');
+    var id_article = url[url.length - 1];
 
     $('.medium-editor-image').mediumInsert({
         editor: new MediumEditor('.medium-editor-image', {
@@ -634,7 +641,7 @@ $(document).ready(function () {
             images: {
                 captions: false,
                 fileUploadOptions : {
-                    url: 'upload',
+                    url: base_url+'article/add_image/'+id_article,
                     acceptFileTypes: /(.|\/)(jpe?g|png)$/i
                 },
                 messages: {
@@ -672,7 +679,7 @@ $(document).ready(function () {
             alert('Le titre de l\'article ne peut pas être vide!');
             return false;
         }
-        var content = $('.content--article').text();
+        var content = editor.serialize()["element-0"].value;
         if(content.trim() == ""){
             $('.content--article').css({'border' :'solid 1px red'});
             alert('Le contenu de l\'article ne peut pas être vide!');
