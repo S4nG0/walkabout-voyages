@@ -73,6 +73,7 @@ body.espace-voyageur {
                 }
 
                 //PLACEHOLDER FOR CONTENTEDITABLE
+                *[contenteditable="true"]:before,
                 *[contenteditable="true"]:empty:before {
                     content: attr(placeholder);
                     position: relative;

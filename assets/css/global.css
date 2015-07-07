@@ -4506,6 +4506,7 @@ body.espace-voyageur .main .big-title-wrapper .big-title {
 body.espace-voyageur .main .big-title-wrapper .big-title .button:last-child {
   margin-right: 0;
 }
+body.espace-voyageur .main .big-title-wrapper .big-title *[contenteditable="true"]:before,
 body.espace-voyageur .main .big-title-wrapper .big-title *[contenteditable="true"]:empty:before {
   content: attr(placeholder);
   position: relative;
