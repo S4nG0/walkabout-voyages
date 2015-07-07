@@ -4524,6 +4524,7 @@ body.espace-voyageur .main .big-title-wrapper .big-title .profile-picture .capti
   margin-top: 10px;
   color: #242424;
   font-size: 14px;
+  line-height: 24px;
   font-style: normal;
   text-transform: uppercase;
 }
@@ -4639,6 +4640,7 @@ body.espace-voyageur .effect figcaption .caption-content a p {
   color: #242424;
   text-transform: uppercase;
   font-size: 14px;
+  line-height: 24px;
   font-weight: 600;
   -moz-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
@@ -4783,22 +4785,28 @@ body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log {
   margin-bottom: 50px;
 }
 body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .image-wrapper {
-  padding: 40% 0;
+  padding-bottom: 80%;
   background-image: url("../images/cdv1.jpg");
-  background-position: 50% -50px;
+  background-position: 50% 0;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .excerpt-wrapper h1 {
   border-bottom: none;
 }
+body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .buttons-wrapper {
+  padding: 19% 0;
+}
 body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .buttons-wrapper .button {
   display: block;
   float: none;
+  width: 200px;
   margin: 0 auto;
   margin-bottom: 15px;
 }
 body.espace-voyageur .content .infos-block {
   display: table;
+  width: 100%;
   text-align: center;
   padding-bottom: 50px;
 }
@@ -4845,6 +4853,10 @@ body.espace-voyageur .content .infos-block .buttons-wrapper .button {
   float: none;
   width: 150px;
   margin-right: 15px;
+}
+body.espace-voyageur .content .infos-block .buttons-wrapper .button:first-child {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 body.espace-voyageur .content.edit-travel-log {
   padding: 50px 0;
@@ -5105,10 +5117,14 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
   body.espace-voyageur .main .navbar.affix .navbar-collapse .nav li a {
     margin: 25px auto;
   }
+  body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .buttons-wrapper {
+    padding: 14% 0;
+  }
 }
 @media screen and (max-width: 992px) {
   body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .image-wrapper {
     padding: 32% 0;
+    margin-bottom: 25px;
     -moz-background-size: cover;
     -o-background-size: cover;
     -webkit-background-size: cover;
@@ -5119,6 +5135,10 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
   }
   body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .buttons-wrapper {
     padding-top: 25px;
+    padding-bottom: 0;
+  }
+  body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .buttons-wrapper .button {
+    width: 200px;
   }
   body.espace-voyageur .content.edit-travel-log .article-aside .button {
     display: block;

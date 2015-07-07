@@ -110,7 +110,7 @@ $page = "moncompte";
                                 <!-- begin:Travel-log-->
                                 <div class="travel-log">
                                     <div class="col-md-3">
-                                        <div class="image-wrapper" style="background-image : url('.img_url($carnet->image_carnet).');background-size:cover;"></div>
+                                        <div class="image-wrapper" style="background-image : url('.img_url($carnet->image_carnet).');"></div>
                                     </div>
                                     <div class="col-md-6 excerpt-wrapper">
                                         <h3>'.$carnet->titre.'</h3>
@@ -138,7 +138,7 @@ $page = "moncompte";
                     </div>
                     <div class="infos-block" id="infos-content">
 
-                        <div class="col-md-6 col-md-offset-3">
+                        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <h3>Changer vos informations de connexion</h3>
                             <div class="form-group">
                                 <input type="email" name="email" id="email" value="<?php echo $user->mail; ?>">
@@ -153,7 +153,7 @@ $page = "moncompte";
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-md-offset-3">
+                        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <h3>Changer les paramètres de la newsletter</h3>
                             <div class="form-group">
                                 <?php if(empty($newsletter)){ ?>

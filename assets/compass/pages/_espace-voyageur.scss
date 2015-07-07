@@ -92,6 +92,7 @@ body.espace-voyageur {
                             margin-top: 10px;
                             color: $noir;
                             font-size: 14px;
+                            line-height: 24px;
                             font-style: normal;
                             text-transform: uppercase;
                         }
@@ -200,6 +201,7 @@ body.espace-voyageur {
                         color: $noir;
                         text-transform: uppercase;
                         font-size: 14px;
+                        line-height: 24px;
                         font-weight: 600;
                         @include transition(300ms all ease-in-out);
                     }
@@ -366,10 +368,11 @@ body.espace-voyageur {
                     margin-bottom: 50px;
 
                     .image-wrapper {
-                        padding: 40% 0;
+                        padding-bottom: 80%;
                         background-image: url('../images/cdv1.jpg');
-                        background-position: 50% -50px;
+                        background-position: 50% 0;
                         background-repeat: no-repeat;
+                        background-size: cover;
                     }
 
                     .excerpt-wrapper {
@@ -379,10 +382,12 @@ body.espace-voyageur {
                     }
 
                     .buttons-wrapper {
+                        padding: 19% 0;
 
                         .button {
                             display: block;
                             float: none;
+                            width: 200px;
                             margin: 0 auto;
                             margin-bottom: 15px;
                         }
@@ -393,6 +398,7 @@ body.espace-voyageur {
 
         .infos-block {
             display: table;
+            width: 100%;
             text-align: center;
             padding-bottom: 50px;
 
@@ -443,6 +449,11 @@ body.espace-voyageur {
                     float: none;
                     width: 150px;
                     margin-right: 15px;
+
+                    &:first-child {
+                        margin-top: 15px;
+                        margin-bottom: 15px;
+                    }
                 }
             }
         }
@@ -774,6 +785,18 @@ body.espace-voyageur {
                 }
             }
         }
+
+        .content {
+            .carnets-block {
+                .travel-logs-wrapper {
+                    .travel-log {
+                        .buttons-wrapper {
+                            padding: 14% 0;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -785,6 +808,7 @@ body.espace-voyageur {
                     .travel-log {
                         .image-wrapper {
                             padding: 32% 0;
+                            margin-bottom: 25px;
                             @include background-size(cover);
                         }
 
@@ -794,6 +818,11 @@ body.espace-voyageur {
 
                         .buttons-wrapper {
                             padding-top: 25px;
+                            padding-bottom: 0;
+
+                            .button {
+                                width: 200px;
+                            }
                         }
                     }
                 }
