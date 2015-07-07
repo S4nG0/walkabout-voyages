@@ -629,13 +629,15 @@ $(document).ready(function () {
     var url = document.location.href;
     url = url.split('/');
     var id_article = url[url.length - 1];
-
-    $('.medium-editor-image').mediumInsert({
-        editor: new MediumEditor('.medium-editor-image', {
+    
+    var editor = new MediumEditor('.medium-editor-image', {
             placeholder: {
                 text: "Cliquez pour commencez à écrire..."
             }
-        }),
+        });
+
+    $('.medium-editor-image').mediumInsert({
+        editor: editor,
         enabled: true,
         addons: {
             images: {
