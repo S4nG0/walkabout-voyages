@@ -667,7 +667,7 @@ body.espace-voyageur {
                     }
                 }
 
-                .tb-article--content.medium-editor-image.medium-editor-insert-plugin.medium-editor-placeholder {
+                .medium-editor-insert-plugin.medium-editor-placeholder {
                     &:before,
                     &:empty:before {
                         content: attr(placeholder);

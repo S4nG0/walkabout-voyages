@@ -12,7 +12,7 @@ $page = "article";
 
         <div class="big-title-wrapper">
             <div class="big-title">
-                <h2 class="no-sep titre--article" contenteditable="true" placeholder="Cliquez pour insérer un titre d'article">
+                <h2 class="no-sep titre--article" contenteditable="true" placeholder="Titre de l'article">
                     <?php echo $article[0]->titre; ?>
                 </h2>
             </div>
@@ -25,8 +25,8 @@ $page = "article";
                 <!-- begin:article -->
                 <div class="row noPadding content--article">
                     <article class="tb-article">
-                        <div class="tb-article--content" placeholder="Cliquez pour commencez à écrire...">
-                            <div class="medium-editor-start medium-editor-image">
+                        <div class="tb-article--content">
+                            <div class="medium-editor-start medium-editor-image" placeholder="Cliquez pour commencez à écrire...">
                                 <?php echo $article[0]->texte; ?>
                             </div>
                         </div>
