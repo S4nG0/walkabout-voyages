@@ -4506,6 +4506,7 @@ body.espace-voyageur .main .big-title-wrapper .big-title {
 body.espace-voyageur .main .big-title-wrapper .big-title .button:last-child {
   margin-right: 0;
 }
+body.espace-voyageur .main .big-title-wrapper .big-title *[contenteditable="true"]:before,
 body.espace-voyageur .main .big-title-wrapper .big-title *[contenteditable="true"]:empty:before {
   content: attr(placeholder);
   position: relative;
@@ -5030,7 +5031,7 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .tb-articl
 body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content blockquote {
   padding: 0;
 }
-body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content.medium-editor-image.medium-editor-insert-plugin.medium-editor-placeholder:before, body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content.medium-editor-image.medium-editor-insert-plugin.medium-editor-placeholder:empty:before {
+body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin.medium-editor-placeholder:before, body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin.medium-editor-placeholder:empty:before {
   content: attr(placeholder);
   position: absolute;
   max-width: 700px;
@@ -5051,7 +5052,7 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .tb-articl
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content.medium-editor-image.medium-editor-insert-plugin.medium-editor-placeholder:after {
+body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin.medium-editor-placeholder:after {
   display: none;
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .medium-insert-images.medium-insert-images-grid,

@@ -73,6 +73,7 @@ body.espace-voyageur {
                 }
 
                 //PLACEHOLDER FOR CONTENTEDITABLE
+                *[contenteditable="true"]:before,
                 *[contenteditable="true"]:empty:before {
                     content: attr(placeholder);
                     position: relative;
@@ -667,7 +668,7 @@ body.espace-voyageur {
                     }
                 }
 
-                .tb-article--content.medium-editor-image.medium-editor-insert-plugin.medium-editor-placeholder {
+                .medium-editor-insert-plugin.medium-editor-placeholder {
                     &:before,
                     &:empty:before {
                         content: attr(placeholder);
