@@ -1,21 +1,14 @@
 <?php
-$page = 'payment'; 
+$page = 'payment';
 ?>
 
 <body class="checkout">
 
+<?php
 
-<div class="main" id="main">
-    <div class="container-fluid noPadding">
-        <!-- Navbar -->
-        <?php 
-        
-        set_include_path(dirname(__FILE__)."/../");
-        require 'template/menu.php'; 
-        
-        ?>
-    </div>
-</div>
+set_include_path(dirname(__FILE__)."/../");
+
+?>
 
 <div class="content">
     <div class="container">
