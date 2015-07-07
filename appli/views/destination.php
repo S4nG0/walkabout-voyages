@@ -396,4 +396,4 @@
     <!-- endblock:Share -->
 
     <!-- Google map API -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGd2lDvHAnUu-V20b5UBz6lXgqtWhSS5g"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4p0PAyfKONlPQH3jTQgPCgV8E8fa48a4"></script>
