@@ -13,6 +13,7 @@ Générales :
   ☐ Faire l'envoi d'email pour l'oubli de mot de passe
   ☐ Faire une page cible user (avec l'ensemble de ses carnets)
   ☐ Faire la page avec tous les carnets
+  ☐ Check matchMedia pour annuler parallax sur mobile
 
 Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)
