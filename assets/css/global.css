@@ -5388,6 +5388,7 @@ strong {
 }
 
 .lead, blockquote {
+  quotes: "\201c" "\201d";
   position: relative;
   padding: 0;
   margin: 0;
@@ -5395,9 +5396,25 @@ strong {
   font-family: "Dosis", sans-serif;
   font-size: 26px;
   font-style: italic;
-  line-height: 36px;
+  line-height: 36px !important;
   text-align: center;
   border-left: none;
+}
+.lead:before, .lead:after, blockquote:before, blockquote:after {
+  font-size: 50px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1em;
+  display: inline-block;
+  position: absolute;
+}
+.lead:before, blockquote:before {
+  content: open-quote;
+  margin-left: -15px;
+}
+.lead:after, blockquote:after {
+  content: close-quote;
+  margin-top: 5px;
 }
 
 .published {
@@ -5940,9 +5957,8 @@ body.single-carnet .content {
   margin: 0 auto;
   font-size: 26px;
   font-weight: 300;
-  line-height: 26px;
   padding: 50px 25px 0 25px;
-  max-width: 800px;
+  max-width: 500px;
 }
 .tb-article .tb-article--content img {
   display: block;
@@ -6455,16 +6471,6 @@ body.single-carnet .content {
   .container-fluid.discussion .comment .comment--content .comment--reply {
     text-align: center;
   }
-
-  p.lead, blockquote {
-    padding: 0;
-  }
-  p.lead:before, blockquote:before {
-    left: 0;
-  }
-  p.lead:after, blockquote:after {
-    bottom: -30px;
-  }
 }
 @media screen and (max-width: 480px) {
   h1, h2, h3 {
@@ -6525,7 +6531,14 @@ body.single-carnet .content {
   }
   body.single-carnet .content .tb-article .lead, body.single-carnet .content .tb-article blockquote {
     font-size: 20px;
-    line-height: 30px;
+    line-height: 30px !important;
+  }
+  body.single-carnet .content .tb-article .lead:before, body.single-carnet .content .tb-article blockquote:before {
+    margin-top: -5px;
+    margin-left: -20px;
+  }
+  body.single-carnet .content .tb-article .lead:after, body.single-carnet .content .tb-article blockquote:after {
+    margin-top: 0;
   }
   body.single-carnet .container-fluid.discussion .comment .comment--content {
     text-align: center;

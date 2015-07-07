@@ -222,6 +222,7 @@ strong {
 }
 
 .lead, blockquote {
+    quotes: "\201c" "\201d";
     position: relative;
     padding: 0;
     margin: 0;
@@ -229,9 +230,28 @@ strong {
     font-family: $dosis;
     font-size: 26px;
     font-style: italic;
-    line-height: 36px;
+    line-height: 36px !important;
     text-align: center;
     border-left: none;
+
+    &:before, &:after {
+        font-size: 50px;
+        font-weight: 500;
+        font-style: italic;
+        line-height: 1em;
+        display: inline-block;
+        position: absolute;
+    }
+
+    &:before {
+        content: open-quote;
+        margin-left: -15px;
+    }
+
+    &:after {
+        content: close-quote;
+        margin-top: 5px;
+    }
 }
 
 .published {
@@ -778,9 +798,8 @@ body.single-carnet {
             margin: 0 auto;
             font-size: 26px;
             font-weight: 300;
-            line-height: 26px;
             padding: 50px 25px 0 25px;
-            max-width: 800px;
+            max-width: 500px;
         }
 
         img {
@@ -1341,17 +1360,6 @@ body.single-carnet {
             }
         }
     }
-    p.lead, blockquote {
-        padding: 0;
-
-        &:before {
-            left: 0;
-        }
-
-        &:after {
-            bottom: -30px;
-        }
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -1427,7 +1435,16 @@ body.single-carnet {
                 }
                 .lead, blockquote {
                     font-size: 20px;
-                    line-height: 30px;
+                    line-height: 30px !important;
+
+                    &:before {
+                        margin-top: -5px;
+                        margin-left: -20px;
+                    }
+
+                    &:after {
+                        margin-top: 0;
+                    }
                 }
             }
         }
