@@ -15,6 +15,10 @@ Générales :
   ☐ Faire la page avec tous les carnets
   ☐ Check matchMedia pour annuler parallax sur mobile
 
+Checkout :
+  ☐ Revoir le dev du checkout
+  ☐ Revoir les titres (ça affiche une erreur en titre de page xD)
+
 Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)
   ☐ Auré : Gérer dynamiquement les 'alt' des pictos (zone informations)
@@ -46,6 +50,11 @@ Utilisateur :
   ✔ Connexion / Déconnexion @done (15-06-21 22:56)
   ☐ Profil ( modification et création )
   ☐ Faire son interface d'administration!!!!! URGENT!
+
+
+  ☐ La deuxième réservation est pas dans le tableau -> what the fuck?
+
+
   ✔ Auré : Mettre le message de "mot de passe requis" en français quand on oublie de mettre son pass ou son ID @done (15-07-03 11:34)
 
 Modif-carnet :

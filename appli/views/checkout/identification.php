@@ -1,21 +1,15 @@
-<?php 
-$page = 'sign-in'; 
+<?php
+$page = 'sign-in';
 ?>
 
 <body class="checkout">
 
 
-<div class="main" id="main">
-    <div class="container-fluid noPadding">
-        <!-- Navbar -->
-        <?php 
-        
-        set_include_path(dirname(__FILE__)."/../");
-        require 'template/menu.php'; 
-        
-        ?>
-    </div>
-</div>
+<?php
+
+set_include_path(dirname(__FILE__)."/../");
+
+?>
 
 <div class="content">
     <div class="container">
@@ -44,7 +38,7 @@ $page = 'sign-in';
                                 <?php echo form_error('password'); ?>
                                 <p class="forgotten-pwd">
                                     Vous avez oublié votre mot de passe ? <a href="#">Cliquez-ici</a>
-                                </p>                            
+                                </p>
                             </div>
                             <!-- Form submitted via jQuery -->
                             <input type="submit" class="button submit-form black" value="Je me connecte !" />

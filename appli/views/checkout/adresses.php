@@ -1,21 +1,15 @@
-<?php 
-$page = 'informations'; 
+<?php
+$page = 'informations';
 ?>
 
 <body class="checkout">
 
 
-<div class="main" id="main">
-    <div class="container-fluid noPadding">
-        <!-- Navbar -->
-        <?php 
-        
-        set_include_path(dirname(__FILE__)."/../");
-        require 'template/menu.php'; 
-        
-        ?>
-    </div>
-</div>
+<?php
+
+set_include_path(dirname(__FILE__)."/../");
+
+?>
 
 <div class="content">
     <div class="container">
@@ -32,10 +26,10 @@ $page = 'informations';
                     <div class="col-sm-6 col-md-8">
                         <div class="form-group">
                             <label for="adresses">Mon adresse</label>
-                            <p style="text-align:left;font-weight:900"><?php 
+                            <p style="text-align:left;font-weight:900"><?php
                             if($user->adresse2 != ""){
                                 echo $user->nom.' '.$user->prenom.' <br/>'.$user->adresse1.' <br/> '.$user->adresse2.' <br/>'.$user->CP.' '.$user->ville.'<br/>'.$user->pays;
-                                
+
                             }
                             else{
                                 echo $user->nom.' '.$user->prenom.' <br/>'.$user->adresse1.' <br/>'.$user->CP.' '.$user->ville.'<br/>'.$user->pays;

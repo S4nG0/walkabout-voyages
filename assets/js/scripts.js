@@ -232,7 +232,7 @@ function mapInitialize() {
 }
 
 $(document).ready(function () {
-    
+
     //var base_url = "http://localhost/walkabout-voyages/";
     var base_url = "http://localhost/walkabout-voyages/";
 
@@ -348,13 +348,16 @@ $(document).ready(function () {
         to: 'fa-bars',
         animation: 'fadeOutBottom'
     }
-    navbarToggle.addEventListener('click', function () {
-        if (!icon.classList.contains('fa-arrow-up')) {
-            iconate(icon, options);
-        } else {
-            iconate(icon, options2);
-        }
-    })
+
+    if(!$('body').hasClass('checkout')) {
+        navbarToggle.addEventListener('click', function () {
+            if (!icon.classList.contains('fa-arrow-up')) {
+                iconate(icon, options);
+            } else {
+                iconate(icon, options2);
+            }
+        })
+    }
 
     /***
      * Sticky navbar
@@ -625,11 +628,11 @@ $(document).ready(function () {
             return false;
         }
     });
-    
+
     var url = document.location.href;
     url = url.split('/');
     var id_article = url[url.length - 1];
-    
+
     var editor = new MediumEditor('.medium-editor-image', {
             placeholder: {
                 text: "Cliquez pour commencez à écrire..."
