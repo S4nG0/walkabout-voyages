@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<!-- Efficom - Groupe 2 - CRW 2014/2015 -->
+<!-- Walkabout est un projet scolaire à but non-lucratif. Aucun bénéfice ne sera réalisé sur ce projet. -->
+
 <head>
 
     <meta charset="UTF-8">
@@ -24,7 +27,7 @@
     <link rel="stylesheet" href="<?php echo css_url('fancybox');?>">
     <link rel="stylesheet" href="<?php echo css_url('iconate.min');?>">
     <link rel="stylesheet" href="<?php echo css_url('owl.carousel');?>">
-    
+
     <!--Medium editor-->
     <link rel="stylesheet" href="<?php echo css_url('medium/medium-editor');?>">
     <link rel="stylesheet" href="<?php echo css_url('medium/bootstrap.min');?>">
