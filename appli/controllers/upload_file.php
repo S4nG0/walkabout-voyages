@@ -35,7 +35,7 @@ class Upload_file extends CI_Controller {
         //On vérifie si le dossier d'upload existe et si non on le crée
         if (!file_exists($config['upload_path'])) {
             //Création du dossier pour le carnet
-            if(!mkdir($config['upload_path'])){
+            if(!mkdir($config['upload_path'],0777,true)){
                 echo 'erreur lors de la création du dossier!';
             }
         }
