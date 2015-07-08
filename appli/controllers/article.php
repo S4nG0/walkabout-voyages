@@ -27,19 +27,16 @@ class Article extends CI_Controller {
             if($data['connecte'] == false){
                 redirect('/connexion');
             }
+            
             $this->form_validation->set_rules('titre','"Titre"', 'trim|required|xss_clean');
             $this->form_validation->set_rules('content','"Contenu"', 'trim|required|xss_clean');
-            
-            var_dump($this->input->post('titre'));
-            var_dump($this->input->post('content'));
             
             if($this->form_validation->run()){
                 $article = new stdClass();
                 $article->titre = $this->input->post('titre');
                 $article->texte = htmlspecialchars_decode($this->input->post('content'));
-                var_dump($article);
-                //$this->articles->modify($article,$id);
-                //redirect($_SERVER["HTTP_REFERER"]);
+                $this->articles->modify($article,$id);
+                redirect($_SERVER["HTTP_REFERER"]);
             }
             else{
                 $data['article'] = $this->articles->constructeur($id);
@@ -52,9 +49,9 @@ class Article extends CI_Controller {
                 $data['title'] = "Modification de l'article";
 
                 
-//                $this->load->view('template/header', $data);
-//                $this->load->view('modif_article', $data);
-//                $this->load->view('template/footer');
+                $this->load->view('template/header', $data);
+                $this->load->view('modif_article', $data);
+                $this->load->view('template/footer');
             }            
         }
         

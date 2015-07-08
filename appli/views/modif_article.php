@@ -1,10 +1,9 @@
 <?php
 $page = "article";
-echo validation_errors();
 ?>
 
 <body class="espace-voyageur">
-    <?php echo form_open(base_url().'article/modifier/'.$article[0]->idArticles); ?>
+    <form action="<?php echo (base_url().'article/modifier/'.$article[0]->idArticles); ?>" method="post" accept-charset="utf-8">
     <div class="main">
         <div class="container-fluid noPadding">
             <!-- Navbar -->
