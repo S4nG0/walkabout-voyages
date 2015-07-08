@@ -233,8 +233,8 @@ function mapInitialize() {
 
 $(document).ready(function () {
 
-    var base_url = "http://dev.walkabout-voyages.fr/";
-    // var base_url = "http://localhost/walkabout-voyages/";
+    // var base_url = "http://dev.walkabout-voyages.fr/";
+    var base_url = "http://localhost/walkabout-voyages/";
 
     /***
      * Carousel initalizers

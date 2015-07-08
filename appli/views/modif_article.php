@@ -1,5 +1,6 @@
 <?php
 $page = "article";
+echo validation_errors();
 ?>
 
 <body class="espace-voyageur">
