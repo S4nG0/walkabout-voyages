@@ -21,6 +21,7 @@ class Informations extends CI_Controller {
 	{
             $data = array();
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
+            $data['title'] = "Réservation";
             if($data['connecte'] == false){
                 redirect('/connexion');
             }
@@ -28,7 +29,7 @@ class Informations extends CI_Controller {
             $data['voyage'] = $this->session->userdata('voyage');
             $data['destination'] = $this->session->userdata('destination');
             
-            $this->load->view('template/header');
+            $this->load->view('template/header',$data);
             $this->load->view('checkout/adresses',$data);
             $this->load->view('template/footer');
 	}

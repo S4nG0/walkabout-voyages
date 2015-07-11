@@ -22,6 +22,7 @@ class Identification extends CI_Controller {
             $data = array();
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $data['result'] = null;
+            $data['title'] = "Réservation";
             
             if ($this->input->post() != false) {
                 $voyage = $this->input->post('date');
@@ -38,7 +39,7 @@ class Identification extends CI_Controller {
             }
             $data['voyage'] = $this->session->userdata('voyage');
             $data['destination'] = $this->session->userdata('destination');
-            $this->load->view('template/header');
+            $this->load->view('template/header',$data);
             $this->load->view('checkout/identification',$data);
             $this->load->view('template/footer');
 	}
