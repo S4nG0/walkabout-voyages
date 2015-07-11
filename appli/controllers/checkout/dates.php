@@ -24,19 +24,20 @@ class Dates extends CI_Controller {
             }
             $data = array();
             $data['voyage_selectionne'] = false;
+            $data['title'] = "Réservation";
             if($this->session->userdata('voyage') != false){
                 $data['voyage_selectionne'] = $this->session->userdata('voyage');
             }
             $this->session->set_userdata('destination',$id);
             $data['destination'] = $this->session->userdata('destination');
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
-            $data['voyages'] = $this->voyages->get_voyages_from_destination($id);
+            $data['voyages'] = $this->voyages->get_voyage_reservation($id);
             foreach($data['voyages'] as $voyage){
                 $voyage->date_depart = conv_date($voyage->date_depart);
                 $voyage->date_retour = conv_date($voyage->date_retour);
                 $voyage->nb_reservés = $voyage->nb_places - $this->reservations->count($voyage->idVoyage);
             }
-            $this->load->view('template/header');
+            $this->load->view('template/header',$data);
             $this->load->view('checkout/dates',$data);
             $this->load->view('template/footer');
             //$this->output->enable_profiler(true);

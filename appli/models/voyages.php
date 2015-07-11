@@ -41,6 +41,23 @@ class Voyages extends CI_Model {
     }  
     
     
+    public function get_voyage_reservation($idDestination = 0){
+        
+        if($idDestination == 0){
+            return false;
+        }
+        
+        $voyages = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idDestination', $idDestination)
+                           ->where('date_depart > "'.Date('Ymd').'"')
+                           ->get()
+                           ->result();
+        
+        return $voyages;
+    }  
+    
+    
     
     public function select_min_prix($id = 0){
         
