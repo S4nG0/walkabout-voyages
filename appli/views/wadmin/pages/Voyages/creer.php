@@ -1,5 +1,5 @@
 <?php
-    echo form_open('walkadmin/voyageadmin/addDate/'.$idDestination);
+    echo form_open('walkadmin/voyage/creer/'.$idDestination);
 ?>
 <div class="container">
     <div class="row">

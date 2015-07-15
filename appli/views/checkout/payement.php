@@ -48,6 +48,7 @@ set_include_path(dirname(__FILE__)."/../");
                                     </td>
                                     <td>
                                         <input type="number" name="nb_personne" id="nb_personne" value="1" min="1" max="<?php echo $nb_places_restantes; ?>"><br /><span class="small">(places restantes : <?php echo $nb_places_restantes; ?>)</span>
+                                        <input type="hidden" id="nb_places" value="<?php echo $nb_places_restantes; ?>"/>
                                     </td>
                                     <td>
                                         <span class="price" id="total"><span id="result_total"><?php echo $voyage->prix; ?></span><sup> €</sup></span>

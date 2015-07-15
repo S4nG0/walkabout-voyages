@@ -1,4 +1,4 @@
-<?php echo form_open('wadmin/droitAdmin/ajoutAdmin'); ?>
+<?php echo form_open('walkadmin/admin/creer'); ?>
 <?php
 if (isset($result) && $result === false) {
     echo '<div class="alert alert-danger" role="alert"><strong>Erreur!</strong> L\'email de connexion ou le mot de passe sont incorrect. Veuillez réessayer!<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';

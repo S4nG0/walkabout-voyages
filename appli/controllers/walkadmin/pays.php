@@ -6,18 +6,18 @@
  * Time: 15:28
  */
 
-class Paysadministration extends CI_Controller{
+class Pays extends CI_Controller{
 
-    public function listePays(){
+    public function liste(){
         $data['pays']=$this->pays->getPays();
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header');
         $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/ListePays',$data);
+        $this->load->view('wadmin/pages/Pays/liste',$data);
         $this->load->view('wadmin/template/footer');
     }
 
-    public function addPays(){
+    public function creer(){
         if($this->input->post() != false) {
             $this->form_validation->set_rules('nom', '"nom"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('capitale', '"capitale"', 'trim|required|encode_php_tags|xss_clean');
@@ -43,18 +43,18 @@ class Paysadministration extends CI_Controller{
                 $this->pays->insertPays($pays);
                 redirect('walkadmin/dashboard');
             }else{
-                redirect('walkadmin/paysadministration/addPays');
+                $this->creer();
             }
         }
         $data['admin'] = $this->session->userdata('admin');
         $data['page'] = "add_country";
         $this->load->view('wadmin/template/header');
         $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/ajouterPays',$data);
+        $this->load->view('wadmin/pages/Pays/creer',$data);
         $this->load->view('wadmin/template/footer');
     }
 
-    public function detailPays($idPays=0){
+    public function detail($idPays=0){
         if($idPays==0)
             redirect('walkadmin/dashboard');
         if($this->input->post() != false) {
@@ -89,7 +89,7 @@ class Paysadministration extends CI_Controller{
         $data['page'] = "modif_country";
         $this->load->view('wadmin/template/header');
         $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/ajouterPays',$data);
+        $this->load->view('wadmin/pages/Pays/modifier',$data);
         $this->load->view('wadmin/template/footer');
     }
 }

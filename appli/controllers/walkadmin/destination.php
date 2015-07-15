@@ -6,14 +6,9 @@
  * Time: 16:43
  */
 
-class Destinationadmin  extends CI_Controller{
+class Destination  extends CI_Controller{
 
-    public function index(){
-        echo 'test';
-    }
-
-
-    public function ajoutDestination(){
+    public function creer(){
         if($this->input->post() != false){
             $this->form_validation->set_rules('pays', '"pays"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('titre', '"titre"', 'trim|required|encode_php_tags|xss_clean');
@@ -44,7 +39,7 @@ class Destinationadmin  extends CI_Controller{
                     $data['admin'] = $this->session->userdata('admin');
                     $this->load->view('wadmin/template/header');
                     $this->load->view('wadmin/template/menu', $data);
-                    $this->load->view('wadmin/ajoutDestination',$data);
+                    $this->load->view('wadmin/pages/Destinations/creer',$data);
                     $this->load->view('wadmin/template/footer');
                 }
                 else{
@@ -81,20 +76,20 @@ class Destinationadmin  extends CI_Controller{
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header');
         $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/ajoutDestination',$data);
+        $this->load->view('wadmin/pages/Destinations/creer',$data);
         $this->load->view('wadmin/template/footer');
     }
 
-    public function ListeDestination(){
+    public function liste(){
         connecte_admin($this->session->userdata('admin'));
         $data['pays']=$this->destination->get_infos_destination();
         $this->load->view('wadmin/template/header');
-        $this->load->view('wadmin/ListeDestination',$data);
+        $this->load->view('wadmin/pages/Destinations/liste',$data);
         $this->load->view('wadmin/template/footer');
     }
 
 
-    public function  detailTravel($idDestination = 0){
+    public function  detail($idDestination = 0){
         if($idDestination==0){
             redirect('walkadmin/dashboard');
         }
@@ -122,7 +117,7 @@ class Destinationadmin  extends CI_Controller{
             $data['admin'] = $this->session->userdata('admin');
             $this->load->view('wadmin/template/header');
             $this->load->view('wadmin/template/menu', $data);
-            $this->load->view('wadmin/ajoutDestination',$data);
+            $this->load->view('wadmin/pages/Destinations/modifier',$data);
             $this->load->view('wadmin/template/footer');
         }
     }
