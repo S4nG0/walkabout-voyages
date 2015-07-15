@@ -52,19 +52,22 @@ body.espace-voyageur {
         }
     }
 
-    .main {
+    .main.banner {
+        height: 400px;
         background: $texture;
         @include box-shadow(none);
         border-bottom: none;
 
         .big-title-wrapper {
+            position: absolute;
             display: table;
+            top: 0;
             width: 100%;
+            height: 100%;
 
             .big-title {
                 display: table-cell;
-                vertical-align: middle;
-                padding-top: 25px;
+                vertical-align: bottom;
                 width: 100%;
                 height: 150px;
                 text-align: center;
