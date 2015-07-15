@@ -44,7 +44,7 @@ body.sign-in {
             }
 
             .navbar-toggle {
-                margin: 25px;
+                margin: 35px 25px;
             }
 
             .navbar-collapse {
@@ -56,12 +56,6 @@ body.sign-in {
                     }
                 }
             }
-        }
-
-        .navbar.affix {
-            background-color: rgba(33, 33, 33, 1);
-            border-bottom: 2px solid $jaune-or;
-            @include box-shadow(0 5px 20px 0 rgba(33, 33, 33, 0.30));
         }
 
         .caption-wrapper {
@@ -161,6 +155,26 @@ body.sign-in {
 
             .button {
                 width: 200px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 330px) {
+    body.sign-in {
+        .main {
+            .navbar {
+                .navbar-toggle {
+                    margin: 25px;
+                }
+
+                .navbar-brand {
+                    padding: 20px 25px;
+                }
+            }
+            .caption-wrapper {
+                position: relative;
+                padding-bottom: 25px;
             }
         }
     }

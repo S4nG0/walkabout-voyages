@@ -2,7 +2,7 @@
 
 <body class="sign-in">
 
-    <div class="main" id="main" data-stellar-background-ratio="0.5">
+    <div class="main" id="main">
         <div class="container-fluid noPadding">
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>

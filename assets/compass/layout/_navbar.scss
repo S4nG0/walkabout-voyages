@@ -21,15 +21,15 @@
             li {
                 a {
                     margin: 55px 25px 40px 0;
+                    padding: 0 0 10px 0;
+                    color: $jaune-or;
                     font-family: $dosis;
                     font-size: 16px;
                     font-weight: 600;
                     letter-spacing: 1px;
-                    padding: 0 0 10px 0;
-                    border-bottom: 2px solid transparent;
-                    color: $jaune-or;
                     text-transform: uppercase;
                     text-decoration: none;
+                    border-bottom: 2px solid transparent;
                     @include transition(0.25s all ease-in-out);
                     .fa{
                         margin-right: 10px;
@@ -112,7 +112,7 @@
             .nav {
                 li {
                     a {
-                        margin: 40px auto;
+                        margin: 25px auto;
                         width: 25%;
                         &:last-child {
                             margin-right: auto;
@@ -169,7 +169,7 @@
 @media screen and (max-width: 480px) {
     .navbar {
         .navbar-brand {
-            padding: 30px 25px;
+            padding: 28px 25px;
             .logo {
                 width: 150px;
             }
@@ -199,10 +199,7 @@
 @media screen and (max-width: 330px) {
     .navbar {
         .navbar-brand {
-            padding: 35px 25px;
-            .logo {
-                width: 130px;
-            }
+            padding: 25px;
         }
     }
 }

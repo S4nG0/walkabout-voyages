@@ -1928,15 +1928,15 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 .navbar .navbar-collapse .nav li a {
   margin: 55px 25px 40px 0;
+  padding: 0 0 10px 0;
+  color: #f0c041;
   font-family: "Dosis", sans-serif;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
-  padding: 0 0 10px 0;
-  border-bottom: 2px solid transparent;
-  color: #f0c041;
   text-transform: uppercase;
   text-decoration: none;
+  border-bottom: 2px solid transparent;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
   -webkit-transition: all 0.25s ease-in-out;
@@ -2011,7 +2011,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     text-align: center;
   }
   .navbar .navbar-collapse .nav li a {
-    margin: 40px auto;
+    margin: 25px auto;
     width: 25%;
   }
   .navbar .navbar-collapse .nav li a:last-child {
@@ -2042,7 +2042,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 @media screen and (max-width: 480px) {
   .navbar .navbar-brand {
-    padding: 30px 25px;
+    padding: 28px 25px;
   }
   .navbar .navbar-brand .logo {
     width: 150px;
@@ -2060,10 +2060,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 @media screen and (max-width: 330px) {
   .navbar .navbar-brand {
-    padding: 35px 25px;
-  }
-  .navbar .navbar-brand .logo {
-    width: 130px;
+    padding: 25px;
   }
 }
 /*------------------------------------*\
@@ -3836,17 +3833,10 @@ body.sign-in .main .navbar .navbar-brand .logo {
   width: 150px;
 }
 body.sign-in .main .navbar .navbar-toggle {
-  margin: 25px;
+  margin: 35px 25px;
 }
 body.sign-in .main .navbar .navbar-collapse .nav li a {
   margin: 35px 25px 28px 0;
-}
-body.sign-in .main .navbar.affix {
-  background-color: #212121;
-  border-bottom: 2px solid #f0c041;
-  -moz-box-shadow: 0 5px 20px 0 rgba(33, 33, 33, 0.3);
-  -webkit-box-shadow: 0 5px 20px 0 rgba(33, 33, 33, 0.3);
-  box-shadow: 0 5px 20px 0 rgba(33, 33, 33, 0.3);
 }
 body.sign-in .main .caption-wrapper {
   position: absolute;
@@ -3914,6 +3904,18 @@ body.sign-in footer {
   }
   body.sign-in .recover-pwd-block .button {
     width: 200px;
+  }
+}
+@media screen and (max-width: 330px) {
+  body.sign-in .main .navbar .navbar-toggle {
+    margin: 25px;
+  }
+  body.sign-in .main .navbar .navbar-brand {
+    padding: 20px 25px;
+  }
+  body.sign-in .main .caption-wrapper {
+    position: relative;
+    padding-bottom: 25px;
   }
 }
 /*------------------------------------*\
@@ -4450,11 +4452,6 @@ body.checkout footer {
     line-height: 34px;
   }
 }
-@media screen and (max-width: 330px) {
-  .navbar .navbar-brand {
-    padding: 25px;
-  }
-}
 /*------------------------------------*\
     #ESPACE VOYAGEUR
 \*------------------------------------*/
@@ -4465,7 +4462,7 @@ body.espace-voyageur .navbar {
   margin-top: 0;
 }
 body.espace-voyageur .navbar .navbar-brand {
-  padding: 30px 25px;
+  padding: 25px 25px;
 }
 body.espace-voyageur .navbar .navbar-brand .logo {
   width: 150px;
@@ -4499,6 +4496,7 @@ body.espace-voyageur .main .big-title-wrapper {
 body.espace-voyageur .main .big-title-wrapper .big-title {
   display: table-cell;
   vertical-align: middle;
+  padding-top: 25px;
   width: 100%;
   height: 150px;
   text-align: center;
@@ -4535,7 +4533,6 @@ body.espace-voyageur .main .big-title-wrapper .big-title h1 {
   margin: 0 auto;
   margin-bottom: 15px;
   font-family: "Dosis", serif;
-  font-size: 36px;
   font-weight: 600;
   color: #f0c041;
   text-transform: uppercase;

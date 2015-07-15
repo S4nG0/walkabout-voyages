@@ -10,32 +10,30 @@ $page = "moncompte";
             <?php include 'template/menu.php'; ?>
         </div>
 
-        <div class="row noPadding">
-            <div class="big-title-wrapper">
-                <div class="big-title">
-                    <h1 class="sep">Espace voyageur</h1>
-                    <div class="profile-picture">
-                        <figure class="effect">
-                            <img src="<?php echo img_url($user->photo); ?>" alt="<?php echo $user->prenom; ?>">
-                            <figcaption>
-                                <div class="caption-content">
-                                    <a class="file-upload" href="#">
-                                        <i class="fa fa-photo"></i>
-                                        <p>Modifier</p>
-                                    </a>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <?php echo form_open_multipart('/upload_file/user'); ?>
-                        <input type="file" name="userimage" class="input-upload hidden"/>
-                        <input type="submit" class="submit-cover hidden"/>
-                    <?php echo  form_close(); ?>
-                        <span><?php if(gettype($upload) != "boolean")echo '<script> alert("'.strip_tags (html_entity_decode($upload)).'"); </script>';?></span>
-                    <p>
-                        Bonjour <?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span>"; ?>
-                    </p>
+        <div class="big-title-wrapper">
+            <div class="big-title">
+                <h1 class="sep">Espace voyageur</h1>
+                <div class="profile-picture">
+                    <figure class="effect">
+                        <img src="<?php echo img_url($user->photo); ?>" alt="<?php echo $user->prenom; ?>">
+                        <figcaption>
+                            <div class="caption-content">
+                                <a class="file-upload" href="#">
+                                    <i class="fa fa-photo"></i>
+                                    <p>Modifier</p>
+                                </a>
+                            </div>
+                        </figcaption>
+                    </figure>
                 </div>
+                <?php echo form_open_multipart('/upload_file/user'); ?>
+                    <input type="file" name="userimage" class="input-upload hidden"/>
+                    <input type="submit" class="submit-cover hidden"/>
+                <?php echo  form_close(); ?>
+                    <span><?php if(gettype($upload) != "boolean")echo '<script> alert("'.strip_tags (html_entity_decode($upload)).'"); </script>';?></span>
+                <p>
+                    Bonjour <?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span>"; ?>
+                </p>
             </div>
         </div>
     </div>
