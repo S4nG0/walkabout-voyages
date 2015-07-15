@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo base_url() . 'walkadmin/commentss'; ?>">
+                    <a href="<?php echo base_url() . 'walkadmin/comments'; ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Voir tout les commentaires</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

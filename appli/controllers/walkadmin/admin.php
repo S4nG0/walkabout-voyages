@@ -1,10 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Administration extends CI_Controller {
+class Admin extends CI_Controller {
 
-    public function index(){
-
-    }
     public function creer(){
         if ($this->input->post() != false) {
             $this->form_validation->set_rules('identifiant', '"identifiant"', 'trim|required|encode_php_tags|xss_clean');
@@ -20,15 +17,12 @@ class Administration extends CI_Controller {
                 );
                 $result= $this->admin->insert($donnee);
                 $data['error'] = $result==false ?  "Erreur lors de l'enregistrement" : "Modification enregistrée.";
-                redirect('/walkadmin/connexion/');
+                redirect('/wadmin/connexion/accueil');
             }
         }
         connecte_admin($this->session->userdata('admin'));
-        $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header');
-        $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/page/Admin/creer');
+        $this->load->view('wadmin/pages/Admin/creer');
         $this->load->view('wadmin/template/footer');
     }
-
 }

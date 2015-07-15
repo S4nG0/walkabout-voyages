@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Booking extends CI_Controller {
+class Reservation extends CI_Controller {
 
     /**
      * Index Page for this controller.
@@ -28,7 +28,7 @@ class Booking extends CI_Controller {
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header');
         $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/booking');
+        $this->load->view('wadmin/pages/Reservations/liste');
         $this->load->view('wadmin/template/footer');
         //$this->output->enable_profiler(true);
     }

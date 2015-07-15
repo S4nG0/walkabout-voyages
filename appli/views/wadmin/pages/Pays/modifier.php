@@ -1,8 +1,5 @@
 <?php
-if($page=="add_country")
-    echo form_open_multipart('walkadmin/paysadministration/addPays');
-else
-    echo form_open_multipart('walkadmin/paysadministration/detailPays/'.$idPays);
+    echo form_open_multipart('walkadmin/pays/detail/'.$idPays);
 ?>
 <div class="container">
     <div class="row">
@@ -13,45 +10,44 @@ else
                         <fieldset>
                             <div class="form-group">
                                 <label for="nom">Nom: </label>
-                                <input class="form-control" placeholder="nom" name="nom" value="<?php if(isset($pays[0]->nom)) echo $pays[0]->nom ?>">
+                                <input class="form-control" placeholder="nom" name="nom" value="<?php echo $pays[0]->nom ?>">
                             </div>
                             <div class="form-group">
                                 <label for="capitale">Capitale: </label>
-                                <input class="form-control" placeholder="capitale" name="capitale" type="text" value="<?php if(isset($pays[0]->capitale)) echo $pays[0]->capitale ?>">
+                                <input class="form-control" placeholder="capitale" name="capitale" type="text" value="<?php echo $pays[0]->capitale ?>">
                             </div>
                             <div class="form-group">
                                 <label for="monnaie">Monnaie: </label>
-                                <input class="form-control" name="monnaie" placeholder="monnaie" value="<?php if(isset($pays[0]->monnaie)) echo $pays[0]->monnaie ?>">
+                                <input class="form-control" name="monnaie" placeholder="monnaie" value="<?php echo $pays[0]->monnaie ?>">
                             </div>
                             <div class="form-group">
                                 <label for="dirigeant">Dirigeant(e): </label>
-                                <input class="form-control" placeholder="dirigeant" name="dirigeant" type="text" value="<?php if(isset($pays[0]->Dirigeant)) echo $pays[0]->Dirigeant ?>">
+                                <input class="form-control" placeholder="dirigeant" name="dirigeant" type="text" value="<?php echo $pays[0]->Dirigeant ?>">
                             </div>
                             <div class="form-group">
                                 <label for="langues">Langues: </label>
-                                <input class="form-control" placeholder="langues" name="langues" type="text" value="<?php if(isset($pays[0]->langues)) echo $pays[0]->langues ?>">
+                                <input class="form-control" placeholder="langues" name="langues" type="text" value="<?php echo $pays[0]->langues ?>">
                             </div>
                             <div class="form-group">
                                 <label for="population">Population: </label>
-                                <input class="form-control" placeholder="population" name="population" type="text" value="<?php if(isset($pays[0]->population)) echo $pays[0]->population ?>">
+                                <input class="form-control" placeholder="population" name="population" type="text" value="<?php echo $pays[0]->population ?>">
                             </div>
                             <div class="form-group">
                                 <label for="superficie">Superficie: </label>
-                                <input class="form-control" placeholder="superficie" name="superficie" type="text" value="<?php if(isset($pays[0]->superficie)) echo $pays[0]->superficie ?>">
+                                <input class="form-control" placeholder="superficie" name="superficie" type="text" value="<?php echo $pays[0]->superficie ?>">
                             </div>
                             <div class="form-group">
                                 <label for="densité">Densité: </label>
-                                <input class="form-control" placeholder="densite" name="densite" type="text" value="<?php if(isset($pays[0]->densité)) echo $pays[0]->densité ?>">
+                                <input class="form-control" placeholder="densite" name="densite" type="text" value="<?php echo $pays[0]->densité ?>">
                             </div>
                             <div class="form-group">
                                 <label for="climat">Climat: </label>
-                                <input class="form-control" placeholder="climat" name="climat" type="text" value="<?php if(isset($pays[0]->climat)) echo $pays[0]->climat ?>">
+                                <input class="form-control" placeholder="climat" name="climat" type="text" value="<?php echo $pays[0]->climat ?>">
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
                             <div class="row noPadding">
                                 <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                                    <?php if($page=="add_country") { ?><input type="submit" class="button pull-right" value="Ajouter le pays"><?php }
-                                    else { ?><input type="submit" class="button pull-right" value="Modifier le pays"><?php } ?>
+                                    <input type="submit" class="button pull-right" value="Modifier le pays">
                                 </div>
                             </div>
                         </fieldset>

@@ -38,7 +38,7 @@ set_include_path(dirname(__FILE__)."/../");
                         }
                         echo '  <li>
                             <div class="form-group">
-                                <input class="radio" type="radio" name="date" id="date'.$x.'" value="'.$voyage->idVoyage.'" '.$checked.'>
+                                <input '.$disable.' class="radio" type="radio" name="date" id="date'.$x.'" value="'.$voyage->idVoyage.'" '.$checked.'>
                                 <label for="date'.$x.'"><span></span>'.$voyage->date_depart.' :</label>
                                 <p>
                                     <strong>Départ</strong> : '.$voyage->date_depart.'<br>

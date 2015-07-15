@@ -6,9 +6,9 @@
  * Time: 11:43
  */
 
-class Voyageadmin extends CI_Controller{
+class Voyage extends CI_Controller{
 
-    public function addDate($idDestination=0){
+    public function creer($idDestination=0){
         if($idDestination==0)
             redirect('walkadmin/dashboard');
         connecte_admin($this->session->userdata('admin'));
@@ -26,13 +26,13 @@ class Voyageadmin extends CI_Controller{
                     "nb_places" => $this->input->post('nb_personne')
                 );
                 $this->voyages->insertVoyage($voyage);
-                redirect('walkadmin/destinationadmin/ListeDestination');
+                redirect('walkadmin/destination/liste');
             }
         }else{
             $data['idDestination']=$idDestination;
             $data['destination']=$this->destination->constructeur($idDestination);
             $this->load->view('wadmin/template/header');
-            $this->load->view('wadmin/ajoutDate',$data);
+            $this->load->view('wadmin/pages/Voyages/creer',$data);
             $this->load->view('wadmin/template/footer');
         }
     }
