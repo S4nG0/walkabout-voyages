@@ -4,7 +4,7 @@
 
     <div class="navbar-header">
         <a class="navbar-brand" href="<?php echo base_url(); ?>">
-            <img class="logo" src="<?php echo img_url('logo.png');?>" alt="Walkabout">
+            <img class="logo" src="<?php echo img_url('logo.svg');?>" alt="Walkabout">
         </a>
         <button id="toggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -14,7 +14,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
 
-    <div class="navbar-collapse collapse noPadding" id="navbar">
+    <div class="navbar-collapse collapse" id="navbar">
         <ul class="nav navbar-nav navbar-right">
 
             <?php if ($page == "destinations" || $page == "single-destination") { ?>

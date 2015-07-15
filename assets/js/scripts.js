@@ -1,3 +1,8 @@
+var body = $('body');
+
+var base_url = "http://dev.walkabout-voyages.fr/";
+// var base_url = "http://localhost/walkabout-voyages/";
+
 /***
  * Gives two column the same height
  */
@@ -37,7 +42,7 @@ function equalheight(container) {
  * Resize home's #main div
  */
 function magicHeight() {
-    if ($('body').hasClass('home') || $('body').hasClass('single-carnet') || $('body').hasClass('sign-in')) {
+    if (body.hasClass('home') || body.hasClass('single-carnet') || body.hasClass('sign-in')) {
         $('#main').css({
             'height': $(window).height()
         });
@@ -233,9 +238,6 @@ function mapInitialize() {
 
 $(document).ready(function () {
 
-    var base_url = "http://dev.walkabout-voyages.fr/";
-    // var base_url = "http://localhost/walkabout-voyages/";
-
     /***
      * Carousel initalizers
      */
@@ -343,19 +345,14 @@ $(document).ready(function () {
         to: 'fa-arrow-up',
         animation: 'fadeOutTop'
     }
-    var options2 = {
-        from: 'fa-arrow-up',
-        to: 'fa-bars',
-        animation: 'fadeOutBottom'
-    }
 
-    if(!$('body').hasClass('checkout')) {
+    if(!body.hasClass('checkout')) {
         navbarToggle.addEventListener('click', function () {
-            if (!icon.classList.contains('fa-arrow-up')) {
-                iconate(icon, options);
-            } else {
-                iconate(icon, options2);
-            }
+            iconate(icon, options, function() {
+                var temp = options.from;
+                options.from = options.to;
+                options.to = temp;
+            });
         })
     }
 
@@ -363,14 +360,16 @@ $(document).ready(function () {
      * Sticky navbar
      */
     var navHeight = 77;
-    $('.navbar').affix({
-        offset: {
-            top: navHeight,
-            bottom: function () {
-                return (this.bottom = $('.footer').outerHeight(true))
+    if (!body.hasClass('sign-in')) {
+        $('.navbar').affix({
+            offset: {
+                top: navHeight,
+                bottom: function () {
+                    return (this.bottom = $('.footer').outerHeight(true))
+                }
             }
-        }
-    });
+        });
+    }
 
     /***
      * Smooth scrolls
@@ -417,7 +416,7 @@ $(document).ready(function () {
     /***
      * Readmore
      */
-    if(!$('body').hasClass('espace-voyageur')) {
+    if(!body.hasClass('espace-voyageur')) {
         $('.tb-article').readmore({
             collapsedHeight: 800,
             heightMargin: 0,
@@ -440,7 +439,7 @@ $(document).ready(function () {
     $('#delete-address').on('click', function () {
         confirm('Êtes-vous sûr de vouloir supprimer cette adresse ?');
     });
-    
+
     //Fonction changement prix pour réservation
     $('input[name=nb_personne]').on('change',function(){
         var nb_reserve = $(this).val();
