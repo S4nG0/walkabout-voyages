@@ -48,25 +48,25 @@
                         <a href="<?php echo base_url() . 'walkadmin/comments'; ?>"><i class="fa fa-comments fa-fw"></i> Commentaires</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/booking'; ?>"><i class="fa fa-shopping-cart fa-fw"></i> Réservations</a>
+                        <a href="<?php echo base_url() . 'walkadmin/reservation'; ?>"><i class="fa fa-shopping-cart fa-fw"></i> Réservations</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/administration/ajoutAdmin'; ?>"><i class="fa fa-support fa-fw"></i> Ajouter un administrateur</a>
+                        <a href="<?php echo base_url() . 'walkadmin/administration/creer'; ?>"><i class="fa fa-support fa-fw"></i> Administrateur</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/destinationadmin/ajoutDestination'; ?>"><i class="fa fa-support fa-fw"></i> Ajouter une destination</a>
+                        <a href="<?php echo base_url() . 'walkadmin/destinations/creer'; ?>"><i class="fa fa-support fa-fw"></i> Ajouter une destination</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/destinationadmin/ListeDestination'; ?>"><i class="fa fa-support fa-fw"></i> Liste des destinations</a>
+                        <a href="<?php echo base_url() . 'walkadmin/destinations/liste'; ?>"><i class="fa fa-support fa-fw"></i> Liste des destinations</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/paysadministration/addPays'; ?>"><i class="fa fa-support fa-fw"></i> Ajouter un pays</a>
+                        <a href="<?php echo base_url() . 'walkadmin/pays_admin/creer'; ?>"><i class="fa fa-support fa-fw"></i> Ajouter un pays</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/paysadministration/listePays'; ?>"><i class="fa fa-support fa-fw"></i> Liste des pays</a>
+                        <a href="<?php echo base_url() . 'walkadmin/pays_admin/liste'; ?>"><i class="fa fa-support fa-fw"></i> Liste des pays</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/utilisateuradministration/listeUser'; ?>"><i class="fa fa-support fa-fw"></i> Liste des utilisateurs</a>
+                        <a href="<?php echo base_url() . 'walkadmin/utilisateur/liste'; ?>"><i class="fa fa-support fa-fw"></i> Liste des utilisateurs</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>"><i class="fa fa-support fa-fw"></i> Contacts</a>
