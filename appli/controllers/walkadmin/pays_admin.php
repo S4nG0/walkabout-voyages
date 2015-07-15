@@ -6,7 +6,7 @@
  * Time: 15:28
  */
 
-class Pays extends CI_Controller{
+class Pays_admin extends CI_Controller{
 
     public function liste(){
         $data['pays']=$this->pays->getPays();

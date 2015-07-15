@@ -26,7 +26,7 @@ class Voyage extends CI_Controller{
                     "nb_places" => $this->input->post('nb_personne')
                 );
                 $this->voyages->insertVoyage($voyage);
-                redirect('walkadmin/destination/liste');
+                redirect('walkadmin/destinations/liste');
             }
         }else{
             $data['idDestination']=$idDestination;
