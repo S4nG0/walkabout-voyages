@@ -440,6 +440,18 @@ $(document).ready(function () {
     $('#delete-address').on('click', function () {
         confirm('Êtes-vous sûr de vouloir supprimer cette adresse ?');
     });
+    
+    //Fonction changement prix pour réservation
+    $('input[name=nb_personne]').on('change',function(){
+        var nb_reserve = $(this).val();
+        var nb_places = $('#nb_places').val();
+        if(nb_places < nb_reserve){
+            $(this).val($('#nb_places').val());
+        }else if($(this).val() < 1){
+            $(this).val(1);
+        }
+        $('#result_total').html($(this).val()*$('#prix_personne').html());
+    });
 
     //Checkout price total
     $('#submit_commande').on('click', function (e) {
