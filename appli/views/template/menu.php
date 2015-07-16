@@ -94,7 +94,7 @@
         <a class="navbar-brand" href="<?php echo base_url(); ?>">
             <img class="logo" src="<?php echo img_url('logo.svg');?>" alt="Walkabout">
         </a>
-        <a class="button back-to-account pull-right">Retour sur mon compte</a>
+        <a class="button back-to-account pull-right">Retour</a>
     </div>
 </nav>
 

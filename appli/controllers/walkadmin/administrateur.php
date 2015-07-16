@@ -25,4 +25,14 @@ class Administrateur extends CI_Controller {
         $this->load->view('wadmin/pages/Admin/creer');
         $this->load->view('wadmin/template/footer');
     }
+    
+    public function index(){
+        $data['admins']=$this->admin->getAll();
+        connecte_admin($this->session->userdata('admin'));
+        $data['admin'] = $this->session->userdata('admin');
+        $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/menu', $data);
+        $this->load->view('wadmin/pages/Admin/liste',$data);
+        $this->load->view('wadmin/template/footer');
+    }
 }

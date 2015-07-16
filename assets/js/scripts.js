@@ -685,43 +685,77 @@ $(document).ready(function () {
         $('input[name=description]').val(texte);
         $(this).parent('form').submit();
     });
+    
+    
 
     //Récupération du formulaire de la modification d'article
-    $('.submit--article').on('click',function(e){
-        e.preventDefault();
-        $('.titre--article').css({'border' :'none'});
-        $('.content--article').css({'border' :'none'});
+    
+    //Load le texte au chargement de la page!
+    if(editor.serialize()["element-0"]){
+        var titre = $('.titre--article').text();
+        $('input[name=titre]').val(titre);    
+        var content = editor.serialize()["element-0"].value;
+        $('input[name=content]').val(content);
+    }
+    
+    $('.titre--article').on('DOMSubtreeModified', function(){
         var titre = $('.titre--article').text();
         if(titre.trim() == ""){
             $('.titre--article').css({'border' :'solid 1px red'});
             alert('Le titre de l\'article ne peut pas être vide!');
             return false;
         }
+        $('input[name=titre]').val(titre);
+    });
+    
+    $('.tb-article--content p').on('DOMSubtreeModified', function() {
         var content = editor.serialize()["element-0"].value;
         if(content.trim() == ""){
             $('.content--article').css({'border' :'solid 1px red'});
             alert('Le contenu de l\'article ne peut pas être vide!');
             return false;
         }
-        //On ajoute le titre et le content dans les input correpondant
-        $('input[name=titre]').val(titre);
+        console.log(content);
         $('input[name=content]').val(content);
-        $('form').submit();
     });
     
+    
+    
+    
+//    $('.submit--article').on('click',function(e){
+//        e.preventDefault();
+//        $('.titre--article').css({'border' :'none'});
+//        $('.content--article').css({'border' :'none'});
+//        var titre = $('.titre--article').text();
+//        if(titre.trim() == ""){
+//            $('.titre--article').css({'border' :'solid 1px red'});
+//            alert('Le titre de l\'article ne peut pas être vide!');
+//            return false;
+//        }
+//        var content = editor.serialize()["element-0"].value;
+//        if(content.trim() == ""){
+//            $('.content--article').css({'border' :'solid 1px red'});
+//            alert('Le contenu de l\'article ne peut pas être vide!');
+//            return false;
+//        }
+//        //On ajoute le titre et le content dans les input correpondant
+//        $('input[name=titre]').val(titre);
+//        $('input[name=content]').val(content);
+//        $('form').submit();
+//    });
+    
+    //Permet de demander avant de quitter la page carnet et article si modification effectué!
     ischanges = false;
     $('.titre--article').on('input', function(){
         ischanges = true;
-        console.log('changed!');
     });
     $('.tb-article--content p').bind('DOMSubtreeModified', function() {
         ischanges = true;
-        console.log('changed!');
     });
     
     $('.back-to-account').on('click', function(e){
         e.preventDefault();
-        if(ischanges == false){
+        if(ischanges === false){
             history.go(-1);
         }else{
             if(confirm("Vous n'avez pas sauvegardé, voulez vous vraiment quitter?")){

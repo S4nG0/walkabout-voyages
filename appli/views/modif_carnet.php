@@ -4,7 +4,7 @@ $page = "editing";
 
 <body class="espace-voyageur editing">
 
-    <div class="main banner modification">
+    <div class="main banner modification carnet">
         <div class="container-fluid noPadding">
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>

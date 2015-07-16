@@ -36,6 +36,15 @@ class Admin extends CI_Model {
         
         return $admin;
     }
+    
+    public function getAll(){
+        $admin = $this->db->select('*')
+                           ->from($this->table)
+                           ->get()
+                           ->result();
+        
+        return $admin;
+    }
 
     public function insert($data){
         if($data==''){

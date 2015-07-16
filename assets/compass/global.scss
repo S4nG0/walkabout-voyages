@@ -1300,7 +1300,9 @@ body.single-carnet {
 @media screen and (max-width: 768px) {
     .button {
         width: 50%;
+        font-size: 12px;
     }
+
     body.single-carnet {
         .main {
             .caption-wrapper {

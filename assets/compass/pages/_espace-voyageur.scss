@@ -54,20 +54,34 @@ body.espace-voyageur {
 
     .main.banner {
         height: 400px;
-    }
 
-    .main.banner.modification {
-        height: 300px;
+        &.modification {
+            &.article {
+                height: 200px;
+            }
 
-        .navbar {
-            .navbar-header {
-                width: 100%;
+            &.carnet {
+                height: 300px;
+            }
 
-                .button {
-                    width: auto;
-                    margin: 30px 25px 0 0;
-                    font-weight: 600;
-                    text-transform: uppercase;
+            .navbar {
+                .navbar-header {
+                    width: 100%;
+
+                    .button {
+                        width: auto;
+                        margin: 30px 25px 0 0;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            .navbar.affix {
+                .navbar-header {
+                    .button {
+                        margin-top: 20px;
+                    }
                 }
             }
         }
@@ -91,6 +105,14 @@ body.espace-voyageur {
                 width: 100%;
                 height: 150px;
                 text-align: center;
+
+                &.vam {
+                    vertical-align: middle;
+                }
+
+                &.vab {
+                    vertical-align: bottom;
+                }
 
                 .button:last-child {
                     margin-right: 0;
@@ -517,7 +539,6 @@ body.espace-voyageur {
             .travel-log__article {
                 display: table;
                 width: 100%;
-                padding: 25px;
                 border: 1px solid $blanc;
                 @include transition(all 300ms ease-in-out);
 
@@ -536,10 +557,12 @@ body.espace-voyageur {
                 }
 
                 .article-block.text {
+                    padding: 25px;
                     width: 80%;
                 }
 
                 .article-block.controls {
+                    padding-right: 25px;
                     width: 20%;
                     text-align: right;
 
@@ -549,8 +572,7 @@ body.espace-voyageur {
 
                         .reorder-article {
                             display: table-cell;
-                            padding-right: 10px;
-                            padding-left: 10px;
+                            padding-right: 15px;
                             vertical-align: middle;
 
                             a {
@@ -569,8 +591,8 @@ body.espace-voyageur {
                         a {
                             display: table-cell;
                             vertical-align: middle;
-                            padding-right: 10px;
-                            padding-left: 10px;
+                            padding-right: 15px;
+                            padding-left: 15px;
                             color: $blanc;
                             font-size: 1.75em;
                             text-align: center;
@@ -582,6 +604,10 @@ body.espace-voyageur {
 
                             &:hover, &:focus {
                                 color: $jaune-or;
+                            }
+
+                            &:last-child {
+                                padding-right: 0;
                             }
                         }
                     }
@@ -650,7 +676,7 @@ body.espace-voyageur {
             .tb-article {
                 .tb-article--content {
                     position: relative;
-                    min-height: 200px;
+                    min-height: 80px;
                     margin-bottom: 50px;
                     @include transition(all 300ms ease-in-out);
 
@@ -825,6 +851,15 @@ body.espace-voyageur {
 
 @media screen and (max-width: 992px) {
     body.espace-voyageur {
+        .main {
+            .big-title-wrapper {
+                .big-title {
+                    .button {
+                        width: 300px;
+                    }
+                }
+            }
+        }
         .content {
             .carnets-block {
                 .travel-logs-wrapper {
@@ -853,6 +888,10 @@ body.espace-voyageur {
         }
 
         .content.edit-travel-log {
+            .travel-log-header {
+                text-align: center;
+            }
+
             .article-aside {
                 .button {
                     display: block;
@@ -872,6 +911,12 @@ body.espace-voyageur {
                         margin-right: 0;
                     }
                 }
+            }
+        }
+
+        .main.banner.modification {
+            &.carnet {
+                height: 350px;
             }
         }
 
@@ -907,6 +952,7 @@ body.espace-voyageur {
                     display: block;
                     margin: 0 auto;
                     margin-bottom: 25px;
+                    width: 250px;
 
                     &:last-child {
                         margin-bottom: 0;
@@ -918,8 +964,28 @@ body.espace-voyageur {
     }
 }
 
+@media screen and (max-width: 600px) {
+    body.espace-voyageur {
+        h1 {
+            font-size: 24px;
+        }
+
+        .main.banner.modification {
+            &.carnet {
+                height: 350px;
+            }
+
+            .travel-log__description {
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 480px) {
     body.espace-voyageur {
+
         .main {
             .caption-wrapper {
                 text-align: center;
@@ -928,6 +994,64 @@ body.espace-voyageur {
                     h1 {text-align: center;}
                     p {line-height: 18px;}
                 }
+            }
+
+            .big-title-wrapper {
+                .big-title {
+                    h1 {
+                        font-size: 20px;
+                        line-height: 30px;
+                    }
+
+                    .button {
+                        width: 75%;
+                    }
+                }
+            }
+        }
+
+        .content.edit-travel-log {
+            .article {
+                .travel-log__article {
+                    display: block;
+
+                    .article-block {
+                        display: block;
+                        text-align: center;
+                    }
+
+                    .article-block.text,
+                    .article-block.controls {
+                        width: 100%;
+                    }
+
+                    .article-block.controls {
+                        padding-bottom: 25px;
+                        padding-right: 25px;
+                        padding-left: 25px;
+
+                        .controls-wrapper {
+                            display: block;
+                            padding: 0;
+                            text-align: center;
+
+                            .reorder-article, a {
+                                display: inline-block;
+                                padding-right: 15px;
+                            }
+
+                            a {
+                                font-size: 1.25em;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .thumbnail {
+                margin-bottom: 0;
+                text-align: center;
             }
         }
     }
