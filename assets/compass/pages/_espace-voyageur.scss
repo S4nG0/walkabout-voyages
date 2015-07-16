@@ -61,8 +61,11 @@ body.espace-voyageur {
 
         .navbar {
             .navbar-header {
-                .navbar-toggle {
+                width: 100%;
+
+                .button {
                     width: auto;
+                    margin: 30px 25px 0 0;
                     font-weight: 600;
                     text-transform: uppercase;
                 }

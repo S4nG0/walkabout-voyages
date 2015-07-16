@@ -708,6 +708,27 @@ $(document).ready(function () {
         $('input[name=content]').val(content);
         $('form').submit();
     });
+    
+    ischanges = false;
+    $('.titre--article').on('input', function(){
+        ischanges = true;
+        console.log('changed!');
+    });
+    $('.tb-article--content p').bind('DOMSubtreeModified', function() {
+        ischanges = true;
+        console.log('changed!');
+    });
+    
+    $('.back-to-account').on('click', function(e){
+        e.preventDefault();
+        if(ischanges == false){
+            history.go(-1);
+        }else{
+            if(confirm("Vous n'avez pas sauvegardé, voulez vous vraiment quitter?")){
+                history.go(-1);
+            }
+        }
+    });
 
     $(window).on('resize', function () {
         equalheight('.sameHeight');
