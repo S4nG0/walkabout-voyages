@@ -25,10 +25,12 @@ class Reservation extends CI_Controller {
         $data = array();
         $data['commentaires'] = $this->commentaires->count_non_modere();
         $data['reservations'] = $this->reservations->count_en_cours();
+        $data['reservations_currents'] = $this->reservations->getReservationCurrent();
+        $data['reservations_finished'] = $this->reservations->getReservationFinished();
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header');
         $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/pages/Reservations/liste');
+        $this->load->view('wadmin/pages/Reservations/liste',$data);
         $this->load->view('wadmin/template/footer');
         //$this->output->enable_profiler(true);
     }
