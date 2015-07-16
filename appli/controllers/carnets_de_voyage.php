@@ -89,12 +89,12 @@ class Carnets_de_voyage extends CI_Controller {
                 $commentaire->date = conv_date($commentaire->date);
                 $commentaire->user = $this->user->constructeur($commentaire->idUsers);
             }
-            
+
             $this->load->view('template/header', $data);
             $this->load->view('carnetdevoyage', $data);
             $this->load->view('template/footer');
         }
-        
+
         public function modifierDescription($id = ""){
             if($id == ""){
                 return false;
@@ -112,17 +112,17 @@ class Carnets_de_voyage extends CI_Controller {
             $carnet = new stdClass();
             $carnet->description = $this->input->post('description');
             $id = $this->input->post('idcarnet');
-            
+
             $this->carnetvoyage->modify($carnet,$id);
-            
+
             header('Location: ' . $_SERVER['HTTP_REFERER']);
-            
+
         }
-        
+
         public function modifier($id = ""){
             if($id == ""){
                 return false;
-            } 
+            }
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $data['title'] = "Compte";
             if($data['connecte'] == false){
@@ -133,11 +133,11 @@ class Carnets_de_voyage extends CI_Controller {
             if($data['carnet'][0]->idUsers != $data['user']->idUsers){
                 redirect('/moncompte');
             }
-            
+
             $data['title'] = "Modification du carnet";
-            
+
             $data['articles'] = $this->articles->getFromCarnet($data['carnet'][0]->idCarnetDeVoyage);
-            
+
             $this->load->view('template/header', $data);
             $this->load->view('modif_carnet', $data);
             $this->load->view('template/footer');
@@ -148,9 +148,10 @@ class Carnets_de_voyage extends CI_Controller {
                 return false;
             }
             $carnet = $this->carnetvoyage->constructeur($id);
-            redirect(base_url().'carnets-de-voyage/'.$carnet[0]->url);
+            var_dump($carnet);
+            redirect(base_url().'carnets-de-voyage/'.$carnet->url);
         }
-              
+
 }
 /* End of file carnet.php */
 /* Location: ./application/controllers/carnet.php */

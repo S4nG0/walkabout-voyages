@@ -1,4 +1,4 @@
-<?php if($page != 'editing') { ?>
+<?php if($page != 'editing-article' && $page != 'editing-carnet') { ?>
 
 <nav class="navbar navbar-default" id="#navigation">
 
@@ -73,13 +73,13 @@
                 if ($page == "moncompte") {
                     echo ' <li><a class="nav_links active" href="'.base_url().'deconnexion" title="Déconnexion"><i class="fa fa-sign-in"></i>Se déconnecter</a></li>';
                 } else {
-                    echo '<li><a class="nav_links" href="'.base_url().'moncompte" title="AccÃ¨dez Ã  votre compte"><i class="fa fa-sign-in"></i>Mon compte</a></li>';
+                    echo '<li><a class="nav_links" href="'.base_url().'moncompte" title="Accédez à votre compte"><i class="fa fa-sign-in"></i>Mon compte</a></li>';
                 }
             } else {
                 if ($page == "account") {
-                    echo '<li><a class="nav_links active" href="'.base_url().'connexion" title="AccÃ¨dez Ã  votre compte"><i class="fa fa-sign-in"></i>Se connecter</a></li>';
+                    echo '<li><a class="nav_links active" href="'.base_url().'connexion" title="Accédez à votre compte"><i class="fa fa-sign-in"></i>Se connecter</a></li>';
                 } else {
-                    echo '<li><a class="nav_links" href="'.base_url().'connexion" title="AccÃ¨dez Ã  votre compte"><i class="fa fa-sign-in"></i>Se connecter</a></li>';
+                    echo '<li><a class="nav_links" href="'.base_url().'connexion" title="Accèdez à votre compte"><i class="fa fa-sign-in"></i>Se connecter</a></li>';
                 }
             }; ?>
 
@@ -94,7 +94,7 @@
         <a class="navbar-brand" href="<?php echo base_url(); ?>">
             <img class="logo" src="<?php echo img_url('logo.svg');?>" alt="Walkabout">
         </a>
-        <a class="button back-to-account pull-right">Retour</a>
+        <a class="button back-to-account pull-right" href="<?php if ($page == 'editing-carnet') { echo base_url() . 'moncompte'; } else { echo base_url() . 'carnets-de-voyage/modifierFromId/' . $article[0]->idCarnet; }  ?>">Retour</a>
     </div>
 </nav>
 

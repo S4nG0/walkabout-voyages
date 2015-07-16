@@ -1,5 +1,5 @@
 <?php
-$page = "editing";
+$page = "editing-carnet";
 ?>
 
 <body class="espace-voyageur editing">
