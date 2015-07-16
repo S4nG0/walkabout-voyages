@@ -55,6 +55,35 @@ class Moncompte extends CI_Controller {
             }
             
 	}
+
+    public function majUser(){
+        if($this->input->post() != false) {
+            $this->form_validation->set_rules('email', '"email"', 'trim|required|valid_email|encode_php_tags|xss_clean');
+            if ($this->form_validation->run()) {
+                $mail=$this->input->post('email');
+                $user=array(
+                    "mail" => $mail
+                );
+                if($this->input->post('password')!=''){
+                    $user['mdp']=hash('sha256',$this->input->post('password'));
+                }
+                $this->user->modify($user,$this->session->userdata('user')[0]->idUsers);
+                $newsPost=$this->input->post('newsletter');
+                if(isset($newsPost)){
+                    $newsletters=$this->newsletters->constructeur($mail);
+                    if(empty($newsletters)){
+                        $news['email']=$mail;
+                        $this->newsletters->insert($news);
+                    }else{
+                        $this->newsletters->deleteNews($mail);
+                    }
+                }
+                $this->index();
+            }else{
+                $this->index();
+            }
+        }
+    }
         
 }
 
