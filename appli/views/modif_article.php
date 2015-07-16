@@ -1,10 +1,10 @@
 <?php
-$page = "article";
+$page = "editing";
 ?>
 
-<body class="espace-voyageur modif-article">
+<body class="espace-voyageur editing">
     <form action="<?php echo (base_url().'article/modifier/'.$article[0]->idArticles); ?>" method="post" accept-charset="utf-8">
-    <div class="main banner">
+    <div class="main banner modification">
         <div class="container-fluid noPadding">
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>

@@ -346,7 +346,7 @@ $(document).ready(function () {
         animation: 'fadeOutTop'
     }
 
-    if(!body.hasClass('checkout')) {
+    if(!body.hasClass('checkout') && !body.hasClass('espace-voyageur editing')) {
         navbarToggle.addEventListener('click', function () {
             iconate(icon, options, function() {
                 var temp = options.from;
