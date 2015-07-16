@@ -710,9 +710,13 @@ $(document).ready(function () {
     });
     
     ischanges = false;
-    console.log($('.titre--article'));
     $('.titre--article').on('input', function(){
         ischanges = true;
+        console.log('changed!');
+    });
+    $('.tb-article--content p').bind('DOMSubtreeModified', function() {
+        ischanges = true;
+        console.log('changed!');
     });
     
     $('.back-to-account').on('click', function(e){
@@ -724,7 +728,7 @@ $(document).ready(function () {
                 history.go(-1);
             }
         }
-    })
+    });
 
     $(window).on('resize', function () {
         equalheight('.sameHeight');
