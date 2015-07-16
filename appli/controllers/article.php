@@ -40,6 +40,7 @@ class Article extends CI_Controller {
             }
             else{
                 $data['article'] = $this->articles->constructeur($id);
+                $data['url'] = $this->carnetvoyage->constructeur($data['article'][0]->idCarnet)[0]->url;
                 $data['user'] = $this->session->userdata('user')[0];
                 $data['carnet'] = $this->carnetvoyage->constructeur($data['article'][0]->idCarnet);
                 if($data['carnet'][0]->idUsers != $data['user']->idUsers){
