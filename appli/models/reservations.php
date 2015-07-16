@@ -40,6 +40,36 @@ class Reservations extends CI_Model {
         return $reservations;
     }
 
+    public function getReservationCurrent(){
+        $reservation= $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays,
+                                         users.nom AS nomClient,users.prenom as prenomClient')
+                               ->from($this->table)
+                               ->join('etatreservation','etatreservation.idReservation=reservation.idReservation')
+                               ->join('users','reservation.idUsers=users.idUsers')
+                               ->join('voyage','reservation.idVoyage=voyage.idVoyage')
+                               ->join('destination','destination.idDestination=voyage.idDestination')
+                               ->join('pays','destination.idPays=pays.idPays')
+                               ->where('etatreservation.etat','En cours')
+                               ->get()
+                               ->result();
+        return $reservation;
+    }
+
+    public function getReservationFinished(){
+        $reservation= $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays,
+                                         users.nom AS nomClient,users.prenom as prenomClient')
+            ->from($this->table)
+            ->join('etatreservation','etatreservation.idReservation=reservation.idReservation')
+            ->join('users','reservation.idUsers=users.idUsers')
+            ->join('voyage','reservation.idVoyage=voyage.idVoyage')
+            ->join('destination','destination.idDestination=voyage.idDestination')
+            ->join('pays','destination.idPays=pays.idPays')
+            ->where('etatreservation.etat','Terminée')
+            ->get()
+            ->result();
+        return $reservation;
+    }
+
     public function insert($data = ''){
         if($data == ''){
             return false;
