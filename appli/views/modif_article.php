@@ -1,5 +1,5 @@
 <?php
-$page = "editing";
+$page = "editing-article";
 ?>
 
 <body class="espace-voyageur editing">
