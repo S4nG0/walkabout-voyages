@@ -27,7 +27,7 @@ class Administration extends CI_Controller {
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header');
         $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/page/Admin/creer');
+        $this->load->view('wadmin/pages/Admin/creer');
         $this->load->view('wadmin/template/footer');
     }
 

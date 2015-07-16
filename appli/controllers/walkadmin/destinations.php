@@ -6,7 +6,7 @@
  * Time: 16:43
  */
 
-class Destination  extends CI_Controller{
+class Destinations  extends CI_Controller{
 
     public function creer(){
         if($this->input->post() != false){

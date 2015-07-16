@@ -1,5 +1,5 @@
 <?php
-    echo form_open_multipart('walkadmin/pays/detail/'.$idPays);
+    echo form_open_multipart('walkadmin/pays_admin/detail/'.$idPays);
 ?>
 <div class="container">
     <div class="row">

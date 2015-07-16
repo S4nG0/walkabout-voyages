@@ -1,5 +1,5 @@
 <?php
-    echo form_open_multipart('walkadmin/destination/detail/'.$idDestination);
+    echo form_open_multipart('walkadmin/destinations/detail/'.$idDestination);
 ?>
 <?php
 if (isset($error)) {
