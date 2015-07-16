@@ -49,11 +49,9 @@ Administration :
 Utilisateur :
   ✔ Connexion / Déconnexion @done (15-06-21 22:56)
 
-
-  ☐ Profil ( modification et création )
-  ☐ Faire son interface d'administration!!!!! URGENT!
   ☐ Checker si on a fait une modif non enregistrée quand on clique sur "Retour sur mon compte" dans espace-voyageur
   ☐ L'image de couverture ne se met pas à jour (marche plus????)
+  ☐ La création du carnet est-elle gérée comme on l'avait prévue ???
 
   ✔ La deuxième réservation est pas dans le tableau -> what the fuck? @done (15-07-07 19:19)
   ✔ Auré : Mettre le message de "mot de passe requis" en français quand on oublie de mettre son pass ou son ID @done (15-07-03 11:34)
@@ -62,9 +60,10 @@ Modif-carnet :
   ☐ Placeholder bug sur Firefox
 
 Modif-article :
-  ☐ Retirer le choix d'alignement à gauche et à droite des images insérées (ça sert à rien), laisser juste les options "justifier" et en mode "grid"
-  ☐ Quand on ajoute une image, le texte revient pas automatiquement à la ligne -> quand on écrit du texte direct après avoir ajouté une image, ça l'écrit en dehors dans une div à part (trop chiant lol).
+  ☐ Quand on ajoute une image, le texte revient pas automatiquement à la ligne -> quand on écrit du texte direct après avoir ajouté une image, ça l'écrit en dehors dans une div à part
   ☐ Quand on ajoute plusieurs images, ça fait ramer à mort (je sais pas si c'est dû aux erreurs qui ressortent (check la console))
+  ☐ Gérer l'effet focus qui merde
+  ☐ Gérer upload d'images qui chie
 
 Espace de connexion :
   ☐ Revoir profile pic

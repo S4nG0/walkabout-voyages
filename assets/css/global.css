@@ -1903,6 +1903,14 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .medium-editor-toolbar.medium-toolbar-arrow-under:after {
   border-color: #f0c041 transparent transparent;
 }
+.medium-editor-toolbar li .medium-editor-button-first {
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
+.medium-editor-toolbar li .medium-editor-button-last {
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
 
 .navbar {
   z-index: 9999;
@@ -5049,11 +5057,6 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .tb-articl
   max-width: 600px;
   margin: 0 auto;
 }
-body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content:focus p {
-  -moz-box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
-  -webkit-box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
-  box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
-}
 body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content p {
   margin-top: 25px;
   padding: 25px;
@@ -5063,6 +5066,11 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .tb-articl
   -o-transition: box-shadow 300ms ease-in-out;
   -webkit-transition: box-shadow 300ms ease-in-out;
   transition: box-shadow 300ms ease-in-out;
+}
+body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content p:focus {
+  -moz-box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
+  -webkit-box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
+  box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content figure {
   margin-top: 25px;
@@ -5074,7 +5082,12 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .tb-articl
   outline: 1px solid #f0c041;
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content blockquote {
-  padding: 0;
+  padding: 25px;
+  max-width: 600px;
+  outline: 1px solid #f0c041;
+}
+body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content blockquote:first-child {
+  margin-top: 25px;
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin.medium-editor-placeholder:before, body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin.medium-editor-placeholder:empty:before {
   content: attr(placeholder);
@@ -5517,7 +5530,7 @@ strong {
 }
 .lead:before, blockquote:before {
   content: open-quote;
-  margin-left: -15px;
+  margin-left: -20px;
 }
 .lead:after, blockquote:after {
   content: close-quote;
