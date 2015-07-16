@@ -94,7 +94,7 @@
         <a class="navbar-brand" href="<?php echo base_url(); ?>">
             <img class="logo" src="<?php echo img_url('logo.svg');?>" alt="Walkabout">
         </a>
-        <a class="button back-to-account pull-right" href="<?php if ($page == 'editing-carnet') { echo base_url() . 'moncompte'; } else { echo base_url() . 'carnets-de-voyage/modifierFromId/' . $article[0]->idCarnet; }  ?>">Retour</a>
+        <a class="button back-to-account pull-right" href="<?php if ($page == 'editing-carnet') { echo base_url() . 'moncompte'; } else { echo base_url() . 'carnets-de-voyage/modifier/' . $url; }  ?>">Retour</a>
     </div>
 </nav>
 
