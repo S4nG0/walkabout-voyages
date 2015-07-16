@@ -4505,8 +4505,12 @@ body.espace-voyageur .main.banner {
 body.espace-voyageur .main.banner.modification {
   height: 300px;
 }
-body.espace-voyageur .main.banner.modification .navbar .navbar-header .navbar-toggle {
+body.espace-voyageur .main.banner.modification .navbar .navbar-header {
+  width: 100%;
+}
+body.espace-voyageur .main.banner.modification .navbar .navbar-header .button {
   width: auto;
+  margin: 30px 25px 0 0;
   font-weight: 600;
   text-transform: uppercase;
 }
