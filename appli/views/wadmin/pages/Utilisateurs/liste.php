@@ -33,12 +33,12 @@
                     <td><?php echo $user[$key]->pays ?></td>
                     <td>
                         <?php if($user[$key]->active == "false" ){?>
-                        <input type="button" value="activer le compte" onclick="document.location='<?php echo base_url()."walkadmin/utilisateuradministration/activeUser/".$user[$key]->idUsers?>'">
+                        <input type="button" value="activer le compte" onclick="document.location='<?php echo base_url()."walkadmin/utilisateuradministrateur/activeUser/".$user[$key]->idUsers?>'">
                         <?php }else {?>
-                        <input type="button" value="désactiver le compte" onclick="document.location='<?php echo base_url()."walkadmin/utilisateuradministration/inactiveUser/".$user[$key]->idUsers?>'">
+                        <input type="button" value="désactiver le compte" onclick="document.location='<?php echo base_url()."walkadmin/utilisateuradministrateur/inactiveUser/".$user[$key]->idUsers?>'">
                         <?php }?>
                     </td>
-                    <td><input type="button" value="Détail de l'utilisateur" onclick="document.location='<?php echo base_url()."walkadmin/utilisateuradministration/detailUser/".$user[$key]->idUsers ?>'"></td>
+                    <td><input type="button" value="Détail de l'utilisateur" onclick="document.location='<?php echo base_url()."walkadmin/utilisateuradministrateur/detailUser/".$user[$key]->idUsers ?>'"></td>
                 </tr>
             <?php
             }
