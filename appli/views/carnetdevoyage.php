@@ -83,45 +83,14 @@
                 $i = 1;
                 foreach ($articles as $article) {
 
-                    echo '<div class="row noPadding">';
-                    $photos = array();
-                    $photos = explode(';', $article->photos);
-                    array_pop($photos);
-                    $html_photo = '';
-
-                    // Get the gallery photos in $photos array
-                    foreach ($photos as $key => $photo) {
-                        $html_photo .= '<li>
-                            <figure>
-                                <img src="' . img_url($photo) . '" alt="photo' . $key . '">
-                                <figcaption>
-                                    <div class="caption-content">
-                                        <!-- Lien vers galerie fancybox -->
-                                        <a class="fancybox" rel="group" href="' . img_url($photo) . '">
-                                            <i class="fa fa-search"></i>
-                                            <p>Agrandir l\'image</p>
-                                        </a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </li>
-                        ';
-                    }
-
-                    echo '
+                    echo '<div class="row noPadding">
                         <article class="tb-article">
                             <h2 class="tb-article--title">
                                 ' . $article->titre . '
                             </h2>
+                            <div class="tb-article--content">
                             '.$article->texte.'
-                            ';
-                    if ($html_photo != '') {
-                        echo '<div class="gallery align-center">
-                    <h2>Les photos liées à cet article</h2>
-                    <ul class="grid">
-                    ' . $html_photo . ''
-                        . '</ul></div>';
-                    }
+                            </div>';
                     echo '
                         </article>
                                 ';

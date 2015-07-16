@@ -3,7 +3,7 @@
 
 class Utilisateur extends CI_Controller{
 
-    public function liste(){
+    public function index(){
         $data['user']=$this->user->getAllUsers();
         connecte_admin($this->session->userdata('admin'));
         $data['admin'] = $this->session->userdata('admin');

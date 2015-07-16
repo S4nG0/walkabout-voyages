@@ -8,7 +8,7 @@
 
 class Pays_admin extends CI_Controller{
 
-    public function liste(){
+    public function index(){
         $data['pays']=$this->pays->getPays();
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header');

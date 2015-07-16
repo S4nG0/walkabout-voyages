@@ -8,6 +8,14 @@
 
 class Destinations  extends CI_Controller{
 
+    public function index(){
+        connecte_admin($this->session->userdata('admin'));
+        $data['pays']=$this->destination->get_infos_destination();
+        $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/pages/Destinations/liste',$data);
+        $this->load->view('wadmin/template/footer');
+    }
+
     public function creer(){
         if($this->input->post() != false){
             $this->form_validation->set_rules('pays', '"pays"', 'trim|required|encode_php_tags|xss_clean');
@@ -79,15 +87,6 @@ class Destinations  extends CI_Controller{
         $this->load->view('wadmin/pages/Destinations/creer',$data);
         $this->load->view('wadmin/template/footer');
     }
-
-    public function liste(){
-        connecte_admin($this->session->userdata('admin'));
-        $data['pays']=$this->destination->get_infos_destination();
-        $this->load->view('wadmin/template/header');
-        $this->load->view('wadmin/pages/Destinations/liste',$data);
-        $this->load->view('wadmin/template/footer');
-    }
-
 
     public function  detail($idDestination = 0){
         if($idDestination==0){
