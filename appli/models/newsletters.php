@@ -32,7 +32,7 @@ class Newsletters extends CI_Model {
         return $newsletter;
     }
 
-    public function deleteNews($mail=''){
+    public function deleteNews($mail=''){ 
         if($mail=='')
             return false;
         $newsletter = $this->db->delete($this->table, array('email' => $mail));
