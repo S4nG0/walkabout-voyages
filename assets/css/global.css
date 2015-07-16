@@ -4501,30 +4501,32 @@ body.espace-voyageur .navbar.affix .navbar-collapse .nav li a {
 }
 body.espace-voyageur .main.banner {
   height: 400px;
+}
+body.espace-voyageur .main {
   background: url("../images/texture.png");
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-bottom: none;
 }
-body.espace-voyageur .main.banner .big-title-wrapper {
+body.espace-voyageur .main .big-title-wrapper {
   position: absolute;
   display: table;
   top: 0;
   width: 100%;
   height: 100%;
 }
-body.espace-voyageur .main.banner .big-title-wrapper .big-title {
+body.espace-voyageur .main .big-title-wrapper .big-title {
   display: table-cell;
   vertical-align: bottom;
   width: 100%;
   height: 150px;
   text-align: center;
 }
-body.espace-voyageur .main.banner .big-title-wrapper .big-title .button:last-child {
+body.espace-voyageur .main .big-title-wrapper .big-title .button:last-child {
   margin-right: 0;
 }
-body.espace-voyageur .main.banner .big-title-wrapper .big-title *[contenteditable="true"]:empty:before {
+body.espace-voyageur .main .big-title-wrapper .big-title *[contenteditable="true"]:empty:before {
   content: attr(placeholder);
   position: relative;
   display: inline-block;
@@ -4532,13 +4534,13 @@ body.espace-voyageur .main.banner .big-title-wrapper .big-title *[contenteditabl
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-body.espace-voyageur .main.banner .big-title-wrapper .big-title .profile-picture {
+body.espace-voyageur .main .big-title-wrapper .big-title .profile-picture {
   width: 125px;
   height: 125px;
   margin: 0 auto;
   margin-top: 50px;
 }
-body.espace-voyageur .main.banner .big-title-wrapper .big-title .profile-picture .caption-content p {
+body.espace-voyageur .main .big-title-wrapper .big-title .profile-picture .caption-content p {
   margin-top: 10px;
   color: #242424;
   font-size: 14px;
@@ -4546,7 +4548,7 @@ body.espace-voyageur .main.banner .big-title-wrapper .big-title .profile-picture
   font-style: normal;
   text-transform: uppercase;
 }
-body.espace-voyageur .main.banner .big-title-wrapper .big-title h1 {
+body.espace-voyageur .main .big-title-wrapper .big-title h1 {
   display: block;
   max-width: 700px;
   width: 90%;
@@ -4559,7 +4561,7 @@ body.espace-voyageur .main.banner .big-title-wrapper .big-title h1 {
   line-height: 46px;
   border-bottom: none;
 }
-body.espace-voyageur .main.banner .big-title-wrapper .big-title h2 {
+body.espace-voyageur .main .big-title-wrapper .big-title h2 {
   display: block;
   max-width: 600px;
   padding: 25px;
@@ -4571,12 +4573,12 @@ body.espace-voyageur .main.banner .big-title-wrapper .big-title h2 {
   -webkit-transition: box-shadow 300ms ease-in-out;
   transition: box-shadow 300ms ease-in-out;
 }
-body.espace-voyageur .main.banner .big-title-wrapper .big-title h2:focus {
+body.espace-voyageur .main .big-title-wrapper .big-title h2:focus {
   -moz-box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
   -webkit-box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
   box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
 }
-body.espace-voyageur .main.banner .big-title-wrapper .big-title p {
+body.espace-voyageur .main .big-title-wrapper .big-title p {
   display: block;
   max-width: 700px;
   width: 90%;
@@ -4587,12 +4589,12 @@ body.espace-voyageur .main.banner .big-title-wrapper .big-title p {
   color: #848484;
   line-height: 30px;
 }
-body.espace-voyageur .main.banner .big-title-wrapper .big-title .button {
+body.espace-voyageur .main .big-title-wrapper .big-title .button {
   display: inline-block;
   margin-top: 25px;
   margin-right: 15px;
 }
-body.espace-voyageur .main.banner .big-title-wrapper .big-title .travel-log__description {
+body.espace-voyageur .main .big-title-wrapper .big-title .travel-log__description {
   color: #fff;
   font-style: normal;
 }
@@ -4874,6 +4876,10 @@ body.espace-voyageur .content .infos-block .buttons-wrapper .button {
 body.espace-voyageur .content .infos-block .buttons-wrapper .button:first-child {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+body.espace-voyageur body.espace-voyageur.modif-carnet .main.banner,
+body.espace-voyageur body.espace-voyageur.modif-article .main.banner {
+  height: 300px;
 }
 body.espace-voyageur .content.edit-travel-log {
   padding: 50px 0;

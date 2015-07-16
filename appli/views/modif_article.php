@@ -2,9 +2,9 @@
 $page = "article";
 ?>
 
-<body class="espace-voyageur">
+<body class="espace-voyageur modif-article">
     <form action="<?php echo (base_url().'article/modifier/'.$article[0]->idArticles); ?>" method="post" accept-charset="utf-8">
-    <div class="main">
+    <div class="main banner">
         <div class="container-fluid noPadding">
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>

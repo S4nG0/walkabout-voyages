@@ -54,6 +54,9 @@ body.espace-voyageur {
 
     .main.banner {
         height: 400px;
+    }
+
+    .main {
         background: $texture;
         @include box-shadow(none);
         border-bottom: none;
@@ -462,6 +465,13 @@ body.espace-voyageur {
         }
 
     }
+
+body.espace-voyageur.modif-carnet,
+body.espace-voyageur.modif-article {
+    .main.banner {
+        height: 300px;
+    }
+}
 
     //MODIF-CARNET
     .content.edit-travel-log {
