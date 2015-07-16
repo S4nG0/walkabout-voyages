@@ -1,3 +1,5 @@
+<?php if($page != 'editing') { ?>
+
 <nav class="navbar navbar-default" id="#navigation">
 
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -84,3 +86,16 @@
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
+
+<?php } else { ?>
+
+<nav class="navbar navbar-default" id="#navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="<?php echo base_url(); ?>">
+            <img class="logo" src="<?php echo img_url('logo.svg');?>" alt="Walkabout">
+        </a>
+        <button class="navbar-toggle pull-right">Retour sur mon compte</button>
+    </div>
+</nav>
+
+<?php } ?>

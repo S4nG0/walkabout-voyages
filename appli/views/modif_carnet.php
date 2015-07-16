@@ -1,10 +1,10 @@
 <?php
-$page = "moncarnet";
+$page = "editing";
 ?>
 
-<body class="espace-voyageur modif-carnet">
+<body class="espace-voyageur editing">
 
-    <div class="main banner">
+    <div class="main banner modification">
         <div class="container-fluid noPadding">
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>
