@@ -2,9 +2,9 @@
 $page = "moncarnet";
 ?>
 
-<body class="espace-voyageur">
+<body class="espace-voyageur modif-carnet">
 
-    <div class="main">
+    <div class="main banner">
         <div class="container-fluid noPadding">
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>

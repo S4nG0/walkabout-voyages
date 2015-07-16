@@ -52,19 +52,25 @@ body.espace-voyageur {
         }
     }
 
+    .main.banner {
+        height: 400px;
+    }
+
     .main {
         background: $texture;
         @include box-shadow(none);
         border-bottom: none;
 
         .big-title-wrapper {
+            position: absolute;
             display: table;
+            top: 0;
             width: 100%;
+            height: 100%;
 
             .big-title {
                 display: table-cell;
-                vertical-align: middle;
-                padding-top: 25px;
+                vertical-align: bottom;
                 width: 100%;
                 height: 150px;
                 text-align: center;
@@ -459,6 +465,13 @@ body.espace-voyageur {
         }
 
     }
+
+body.espace-voyageur.modif-carnet,
+body.espace-voyageur.modif-article {
+    .main.banner {
+        height: 300px;
+    }
+}
 
     //MODIF-CARNET
     .content.edit-travel-log {

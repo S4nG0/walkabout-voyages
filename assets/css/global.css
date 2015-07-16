@@ -1927,6 +1927,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   transition: all 300ms ease-in-out;
 }
 .navbar .navbar-collapse .nav li a {
+  position: relative;
   margin: 55px 25px 40px 0;
   padding: 0 0 10px 0;
   color: #f0c041;
@@ -1936,11 +1937,23 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  -moz-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
+}
+.navbar .navbar-collapse .nav li a:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 75%;
+  height: 2px;
+  background-color: transparent;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -moz-transition: background-color 300ms ease-in-out;
+  -o-transition: background-color 300ms ease-in-out;
+  -webkit-transition: background-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
 }
 .navbar .navbar-collapse .nav li a .fa {
   margin-right: 10px;
@@ -1948,11 +1961,11 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .navbar .navbar-collapse .nav li a:last-child {
   margin-right: 25px;
 }
-.navbar .navbar-collapse .nav li a:hover, .navbar .navbar-collapse .nav li a:focus {
-  border-bottom: 2px solid #f0c041;
+.navbar .navbar-collapse .nav li a:hover:after, .navbar .navbar-collapse .nav li a:focus:after {
+  background-color: #f0c041;
 }
-.navbar .navbar-collapse .nav li a.active {
-  border-bottom: 2px solid #f0c041;
+.navbar .navbar-collapse .nav li a.active:after {
+  background-color: #f0c041;
 }
 
 .navbar-right {
@@ -2012,7 +2025,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   }
   .navbar .navbar-collapse .nav li a {
     margin: 25px auto;
-    width: 25%;
+  }
+  .navbar .navbar-collapse .nav li a:after {
+    width: 8%;
   }
   .navbar .navbar-collapse .nav li a:last-child {
     margin-right: auto;
@@ -2032,8 +2047,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   .navbar .navbar-toggle {
     margin: 35px 25px;
   }
-  .navbar .navbar-collapse .nav li a {
-    width: 35%;
+  .navbar .navbar-collapse .nav li a:after {
+    width: 15%;
   }
 
   .navbar.affix .navbar-toggle {
@@ -2050,8 +2065,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   .navbar .navbar-toggle {
     margin: 30px 25px;
   }
-  .navbar .navbar-collapse .nav li a {
-    width: 50%;
+  .navbar .navbar-collapse .nav li a:after {
+    width: 25%;
   }
 
   .navbar.affix .navbar-brand .logo {
@@ -3826,17 +3841,19 @@ body.sign-in .main {
 }
 body.sign-in .main .navbar {
   margin-top: 0;
-  background-color: transparent;
-  border-bottom: 1px solid #f0c041;
+  background-color: #242424;
+}
+body.sign-in .main .navbar .navbar-brand {
+  padding: 15px 25px;
 }
 body.sign-in .main .navbar .navbar-brand .logo {
   width: 150px;
 }
 body.sign-in .main .navbar .navbar-toggle {
-  margin: 35px 25px;
+  margin: 15px 25px 0 25px;
 }
 body.sign-in .main .navbar .navbar-collapse .nav li a {
-  margin: 35px 25px 28px 0;
+  margin: 25px 25px 10px 0;
 }
 body.sign-in .main .caption-wrapper {
   position: absolute;
@@ -4482,6 +4499,9 @@ body.espace-voyageur .navbar.affix .navbar-brand .logo {
 body.espace-voyageur .navbar.affix .navbar-collapse .nav li a {
   margin: 30px 25px 15px 0;
 }
+body.espace-voyageur .main.banner {
+  height: 400px;
+}
 body.espace-voyageur .main {
   background: url("../images/texture.png");
   -moz-box-shadow: none;
@@ -4490,13 +4510,15 @@ body.espace-voyageur .main {
   border-bottom: none;
 }
 body.espace-voyageur .main .big-title-wrapper {
+  position: absolute;
   display: table;
+  top: 0;
   width: 100%;
+  height: 100%;
 }
 body.espace-voyageur .main .big-title-wrapper .big-title {
   display: table-cell;
-  vertical-align: middle;
-  padding-top: 25px;
+  vertical-align: bottom;
   width: 100%;
   height: 150px;
   text-align: center;
@@ -4854,6 +4876,10 @@ body.espace-voyageur .content .infos-block .buttons-wrapper .button {
 body.espace-voyageur .content .infos-block .buttons-wrapper .button:first-child {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+body.espace-voyageur body.espace-voyageur.modif-carnet .main.banner,
+body.espace-voyageur body.espace-voyageur.modif-article .main.banner {
+  height: 300px;
 }
 body.espace-voyageur .content.edit-travel-log {
   padding: 50px 0;
