@@ -143,7 +143,14 @@ class Carnets_de_voyage extends CI_Controller {
             $this->load->view('template/footer');
         }
 
-
+        public function modifierFromId($id = 0){
+            if($id == 0){
+                return false;
+            }
+            $carnet = $this->carnetvoyage->constructeur($id);
+            redirect(base_url().'carnets-de-voyage/'.$carnet[0]->url);
+        }
+              
 }
 /* End of file carnet.php */
 /* Location: ./application/controllers/carnet.php */
