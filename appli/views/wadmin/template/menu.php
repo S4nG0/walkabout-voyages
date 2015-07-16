@@ -51,16 +51,16 @@
                         <a href="<?php echo base_url() . 'walkadmin/reservation'; ?>"><i class="fa fa-shopping-cart fa-fw"></i> Réservations</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/administrateur/liste'; ?>"><i class="fa fa-user-md fa-fw"></i> Administrateur</a>
+                        <a href="<?php echo base_url() . 'walkadmin/administrateur'; ?>"><i class="fa fa-user-md fa-fw"></i> Administrateur</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/destinations/liste'; ?>"><i class="fa fa-plane fa-fw"></i> Destinations</a>
+                        <a href="<?php echo base_url() . 'walkadmin/destinations'; ?>"><i class="fa fa-plane fa-fw"></i> Destinations</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/pays_admin/liste'; ?>"><i class="fa fa-globe fa-fw"></i> Pays</a>
+                        <a href="<?php echo base_url() . 'walkadmin/pays_admin'; ?>"><i class="fa fa-globe fa-fw"></i> Pays</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/utilisateur/liste'; ?>"><i class="fa fa-users fa-fw"></i>  Utilisateurs</a>
+                        <a href="<?php echo base_url() . 'walkadmin/utilisateur'; ?>"><i class="fa fa-users fa-fw"></i>  Utilisateurs</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>"><i class="fa fa-pencil-square-o fa-fw"></i> Contacts</a>
