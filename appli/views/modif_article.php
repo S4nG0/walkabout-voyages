@@ -35,7 +35,6 @@ $page = "editing-article";
             </div>
             <div class="buttons-wrapper">
                 <input type="submit" value="Enregistrer les modifications" contenteditable="false" class="button submit--article">
-                <input type="cancel" onclick="history.back(-1);" value="Annuler" contenteditable="false" class="button">
             </div>
         </div>
     </div>

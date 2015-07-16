@@ -743,7 +743,7 @@ $(document).ready(function () {
 //        $('form').submit();
 //    });
 
-    //Permet de demander avant de quitter la page carnet et article si modification effectué!
+    //Permet de demander avant de quitter la page carnet et article si modification effectuée !
     hasChanged = false;
 
     $('.titre--article').on('input', function(){
@@ -754,11 +754,11 @@ $(document).ready(function () {
         hasChanged = true;
     });
 
-    $(window).bind('beforeunload', function() {
-        if(hasChanged == true) {
-            return "Vos entrées seront perdues si vous actualisez la page.";
-        }
-    });
+    // $(window).bind('beforeunload', function() {
+    //     if(hasChanged == true) {
+    //         return "Vos entrées seront perdues si vous actualisez la page.";
+    //     }
+    // });
 
     $(window).on('resize', function () {
         equalheight('.sameHeight');
