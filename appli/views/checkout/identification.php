@@ -1,31 +1,35 @@
 <?php
-$page = 'sign-in';
+$page = 'checkout';
+$step = 'sign-in';
 ?>
 
 <body class="checkout">
 
+<div class="main banner">
+    <div class="container-fluid noPadding">
+    <?php
 
-<?php
+    set_include_path(dirname(__FILE__)."/../");
+    include 'template/menu.php';
 
-set_include_path(dirname(__FILE__)."/../");
-
-?>
+    ?>
+    </div>
+</div>
 
 <div class="content">
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid noPadding">
+        <div class="row noPadding">
             <!-- Etapes de commande -->
             <?php include 'etapes.php'; ?>
         </div>
-
+    </div>
+    <div class="container">
         <!-- Sign-in Block -->
         <div class="row">
             <div class="sign-in-block">
-                <h1>Identification</h1>
-
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <div class="user-log-in">
-                        <h2>Déjà inscrit ? Identifiez-vous !</h2>
+                        <h2 class="sep">Déjà inscrit&nbsp;?<br>Identifiez-vous&nbsp;!</h2>
                         <?php echo form_open('connexion'); ?>
                             <div class="form-group">
                                 <label for="email">E-mail</label>
@@ -37,7 +41,7 @@ set_include_path(dirname(__FILE__)."/../");
                                 <input type="password" name="password" id="password">
                                 <?php echo form_error('password'); ?>
                                 <p class="forgotten-pwd">
-                                    Vous avez oublié votre mot de passe ? <a href="#">Cliquez-ici</a>
+                                    Vous avez oublié votre mot de passe&nbsp;? <a href="#">Cliquez-ici</a>
                                 </p>
                             </div>
                             <!-- Form submitted via jQuery -->
@@ -46,9 +50,9 @@ set_include_path(dirname(__FILE__)."/../");
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <div class="new-user">
-                        <h2>Nouveau client ? Créez un compte !</h2>
+                        <h2 class="sep">Nouveau client&nbsp;?<br>Créez un compte&nbsp;!</h2>
                         <?php echo form_open('checkout/identification/inscription'); ?>
                             <div class="form-group">
                                 <label for="email">E-mail désiré</label>
@@ -60,10 +64,12 @@ set_include_path(dirname(__FILE__)."/../");
                     </div>
                 </div>
             </div>
-
-            <!-- Previous button -->
-            <a onclick="history.go(-1);" class="button prev">Retour</a>
+            <div class="col-sm-12">
+                <div class="buttons-block">
+                    <!-- Previous button -->
+                    <a onclick="history.go(-1);" class="button prev">Retour à l'étape précédente</a>
+                </div>
+            </div>
         </div>
-
     </div>
 </div>

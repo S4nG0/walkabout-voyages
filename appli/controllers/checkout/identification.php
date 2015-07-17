@@ -7,10 +7,10 @@ class Identification extends CI_Controller {
 	 *
 	 * Maps to the following URL
 	 * 		http://example.com/index.php/welcome
-	 *	- or -  
+	 *	- or -
 	 * 		http://example.com/index.php/welcome/index
 	 *	- or -
-	 * Since this controller is set as the default controller in 
+	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
@@ -23,17 +23,16 @@ class Identification extends CI_Controller {
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $data['result'] = null;
             $data['title'] = "Réservation";
-            
+
             if ($this->input->post() != false) {
                 $voyage = $this->input->post('date');
-                var_dump($voyage);
                 $this->session->set_userdata('voyage', $voyage);
             }else{
                 if($this->session->userdata('voyage') == false){
                     redirect($_SERVER["HTTP_REFERER"]);
                 }
             }
-            
+
             if($data['connecte'] == true){
                 redirect('/checkout/informations');
             }
@@ -43,7 +42,7 @@ class Identification extends CI_Controller {
             $this->load->view('checkout/identification',$data);
             $this->load->view('template/footer');
 	}
-        
+
         public function inscription()
 	{
             $data = array();
@@ -52,15 +51,15 @@ class Identification extends CI_Controller {
             if($data['connecte'] == true){
                 redirect('/checkout/informations');
             }
-            
+
             $data['email'] = $this->input->post('email');
             $data['destination'] = $this->session->userdata('destination');
             $this->load->view('template/header');
             $this->load->view('checkout/inscription',$data);
             $this->load->view('template/footer');
 	}
-        
-        
+
+
 }
 
 

@@ -12,9 +12,12 @@ body.checkout {
 
     .buttons-block {
         clear: both;
+        display: table;
+        width: 100%;
     }
 
     .button {
+        margin: 0 auto;
         .fa {
             margin-right: 10px;
         }
@@ -27,22 +30,39 @@ body.checkout {
     .button.prev {
         cursor: pointer;
         float: left;
-        margin-top: 2%;
-        margin-left: 2%;
-        margin-bottom: 2%;
+        margin-bottom: 25px;
     }
 
     .button.next {
         cursor: pointer;
         float: right;
-        margin-top: 2%;
-        margin-right: 2%;
-        margin-bottom: 2%;
+        margin-bottom: 25px;
     }
 
-    //Main styles
-    .main {
-        display: none;
+    .main.banner {
+        height: 100px;
+        background: $texture;
+        border-bottom: none;
+        @include box-shadow(none);
+
+        .navbar {
+            margin-top: 0;
+            background-color: transparent;
+
+            .navbar-header {
+                .navbar-brand {
+                    .logo {
+                        width: 150px;
+                    }
+                }
+
+                .button {
+                    margin-top: 35px;
+                    width: auto;
+                    border: none;
+                }
+            }
+        }
     }
 
     /*------------------------------------*\
@@ -51,13 +71,12 @@ body.checkout {
     .content {
         padding: 0;
 
-        > .container {
+        > .container-fluid {
             padding: 0;
 
             .steps-wrapper {
                 display: table;
                 width: 100%;
-                padding-top: 50px;
 
                 .steps {
                     display: table-cell;
@@ -71,51 +90,86 @@ body.checkout {
                         display: block;
                         float: left;
                         width: 25%;
+                        height: 75px;
                         text-align: center;
+
+                        &:before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            height: 3px;
+                            background-color: $jaune-or;
+                        }
 
                         a {
                             text-decoration: none;
                         }
 
                         .step-block {
+                            position: relative;
                             display: block;
                             width: 100%;
                             height: 100%;
-
-                            .fa {
-                                font-size: 3em;
-                            }
+                            text-align: center;
 
                             .step {
+                                cursor: default;
                                 display: block;
-                                margin-top: 15px;
+                                padding-top: 25px;
                                 font-size: 14px;
-                                text-transform: uppercase;
                                 text-decoration: none;
+                            }
+
+                            .number {
+                                position: absolute;
+                                left: 50%;
+                                bottom: -12px;
+                                margin-left: -10px;
+                                width: 25px;
+                                height: 25px;
+                                padding-top: 2px;
+                                background-color: $jaune-or;
+                                @include border-radius(100%);
+                                color: $noir;
+                                font-size: 14px;
+                                font-weight: 700;
                             }
                         }
                     }
 
                     .active {
-                        .fa, .step {
+                        background-color: transparent;
+                        .number, .step {
                             color: $jaune-or;
+                        }
+                    }
+
+                    .validated {
+                        &:before {
+                            background-color: $blanc;
+                        }
+
+                        .number, .step {
+                            color: $blanc
+                        }
+
+                        .step-block {
+                            .number {
+                                background-color: $blanc;
+                            }
                         }
                     }
 
                     .disabled {
                         cursor: default !important;
-                        opacity: 0.6;
+                        opacity: 0.2;
+                        color: $jaune-or;
                         &:hover, &:focus, &:active, &:visited {
                             background-color: transparent;
-                            color: $gris-clair;
-                        }
-
-                        a {
-                            color: $gris-clair;
-                        }
-
-                        .fa {
-                            color: $gris-clair;
+                            color: $jaune-or;
                         }
                     }
                 }
@@ -183,24 +237,30 @@ body.checkout {
     .content {
 
         .sign-in-block {
-
-            h1 {
-                padding: 0;
-                margin-bottom: 50px;
-            }
+            display: table;
+            width: 100%;
+            padding: 50px 0;
 
             .user-log-in,
             .new-user {
-                text-align: center;
-                background-color: $fond-blanc;
+                width: 100%;
+                height: 100%;
                 padding: 50px;
+                background-color: $fond-blanc;
+                text-align: center;
 
                 h2 {
-                    text-align: center;
-                    color: $noir;
-                    font-size: 22px;
-                    font-weight: 600;
                     margin-bottom: 50px;
+                    color: $noir;
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-align: center;
+
+                    &.sep {
+                        &:after {
+                            background-color: $noir;
+                        }
+                    }
                 }
 
                 .forgotten-pwd {
@@ -222,6 +282,12 @@ body.checkout {
                 }
             }
 
+            .buttons-block {
+                .button.prev {
+                    margin-top: 0;
+                }
+            }
+
         }
     }
 
@@ -234,8 +300,12 @@ body.checkout {
             display: none;
         }
 
+        .buttons-block {
+            margin-top: 50px;
+        }
+
         .infos-block {
-            margin-top: 25px;
+            margin-top: 100px;
             padding: 50px;
             background-color: $fond-blanc;
 
@@ -281,6 +351,19 @@ body.checkout {
 
             .form-group {
                 margin-bottom: 0;
+
+                h3 {
+                    font-size: 24px;
+                    color: $noir;
+                }
+
+                p {
+                    margin-top: 10px;
+                    margin-bottom: 0;
+                    font-size: 16px;
+                    line-height: 26px;
+                    text-align: left;
+                }
 
                 .button {
                     float: none;
@@ -610,8 +693,15 @@ body.checkout {
             font-size: 12px;
         }
 
-        .buttons-block {
-            margin-top: 25px;
+        .main.banner {
+            .navbar {
+                .navbar-header {
+                    .button {
+                        margin-top: 32px;
+                        width: 100px;
+                    }
+                }
+            }
         }
 
         .content {
@@ -643,6 +733,12 @@ body.checkout {
                 }
 
                 .form-group {
+                    text-align: center;
+
+                    p {
+                        text-align: center;
+                    }
+
                     .button {
                         display: block;
                         margin: 15px auto 0 auto;
@@ -675,13 +771,14 @@ body.checkout {
 
         .content {
 
-            > .container {
+            > .container-fluid {
 
                 .steps-wrapper {
                     .steps {
                         li:not(.active) {
                             display: none;
                         }
+
                         .active {
                             width: 100%;
                         }

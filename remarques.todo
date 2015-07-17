@@ -18,6 +18,9 @@ Générales :
 Checkout :
   ☐ Revoir le dev du checkout
   ☐ Revoir les titres (ça affiche une erreur en titre de page xD)
+  ☐ Revoir les redirections (genre quand on se connecte, ça renvoie sur l'espace perso XD)
+  ☐ Bouton 'Modifier l'adresse' ne fonctionne pas
+  ☐ Se réidentifiter quand on est dans le checkout (ne pas maintenir le compte ouvert)
 
 Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)

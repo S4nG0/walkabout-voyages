@@ -1,32 +1,38 @@
 <?php
-$page = 'informations';
+$page = 'checkout';
+$step = 'informations';
 ?>
 
 <body class="checkout">
 
+<div class="main banner">
+    <div class="container-fluid noPadding">
+    <?php
 
-<?php
+    set_include_path(dirname(__FILE__)."/../");
+    include 'template/menu.php';
 
-set_include_path(dirname(__FILE__)."/../");
-
-?>
+    ?>
+    </div>
+</div>
 
 <div class="content">
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid noPadding">
+        <div class="row noPadding">
             <!-- Etapes de commande -->
             <?php include 'etapes.php'; ?>
         </div>
+    </div>
+    <div class="container">
 
         <!-- Existing adress block -->
         <div class="row">
-            <h1>Vos adresses</h1>
-           <?php echo form_open('checkout/payement'); ?>
+           <?php echo form_open('checkout/paiement'); ?>
                 <div class="infos-block existing-address clearfix">
                     <div class="col-sm-6 col-md-8">
                         <div class="form-group">
-                            <label for="adresses">Mon adresse</label>
-                            <p style="text-align:left;font-weight:900"><?php
+                            <h3 for="adresses">Mon adresse</h3>
+                            <p><?php
                             if($user->adresse2 != ""){
                                 echo $user->nom.' '.$user->prenom.' <br/>'.$user->adresse1.' <br/> '.$user->adresse2.' <br/>'.$user->CP.' '.$user->ville.'<br/>'.$user->pays;
 
@@ -34,7 +40,7 @@ set_include_path(dirname(__FILE__)."/../");
                             else{
                                 echo $user->nom.' '.$user->prenom.' <br/>'.$user->adresse1.' <br/>'.$user->CP.' '.$user->ville.'<br/>'.$user->pays;
                             }
-?></p>
+                            ?></p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4">
@@ -157,8 +163,10 @@ set_include_path(dirname(__FILE__)."/../");
 
             </form>
         </div>
-        <div class="buttons-block">
-            <a class="button prev"  onclick="history.go(-1);">Retour</a>
+        <div class="row">
+            <div class="buttons-block">
+                <a class="button prev"  onclick="history.go(-1);">Retour</a>
+            </div>
         </div>
     </div>
 </div>

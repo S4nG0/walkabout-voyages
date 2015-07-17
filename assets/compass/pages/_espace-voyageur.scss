@@ -711,13 +711,10 @@ body.espace-voyageur {
                     }
 
                     blockquote {
+                        margin-top: 25px;
                         padding: 25px;
                         max-width: 600px;
                         outline: $gold-border;
-
-                        &:first-child {
-                            margin-top: 25px;
-                        }
                     }
                 }
 
@@ -977,7 +974,7 @@ body.espace-voyageur {
 
         .main.banner.modification {
             &.carnet {
-                height: 350px;
+                height: 400px;
             }
 
             .travel-log__description {

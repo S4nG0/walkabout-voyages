@@ -1,130 +1,130 @@
+<!-- BREADCRUMBS FOR CHECKOUT -->
 <div class="steps-wrapper">
-
     <ul class="steps">
 
-<?php if( $page == 'choice' ) { ?>
+<?php if( $step == 'choice' ) { ?>
 
         <li class="active">
             <div class="step-block">
-                <i class="fa fa-globe"></i>
-                <span class="step">Date de départ</span>
+                <span class="step">Choix de la date</span>
+                <span class="number">1</span>
             </div>
         </li>
 
         <li class="disabled">
             <div class="step-block">
-                <i class="fa fa-sign-in"></i>
                 <span class="step">Connexion</span>
+                <span class="number">2</span>
             </div>
         </li>
 
         <li class="disabled">
             <div class="step-block">
-                <i class="fa fa-info-circle"></i>
-                <span class="step">Informations</span>
+                <span class="step">Adresse</span>
+                <span class="number">3</span>
             </div>
         </li>
 
         <li class="disabled">
             <div class="step-block">
-                <i class="fa fa-money"></i>
                 <span class="step">Paiement</span>
+                <span class="number">4</span>
             </div>
         </li>
 
 <?php }; ?>
 
-<?php if( $page == 'sign-in' ) { ?>
+<?php if( $step == 'sign-in' ) { ?>
 
-        <li class="active">
+        <li class="validated">
             <div class="step-block">
-                <i class="fa fa-globe"></i>
-                <span class="step">Date de départ</span>
+                <span class="step">Choix de la date</span>
+                <span class="number">1</span>
             </div>
         </li>
 
         <li class="active">
             <div class="step-block">
-                <i class="fa fa-sign-in"></i>
                 <span class="step">Connexion</span>
+                <span class="number">2</span>
             </div>
         </li>
 
         <li class="disabled">
             <div class="step-block">
-                <i class="fa fa-info-circle"></i>
-                <span class="step">Informations</span>
+                <span class="step">Adresse</span>
+                <span class="number">3</span>
             </div>
         </li>
 
         <li class="disabled">
             <div class="step-block">
-                <i class="fa fa-money"></i>
                 <span class="step">Paiement</span>
+                <span class="number">4</span>
             </div>
         </li>
 
 <?php }; ?>
 
-<?php if( $page == 'informations' || $page == 'inscription' ) { ?>
+<?php if( $step == 'informations' || $step == 'inscription' ) { ?>
 
-        <li class="active">
+        <li class="validated">
             <div class="step-block">
-                <i class="fa fa-globe"></i>
-                <span class="step">Date de départ</span>
+                <span class="step">Choix de la date</span>
+                <span class="number">1</span>
             </div>
         </li>
 
-        <li class="active">
+        <li class="validated">
             <div class="step-block">
-                <i class="fa fa-sign-in"></i>
                 <span class="step">Connexion</span>
+                <span class="number">2</span>
             </div>
         </li>
 
         <li class="active">
             <div class="step-block">
-                <i class="fa fa-info-circle"></i>
-                <span class="step">Informations</span>
+                <span class="step">Adresse</span>
+                <span class="number">3</span>
             </div>
         </li>
 
         <li class="disabled">
             <div class="step-block">
-                <i class="fa fa-money"></i>
                 <span class="step">Paiement</span>
+                <span class="number">4</span>
             </div>
         </li>
 
 <?php }; ?>
 
-<?php if( $page == 'payment' ) { ?>
+<?php if( $step == 'payment' ) { ?>
 
-        <li class="active">
+        <li class="validated">
             <div class="step-block">
-                <i class="fa fa-globe"></i>
-                <span class="step">Date de départ</span>
+                <span class="step">Choix de la date</span>
+                <span class="number">1</span>
             </div>
         </li>
 
-        <li class="active">
+        <li class="validated">
             <div class="step-block">
-                <i class="fa fa-sign-in"></i>
                 <span class="step">Connexion</span>
+                <span class="number">2</span>
+            </div>
+        </li>
+
+        <li class="validated">
+            <div class="step-block">
+                <span class="step">Adresse</span>
+                <span class="number">3</span>
             </div>
         </li>
 
         <li class="active">
             <div class="step-block">
-                <i class="fa fa-info-circle"></i>
-                <span class="step">Informations</span>
-            </div>
-        </li>
-
-        <li class="active">
-            <div class="step-block">
-                <i class="fa fa-money"></i>
                 <span class="step">Paiement</span>
+                <span class="number">4</span>
             </div>
         </li>
 
