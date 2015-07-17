@@ -37,6 +37,11 @@ class Dates extends CI_Controller {
                 $voyage->date_retour = conv_date($voyage->date_retour);
                 $voyage->nb_reservés = $voyage->nb_places - $this->reservations->count($voyage->idVoyage);
             }
+            if(sizeof($data['voyages']) == 0){
+                $data['no_voyage'] = true;
+            }else{
+                $data['no_voyage'] = false;
+            }
             $this->load->view('template/header',$data);
             $this->load->view('checkout/dates',$data);
             $this->load->view('template/footer');
