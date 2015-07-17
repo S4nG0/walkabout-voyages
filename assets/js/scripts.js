@@ -784,5 +784,4 @@ $(document).ready(function () {
         var sb = $(window).scrollTop();
         $('.spirit-content').css({'opacity': (-650 + sb) / 1000});
     });
-
 });
