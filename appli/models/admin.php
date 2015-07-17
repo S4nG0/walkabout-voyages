@@ -54,4 +54,11 @@ class Admin extends CI_Model {
         return $admin;
     }
 
+    public function deleteAdmin($idAdministrateur=0){
+        if($idAdministrateur==0)
+            return false;
+        $admin = $this->db->delete($this->table, array('idAdministrateur' => $idAdministrateur));
+        return $admin;
+    }
+
 }
