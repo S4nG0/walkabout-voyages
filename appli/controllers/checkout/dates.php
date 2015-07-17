@@ -40,6 +40,7 @@ class Dates extends CI_Controller {
             $this->load->view('template/header',$data);
             $this->load->view('checkout/dates',$data);
             $this->load->view('template/footer');
+            $this->session->unset_userdata('user');
             //$this->output->enable_profiler(true);
 	}
         
