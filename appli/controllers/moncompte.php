@@ -67,7 +67,7 @@ class Moncompte extends CI_Controller {
                 );
                 if($this->input->post('old_password')!= ''){
                     $old_password = hash('sha256',$this->input->post('old_password'));
-                    if($this->session->userdata('user')[0]->idUsers == $old_password && $this->input->post('new_password') = $this->input->post('confirmation_password')){
+                    if($this->session->userdata('user')[0]->idUsers == $old_password && $this->input->post('new_password') == $this->input->post('confirmation_password')){
                         $this->user->modify($user,$this->session->userdata('user')[0]->idUsers);
                     }
                 }
@@ -81,9 +81,9 @@ class Moncompte extends CI_Controller {
                         $this->newsletters->deleteNews($mail);
                     }
                 }
-                $this->index();
+                redirect($this->index());
             }else{
-                $this->index();
+                redirect($this->index());
             }
         }
     }
