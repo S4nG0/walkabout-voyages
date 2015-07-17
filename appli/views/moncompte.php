@@ -135,7 +135,7 @@ $page = "moncompte";
                         </div>
                     </div>
                     <div class="infos-block" id="infos-content">
-
+                        <?php echo form_open('moncompte/majuser') ?>
                         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <h3>Changer vos informations de connexion</h3>
                             <div class="form-group">
@@ -170,6 +170,7 @@ $page = "moncompte";
                                 <button class="button" type="submit">Sauvegarder</button>
                             </div>
                         </div>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>

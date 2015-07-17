@@ -19,42 +19,71 @@ class Moncompte extends CI_Controller {
 	 */
 	public function index()
 	{
-            $data['connecte'] = connecte($this->session->userdata('user')[0]);
-            $data['title'] = "Compte";
-            $data['upload'] = $this->session->flashdata('upload');
-            if($data['connecte'] == false){
-                redirect('/connexion');
-            }else{
-                $data['user'] = $this->session->userdata('user')[0];
-                $data['newsletter'] = $this->newsletters->constructeur($data['user']->mail);
-                $data['reservations'] = $this->reservations->constructeur($data['user']->idUsers);
-                if(sizeof($data['reservations']) > 0){
-                    foreach( $data['reservations'] as $reservation){
-                        $reservation->voyage = $this->voyages->constructeur($reservation->idVoyage); 
-                        $reservation->destination = $this->destination->constructeur($reservation->voyage[0]->idDestination);
-                        $reservation->pays = $this->pays->constructeur($reservation->destination[0]->idPays);
-                        $reservation->voyage[0]->date_depart = conv_date($reservation->voyage[0]->date_depart);
-                        $reservation->voyage[0]->date_retour = conv_date($reservation->voyage[0]->date_retour);
-                        $reservation->date = conv_date($reservation->date);
-                        $reservation->etatreservation = $this->etat_reservation->constructeur($reservation->idReservation)[0]->etat;
-                    }
+        $data['connecte'] = connecte($this->session->userdata('user')[0]);
+        $data['title'] = "Compte";
+        $data['upload'] = $this->session->flashdata('upload');
+        if($data['connecte'] == false){
+            redirect('/connexion');
+        }else{
+            $data['user'] = $this->session->userdata('user')[0];
+            $data['newsletter'] = $this->newsletters->constructeur($data['user']->mail);
+            $data['reservations'] = $this->reservations->constructeur($data['user']->idUsers);
+            if(sizeof($data['reservations']) > 0){
+                foreach( $data['reservations'] as $reservation){
+                    $reservation->voyage = $this->voyages->constructeur($reservation->idVoyage);
+                    $reservation->destination = $this->destination->constructeur($reservation->voyage[0]->idDestination);
+                    $reservation->pays = $this->pays->constructeur($reservation->destination[0]->idPays);
+                    $reservation->voyage[0]->date_depart = conv_date($reservation->voyage[0]->date_depart);
+                    $reservation->voyage[0]->date_retour = conv_date($reservation->voyage[0]->date_retour);
+                    $reservation->date = conv_date($reservation->date);
+                    $reservation->etatreservation = $this->etat_reservation->constructeur($reservation->idReservation)[0]->etat;
                 }
-                $data['carnets'] = $this->carnetvoyage->get_carnet_for_user($data['user']->idUsers);
-                foreach($data['carnets'] as $carnet){
-                    $carnet->date = conv_date($carnet->date);
-                    $carnet->user = $this->user->constructeur($carnet->idUsers);
-                    $carnet->voyage = $this->voyages->constructeur($carnet->idVoyage);
-                    $carnet->destination = $this->destination->constructeur($carnet->idDestination);
-                    $carnet->pays = $this->pays->constructeur($carnet->destination[0]->idPays);
-                    $carnet->voyage[0]->date_depart = conv_date($carnet->voyage[0]->date_depart);
-                    $carnet->voyage[0]->date_retour = conv_date($carnet->voyage[0]->date_retour);
-                }
-                $this->load->view('template/header', $data);
-                $this->load->view('moncompte',$data);
-                $this->load->view('template/footer');
             }
+            $data['carnets'] = $this->carnetvoyage->get_carnet_for_user($data['user']->idUsers);
+            foreach($data['carnets'] as $carnet){
+                $carnet->date = conv_date($carnet->date);
+                $carnet->user = $this->user->constructeur($carnet->idUsers);
+                $carnet->voyage = $this->voyages->constructeur($carnet->idVoyage);
+                $carnet->destination = $this->destination->constructeur($carnet->idDestination);
+                $carnet->pays = $this->pays->constructeur($carnet->destination[0]->idPays);
+                $carnet->voyage[0]->date_depart = conv_date($carnet->voyage[0]->date_depart);
+                $carnet->voyage[0]->date_retour = conv_date($carnet->voyage[0]->date_retour);
+            }
+            $this->load->view('template/header', $data);
+            $this->load->view('moncompte',$data);
+            $this->load->view('template/footer');
+        }
             
 	}
+
+    public function majUser(){
+        if($this->input->post() != false) {
+            $this->form_validation->set_rules('email', '"email"', 'trim|required|valid_email|encode_php_tags|xss_clean');
+            if ($this->form_validation->run()) {
+                $mail=$this->input->post('email');
+                $user=array(
+                    "mail" => $mail
+                );
+                if($this->input->post('password')!=''){
+                    $user['mdp']=hash('sha256',$this->input->post('password'));
+                }
+                $this->user->modify($user,$this->session->userdata('user')[0]->idUsers);
+                $newsPost=$this->input->post('newsletter');
+                if(isset($newsPost)){
+                    $newsletters=$this->newsletters->constructeur($mail);
+                    if(empty($newsletters)){
+                        $news['email']=$mail;
+                        $this->newsletters->insert($news);
+                    }else{
+                        $this->newsletters->deleteNews($mail);
+                    }
+                }
+                $this->index();
+            }else{
+                $this->index();
+            }
+        }
+    }
         
 }
 
