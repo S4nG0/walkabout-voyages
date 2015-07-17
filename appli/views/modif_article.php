@@ -3,7 +3,7 @@ $page = "editing-article";
 ?>
 
 <body class="espace-voyageur editing">
-    <form action="<?php echo (base_url().'article/modifier/'.$article[0]->idArticles); ?>" method="post" accept-charset="utf-8">
+    <form action="<?php echo (base_url().'article/modifier/'.$article[0]->idArticles); ?>" method="post" name="form_article" accept-charset="utf-8">
     <div class="main banner modification article">
         <div class="container-fluid noPadding">
             <!-- Navbar -->

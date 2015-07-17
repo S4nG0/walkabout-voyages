@@ -135,19 +135,19 @@ $page = "moncompte";
                         </div>
                     </div>
                     <div class="infos-block" id="infos-content">
-
+                        <?php echo form_open('moncompte/majuser') ?>
                         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <h3>Changer vos informations de connexion</h3>
                             <div class="form-group">
                                 <input type="email" name="email" id="email" value="<?php echo $user->mail; ?>">
                                 <div class="change-pwd-wrapper">
-                                    <input type="password" name="password" id="former-password" placeholder="Entrez votre ancien mot de passe">
+                                    <input type="password" name="old_password" placeholder="Entrez votre ancien mot de passe">
                                     <button class="change-pwd-button">
                                         Modifiez votre mot de passe
                                     </button>
                                 </div>
-                                <input type="password" name="password" id="new-password" placeholder="Entrez votre nouveau mot de passe">
-                                <input type="password" name="password" id="new-password-confirmation" placeholder="Confirmez votre nouveau mot de passe">
+                                <input type="password" name="new_password" placeholder="Entrez votre nouveau mot de passe">
+                                <input type="password" name="confirmation_password" placeholder="Confirmez votre nouveau mot de passe">
                             </div>
                         </div>
 
@@ -170,6 +170,7 @@ $page = "moncompte";
                                 <button class="button" type="submit">Sauvegarder</button>
                             </div>
                         </div>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>
