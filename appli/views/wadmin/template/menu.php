@@ -63,6 +63,9 @@
                         <a href="<?php echo base_url() . 'walkadmin/utilisateur'; ?>"><i class="fa fa-users fa-fw"></i>  Utilisateurs</a>
                     </li>
                     <li>
+                        <a href="<?php echo base_url() . 'walkadmin/article'; ?>"><i class="fa fa-book fa-fw"></i>  Articles</a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>"><i class="fa fa-pencil-square-o fa-fw"></i> Contacts</a>
                     </li>
 
