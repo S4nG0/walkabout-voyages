@@ -62,12 +62,15 @@ class Moncompte extends CI_Controller {
             if ($this->form_validation->run()) {
                 $mail=$this->input->post('email');
                 $user=array(
-                    "mail" => $mail
+                    "mail" => $mail,
+                    "mdp" => hash('sha256',$this->input->post('new_password'))
                 );
-                if($this->input->post('password')!=''){
-                    $user['mdp']=hash('sha256',$this->input->post('password'));
+                if($this->input->post('old_password')!= ''){
+                    $old_password = hash('sha256',$this->input->post('old_password'));
+                    if($this->session->userdata('user')[0]->idUsers == $old_password && $this->input->post('new_password') = $this->input->post('confirmation_password')){
+                        $this->user->modify($user,$this->session->userdata('user')[0]->idUsers);
+                    }
                 }
-                $this->user->modify($user,$this->session->userdata('user')[0]->idUsers);
                 $newsPost=$this->input->post('newsletter');
                 if(isset($newsPost)){
                     $newsletters=$this->newsletters->constructeur($mail);

@@ -103,6 +103,7 @@ $page = "editing-carnet";
                         </div>
                     </div>
                     <?php echo form_open_multipart('/upload_file/cover'); ?>
+                        <input type="hidden" name="csrf_hash_name" value="CSRF_walkabout_voyages">
                         <input type="file" name="coverimage" class="input-upload hidden"/>
                         <input type="hidden" name="id_carnet" value="<?php echo $carnet[0]->idCarnetDeVoyage; ?>"/>
                         <input type="submit" class="submit-cover hidden"/>
