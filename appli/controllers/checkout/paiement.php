@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class  Payement extends CI_Controller {
+class  Paiement extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -40,7 +40,7 @@ class  Payement extends CI_Controller {
             $data['pays'] = $this->pays->constructeur($data['destination']->idPays)[0];
             
             $this->load->view('template/header',$data);
-            $this->load->view('checkout/payement',$data);
+            $this->load->view('checkout/paiement',$data);
             $this->load->view('template/footer');
 	}
         

@@ -21,7 +21,7 @@ set_include_path(dirname(__FILE__)."/../");
         <!-- Existing adress block -->
         <div class="row">
             <h1>Vos adresses</h1>
-           <?php echo form_open('checkout/payement'); ?>
+           <?php echo form_open('checkout/paiement'); ?>
                 <div class="infos-block existing-address clearfix">
                     <div class="col-sm-6 col-md-8">
                         <div class="form-group">
