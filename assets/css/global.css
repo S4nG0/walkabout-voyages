@@ -3976,15 +3976,15 @@ body.checkout .buttons-block {
   clear: both;
   display: table;
   width: 100%;
+  margin-top: 25px;
+  margin-bottom: 50px;
 }
 body.checkout .button {
   margin: 0 auto;
+  width: auto;
 }
 body.checkout .button .fa {
   margin-right: 10px;
-}
-body.checkout input[type="submit"] {
-  width: 225px;
 }
 body.checkout .button.prev {
   cursor: pointer;
@@ -4195,9 +4195,6 @@ body.checkout .content .sign-in-block .buttons-block .button.prev {
 }
 body.checkout .content #new-address {
   display: none;
-}
-body.checkout .content .buttons-block {
-  margin-top: 50px;
 }
 body.checkout .content .infos-block {
   margin-top: 100px;
