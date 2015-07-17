@@ -14,17 +14,16 @@ body.checkout {
         clear: both;
         display: table;
         width: 100%;
+        margin-top: 25px;
+        margin-bottom: 50px;
     }
 
     .button {
         margin: 0 auto;
+        width: auto;
         .fa {
             margin-right: 10px;
         }
-    }
-
-    input[type="submit"] {
-        width: 225px;
     }
 
     .button.prev {
@@ -298,10 +297,6 @@ body.checkout {
 
         #new-address {
             display: none;
-        }
-
-        .buttons-block {
-            margin-top: 50px;
         }
 
         .infos-block {

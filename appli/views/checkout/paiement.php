@@ -1,22 +1,29 @@
 <?php
-$page = 'payment';
+$page = 'checkout';
+$step = 'payment';
 ?>
 
 <body class="checkout">
 
-<?php
+<div class="main banner">
+    <div class="container-fluid noPadding">
+    <?php
 
-set_include_path(dirname(__FILE__)."/../");
+    set_include_path(dirname(__FILE__)."/../");
+    include 'template/menu.php';
 
-?>
+    ?>
+    </div>
+</div>
 
 <div class="content">
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid noPadding">
+        <div class="row noPadding">
             <!-- Etapes de commande -->
             <?php include 'etapes.php'; ?>
         </div>
-
+    </div>
+    <div class="container">
         <!-- Choice block -->
         <div class="row">
             <div class="payment-block">
