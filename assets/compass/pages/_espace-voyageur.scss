@@ -165,7 +165,7 @@ body.espace-voyageur {
                     padding: 25px;
                     margin: 0 auto;
                     text-transform: none;
-                    outline: 1px solid $jaune-or;
+                    outline: $gold-border;
                     @include transition(box-shadow 300ms ease-in-out);
 
                     &:focus {
@@ -685,18 +685,17 @@ body.espace-voyageur {
                         margin: 0 auto;
                     }
 
-                    &:focus {
-                        p {
-                            @include box-shadow(0 0 10px 0 rgba(240, 192, 65, 0.6));
-                        }
-                    }
 
                     p {
                         margin-top: 25px;
                         padding: 25px;
                         max-width: 600px;
-                        outline: 1px solid $jaune-or;
+                        outline: $gold-border;
                         @include transition(box-shadow 300ms ease-in-out);
+
+                        &:focus {
+                            @include box-shadow(0 0 10px 0 rgba(240, 192, 65, 0.6));
+                        }
                     }
 
                     figure {
@@ -706,13 +705,19 @@ body.espace-voyageur {
                             padding: 0;
 
                             &.medium-insert-image-active {
-                                outline: 1px solid $jaune-or;
+                                outline: $gold-border;
                             }
                         }
                     }
 
                     blockquote {
-                        padding: 0;
+                        padding: 25px;
+                        max-width: 600px;
+                        outline: $gold-border;
+
+                        &:first-child {
+                            margin-top: 25px;
+                        }
                     }
                 }
 
