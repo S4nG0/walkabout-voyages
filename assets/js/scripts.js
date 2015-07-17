@@ -780,7 +780,6 @@ $(document).ready(function () {
          */
         var st = $(window).scrollTop();
         $('.caption-wrapper').css({'opacity': (1000 - st) / 1000});
-
         var sb = $(window).scrollTop();
         $('.spirit-content').css({'opacity': (-650 + sb) / 1000});
     });
