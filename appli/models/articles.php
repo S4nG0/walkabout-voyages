@@ -111,4 +111,20 @@ class Articles extends CI_Model {
         
         return $result;
     }
+
+    public function getCarnetAll(){
+
+        $carnet = $this->db->select('users.nom as nomClient,users.prenom as prenomClient,articles.titre AS titreArticle,
+                                     articles.date AS dateArticle,articles.etat AS etatArticle,carnetdevoyage.titre AS
+                                     titreCarnet,carnetdevoyage.url,voyage.date_depart,voyage.date_retour,
+                                     destination.titre AS destination,destination.ville,articles.idArticles')
+                           ->from($this->table)
+                           ->join('carnetdevoyage','carnetdevoyage.idCarnetDeVoyage=articles.idCarnet')
+                           ->join('users','users.idUsers=carnetdevoyage.idUsers')
+                           ->join('voyage','voyage.idVoyage=carnetdevoyage.idVoyage')
+                           ->join('destination','destination.idDestination=voyage.idDestination')
+                           ->get()
+                           ->result();
+        return $carnet;
+    }
 }
