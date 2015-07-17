@@ -25,6 +25,13 @@ class Administrateur extends CI_Controller {
         $this->load->view('wadmin/pages/Admin/creer');
         $this->load->view('wadmin/template/footer');
     }
+
+    public function supprimer($idAdministrateur=0){
+        if($idAdministrateur==0)
+            $this->index();
+        $this->admin->deleteAdmin($idAdministrateur);
+        $this->index();
+    }
     
     public function index(){
         $data['admins']=$this->admin->getAll();
