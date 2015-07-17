@@ -24,13 +24,20 @@ class Upload_file extends CI_Controller {
         
         $data = array();
         $data['carnet'] = $this->carnetvoyage->constructeur($_REQUEST['id_carnet'])[0];
-        var_dump($data);
         $name_folder = slugify($data['carnet']->titre);
         
         //Dossier d'upload
         $config['upload_path'] = 'assets/images/carnets/'.$name_folder;
-        $config['min_width']  = '1200';
-        $config['min_height']  = '600';
+        // set the filter image types
+        $config['allowed_types'] = 'jpeg|jpg|png';
+        //On réécris si la photo existe déja!
+        $config['overwrite'] = true;
+        //Définition des tailles min
+        $config['min_width']  = '800';
+	$config['min_height']  = '600';
+        //Configuration de la librairie
+        $this->upload->initialize($config);
+        
         
         //On vérifie si le dossier d'upload existe et si non on le crée
         if (!file_exists($config['upload_path'])) {
@@ -39,15 +46,14 @@ class Upload_file extends CI_Controller {
                 echo 'erreur lors de la création du dossier!';
             }
         }
-        // set the filter image types
-        $config['allowed_types'] = 'jpg|jpeg|png';
-        //Configuration de la librairie
-        $this->upload->initialize($config);
+        
 
         $data['upload_data'] = '';
         //if not successful, set the error message
         if (!$this->upload->do_upload('coverimage')) {
             $this->session->set_flashdata('upload', $this->upload->display_errors());
+            var_dump($this->upload->data());
+            var_dump($this->upload->display_errors());
         } else { //else, set the success message
             $this->session->set_flashdata('upload', true);
             $data['upload_data'] = $this->upload->data();
@@ -57,7 +63,18 @@ class Upload_file extends CI_Controller {
             $result = $this->carnetvoyage->modify($carnet,$_REQUEST['id_carnet']);
         }
         
-        header('Location: ' . $_SERVER['HTTP_REFERER'] );
+        $config2['image_library'] = 'gd2';
+        $config2['source_image']	= $config['upload_path'].'/'.$data['upload_data']['file_name'];
+        $config2['maintain_ratio'] = TRUE;
+        $config2['width']	= 2560;
+        $config2['height']	= 1600;
+
+        $this->load->library('image_lib', $config); 
+        $resultat = $this->image_lib->resize();
+        
+        var_dump($resultat);
+        
+        //header('Location: ' . $_SERVER['HTTP_REFERER'] );
     }
     
     public function user() {

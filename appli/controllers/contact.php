@@ -66,7 +66,7 @@ class Contact extends CI_Controller {
                     $result = $this->__construct_email($form);
                     
                     $this->email->from($form['mail'], $form['prenom'].' '.$form['nom']);
-                    $this->email->to('capi.aurelien@gmail.com'); 
+                    $this->email->to('celine.vano@gmail.com'); 
 
                     $this->email->subject('Nouveau contact Walkabout');
                     $this->email->set_mailtype("html");
