@@ -45,7 +45,7 @@ $page = "esprit"
                             Georges est en charge de la production de nos voyages en immersion.
                             <strong>Aventurier</strong> et <strong>baroudeur</strong>, il parcourt les 5 continents pendant plus de 30 ans.
                             <strong>Ethnologue</strong>, il écrit des articles pour des revus spécialisés sur des tribus après les avoir observées quelque temps.
-                            <span class="lead">&laquo;&nbsp;En allant au devant des autres, le voyage peut devenir une vraie aventure humaine&nbsp;&raquo;</span>
+                            <span class="lead">En allant au devant des autres, le voyage peut devenir une vraie aventure humaine</span>
                         </p>
                     </div>
                     <div class="col-md-5">
@@ -57,7 +57,7 @@ $page = "esprit"
                         <p>
                             Alexandre est en charge de la vente de nos voyages en immersion.
                             <strong>Professionnel du voyage</strong>, il fabrique des voyages clé en main et les revend à des tours opérateur.
-                            <span class="lead">&laquo;&nbsp;Le partage, l’humanité et la soif de nouvelles expériences pour s’ouvrir aux autres&nbsp;&raquo;.</span>
+                            <span class="lead">Le partage, l’humanité et la soif de nouvelles expériences pour s’ouvrir aux autres.</span>
                         </p>
                     </div>
                 </div>

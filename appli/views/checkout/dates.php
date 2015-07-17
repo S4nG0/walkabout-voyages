@@ -1,21 +1,30 @@
 <?php
-$page = 'choice';
+$page = 'checkout';
+$step = 'choice';
 ?>
 
 <body class="checkout">
 
-<?php
+<div class="main banner">
+    <div class="container-fluid noPadding">
+    <?php
 
-set_include_path(dirname(__FILE__)."/../");
+    set_include_path(dirname(__FILE__)."/../");
+    include 'template/menu.php';
 
-?>
+    ?>
+    </div>
+</div>
+
 
 <div class="content">
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid noPadding">
+        <div class="row noPadding">
             <!-- Etapes de commande -->
             <?php include 'etapes.php'; ?>
         </div>
+    </div>
+    <div class="container">
 
         <!-- Choice block -->
         <div class="row">
@@ -55,8 +64,7 @@ set_include_path(dirname(__FILE__)."/../");
                 </ul>
 
                 <div class="buttons-block">
-                    <a class="button prev cancel-form" onclick="history.go(-1);">Annuler la réservation</a>
-                    <input class="button next" type="submit" value="Je réserve ma place !">
+                    <input class="button" type="submit" value="Je réserve ma place !">
                 </div>
             </div>
         </div>

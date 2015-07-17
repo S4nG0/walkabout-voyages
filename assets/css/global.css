@@ -3849,7 +3849,7 @@ body.sign-in .main {
 }
 body.sign-in .main .navbar {
   margin-top: 0;
-  background-color: #242424;
+  background-color: transparent;
 }
 body.sign-in .main .navbar .navbar-brand {
   padding: 15px 25px;
@@ -3974,6 +3974,11 @@ body.checkout h1 {
 }
 body.checkout .buttons-block {
   clear: both;
+  display: table;
+  width: 100%;
+}
+body.checkout .button {
+  margin: 0 auto;
 }
 body.checkout .button .fa {
   margin-right: 10px;
@@ -3984,79 +3989,124 @@ body.checkout input[type="submit"] {
 body.checkout .button.prev {
   cursor: pointer;
   float: left;
-  margin-top: 2%;
-  margin-left: 2%;
-  margin-bottom: 2%;
+  margin-bottom: 25px;
 }
 body.checkout .button.next {
   cursor: pointer;
   float: right;
-  margin-top: 2%;
-  margin-right: 2%;
-  margin-bottom: 2%;
+  margin-bottom: 25px;
 }
-body.checkout .main {
-  display: none;
+body.checkout .main.banner {
+  height: 100px;
+  background: url("../images/texture.png");
+  border-bottom: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+body.checkout .main.banner .navbar {
+  margin-top: 0;
+  background-color: transparent;
+}
+body.checkout .main.banner .navbar .navbar-header .navbar-brand .logo {
+  width: 150px;
+}
+body.checkout .main.banner .navbar .navbar-header .button {
+  margin-top: 35px;
+  width: auto;
+  border: none;
 }
 body.checkout .content {
   padding: 0;
 }
-body.checkout .content > .container {
+body.checkout .content > .container-fluid {
   padding: 0;
 }
-body.checkout .content > .container .steps-wrapper {
+body.checkout .content > .container-fluid .steps-wrapper {
   display: table;
   width: 100%;
-  padding-top: 50px;
 }
-body.checkout .content > .container .steps-wrapper .steps {
+body.checkout .content > .container-fluid .steps-wrapper .steps {
   display: table-cell;
   width: 100%;
   vertical-align: middle;
   padding: 0;
   margin: 0;
 }
-body.checkout .content > .container .steps-wrapper .steps li {
+body.checkout .content > .container-fluid .steps-wrapper .steps li {
   position: relative;
   display: block;
   float: left;
   width: 25%;
+  height: 75px;
   text-align: center;
 }
-body.checkout .content > .container .steps-wrapper .steps li a {
+body.checkout .content > .container-fluid .steps-wrapper .steps li:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background-color: #f0c041;
+}
+body.checkout .content > .container-fluid .steps-wrapper .steps li a {
   text-decoration: none;
 }
-body.checkout .content > .container .steps-wrapper .steps li .step-block {
+body.checkout .content > .container-fluid .steps-wrapper .steps li .step-block {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
+  text-align: center;
 }
-body.checkout .content > .container .steps-wrapper .steps li .step-block .fa {
-  font-size: 3em;
-}
-body.checkout .content > .container .steps-wrapper .steps li .step-block .step {
+body.checkout .content > .container-fluid .steps-wrapper .steps li .step-block .step {
+  cursor: default;
   display: block;
-  margin-top: 15px;
+  padding-top: 25px;
   font-size: 14px;
-  text-transform: uppercase;
   text-decoration: none;
 }
-body.checkout .content > .container .steps-wrapper .steps .active .fa, body.checkout .content > .container .steps-wrapper .steps .active .step {
+body.checkout .content > .container-fluid .steps-wrapper .steps li .step-block .number {
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  margin-left: -10px;
+  width: 25px;
+  height: 25px;
+  padding-top: 2px;
+  background-color: #f0c041;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  color: #242424;
+  font-size: 14px;
+  font-weight: 700;
+}
+body.checkout .content > .container-fluid .steps-wrapper .steps .active {
+  background-color: transparent;
+}
+body.checkout .content > .container-fluid .steps-wrapper .steps .active .number, body.checkout .content > .container-fluid .steps-wrapper .steps .active .step {
   color: #f0c041;
 }
-body.checkout .content > .container .steps-wrapper .steps .disabled {
+body.checkout .content > .container-fluid .steps-wrapper .steps .validated:before {
+  background-color: #fff;
+}
+body.checkout .content > .container-fluid .steps-wrapper .steps .validated .number, body.checkout .content > .container-fluid .steps-wrapper .steps .validated .step {
+  color: #fff;
+}
+body.checkout .content > .container-fluid .steps-wrapper .steps .validated .step-block .number {
+  background-color: #fff;
+}
+body.checkout .content > .container-fluid .steps-wrapper .steps .disabled {
   cursor: default !important;
-  opacity: 0.6;
+  opacity: 0.2;
+  color: #f0c041;
 }
-body.checkout .content > .container .steps-wrapper .steps .disabled:hover, body.checkout .content > .container .steps-wrapper .steps .disabled:focus, body.checkout .content > .container .steps-wrapper .steps .disabled:active, body.checkout .content > .container .steps-wrapper .steps .disabled:visited {
+body.checkout .content > .container-fluid .steps-wrapper .steps .disabled:hover, body.checkout .content > .container-fluid .steps-wrapper .steps .disabled:focus, body.checkout .content > .container-fluid .steps-wrapper .steps .disabled:active, body.checkout .content > .container-fluid .steps-wrapper .steps .disabled:visited {
   background-color: transparent;
-  color: #848484;
-}
-body.checkout .content > .container .steps-wrapper .steps .disabled a {
-  color: #848484;
-}
-body.checkout .content > .container .steps-wrapper .steps .disabled .fa {
-  color: #848484;
+  color: #f0c041;
 }
 body.checkout .content .choice-block {
   display: table;
@@ -4100,23 +4150,30 @@ body.checkout .content .choice-block .date-list li .form-group p {
   font-size: 16px;
   line-height: 26px;
 }
-body.checkout .content .sign-in-block h1 {
-  padding: 0;
-  margin-bottom: 50px;
+body.checkout .content .sign-in-block {
+  display: table;
+  width: 100%;
+  padding: 50px 0;
 }
 body.checkout .content .sign-in-block .user-log-in,
 body.checkout .content .sign-in-block .new-user {
-  text-align: center;
-  background-color: #e4e4e4;
+  width: 100%;
+  height: 100%;
   padding: 50px;
+  background-color: #e4e4e4;
+  text-align: center;
 }
 body.checkout .content .sign-in-block .user-log-in h2,
 body.checkout .content .sign-in-block .new-user h2 {
-  text-align: center;
-  color: #242424;
-  font-size: 22px;
-  font-weight: 600;
   margin-bottom: 50px;
+  color: #242424;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+body.checkout .content .sign-in-block .user-log-in h2.sep:after,
+body.checkout .content .sign-in-block .new-user h2.sep:after {
+  background-color: #242424;
 }
 body.checkout .content .sign-in-block .user-log-in .forgotten-pwd,
 body.checkout .content .sign-in-block .new-user .forgotten-pwd {
@@ -4133,11 +4190,17 @@ body.checkout .content .sign-in-block .new-user .button {
 body.checkout .content .sign-in-block .new-user .form-group {
   padding: 71px 0;
 }
+body.checkout .content .sign-in-block .buttons-block .button.prev {
+  margin-top: 0;
+}
 body.checkout .content #new-address {
   display: none;
 }
+body.checkout .content .buttons-block {
+  margin-top: 50px;
+}
 body.checkout .content .infos-block {
-  margin-top: 25px;
+  margin-top: 100px;
   padding: 50px;
   background-color: #e4e4e4;
 }
@@ -4172,6 +4235,17 @@ body.checkout .content .infos-block select option {
 }
 body.checkout .content .infos-block.existing-address .form-group {
   margin-bottom: 0;
+}
+body.checkout .content .infos-block.existing-address .form-group h3 {
+  font-size: 24px;
+  color: #242424;
+}
+body.checkout .content .infos-block.existing-address .form-group p {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: left;
 }
 body.checkout .content .infos-block.existing-address .form-group .button {
   float: none;
@@ -4389,8 +4463,9 @@ body.checkout footer {
   body.checkout .button {
     font-size: 12px;
   }
-  body.checkout .buttons-block {
-    margin-top: 25px;
+  body.checkout .main.banner .navbar .navbar-header .button {
+    margin-top: 32px;
+    width: 100px;
   }
   body.checkout .content > .container {
     padding-left: 15px;
@@ -4406,6 +4481,14 @@ body.checkout footer {
   body.checkout .content .infos-block .button,
   body.checkout .content .infos-block.existing-address .button {
     width: 75%;
+  }
+  body.checkout .content .infos-block .form-group,
+  body.checkout .content .infos-block.existing-address .form-group {
+    text-align: center;
+  }
+  body.checkout .content .infos-block .form-group p,
+  body.checkout .content .infos-block.existing-address .form-group p {
+    text-align: center;
   }
   body.checkout .content .infos-block .form-group .button,
   body.checkout .content .infos-block.existing-address .form-group .button {
@@ -4426,10 +4509,10 @@ body.checkout footer {
     margin: 0 auto;
     margin-bottom: 15px;
   }
-  body.checkout .content > .container .steps-wrapper .steps li:not(.active) {
+  body.checkout .content > .container-fluid .steps-wrapper .steps li:not(.active) {
     display: none;
   }
-  body.checkout .content > .container .steps-wrapper .steps .active {
+  body.checkout .content > .container-fluid .steps-wrapper .steps .active {
     width: 100%;
   }
   body.checkout .content .choice-block .date-list {
@@ -5082,12 +5165,10 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .tb-articl
   outline: 1px solid #f0c041;
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content blockquote {
+  margin-top: 25px;
   padding: 25px;
   max-width: 600px;
   outline: 1px solid #f0c041;
-}
-body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content blockquote:first-child {
-  margin-top: 25px;
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin.medium-editor-placeholder:before, body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin.medium-editor-placeholder:empty:before {
   content: attr(placeholder);
@@ -5247,7 +5328,7 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
     font-size: 24px;
   }
   body.espace-voyageur .main.banner.modification.carnet {
-    height: 350px;
+    height: 400px;
   }
   body.espace-voyageur .main.banner.modification .travel-log__description {
     font-size: 16px;
@@ -5530,7 +5611,7 @@ strong {
 }
 .lead:before, blockquote:before {
   content: open-quote;
-  margin-left: -20px;
+  margin-left: -25px;
 }
 .lead:after, blockquote:after {
   content: close-quote;
@@ -6618,7 +6699,7 @@ body.single-carnet .content {
 
   .content.block_destinations {
     background-image: none;
-    background-color: #fdf9b5;
+    background-color: #efd48d;
   }
 
   .content .introduction {

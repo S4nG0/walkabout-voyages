@@ -23,9 +23,9 @@ class Upload_file extends CI_Controller {
     public function cover() {
         
         $data = array();
+                
         $data['carnet'] = $this->carnetvoyage->constructeur($_REQUEST['id_carnet'])[0];
-        var_dump($data);
-        $name_folder = slugify($data['carnet']->titre);
+        $name_folder = $data['carnet']->url;
         
         //Dossier d'upload
         $config['upload_path'] = 'assets/images/carnets/'.$name_folder;
@@ -56,6 +56,16 @@ class Upload_file extends CI_Controller {
             $carnet->image_carnet = 'carnets/'.$name_folder.'/'.$data['upload_data']['file_name'];
             $result = $this->carnetvoyage->modify($carnet,$_REQUEST['id_carnet']);
         }
+        
+        $config2['image_library'] = 'gd2';
+        $config2['source_image'] = $config['upload_path']. '/' .$data['upload_data']['file_name'];
+        $config2['maintain_ratio'] = TRUE;
+        $config2['width']	= 2560;
+        $config2['height']	= 1600;
+
+        $this->load->library('image_lib', $config2); 
+
+        $this->image_lib->resize();
         
         header('Location: ' . $_SERVER['HTTP_REFERER'] );
     }

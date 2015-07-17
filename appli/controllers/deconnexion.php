@@ -20,6 +20,7 @@ class Deconnexion extends CI_Controller {
 	public function index()
 	{
             $this->session->unset_userdata('user');
+            $this->session->unset_userdata('voyage');
             redirect('/accueil');
             //$this->output->enable_profiler(true);
 	}

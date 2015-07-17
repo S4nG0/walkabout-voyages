@@ -1,16 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class  Payement extends CI_Controller {
+class  Paiement extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
 	 *
 	 * Maps to the following URL
 	 * 		http://example.com/index.php/welcome
-	 *	- or -  
+	 *	- or -
 	 * 		http://example.com/index.php/welcome/index
 	 *	- or -
-	 * Since this controller is set as the default controller in 
+	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
@@ -30,20 +30,20 @@ class  Payement extends CI_Controller {
             if($data['voyage'] == false){
                 redirect('/voyage');
             }
-            
-            
+
+
             $data['nb_places_restantes'] = $this->voyages->constructeur($data['voyage'])[0]->nb_places - $this->reservations->count($data['destination']);
             $data['voyage'] = $this->voyages->constructeur($data['voyage'])[0];
             $data['voyage']->date_depart = conv_date($data['voyage']->date_depart);
             $data['voyage']->date_retour = conv_date($data['voyage']->date_retour);
             $data['destination'] = $this->destination->constructeur($data['destination'])[0];
             $data['pays'] = $this->pays->constructeur($data['destination']->idPays)[0];
-            
+
             $this->load->view('template/header',$data);
-            $this->load->view('checkout/payement',$data);
+            $this->load->view('checkout/paiement',$data);
             $this->load->view('template/footer');
 	}
-        
+
 }
 
 
