@@ -141,13 +141,13 @@ $page = "moncompte";
                             <div class="form-group">
                                 <input type="email" name="email" id="email" value="<?php echo $user->mail; ?>">
                                 <div class="change-pwd-wrapper">
-                                    <input type="password" name="password" id="former-password" placeholder="Entrez votre ancien mot de passe">
+                                    <input type="password" name="old_password" placeholder="Entrez votre ancien mot de passe">
                                     <button class="change-pwd-button">
                                         Modifiez votre mot de passe
                                     </button>
                                 </div>
-                                <input type="password" name="password" id="new-password" placeholder="Entrez votre nouveau mot de passe">
-                                <input type="password" name="password" id="new-password-confirmation" placeholder="Confirmez votre nouveau mot de passe">
+                                <input type="password" name="new_password" placeholder="Entrez votre nouveau mot de passe">
+                                <input type="password" name="confirmation_password" placeholder="Confirmez votre nouveau mot de passe">
                             </div>
                         </div>
 

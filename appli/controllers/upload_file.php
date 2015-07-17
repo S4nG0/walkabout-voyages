@@ -23,13 +23,12 @@ class Upload_file extends CI_Controller {
     public function cover() {
         
         $data = array();
-        
+                
         $data['carnet'] = $this->carnetvoyage->constructeur($_REQUEST['id_carnet'])[0];
         $name_folder = $data['carnet']->url;
         
         //Dossier d'upload
         $config['upload_path'] = 'assets/images/carnets/'.$name_folder;
-        $config['overwrite'] = true;
         $config['min_width']  = '1200';
         $config['min_height']  = '600';
         
@@ -68,7 +67,7 @@ class Upload_file extends CI_Controller {
 
         $this->image_lib->resize();
         
-        //header('Location: ' . $_SERVER['HTTP_REFERER'] );
+        header('Location: ' . $_SERVER['HTTP_REFERER'] );
     }
     
     public function user() {

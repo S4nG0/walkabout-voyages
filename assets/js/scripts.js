@@ -745,7 +745,7 @@ $(document).ready(function () {
 
     //Permet de demander avant de quitter la page carnet et article si modification effectuée !
     hasChanged = false;
-
+    form_submit = false;
     $('.titre--article').on('input', function(){
         hasChanged = true;
     });
@@ -754,11 +754,19 @@ $(document).ready(function () {
         hasChanged = true;
     });
 
-    // $(window).bind('beforeunload', function() {
-    //     if(hasChanged == true) {
-    //         return "Vos entrées seront perdues si vous actualisez la page.";
-    //     }
-    // });
+     $(window).bind('beforeunload', function() {
+         if(hasChanged == true && form_submit == false) {
+             return "Vos entrées seront perdues si vous actualisez la page.";
+         }
+         form_submit = false;
+     });
+     
+     $('.submit--article').on('click', function(){
+         form_submit = true;
+     });
+     $('.description_submit').on('click', function(){
+         form_submit = true;
+     });
 
     $(window).on('resize', function () {
         equalheight('.sameHeight');
