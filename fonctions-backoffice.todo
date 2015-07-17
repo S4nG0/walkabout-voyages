@@ -1,7 +1,7 @@
 Modules back office à rajouter :
   ☐ Actualités
   ☐ Carnets de voyages
-  ☐ Destinations
+  ✔ Destinations @done (15-07-17 09:38)
   ✔ Ajouter un administrateur @done (15-07-01 10:32)
   ☐ Gestion des réservations
   ☐ Gestion des renseignements
@@ -18,9 +18,9 @@ Module carnets de voyages :
   ☐ sélectionner un carnet phare (page carnet de voyage)
 
 Module destinations :
-  ☐ ajouter une destination
-  ☐ rédaction des informations (formulaire avec : capital, monnaie, dirigeant,... l'admin rentre les infos dans le formulaire)
-  ☐ rédaction du descriptif
+  ✔ ajouter une destination @done (15-07-17 09:36)
+  ✔ rédaction des informations (formulaire avec : capital, monnaie, dirigeant,... l'admin rentre les infos dans le formulaire) @done (15-07-17 09:38)
+  ✔ rédaction du descriptif @done (15-07-17 09:38)
   ☐ gestion des photos
 
 Informations générales : 

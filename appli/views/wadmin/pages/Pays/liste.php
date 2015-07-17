@@ -35,7 +35,7 @@
                     <td><?php echo $pays[$key]->superficie ?></td>
                     <td><?php echo $pays[$key]->densité ?></td>
                     <td><?php echo $pays[$key]->climat ?></td>
-                    <td><input type="button" value="Modifier le pays" onclick="document.location='<?php echo base_url()."walkadmin/pays_adminadministrateur/detailPays/".$pays[$key]->idPays ?>'"></td>
+                    <td><input type="button" value="Modifier le pays" onclick="document.location='<?php echo base_url()."walkadmin/pays_admin/detail/".$pays[$key]->idPays ?>'"></td>
                 </tr>
             <?php
             }
