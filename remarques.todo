@@ -10,6 +10,8 @@ Générales :
 Checkout :
   ✔ Revoir le dev du checkout @done (15-07-18 12:33)
   ☐ Bouton 'Modifier l'adresse' ne fonctionne pas ------>   En cours
+  ☐ Finaliser la réservation ne renvoie nulle part (t'es sûrement en train de gérer ça ^^)
+  ☐ Rappel : bouton "Retour" à gérer
 
 Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)
