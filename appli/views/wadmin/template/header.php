@@ -10,6 +10,9 @@
     <meta name="author" content="">
 
     <title>Walkabout administration</title>
+    <link rel="icon" href="<?php echo img_url('favicon.png'); ?>" type="image/png">
+    <link rel="apple-touch-icon" href="<?php echo img_url('apple-touch-icon.png'); ?>">
+    <link rel="alternate" hreflang="fr" href="http://fr.walkabout-voyages.fr/walkadmin" />
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="<?php echo css_url('bootstrap.min'); ?>">
@@ -19,6 +22,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo css_url('sb-admin-2'); ?>">
+    <link rel="stylesheet" href="<?php echo css_url('walkadmin'); ?>">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="<?php echo css_url('font-awesome.min'); ?>">

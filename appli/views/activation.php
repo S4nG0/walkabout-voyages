@@ -13,17 +13,17 @@ $page = "moncompte";
 
     <div class="content">
         <?php
-            
+
             switch ($result) {
-                case false : echo "<h3 style='padding:50px;'>Une erreur est survenue, veuillez réessayer!</h3>";
+                case false : echo "<p class='need-activation'><i class='fa fa-exclamation-circle'></i>Une erreur est survenue, veuillez réessayer.</p>";
                     break;
-                case "active" : echo "<h3 style='padding:50px;'>Votre compte est déja activé!</h3>";
+                case "active" : echo "<p class='need-activation'><i class='fa fa-exclamation-circle'></i>Votre compte est déja activé.</p>";
                     break;
-                case "done" : echo "<h3 style='padding:50px;'>Votre compte à bien été activé!</h3>";
+                case "done" : echo "<p class='need-activation'><i class='fa fa-exclamation-circle'></i>Votre compte à bien été activé.</p>";
                     break;
-                case "non_active" : echo "<h3 style='padding:50px;'>Votre compte n'est pas encore actif! Veuillez l'activer avant de continuer!</h3>";
+                case "non_active" : echo "<p class='need-activation'><i class='fa fa-exclamation-circle'></i>Votre compte n'est pas encore actif.<br><br><span class='small'>Un e-mail avec le lien d'activation vous a été envoyé.<br>Rendez-vous sur votre boîte mail pour l'activer.</span></p>";
                     break;
             }
-        
+
         ?>
     </div>

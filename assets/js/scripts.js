@@ -360,7 +360,7 @@ $(document).ready(function () {
      * Sticky navbar
      */
     var navHeight = 77;
-    if (!body.hasClass('sign-in')) {
+    if (!body.hasClass('sign-in'), !body.hasClass('checkout')) {
         $('.navbar').affix({
             offset: {
                 top: navHeight,

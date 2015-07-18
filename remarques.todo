@@ -1,44 +1,31 @@
 Générales :
-  ✔ Auré : Renommer slug 'actus' et 'voyage' en 'actualites' et 'destinations' ou 'nos-actualites' et 'nos-destinations' @done (15-06-30 09:53)
-  ✔ --> Plus moyen d'accèder à la page actualités depuis le footer, le lien chie complètement ! @done (15-06-30 09:56)
-  ✔ Auré : Au lieu de 'destination/1' afficher le lien complet 'destination/quechuas' ou "destination/perou" etc @done (15-06-29 12:08) --> Corrigé par Julien (ajout d'une fonction dans code_helper.php qui transforme l'url + modif du model destinations.php)
-  ✔ Pour les carnets de voyage, on a toujours l'identifiant qui est passé dans l'url =/ @done (15-06-30 10:06)
-  ✔ Auré : Utiliser la propriété "background-image" quand on génère des images dynamiquement par la base de données (parce que sinon le style casse, j'utilise plus les background qui regroupent toutes les propriétés, c'est chiant quand on génère du dynamisme). @done (15-06-30 10:13)
-  ✔ Ajout newsletter en fancybox @done (15-06-30 15:43)
-  ✔ Faire l'ajout des emails des personnes dans la newsletter @done (15-06-30 15:43)
 
-
-  ☐ Faire un breadcrumbs (pour le référencement)
+  ☐ Faire un breadcrumbs (pour le référencement) ------>   NON! TG
   ☐ Localiser les fichiers (pour la présentation au cas où)
   ☐ Faire l'envoi d'email pour l'oubli de mot de passe
-  ☐ Faire une page cible user (avec l'ensemble de ses carnets)
-  ☐ Faire la page avec tous les carnets
-  ☐ Check matchMedia pour annuler parallax sur mobile
+  ☐ Faire une page cible user (avec l'ensemble de ses carnets) ------>   URGENT!!!
+  ☐ Faire la page avec tous les carnets ------>   URGENT!!!
+  ☐ Julien : check matchMedia pour annuler parallax sur mobile
 
 Checkout :
-  ☐ Revoir le dev du checkout
-  ☐ Revoir les titres (ça affiche une erreur en titre de page xD)
-  ☐ Revoir les redirections (genre quand on se connecte, ça renvoie sur l'espace perso XD)
-  ☐ Bouton 'Modifier l'adresse' ne fonctionne pas
-  ☐ Se réidentifiter quand on est dans le checkout (ne pas maintenir le compte ouvert)
+  ✔ Revoir le dev du checkout @done (15-07-18 12:33)
+  ☐ Bouton 'Modifier l'adresse' ne fonctionne pas ------>   En cours
+  ☐ Rappel : bouton "Retour" à gérer
+  ✔ Design : revoir les pages inscription pour nouvel user @done (15-07-18 13:56)
+  ☐ Erreur php quand on essaie de créer un nouvel utilisateur (envoi du mail qui chie)
+  ☐ Créer une alerte quand on n'a pas checké les conditions générales de ventes (tu as géré le fait qu'on puisse pas finaliser, mais ça affiche rien si on coche pas les CGV)
+  ☐ Finaliser la réservation ne renvoie nulle part (t'es sûrement en train de gérer ça ^^)
 
 Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)
   ☐ Auré : Gérer dynamiquement les 'alt' des pictos (zone informations)
-  ✔ Auré : J'ai pas trouvé comment retirer le bordel généré par CodeIgniter tout en bas x'D @done (15-06-30 10:57)
   ☐ Auré : les carnets de tous les voyages sont affichés en bas de page (or il faudrait seulement ceux du voyage sur lequel on se trouve)
-  ☐ Julien : Revoir ancrage (fermeture d'un collapse)
-  ✔ Julien : ajouter bouton "Je réserve" après bouton CDV @done (15-06-30 13:47)
 
 Carnets list :
-  ☐ Auré : (pas urgent) sur le carnet phare, l'extrait est pas qualitatif : il doit être de meilleure qualité si on veut que l'utilisateur soit attiré, chopper un extrait du carnet
-  ✔ Auré : le bg image des carnets est pas géré dynamiquement @done (15-06-30 10:58)
+  RIEN
 
 Single carnet :
-  ☐ Auré / Ju : Gérer le bug du collapse (ME SAOULE CE BUG)
-  ✔ Auré : Gérer les châpeau dans la BDD (les 'p' en classe 'lead') @done (15-07-03 11:33)
   ☐ Julien : revoir zone de comm : affichage en escalier pour montrer les réponses à une question (pas urgent) + gérer pagination sur les comm
-  ✔ Auré : le bg image des carnets est pas géré dynamiquement @done (15-06-30 10:58)
 
 Notre esprit :
   ✔ Changer les liens en bas de page @done (15-06-30 15:47)
@@ -53,7 +40,7 @@ Utilisateur :
   ✔ Connexion / Déconnexion @done (15-06-21 22:56)
 
   ☐ Checker si on a fait une modif non enregistrée quand on clique sur "Retour sur mon compte" dans espace-voyageur
-  ☐ L'image de couverture ne se met pas à jour (marche plus????)
+  ✔ L'image de couverture ne se met pas à jour (marche plus????) @done (15-07-17 16:17)
   ☐ La création du carnet est-elle gérée comme on l'avait prévue ???
 
   ✔ La deuxième réservation est pas dans le tableau -> what the fuck? @done (15-07-07 19:19)
@@ -61,18 +48,23 @@ Utilisateur :
 
 Modif-carnet :
   ☐ Placeholder bug sur Firefox
+  ☐ Possible d'éviter d'enregistrer à chaque fois la même image dans les dossiers lors de l'upload d'une image de couverture ?
 
 Modif-article :
   ☐ Quand on ajoute une image, le texte revient pas automatiquement à la ligne -> quand on écrit du texte direct après avoir ajouté une image, ça l'écrit en dehors dans une div à part
   ☐ Quand on ajoute plusieurs images, ça fait ramer à mort (je sais pas si c'est dû aux erreurs qui ressortent (check la console))
   ☐ Gérer l'effet focus qui merde
-  ☐ Gérer upload d'images qui chie
+  ☐ Gérer upload d'images qui chie - bug toujours présent sur Firefox, IE et Chrome (même en changeant les base_url dans les fichiers JS)
+
+  ☐ IE9,10,11 : mettre le texte en blockquote crée plein d'éléments <p> (que ce soit à l'ajout d'un article ou à la modification d'un existant) + il en rajoute encore quand on appui plein de fois sur le bouton (alors que ça devrait l'annuler) -> LES JOIES DE IE !
+  ☐ IE9 : upload image : "Extension du fichier pas supportée" -> problème peut être insurmontable ou chiant à résoudre
+  ☐ IE10,11 : chargement très long lors d'une upload (voir en dessous pour ajout d'un loader)
+
+  ☐ Possible d'ajouter un loader quand on upload une image ?
+
 
 Espace de connexion :
-  ☐ Revoir profile pic
-  ☐ Revoir dépliage de la navbar
-
-
+  RIEN
 
 Référencement :
   ✔ A faire, URGENT! --> Aurélien : je m'en occupe :3 @done (15-07-03 11:34)

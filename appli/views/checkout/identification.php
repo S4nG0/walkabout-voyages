@@ -28,7 +28,7 @@ $step = 'sign-in';
         <div class="row">
             <div class="sign-in-block">
                 <div class="col-sm-6">
-                    <div class="user-log-in">
+                    <div class="user-log-in sameHeight">
                         <h2 class="sep">Déjà inscrit&nbsp;?<br>Identifiez-vous&nbsp;!</h2>
                         <?php echo form_open('connexion'); ?>
                             <div class="form-group">
@@ -51,7 +51,7 @@ $step = 'sign-in';
                 </div>
 
                 <div class="col-sm-6">
-                    <div class="new-user">
+                    <div class="new-user sameHeight">
                         <h2 class="sep">Nouveau client&nbsp;?<br>Créez un compte&nbsp;!</h2>
                         <?php echo form_open('checkout/identification/inscription'); ?>
                             <div class="form-group">
@@ -67,7 +67,7 @@ $step = 'sign-in';
             <div class="col-sm-12">
                 <div class="buttons-block">
                     <!-- Previous button -->
-                    <a onclick="history.go(-1);" class="button prev">Retour à l'étape précédente</a>
+                    <a onclick="history.go(-1);" class="button prev">Retour</a>
                 </div>
             </div>
         </div>

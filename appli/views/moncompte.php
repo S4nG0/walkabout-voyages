@@ -94,7 +94,7 @@ $page = "moncompte";
                             </table>
                         </div>';
                         } else {
-                            echo '<p class="lead">Il n\'y a aucune réservation enregistrée pour votre compte !</p>';
+                            echo '<p class="no-entry">Il n\'y a aucune réservation enregistrée pour votre compte !</p>';
                         } ?>
 
                     </div>
@@ -128,7 +128,7 @@ $page = "moncompte";
                         } else {
                             echo '<div class="travel-log">
                                 <div class="col-md-12">
-                                    <p class="lead">Il n\'y a aucun carnet enregistré pour votre compte !</p class="lead">
+                                    <p class="no-entry">Il n\'y a aucun carnet enregistré pour votre compte !</p>
                                 </div>
                             </div>';
                         } ?>

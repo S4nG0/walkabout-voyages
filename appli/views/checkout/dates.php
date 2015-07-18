@@ -29,7 +29,6 @@ $step = 'choice';
         <!-- Choice block -->
         <div class="row">
             <div class="choice-block">
-                <h1 class="sep">Choisissez une date de départ</h1>
 
                 <?php echo form_open('checkout/identification')?>
 
@@ -37,35 +36,49 @@ $step = 'choice';
 
                     <?php
                     $x = 0;
-                    foreach($voyages as $voyage){
-                        if($voyage_selectionne == $voyage->idVoyage) {
-                            $checked = 'checked';
-                        } else if ($voyage_selectionne == false && $x == 0) {
-                            $checked = 'checked';
-                        } else {
-                            $checked = '';
+                    if($no_voyage == true){
+                        echo '<p class="no-entry"><i class="fa fa-exclamation-circle"></i>Pas de date de prévue pour le moment&nbsp;.</p>';
+                    }else{
+                        foreach($voyages as $voyage){
+                            if($voyage_selectionne == $voyage->idVoyage) {
+                                $checked = 'checked';
+                            } else if ($voyage_selectionne == false && $x == 0) {
+                                $checked = 'checked';
+                            } else {
+                                $checked = '';
+                            }
+                            if($voyage->nb_reservés == 0){
+                                $disable = "disable";
+                            }else{
+                                $disable = "";
+                            }
+                            echo '  <li>
+                                <div class="form-group">
+                                    <input '.$disable.' class="radio" type="radio" name="date" id="date'.$x.'" value="'.$voyage->idVoyage.'" '.$checked.'>
+                                    <label for="date'.$x.'"><span></span>'.$voyage->date_depart.' :</label>
+                                    <p>
+                                        <strong>Départ</strong> : '.$voyage->date_depart.'<br>
+                                        <strong>Retour</strong> : '.$voyage->date_retour.'<br>
+                                        <strong>'.$voyage->prix.' € par personnes.</strong><br>
+                                        <strong>Places restantes</strong> : '.$voyage->nb_reservés.' sur '.$voyage->nb_places.'
+                                    </p>
+                                </div>
+                            </li>';
+                            $x++;
                         }
-                        echo '  <li>
-                            <div class="form-group">
-                                <input '.$disable.' class="radio" type="radio" name="date" id="date'.$x.'" value="'.$voyage->idVoyage.'" '.$checked.'>
-                                <label for="date'.$x.'"><span></span>'.$voyage->date_depart.' :</label>
-                                <p>
-                                    <strong>Départ</strong> : '.$voyage->date_depart.'<br>
-                                    <strong>Retour</strong> : '.$voyage->date_retour.'<br>
-                                    <strong>'.$voyage->prix.' € par personnes.</strong><br>
-                                    <strong>Places restantes</strong> : '.$voyage->nb_reservés.' sur '.$voyage->nb_places.'
-                                </p>
-                            </div>
-                        </li>';
-                        $x++;
                     }
 
                     ?>
                 </ul>
+            </div>
 
-                <div class="buttons-block">
-                    <input class="button" type="submit" value="Je réserve ma place !">
-                </div>
+            <div class="buttons-block">
+                <?php
+                if($no_voyage != true){ ?>
+                <input class="button" type="submit" value="Je réserve ma place !" >
+                <?php }else{ ?>
+                <a class="button no-entry" href="<?php echo base_url().'nos-destinations'; ?>">Retour</a>
+                <?php } ?>
             </div>
         </div>
     </div>
