@@ -346,7 +346,8 @@ body.checkout {
             }
 
             .infos-block__personal,
-            .infos-block__address {
+            .infos-block__address,
+            &.existing-address {
                 padding: 50px;
                 background-color: $fond-blanc;
             }
@@ -730,18 +731,7 @@ body.checkout {
                     }
                 }
             }
-        }
 
-        .content {
-            .sign-in-block {
-                .user-log-in,
-                .new-user {
-                    margin-bottom: 50px;
-                }
-            }
-        }
-
-        .content {
             .infos-block,
             .infos-block.existing-address {
                 .form-group {
@@ -778,7 +768,6 @@ body.checkout {
             .button.next, .button.prev {
                 display: block;
                 float: none;
-                width: 100px;
                 margin: 0 auto;
                 margin-bottom: 15px;
             }
@@ -800,6 +789,12 @@ body.checkout {
                             }
                         }
                     }
+                }
+            }
+
+            .sign-in-block {
+                .user-log-in {
+                    margin-bottom: 50px;
                 }
             }
 

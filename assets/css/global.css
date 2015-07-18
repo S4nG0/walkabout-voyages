@@ -4236,7 +4236,7 @@ body.checkout .content .infos-block .success {
   color: green;
 }
 body.checkout .content .infos-block .infos-block__personal,
-body.checkout .content .infos-block .infos-block__address {
+body.checkout .content .infos-block .infos-block__address, body.checkout .content .infos-block.existing-address {
   padding: 50px;
   background-color: #e4e4e4;
 }
@@ -4505,10 +4505,6 @@ body.checkout footer {
     padding: 0;
     margin-top: 15px;
   }
-  body.checkout .content .sign-in-block .user-log-in,
-  body.checkout .content .sign-in-block .new-user {
-    margin-bottom: 50px;
-  }
   body.checkout .content .infos-block .form-group .button,
   body.checkout .content .infos-block.existing-address .form-group .button {
     display: block;
@@ -4526,7 +4522,6 @@ body.checkout footer {
   body.checkout .content .button.next, body.checkout .content .button.prev {
     display: block;
     float: none;
-    width: 100px;
     margin: 0 auto;
     margin-bottom: 15px;
   }
@@ -4540,6 +4535,9 @@ body.checkout footer {
   body.checkout .content .choice-block .date-list li .form-group p {
     font-size: 14px;
     padding-left: 0;
+  }
+  body.checkout .content .sign-in-block .user-log-in {
+    margin-bottom: 50px;
   }
   body.checkout .content .infos-block .button,
   body.checkout .content .infos-block.existing-address .button {

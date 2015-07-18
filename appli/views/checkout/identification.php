@@ -67,7 +67,7 @@ $step = 'sign-in';
             <div class="col-sm-12">
                 <div class="buttons-block">
                     <!-- Previous button -->
-                    <a onclick="history.go(-1);" class="button prev">Retour à l'étape précédente</a>
+                    <a onclick="history.go(-1);" class="button prev">Retour</a>
                 </div>
             </div>
         </div>

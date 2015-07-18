@@ -10,10 +10,11 @@ Générales :
 Checkout :
   ✔ Revoir le dev du checkout @done (15-07-18 12:33)
   ☐ Bouton 'Modifier l'adresse' ne fonctionne pas ------>   En cours
-  ☐ Finaliser la réservation ne renvoie nulle part (t'es sûrement en train de gérer ça ^^)
   ☐ Rappel : bouton "Retour" à gérer
   ✔ Design : revoir les pages inscription pour nouvel user @done (15-07-18 13:56)
   ☐ Erreur php quand on essaie de créer un nouvel utilisateur (envoi du mail qui chie)
+  ☐ Créer une alerte quand on n'a pas checké les conditions générales de ventes (tu as géré le fait qu'on puisse pas finaliser, mais ça affiche rien si on coche pas les CGV)
+  ☐ Finaliser la réservation ne renvoie nulle part (t'es sûrement en train de gérer ça ^^)
 
 Single-destination :
   ☐ Auré : Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix)
