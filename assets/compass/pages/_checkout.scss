@@ -14,17 +14,16 @@ body.checkout {
         clear: both;
         display: table;
         width: 100%;
+        margin-top: 25px;
+        margin-bottom: 50px;
     }
 
     .button {
         margin: 0 auto;
+        width: auto;
         .fa {
             margin-right: 10px;
         }
-    }
-
-    input[type="submit"] {
-        width: 225px;
     }
 
     .button.prev {
@@ -184,6 +183,7 @@ body.checkout {
         .choice-block {
             display: table;
             width: 100%;
+            margin-top: 100px;
             padding: 0;
             .date-list {
                 display: table;
@@ -191,6 +191,13 @@ body.checkout {
                 list-style-type: none;
                 padding-left: 0;
                 margin: 0;
+
+                .no-entry {
+                    font-size: 24px;
+                    line-height: 34px;
+                    font-style: italic;
+                    text-align: center;
+                }
 
                 li {
                     float: left;
@@ -227,6 +234,10 @@ body.checkout {
                         }
                     }
                 }
+            }
+
+            .button.no-entry {
+                width: 100px;
             }
         }
     }
@@ -298,10 +309,6 @@ body.checkout {
 
         #new-address {
             display: none;
-        }
-
-        .buttons-block {
-            margin-top: 50px;
         }
 
         .infos-block {
@@ -404,7 +411,7 @@ body.checkout {
         }
 
         .recap-block {
-            margin-top: 50px;
+            margin-top: 100px;
             padding-left: 25px;
             padding-right: 25px;
 

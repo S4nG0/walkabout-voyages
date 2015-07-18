@@ -12,32 +12,31 @@
             <a class="navbar-brand" href="<?php echo base_url() . 'walkadmin/dashboard'; ?>">Admin Walkabout</a>
         </div>
         <!-- /.navbar-header -->
-            
-            <ul class="nav navbar-top-links navbar-right pull-right">
-                <li>
-                    <a href="<?php echo base_url() . 'walkadmin/params'; ?>">
-                        <i class="fa fa-wrench fa-fw"></i>
-                    </a>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user-md fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user-md fa-fw"></i>Bonjour <?php echo $admin[0]->prenom . ' ' . $admin[0]->nom; ?></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="<?php echo base_url() . 'walkadmin/deconnexion'; ?>"><i class="fa fa-sign-out fa-fw"></i> Déconnexion</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-        </div>
-        <!-- /.navbar-header -->
+
+        <ul class="nav navbar-top-links navbar-right">
+            <li>
+                <a href="<?php echo base_url() . 'walkadmin/params'; ?>">
+                    <i class="fa fa-wrench fa-fw"></i>
+                </a>
+                <!-- /.dropdown-alerts -->
+            </li>
+            <!-- /.dropdown -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-user-md fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user-md fa-fw"></i>Bonjour <?php echo $admin[0]->prenom . ' ' . $admin[0]->nom; ?></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="<?php echo base_url() . 'walkadmin/deconnexion'; ?>"><i class="fa fa-sign-out fa-fw"></i> Déconnexion</a>
+                    </li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
+        <!-- /.navbar-top-links -->
 
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
@@ -62,6 +61,9 @@
                     </li>
                     <li>
                         <a href="<?php echo base_url() . 'walkadmin/utilisateur'; ?>"><i class="fa fa-users fa-fw"></i>  Utilisateurs</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url() . 'walkadmin/article'; ?>"><i class="fa fa-book fa-fw"></i>  Articles</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>"><i class="fa fa-pencil-square-o fa-fw"></i> Contacts</a>

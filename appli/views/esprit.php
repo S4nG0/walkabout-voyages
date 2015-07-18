@@ -20,7 +20,7 @@ $page = "esprit"
                         <img class="img-responsive logo" src="<?php echo img_url('logo-wk-icon.png'); ?>" alt="Walkabout">
                         <h1 class="sep">Qui sommes-nous ?</h1>
                         <p>Walkabout est né d’une rencontre entre deux passionnés de voyage, au détour d’un voyage en Chine. L’un aventurier et ethnologue, a parcouru les continents pendant plus de 30 ans à la recherche de populations reculé. L’autre professionnel du voyage, fabrique des voyages clé en main et les revends aux tours opérateurs.</p>
-                        <p class="lead">&laquo;&nbsp;Notre passion est animé par le partage et par l’aventure humaine que représentent les voyages que nous proposons.&nbsp;&raquo;</p>
+                        <p class="lead">Notre passion est animé par le partage et par l’aventure humaine que représentent les voyages que nous proposons.</p>
                         <p>Walkabout est un concepteur de voyage créé pour vous proposer une autre manière de partager, nous privilégions les échanges et les rencontres tout au long du séjour.</p>
                         <p>Walkabout est plus qu’une agence de voyage spécialisée dans le voyage en immersion car nous donnons à nos client la possibilité de vivre une expérience inoubliable et enrichissante et de la partager avec la communauté des voyageurs à travers un carnet de voyage modulable. Ce carnet constitue un élément central de notre vision du voyage en immersion.</p>
                     </div>

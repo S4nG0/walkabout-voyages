@@ -4,20 +4,25 @@ $page = 'inscription';
 
 <body class="checkout">
 
+<div class="main banner">
+    <div class="container-fluid noPadding">
+    <?php
 
-<?php
+    set_include_path(dirname(__FILE__)."/../");
+    include 'template/menu.php';
 
-set_include_path(dirname(__FILE__)."/../");
-
-?>
+    ?>
+    </div>
+</div>
 
 <div class="content">
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid noPadding">
+        <div class="row noPadding">
             <!-- Etapes de commande -->
             <?php include 'etapes.php'; ?>
         </div>
-
+    </div>
+    <div class="container">
         <!-- Adress block -->
         <div class="row">
             <h1>Vos informations personnelles</h1>
