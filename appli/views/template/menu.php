@@ -53,7 +53,7 @@
                 </li>
             <?php }; ?>
 
-            <?php if ($page == "carnets" || $page == "single-carnet") { ?>
+            <?php if ($page == "carnets" || $page == "single-carnet" || $page == "tous-les-carnets") { ?>
                 <li>
                     <a class="nav_links active" href="<?php echo base_url(); ?>carnets-de-voyage" title="Consultez les carnets de voyages">Carnets de voyages</a>
                 </li>
