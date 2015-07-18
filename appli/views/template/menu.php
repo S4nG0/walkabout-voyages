@@ -4,7 +4,7 @@
 <nav class="navbar navbar-default" id="#navigation">
     <div class="navbar-header">
         <a class="navbar-brand" href="<?php echo base_url(); ?>">
-            <img class="logo" src="<?php echo img_url('logo.svg');?>" alt="Walkabout">
+            <img class="logo" src="<?php echo img_url('logo.png');?>" alt="Walkabout">
         </a>
         <a class="button back-to-account pull-right" href="<?php if ($page == 'editing-carnet') { echo base_url() . 'moncompte'; } else { echo base_url() . 'carnets-de-voyage/modifier/' . $url; }  ?>">Retour</a>
     </div>
@@ -16,7 +16,7 @@
 <nav class="navbar navbar-default" id="#navigation">
     <div class="navbar-header">
         <a class="navbar-brand">
-            <img class="logo" src="<?php echo img_url('logo.svg');?>" alt="Walkabout">
+            <img class="logo" src="<?php echo img_url('logo.png');?>" alt="Walkabout">
         </a>
         <a class="button pull-left" href="<?php echo base_url(); ?>"><i class="fa fa-chevron-left"></i><span class="hidden-xs">Retournez à l'accueil</span><span class="hidden-lg hidden-md hidden-sm">Annuler</span></a>
     </div>
@@ -30,7 +30,7 @@
 
     <div class="navbar-header">
         <a class="navbar-brand" href="<?php echo base_url(); ?>">
-            <img class="logo" src="<?php echo img_url('logo.svg');?>" alt="Walkabout">
+            <img class="logo" src="<?php echo img_url('logo.png');?>" alt="Walkabout">
         </a>
         <button id="toggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
             <span class="sr-only">Toggle navigation</span>
