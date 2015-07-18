@@ -19,6 +19,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo css_url('sb-admin-2'); ?>">
+    <link rel="stylesheet" href="<?php echo css_url('walkadmin'); ?>">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="<?php echo css_url('font-awesome.min'); ?>">
