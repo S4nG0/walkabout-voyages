@@ -64,3 +64,57 @@ body{
     text-transform: uppercase;
     transition: all 300ms ease-in-out 0s;
 }
+
+.centered{
+    text-align:center;
+    color : #f0c041;
+}
+
+
+/* Suppression du background color pour faire apparaitre image background */
+
+#page-wrapper{
+    background-color:transparent;
+    border-left : 0px;
+    color:#f0c041;
+}
+
+.navbar-default{
+    border : none;
+    background: transparent;
+    color:white;
+}
+
+
+.nav>li>a:hover, .nav>li>a:focus, .nav>li>a.active {
+  text-decoration: none;
+  background-color: transparent;
+  color:#f0c041;
+}
+
+.sidebar ul li a.active{
+    background-color:transparent;
+}
+
+.nav>li>a, .nav>li>a, .nav>li>a {
+  color:whitesmoke;
+}
+
+.sidebar ul li {
+  border:none;
+}
+
+.sidebar{
+    margin-top : auto;
+}
+
+.navbar-collapse{
+    border:none;
+    box-shadow: none;
+}
+
+@media (min-width: 768px){
+    .sidebar {
+        margin-top: 51px;
+    }
+}
