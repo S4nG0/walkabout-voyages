@@ -43,6 +43,7 @@ Utilisateur :
 
 Modif-carnet :
   ☐ Placeholder bug sur Firefox
+  ☐ Possible d'éviter d'enregistrer à chaque fois la même image dans les dossiers lors de l'upload d'une image de couverture ?
 
 Modif-article :
   ☐ Quand on ajoute une image, le texte revient pas automatiquement à la ligne -> quand on écrit du texte direct après avoir ajouté une image, ça l'écrit en dehors dans une div à part
@@ -56,11 +57,9 @@ Modif-article :
 
   ☐ Possible d'ajouter un loader quand on upload une image ?
 
+
 Espace de connexion :
-  ✔ Revoir profile pic @done (15-07-18 12:22)
-  ✔ Revoir dépliage de la navbar @done (15-07-18 12:22)
-
-
+  RIEN
 
 Référencement :
   ✔ A faire, URGENT! --> Aurélien : je m'en occupe :3 @done (15-07-03 11:34)
