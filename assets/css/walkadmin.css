@@ -1,0 +1,66 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18 juil. 2015, 07:30:23
+    Author     : T4GAD4
+*/
+
+
+body{
+    background: rgba(0, 0, 0, 0) url("../images/texture.png") repeat scroll 0 0;
+    color: #fff;
+}
+
+.panel-logo{
+    text-align:center;
+}
+
+.panel-logo img{
+    padding:20px;
+    width:100%;
+}
+
+.form-control{
+    border-color: -moz-use-text-color -moz-use-text-color #242424;
+    border-radius: 0;
+    border-style: none none solid;
+    border-width: medium medium 1px;
+    color: #242424;
+    padding: 15px;
+    transition: border 300ms ease-in-out 0s;
+    width: 100%;
+    height:auto;
+    box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: #f0c041;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.button:hover, .button:focus {
+  text-decoration: none;
+  border-color: #f0c041;
+  color: #f0c041;
+}
+
+.button{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px;
+    text-align: center;
+    margin:0 auto;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 300ms ease-in-out 0s;
+}

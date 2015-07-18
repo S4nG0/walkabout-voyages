@@ -1,7 +1,7 @@
 Modules back office à rajouter :
   ☐ Actualités
   ☐ Carnets de voyages
-  ✔ Destinations @done (15-07-17 09:38)
+  ☐ Destinations ( reste supprimer à faire!)
   ✔ Ajouter un administrateur @done (15-07-01 10:32)
   ☐ Gestion des réservations
   ☐ Gestion des renseignements
@@ -21,9 +21,10 @@ Module destinations :
   ✔ ajouter une destination @done (15-07-17 09:36)
   ✔ rédaction des informations (formulaire avec : capital, monnaie, dirigeant,... l'admin rentre les infos dans le formulaire) @done (15-07-17 09:38)
   ✔ rédaction du descriptif @done (15-07-17 09:38)
+  ☐ Suppression des destinations
   ☐ gestion des photos
 
-Informations générales : 
+Informations générales :
   ☐ gestion des pictogrammes
   ☐ rédaction accompagnement, déplacements, hébergement, repas&boissons
   ☐ rédaction du déroulement du séjour (jour 1, jour 2,...)
@@ -47,5 +48,5 @@ Référencement :
 
   Checkout :
     ☐ Impossible de valider le paiement sur la dernière phase.
-    ☐ Lorsqu'on augmente le nombre de participant, le prix ne change pas.
-    
+    ✔ Lorsqu'on augmente le nombre de participant, le prix ne change pas. @done (15-07-17 16:29)
+
