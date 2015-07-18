@@ -41,7 +41,6 @@ $page='destinations';
                                 <h3>'.$destination->pays[0]->nom.'&nbsp;&bull;&nbsp;'.$destination->ville.'</h3>
                                 <p>'.$destination->nom.'</p>
                                 <p class="price">À partir de <strong>'.$destination->prix_min.' € par personne</strong></p>
-                                <p></p>
                                 <a href="'.base_url().'nos-destinations/'.slugify($destination->titre).'" class="button align-left">Voir la destination</a>
                             </a>
                         </div>

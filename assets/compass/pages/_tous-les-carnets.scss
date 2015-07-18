@@ -1,0 +1,387 @@
+/*------------------------------------*\
+    #TOUS-LES-CARNETS
+\*------------------------------------*/
+body.tous-les-carnets {
+
+    .navbar {
+        margin-top: 0;
+        background-color: transparent;
+
+        .navbar-brand {
+            padding: 25px 25px;
+
+            .logo {
+                width: 150px;
+            }
+        }
+
+        .navbar-toggle {
+            margin: 25px;
+        }
+
+        .navbar-collapse {
+            .nav {
+                li {
+                    a {
+                        margin: 40px 25px 40px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar.affix {
+        background-image: $texture;
+
+        .navbar-brand {
+            padding: 15px 25px;
+            .logo {
+                width: 150px;
+            }
+        }
+
+        .navbar-toggle {
+            margin: 20px 25px;
+        }
+
+        .navbar-collapse {
+            .nav {
+                li {
+                    a {
+                        margin: 30px 25px 15px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .main.banner {
+        height: 275px;
+        background: $texture;
+        border-bottom: $gold-border;
+        @include box-shadow(none);
+
+        .big-title-wrapper {
+            position: absolute;
+            display: table;
+            width: 100%;
+            height: 100%;
+            top: 0;
+
+            .big-title {
+                display: table-cell;
+                vertical-align: bottom;
+                padding-bottom: 50px;
+                width: 100%;
+                text-align: center;
+                @include text-shadow(0px 1px 2px rgba(0 ,0, 0, 0.80));
+
+                h1 {
+                    display: block;
+                    max-width: 700px;
+                    width: 90%;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+                    font-family: $dosis-serif;
+                    font-size: 54px;
+                    font-weight: 600;
+                    color: $jaune-or;
+                    font-style: italic;
+                    text-transform: none;
+                    line-height: 64px;
+                }
+
+                p {
+                    display: block;
+                    max-width: 700px;
+                    width: 90%;
+                    margin: 0 auto;
+                    font-size: 24px;
+                    color: $blanc;
+                    line-height: 34px;
+                }
+            }
+        }
+    }
+
+    .content {
+        padding: 0;
+        margin: 0;
+        border-bottom: $gold-border;
+
+        .travel-log-block {
+            display: block;
+            clear: both;
+            width: 100%;
+
+            .image-wrapper {
+                display: block;
+                float: right;
+                width: 66.66%;
+
+                .image-container {
+                    display: block;
+                    width: 100%;
+                    min-height: 500px;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    @include background-size(cover);
+                }
+            }
+
+            .text-container {
+                display: block;
+                float: right;
+                width: 33.33%;
+                padding: 3%;
+                text-align: right;
+
+                .profile-picture {
+                    display: inline-block;
+                    width: 100px;
+                    height: 100px;
+                    margin-bottom: 25px;
+                }
+
+                h2 {
+                    font-size: 24px;
+                    line-height: 34px;
+                    font-weight: 600;
+                    border-bottom: none;
+                }
+
+                h3 {
+                    font-style: italic;
+                }
+
+                p {
+                    margin: 0;
+                    margin-top: 15px;
+                    padding: 0;
+                    font-weight: 300;
+                }
+
+                blockquote {
+                    max-width: 300px;
+                    margin-right: 0;
+                    margin-left: auto;
+                    color: $blanc;
+                    font-size: 20px;
+                    line-height: 30px !important;
+                    text-align: right;
+                }
+
+                .button {
+                    float: right;
+                    margin-top: 25px;
+                }
+            }
+
+            &:nth-child(even) {
+                .image-wrapper {
+                    float: left;
+                }
+
+                .text-container {
+                    float: left;
+                    text-align: left;
+                }
+
+                .button {
+                    float: left;
+                }
+
+                blockquote {
+                    text-align: left;
+                    margin-right: auto;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+
+/*------------------------------------*\
+    #RESPONSIVE
+\*------------------------------------*/
+
+@media screen and (max-width: 992px) {
+    body.tous-les-carnets {
+
+        .main.banner {
+
+            .big-title-wrapper {
+
+                .big-title {
+
+                    h1 {
+                        font-size: 42px;
+                        line-height: 52px;
+                    }
+
+                    p {
+                        font-size: 22px;
+                        line-height: 32px;
+                    }
+                }
+            }
+        }
+
+        .content {
+
+            .travel-log-block {
+                width: 100%;
+                text-align: center;
+
+                .image-wrapper,
+                .text-container {
+                    width: 50%;
+                }
+
+                .text-container {
+                    padding: 8% 3%;
+
+                    &:nth-child(odd),
+                    &:nth-child(even) {
+                        text-align: center;
+                    }
+
+                    h1 {
+                        font-size: 22px;
+                        line-height: 32px;
+                    }
+
+                    h3 {
+                        font-size: 18px;
+                        line-height: 28px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        line-height: 26px;
+                    }
+
+                    blockquote {
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+
+                    .button {
+                        display: inline-block;
+                        float: none;
+                        width: 75%;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body.tous-les-carnets {
+
+        .main.banner {
+
+            .big-title-wrapper {
+
+                .big-title {
+
+                    h1 {
+                        font-size: 40px;
+                        line-height: 50px;
+                    }
+
+                    p {
+                        font-size: 20px;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+
+        .content {
+
+            .travel-log-block {
+
+                .image-wrapper {
+                    width: 100%;
+                }
+
+                .text-container {
+                    width: 100%;
+                    padding: 10%;
+
+                    h1 {
+                        font-size: 20px;
+                        line-height: 30px;
+                    }
+
+                    h3 {
+                        font-size: 16px;
+                        line-height: 26px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        line-height: 24px;
+                    }
+
+                    .button {
+                        display: inline-block;
+                        float: none;
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body.tous-les-carnets {
+
+        .main.banner {
+
+            .big-title-wrapper {
+
+                .big-title {
+                    height: 200px;
+
+                    h1 {
+                        font-size: 28px;
+                        line-height: 38px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        line-height: 26px;
+                    }
+                }
+            }
+        }
+
+        .content {
+            .travel-log-block {
+                .image-wrapper {
+                    .image-container {
+                        min-height: 200px;
+                        background-position: 50% 0;
+                        @include background-size(cover);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 330px) {
+    body.tous-les-carnets {
+        .navbar {
+            .navbar-brand {
+                padding: 20px 0 20px 25px;
+            }
+        }
+    }
+}
