@@ -14,7 +14,6 @@ body.checkout {
         clear: both;
         display: table;
         width: 100%;
-        margin-top: 25px;
         margin-bottom: 50px;
     }
 
@@ -183,7 +182,7 @@ body.checkout {
         .choice-block {
             display: table;
             width: 100%;
-            margin-top: 100px;
+            margin: 100px 0 50px 0;
             padding: 0;
             .date-list {
                 display: table;
@@ -193,10 +192,16 @@ body.checkout {
                 margin: 0;
 
                 .no-entry {
+                    color: $jaune-or;
                     font-size: 24px;
                     line-height: 34px;
-                    font-style: italic;
                     text-align: center;
+
+                    .fa {
+                        display: block;
+                        font-size: 3em;
+                        margin-bottom: 25px;
+                    }
                 }
 
                 li {
@@ -235,6 +240,12 @@ body.checkout {
                     }
                 }
             }
+        }
+
+        .buttons-block {
+            .button {
+                width: 250px;
+            }
 
             .button.no-entry {
                 width: 100px;
@@ -250,7 +261,8 @@ body.checkout {
         .sign-in-block {
             display: table;
             width: 100%;
-            padding: 50px 0;
+            margin: 100px 0 50px 0;
+            padding: 0;
 
             .user-log-in,
             .new-user {
@@ -289,7 +301,7 @@ body.checkout {
 
             .new-user {
                 .form-group {
-                    padding: 71px 0;
+                    padding: 60px 0;
                 }
             }
 
@@ -312,17 +324,66 @@ body.checkout {
         }
 
         .infos-block {
-            margin-top: 100px;
-            padding: 50px;
-            background-color: $fond-blanc;
+            margin: 100px 0 50px 0;
+
+            .error, .success {
+                margin: 0 0 25px 0;
+                font-size: 18px;
+                line-height: 28px;
+                text-align: center;
+
+                .fa {
+                    margin-right: 10px;
+                }
+            }
+
+            .error {
+                color: red;
+            }
+
+            .success {
+                color: green;
+            }
+
+            .infos-block__personal,
+            .infos-block__address {
+                padding: 50px;
+                background-color: $fond-blanc;
+            }
+
+            h2 {
+                color: $noir;
+                text-align: center;
+                margin-bottom: 50px;
+
+                &.sep {
+                    &:after {
+                        background-color: $noir;
+                    }
+                }
+            }
 
             .form-group {
                 p {
-                    margin-top: 0;
-                    margin-bottom: 5px;
+                    display: block;
+                    margin: 0;
+                    padding-top: 10px;
                     font-size: 12px;
+                    line-height: 22px;
                     color: $noir;
-                    text-align: right;
+                    text-align: left;
+
+                    .required {
+                        color: red;
+
+                        .fa {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+
+                &.newsletter {
+                    margin-top: 25px;
                 }
             }
 
@@ -536,6 +597,7 @@ body.checkout {
         }
 
         .terms-and-conditions-block {
+            margin-bottom: 50px;
             padding: 25px 0 50px 0;
             text-align: center;
 
@@ -713,6 +775,14 @@ body.checkout {
 
         .content {
 
+            .button.next, .button.prev {
+                display: block;
+                float: none;
+                width: 100px;
+                margin: 0 auto;
+                margin-bottom: 15px;
+            }
+
             > .container {
                 padding-left: 15px;
                 padding-right: 15px;
@@ -751,6 +821,14 @@ body.checkout {
                         margin: 15px auto 0 auto;
                     }
                 }
+
+                .infos-block__address {
+                    margin-top: 50px;
+                }
+            }
+
+            .infos-block {
+                padding: 25px;
             }
 
             .recap-block {
@@ -768,13 +846,6 @@ body.checkout {
 
 @media screen and (max-width: 480px) {
     body.checkout {
-
-        .button.next, .button.prev {
-            display: block;
-            float: none;
-            margin: 0 auto;
-            margin-bottom: 15px;
-        }
 
         .content {
 
@@ -815,10 +886,6 @@ body.checkout {
                         width: 100%;
                     }
                 }
-            }
-
-            .infos-block {
-                padding: 25px;
             }
 
             .payment-method-block,

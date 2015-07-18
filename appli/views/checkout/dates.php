@@ -37,7 +37,7 @@ $step = 'choice';
                     <?php
                     $x = 0;
                     if($no_voyage == true){
-                        echo '<p class="no-entry">Aucune date de prévue pour le moment&nbsp;!</p>';
+                        echo '<p class="no-entry"><i class="fa fa-exclamation-circle"></i>Pas de date de prévue pour le moment&nbsp;.</p>';
                     }else{
                         foreach($voyages as $voyage){
                             if($voyage_selectionne == $voyage->idVoyage) {
@@ -70,15 +70,15 @@ $step = 'choice';
 
                     ?>
                 </ul>
+            </div>
 
-                <div class="buttons-block">
-                    <?php
-                    if($no_voyage != true){ ?>
-                    <input class="button" type="submit" value="Je réserve ma place !" >
-                    <?php }else{ ?>
-                    <a class="button no-entry" href="<?php echo base_url().'nos-destinations'; ?>">Retour</a>
-                    <?php } ?>
-                </div>
+            <div class="buttons-block">
+                <?php
+                if($no_voyage != true){ ?>
+                <input class="button" type="submit" value="Je réserve ma place !" >
+                <?php }else{ ?>
+                <a class="button no-entry" href="<?php echo base_url().'nos-destinations'; ?>">Retour</a>
+                <?php } ?>
             </div>
         </div>
     </div>
