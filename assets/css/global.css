@@ -4114,6 +4114,7 @@ body.checkout .content > .container-fluid .steps-wrapper .steps .disabled:hover,
 body.checkout .content .choice-block {
   display: table;
   width: 100%;
+  margin-top: 100px;
   padding: 0;
 }
 body.checkout .content .choice-block .date-list {
@@ -4122,6 +4123,12 @@ body.checkout .content .choice-block .date-list {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
+}
+body.checkout .content .choice-block .date-list .no-entry {
+  font-size: 24px;
+  line-height: 34px;
+  font-style: italic;
+  text-align: center;
 }
 body.checkout .content .choice-block .date-list li {
   float: left;
@@ -4152,6 +4159,9 @@ body.checkout .content .choice-block .date-list li .form-group p {
   color: #242424;
   font-size: 16px;
   line-height: 26px;
+}
+body.checkout .content .choice-block .button.no-entry {
+  width: 100px;
 }
 body.checkout .content .sign-in-block {
   display: table;
@@ -4274,7 +4284,7 @@ body.checkout .content .terms-and-conditions-block h1 {
   margin-bottom: 25px;
 }
 body.checkout .content .recap-block {
-  margin-top: 50px;
+  margin-top: 100px;
   padding-left: 25px;
   padding-right: 25px;
 }

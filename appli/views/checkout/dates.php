@@ -29,7 +29,6 @@ $step = 'choice';
         <!-- Choice block -->
         <div class="row">
             <div class="choice-block">
-                <h1 class="sep">Choisissez une date de départ</h1>
 
                 <?php echo form_open('checkout/identification')?>
 
@@ -38,7 +37,7 @@ $step = 'choice';
                     <?php
                     $x = 0;
                     if($no_voyage == true){
-                        echo '<h1>Aucun voyage disponible pour le moment!</h1>';
+                        echo '<p class="no-entry">Aucune date de prévue pour le moment&nbsp;!</p>';
                     }else{
                         foreach($voyages as $voyage){
                             if($voyage_selectionne == $voyage->idVoyage) {
@@ -73,11 +72,11 @@ $step = 'choice';
                 </ul>
 
                 <div class="buttons-block">
-                    <?php 
+                    <?php
                     if($no_voyage != true){ ?>
                     <input class="button" type="submit" value="Je réserve ma place !" >
                     <?php }else{ ?>
-                    <a class="button" href="<?php echo base_url().'nos-destinations'; ?>">Retour</a>
+                    <a class="button no-entry" href="<?php echo base_url().'nos-destinations'; ?>">Retour</a>
                     <?php } ?>
                 </div>
             </div>

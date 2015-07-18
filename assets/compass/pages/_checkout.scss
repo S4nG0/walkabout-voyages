@@ -183,6 +183,7 @@ body.checkout {
         .choice-block {
             display: table;
             width: 100%;
+            margin-top: 100px;
             padding: 0;
             .date-list {
                 display: table;
@@ -190,6 +191,13 @@ body.checkout {
                 list-style-type: none;
                 padding-left: 0;
                 margin: 0;
+
+                .no-entry {
+                    font-size: 24px;
+                    line-height: 34px;
+                    font-style: italic;
+                    text-align: center;
+                }
 
                 li {
                     float: left;
@@ -226,6 +234,10 @@ body.checkout {
                         }
                     }
                 }
+            }
+
+            .button.no-entry {
+                width: 100px;
             }
         }
     }
@@ -399,7 +411,7 @@ body.checkout {
         }
 
         .recap-block {
-            margin-top: 50px;
+            margin-top: 100px;
             padding-left: 25px;
             padding-right: 25px;
 
