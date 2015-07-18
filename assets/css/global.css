@@ -1934,6 +1934,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
+.navbar .navbar-collapse {
+  padding: 0;
+}
 .navbar .navbar-collapse .nav li a {
   position: relative;
   margin: 55px 25px 40px 0;
@@ -5389,6 +5392,11 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   background: url("../images/texture.png");
   font-family: "Open Sans", sans-serif;
@@ -5481,6 +5489,20 @@ h4 {
   line-height: 28px;
 }
 
+/*
+ * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
+ * [1] IE9
+ * [2] IE10+
+ */
+img[src*=".svg"] {
+  width: 500px\9;
+}
+
+@media screen and (min-width: 0\0) {
+  img[src*=".svg"] {
+    width: 500px;
+  }
+}
 p {
   margin-top: 25px;
   color: #fff;
@@ -5780,8 +5802,9 @@ input[type="radio"]:not(old):checked + label > span {
   position: absolute;
   display: table;
   top: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   text-align: center;
