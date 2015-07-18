@@ -3979,7 +3979,6 @@ body.checkout .buttons-block {
   clear: both;
   display: table;
   width: 100%;
-  margin-top: 25px;
   margin-bottom: 50px;
 }
 body.checkout .button {
@@ -4114,7 +4113,7 @@ body.checkout .content > .container-fluid .steps-wrapper .steps .disabled:hover,
 body.checkout .content .choice-block {
   display: table;
   width: 100%;
-  margin-top: 100px;
+  margin: 100px 0 50px 0;
   padding: 0;
 }
 body.checkout .content .choice-block .date-list {
@@ -4125,10 +4124,15 @@ body.checkout .content .choice-block .date-list {
   margin: 0;
 }
 body.checkout .content .choice-block .date-list .no-entry {
+  color: #f0c041;
   font-size: 24px;
   line-height: 34px;
-  font-style: italic;
   text-align: center;
+}
+body.checkout .content .choice-block .date-list .no-entry .fa {
+  display: block;
+  font-size: 3em;
+  margin-bottom: 25px;
 }
 body.checkout .content .choice-block .date-list li {
   float: left;
@@ -4160,13 +4164,17 @@ body.checkout .content .choice-block .date-list li .form-group p {
   font-size: 16px;
   line-height: 26px;
 }
-body.checkout .content .choice-block .button.no-entry {
+body.checkout .content .buttons-block .button {
+  width: 250px;
+}
+body.checkout .content .buttons-block .button.no-entry {
   width: 100px;
 }
 body.checkout .content .sign-in-block {
   display: table;
   width: 100%;
-  padding: 50px 0;
+  margin: 100px 0 50px 0;
+  padding: 0;
 }
 body.checkout .content .sign-in-block .user-log-in,
 body.checkout .content .sign-in-block .new-user {
@@ -4201,7 +4209,7 @@ body.checkout .content .sign-in-block .new-user .button {
   margin-top: 25px;
 }
 body.checkout .content .sign-in-block .new-user .form-group {
-  padding: 71px 0;
+  padding: 60px 0;
 }
 body.checkout .content .sign-in-block .buttons-block .button.prev {
   margin-top: 0;
@@ -4210,16 +4218,53 @@ body.checkout .content #new-address {
   display: none;
 }
 body.checkout .content .infos-block {
-  margin-top: 100px;
+  margin: 100px 0 50px 0;
+}
+body.checkout .content .infos-block .error, body.checkout .content .infos-block .success {
+  margin: 0 0 25px 0;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+}
+body.checkout .content .infos-block .error .fa, body.checkout .content .infos-block .success .fa {
+  margin-right: 10px;
+}
+body.checkout .content .infos-block .error {
+  color: red;
+}
+body.checkout .content .infos-block .success {
+  color: green;
+}
+body.checkout .content .infos-block .infos-block__personal,
+body.checkout .content .infos-block .infos-block__address {
   padding: 50px;
   background-color: #e4e4e4;
 }
-body.checkout .content .infos-block .form-group p {
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-size: 12px;
+body.checkout .content .infos-block h2 {
   color: #242424;
-  text-align: right;
+  text-align: center;
+  margin-bottom: 50px;
+}
+body.checkout .content .infos-block h2.sep:after {
+  background-color: #242424;
+}
+body.checkout .content .infos-block .form-group p {
+  display: block;
+  margin: 0;
+  padding-top: 10px;
+  font-size: 12px;
+  line-height: 22px;
+  color: #242424;
+  text-align: left;
+}
+body.checkout .content .infos-block .form-group p .required {
+  color: red;
+}
+body.checkout .content .infos-block .form-group p .required .fa {
+  margin-right: 5px;
+}
+body.checkout .content .infos-block .form-group.newsletter {
+  margin-top: 25px;
 }
 body.checkout .content .infos-block label.title {
   display: block;
@@ -4386,6 +4431,7 @@ body.checkout .content .payment-method-block .methods .method label span {
   height: 25px;
 }
 body.checkout .content .terms-and-conditions-block {
+  margin-bottom: 50px;
   padding: 25px 0 50px 0;
   text-align: center;
 }
@@ -4477,6 +4523,13 @@ body.checkout footer {
     margin-top: 32px;
     width: 100px;
   }
+  body.checkout .content .button.next, body.checkout .content .button.prev {
+    display: block;
+    float: none;
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
   body.checkout .content > .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -4505,6 +4558,13 @@ body.checkout footer {
     display: block;
     margin: 15px auto 0 auto;
   }
+  body.checkout .content .infos-block .infos-block__address,
+  body.checkout .content .infos-block.existing-address .infos-block__address {
+    margin-top: 50px;
+  }
+  body.checkout .content .infos-block {
+    padding: 25px;
+  }
   body.checkout .content .recap-block .table-responsive {
     margin-bottom: 0;
   }
@@ -4513,12 +4573,6 @@ body.checkout footer {
   }
 }
 @media screen and (max-width: 480px) {
-  body.checkout .button.next, body.checkout .button.prev {
-    display: block;
-    float: none;
-    margin: 0 auto;
-    margin-bottom: 15px;
-  }
   body.checkout .content > .container-fluid .steps-wrapper .steps li:not(.active) {
     display: none;
   }
@@ -4540,9 +4594,6 @@ body.checkout footer {
   body.checkout .content .sign-in-block .user-log-in .button,
   body.checkout .content .sign-in-block .new-user .button {
     width: 100%;
-  }
-  body.checkout .content .infos-block {
-    padding: 25px;
   }
   body.checkout .content .payment-method-block,
   body.checkout .content .terms-and-conditions-block {
@@ -4850,8 +4901,28 @@ body.espace-voyageur input[type="radio"]:not(old):checked + label > span {
   background-color: #f0c041;
   border-color: #f0c041;
 }
+body.espace-voyageur .no-entry {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 28px;
+  color: #f0c041;
+  text-align: center;
+}
 body.espace-voyageur .content {
   padding: 0;
+}
+body.espace-voyageur .content .need-activation {
+  margin: 50px 0;
+  color: #f0c041;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: center;
+}
+body.espace-voyageur .content .need-activation .fa {
+  display: block;
+  font-size: 3em;
+  margin-bottom: 25px;
 }
 body.espace-voyageur .content .submenu {
   display: table;
@@ -4886,9 +4957,6 @@ body.espace-voyageur .content .submenu li .active {
 }
 body.espace-voyageur .content .reservations-block {
   padding-bottom: 30px;
-}
-body.espace-voyageur .content .reservations-block .lead {
-  margin-bottom: 20px;
 }
 body.espace-voyageur .content .reservations-block thead {
   color: #f0c041;

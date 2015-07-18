@@ -20,7 +20,7 @@
 
         <li class="disabled">
             <div class="step-block">
-                <span class="step">Adresse</span>
+                <span class="step">Informations</span>
                 <span class="number">3</span>
             </div>
         </li>
@@ -52,7 +52,7 @@
 
         <li class="disabled">
             <div class="step-block">
-                <span class="step">Adresse</span>
+                <span class="step">Informations</span>
                 <span class="number">3</span>
             </div>
         </li>
@@ -84,7 +84,7 @@
 
         <li class="active">
             <div class="step-block">
-                <span class="step">Adresse</span>
+                <span class="step">Informations</span>
                 <span class="number">3</span>
             </div>
         </li>
@@ -116,7 +116,7 @@
 
         <li class="validated">
             <div class="step-block">
-                <span class="step">Adresse</span>
+                <span class="step">Informations</span>
                 <span class="number">3</span>
             </div>
         </li>
