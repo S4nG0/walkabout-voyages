@@ -2029,7 +2029,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
     background-color: transparent;
   }
   .navbar .navbar-collapse {
-    background-color: rgba(33, 33, 33, 0.85);
+    background-color: rgba(33, 33, 33, 0.95);
     border-top-color: #f0c041;
     border-bottom: 2px solid #f0c041;
     text-align: center;
