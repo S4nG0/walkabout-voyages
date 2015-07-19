@@ -11,7 +11,7 @@ and open the template in the editor.
 
 body{
     background: rgba(0, 0, 0, 0) url("../images/texture.png") repeat scroll 0 0;
-    color: #fff;
+    color: whitesmoke;
 }
 
 .panel-logo{
@@ -43,10 +43,18 @@ body{
   box-shadow: none;
 }
 
-.button:hover, .button:focus {
+i{
+    transition : linear 300ms all;
+}
+
+.button:hover, .button:focus, .button:hover i {
   text-decoration: none;
   border-color: #f0c041;
   color: #f0c041;
+}
+
+.fa{
+    color:#f0c041;
 }
 
 .button{
@@ -76,7 +84,7 @@ body{
 #page-wrapper{
     background-color:transparent;
     border-left : 0px;
-    color:#f0c041;
+    color:whitesmoke;
 }
 
 .navbar-default{
@@ -118,3 +126,52 @@ body{
         margin-top: 51px;
     }
 }
+
+.page-header{
+    display:inline-block;
+    color:#f0c041;
+    width: 100%;
+}
+
+.fa{
+    color:whitesmoke;
+}
+
+h1{
+    color:#f0c041;
+}
+
+.fa:hover{
+    color:#f0c041;
+}
+
+#search{
+    margin-top : 20px;
+    margin-bottom : 20px; 
+}
+
+td{
+    padding : 15px;
+}
+
+.image-wrapper{
+    padding-bottom: 80%;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.destination{
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.destination .button{
+    margin-top: 15px;
+}
+
+.contain-svg{
+    width:100%;
+    height:100%;
+}
+   

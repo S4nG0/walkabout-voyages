@@ -51,7 +51,7 @@
                         <a href="<?php echo base_url() . 'walkadmin/reservation'; ?>"><i class="fa fa-shopping-cart fa-fw"></i> Réservations</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/administrateur'; ?>"><i class="fa fa-user-md fa-fw"></i> Administrateur</a>
+                        <a href="<?php echo base_url() . 'walkadmin/administrateur'; ?>"><i class="fa fa-user-md fa-fw"></i> Administrateurs</a>
                     </li>
                     <li>
                         <a href="<?php echo base_url() . 'walkadmin/destinations'; ?>"><i class="fa fa-plane fa-fw"></i> Destinations</a>
