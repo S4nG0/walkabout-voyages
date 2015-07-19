@@ -6110,7 +6110,7 @@ strong {
 .published {
   display: block;
   margin: 0;
-  color: #848484;
+  color: #848484 !important;
   font-style: italic;
 }
 
