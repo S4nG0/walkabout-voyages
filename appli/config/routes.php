@@ -44,7 +44,6 @@ $route['carnets-de-voyage'] = 'carnets_de_voyage';
 $route['tous-les-carnets'] = 'tous_les_carnets';
 $route['carnets-de-voyage/modifier/(:any)'] = 'carnets_de_voyage/modifier/$1';
 $route['carnets-de-voyage/(:any)'] = 'carnets_de_voyage/load_carnet/$1';
-$route['utilisateur'] = 'utilisateur';
 $route['nos-actualites'] = 'nos_actualites';
 $route['nos-destinations'] = 'destinations';
 $route['nos-destinations/(:any)'] = 'destinations/$1';

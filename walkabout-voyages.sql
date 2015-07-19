@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 19 Juillet 2015 à 15:28
+-- Généré le :  Dim 19 Juillet 2015 à 15:43
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -474,7 +474,8 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
 ('349eb607953ca2239dd7d508d80ed27f', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1437306807, ''),
-('9124f83426c275b3b70873d1dca3579d', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36', 1437312160, 'a:1:{s:5:"admin";a:1:{i:0;O:8:"stdClass":5:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}');
+('9124f83426c275b3b70873d1dca3579d', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36', 1437312160, 'a:1:{s:5:"admin";a:1:{i:0;O:8:"stdClass":5:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}'),
+('b314cf264a19c6bc643b9db6f76f1f33', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36', 1437313337, 'a:1:{s:9:"user_data";s:0:"";}');
 
 -- --------------------------------------------------------
 
@@ -489,7 +490,7 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
   `mdp` varchar(100) NOT NULL,
   `nom` varchar(45) NOT NULL,
   `prenom` varchar(45) NOT NULL,
-  `slugify` varchar(500) NOT NULL,
+  `slug` varchar(500) NOT NULL,
   `adresse1` varchar(150) NOT NULL,
   `adresse2` varchar(150) NOT NULL,
   `CP` varchar(45) NOT NULL,
@@ -509,7 +510,7 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
 -- Contenu de la table `wa__users`
 --
 
-INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `slugify`, `adresse1`, `adresse2`, `CP`, `ville`, `pays`, `tel_fixe`, `tel_port`, `date_naissance`, `num_activation`, `active`, `photo`) VALUES
+INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `slug`, `adresse1`, `adresse2`, `CP`, `ville`, `pays`, `tel_fixe`, `tel_port`, `date_naissance`, `num_activation`, `active`, `photo`) VALUES
 (1, 1, 'aurelien.capi@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '1-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321640744', '0623974082', '1992-10-28', '7851659894615189', 'false', 'profile2.png'),
 (2, 1, 'celine@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'Vano', 'Céline', '2-vano-celine', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321643775', '0623974082', '1992-10-28', '549846519181915', 'false', 'profile.png'),
 (12, 1, 'capi.aurelien@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '12-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '', '', '1992-10-28', '3oKvnpMuhP4lNF2Zka', 'true', 'users/12/Voyage_etranger1.jpg'),
@@ -542,7 +543,7 @@ CREATE TABLE IF NOT EXISTS `wa__voyage` (
 --
 
 INSERT INTO `wa__voyage` (`idVoyage`, `idDestination`, `idInfos`, `date_depart`, `date_retour`, `prix`, `nb_places`) VALUES
-(1, 1, 2, '2015-03-28', '2015-04-03', 5200, 20),
+(1, 1, 2, '2016-07-13', '2016-11-11', 5200, 20),
 (2, 1, 2, '2015-07-16', '2015-06-02', 4700, 10);
 
 --

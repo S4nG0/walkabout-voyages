@@ -24,16 +24,15 @@ class Utilisateur extends CI_Controller {
             if($name == ""){
                 return false;
             }
-            
+
             $data = array();
             $data['user'] = $this->user->getFromName($name)[0];
             $data['title'] = $data['user']->nom.' '.$data['user']->prenom;
             $data['carnets'] = $this->carnetvoyage->getFromUser($data['user']->idUsers);
             var_dump($data);
-//            $this->load->view('template/header', $data);
-//            $this->load->view('utilisateur', $data);
-//            $this->load->view('template/footer');
-            //$this->output->enable_profiler(true);
+            $this->load->view('template/header', $data);
+            $this->load->view('utilisateur', $data);
+            $this->load->view('template/footer');
     }
 
     public function _remap($name = "")
