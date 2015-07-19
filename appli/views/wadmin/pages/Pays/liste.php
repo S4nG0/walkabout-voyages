@@ -1,5 +1,5 @@
 
-<div id="page-wrapper">
+<div id="wrapper">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Liste des pays</h1>
@@ -7,21 +7,40 @@
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
-    <div class="row"style="height:auto;">
-        <div class="col-md-12">
-            <div class="contain-svg">
-                <?php 
-                    $svg = file_get_contents(img_url('walkadmin/world.svg'));
-                    echo $svg;
-                ?>
-            </div>
-        </div>
+    <div class="row">
+        <table style="margin-left: 280px;">
+            <thead>
+            <tr>
+                <td>Nom</td>
+                <td>Capitale</td>
+                <td>Monnaie</td>
+                <td>Dirigeant(e)</td>
+                <td>Langues</td>
+                <td>Population</td>
+                <td>Superficie</td>
+                <td>Densité</td>
+                <td>Climat</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($pays as $key=>$value){?>
+                <tr>
+                    <td><?php echo $pays[$key]->nom ?></td>
+                    <td><?php echo $pays[$key]->capitale ?></td>
+                    <td><?php echo $pays[$key]->monnaie ?></td>
+                    <td><?php echo $pays[$key]->Dirigeant ?></td>
+                    <td><?php echo $pays[$key]->langues ?></td>
+                    <td><?php echo $pays[$key]->population ?></td>
+                    <td><?php echo $pays[$key]->superficie ?></td>
+                    <td><?php echo $pays[$key]->densité ?></td>
+                    <td><?php echo $pays[$key]->climat ?></td>
+                    <td><input type="button" value="Modifier le pays" onclick="document.location='<?php echo base_url()."walkadmin/pays_admin/detail/".$pays[$key]->idPays ?>'"></td>
+                </tr>
+            <?php
+            }
+            ?>
+            </tbody>
+        </table>
     </div>
 </div>
-
-<script>
-    <?php foreach($pays as $paysActuel){?>
-        $('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("class", "land active");
-        $('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("onclick", "document.location.href='<?php echo base_url().'walkadmin/pays_admin/detail/'.$paysActuel->idPays; ?>'");
-    <?php } ?>
-</script>

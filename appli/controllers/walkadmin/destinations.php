@@ -10,9 +10,8 @@ class Destinations  extends CI_Controller{
 
     public function index(){
         connecte_admin($this->session->userdata('admin'));
-        $data['destinations']=$this->destination->get_infos_destination();
+        $data['pays']=$this->destination->get_infos_destination();
         $this->load->view('wadmin/template/header');
-        $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Destinations/liste',$data);
         $this->load->view('wadmin/template/footer');
     }
