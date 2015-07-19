@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 19 Juillet 2015 à 13:30
+-- Généré le :  Dim 19 Juillet 2015 à 15:28
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -397,7 +397,7 @@ CREATE TABLE IF NOT EXISTS `wa__pays` (
   `densité` varchar(45) DEFAULT NULL,
   `climat` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idPays`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `wa__pays`
@@ -406,7 +406,9 @@ CREATE TABLE IF NOT EXISTS `wa__pays` (
 INSERT INTO `wa__pays` (`idPays`, `nom`, `code_pays`, `capitale`, `monnaie`, `Dirigeant`, `langues`, `population`, `superficie`, `densité`, `climat`) VALUES
 (2, 'Australie', 'AU', 'Canberra', 'Dollar australien', 'Élisabeth II', 'Anglais', '23 500 000 Habitants', '7 686 850 Km²', '3 Hab./km²', 'varié'),
 (3, 'Pérou', 'PE', 'Lima', 'Nuevo sol', 'Ollanta Humala', 'Espagnol, Quechua et Aymara', '29 907 003 Habitants', '1 285 315 Km²', '22 Hab./km²', 'varié'),
-(4, 'Canada', 'CA', 'Lima', 'Nuevo sol', 'Ollanta Humala', 'Espagnol, Quechua et Aymara', '29 907 003 Habitants', '1 285 315 Km²', '22 Hab./km²', 'varié');
+(4, 'Canada', 'CA', 'Lima', 'Nuevo sol', 'Ollanta Humala', 'Espagnol, Quechua et Aymara', '29 907 003 Habitants', '1 285 315 Km²', '22 Hab./km²', 'varié'),
+(5, 'Afghanistan', 'AF', 'dzdza', 'dazdaz', 'dzada', 'Anglais', '141551', '250000', '22', 'tropical'),
+(6, 'Arménie', 'AM', 'dkjbbkbk', 'gcjvjhvjh', 'hjvjhvjvj', 'kbhjhvhj', '54165156', '165165165', '651165', 'hvhg');
 
 -- --------------------------------------------------------
 
@@ -471,8 +473,8 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('bc8e92eb5af592c2cb98896f68549d79', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1437302183, ''),
-('0f5b3017c57c66650d14294ed96df37f', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36', 1437303655, 'a:1:{s:5:"admin";a:1:{i:0;O:8:"stdClass":5:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}');
+('349eb607953ca2239dd7d508d80ed27f', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1437306807, ''),
+('9124f83426c275b3b70873d1dca3579d', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36', 1437312160, 'a:1:{s:5:"admin";a:1:{i:0;O:8:"stdClass":5:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}');
 
 -- --------------------------------------------------------
 
@@ -487,6 +489,7 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
   `mdp` varchar(100) NOT NULL,
   `nom` varchar(45) NOT NULL,
   `prenom` varchar(45) NOT NULL,
+  `slugify` varchar(500) NOT NULL,
   `adresse1` varchar(150) NOT NULL,
   `adresse2` varchar(150) NOT NULL,
   `CP` varchar(45) NOT NULL,
@@ -506,14 +509,14 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
 -- Contenu de la table `wa__users`
 --
 
-INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `adresse1`, `adresse2`, `CP`, `ville`, `pays`, `tel_fixe`, `tel_port`, `date_naissance`, `num_activation`, `active`, `photo`) VALUES
-(1, 1, 'aurelien.capi@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321640744', '0623974082', '1992-10-28', '7851659894615189', 'false', 'profile2.png'),
-(2, 1, 'celine@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'Vano', 'Céline', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321643775', '0623974082', '1992-10-28', '549846519181915', 'false', 'profile.png'),
-(12, 1, 'capi.aurelien@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '', '', '1992-10-28', '3oKvnpMuhP4lNF2Zka', 'true', 'users/12/Voyage_etranger1.jpg'),
-(13, 1, 'julien.vdm@gmail.com', 'f938f74c4081a8994371697781acc42e163d893149dc255cec3bf1c4ce3ab7ab', 'Vandermeersch', 'Julien', '87 rue des Orions', '87 rue des Orions', '59200', 'Tourcoing', 'France', '0301020304', '', '1990-03-10', 'eROhZ3kZpa5YhPCY7X', 'false', 'unsigned_user.jpg'),
-(14, 1, 'capi.aurelien@yopmail.fr', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'aurélien', '654 rue du plouy', '', '62232', 'Hinges', 'fzfqfqzfqfzf', '', '', '1992-10-28', '0xV9E6dv9XR1lcUfCO', 'false', 'unsigned_user.jpg'),
-(15, 1, 'aurelien.capi@yopmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'capi', 'Aurélien', '654 rue du plouy', '', '62232', 'Hinges', 'FRANCE', '', '', '1992-10-28', 'THag5VT6fiojoZiemo', 'false', 'unsigned_user.jpg'),
-(16, 1, 'nightrei@hotmail.fr', 'c775e7b757ede630cd0aa1113bd102661ab38829ca52a6422ab782862f268646', 'valet', 'kevin', 'khfeiozhoifeh', 'kjdzkjs', '59000', 'oziapoepza', 'reservoir', '', '', '0000-00-00', 'YGhTWxlY6f7tY8MH32', 'false', 'unsigned_user.jpg');
+INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `slugify`, `adresse1`, `adresse2`, `CP`, `ville`, `pays`, `tel_fixe`, `tel_port`, `date_naissance`, `num_activation`, `active`, `photo`) VALUES
+(1, 1, 'aurelien.capi@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '1-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321640744', '0623974082', '1992-10-28', '7851659894615189', 'false', 'profile2.png'),
+(2, 1, 'celine@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'Vano', 'Céline', '2-vano-celine', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321643775', '0623974082', '1992-10-28', '549846519181915', 'false', 'profile.png'),
+(12, 1, 'capi.aurelien@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '12-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '', '', '1992-10-28', '3oKvnpMuhP4lNF2Zka', 'true', 'users/12/Voyage_etranger1.jpg'),
+(13, 1, 'julien.vdm@gmail.com', 'f938f74c4081a8994371697781acc42e163d893149dc255cec3bf1c4ce3ab7ab', 'Vandermeersch', 'Julien', '13-vandermeersch-julien', '87 rue des Orions', '87 rue des Orions', '59200', 'Tourcoing', 'France', '0301020304', '', '1990-03-10', 'eROhZ3kZpa5YhPCY7X', 'false', 'unsigned_user.jpg'),
+(14, 1, 'capi.aurelien@yopmail.fr', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'aurélien', '14-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'fzfqfqzfqfzf', '', '', '1992-10-28', '0xV9E6dv9XR1lcUfCO', 'false', 'unsigned_user.jpg'),
+(15, 1, 'aurelien.capi@yopmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'capi', 'Aurélien', '15-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'FRANCE', '', '', '1992-10-28', 'THag5VT6fiojoZiemo', 'false', 'unsigned_user.jpg'),
+(16, 1, 'nightrei@hotmail.fr', 'c775e7b757ede630cd0aa1113bd102661ab38829ca52a6422ab782862f268646', 'valet', 'kevin', '16-valet-kevin', 'khfeiozhoifeh', 'kjdzkjs', '59000', 'oziapoepza', 'reservoir', '', '', '0000-00-00', 'YGhTWxlY6f7tY8MH32', 'false', 'unsigned_user.jpg');
 
 -- --------------------------------------------------------
 
