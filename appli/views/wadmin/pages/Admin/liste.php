@@ -1,34 +1,33 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Administrateur</h1>
+                <h1 class="page-header">Administrateurs <a class="button pull-right" href="<?php echo base_url().'walkadmin/administrateur/creer/' ;?>"><i class="fa fa-user"></i> Ajouter</a></h1>
             </div>
-            <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
             <div class="col-md-12">
+                <input type="search" class="form-control" id="search" placeholder="Rechercher un administrateur"/>
                 <table>
                     <thead>
                         <tr>
                             <td style="padding-right: 20px;">Nom</td>
                             <td style="padding-right: 20px;">Prénom</td>
                             <td style="padding-right: 20px;">Identifiant</td>
-                            <td>Supprimer</td>
+                            <td></td>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($admins as $key=>$value){ ?>
-                            <tr>
-                                <td style="padding-right: 20px;"><?php if(isset($admins[$key])) echo $admins[$key]->nom ?></td>
-                                <td style="padding-right: 20px;"><?php if(isset($admins[$key])) echo $admins[$key]->prenom ?></td>
-                                <td style="padding-right: 20px;"><?php if(isset($admins[$key])) echo $admins[$key]->identifiant ?></td>
-                                <td><a href="<?php echo base_url().'walkadmin/administrateur/supprimer/'.$admins[$key]->idAdministrateur;?>" class="btn">Supprimer l'administrateur</a></td>
+                        <?php foreach($admins as $admin){ ?>
+                            <tr class="searchable" data-search="<?php echo "$admin->nom $admin->prenom $admin->identifiant"; ?>">
+                                <td><?php echo $admin->nom ?></td>
+                                <td><?php echo $admin->prenom ?></td>
+                                <td><?php echo $admin->identifiant ?></td>
+                                <td><a href="<?php echo base_url().'walkadmin/administrateur/supprimer/'.$admin->idAdministrateur;?>" class="btn"><i class="fa fa-2x fa-trash"></i></a></td>
                             </tr>
                         <?php } ?>
                     </tbody>
                 </table>
-                <a href="<?php echo base_url().'walkadmin/administrateur/creer/' ;?>" class="btn">Ajouter un administrateur</a>
             </div>
         </div>
     </div>
