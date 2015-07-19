@@ -1,7 +1,8 @@
 /*------------------------------------*\
     #TOUS-LES-CARNETS
 \*------------------------------------*/
-body.tous-les-carnets {
+body.tous-les-carnets,
+body.page-utilisateur {
 
     .navbar {
         margin-top: 0;
@@ -169,6 +170,14 @@ body.tous-les-carnets {
                     font-size: 20px;
                     line-height: 30px !important;
                     text-align: right;
+
+                    &:before, &:after {
+                        font-size: 36px;
+                    }
+
+                    &:before {
+                        margin-left: -18px;
+                    }
                 }
 
                 .button {
@@ -207,7 +216,8 @@ body.tous-les-carnets {
 \*------------------------------------*/
 
 @media screen and (max-width: 992px) {
-    body.tous-les-carnets {
+    body.tous-les-carnets,
+    body.page-utilisateur {
 
         .main.banner {
 
@@ -280,7 +290,8 @@ body.tous-les-carnets {
 }
 
 @media screen and (max-width: 768px) {
-    body.tous-les-carnets {
+    body.tous-les-carnets,
+    body.page-utilisateur {
 
         .main.banner {
 
@@ -340,7 +351,8 @@ body.tous-les-carnets {
 }
 
 @media screen and (max-width: 480px) {
-    body.tous-les-carnets {
+    body.tous-les-carnets,
+    body.page-utilisateur {
 
         .main.banner {
 
@@ -377,7 +389,8 @@ body.tous-les-carnets {
 }
 
 @media screen and (max-width: 330px) {
-    body.tous-les-carnets {
+    body.tous-les-carnets,
+    body.page-utilisateur {
         .navbar {
             .navbar-brand {
                 padding: 20px 0 20px 25px;
