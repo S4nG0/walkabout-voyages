@@ -23,8 +23,10 @@
                         <div class="col-md-2">
                             <a class="button" href="'.base_url()."walkadmin/destinations/detail/".$destination->idDestination .'"><i class="fa fa-info"></i> Détails</a>
                             <a class="button" href="='. base_url()."walkadmin/voyage/creer/".$destination->idDestination .'"><i class="fa fa-edit"></i> Modifier</a>
+                            <a class="button" href="='. base_url()."walkadmin/voyage/supprimer/".$destination->idDestination .'"><i class="fa fa-trash"></i> Supprimer</a>
                         </div>
                     </div>
+                    <hr/>
                     ';
             }
         } else {

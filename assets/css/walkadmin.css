@@ -175,3 +175,8 @@ td{
   width: 100%;
   margin: 0 auto;
 }
+
+hr{
+    width:30%;
+    text-align:center;
+}
