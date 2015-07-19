@@ -22,7 +22,7 @@
             <h2 class="no-sep"><?php echo $favoris->titre; ?></h2>
             <p><?php echo $favoris->description; ?></p>
             <span class="auteur">
-                <a href="#"><?php echo $favoris->user[0]->prenom.' '.$favoris->user[0]->nom; ?></a>
+                <a href="<?php echo base_url().'utilisateur/'.slugify($favoris->user[0]->prenom).'-'.slugify($favoris->user[0]->nom); ?>"><?php echo $favoris->user[0]->prenom.' '.$favoris->user[0]->nom; ?></a>
             </span>
             &nbsp;&bull;&nbsp;
             <span class="pays"><?php echo $favoris->pays[0]->nom; ?></span>
@@ -47,7 +47,7 @@
                                 <a class="no-style" href="'.base_url().'carnets-de-voyage/'. slugify($carnet->titre) .'"><h3>'.$carnet->titre.'</h3></a>
                                 <a class="no-style" href="'.base_url().'carnets-de-voyage/'. slugify($carnet->titre) .'"><p>'.$carnet->description.'</p></a>
                                 <div class="details">
-                                    <span class="auteur"><a href="#">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a></span>
+                                    <span class="auteur"><a href="'.base_url().'utilisateur/'.slugify($carnet->user[0]->prenom).'-'.slugify($carnet->user[0]->nom).'">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a></span>
                                     &nbsp;&bull;&nbsp;
                                     <span class="pays">'.$carnet->pays[0]->nom.'</span>
                                 </div>
