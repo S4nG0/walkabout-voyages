@@ -22,8 +22,9 @@ class Page_utilisateur extends CI_Controller {
         public function index()
     {
             $data = array();
+            $data['user'] = $this->user->constructeur($id);
             $data['title'] = $user->prenom;
-            $data['connecte'] = connecte($this->session->userdata('user')[0]);
+            $data['carnets'] = $this->carnetvoyage->getFromUser($id);
             $this->load->view('template/header', $data);
             $count = $this->db->count_all('carnetdevoyage');
             // /*Load des helpers et librairies*/
@@ -66,8 +67,18 @@ class Page_utilisateur extends CI_Controller {
                 }
             }
             $this->load->view('utilisateur', $data);
+            var_dump($data);
             $this->load->view('template/footer');
             //$this->output->enable_profiler(true);
+    }
+
+    public function _remap($id = 0)
+    {
+        if ($id == 0) {
+            return false;
+        }
+
+        $this->index($id);
     }
 
 }
