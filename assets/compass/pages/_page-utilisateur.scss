@@ -1,0 +1,93 @@
+/*------------------------------------*\
+    #UTILISATEUR
+\*------------------------------------*/
+body.page-utilisateur {
+    .navbar {
+        margin-top: 0;
+        background-color: transparent;
+
+        .navbar-brand {
+            padding: 25px 25px;
+
+            .logo {
+                width: 150px;
+            }
+        }
+
+        .navbar-toggle {
+            margin: 25px;
+        }
+
+        .navbar-collapse {
+            .nav {
+                li {
+                    a {
+                        margin: 40px 25px 40px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar.affix {
+        background-image: $texture;
+
+        .navbar-brand {
+            padding: 15px 25px;
+            .logo {
+                width: 150px;
+            }
+        }
+
+        .navbar-toggle {
+            margin: 20px 25px;
+        }
+
+        .navbar-collapse {
+            .nav {
+                li {
+                    a {
+                        margin: 30px 25px 15px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .main.banner {
+        height: 500px;
+        background: $texture;
+        border-bottom: $gold-border;
+        @include box-shadow(none);
+
+        .caption-wrapper {
+            padding-bottom: 50px;
+        }
+    }
+
+    .content {
+        .travel-log-block {
+            .image-wrapper {
+                .image-container {
+                    min-height: 350px;
+                }
+            }
+        }
+    }
+}
+
+/*------------------------------------*\
+    #RESPONSIVE
+\*------------------------------------*/
+@media screen and (max-width: 992px) {
+    body.page-utilisateur {
+        .content {
+            .travel-log-block {
+                .text-container {
+                    padding: 6% 3%;
+                }
+            }
+        }
+
+    }
+}

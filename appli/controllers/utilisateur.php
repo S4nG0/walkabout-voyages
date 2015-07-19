@@ -27,9 +27,13 @@ class Utilisateur extends CI_Controller {
 
             $data = array();
             $data['user'] = $this->user->getFromName($name)[0];
-            $data['title'] = ucfirst($data['user']->nom.' '.$data['user']->prenom);
+            $data['title'] = ucfirst(strtolower($data['user']->nom)).' '.ucfirst($data['user']->prenom);
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $data['carnets'] = $this->carnetvoyage->getFromUser($data['user']->idUsers);
+            foreach($data['carnets'] as $carnet){
+                $carnet->date = conv_date($carnet->date);
+                $carnet->user = $this->user->constructeur($carnet->idUsers);
+            }
             $this->load->view('template/header', $data);
             $this->load->view('utilisateur', $data);
             $this->load->view('template/footer');

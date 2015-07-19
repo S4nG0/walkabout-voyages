@@ -172,9 +172,9 @@ switch($newsletter){
 
                                             <h3>'.$carnet->titre.'</h3>
 
-                                            <p class="published">Publié par <a href="#">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a>, le '.$carnet->date.'.</p>
+                                            <p class="published">Publié par <a href="utilisateur/'.$carnet->user[0]->slug.'">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a>, le '.$carnet->date.'.</p>
 
-                                            <p>&laquo;&nbsp;'.$carnet->description.'&nbsp;&raquo;</p>
+                                            <blockquote>'.$carnet->description.'</blockquote>
 
                                             <a href="'.base_url().'carnets-de-voyage/'. slugify($carnet->titre) .'" class="button">Feuilletez le carnet</a>
 

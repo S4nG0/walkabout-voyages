@@ -241,16 +241,14 @@ $(document).ready(function () {
     /***
      * Carousel initalizers
      */
-    $.doTimeout(500, function () {
-        $('.travel-logs__slider').owlCarousel({
-            items: 1,
-            mouseDrag: false,
-            touchDrag: true,
-            fluidSpeed: 100,
-            responsiveRefresh: 200,
-            smartSpeed: 500
-        });
-    })
+    $('.travel-logs__slider').owlCarousel({
+        items: 1,
+        mouseDrag: false,
+        touchDrag: true,
+        fluidSpeed: 100,
+        responsiveRefresh: 200,
+        smartSpeed: 500
+    });
 
     $('.travel-logs-slider').owlCarousel({
         responsive: {

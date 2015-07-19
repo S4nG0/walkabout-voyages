@@ -2,7 +2,10 @@ Générales :
 
   ☐ Localiser les fichiers (pour la présentation au cas où)
   ☐ Faire l'envoi d'email pour l'oubli de mot de passe
-  ☐ Faire une page cible user (avec l'ensemble de ses carnets) ------>  en cours
+  ✔ Faire une page cible user (avec l'ensemble de ses carnets) @done (15-07-19 17:52)
+    Idées pour le design : Le haut de page fait assez vide du coup vu que l'utilisateur a pas d'image de fond, est-ce qu'on pourrait pas :
+      ☐ 1 : ajouter un champ image de fond personnalisable (telle une couverture à la Facebook) ?
+      ☐ 2 : proposer une image de fond qui sera la même pour tous les users ?
   ✔ Faire la page avec tous les carnets @done (15-07-18 16:19)
     Développer soit :
       ☐ Pagination : quand on a trop de carnets affichés
@@ -41,9 +44,9 @@ Administration :
 Utilisateur :
   ✔ Connexion / Déconnexion @done (15-06-21 22:56)
 
-  ☐ Checker si on a fait une modif non enregistrée quand on clique sur "Retour sur mon compte" dans espace-voyageur
+  ✔ Checker si on a fait une modif non enregistrée quand on clique sur "Retour sur mon compte" dans espace-voyageur @done (15-07-19 17:52)
   ✔ L'image de couverture ne se met pas à jour (marche plus????) @done (15-07-17 16:17)
-  ☐ La création du carnet est-elle gérée comme on l'avait prévue ???
+  ☐ La création du carnet est-elle gérée comme on l'avait prévue ? (càd : le mec réserve son voyage -> reservation confirmée -> ouverture du carnet programmée -> un bouton apparaît avec 'ouvrir votre carnet' sur son espace voyageur et il peut choisir le titre de son carnet une seule fois)
 
   ✔ La deuxième réservation est pas dans le tableau -> what the fuck? @done (15-07-07 19:19)
   ✔ Auré : Mettre le message de "mot de passe requis" en français quand on oublie de mettre son pass ou son ID @done (15-07-03 11:34)
