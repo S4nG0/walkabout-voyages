@@ -67,7 +67,13 @@ class Inscription extends CI_Controller {
                     'ville' => $this->input->post('ville')
                 );
                 $data['email'] = $donnee["mail"];
-                $result = $this->user->insert($donnee);
+                $id = $this->user->insert($donnee);
+                
+                $user = array(
+                    "slugify" => slugify($id."-".$this->input->post('nom')."-".$this->input->post('prenom'))
+                );
+                
+                $this->user->modify($user,$id);
                 
                 if($result != false){
                     $data['erreur'] == false;

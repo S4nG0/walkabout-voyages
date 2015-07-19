@@ -91,7 +91,7 @@ class Carnetvoyage extends CI_Model {
 
         $carnets = $this->db->select('*')
                            ->from($this->table)
-                           ->where('idUsers', "$id")
+                           ->where('idUsers', $id)
                            ->get()
                            ->result();
 
