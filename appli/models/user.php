@@ -22,6 +22,21 @@ class User extends CI_Model {
         return $user;
     }
     
+    public function getFromName($name = ""){
+        if($name == ""){
+            return false;
+        }
+        
+        $user = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('slugify', $name)
+                           ->limit(1)
+                           ->get()
+                           ->result();
+        
+        return $user;
+    }
+    
     public function select($email = ''){
         if($email == ''){
             return false;
@@ -53,7 +68,9 @@ class User extends CI_Model {
         
         $user = $this->db->insert($this->table, $data); 
         
-        return $user;
+        $id = $this->db->insert_id();
+        
+        return $id;
     }
     
     public function confirmation($email = '',$code =''){
