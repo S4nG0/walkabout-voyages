@@ -2,7 +2,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Liste des pays</h1>
+            <h1 class="page-header">Pays <a class="button pull-right" href="<?php echo base_url() . 'walkadmin/pays_admin/creer/'; ?>"><i class="fa fa-plus"></i> Ajouter</a></h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>

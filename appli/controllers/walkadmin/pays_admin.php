@@ -19,6 +19,7 @@ class Pays_admin extends CI_Controller{
 
     public function creer(){
         if($this->input->post() != false) {
+            $this->form_validation->set_rules('code_pays', '"Pays"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('nom', '"nom"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('capitale', '"capitale"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('monnaie', '"monnaie"', 'trim|required|encode_php_tags|xss_clean');
@@ -31,6 +32,7 @@ class Pays_admin extends CI_Controller{
             if ($this->form_validation->run()) {
                 $pays=array(
                     "nom" => $this->input->post('nom'),
+                    "code_pays" => $this->input->post('code_pays'),
                     "capitale" => $this->input->post('capitale'),
                     "monnaie" => $this->input->post('monnaie'),
                     "Dirigeant" => $this->input->post('dirigeant'),
