@@ -40,7 +40,7 @@ $page = "tous-les-carnets";
                             <a class="no-style" href="'.base_url().'carnets-de-voyage/'.slugify($carnet->titre).'">
                                 <h2>'.$carnet->titre.'</h2>
                                 <blockquote>'.$carnet->description.'</blockquote>
-                                <p class="published">Publié par <a href="'.base_url().'utilisateur/'.slugify($carnet->user[0]->prenom).'-'.slugify($carnet->user[0]->nom).'">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a>, le '.$carnet->date.'.</p>
+                                <p class="published">Publié par <a href="'.base_url().'utilisateur/'.$carnet->user[0]->slugify.'">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a>, le '.$carnet->date.'.</p>
                                 <a href="'.base_url().'carnets-de-voyage/'.slugify($carnet->titre).'" class="button align-left">Feuilletez le carnet</a>
                             </a>
                         </div>

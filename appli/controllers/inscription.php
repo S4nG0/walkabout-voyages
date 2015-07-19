@@ -10,10 +10,10 @@ class Inscription extends CI_Controller {
      *
      * Maps to the following URL
      * 		http://example.com/index.php/welcome
-     * 	- or -  
+     * 	- or -
      * 		http://example.com/index.php/welcome/index
      * 	- or -
-     * Since this controller is set as the default controller in 
+     * Since this controller is set as the default controller in
      * config/routes.php, it's displayed at http://example.com/
      *
      * So any other public methods not prefixed with an underscore will
@@ -68,19 +68,19 @@ class Inscription extends CI_Controller {
                 );
                 $data['email'] = $donnee["mail"];
                 $id = $this->user->insert($donnee);
-                
+
                 $user = array(
-                    "slugify" => slugify($id."-".$this->input->post('nom')."-".$this->input->post('prenom'))
+                    "slug" => slugify($id."-".$this->input->post('nom')."-".$this->input->post('prenom'))
                 );
-                
+
                 $this->user->modify($user,$id);
-                
+
                 if($result != false){
                     $data['erreur'] == false;
                     //envoyer un mail!
                     $result = $result = $this->__construct_email($donnee);
                     $this->email->from("inscription@walkabout-voyages.fr");
-                    $this->email->to($donnee['mail']); 
+                    $this->email->to($donnee['mail']);
 
                     $this->email->subject('Inscription Walkabout');
                     $this->email->set_mailtype("html");
@@ -97,9 +97,9 @@ class Inscription extends CI_Controller {
                 $this->load->view('template/footer');
             }
         }
-        
+
     }
-    
+
     public function __construct_email($data = '') {
         if ($data != '') {
             $html = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -114,47 +114,47 @@ class Inscription extends CI_Controller {
 
             /* Client-specific Styles & Reset */
 
-            #outlook a { 
-                padding:0; 
-            } 
-
-            body{ 
-                width:100% !important; 
-                min-width: 100%;
-                -webkit-text-size-adjust:100%; 
-                -ms-text-size-adjust:100%; 
-                margin:0; 
+            #outlook a {
                 padding:0;
             }
 
-            .ExternalClass { 
-                width:100%;
-            } 
-
-            .ExternalClass, 
-            .ExternalClass p, 
-            .ExternalClass span, 
-            .ExternalClass font, 
-            .ExternalClass td, 
-            .ExternalClass div { 
-                line-height: 100%; 
-            } 
-
-            #backgroundTable { 
-                margin:0; 
-                padding:0; 
-                width:100% !important; 
-                line-height: 100% !important; 
+            body{
+                width:100% !important;
+                min-width: 100%;
+                -webkit-text-size-adjust:100%;
+                -ms-text-size-adjust:100%;
+                margin:0;
+                padding:0;
             }
 
-            img { 
-                outline:none; 
-                text-decoration:none; 
+            .ExternalClass {
+                width:100%;
+            }
+
+            .ExternalClass,
+            .ExternalClass p,
+            .ExternalClass span,
+            .ExternalClass font,
+            .ExternalClass td,
+            .ExternalClass div {
+                line-height: 100%;
+            }
+
+            #backgroundTable {
+                margin:0;
+                padding:0;
+                width:100% !important;
+                line-height: 100% !important;
+            }
+
+            img {
+                outline:none;
+                text-decoration:none;
                 -ms-interpolation-mode: bicubic;
                 width: auto;
-                max-width: 100%; 
-                float: left; 
-                clear: both; 
+                max-width: 100%;
+                float: left;
+                clear: both;
                 display: block;
             }
 
@@ -163,7 +163,7 @@ class Inscription extends CI_Controller {
                 min-width: 580px;
             }
 
-            a img { 
+            a img {
                 border: none;
             }
 
@@ -176,12 +176,12 @@ class Inscription extends CI_Controller {
                 border-collapse: collapse;
             }
 
-            td { 
+            td {
                 word-break: break-word;
                 -webkit-hyphens: auto;
                 -moz-hyphens: auto;
                 hyphens: auto;
-                border-collapse: collapse !important; 
+                border-collapse: collapse !important;
             }
 
             table, tr, td {
@@ -191,9 +191,9 @@ class Inscription extends CI_Controller {
             }
 
             hr {
-                color: #f0c041; 
-                background-color: #f0c041; 
-                height: 1px; 
+                color: #f0c041;
+                background-color: #f0c041;
+                height: 1px;
                 border: none;
             }
 
@@ -211,8 +211,8 @@ class Inscription extends CI_Controller {
                 text-align: inherit;
             }
 
-            table.row { 
-                padding: 0px; 
+            table.row {
+                padding: 0px;
                 width: 100%;
                 position: relative;
             }
@@ -233,7 +233,7 @@ class Inscription extends CI_Controller {
 
             table.columns td,
             table.column td {
-                padding: 0px 0px 10px; 
+                padding: 0px 0px 10px;
             }
 
             table.columns td.sub-columns,
@@ -408,7 +408,7 @@ class Inscription extends CI_Controller {
             h6.center {
                 text-align: center;
             }
-            
+
             .message p{
                 text-align:justify !important;
             }
@@ -418,7 +418,7 @@ class Inscription extends CI_Controller {
                 width: 100%;
                 text-align: center;
             }
-            
+
             td.center p {
                 display: block;
                 width: 100%;
@@ -437,13 +437,13 @@ class Inscription extends CI_Controller {
 
             /* Typography */
 
-            body, table.body, h1, h2, h3, h4, h5, h6, p, td { 
+            body, table.body, h1, h2, h3, h4, h5, h6, p, td {
                 color: #222222;
-                font-family: "Helvetica", "Arial", sans-serif; 
-                font-weight: normal; 
-                padding:0; 
+                font-family: "Helvetica", "Arial", sans-serif;
+                font-weight: normal;
+                padding:0;
                 margin: 0;
-                text-align: left; 
+                text-align: left;
                 line-height: 1.3;
             }
 
@@ -464,7 +464,7 @@ class Inscription extends CI_Controller {
                 line-height:21px;
             }
 
-            p { 
+            p {
                 margin-bottom: 10px;
             }
 
@@ -473,48 +473,48 @@ class Inscription extends CI_Controller {
             }
 
             a {
-                color: #2ba6cb; 
+                color: #2ba6cb;
                 text-decoration: none;
             }
 
-            a:hover { 
+            a:hover {
                 color: #2795b6 !important;
             }
 
-            a:active { 
+            a:active {
                 color: #2795b6 !important;
             }
 
-            a:visited { 
+            a:visited {
                 color: #2ba6cb !important;
             }
 
-            h1 a, 
-            h2 a, 
-            h3 a, 
-            h4 a, 
-            h5 a, 
+            h1 a,
+            h2 a,
+            h3 a,
+            h4 a,
+            h5 a,
             h6 a {
                 color: #2ba6cb;
             }
 
-            h1 a:active, 
-            h2 a:active,  
-            h3 a:active, 
-            h4 a:active, 
-            h5 a:active, 
-            h6 a:active { 
-                color: #2ba6cb !important; 
-            } 
+            h1 a:active,
+            h2 a:active,
+            h3 a:active,
+            h4 a:active,
+            h5 a:active,
+            h6 a:active {
+                color: #2ba6cb !important;
+            }
 
-            h1 a:visited, 
-            h2 a:visited,  
-            h3 a:visited, 
-            h4 a:visited, 
-            h5 a:visited, 
-            h6 a:visited { 
-                color: #2ba6cb !important; 
-            } 
+            h1 a:visited,
+            h2 a:visited,
+            h3 a:visited,
+            h4 a:visited,
+            h5 a:visited,
+            h6 a:visited {
+                color: #2ba6cb !important;
+            }
 
             /* Panels */
 
@@ -637,7 +637,7 @@ class Inscription extends CI_Controller {
             table.large-button:hover td a,
             table.large-button:active td a,
             table.large-button td a:visited {
-                color: #ffffff !important; 
+                color: #ffffff !important;
             }
 
             table.secondary td {
@@ -936,19 +936,19 @@ class Inscription extends CI_Controller {
                                 </td>
                             </tr>
                         </table>
-                        
+
                          <table class="container">
                             <tr>
                                 <td class="wrapper last">
 
                                     <table class="twelve columns">
-                                        
+
                                         <tr>
                                             <td class="twelve columns">
                                                 <h1 class="center">Inscription Walkabout</h1>
                                             </td>
                                         </tr>
-                                    
+
                                     </table>
                                 </td>
                             </tr>
@@ -960,7 +960,7 @@ class Inscription extends CI_Controller {
                                 <td class="wrapper last">
 
                                     <table class="twelve columns">
-                                        
+
                                         <tr>
                                             <td class="twelve sub-columns">
                                                 <p><span class="lead">Bienvenue chez Walkabout '.$data['prenom'].'!</p>
