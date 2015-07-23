@@ -19,6 +19,7 @@ class Connexion extends CI_Controller {
 	 */
 	public function index()
 	{
+        connecte_admin($this->session->userdata('admin'));
             if($this->session->userdata('admin')){
                 redirect(base_url().'walkadmin/dashboard');
             }

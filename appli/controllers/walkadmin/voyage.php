@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 02/07/15
- * Time: 11:43
- */
 
 class Voyage extends CI_Controller{
 
     public function creer($idDestination=0){
+        connecte_admin($this->session->userdata('admin'));
         if($idDestination==0)
             redirect('walkadmin/dashboard');
-        connecte_admin($this->session->userdata('admin'));
         if($this->input->post() != false) {
             $this->form_validation->set_rules('date_debut', '"date_debut"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('date_fin', '"date_fin"', 'trim|required|encode_php_tags|xss_clean');
