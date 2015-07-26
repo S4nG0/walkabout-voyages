@@ -2545,6 +2545,29 @@ footer .footer__copyright li {
   display: inline-block;
 }
 
+#create-carnet {
+  display: none;
+  text-align: center;
+  margin: 35px;
+}
+#create-carnet label {
+  display: block;
+  margin-top: 50px;
+  color: #f0c041;
+}
+#create-carnet input {
+  display: block;
+  margin-top: 25px;
+  text-align: center;
+}
+#create-carnet .button {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+
 #newsletter-block {
   display: none;
   text-align: center;

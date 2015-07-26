@@ -48,12 +48,10 @@ class Destinations extends CI_Controller {
                 $carnet->date = conv_date($carnet->date);
                 $carnet->user = $this->user->constructeur($carnet->idUsers);
             }
-            //var_dump($data['carnets']);
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $this->load->view('template/header', $data);
             $this->load->view('destination',$data);
             $this->load->view('template/footer');
-            //$this->output->enable_profiler(TRUE);
         }
         
         public function _remap($name = ''){

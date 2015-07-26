@@ -25,7 +25,7 @@
                         <ul id="introduction_aside--infos">
                             <?php
                                 foreach ($infos_pays[0] as $key => $value) {
-                                    if ($key != 'idPays' && $key != 'nom') {
+                                    if ($key != 'idPays' && $key != 'nom' && $key != 'code_pays') {
                                         echo '<li>' . ucfirst($key) . ' : ' . $value . '</li>';
                                     }
                                 }

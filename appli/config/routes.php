@@ -43,6 +43,7 @@ $route['admin'] = "walkadmin/connexion";
 $route['walkadmin'] = "walkadmin/connexion";
 $route['carnets-de-voyage'] = 'carnets_de_voyage';
 $route['tous-les-carnets'] = 'tous_les_carnets';
+$route['carnets-de-voyage/creer'] = 'carnets_de_voyage/creer';
 $route['carnets-de-voyage/modifier/(:any)'] = 'carnets_de_voyage/modifier/$1';
 $route['carnets-de-voyage/(:any)'] = 'carnets_de_voyage/load_carnet/$1';
 $route['nos-actualites'] = 'nos_actualites';

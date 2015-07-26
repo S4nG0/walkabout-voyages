@@ -146,5 +146,12 @@ class Carnetvoyage extends CI_Model {
 
         return $result;
     }
+    
+    public function add($carnet){
+        
+        $result = $this->db->insert($this->table, $carnet); 
+        
+        return $result;
+    }
 
 }
