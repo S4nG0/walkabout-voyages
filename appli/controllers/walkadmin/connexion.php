@@ -40,7 +40,7 @@ class Connexion extends CI_Controller {
         }
 
         $data['title'] = "Connexion";
-        $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/login');
         $this->load->view('wadmin/template/footer');
 

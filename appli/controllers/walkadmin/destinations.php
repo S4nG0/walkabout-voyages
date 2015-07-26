@@ -10,8 +10,9 @@ class Destinations  extends CI_Controller{
 
     public function index(){
         connecte_admin($this->session->userdata('admin'));
+        $data['title'] = 'Destinations';
         $data['destinations']=$this->destination->get_infos_destination();
-        $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Destinations/liste',$data);
         $this->load->view('wadmin/template/footer');
@@ -46,7 +47,7 @@ class Destinations  extends CI_Controller{
                     $data['error'] =$this->upload->display_errors();
                     $data['pays']=$this->pays->getPays();
                     $data['admin'] = $this->session->userdata('admin');
-                    $this->load->view('wadmin/template/header');
+                    $this->load->view('wadmin/template/header', $data);
                     $this->load->view('wadmin/template/menu', $data);
                     $this->load->view('wadmin/pages/Destinations/creer',$data);
                     $this->load->view('wadmin/template/footer');
@@ -83,7 +84,7 @@ class Destinations  extends CI_Controller{
         $data['pays']=$this->pays->getPays();
         $data['page']="add_travel";
         $data['admin'] = $this->session->userdata('admin');
-        $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Destinations/creer',$data);
         $this->load->view('wadmin/template/footer');
@@ -115,7 +116,7 @@ class Destinations  extends CI_Controller{
             $data['idDestination']=$idDestination;
             $data['page']="modif_travel";
             $data['admin'] = $this->session->userdata('admin');
-            $this->load->view('wadmin/template/header');
+            $this->load->view('wadmin/template/header', $data);
             $this->load->view('wadmin/template/menu', $data);
             $this->load->view('wadmin/pages/Destinations/modifier',$data);
             $this->load->view('wadmin/template/footer');

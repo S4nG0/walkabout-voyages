@@ -25,7 +25,10 @@ $(function() {
             $("#page-wrapper").css("min-height", (height) + "px");
         }
     });
+});
 
+$('document').ready(function(){
+    //set active class to navbar 'a's
     var url = window.location;
     var element = $('ul.nav a').filter(function() {
         return this.href == url || url.href.indexOf(this.href) == 0;
@@ -33,9 +36,7 @@ $(function() {
     if (element.is('li')) {
         element.addClass('active');
     }
-});
 
-$('document').ready(function(){
     //appel à la fonction qui va lancer la recherche
     $('#search').keyup(function () {
         search();

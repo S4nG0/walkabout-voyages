@@ -32,8 +32,9 @@ $page = "moncompte";
                 <?php echo  form_close(); ?>
                     <span><?php if(gettype($upload) != "boolean")echo '<script> alert("'.strip_tags (html_entity_decode($upload)).'"); </script>';?></span>
                 <p>
-                    Bonjour <?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span>"; ?>
+                    Bonjour&nbsp;<?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span></a>"; ?>
                 </p>
+                <a href="<?php echo base_url() . 'utilisateur/' . $user->slug ?>">Voir mon mur</a>
             </div>
         </div>
     </div>
@@ -51,7 +52,7 @@ $page = "moncompte";
                             <a class="button" id="carnets">Mes carnets de voyages</a>
                         </li>
                         <li>
-                            <a class="button" id="infos">Mes coordonnées</a>
+                            <a class="button" id="infos">Mes informations</a>
                         </li>
                     </ul>
                 </div>
@@ -137,6 +138,23 @@ $page = "moncompte";
                     <div class="infos-block" id="infos-content">
                         <?php echo form_open('moncompte/majuser') ?>
                         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                            <h3>Votre couverture</h3>
+                            <div class="cover-picture">
+                                <figure class="effect">
+                                    <img src="<?php echo img_url('default.png');  ?>" alt="Photo de couverture" class="img-responsive">
+                                    <figcaption>
+                                        <div class="caption-content">
+                                            <a class="file-upload" href="#">
+                                                <i class="fa fa-picture-o"></i>
+                                                <p>Changer la photo</p>
+                                            </a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <h3>Changer vos informations de connexion</h3>
                             <div class="form-group">
                                 <input type="email" name="email" id="email" value="<?php echo $user->mail; ?>">
@@ -164,7 +182,7 @@ $page = "moncompte";
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-md-offset-3">
+                        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <div class="buttons-wrapper">
                                 <button class="button" type="cancel">Annuler</button>
                                 <button class="button" type="submit">Sauvegarder</button>

@@ -22,8 +22,7 @@ class Params extends CI_Controller {
             connecte_admin($this->session->userdata('admin'));
             $data = array();
             $data['admin'] = $this->session->userdata('admin');
-            $data['title'] = '';
-            $this->load->view('wadmin/template/header');
+            $this->load->view('wadmin/template/header', $data);
             $this->load->view('wadmin/template/menu',$data);
             $this->load->view('wadmin/dashboard');
             $this->load->view('wadmin/template/footer');
