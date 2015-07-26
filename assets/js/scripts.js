@@ -1,7 +1,7 @@
 var body = $('body');
 
 var base_url = "http://dev.walkabout-voyages.fr/";
-// var base_url = "http://localhost/walkabout-voyages/";
+//var base_url = "http://localhost/walkabout-voyages/";
 
 /***
  * Gives two column the same height
@@ -647,7 +647,8 @@ $(document).ready(function () {
     var editor = new MediumEditor('.medium-editor-image', {
             placeholder: {
                 text: "Cliquez pour commencez à écrire..."
-            }
+            },
+            imageDragging: false
         });
 
     $('.medium-editor-image').mediumInsert({
