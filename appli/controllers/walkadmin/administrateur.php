@@ -27,6 +27,7 @@ class Administrateur extends CI_Controller {
     }
 
     public function supprimer($idAdministrateur=0){
+        connecte_admin($this->session->userdata('admin'));
         if($idAdministrateur==0)
             $this->index();
         $this->admin->deleteAdmin($idAdministrateur);
@@ -34,6 +35,7 @@ class Administrateur extends CI_Controller {
     }
 
     public function index(){
+        connecte_admin($this->session->userdata('admin'));
         $data['admins']=$this->admin->getAll();
         connecte_admin($this->session->userdata('admin'));
         $data['admin'] = $this->session->userdata('admin');

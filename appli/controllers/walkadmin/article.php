@@ -15,6 +15,7 @@ class Article extends CI_Controller{
     }
 
     public function majArticle($idArticles=0){
+        connecte_admin($this->session->userdata('admin'));
         if($idArticles==0)
             $this->index();
         if($this->input->post() != false) {

@@ -76,9 +76,8 @@ $page = "esprit"
                                 <p>
                                     Rejoignez la communauté Walkabout et découvrez un monde rempli de récits hors-du-commun. Partagez vous aussi votre expérience à la fin de votre voyage et inspirez photographes, écrivains et aventuriers avides de découverte.
                                 </p>
-                                <h3>
-                                    Sans plus attendre...
-                                </h3>
+                                <h4>Sans plus attendre...</h4>    
+                                
                             </div>
                         </div>
                         <div class="row noPadding">

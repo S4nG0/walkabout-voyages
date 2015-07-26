@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 01/07/15
- * Time: 16:43
- */
 
 class Destinations  extends CI_Controller{
 
@@ -19,6 +13,7 @@ class Destinations  extends CI_Controller{
     }
 
     public function creer(){
+        connecte_admin($this->session->userdata('admin'));
         if($this->input->post() != false){
             $this->form_validation->set_rules('pays', '"pays"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('titre', '"titre"', 'trim|required|encode_php_tags|xss_clean');
@@ -80,7 +75,6 @@ class Destinations  extends CI_Controller{
                 }
             }
         }
-        connecte_admin($this->session->userdata('admin'));
         $data['pays']=$this->pays->getPays();
         $data['page']="add_travel";
         $data['admin'] = $this->session->userdata('admin');
@@ -91,6 +85,7 @@ class Destinations  extends CI_Controller{
     }
 
     public function  detail($idDestination = 0){
+        connecte_admin($this->session->userdata('admin'));
         if($idDestination==0){
             redirect('walkadmin/dashboard');
         }

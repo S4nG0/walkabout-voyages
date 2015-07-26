@@ -19,22 +19,24 @@ class Connexion extends CI_Controller {
 	 */
 	public function index()
 	{
-        if($this->session->userdata('admin')){
-            redirect(base_url().'walkadmin/dashboard');
-        }
-        $this->form_validation->set_rules('pseudo', '"Pseudo"', 'trim|required|encode_php_tags|xss_clean');
-        $this->form_validation->set_rules('password', '"Mot de passe"', 'trim|required|encode_php_tags|xss_clean');
-
-        if($this->form_validation->run()){
-            $pseudo = $this->input->post('pseudo');
-            $mdp = $this->input->post('password');
-            $admin = $this->admin->getFromPseudo($pseudo);
-            if(!empty($admin)){
-                if($admin[0]->mdp == hash('sha256',$mdp)){
-                    $this->session->set_userdata('admin',$admin);
-                    redirect(base_url().'walkadmin/dashboard');
-                }else{
-                    echo '<script>alert("Votre mot de passe est incorrect!");</script>';
+        connecte_admin($this->session->userdata('admin'));
+            if($this->session->userdata('admin')){
+                redirect(base_url().'walkadmin/dashboard');
+            }
+            $this->form_validation->set_rules('pseudo', '"Pseudo"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('password', '"Mot de passe"', 'trim|required|encode_php_tags|xss_clean');
+            
+            if($this->form_validation->run()){
+                $pseudo = $this->input->post('pseudo');
+                $mdp = $this->input->post('password');
+                $admin = $this->admin->getFromPseudo($pseudo);
+                if(!empty($admin)){
+                    if($admin[0]->mdp == hash('sha256',$mdp)){
+                        $this->session->set_userdata('admin',$admin);
+                        redirect(base_url().'walkadmin/dashboard');
+                    }else{
+                        echo '<script>alert("Votre mot de passe est incorrect!");</script>';
+                    }
                 }
             }
         }

@@ -1,15 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 02/07/15
- * Time: 15:28
- */
 
 class Pays_admin extends CI_Controller{
 
     public function index(){
         $data['title'] = 'Pays';
+        connecte_admin($this->session->userdata('admin'));
         $data['pays']=$this->pays->getPays();
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
@@ -19,6 +14,7 @@ class Pays_admin extends CI_Controller{
     }
 
     public function creer(){
+        connecte_admin($this->session->userdata('admin'));
         if($this->input->post() != false) {
             $this->form_validation->set_rules('code_pays', '"Pays"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('nom', '"nom"', 'trim|required|encode_php_tags|xss_clean');
@@ -58,6 +54,7 @@ class Pays_admin extends CI_Controller{
     }
 
     public function detail($idPays=0){
+        connecte_admin($this->session->userdata('admin'));
         if($idPays==0)
             redirect('walkadmin/dashboard');
         if($this->input->post() != false) {

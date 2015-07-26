@@ -5,8 +5,8 @@ class Utilisateur extends CI_Controller{
 
     public function index(){
         $data['title'] = 'Liste des utilisateurs';
-        $data['user']=$this->user->getAllUsers();
         connecte_admin($this->session->userdata('admin'));
+        $data['users']=$this->user->getAllUsers();
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
@@ -15,9 +15,9 @@ class Utilisateur extends CI_Controller{
     }
 
     public function activer($idUsers){
+        connecte_admin($this->session->userdata('admin'));
         if($idUsers==0)
             $this->liste();
-        connecte_admin($this->session->userdata('admin'));
         $user=array(
             "active" => "true"
         );
@@ -26,9 +26,9 @@ class Utilisateur extends CI_Controller{
     }
 
     public function desactiver($idUsers){
+        connecte_admin($this->session->userdata('admin'));
         if($idUsers==0)
             $this->liste();
-        connecte_admin($this->session->userdata('admin'));
         $user=array(
             "active" => "false"
         );
@@ -37,9 +37,9 @@ class Utilisateur extends CI_Controller{
     }
 
     public function detail($idUsers){
+        connecte_admin($this->session->userdata('admin'));
         if($idUsers==0)
             $this->liste();
-        connecte_admin($this->session->userdata('admin'));
         $data['user']=$this->user->constructeur($idUsers);
         $data['admin'] = $this->session->userdata('admin');
         $data['reservation'] = $this->reservations->getReservationAdmin($idUsers);
