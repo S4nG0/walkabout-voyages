@@ -54,8 +54,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul class="footer__copyright">
-                        <hr />
-                        <li>©&nbsp;Walkabout &bull; 2015</li><br>
+                        <hr>
+                        <li>©&nbsp;Walkabout &bull; 2015</li><br />
                         <li><a href="<?php echo base_url(); ?>mentions">Mentions légales</a> &bull; </li>
                         <li><a href="<?php echo base_url(); ?>conditions_generales_de_ventes">Conditions Générales de Vente</a></li>
                     </ul>

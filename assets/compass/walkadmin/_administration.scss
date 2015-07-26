@@ -1,0 +1,293 @@
+/*------------------------------------*\
+    #WALKADMIN STYLES
+\*------------------------------------*/
+body.admin {
+    width: 100%;
+    height: 100%;
+    background: $texture;
+    letter-spacing: 1px;
+}
+
+.button {
+    letter-spacing: 1px;
+}
+
+
+
+/*------------------------------------*\
+    #LOG-IN
+\*------------------------------------*/
+.admin-log-on {
+    display: table;
+    width: 100%;
+    height: 100%;
+
+    > .container {
+        display: table-cell;
+        vertical-align: middle;
+
+        .login-panel {
+            margin-top: 0;
+
+            .panel-logo {
+                margin-bottom: 50px;
+
+                > img {
+                    display: block;
+                    margin: 0 auto;
+                    width: 80px;
+                }
+            }
+
+            .panel-form {
+
+                .form-group {
+                    margin-bottom: 25px;
+                    text-align: center;
+
+                    label {
+                        color: $jaune-or;
+                    }
+
+                    input {
+                        display: block;
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+
+                    &:nth-child(2) {
+                        margin-bottom: 0 !important;
+                    }
+
+                    .forgotten-pwd {
+                        display: block;
+                        margin: 0 auto;
+                        margin-top: 10px;
+                        font-size: 80%;
+                        text-align: center;
+                    }
+                }
+
+                .button {
+                    margin: 0 auto;
+                    margin-top: 50px;
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+.recover-pwd-block {
+    text-align: center;
+    label {
+        color: $jaune-or;
+    }
+}
+
+/*------------------------------------*\
+    #RESPONSIVE
+\*------------------------------------*/
+@media screen and (min-width: 1200px) {
+    body.admin {
+        .admin-log-on {
+            > .container {
+                .login-panel {
+                    .panel-form {
+                        .form-group {
+                            input {
+                                width: 75%;
+                            }
+
+                            .forgotten-pwd {
+                                width: 75%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body.admin {
+        .admin-log-on {
+            > .container {
+                .login-panel {
+                    .panel-form {
+                        .form-group {
+                            input {
+                                width: 50%;
+                            }
+
+                            .forgotten-pwd {
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body.admin {
+        .admin-log-on {
+            > .container {
+                .login-panel {
+                    .panel-form {
+                        .form-group {
+                            input {
+                                width: 100%;
+                            }
+
+                            .forgotten-pwd {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// body.admin {
+//     background: rgba(0, 0, 0, 0) url("../images/texture.png") repeat scroll 0 0;
+//     color: whitesmoke;
+// }
+
+// .form-control{
+//     border-color: -moz-use-text-color -moz-use-text-color #242424;
+//     border-radius: 0;
+//     border-style: none none solid;
+//     border-width: medium medium 1px;
+//     color: #242424;
+//     padding: 15px;
+//     transition: border 300ms ease-in-out 0s;
+//     width: 100%;
+//     height:auto;
+//     box-shadow: none;
+// }
+
+// .form-control:focus {
+//   border-color: #f0c041;
+//   outline: 0;
+//   -webkit-box-shadow: none;
+//   box-shadow: none;
+// }
+
+// .centered{
+//     text-align:center;
+//     color : #f0c041;
+// }
+
+
+// /* Suppression du background color pour faire apparaitre image background */
+
+// #page-wrapper{
+//     background-color:transparent;
+//     border-left : 0px;
+//     color:#f0c041;
+// }
+
+// .navbar-default{
+//     border : none;
+//     background: transparent;
+//     color:white;
+// }
+
+
+// .nav>li>a:hover, .nav>li>a:focus, .nav>li>a.active {
+//   text-decoration: none;
+//   background-color: transparent;
+//   color:#f0c041;
+// }
+
+// .sidebar ul li a.active{
+//     background-color:transparent;
+// }
+
+// .nav>li>a, .nav>li>a, .nav>li>a {
+//   color:whitesmoke;
+// }
+
+// .sidebar ul li {
+//   border:none;
+// }
+
+// .sidebar{
+//     margin-top : auto;
+// }
+
+// .navbar-collapse{
+//     border:none;
+//     box-shadow: none;
+// }
+
+// @media (min-width: 768px){
+//     .sidebar {
+//         margin-top: 51px;
+//     }
+// }
+
+// .page-header{
+//     display:inline-block;
+//     color:#f0c041;
+//     width: 100%;
+// }
+
+// .fa{
+//     color:whitesmoke;
+// }
+
+// h1{
+//     color:#f0c041;
+// }
+
+// .fa:hover{
+//     color:#f0c041;
+// }
+
+// #search{
+//     margin-top : 20px;
+//     margin-bottom : 20px;
+// }
+
+// td{
+//     padding : 15px;
+// }
+
+// .image-wrapper{
+//     padding-bottom: 80%;
+//     background-position: 50% 0;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+
+// .destination{
+//     padding-bottom: 15px;
+//     padding-top: 15px;
+// }
+
+// .destination .button{
+//     margin-top: 15px;
+// }
+
+// svg{
+//     width:100%;
+//     height:650px;
+// }
+
+// .contain-svg {
+//   width: 100%;
+//   margin: 0 auto;
+// }
+
+// hr{
+//     width:30%;
+//     text-align:center;
+// }

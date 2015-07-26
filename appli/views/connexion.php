@@ -77,7 +77,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <button type="submit" class="button">Récuper votre mot de passe</button>
+                            <button type="submit" class="button">Récupérer votre mot de passe</button>
                         </div>
                     </div>
                 </div>

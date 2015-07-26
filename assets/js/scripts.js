@@ -1,7 +1,7 @@
 var body = $('body');
 
 var base_url = "http://dev.walkabout-voyages.fr/";
-//var base_url = "http://localhost/walkabout-voyages/";
+// var base_url = "http://localhost/walkabout-voyages/";
 
 /***
  * Gives two column the same height
@@ -344,7 +344,7 @@ $(document).ready(function () {
         animation: 'fadeOutTop'
     }
 
-    if(!body.hasClass('checkout') && !body.hasClass('espace-voyageur editing')) {
+    if(!body.hasClass('checkout') && !body.hasClass('espace-voyageur editing') && !body.hasClass('admin')) {
         navbarToggle.addEventListener('click', function () {
             iconate(icon, options, function() {
                 var temp = options.from;
@@ -647,8 +647,7 @@ $(document).ready(function () {
     var editor = new MediumEditor('.medium-editor-image', {
             placeholder: {
                 text: "Cliquez pour commencez à écrire..."
-            },
-            imageDragging: false
+            }
         });
 
     $('.medium-editor-image').mediumInsert({

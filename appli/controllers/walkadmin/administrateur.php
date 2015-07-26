@@ -3,7 +3,7 @@
 class Administrateur extends CI_Controller {
 
     public function creer(){
-        connecte_admin($this->session->userdata('admin'));        
+        connecte_admin($this->session->userdata('admin'));
         if ($this->input->post() != false) {
             $this->form_validation->set_rules('identifiant', '"identifiant"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('nom', '"nom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
@@ -33,12 +33,13 @@ class Administrateur extends CI_Controller {
         $this->admin->deleteAdmin($idAdministrateur);
         redirect(base_url()."administrateur");
     }
-    
+
     public function index(){
         connecte_admin($this->session->userdata('admin'));
         $data['admins']=$this->admin->getAll();
         connecte_admin($this->session->userdata('admin'));
         $data['admin'] = $this->session->userdata('admin');
+        $data['title'] = "Gestion des administrateurs";
         $this->load->view('wadmin/template/header');
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Admin/liste',$data);

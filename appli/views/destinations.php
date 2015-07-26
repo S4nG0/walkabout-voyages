@@ -13,7 +13,7 @@ $page='destinations';
             <div class="big-title">
                 <h1 class="no-sep">Nos destinations</h1>
                 <p>
-                    Partez dans une contrée reculée,<br>et partagez votre expérience avec les autres
+                    Partez dans une contrée reculée,<br />et partagez votre expérience avec les autres
                 </p>
             </div>
         </div>

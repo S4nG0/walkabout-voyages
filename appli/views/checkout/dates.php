@@ -57,9 +57,9 @@ $step = 'choice';
                                     <input '.$disable.' class="radio" type="radio" name="date" id="date'.$x.'" value="'.$voyage->idVoyage.'" '.$checked.'>
                                     <label for="date'.$x.'"><span></span>'.$voyage->date_depart.' :</label>
                                     <p>
-                                        <strong>Départ</strong> : '.$voyage->date_depart.'<br>
-                                        <strong>Retour</strong> : '.$voyage->date_retour.'<br>
-                                        <strong>'.$voyage->prix.' € par personnes.</strong><br>
+                                        <strong>Départ</strong> : '.$voyage->date_depart.'<br />
+                                        <strong>Retour</strong> : '.$voyage->date_retour.'<br />
+                                        <strong>'.$voyage->prix.' € par personnes.</strong><br />
                                         <strong>Places restantes</strong> : '.$voyage->nb_reservés.' sur '.$voyage->nb_places.'
                                     </p>
                                 </div>
