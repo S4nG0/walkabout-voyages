@@ -25,6 +25,29 @@ class Voyages extends CI_Model {
     }  
     
     
+    public function get_where_non_carnet($idUser = 0){
+        
+        if($idUser == 0){
+            return false;
+        }
+        
+        $query = "  SELECT * FROM `wa__reservation` as R,`wa__voyage` as V
+                    WHERE 
+                    R.idUsers = ".$idUser." AND
+                    R.idVoyage = V.idVoyage AND
+                    V.idVoyage not in(
+                        SELECT idVoyage FROM `wa__CarnetDeVoyage`
+                        WHERE
+                        idUsers = ".$idUser."
+                        )
+                    ";
+        
+        $voyages = $this->db->query($query)->result();
+        
+        return $voyages;
+    }  
+    
+    
     public function get_voyages_from_destination($idDestination = 0){
         
         if($idDestination == 0){

@@ -4,13 +4,13 @@ Générales :
   ☐ Faire l'envoi d'email pour l'oubli de mot de passe
   ✔ Faire une page cible user (avec l'ensemble de ses carnets) @done (15-07-19 17:52)
     Idées pour le design : Le haut de page fait assez vide du coup vu que l'utilisateur a pas d'image de fond, est-ce qu'on pourrait pas :
-      ☐ 1 : ajouter un champ image de fond personnalisable (telle une couverture à la Facebook) ?
-      ☐ 2 : proposer une image de fond qui sera la même pour tous les users ?
-  ✔ Faire la page avec tous les carnets @done (15-07-18 16:19)
+      ☐ 1 : ajouter un champ image de fond personnalisable (telle une couverture à la Facebook) ? OUI!
+      ☐ 2 : proposer une image de fond qui sera la même pour tous les users ? NON!
+      ✔ Faire la page avec tous les carnets @done (15-07-18 16:19)s
     Développer soit :
       ☐ Pagination : quand on a trop de carnets affichés
       ☐ Loading en AJAX de carnets (je préfère ça, mais apparemment le prof veut pas???)
-  ☐ Julien : check matchMedia pour annuler parallax sur mobile
+      ☐ Julien : check matchMedia pour annuler parallax sur mobile
 
 Checkout :
   ✔ Revoir le dev du checkout @done (15-07-18 12:33)
@@ -30,7 +30,7 @@ Carnets list :
   RIEN
 
 Single carnet :
-  ☐ Julien : revoir zone de comm : affichage en escalier pour montrer les réponses à une question (pas urgent) + gérer pagination sur les comm
+  ☐ Julien : revoir zone de comm : affichage en escalier pour montrer les réponses à une question (pas urgent) + gérer pagination sur les comm   //Pas prévu en BDD d'escaliers sur les commentaires mais je m'en occupe! A.C.
 
 Notre esprit :
   ✔ Changer les liens en bas de page @done (15-06-30 15:47)
@@ -46,14 +46,14 @@ Utilisateur :
 
   ✔ Checker si on a fait une modif non enregistrée quand on clique sur "Retour sur mon compte" dans espace-voyageur @done (15-07-19 17:52)
   ✔ L'image de couverture ne se met pas à jour (marche plus????) @done (15-07-17 16:17)
-  ☐ La création du carnet est-elle gérée comme on l'avait prévue ? (càd : le mec réserve son voyage -> reservation confirmée -> ouverture du carnet programmée -> un bouton apparaît avec 'ouvrir votre carnet' sur son espace voyageur et il peut choisir le titre de son carnet une seule fois)
+  ☐ La création du carnet est-elle gérée comme on l'avait prévue ? (càd : le mec réserve son voyage -> reservation confirmée -> ouverture du carnet programmée -> un bouton apparaît avec 'ouvrir votre carnet' sur son espace voyageur et il peut choisir le titre de son carnet une seule fois) Julien voir design avant que je puisse aller plus loin!!!
 
   ✔ La deuxième réservation est pas dans le tableau -> what the fuck? @done (15-07-07 19:19)
   ✔ Auré : Mettre le message de "mot de passe requis" en français quand on oublie de mettre son pass ou son ID @done (15-07-03 11:34)
 
 Modif-carnet :
   ☐ Placeholder bug sur Firefox
-  ☐ Possible d'éviter d'enregistrer à chaque fois la même image dans les dossiers lors de l'upload d'une image de couverture ?
+  ✔ Possible d'éviter d'enregistrer à chaque fois la même image dans les dossiers lors de l'upload d'une image de couverture ? @done (15-07-25 23:37) Non on garde toutes les images!!! =)
 
 Modif-article :
   ☐ Quand on ajoute une image, le texte revient pas automatiquement à la ligne -> quand on écrit du texte direct après avoir ajouté une image, ça l'écrit en dehors dans une div à part

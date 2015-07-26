@@ -99,6 +99,25 @@ $page = "moncompte";
 
                     </div>
                     <div class="carnets-block" id="carnets-content">
+                        <!--Design a faire par Julien ! :)  -->
+                        
+                        <?php 
+                            if(sizeof($voyages_sans_carnets) > 0){
+                                if(sizeof($voyages_sans_carnets) > 1){
+                                    $pluriel = 's';
+                                }else{
+                                    $pluriel = '';
+                                }
+                                echo '<h4>Vous pouvez réaliser un carnet de voyage pour le'.$pluriel.' voyage'.$pluriel.' suivant'.$pluriel.' :</h4>';
+                                foreach($voyages_sans_carnets as $voyage_sans_carnet){
+                                    echo '<h5>'. $voyage_sans_carnet->destination->titre .' voyage réalisé du '. conv_date($voyage_sans_carnet->date_depart) .' au '. conv_date($voyage_sans_carnet->date_retour) .'</h5>';
+                                }
+                            }
+                            
+                        ?>
+                        
+                        <!-- Fin design julien! :) -->
+                        
                         <div class="travel-logs-wrapper">
                         <?php
 

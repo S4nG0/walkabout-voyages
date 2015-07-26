@@ -49,6 +49,10 @@ class Moncompte extends CI_Controller {
                 $carnet->voyage[0]->date_depart = conv_date($carnet->voyage[0]->date_depart);
                 $carnet->voyage[0]->date_retour = conv_date($carnet->voyage[0]->date_retour);
             }
+            $data['voyages_sans_carnets'] = $this->voyages->get_where_non_carnet($data['user']->idUsers);
+            foreach($data['voyages_sans_carnets'] as $voyage_sans_carnet){
+                $voyage_sans_carnet->destination = $this->destination->constructeur($voyage_sans_carnet->idDestination)[0];
+            }
             $this->load->view('template/header', $data);
             $this->load->view('moncompte',$data);
             $this->load->view('template/footer');
