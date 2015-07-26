@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -9,24 +9,25 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Walkabout administration</title>
+    <title><?php echo "Administration > $title"; ?></title>
     <link rel="icon" href="<?php echo img_url('favicon.png'); ?>" type="image/png">
     <link rel="apple-touch-icon" href="<?php echo img_url('apple-touch-icon.png'); ?>">
     <link rel="alternate" hreflang="fr" href="http://fr.walkabout-voyages.fr/walkadmin" />
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="<?php echo css_url('bootstrap.min'); ?>">
+    <link rel="stylesheet" href="<?php echo css_url('sb-admin-2'); ?>">
 
-    <!-- MetisMenu CSS -->
+    <!-- Vendors -->
     <link rel="stylesheet" href="<?php echo css_url('metisMenu.min'); ?>">
+    <link rel="stylesheet" href="<?php echo css_url('fancybox'); ?>">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?php echo css_url('sb-admin-2'); ?>">
-    <link rel="stylesheet" href="<?php echo css_url('walkadmin'); ?>">
+    <link rel="stylesheet" href="<?php echo css_url('global'); ?>">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="<?php echo css_url('font-awesome.min'); ?>">
-    
+
         <!-- jQuery -->
     <script type="text/javascript" src="<?php echo js_url('jquery'); ?>"></script>
 
@@ -40,5 +41,4 @@
 
 </head>
 
-
-<body>
+<body class="admin">

@@ -40,7 +40,7 @@ $('document').ready(function(){
     $('#search').keyup(function () {
         search();
     });
-    
+
     //Fonctions pour la recherche!
     function sans_accents(str) {
     var accent = [

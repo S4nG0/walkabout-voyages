@@ -42,7 +42,7 @@
                     <div class="bottom-wrapper">
                         <div class="col-xs-12 col-sm-4 col-md-4 details">
                             <span class="author">
-                                <a href="#"><?php echo $user[0]->prenom . ' ' . $user[0]->nom ?></a>
+                                <a href="<?php echo base_url() . 'utilisateur/' . $user[0]->slug; ?>"><?php echo $user[0]->prenom . ' ' . $user[0]->nom ?></a>
                             </span>
                             <span class="bull">&bull;</span>
                             <span class="location">
