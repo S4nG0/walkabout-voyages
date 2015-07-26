@@ -29,7 +29,7 @@ $step = 'sign-in';
             <div class="sign-in-block">
                 <div class="col-sm-6">
                     <div class="user-log-in sameHeight">
-                        <h2 class="sep">Déjà inscrit&nbsp;?<br>Identifiez-vous&nbsp;!</h2>
+                        <h2 class="sep">Déjà inscrit&nbsp;?<br />Identifiez-vous&nbsp;!</h2>
                         <?php echo form_open('connexion'); ?>
                             <div class="form-group">
                                 <label for="email">E-mail</label>
@@ -52,7 +52,7 @@ $step = 'sign-in';
 
                 <div class="col-sm-6">
                     <div class="new-user sameHeight">
-                        <h2 class="sep">Nouveau client&nbsp;?<br>Créez un compte&nbsp;!</h2>
+                        <h2 class="sep">Nouveau client&nbsp;?<br />Créez un compte&nbsp;!</h2>
                         <?php echo form_open('checkout/identification/inscription'); ?>
                             <div class="form-group">
                                 <label for="email">E-mail désiré</label>
