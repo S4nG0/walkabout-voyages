@@ -56,12 +56,23 @@ body.page-utilisateur {
 
     .main.banner {
         height: 500px;
-        background: $texture;
+        background-image: $texture;
+        background-position: center 0;
+        background-repeat: no-repeat;
+        @include background-size(cover);
         border-bottom: $gold-border;
         @include box-shadow(none);
 
         .caption-wrapper {
             padding-bottom: 50px;
+
+            .button {
+                width: 250px;
+                margin-top: 25px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: $noir;
+            }
         }
     }
 

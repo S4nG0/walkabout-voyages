@@ -167,7 +167,6 @@ class Carnets_de_voyage extends CI_Controller {
             }
             redirect(base_url()."carnets-de-voyage/modifier/".$carnet->url);
         }
-
 }
 /* End of file carnet.php */
 /* Location: ./application/controllers/carnet.php */

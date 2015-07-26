@@ -32,8 +32,9 @@ $page = "moncompte";
                 <?php echo  form_close(); ?>
                     <span><?php if(gettype($upload) != "boolean")echo '<script> alert("'.strip_tags (html_entity_decode($upload)).'"); </script>';?></span>
                 <p>
-                    Bonjour <?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span>"; ?>
+                    Bonjour&nbsp;<?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span></a>"; ?>
                 </p>
+                <a href="<?php echo base_url() . 'utilisateur/' . $user->slug ?>">Voir mon mur</a>
             </div>
         </div>
     </div>
@@ -51,7 +52,7 @@ $page = "moncompte";
                             <a class="button" id="carnets">Mes carnets de voyages</a>
                         </li>
                         <li>
-                            <a class="button" id="infos">Mes coordonnées</a>
+                            <a class="button" id="infos">Mes informations</a>
                         </li>
                     </ul>
                 </div>
@@ -99,21 +100,6 @@ $page = "moncompte";
 
                     </div>
                     <div class="carnets-block" id="carnets-content">
-                        <!--Design a faire par Julien ! :)  -->
-                        
-                        <?php 
-                            if(sizeof($voyages_sans_carnets) > 0){
-                                if(sizeof($voyages_sans_carnets) > 1){
-                                    echo '<h4>Vous pouvez créer des carnets de voyage grâce à vos réservation!</h4><br/><a href="#create-carnet" class="fancybox btn"> Créer mon carnet </a>';
-                                }else{
-                                    echo '<h4>Vous pouvez créer un carnet de voyage grâce à votre réservation!</h4><br/><a href="#create-carnet" class="fancybox btn"> Créer mon carnet </a>';
-                                }
-                            }
-                            
-                        ?>
-                        
-                        <!-- Fin design julien! :) -->
-                        
                         <div class="travel-logs-wrapper">
                         <?php
 
@@ -152,6 +138,23 @@ $page = "moncompte";
                     <div class="infos-block" id="infos-content">
                         <?php echo form_open('moncompte/majuser') ?>
                         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                            <h3>Votre couverture</h3>
+                            <div class="cover-picture">
+                                <figure class="effect">
+                                    <img src="<?php echo img_url('default.png');  ?>" alt="Photo de couverture" class="img-responsive">
+                                    <figcaption>
+                                        <div class="caption-content">
+                                            <a class="file-upload" href="#">
+                                                <i class="fa fa-picture-o"></i>
+                                                <p>Changer la photo</p>
+                                            </a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <h3>Changer vos informations de connexion</h3>
                             <div class="form-group">
                                 <input type="email" name="email" id="email" value="<?php echo $user->mail; ?>">
@@ -179,7 +182,7 @@ $page = "moncompte";
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-md-offset-3">
+                        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <div class="buttons-wrapper">
                                 <button class="button" type="cancel">Annuler</button>
                                 <button class="button" type="submit">Sauvegarder</button>
@@ -191,27 +194,3 @@ $page = "moncompte";
             </div>
 
         </div>
-
-    </div>
-    <?php 
-        if(sizeof($voyages_sans_carnets) > 0){
-    ?>    
-    <div id="create-carnet">
-        <h2 class="sep">Création d'un carnet de voyage</h2>
-        <?php echo form_open("carnets-de-voyage/creer") ?>
-            <label for="voyage">Choisissez le voyage sur lequel vous souhaitez créer ce carnet :</label>
-            <select name="voyage" id="voyage">
-            <?php
-                foreach($voyages_sans_carnets as $voyage_sans_carnet){
-                    echo '<option value="'.$voyage_sans_carnet->idVoyage.'">'.$voyage_sans_carnet->destination->titre.'<option>';
-                }
-            ?>
-            </select>
-            <label for="titre">Renseignez le titre de votre carnet :</label>
-            <input type="text" name="titre" id="titre" placeholder="Entrez le titre de votre carnet...">
-            <input class="button" type="submit" value="Créer !">
-        <?php echo form_close(); ?>
-    </div>
-    <?php
-    }
-    ?>

@@ -20,7 +20,7 @@ class Administrateur extends CI_Controller {
                 redirect(base_url()."administrateur");
             }
         }
-        $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu');
         $this->load->view('wadmin/pages/Admin/creer');
         $this->load->view('wadmin/template/footer');
@@ -40,7 +40,7 @@ class Administrateur extends CI_Controller {
         connecte_admin($this->session->userdata('admin'));
         $data['admin'] = $this->session->userdata('admin');
         $data['title'] = "Gestion des administrateurs";
-        $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Admin/liste',$data);
         $this->load->view('wadmin/template/footer');

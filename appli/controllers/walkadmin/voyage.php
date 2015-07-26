@@ -23,9 +23,10 @@ class Voyage extends CI_Controller{
                 redirect('walkadmin/destinations/liste');
             }
         }else{
+            $data['title'] = 'Voyages';
             $data['idDestination']=$idDestination;
             $data['destination']=$this->destination->constructeur($idDestination);
-            $this->load->view('wadmin/template/header');
+            $this->load->view('wadmin/template/header', $data);
             $this->load->view('wadmin/pages/Voyages/creer',$data);
             $this->load->view('wadmin/template/footer');
         }

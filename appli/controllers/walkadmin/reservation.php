@@ -10,10 +10,10 @@ class Reservation extends CI_Controller {
      *
      * Maps to the following URL
      * 		http://example.com/index.php/welcome
-     * 	- or -  
+     * 	- or -
      * 		http://example.com/index.php/welcome/index
      * 	- or -
-     * Since this controller is set as the default controller in 
+     * Since this controller is set as the default controller in
      * config/routes.php, it's displayed at http://example.com/
      *
      * So any other public methods not prefixed with an underscore will
@@ -23,12 +23,13 @@ class Reservation extends CI_Controller {
     public function index() {
         connecte_admin($this->session->userdata('admin'));
         $data = array();
+        $data['title'] = 'Réservations';
         $data['commentaires'] = $this->commentaires->count_non_modere();
         $data['reservations'] = $this->reservations->count_en_cours();
         $data['reservations_currents'] = $this->reservations->getReservationCurrent();
         $data['reservations_finished'] = $this->reservations->getReservationFinished();
         $data['admin'] = $this->session->userdata('admin');
-        $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Reservations/liste',$data);
         $this->load->view('wadmin/template/footer');

@@ -9,7 +9,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo base_url() . 'walkadmin/dashboard'; ?>">Espace d'administration</a>
+            <a class="navbar-brand" href="<?php echo base_url() . 'walkadmin/dashboard'; ?>">
+                Walkadmin
+            </a>
         </div>
         <!-- /.navbar-header -->
 
@@ -29,7 +31,7 @@
                     <li><a href="#"><i class="fa fa-user-md fa-fw"></i>Bonjour <?php echo $admin[0]->prenom . ' ' . $admin[0]->nom; ?></a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="<?php echo base_url() . 'walkadmin/deconnexion'; ?>"><i class="fa fa-sign-out fa-fw"></i> Déconnexion</a>
+                    <li><a href="<?php echo base_url() . 'walkadmin/deconnexion'; ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Déconnexion</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -42,31 +44,45 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/dashboard'; ?>"><i class="fa fa-dashboard fa-fw"></i> Tableau de bord</a>
+                        <a href="<?php echo base_url() . 'walkadmin/dashboard'; ?>"><i class="fa fa-dashboard fa-fw menu-icons"></i>&nbsp;Tableau de bord</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/comments'; ?>"><i class="fa fa-comments fa-fw"></i> Commentaires</a>
+                        <a href="<?php echo base_url() . 'walkadmin/reservation'; ?>"><i class="fa fa-shopping-cart fa-fw menu-icons"></i>&nbsp;Réservations</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/reservation'; ?>"><i class="fa fa-shopping-cart fa-fw"></i> Réservations</a>
+                        <a href="<?php echo base_url() . 'walkadmin/destinations'; ?>"><i class="fa fa-plane fa-fw menu-icons"></i>&nbsp;Destinations</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/administrateur'; ?>"><i class="fa fa-user-md fa-fw"></i> Administrateur</a>
+                        <a href="<?php echo base_url() . 'walkadmin/pays_admin'; ?>"><i class="fa fa-globe fa-fw menu-icons"></i>&nbsp;Pays</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/destinations'; ?>"><i class="fa fa-plane fa-fw"></i> Destinations</a>
+                        <a href="#"><i class="fa fa-book fa-fw menu-icons"></i>&nbsp;Carnets de voyage<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">Carnets</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/article'; ?>">Articles</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/comments'; ?>">Commentaires</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/pays_admin'; ?>"><i class="fa fa-globe fa-fw"></i> Pays</a>
+                        <a href="#"><i class="fa fa-users fa-fw menu-icons"></i>&nbsp;Utilisateurs<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/administrateur'; ?>">Administrateurs</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/utilisateur'; ?>">Membres</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/utilisateur'; ?>"><i class="fa fa-users fa-fw"></i>  Utilisateurs</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url() . 'walkadmin/article'; ?>"><i class="fa fa-book fa-fw"></i>  Articles</a>
-                    </li>
-                    <li>
-                        <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>"><i class="fa fa-pencil-square-o fa-fw"></i> Contacts</a>
+                        <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>"><i class="fa fa-pencil-square-o fa-fw menu-icons"></i>&nbsp;Contacts</a>
                     </li>
                 </ul>
             </div>
