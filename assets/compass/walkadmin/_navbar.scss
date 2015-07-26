@@ -1,0 +1,101 @@
+/*------------------------------------*\
+    #WALKADMIN - NAVBAR
+\*------------------------------------*/
+body.admin {
+
+    .navbar {
+        margin-top: 0;
+        border-bottom: none;
+    }
+
+    .navbar-brand {
+        color: $jaune-or;
+        font-family: $dosis;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            color: $gris-tres-clair;
+        }
+    }
+
+    .navbar-default {
+        background: $texture;
+    }
+
+    .navbar-default.sidebar {
+        background: $texture;
+
+        li {
+            border-bottom: none;
+        }
+
+        a {
+            .fa.menu-icons {
+                float: left;
+                font-size: 20px;
+                width: 30px;
+                height: 25px;
+            }
+
+            position: relative;
+            padding: 10px 15px 10px 5px;
+            background-color: transparent;
+            border-left: 5px solid transparent;
+            color: $gris-tres-clair;
+            text-decoration: none;
+
+            &:hover, &:focus, &.active {
+                border-left: 5px solid $jaune-or;
+                background-color: transparent;
+                color: $jaune-or;
+            }
+
+            &.active {
+                &:after {
+                    content: " ";
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    border: solid transparent;
+                    height: 0;
+                    width: 0;
+                    pointer-events: none;
+                    border-color: rgba(136, 183, 213, 0);
+                    border-right-color: #fff;
+                    border-width: 10px;
+                    margin-top: -8px;
+                }
+            }
+        }
+
+        .nav-second-level {
+            li {
+                a {
+                    padding-left: 37px;
+                }
+            }
+        }
+    }
+
+    .nav.navbar-top-links {
+        a {
+            color: $gris-tres-clair;
+        }
+    }
+
+    @media(min-width:768px) {
+        .sidebar {
+            z-index: 1;
+            position: absolute;
+            width: 225px;
+            margin-top: 75px;
+        }
+
+        .navbar-top-links .dropdown-messages,
+        .navbar-top-links .dropdown-tasks,
+        .navbar-top-links .dropdown-alerts {
+            margin-left: auto;
+        }
+    }
+}

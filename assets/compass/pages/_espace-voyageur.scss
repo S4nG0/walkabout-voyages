@@ -466,9 +466,35 @@ body.espace-voyageur {
             text-align: center;
             padding-bottom: 50px;
 
+            .cover-picture {
+                margin-top: 25px;
+                margin-bottom: 40px;
+
+                .effect {
+                    figcaption {
+                        .caption-content {
+                            left: 46%;
+                            top: 50%;
+                            width: 240px;
+
+                            a {
+                                i {
+                                    font-size: 4em;
+                                }
+
+                                p {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             .form-group {
                 padding-top: 25px;
                 color: $blanc;
+
 
                 input {
                     margin-bottom: 25px;

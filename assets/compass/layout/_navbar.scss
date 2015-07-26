@@ -1,99 +1,102 @@
-//Navbar
-
-.navbar {
-    z-index: 9999;
-    margin-top: 25px;
-    margin-bottom: 0;
-    background-color: rgba(33, 33, 33, 0.50);
-    border: none;
-    @include border-radius(0);
-    .navbar-brand {
-        display: table;
-        padding: 28px 25px;
-        .logo {
-            display: block;
-            width: 250px;
-            @include transition(300ms all ease-in-out);
+/*------------------------------------*\
+    #NAVBAR
+\*------------------------------------*/
+body:not(.admin) {
+    .navbar {
+        z-index: 9999;
+        margin-top: 25px;
+        margin-bottom: 0;
+        background-color: rgba(33, 33, 33, 0.50);
+        border: none;
+        @include border-radius(0);
+        .navbar-brand {
+            display: table;
+            padding: 28px 25px;
+            .logo {
+                display: block;
+                width: 250px;
+                @include transition(300ms all ease-in-out);
+            }
         }
-    }
-    .navbar-collapse {
-        padding: 0;
-        .nav {
-            li {
-                a {
-                    position: relative;
-                    margin: 55px 25px 40px 0;
-                    padding: 0 0 10px 0;
-                    color: $jaune-or;
-                    font-family: $dosis;
-                    font-size: 16px;
-                    font-weight: 600;
-                    letter-spacing: 1px;
-                    text-transform: uppercase;
-                    text-decoration: none;
+        .navbar-collapse {
+            padding: 0;
+            .nav {
+                li {
+                    a {
+                        position: relative;
+                        margin: 55px 25px 40px 0;
+                        padding: 0 0 10px 0;
+                        color: $jaune-or;
+                        font-family: $dosis;
+                        font-size: 16px;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        text-decoration: none;
 
-                    &:after {
-                        content: '';
-                        position: absolute;
-                        left: 50%;
-                        bottom: 0;
-                        width: 100%;
-                        height: 2px;
-                        background-color: transparent;
-                        @include translateX(-50%);
-                        @include transition(background-color 300ms ease-in-out);
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            left: 50%;
+                            bottom: 0;
+                            width: 100%;
+                            height: 2px;
+                            background-color: transparent;
+                            @include translateX(-50%);
+                            @include transition(background-color 300ms ease-in-out);
+                        }
+
+                        .fa{
+                            margin-right: 10px;
+                        }
+
+                        &:last-child {
+                            margin-right: 25px;
+                        }
+
+                        &:hover, &:focus {
+
+                            &:after {
+                                background-color: $jaune-or;
+                            }
+                        }
                     }
-
-                    .fa{
-                        margin-right: 10px;
-                    }
-
-                    &:last-child {
-                        margin-right: 25px;
-                    }
-
-                    &:hover, &:focus {
-
+                    a.active {
                         &:after {
                             background-color: $jaune-or;
                         }
                     }
                 }
-                a.active {
-                    &:after {
-                        background-color: $jaune-or;
-                    }
-                }
             }
         }
     }
-}
 
-.navbar-right {
-    padding: 0;
-    margin: 0;
-}
-
-//Affix
-.navbar.affix {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    background-color: rgba(33, 33, 33, 1);
-    // @include box-shadow(0 5px 20px 0 rgba(33, 33, 33, 0.30));
-    .navbar-brand {
-        padding: 15px 25px;
-        .logo {
-            width: 150px;
-        }
+    .navbar-right {
+        padding: 0;
+        margin: 0;
     }
-    .navbar-collapse {
-        .nav {
-            li {
-                a {
-                    margin: 30px 25px 15px 0;
+
+    //Affix
+    .navbar.affix {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        background-color: rgba(33, 33, 33, 1);
+        // @include box-shadow(0 5px 20px 0 rgba(33, 33, 33, 0.30));
+        .navbar-brand {
+            padding: 15px 25px;
+            .logo {
+                width: 150px;
+            }
+        }
+        .navbar-collapse {
+            .nav {
+                li {
+                    a {
+                        margin: 30px 25px 15px 0;
+                    }
                 }
             }
         }
@@ -103,56 +106,58 @@
 //Responsive
 
 @media screen and (max-width: 1200px) {
-    .navbar {
-        .navbar-toggle {
-            display: block;
-            width: 50px;
-            height: 35px;
-            padding: 6px;
-            margin: 45px 25px;
-            background-color: transparent;
-            border: 1px solid $jaune-or;
-            @include border-radius(0);
-            @include transition(all 300ms ease-in-out);
-            .fa {
-                font-size: 1.5em;
-                margin: 0 auto;
-            }
-            &:hover, &:focus, &:active {
-                cursor: pointer;
-                color: $jaune-or;
+    body:not(.admin) {
+        .navbar {
+            .navbar-toggle {
+                display: block;
+                width: 50px;
+                height: 35px;
+                padding: 6px;
+                margin: 45px 25px;
                 background-color: transparent;
+                border: 1px solid $jaune-or;
+                @include border-radius(0);
+                @include transition(all 300ms ease-in-out);
+                .fa {
+                    font-size: 1.5em;
+                    margin: 0 auto;
+                }
+                &:hover, &:focus, &:active {
+                    cursor: pointer;
+                    color: $jaune-or;
+                    background-color: transparent;
+                }
             }
-        }
-        .navbar-collapse {
-            background-color: rgba(33, 33, 33, 0.95);
-            border-top-color: $jaune-or;
-            border-bottom: 2px solid $jaune-or;
-            text-align: center;
-            .nav {
-                li {
-                    a {
-                        margin: 25px auto;
-                        &:after {
-                            width: 15%;
-                        }
-                        &:last-child {
-                            margin-right: auto;
+            .navbar-collapse {
+                background-color: rgba(33, 33, 33, 0.95);
+                border-top-color: $jaune-or;
+                border-bottom: 2px solid $jaune-or;
+                text-align: center;
+                .nav {
+                    li {
+                        a {
+                            margin: 25px auto;
+                            &:after {
+                                width: 15%;
+                            }
+                            &:last-child {
+                                margin-right: auto;
+                            }
                         }
                     }
                 }
             }
         }
-    }
-    .navbar.affix {
-        .navbar-toggle {
-            margin: 18px 25px
-        }
-        .navbar-collapse {
-            .nav {
-                li {
-                    a {
-                        margin: 25px auto;
+        .navbar.affix {
+            .navbar-toggle {
+                margin: 18px 25px
+            }
+            .navbar-collapse {
+                .nav {
+                    li {
+                        a {
+                            margin: 25px auto;
+                        }
                     }
                 }
             }
@@ -162,70 +167,76 @@
 
 
 @media screen and (max-width: 768px) {
-    .navbar {
-        .navbar-brand {
-            .logo {
-                width: 180px;
+    body:not(.admin) {
+        .navbar {
+            .navbar-brand {
+                .logo {
+                    width: 180px;
+                }
             }
-        }
-        .navbar-toggle {
-            margin: 35px 25px;
-        }
-        .navbar-collapse {
-            .nav {
-                li {
-                    a {
-                        &:after {
-                            width: 35%;
+            .navbar-toggle {
+                margin: 35px 25px;
+            }
+            .navbar-collapse {
+                .nav {
+                    li {
+                        a {
+                            &:after {
+                                width: 35%;
+                            }
                         }
                     }
                 }
             }
         }
-    }
-    .navbar.affix {
-        .navbar-toggle {
-            margin: 15px 25px;
+        .navbar.affix {
+            .navbar-toggle {
+                margin: 15px 25px;
+            }
         }
     }
 }
 
 @media screen and (max-width: 480px) {
-    .navbar {
-        .navbar-brand {
-            padding: 28px 25px;
-            .logo {
-                width: 150px;
+    body:not(.admin) {
+        .navbar {
+            .navbar-brand {
+                padding: 28px 25px;
+                .logo {
+                    width: 150px;
+                }
             }
-        }
-        .navbar-toggle {
-            margin: 30px 25px;
-        }
-        .navbar-collapse {
-            .nav {
-                li {
-                    a {
-                        &:after {
-                            width: 50%;
+            .navbar-toggle {
+                margin: 30px 25px;
+            }
+            .navbar-collapse {
+                .nav {
+                    li {
+                        a {
+                            &:after {
+                                width: 50%;
+                            }
                         }
                     }
                 }
             }
         }
-    }
-    .navbar.affix {
-        .navbar-brand {
-            .logo {
-                width: 130px;
+        .navbar.affix {
+            .navbar-brand {
+                .logo {
+                    width: 130px;
+                }
             }
         }
     }
 }
 
 @media screen and (max-width: 330px) {
-    .navbar {
-        .navbar-brand {
-            padding: 25px;
+    body:not(.admin) {
+        .navbar {
+            .navbar-brand {
+                padding: 25px;
+            }
         }
     }
 }

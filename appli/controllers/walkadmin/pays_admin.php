@@ -3,10 +3,11 @@
 class Pays_admin extends CI_Controller{
 
     public function index(){
+        $data['title'] = 'Pays';
         connecte_admin($this->session->userdata('admin'));
         $data['pays']=$this->pays->getPays();
         $data['admin'] = $this->session->userdata('admin');
-        $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Pays/liste',$data);
         $this->load->view('wadmin/template/footer');
@@ -46,7 +47,7 @@ class Pays_admin extends CI_Controller{
         }
         $data['admin'] = $this->session->userdata('admin');
         $data['page'] = "add_country";
-        $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Pays/creer',$data);
         $this->load->view('wadmin/template/footer');
@@ -86,7 +87,7 @@ class Pays_admin extends CI_Controller{
         $data['pays'] = $this->pays->constructeur($idPays);
         $data['idPays'] = $idPays;
         $data['page'] = "modif_country";
-        $this->load->view('wadmin/template/header');
+        $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Pays/modifier',$data);
         $this->load->view('wadmin/template/footer');
