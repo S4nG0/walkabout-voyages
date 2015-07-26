@@ -142,6 +142,31 @@ class Carnets_de_voyage extends CI_Controller {
             $this->load->view('modif_carnet', $data);
             $this->load->view('template/footer');
         }
+        
+        public function creer(){
+            $data['connecte'] = connecte($this->session->userdata('user')[0]);
+            if($data['connecte'] == false){
+                redirect('/connexion');
+            }
+            
+            $this->form_validation->set_rules('voyage', '"Voyage"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('titre', '"Titre"', 'trim|min_length[10]|max_length[150]|required|encode_php_tags|xss_clean|is_unique[carnetdevoyage.titre]');
+            
+            if($this->form_validation->run()){
+                $user = $this->session->userdata('user')[0];
+                $carnet = new stdClass();   
+                $carnet->date = Date('Y-m-d');
+                $carnet->publie = "false";
+                $carnet->titre = $this->input->post('titre');
+                $carnet->url = slugify($this->input->post('titre'));
+                $carnet->idUsers = $user->idUsers;
+                $carnet->idVoyage = $this->input->post('voyage');
+                $voyage = $this->voyages->constructeur($this->input->post('voyage'))[0];
+                $carnet->idDestination = $voyage->idDestination;
+                $this->carnetvoyage->add($carnet);
+            }
+            redirect(base_url()."carnets-de-voyage/modifier/".$carnet->url);
+        }
 
 }
 /* End of file carnet.php */

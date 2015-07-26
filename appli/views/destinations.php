@@ -39,9 +39,13 @@ $page='destinations';
                             <a class="no-style" href="'.base_url().'nos-destinations/'.slugify($destination->titre).'">
                                 <h2>'.$destination->titre.'</h2>
                                 <h3>'.$destination->pays[0]->nom.'&nbsp;&bull;&nbsp;'.$destination->ville.'</h3>
-                                <p>'.$destination->nom.'</p>
-                                <p class="price">À partir de <strong>'.$destination->prix_min.' € par personne</strong></p>
-                                <a href="'.base_url().'nos-destinations/'.slugify($destination->titre).'" class="button align-left">Voir la destination</a>
+                                <p>'.$destination->nom.'</p>';
+                            if(isset($destination->prix_min)){
+                                echo '<p class="price">À partir de <strong>'.$destination->prix_min.' € par personne</strong></p>';
+                            }else{
+                                echo '<br/><br/>';
+                            }
+                         echo '<a href="'.base_url().'nos-destinations/'.slugify($destination->titre).'" class="button align-left">Voir la destination</a>
                             </a>
                         </div>
                     </div>
