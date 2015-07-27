@@ -44,7 +44,7 @@ $nbCarnets = count($carnets);
                         <div class="text-container">
                             <h2>'.$carnet->titre.'</h2>
                             <blockquote>'.$carnet->description.'</blockquote>
-                            <p class="published">Publié par <a href="'.base_url().'utilisateur/'.$carnet->user[0]->slug.'">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a>, le '.$carnet->date.'.</p>
+                            <p class="published">Publié le '.$carnet->date.'.</p>
                             <a href="'.base_url().'carnets-de-voyage/'.slugify($carnet->titre).'" class="button align-left">Feuilletez le carnet</a>                        </div>
                     </div>
                 </div>';
