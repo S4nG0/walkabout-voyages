@@ -52,10 +52,12 @@ class Destination extends CI_Model {
     public function get_infos_destination(){
 
         $destinations = $this->db->select('*')
-            ->from($this->table)
-            ->join('pays','destination.idPays=pays.idPays')
-            ->get()
-            ->result();
+                                 ->from($this->table)
+                                 ->join('pays','destination.idPays=pays.idPays')
+                                 ->join('voyage','voyage.idDestination=destination.idDestination')
+                                 ->where('voyage.active','true')
+                                 ->get()
+                                 ->result();
 
         return $destinations;
     }
