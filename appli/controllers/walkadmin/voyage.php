@@ -31,4 +31,11 @@ class Voyage extends CI_Controller{
             $this->load->view('wadmin/template/footer');
         }
     }
+
+    public function supprimer($idVoyage=0){
+        if($idVoyage==0)
+            redirect('walkadmin/dashboard');
+        $this->voyages->deleteVoyage($idVoyage);
+        redirect('walkadmin/destinations');
+    }
 }

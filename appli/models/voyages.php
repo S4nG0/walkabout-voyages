@@ -102,4 +102,12 @@ class Voyages extends CI_Model {
         $voyage= $this->db->insert($this->table,$data);
         return $voyage;
     }
+
+    public function deleteVoyage($id = 0){
+        if($id==0)
+            return false;
+        $this->db->where('idVoyage',$id);
+        $voyage=$this->db->update($this->table,array("active" => "false"));
+        return $voyage;
+    }
 }
