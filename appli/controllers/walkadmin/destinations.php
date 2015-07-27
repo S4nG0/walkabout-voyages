@@ -6,6 +6,7 @@ class Destinations  extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         $data['title'] = 'Destinations';
         $data['destinations']=$this->destination->get_infos_destination();
+        $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Destinations/liste',$data);
