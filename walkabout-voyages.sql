@@ -3,18 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 19 Juillet 2015 à 15:43
+-- Généré le :  Mar 28 Juillet 2015 à 17:46
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données :  `walkabout-voyages`
@@ -88,19 +82,20 @@ CREATE TABLE IF NOT EXISTS `wa__articles` (
   `etat` varchar(50) NOT NULL DEFAULT 'Brouillon',
   PRIMARY KEY (`idArticles`),
   KEY `idCarnet` (`idCarnet`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Contenu de la table `wa__articles`
 --
 
 INSERT INTO `wa__articles` (`idArticles`, `idCarnet`, `date`, `ordre`, `titre`, `texte`, `etat`) VALUES
-(1, 1, '2015-04-01', '1', 'Mon arrivé au village', '<p class="lead">\r\n     Je suis arrivé dans le village dans lequel j''allais être hébergé pendant 2 semaines\r\n</p>\r\n\r\n<p>\r\nJ''ai réservé mon trek à partir de Cuzco. J''ai pris une agence au hasard qui m''a dit qu''on serait au maximum 20 pour le trek, et on s''est retrouvé à 19 (sans compter le guide et les accompagnateurs), résultat en fait du groupement de plusieurs agences, avec certains qui s''attendaient à être entre eux, à 5... Globalement, le groupe était sympathique, chacun à son rythme. Je me suis bien entendu avec la plupart d''entre eux. On est resté 4 jours ensemble.</p>\r\n<img src="http://mesvoyages.net/Images/Perou/Matchup2.JPG" alt="La photo classique du Matchu Picchu, qu''on ne peut s''empêcher de faire pourtant en arrivant tellement c''est beau">\r\n<p>Le départ de Cuzco se fait en bus jusqu''à un certain point, le km88, où, le long de la voie de chemin de fer qui va de Cuzco jusqu''à Matchu Picchu, l''on descend et d''où l''on marche, notre sac sur le dos. La <a name="1"></a>première journée de marche, commençant à 2200 m, est à peu près plate jusqu''à 2750m, et pas trop longue et l''on est arrivé près d''une petite maison où les accompagnateurs ont planté les tentes, et où l''on a eu un repas fort sympathique. Plus tard, avec la nuit, on s''est demandé comment on allait dormir et là, angoisse... il n''y avait pas assez de place dans les tentes. En fait, ils n''avaient pas pris assez de tentes. Certains sont allés dans la petite maison, partageant la salle commune avec la famille qui était là, d''autres dans les tentes et j''étais sur le balcon devant la maison, dehors, par cette nuit froide. J''ai sorti mon duvet, ma couverture de survie pour me protéger le corps du vent, mes sacs poubelle pour faire un espèce d''abris face au vent, suspendus sur la rambarde du balcon. Je n''avais même pas assez de place pour les jambes car un second trekker se trouvait aussi sur le balcon, dans l''alignement, ses jambes à lui dépassant au dessus de l''escalier. Dur pour une première nuit, mais j''ai finalement bien dormi. Le lendemain soir, avant de nous coucher, le cuisinier, qui était responsable des tentes (et donc était rendu responsable devant tout le monde de l''oubli par le guide, alors que je pense que c''était le guide qui était responsable de ne pas avoir vérifié) et était redescendu à pieds en chercher, était revenu de la même façon avec d''autres tentes. Il a fait l''aller-retour (+ du stop jusqu''à Cuzco) dans la journée !</p>\r\n<img src="http://mesvoyages.net/Images/Perou/Col4200.JPG" alt="Le col à 4200 m">\r\n<p>La <a name="2"></a>seconde journée fut la plus dure, avec une ascension jusqu''à 4200 m dans la matinée, en partant de 2750 m, soient 1450 m de dénivelé d''un trait. C''est dur, mais j''aime cela, et je suis arrivé au col en bon état, en même temps que la plupart. Il y a deux autres cols pendant le trek, mais ils ne sont pas trop durs. Certaines jeunes filles, qui faisaient pourtant partie d''un groupe d''Israéliens sortant de leur service militaire (un grand classique en voyage que ces jeunes qui veulent se changer les idées après trois ans de service militaire - bien sûr l''un d''entre eux n''arrêtait pas de manipuler une machette qu''il portait dans son dos à la Rambo, ce qui mettait mal à l''aise tout le monde vu qu''en plus il ne souriait jamais, mais bon, on fait avec), ont eu beaucoup de mal, parce qu''avec leur sac (plus volumineux qu''elles) sur le dos ce fut très dur. Mais leurs copains sont redescendus les aider, après avoir déposé leur propre sac au col !</p>\r\n<p>On a mangé au col, en plein vent et, comme d''habitude, la nourriture fut excellente. Au soir, on s''est retrouvé en pleine nature, et on a pu dormir dans des tentes. Rien d''autre de spécial à signaler ce second jour. Le <a name="3"></a>troisième jour, après le petit déjeuner, on est parti vers la suite de notre voyage, pour une journée qui m''a semblé longue. On a visité un temple solaire, bien orienté, on a mangé sur un flanc de montagne orienté vers le Nord, dans un coin qui s''appelait la vallée de la pluie... et il a plut. Puis on a marché, toujours sur ce flanc de montagne, dans un paysage très humide, amazonien, avec des lianes, des murs de mousse où l''on peut plonger le bras sans toucher le rocher et un sol glissant. On est passé dans des tunnels creusés par les Incas suivant une technique ancestrale, utilisant le gonflement du bois mouillé pour faire exploser la roche. Le soir on est arrivé près d''un bâtiment en dur où, tout en dormant dans les tentes, on a pu aller prendre une douche (bienvenue), et manger assis sur une chaise, sur une table.</p>', 'Publie'),
+(1, 1, '2015-04-01', '1', 'Mon arrivé au village', '<p class="lead">\r\n     Je suis arrivé dans le village dans lequel j''allais être hébergé pendant 2 semaines\r\n</p>\r\n\r\n<p>\r\nJ''ai réservé mon trek à partir de Cuzco. J''ai pris une agence au hasard qui m''a dit qu''on serait au maximum 20 pour le trek, et on s''est retrouvé à 19 (sans compter le guide et les accompagnateurs), résultat en fait du groupement de plusieurs agences, avec certains qui s''attendaient à être entre eux, à 5... Globalement, le groupe était sympathique, chacun à son rythme. Je me suis bien entendu avec la plupart d''entre eux. On est resté 4 jours ensemble.</p>\r\n<img src="http://mesvoyages.net/Images/Perou/Matchup2.JPG" alt="La photo classique du Matchu Picchu, qu''on ne peut s''empêcher de faire pourtant en arrivant tellement c''est beau">\r\n<p>Le départ de Cuzco se fait en bus jusqu''à un certain point, le km88, où, le long de la voie de chemin de fer qui va de Cuzco jusqu''à Matchu Picchu, l''on descend et d''où l''on marche, notre sac sur le dos. La <a name="1"></a>première journée de marche, commençant à 2200 m, est à peu près plate jusqu''à 2750m, et pas trop longue et l''on est arrivé près d''une petite maison où les accompagnateurs ont planté les tentes, et où l''on a eu un repas fort sympathique. Plus tard, avec la nuit, on s''est demandé comment on allait dormir et là, angoisse... il n''y avait pas assez de place dans les tentes. En fait, ils n''avaient pas pris assez de tentes. Certains sont allés dans la petite maison, partageant la salle commune avec la famille qui était là, d''autres dans les tentes et j''étais sur le balcon devant la maison, dehors, par cette nuit froide. J''ai sorti mon duvet, ma couverture de survie pour me protéger le corps du vent, mes sacs poubelle pour faire un espèce d''abris face au vent, suspendus sur la rambarde du balcon. Je n''avais même pas assez de place pour les jambes car un second trekker se trouvait aussi sur le balcon, dans l''alignement, ses jambes à lui dépassant au dessus de l''escalier. Dur pour une première nuit, mais j''ai finalement bien dormi. Le lendemain soir, avant de nous coucher, le cuisinier, qui était responsable des tentes (et donc était rendu responsable devant tout le monde de l''oubli par le guide, alors que je pense que c''était le guide qui était responsable de ne pas avoir vérifié) et était redescendu à pieds en chercher, était revenu de la même façon avec d''autres tentes. Il a fait l''aller-retour (+ du stop jusqu''à Cuzco) dans la journée !</p>\r\n<img src="http://mesvoyages.net/Images/Perou/Col4200.JPG" alt="Le col à 4200 m">\r\n<p>La <a name="2"></a>seconde journée fut la plus dure, avec une ascension jusqu''à 4200 m dans la matinée, en partant de 2750 m, soient 1450 m de dénivelé d''un trait. C''est dur, mais j''aime cela, et je suis arrivé au col en bon état, en même temps que la plupart. Il y a deux autres cols pendant le trek, mais ils ne sont pas trop durs. Certaines jeunes filles, qui faisaient pourtant partie d''un groupe d''Israéliens sortant de leur service militaire (un grand classique en voyage que ces jeunes qui veulent se changer les idées après trois ans de service militaire - bien sûr l''un d''entre eux n''arrêtait pas de manipuler une machette qu''il portait dans son dos à la Rambo, ce qui mettait mal à l''aise tout le monde vu qu''en plus il ne souriait jamais, mais bon, on fait avec), ont eu beaucoup de mal, parce qu''avec leur sac (plus volumineux qu''elles) sur le dos ce fut très dur. Mais leurs copains sont redescendus les aider, après avoir déposé leur propre sac au col !</p>\r\n<p>On a mangé au col, en plein vent et, comme d''habitude, la nourriture fut excellente. Au soir, on s''est retrouvé en pleine nature, et on a pu dormir dans des tentes. Rien d''autre de spécial à signaler ce second jour. Le <a name="3"></a>troisième jour, après le petit déjeuner, on est parti vers la suite de notre voyage, pour une journée qui m''a semblé longue. On a visité un temple solaire, bien orienté, on a mangé sur un flanc de montagne orienté vers le Nord, dans un coin qui s''appelait la vallée de la pluie... et il a plut. Puis on a marché, toujours sur ce flanc de montagne, dans un paysage très humide, amazonien, avec des lianes, des murs de mousse où l''on peut plonger le bras sans toucher le rocher et un sol glissant. On est passé dans des tunnels creusés par les Incas suivant une technique ancestrale, utilisant le gonflement du bois mouillé pour faire exploser la roche. Le soir on est arrivé près d''un bâtiment en dur où, tout en dormant dans les tentes, on a pu aller prendre une douche (bienvenue), et manger assis sur une chaise, sur une table.</p>', 'Publie'),
 (5, 3, '2015-07-03', '1', 'Test d''ajout d''article! Ça marche! :)', 'Contenu à ne pas effacer! :) La modification d''article marche enfin! ;) On est super heureux!', 'Brouillon'),
 (8, 5, '2015-07-08', '1', NULL, NULL, 'Brouillon'),
 (9, 5, '2015-07-08', '2', NULL, NULL, 'Brouillon'),
 (10, 2, '2015-07-15', '1', 'Introduction au Pérou', '<p>La quête du mythique Eldorado a attiré au Pérou une noria de conquistadors assoiffés de richesses et de pouvoir, à l’image d’Aguirre, lieutenant de Pizarro et héros du film éponyme de Werner Herzog. Près de cinq siècles plus tard, les légendes de trésors incas courent encore les calles du Pérou, mais ce n’est plus l’or qui fascine les aventuriers : c’est la pierre, dressée en montagnes altières, creusée en vallées sacrées, débitée en murs aux pavés parfaitement joints, témoins du savoir-faire des Incas.</p><p>C’est aussi l’incalculable richesse humaine, physique et culturelle du Pérou que vous viendrez explorer. Bien évidemment, il y a le Machu Picchu et Cuzco, l''ancienne capitale de l’Empire inca. Mais vous découvrirez les vestiges d’autres civilisations qui peuplèrent la région avant l’empire du Soleil : les Nazcas, les Chavíns, les Chimús ou les Moches (prononcez « Motché » !). Sans oublier les fêtes et cérémonies, mêlant en un syncrétisme constamment revisité croyances catholiques et anciens rites précolombiens.</p><p>Entre la côte sableuse et désertique, baignée par le froid courant de Humboldt, les sommets de la cordillera Blanca avec toutes ses possibilités de randonnées, les steppes arides de l’Altiplano peuplées de lamas et vigognes et l’« enfer vert » de la forêt amazonienne, il serait étonnant que vous ne trouviez pas, au Pérou, de quoi satisfaire votre soif d’exotisme. En route pour l’aventure !</p>', 'Brouillon'),
-(12, 6, '2015-07-16', '1', 'Bonjour ! :=)', '<p>Test à la con! :) tesfgv<br></p>', 'Publie');
+(12, 6, '2015-07-16', '1', 'Bonjour ! :=)', '<p>Test à la con! :) tesfgv<br></p>', 'Publie'),
+(14, 1, '2015-07-26', '2', 'test a la con pour le putin de drag and drop image!!!', '<p class="">test</p><div draggable="false" class="medium-insert-images"><figure>\r\n    <img src="http://dev.walkabout-voyages.fr/assets/images/carnets/mon-aventure-chez-les-quechuas/articles/15B3406D7A(3).jpg" alt="">\r\n        \r\n</figure></div><p class="">test<br></p>', 'Brouillon');
 
 -- --------------------------------------------------------
 
@@ -133,11 +128,11 @@ CREATE TABLE IF NOT EXISTS `wa__carnetdevoyage` (
 
 INSERT INTO `wa__carnetdevoyage` (`idCarnetDeVoyage`, `date`, `publie`, `titre`, `url`, `description`, `idUsers`, `idVoyage`, `idDestination`, `image_carnet`, `favoris`) VALUES
 (1, '2015-03-05', 'true', 'Mon aventure chez les Quéchuas', 'mon-aventure-chez-les-quechuas', 'J''ai passé une merveilleuse expérience durant ce séjour!', 12, 1, 1, 'carnets/mon-aventure-chez-les-quechuas/2013-chevrolet-camaro-vs-2013-ford-mustang-gt-0312.jpg', 'false'),
-(2, '2015-03-05', 'true', 'Moi chez les péruviens', 'moi-chez-les-peruviens', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 12, 2, 1, 'carnets/moi-chez-les-peruviens/yaxhacoucherdesoleil.jpg', 'true'),
+(2, '2015-03-05', 'true', 'Moi chez les péruviens', 'moi-chez-les-peruviens', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 15, 2, 1, 'carnets/moi-chez-les-peruviens/yaxhacoucherdesoleil.jpg', 'true'),
 (3, '2015-03-05', 'true', 'Mon expérience Péruvienne', 'mon-experience-peruvienne', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'cdv1.jpg', 'false'),
 (4, '2015-03-05', 'true', 'Mon aventure au Pérou', 'mon-aventure-au-perou', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'carnets/mon-aventure-au-perou/21.JPG', 'false'),
-(5, '2015-06-24', 'true', 'Immersion dans une culture oubliée', 'immersion-dans-une-culture-oubliee', 'Voyage à la découverte de la fascinante culture des Incas', 12, 2, 1, 'voyages/perou/banner-list.jpg', 'false'),
-(6, '2015-06-16', 'true', 'Périple chez les danseurs Nyau', 'periple-chez-les-danseurs-nyau', 'Mon voyage chez les danseurs Nyau de Mozambique', 12, 2, 1, 'voyages/mozambique/dest-img.jpg', 'false');
+(5, '2015-06-24', 'true', 'Immersion dans une culture oubliée', 'immersion-dans-une-culture-oubliee', 'Voyage à la découverte de la fascinante culture des Incas', 2, 2, 1, 'voyages/perou/banner-list.jpg', 'false'),
+(6, '2015-06-16', 'true', 'Périple chez les danseurs Nyau', 'periple-chez-les-danseurs-nyau', 'Mon voyage chez les danseurs Nyau de Mozambique', 14, 2, 1, 'voyages/mozambique/dest-img.jpg', 'false');
 
 -- --------------------------------------------------------
 
@@ -249,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `wa__etatreservation` (
   `etat` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`idEtatReservation`),
   KEY `idReservation` (`idReservation`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Contenu de la table `wa__etatreservation`
@@ -257,8 +252,7 @@ CREATE TABLE IF NOT EXISTS `wa__etatreservation` (
 
 INSERT INTO `wa__etatreservation` (`idEtatReservation`, `idReservation`, `etat`) VALUES
 (9, 21, 'En cours'),
-(10, 22, 'En cours'),
-(11, 23, 'En cours');
+(10, 22, 'En cours');
 
 -- --------------------------------------------------------
 
@@ -397,7 +391,7 @@ CREATE TABLE IF NOT EXISTS `wa__pays` (
   `densité` varchar(45) DEFAULT NULL,
   `climat` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idPays`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `wa__pays`
@@ -408,7 +402,8 @@ INSERT INTO `wa__pays` (`idPays`, `nom`, `code_pays`, `capitale`, `monnaie`, `Di
 (3, 'Pérou', 'PE', 'Lima', 'Nuevo sol', 'Ollanta Humala', 'Espagnol, Quechua et Aymara', '29 907 003 Habitants', '1 285 315 Km²', '22 Hab./km²', 'varié'),
 (4, 'Canada', 'CA', 'Lima', 'Nuevo sol', 'Ollanta Humala', 'Espagnol, Quechua et Aymara', '29 907 003 Habitants', '1 285 315 Km²', '22 Hab./km²', 'varié'),
 (5, 'Afghanistan', 'AF', 'dzdza', 'dazdaz', 'dzada', 'Anglais', '141551', '250000', '22', 'tropical'),
-(6, 'Arménie', 'AM', 'dkjbbkbk', 'gcjvjhvjh', 'hjvjhvjvj', 'kbhjhvhj', '54165156', '165165165', '651165', 'hvhg');
+(6, 'Arménie', 'AM', 'dkjbbkbk', 'gcjvjhvjh', 'hjvjhvjvj', 'kbhjhvhj', '54165156', '165165165', '651165', 'hvhg'),
+(7, 'Singapour', 'SG', 'vh', 'vhjvjhv', 'vjvhj', 'bkjbjk', '6561', '165165', '61651', 'jbjhjhbhj');
 
 -- --------------------------------------------------------
 
@@ -441,7 +436,7 @@ CREATE TABLE IF NOT EXISTS `wa__reservation` (
   PRIMARY KEY (`idReservation`),
   KEY `idVoyage` (`idVoyage`),
   KEY `idUsers` (`idUsers`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Contenu de la table `wa__reservation`
@@ -449,8 +444,7 @@ CREATE TABLE IF NOT EXISTS `wa__reservation` (
 
 INSERT INTO `wa__reservation` (`idReservation`, `idVoyage`, `idUsers`, `nb_personnes`, `date`) VALUES
 (21, 2, 12, 5, '2015-07-11'),
-(22, 2, 12, 1, '2015-07-15'),
-(23, 2, 12, 1, '2015-07-17');
+(22, 1, 12, 1, '2015-07-15');
 
 -- --------------------------------------------------------
 
@@ -473,9 +467,8 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('349eb607953ca2239dd7d508d80ed27f', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1437306807, ''),
-('9124f83426c275b3b70873d1dca3579d', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36', 1437312160, 'a:1:{s:5:"admin";a:1:{i:0;O:8:"stdClass":5:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}'),
-('b314cf264a19c6bc643b9db6f76f1f33', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36', 1437313337, 'a:1:{s:9:"user_data";s:0:"";}');
+('9d89b6120d0356542d43ae5a26041ab7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438098023, 'a:2:{s:9:"user_data";s:0:"";s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:29:"users/12/Voyage_etranger1.jpg";s:5:"cover";s:28:"users/12/cover/dest-img2.jpg";}}}'),
+('3eaa6ec88072cf749ddce338f7ad5536', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438097171, 'a:2:{s:9:"user_data";s:0:"";s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:29:"users/12/Voyage_etranger1.jpg";s:5:"cover";s:67:"users/12/cover/2013-chevrolet-camaro-vs-2013-ford-mustang-gt-03.jpg";}}}');
 
 -- --------------------------------------------------------
 
@@ -502,6 +495,7 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
   `num_activation` varchar(45) NOT NULL,
   `active` varchar(5) NOT NULL,
   `photo` varchar(500) DEFAULT NULL,
+  `cover` varchar(500) NOT NULL,
   PRIMARY KEY (`idUsers`),
   KEY `idLevel` (`idLevel`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
@@ -510,14 +504,14 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
 -- Contenu de la table `wa__users`
 --
 
-INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `slug`, `adresse1`, `adresse2`, `CP`, `ville`, `pays`, `tel_fixe`, `tel_port`, `date_naissance`, `num_activation`, `active`, `photo`) VALUES
-(1, 1, 'aurelien.capi@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '1-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321640744', '0623974082', '1992-10-28', '7851659894615189', 'false', 'profile2.png'),
-(2, 1, 'celine@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'Vano', 'Céline', '2-vano-celine', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321643775', '0623974082', '1992-10-28', '549846519181915', 'false', 'profile.png'),
-(12, 1, 'capi.aurelien@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '12-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '', '', '1992-10-28', '3oKvnpMuhP4lNF2Zka', 'true', 'users/12/Voyage_etranger1.jpg'),
-(13, 1, 'julien.vdm@gmail.com', 'f938f74c4081a8994371697781acc42e163d893149dc255cec3bf1c4ce3ab7ab', 'Vandermeersch', 'Julien', '13-vandermeersch-julien', '87 rue des Orions', '87 rue des Orions', '59200', 'Tourcoing', 'France', '0301020304', '', '1990-03-10', 'eROhZ3kZpa5YhPCY7X', 'false', 'unsigned_user.jpg'),
-(14, 1, 'capi.aurelien@yopmail.fr', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'aurélien', '14-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'fzfqfqzfqfzf', '', '', '1992-10-28', '0xV9E6dv9XR1lcUfCO', 'false', 'unsigned_user.jpg'),
-(15, 1, 'aurelien.capi@yopmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'capi', 'Aurélien', '15-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'FRANCE', '', '', '1992-10-28', 'THag5VT6fiojoZiemo', 'false', 'unsigned_user.jpg'),
-(16, 1, 'nightrei@hotmail.fr', 'c775e7b757ede630cd0aa1113bd102661ab38829ca52a6422ab782862f268646', 'valet', 'kevin', '16-valet-kevin', 'khfeiozhoifeh', 'kjdzkjs', '59000', 'oziapoepza', 'reservoir', '', '', '0000-00-00', 'YGhTWxlY6f7tY8MH32', 'false', 'unsigned_user.jpg');
+INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `slug`, `adresse1`, `adresse2`, `CP`, `ville`, `pays`, `tel_fixe`, `tel_port`, `date_naissance`, `num_activation`, `active`, `photo`, `cover`) VALUES
+(1, 1, 'aurelien.capi@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '1-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321640744', '0623974082', '1992-10-28', '7851659894615189', 'false', 'profile2.png', ''),
+(2, 1, 'celine@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'Vano', 'Céline', '2-vano-celine', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321643775', '0623974082', '1992-10-28', '549846519181915', 'false', 'profile.png', ''),
+(12, 1, 'capi.aurelien@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '12-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '', '', '1992-10-28', '3oKvnpMuhP4lNF2Zka', 'true', 'users/12/Voyage_etranger1.jpg', 'users/12/cover/dest-img2.jpg'),
+(13, 1, 'julien.vdm@gmail.com', 'f938f74c4081a8994371697781acc42e163d893149dc255cec3bf1c4ce3ab7ab', 'Vandermeersch', 'Julien', '13-vandermeersch-julien', '87 rue des Orions', '87 rue des Orions', '59200', 'Tourcoing', 'France', '0301020304', '', '1990-03-10', 'eROhZ3kZpa5YhPCY7X', 'false', 'unsigned_user.jpg', ''),
+(14, 1, 'capi.aurelien@yopmail.fr', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'aurélien', '14-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'fzfqfqzfqfzf', '', '', '1992-10-28', '0xV9E6dv9XR1lcUfCO', 'false', 'unsigned_user.jpg', ''),
+(15, 1, 'aurelien.capi@yopmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'capi', 'Aurélien', '15-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'FRANCE', '', '', '1992-10-28', 'THag5VT6fiojoZiemo', 'false', 'unsigned_user.jpg', ''),
+(16, 1, 'nightrei@hotmail.fr', 'c775e7b757ede630cd0aa1113bd102661ab38829ca52a6422ab782862f268646', 'valet', 'kevin', '16-valet-kevin', 'khfeiozhoifeh', 'kjdzkjs', '59000', 'oziapoepza', 'reservoir', '', '', '0000-00-00', 'YGhTWxlY6f7tY8MH32', 'false', 'unsigned_user.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -533,6 +527,7 @@ CREATE TABLE IF NOT EXISTS `wa__voyage` (
   `date_retour` date DEFAULT NULL,
   `prix` float NOT NULL,
   `nb_places` int(3) NOT NULL,
+  `active` varchar(10) NOT NULL DEFAULT 'false',
   PRIMARY KEY (`idVoyage`),
   KEY `idDestination` (`idDestination`,`idInfos`),
   KEY `idInfos` (`idInfos`)
@@ -542,9 +537,9 @@ CREATE TABLE IF NOT EXISTS `wa__voyage` (
 -- Contenu de la table `wa__voyage`
 --
 
-INSERT INTO `wa__voyage` (`idVoyage`, `idDestination`, `idInfos`, `date_depart`, `date_retour`, `prix`, `nb_places`) VALUES
-(1, 1, 2, '2016-07-13', '2016-11-11', 5200, 20),
-(2, 1, 2, '2015-07-16', '2015-06-02', 4700, 10);
+INSERT INTO `wa__voyage` (`idVoyage`, `idDestination`, `idInfos`, `date_depart`, `date_retour`, `prix`, `nb_places`, `active`) VALUES
+(1, 1, 2, '2016-07-13', '2016-11-11', 5200, 20, 'false'),
+(2, 1, 2, '2015-07-16', '2015-06-02', 4700, 10, 'false');
 
 --
 -- Contraintes pour les tables exportées
@@ -644,7 +639,3 @@ ALTER TABLE `wa__users`
 ALTER TABLE `wa__voyage`
   ADD CONSTRAINT `id_voyage_destination` FOREIGN KEY (`idDestination`) REFERENCES `wa__destination` (`idDestination`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `id_voyage_infos` FOREIGN KEY (`idInfos`) REFERENCES `wa__infosdestinations` (`idInfosDestinations`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

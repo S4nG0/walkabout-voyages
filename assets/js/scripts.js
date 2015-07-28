@@ -667,6 +667,15 @@ $(document).ready(function () {
             }
         }
     });
+    
+    $('.cover-change').on('click', function(e){
+        e.preventDefault();
+        $('.input-upload-cover').click();
+    });
+
+    $('.input-upload-cover').on('change',function(){
+        $('.submit-user-cover').click();
+    });
 
     $('.file-upload').on('click', function(e){
         e.preventDefault();

@@ -5,7 +5,7 @@ Générales :
   ☐ Localiser les fichiers (pour la présentation au cas où) @low
   ☐ Faire l'envoi d'email pour l'oubli de mot de passe @low
     Idées pour le design : Le haut de page fait assez vide du coup vu que l'utilisateur a pas d'image de fond, est-ce qu'on pourrait pas :
-      ✔ 1 : ajouter un champ image de fond personnalisable (telle une couverture à la Facebook)? @critical @done (15-07-27 12:52)
+      ☐ 1 : ajouter un champ image de fond personnalisable (telle une couverture à la Facebook)? @critical
     Développer soit :
       ☐ Pagination : quand on a trop de carnets affichés
       ☐ Loading en AJAX de carnets (je préfère ça, mais apparemment le prof veut pas???)
