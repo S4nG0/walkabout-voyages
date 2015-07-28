@@ -33,6 +33,7 @@ class Voyage extends CI_Controller{
     }
 
     public function supprimer($idVoyage=0){
+        connecte_admin($this->session->userdata('admin'));
         if($idVoyage==0)
             redirect('walkadmin/dashboard');
         $this->voyages->deleteVoyage($idVoyage);
