@@ -26,6 +26,8 @@ class Moncompte extends CI_Controller {
             redirect('/connexion');
         }else{
             $data['user'] = $this->session->userdata('user')[0];
+            $data['uploader'] = $this->session->flashdata('upload');
+            $data['utilisateur_connecte'] = $this->session->userdata('user')[0];
             $data['newsletter'] = $this->newsletters->constructeur($data['user']->mail);
             $data['reservations'] = $this->reservations->constructeur($data['user']->idUsers);
             if(sizeof($data['reservations']) > 0){

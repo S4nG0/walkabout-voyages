@@ -90,7 +90,7 @@ $page = "editing-carnet";
                                 <h3>Image de couverture</h3>
                             </div>
                             <figure class="effect">
-                                <img src="<?php echo img_url($carnet[0]->image_carnet);  ?>" alt="Image à la une" class="img-responsive travel-log-thumbnail">
+                                <img src="<?php if(!$carnet[0]->image_carnet){echo img_url('default.png');}else{echo img_url($carnet[0]->image_carnet);} ?>" alt="Image à la une" class="img-responsive travel-log-thumbnail">
                                 <figcaption>
                                     <div class="caption-content">
                                         <a class="file-upload" href="#">

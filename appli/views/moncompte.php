@@ -136,15 +136,15 @@ $page = "moncompte";
                         </div>
                     </div>
                     <div class="infos-block" id="infos-content">
-                        <?php echo form_open('moncompte/majuser') ?>
+                        
                         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <h3>Votre couverture</h3>
                             <div class="cover-picture">
                                 <figure class="effect">
-                                    <img src="<?php echo img_url('default.png');  ?>" alt="Photo de couverture" class="img-responsive">
+                                    <img src="<?php if(!$user->cover){echo img_url('default.png');}else{echo img_url($user->cover);}  ?>" alt="Photo de couverture" class="img-responsive">
                                     <figcaption>
                                         <div class="caption-content">
-                                            <a class="file-upload" href="#">
+                                            <a class="cover-change" href="#">
                                                 <i class="fa fa-picture-o"></i>
                                                 <p>Changer la photo</p>
                                             </a>
@@ -152,8 +152,17 @@ $page = "moncompte";
                                     </figcaption>
                                 </figure>
                             </div>
+                            <?php 
+                            if($utilisateur_connecte !=  false){
+                            if($user->idUsers == $utilisateur_connecte->idUsers){ ?>
+                            <?php echo form_open_multipart('/upload_file/usercover'); ?>
+                                <input type="file" name="usercover" class="input-upload-cover hidden"/>
+                                <input type="submit" class="submit-user-cover hidden"/>
+                            <?php echo  form_close(); ?>
+                                <span><?php if(gettype($uploader) != "boolean")echo '<script> alert("'.strip_tags (html_entity_decode($upload)).'"); </script>';?></span>
+                            <?php }} ?>
                         </div>
-
+                        <?php echo form_open('moncompte/majuser') ?>
                         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <h3>Changer vos informations de connexion</h3>
                             <div class="form-group">
