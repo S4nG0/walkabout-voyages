@@ -5505,6 +5505,7 @@ body.espace-voyageur .content.edit-travel-log .travel-log-header h2 {
 }
 body.espace-voyageur .content.edit-travel-log .travel-log-header .button {
   display: inline-block;
+  width: 150px;
   margin-right: 0;
   margin-left: auto;
   vertical-align: middle;

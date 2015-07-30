@@ -2,7 +2,8 @@ Accueil :
   ☐ Changer tous nos voyages en toutes nos destinations @low @Julien
 Générales :
 
-  ☐ Localiser les fichiers (pour la présentation au cas où) @low
+  ☐ Image par défaut : gérer le style pour le cas où aucune image ne serait enregistrée
+  ✔ Localiser les fichiers (pour la présentation au cas où) @low @done (15-07-30 20:52)
   ☐ Faire l'envoi d'email pour l'oubli de mot de passe @low
     Idées pour le design : Le haut de page fait assez vide du coup vu que l'utilisateur a pas d'image de fond, est-ce qu'on pourrait pas :
       ☐ 1 : ajouter un champ image de fond personnalisable (telle une couverture à la Facebook)? @critical
