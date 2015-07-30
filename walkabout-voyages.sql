@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 28 Juillet 2015 à 17:46
+-- Généré le :  Ven 31 Juillet 2015 à 00:28
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `wa__articles` (
   `etat` varchar(50) NOT NULL DEFAULT 'Brouillon',
   PRIMARY KEY (`idArticles`),
   KEY `idCarnet` (`idCarnet`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Contenu de la table `wa__articles`
@@ -94,8 +94,7 @@ INSERT INTO `wa__articles` (`idArticles`, `idCarnet`, `date`, `ordre`, `titre`, 
 (8, 5, '2015-07-08', '1', NULL, NULL, 'Brouillon'),
 (9, 5, '2015-07-08', '2', NULL, NULL, 'Brouillon'),
 (10, 2, '2015-07-15', '1', 'Introduction au Pérou', '<p>La quête du mythique Eldorado a attiré au Pérou une noria de conquistadors assoiffés de richesses et de pouvoir, à l’image d’Aguirre, lieutenant de Pizarro et héros du film éponyme de Werner Herzog. Près de cinq siècles plus tard, les légendes de trésors incas courent encore les calles du Pérou, mais ce n’est plus l’or qui fascine les aventuriers : c’est la pierre, dressée en montagnes altières, creusée en vallées sacrées, débitée en murs aux pavés parfaitement joints, témoins du savoir-faire des Incas.</p><p>C’est aussi l’incalculable richesse humaine, physique et culturelle du Pérou que vous viendrez explorer. Bien évidemment, il y a le Machu Picchu et Cuzco, l''ancienne capitale de l’Empire inca. Mais vous découvrirez les vestiges d’autres civilisations qui peuplèrent la région avant l’empire du Soleil : les Nazcas, les Chavíns, les Chimús ou les Moches (prononcez « Motché » !). Sans oublier les fêtes et cérémonies, mêlant en un syncrétisme constamment revisité croyances catholiques et anciens rites précolombiens.</p><p>Entre la côte sableuse et désertique, baignée par le froid courant de Humboldt, les sommets de la cordillera Blanca avec toutes ses possibilités de randonnées, les steppes arides de l’Altiplano peuplées de lamas et vigognes et l’« enfer vert » de la forêt amazonienne, il serait étonnant que vous ne trouviez pas, au Pérou, de quoi satisfaire votre soif d’exotisme. En route pour l’aventure !</p>', 'Brouillon'),
-(12, 6, '2015-07-16', '1', 'Bonjour ! :=)', '<p>Test à la con! :) tesfgv<br></p>', 'Publie'),
-(14, 1, '2015-07-26', '2', 'test a la con pour le putin de drag and drop image!!!', '<p class="">test</p><div draggable="false" class="medium-insert-images"><figure>\r\n    <img src="http://dev.walkabout-voyages.fr/assets/images/carnets/mon-aventure-chez-les-quechuas/articles/15B3406D7A(3).jpg" alt="">\r\n        \r\n</figure></div><p class="">test<br></p>', 'Brouillon');
+(12, 6, '2015-07-16', '1', 'Bonjour ! :=)', '<p>Test à la con! :) tesfgv<br></p>', 'Publie');
 
 -- --------------------------------------------------------
 
@@ -120,19 +119,20 @@ CREATE TABLE IF NOT EXISTS `wa__carnetdevoyage` (
   KEY `idUsers` (`idUsers`,`idVoyage`),
   KEY `idVoyage` (`idVoyage`),
   KEY `idDestination` (`idDestination`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `wa__carnetdevoyage`
 --
 
 INSERT INTO `wa__carnetdevoyage` (`idCarnetDeVoyage`, `date`, `publie`, `titre`, `url`, `description`, `idUsers`, `idVoyage`, `idDestination`, `image_carnet`, `favoris`) VALUES
-(1, '2015-03-05', 'true', 'Mon aventure chez les Quéchuas', 'mon-aventure-chez-les-quechuas', 'J''ai passé une merveilleuse expérience durant ce séjour!', 12, 1, 1, 'carnets/mon-aventure-chez-les-quechuas/2013-chevrolet-camaro-vs-2013-ford-mustang-gt-0312.jpg', 'false'),
+(1, '2015-03-05', 'true', 'Mon aventure chez les Quéchuas', 'mon-aventure-chez-les-quechuas', 'J''ai passé une merveilleuse expérience durant ce séjour!', 12, 1, 1, 'carnets/mon-aventure-chez-les-quechuas/15B3406D7A2.jpg', 'false'),
 (2, '2015-03-05', 'true', 'Moi chez les péruviens', 'moi-chez-les-peruviens', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 15, 2, 1, 'carnets/moi-chez-les-peruviens/yaxhacoucherdesoleil.jpg', 'true'),
 (3, '2015-03-05', 'true', 'Mon expérience Péruvienne', 'mon-experience-peruvienne', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'cdv1.jpg', 'false'),
 (4, '2015-03-05', 'true', 'Mon aventure au Pérou', 'mon-aventure-au-perou', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'carnets/mon-aventure-au-perou/21.JPG', 'false'),
 (5, '2015-06-24', 'true', 'Immersion dans une culture oubliée', 'immersion-dans-une-culture-oubliee', 'Voyage à la découverte de la fascinante culture des Incas', 2, 2, 1, 'voyages/perou/banner-list.jpg', 'false'),
-(6, '2015-06-16', 'true', 'Périple chez les danseurs Nyau', 'periple-chez-les-danseurs-nyau', 'Mon voyage chez les danseurs Nyau de Mozambique', 14, 2, 1, 'voyages/mozambique/dest-img.jpg', 'false');
+(6, '2015-06-16', 'true', 'Périple chez les danseurs Nyau', 'periple-chez-les-danseurs-nyau', 'Mon voyage chez les danseurs Nyau de Mozambique', 14, 2, 1, 'voyages/mozambique/dest-img.jpg', 'false'),
+(7, '2015-07-30', 'false', 'Test de création de carnet', 'test-de-creation-de-carnet', '', 12, 2, 1, '', 'false');
 
 -- --------------------------------------------------------
 
@@ -230,7 +230,35 @@ CREATE TABLE IF NOT EXISTS `wa__destination` (
 
 INSERT INTO `wa__destination` (`idDestination`, `idPays`, `titre`, `url`, `nom`, `description`, `ville`, `coordonnees`, `photos`, `banner`) VALUES
 (1, 3, 'À la découverte des Quéchuas du Pérou', 'a-la-decouverte-des-quechuas-du-perou', 'Voyage à Lima', 'Dans les montagnes, les Quechuas élèvent traditionnellement des lamas et des alpagas pour leur laine et leur viande.\n                                Ces animaux vivent en haute altitude ce qui oblige les hommes à s’établir sur des terres arides où rien ne pousse ou presque.\n                                Pourtant, les Quechuas sont également agriculteurs. Ils réussissent l’exploit de cultiver un véritable trésor : la pomme de terre.\n                                Plus qu’un aliment, la pomme de terre est l’emblème de la culture andine, elle symbolise la fertilité. Certaines sont même sacrées.\n                                Elles sont offertes à la Pachamama, « la terre mère », pour la remercier de ses bienfaits et implorer sa protection\n                                pour la récolte à venir.\n                                <br /><br />\n                                Au quotidien, les Quechuas vénèrent la nature sous toutes ses formes. Pour eux, les montagnes sont des Dieux et\n                                ils n’hésitent pas à effectuer un long voyage et à gravir des sommets vertigineux pour recueillir la glace sacrée\n                                qui bénira leur troupeau et leur terre.\n                                <br /><br />\n                                Faites l’expérience de leur culture en vous y immergeant  !', 'Lima', '-12.04,-77.04', 'voyages/perou/01.jpg;voyages/perou/04.jpg;voyages/perou/03.jpg;voyages/perou/02.jpg;voyages/perou/05.jpg;', 'voyages/perou/dest-img.jpg'),
-(2, 3, 'Les incas, une culture oubliée', 'les-incas-une-culture-oubliee', 'Voyage chez les incas', 'La civilisation inca est une civilisation précolombienne du groupe andin. Elle prend naissance au début du XIIIe siècle dans le bassin de Cuzco dans l''actuel Pérou et se développe ensuite le long de l''océan Pacifique et de la cordillère des Andes, couvrant la partie occidentale de l''Amérique du Sud. À son apogée, elle s''étend de la Colombie jusqu''à l''Argentine et au Chili, par-delà l''Équateur, le Pérou et la Bolivie.\r\n\r\nElle est à l''origine de l''empire inca, l''un des trois grands empires de l''Amérique précolombienne. Cet empire avait pour chef suprême le Sapa Inca. L''empire inca fut conquis par les conquistadors espagnols sous les ordres de Francisco Pizarro à partir de 1532.\r\n\r\nL''une des grandes singularités de cet empire fut d''avoir intégré, dans une organisation étatique originale, la multiplicité socioculturelle des populations hétérogènes qui le composaient.', 'Cuzco', '-13.31, -71.58  ', 'voyages/incas/01.jpg;voyages/incas/02.jpg;voyages/incas/03.jpg;', 'voyages/incas/banner-list.jpg');
+(2, 3, 'Les incas, une culture oubliée', 'les-incas-une-culture-oubliee', 'Voyage chez les incas', 'La civilisation inca est une civilisation précolombienne du groupe andin. Elle prend naissance au début du XIIIe siècle dans le bassin de Cuzco dans l''actuel Pérou et se développe ensuite le long de l''océan Pacifique et de la cordillère des Andes, couvrant la partie occidentale de l''Amérique du Sud. À son apogée, elle s''étend de la Colombie jusqu''à l''Argentine et au Chili, par-delà l''Équateur, le Pérou et la Bolivie.\r\n\r\nElle est à l''origine de l''empire inca, l''un des trois grands empires de l''Amérique précolombienne. Cet empire avait pour chef suprême le Sapa Inca. L''empire inca fut conquis par les conquistadors espagnols sous les ordres de Francisco Pizarro à partir de 1532.\r\n\r\nL''une des grandes singularités de cet empire fut d''avoir intégré, dans une organisation étatique originale, la multiplicité socioculturelle des populations hétérogènes qui le composaient.', 'Cuzco', '-13.53, -71.93  ', 'voyages/incas/01.jpg;voyages/incas/02.jpg;voyages/incas/03.jpg;', 'voyages/incas/banner-list.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `wa__details_prix`
+--
+
+CREATE TABLE IF NOT EXISTS `wa__details_prix` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idDestination` int(11) NOT NULL,
+  `plusoumoins` varchar(5) NOT NULL,
+  `valeur` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idVoyage` (`idDestination`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Contenu de la table `wa__details_prix`
+--
+
+INSERT INTO `wa__details_prix` (`id`, `idDestination`, `plusoumoins`, `valeur`) VALUES
+(1, 1, 'plus', 'Vol international &amp; Taxes d''aéroport'),
+(2, 1, 'plus', 'Assistance &amp; Transferts à l''aéroport de destination'),
+(3, 1, 'plus', 'Encadrement / Transport / Repas / Hébergement (chambres partagées)'),
+(4, 1, 'plus', 'Visites &amp; Activités au programme'),
+(5, 1, 'moins', 'Assurances assistance &amp; annulation'),
+(6, 1, 'moins', 'Supplément chambre une personne : 100 €'),
+(7, 1, 'moins', 'Extras / Boissons / Dépenses personnelles');
 
 -- --------------------------------------------------------
 
@@ -244,7 +272,7 @@ CREATE TABLE IF NOT EXISTS `wa__etatreservation` (
   `etat` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`idEtatReservation`),
   KEY `idReservation` (`idReservation`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Contenu de la table `wa__etatreservation`
@@ -252,7 +280,9 @@ CREATE TABLE IF NOT EXISTS `wa__etatreservation` (
 
 INSERT INTO `wa__etatreservation` (`idEtatReservation`, `idReservation`, `etat`) VALUES
 (9, 21, 'En cours'),
-(10, 22, 'En cours');
+(10, 22, 'En cours'),
+(11, 23, 'En cours'),
+(12, 24, 'En cours');
 
 -- --------------------------------------------------------
 
@@ -263,7 +293,8 @@ INSERT INTO `wa__etatreservation` (`idEtatReservation`, `idReservation`, `etat`)
 CREATE TABLE IF NOT EXISTS `wa__infoscomplementaire` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `idDestination` int(11) NOT NULL,
-  `information` mediumtext NOT NULL,
+  `titre` varchar(250) NOT NULL,
+  `value` mediumtext NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idVoyage` (`idDestination`),
   KEY `idDestination` (`idDestination`)
@@ -273,11 +304,11 @@ CREATE TABLE IF NOT EXISTS `wa__infoscomplementaire` (
 -- Contenu de la table `wa__infoscomplementaire`
 --
 
-INSERT INTO `wa__infoscomplementaire` (`id`, `idDestination`, `information`) VALUES
-(1, 1, '<h3>Accompagnement</h3>\r\n                                        <p>\r\n                                            1 guide bilingue français/espagnol sur l’ensemble du séjour + guides locaux selon les spots\r\n                                        </p>'),
-(2, 1, '<h3>Déplacements</h3><p>\r\n                                            Transport privé ou bus collectif (selon les régions traversées) + balades à pied, en pirogue, à vélo\r\n                                        </p>'),
-(3, 1, '                                        <h3>Hébergement</h3>\r\n                                        <p>\r\n                                            5 nuits à l’hôtel / 5 nuits chez l’habitant / 1 nuit en vol\r\n                                        </p>'),
-(4, 1, '                                        <h3>Repas &amp; Boissons</h3>\r\n                                        <p>\r\n                                            Tous les repas sont compris / l’eau minérale est servie pendant les repas\r\n                                        </p>');
+INSERT INTO `wa__infoscomplementaire` (`id`, `idDestination`, `titre`, `value`) VALUES
+(1, 1, 'Accompagnement', '                                        1 guide bilingue français/espagnol sur l’ensemble du séjour + guides locaux selon les spots'),
+(2, 1, 'Déplacements', 'Transport privé ou bus collectif (selon les régions traversées) + balades à pied, en pirogue, à vélo'),
+(3, 1, 'Hébergements', '5 nuits à l’hôtel / 5 nuits chez l’habitant / 1 nuit en vol'),
+(4, 1, 'Repas & boissons', 'Tous les repas sont compris / l’eau minérale est servie pendant les repas');
 
 -- --------------------------------------------------------
 
@@ -300,11 +331,11 @@ CREATE TABLE IF NOT EXISTS `wa__infosdestinations` (
 --
 
 INSERT INTO `wa__infosdestinations` (`idInfosDestinations`, `idDestination`, `titre`, `valeur`, `image`) VALUES
-(1, 1, 'Habite', 'Chez l''habitant', 'info-pics/pension.png'),
-(2, 1, 'Animaux', 'acceptés', 'info-pics/animals.png'),
-(3, 1, 'météo', 'varié', 'info-pics/climat.png'),
-(4, 1, 'monnaie', 'nuevo sol', 'info-pics/currency.png'),
-(6, 1, 'passport', 'obligatoire', 'info-pics/passport.png');
+(1, 1, 'Habite', 'Chez l''habitant', 'info-pics/pension_white.png'),
+(2, 1, 'Animaux', 'acceptés', 'info-pics/animals_white.png'),
+(3, 1, 'météo', 'varié', 'info-pics/climat_white.png'),
+(4, 1, 'monnaie', 'nuevo sol', 'info-pics/currency_white.png'),
+(6, 1, 'passport', 'obligatoire', 'info-pics/passport_white.png');
 
 -- --------------------------------------------------------
 
@@ -436,7 +467,7 @@ CREATE TABLE IF NOT EXISTS `wa__reservation` (
   PRIMARY KEY (`idReservation`),
   KEY `idVoyage` (`idVoyage`),
   KEY `idUsers` (`idUsers`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Contenu de la table `wa__reservation`
@@ -444,7 +475,9 @@ CREATE TABLE IF NOT EXISTS `wa__reservation` (
 
 INSERT INTO `wa__reservation` (`idReservation`, `idVoyage`, `idUsers`, `nb_personnes`, `date`) VALUES
 (21, 2, 12, 5, '2015-07-11'),
-(22, 1, 12, 1, '2015-07-15');
+(22, 1, 12, 1, '2015-07-15'),
+(23, 1, 12, 1, '2015-07-30'),
+(24, 1, 12, 1, '2015-07-30');
 
 -- --------------------------------------------------------
 
@@ -467,8 +500,7 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('9d89b6120d0356542d43ae5a26041ab7', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438098023, 'a:2:{s:9:"user_data";s:0:"";s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:29:"users/12/Voyage_etranger1.jpg";s:5:"cover";s:28:"users/12/cover/dest-img2.jpg";}}}'),
-('3eaa6ec88072cf749ddce338f7ad5536', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438097171, 'a:2:{s:9:"user_data";s:0:"";s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:29:"users/12/Voyage_etranger1.jpg";s:5:"cover";s:67:"users/12/cover/2013-chevrolet-camaro-vs-2013-ford-mustang-gt-03.jpg";}}}');
+('affd74055a5b13c1e9267b7b2fe65f92', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438294598, 'a:3:{s:9:"user_data";s:0:"";s:11:"destination";s:1:"1";s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:31:"aussi rebatisé avenue des cons";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:30:"users/12/Voyage_etranger11.jpg";s:5:"cover";s:31:"users/12/cover/dest-img2111.jpg";}}}');
 
 -- --------------------------------------------------------
 
@@ -498,7 +530,7 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
   `cover` varchar(500) NOT NULL,
   PRIMARY KEY (`idUsers`),
   KEY `idLevel` (`idLevel`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Contenu de la table `wa__users`
@@ -507,11 +539,10 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
 INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `slug`, `adresse1`, `adresse2`, `CP`, `ville`, `pays`, `tel_fixe`, `tel_port`, `date_naissance`, `num_activation`, `active`, `photo`, `cover`) VALUES
 (1, 1, 'aurelien.capi@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '1-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321640744', '0623974082', '1992-10-28', '7851659894615189', 'false', 'profile2.png', ''),
 (2, 1, 'celine@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'Vano', 'Céline', '2-vano-celine', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '0321643775', '0623974082', '1992-10-28', '549846519181915', 'false', 'profile.png', ''),
-(12, 1, 'capi.aurelien@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '12-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '', '', '1992-10-28', '3oKvnpMuhP4lNF2Zka', 'true', 'users/12/Voyage_etranger1.jpg', 'users/12/cover/dest-img2.jpg'),
+(12, 1, 'capi.aurelien@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '12-capi-aurelien', '654 rue du plouy', 'aussi rebatisé avenue des cons', '62232', 'HINGES', 'FRANCE', '', '', '1992-10-28', '3oKvnpMuhP4lNF2Zka', 'true', 'users/12/Voyage_etranger11.jpg', 'users/12/cover/dest-img2111.jpg'),
 (13, 1, 'julien.vdm@gmail.com', 'f938f74c4081a8994371697781acc42e163d893149dc255cec3bf1c4ce3ab7ab', 'Vandermeersch', 'Julien', '13-vandermeersch-julien', '87 rue des Orions', '87 rue des Orions', '59200', 'Tourcoing', 'France', '0301020304', '', '1990-03-10', 'eROhZ3kZpa5YhPCY7X', 'false', 'unsigned_user.jpg', ''),
 (14, 1, 'capi.aurelien@yopmail.fr', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'aurélien', '14-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'fzfqfqzfqfzf', '', '', '1992-10-28', '0xV9E6dv9XR1lcUfCO', 'false', 'unsigned_user.jpg', ''),
-(15, 1, 'aurelien.capi@yopmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'capi', 'Aurélien', '15-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'FRANCE', '', '', '1992-10-28', 'THag5VT6fiojoZiemo', 'false', 'unsigned_user.jpg', ''),
-(16, 1, 'nightrei@hotmail.fr', 'c775e7b757ede630cd0aa1113bd102661ab38829ca52a6422ab782862f268646', 'valet', 'kevin', '16-valet-kevin', 'khfeiozhoifeh', 'kjdzkjs', '59000', 'oziapoepza', 'reservoir', '', '', '0000-00-00', 'YGhTWxlY6f7tY8MH32', 'false', 'unsigned_user.jpg', '');
+(15, 1, 'aurelien.capi@yopmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'capi', 'Aurélien', '15-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'FRANCE', '', '', '1992-10-28', 'THag5VT6fiojoZiemo', 'false', 'unsigned_user.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -583,6 +614,12 @@ ALTER TABLE `wa__contact`
 --
 ALTER TABLE `wa__destination`
   ADD CONSTRAINT `id_destination_pays` FOREIGN KEY (`idPays`) REFERENCES `wa__pays` (`idPays`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `wa__details_prix`
+--
+ALTER TABLE `wa__details_prix`
+  ADD CONSTRAINT `wa__details_prix_ibfk_1` FOREIGN KEY (`idDestination`) REFERENCES `wa__destination` (`idDestination`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `wa__etatreservation`
