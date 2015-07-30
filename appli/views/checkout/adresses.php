@@ -165,7 +165,7 @@ $step = 'informations';
         </div>
         <div class="row">
             <div class="buttons-block">
-                <a class="button prev"  onclick="history.go(-1);">Retour</a>
+                <a class="button prev"  href="<?php echo base_url()."checkout/identification"; ?>">Retour</a>
             </div>
         </div>
     </div>

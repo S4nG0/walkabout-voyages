@@ -20,7 +20,7 @@ class Connexion extends CI_Controller {
 	public function index()
 	{
             $data = array();
-        $data['title'] = "Connexion";
+            $data['title'] = "Connexion";
             $data['result'] = null;
             
             if ($this->input->post() != false) {
@@ -37,7 +37,7 @@ class Connexion extends CI_Controller {
                             //On est connecté
                             $this->session->set_userdata('user',$user);
                             if($this->session->userdata('voyage') != false){
-                                redirect('/checkout/identification');
+                                redirect('/checkout/informations');
                             }
                             redirect('/moncompte');
                             }else{
