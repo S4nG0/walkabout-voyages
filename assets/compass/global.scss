@@ -1116,6 +1116,44 @@ body.single-carnet {
     }
 }
 
+//Spinner
+#spinner{
+  display : none;
+  position : fixed;
+  z-index : 10000;
+  top : 0;
+  left: 0;
+  bottom : 0;
+  right: 0;
+  background : rgba(0, 0, 0, 0.9);
+  margin: 0 auto;
+}
+
+#spinner img{
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 60px;
+    margin: 0 auto;
+    animation : infinite-spinning 1.8s infinite;
+}
+
+@keyframes infinite-spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(360deg);
+  }
+  99.99%{
+      transform : rotate(360deg);
+  }
+  100%{
+      transform : rotate(0deg);
+  }
+}
+
 /*------------------------------------*\
     #TRUMPS
 \*------------------------------------*/

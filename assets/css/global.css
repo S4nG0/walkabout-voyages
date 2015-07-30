@@ -2545,63 +2545,6 @@ footer .footer__copyright li {
   display: inline-block;
 }
 
-#create-carnet {
-  display: none;
-  text-align: center;
-  margin: 35px;
-}
-#create-carnet label {
-  display: block;
-  margin-top: 50px;
-  color: #f0c041;
-}
-#create-carnet input {
-  display: block;
-  margin-top: 25px;
-  text-align: center;
-}
-#create-carnet .button {
-  display: block;
-  width: 150px;
-  margin: 0 auto;
-  margin-top: 25px;
-}
-
-#spinner{
-  display : none;
-  width: 100%;
-  height : auto;
-  text-align: center;
-  background : rgba(0,0,0,0.8);
-  margin: 0 auto;
-  top : 0;
-  bottom : 0;
-  position : fixed;
-  z-index : 1000000;
-}
-
-#spinner img{
-    display: block;
-    margin: 0 auto; 
-    animation : infinite-spinning 1.8s infinite;
-}
-
-@keyframes infinite-spinning {
-  0% {
-    transform: rotate(0deg);
-  }
-  80% {
-    transform: rotate(360deg);
-  }
-  99.99%{
-      transform : rotate(360deg);
-  }
-  100%{
-      transform : rotate(0deg);
-  }
-}
-
-
 #newsletter-block {
   display: none;
   text-align: center;
@@ -7221,6 +7164,42 @@ body.single-carnet .content {
   right: -25px;
 }
 
+#spinner {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  margin: 0 auto;
+}
+
+#spinner img {
+  display: block;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 60px;
+  margin: 0 auto;
+  animation: infinite-spinning 1.8s infinite;
+}
+
+@keyframes infinite-spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(360deg);
+  }
+  99.99% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 /*------------------------------------*\
     #TRUMPS
 \*------------------------------------*/
