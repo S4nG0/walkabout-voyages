@@ -456,6 +456,8 @@ $(document).ready(function () {
         var result = $('input[type=checkbox][name=gtc]').is(':checked');
         if (result == true) {
             $('form').submit();
+        }else{
+            alert('Vous devez accepter les conditions générales de ventes afin de pouvoir finaliser votre commande.');
         }
     });
 
@@ -674,6 +676,9 @@ $(document).ready(function () {
     });
 
     $('.input-upload-cover').on('change',function(){
+        $('#spinner').css({
+            'display' : 'block'
+        });
         $('.submit-user-cover').click();
     });
 
@@ -683,6 +688,9 @@ $(document).ready(function () {
     });
 
     $('.input-upload').on('change',function(){
+        $('#spinner').css({
+            'display' : 'block'
+        });
         $('.submit-cover').click();
     });
 

@@ -72,7 +72,13 @@
         </div>
     </footer>
 
+<!-- Loader -->
+        
+    <div id="spinner">
+        <img src="<?php echo img_url("logo-wk-icon.png"); ?>" /> 
+    </div>
 
+<!-- Fin Loader -->
 
 <!-- Jquery & jQUI -->
 <script type="text/javascript" src="<?php echo js_url('jquery') ?>"></script>

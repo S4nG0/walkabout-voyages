@@ -19,8 +19,8 @@ class Identification extends CI_Controller {
 	 */
 	public function index()
 	{
+            $this->session->unset_userdata('user');
             $data = array();
-            $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $data['result'] = null;
             $data['title'] = "Réservation";
 
@@ -32,10 +32,7 @@ class Identification extends CI_Controller {
                     redirect($_SERVER["HTTP_REFERER"]);
                 }
             }
-
-            if($data['connecte'] == true){
-                redirect('/checkout/informations');
-            }
+            
             $data['voyage'] = $this->session->userdata('voyage');
             $data['destination'] = $this->session->userdata('destination');
             $this->load->view('template/header',$data);

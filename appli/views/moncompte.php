@@ -100,6 +100,21 @@ $page = "moncompte";
 
                     </div>
                     <div class="carnets-block" id="carnets-content">
+                        <!--Design a faire par Julien ! :)  -->
+                        
+                        <?php 
+                            if(sizeof($voyages_sans_carnets) > 0){
+                                if(sizeof($voyages_sans_carnets) > 1){
+                                    echo '<h4>Vous pouvez créer des carnets de voyage grâce à vos réservation!</h4><br/><a href="#create-carnet" class="fancybox btn"> Créer mon carnet </a>';
+                                }else{
+                                    echo '<h4>Vous pouvez créer un carnet de voyage grâce à votre réservation!</h4><br/><a href="#create-carnet" class="fancybox btn"> Créer mon carnet </a>';
+                                }
+                            }
+                            
+                        ?>
+                        
+                        <!-- Fin design julien! :) -->
+                        
                         <div class="travel-logs-wrapper">
                         <?php
 
@@ -203,3 +218,28 @@ $page = "moncompte";
             </div>
 
         </div>
+
+    </div>
+    <?php 
+        var_dump($voyages_sans_carnets);
+        if(sizeof($voyages_sans_carnets) > 0){
+    ?>    
+    <div id="create-carnet">
+        <h2 class="sep">Création d'un carnet de voyage</h2>
+        <?php echo form_open("carnets-de-voyage/creer") ?>
+            <label for="voyage">Choisissez le voyage sur lequel vous souhaitez créer ce carnet :</label>
+            <select name="voyage" id="voyage">
+            <?php
+                foreach($voyages_sans_carnets as $voyage_sans_carnet){
+                    echo '<option value="'.$voyage_sans_carnet->idVoyage.'">'.$voyage_sans_carnet->destination->titre.'<option>';
+                }
+            ?>
+            </select>
+            <label for="titre">Renseignez le titre de votre carnet :</label>
+            <input type="text" name="titre" id="titre" placeholder="Entrez le titre de votre carnet...">
+            <input class="button" type="submit" value="Créer !">
+        <?php echo form_close(); ?>
+    </div>
+    <?php
+    }
+    ?>

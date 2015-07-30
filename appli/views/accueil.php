@@ -90,7 +90,7 @@ switch($newsletter){
 
                     </p>
 
-                    <a href="about" class="button">En savoir plus</a>
+                    <a href="<?php echo base_url().'qui-sommes-nous'; ?>" class="button">En savoir plus</a>
 
                 </div>
 

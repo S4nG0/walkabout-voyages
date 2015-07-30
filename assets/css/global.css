@@ -2567,6 +2567,40 @@ footer .footer__copyright li {
   margin-top: 25px;
 }
 
+#spinner{
+  display : none;
+  width: 100%;
+  height : auto;
+  text-align: center;
+  background : rgba(0,0,0,0.8);
+  margin: 0 auto;
+  top : 0;
+  bottom : 0;
+  position : fixed;
+  z-index : 1000000;
+}
+
+#spinner img{
+    display: block;
+    margin: 0 auto; 
+    animation : infinite-spinning 1.8s infinite;
+}
+
+@keyframes infinite-spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(360deg);
+  }
+  99.99%{
+      transform : rotate(360deg);
+  }
+  100%{
+      transform : rotate(0deg);
+  }
+}
+
 
 #newsletter-block {
   display: none;
