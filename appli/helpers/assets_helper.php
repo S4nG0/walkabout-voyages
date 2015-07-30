@@ -8,6 +8,14 @@ if ( ! function_exists('css_url'))
 	}
 }
 
+if ( ! function_exists('fonts_url'))
+{
+	function fonts_url($nom)
+	{
+		return base_url() . 'assets/fonts/' . $nom . '.ttf';
+	}
+}
+
 if ( ! function_exists('js_url'))
 {
 	function js_url($nom)
