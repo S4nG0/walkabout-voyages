@@ -674,6 +674,9 @@ $(document).ready(function () {
     });
 
     $('.input-upload-cover').on('change',function(){
+        $('#spinner').css({
+            'display' : 'block'
+        });
         $('.submit-user-cover').click();
     });
 
@@ -683,6 +686,9 @@ $(document).ready(function () {
     });
 
     $('.input-upload').on('change',function(){
+        $('#spinner').css({
+            'display' : 'block'
+        });
         $('.submit-cover').click();
     });
 
