@@ -7,8 +7,6 @@
 /*------------------------------------*\
     #TRUE CODE
 \*------------------------------------*/
-@import url(http://fonts.googleapis.com/css?family=Dosis);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 * {
   box-sizing: border-box;
 }
@@ -5389,6 +5387,10 @@ body.espace-voyageur .content .reservations-block tbody tr td p {
 body.espace-voyageur .content .carnets-block {
   display: table;
   width: 100%;
+  text-align: center;
+}
+body.espace-voyageur .content .carnets-block #create-carnet {
+  display: none;
   text-align: center;
 }
 body.espace-voyageur .content .carnets-block .travel-logs-wrapper {

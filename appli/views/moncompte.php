@@ -101,20 +101,59 @@ $page = "moncompte";
                     </div>
                     <div class="carnets-block" id="carnets-content">
                         <!--Design a faire par Julien ! :)  -->
-                        
-                        <?php 
+
+                        <?php
                             if(sizeof($voyages_sans_carnets) > 0){
                                 if(sizeof($voyages_sans_carnets) > 1){
-                                    echo '<h4>Vous pouvez créer des carnets de voyage grâce à vos réservation!</h4><br/><a href="#create-carnet" class="fancybox btn"> Créer mon carnet </a>';
+                                    echo '<p>
+                                    Vous pouvez créer des carnets de voyage grâce à vos réservation!</p>
+                                    <a href="#create-carnet" class="fancybox btn"> Créer mon carnet </a>';
                                 }else{
-                                    echo '<h4>Vous pouvez créer un carnet de voyage grâce à votre réservation!</h4><br/><a href="#create-carnet" class="fancybox btn"> Créer mon carnet </a>';
+                                    echo '<p>
+                                    Vous pouvez créer un carnet de voyage grâce à votre réservation!</p>
+                                    <a href="#create-carnet" class="fancybox btn"> Créer mon carnet </a>';
                                 }
                             }
-                            
+                            if(sizeof($voyages_sans_carnets) > 0){
                         ?>
-                        
+                            <div id="create-carnet">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h2 class="sep">Création d'un carnet de voyage</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                        <?php echo form_open("carnets-de-voyage/creer") ?>
+                                            <div class="form-group">
+                                                <label for="voyage">Choisissez le voyage sur lequel vous souhaitez créer ce carnet :</label>
+                                                <select name="voyage" id="voyage">
+                                                <?php
+                                                    foreach($voyages_sans_carnets as $voyage_sans_carnet){
+                                                        echo '<option value="'.$voyage_sans_carnet->idVoyage.'">'.$voyage_sans_carnet->destination->titre.'<option>';
+                                                    }
+                                                ?>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="titre">Renseignez le titre de votre carnet :</label>
+                                                <input type="text" name="titre" id="titre" placeholder="Entrez le titre de votre carnet...">
+                                            </div>
+                                            <div class="buttons-block">
+                                                <input class="button" type="submit" value="Créer !">
+                                            </div>
+                                        <?php echo form_close(); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                        }
+                        ?>
+
                         <!-- Fin design julien! :) -->
-                        
+
                         <div class="travel-logs-wrapper">
                         <?php
 
@@ -151,7 +190,7 @@ $page = "moncompte";
                         </div>
                     </div>
                     <div class="infos-block" id="infos-content">
-                        
+
                         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <h3>Votre couverture</h3>
                             <div class="cover-picture">
@@ -167,7 +206,7 @@ $page = "moncompte";
                                     </figcaption>
                                 </figure>
                             </div>
-                            <?php 
+                            <?php
                             if($utilisateur_connecte !=  false){
                             if($user->idUsers == $utilisateur_connecte->idUsers){ ?>
                             <?php echo form_open_multipart('/upload_file/usercover'); ?>
@@ -220,25 +259,3 @@ $page = "moncompte";
         </div>
 
     </div>
-    <?php 
-        if(sizeof($voyages_sans_carnets) > 0){
-    ?>    
-    <div id="create-carnet">
-        <h2 class="sep">Création d'un carnet de voyage</h2>
-        <?php echo form_open("carnets-de-voyage/creer") ?>
-            <label for="voyage">Choisissez le voyage sur lequel vous souhaitez créer ce carnet :</label>
-            <select name="voyage" id="voyage">
-            <?php
-                foreach($voyages_sans_carnets as $voyage_sans_carnet){
-                    echo '<option value="'.$voyage_sans_carnet->idVoyage.'">'.$voyage_sans_carnet->destination->titre.'<option>';
-                }
-            ?>
-            </select>
-            <label for="titre">Renseignez le titre de votre carnet :</label>
-            <input type="text" name="titre" id="titre" placeholder="Entrez le titre de votre carnet...">
-            <input class="button" type="submit" value="Créer !">
-        <?php echo form_close(); ?>
-    </div>
-    <?php
-    }
-    ?>
