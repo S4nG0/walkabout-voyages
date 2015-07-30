@@ -46,4 +46,5 @@ $page = "tous-les-carnets";
                 </div>';
             } ?>
         </div>
+        <?php echo "<br/><center>$pagination</center><br/>"; ?>
     </div>

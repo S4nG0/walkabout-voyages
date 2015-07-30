@@ -44,6 +44,7 @@ class Identification extends CI_Controller {
 	{
             $data = array();
             $data['erreur'] = "";
+            $data['title'] = "Création d'un compte";
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             if($data['connecte'] == true){
                 redirect('/checkout/informations');

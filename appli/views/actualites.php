@@ -30,7 +30,7 @@ include 'template/menu.php';
                             </div>
                             <div class="col-md-8">
                                 <h3>'.$actu->titre.'</h3>
-                                <p><span class="published">par <a href="#">'.$actu->admin[0]->prenom.' '.$actu->admin[0]->nom.'</a>, le '.$actu->date.'
+                                <p><span class="published">par '.$actu->admin[0]->prenom.' '.$actu->admin[0]->nom.', le '.$actu->date.'
                                 '.$actu->texte.'
                             </div>
                         </div>
@@ -47,7 +47,7 @@ include 'template/menu.php';
                             </div>
                             <div class="col-md-8">
                                 <h3>'.$actu->titre.'</h3>
-                                <p><span class="published">par <a href="#">'.$actu->admin[0]->prenom.' '.$actu->admin[0]->nom.'</a>, le '.$actu->date.'
+                                <p><span class="published">par '.$actu->admin[0]->prenom.' '.$actu->admin[0]->nom.', le '.$actu->date.'
                                 '.$actu->texte.'
                             </div>
                         </div>

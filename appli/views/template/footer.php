@@ -38,13 +38,13 @@
                 <div class="col-sm-4 col-md-4 footer__block">
                     <span class="footer__title">Tenez-vous informés</span>
                     <div class="footer__social">
-                        <a class="item_fb" href="#" title="Suivez-nous sur Facebook !" target="blank">
+                        <a class="item_fb" href="https://www.facebook.com/walkabout.voyage" title="Suivez-nous sur Facebook !" target="blank">
                             <i class="fa fa-facebook"></i>
                         </a>
-                        <a class="item_tw" href="#" title="Suivez-nous sur Twitter !" target="blank">
+                        <a class="item_tw" href="https://twitter.com/_Walkabout_" title="Suivez-nous sur Twitter !" target="blank">
                             <i class="fa fa-twitter"></i>
                         </a>
-                        <a class="item_gp" href="#" title="Suivez-nous sur Google + !" target="blank">
+                        <a class="item_gp" href="https://plus.google.com/114606485962340409388" title="Suivez-nous sur Google + !" target="blank">
                             <i class="fa fa-google-plus"></i>
                         </a>
                     </div>

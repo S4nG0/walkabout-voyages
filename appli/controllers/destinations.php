@@ -41,7 +41,14 @@ class Destinations extends CI_Controller {
             $data['infos_pays'] = $this->pays->constructeur($data['destination'][0]->idPays);
             $data['infos_destination'] = $this->infos_destination->constructeur($data['destination'][0]->idDestination);
             $data['infos_complementaires'] = $this->infos_complementaires->constructeur($data['destination'][0]->idDestination);
-            $data['voyages'] = $this->voyages->get_voyages_from_destination($data['destination'][0]->idDestination);
+            $data['voyages'] = $this->voyages->get_voyage_reservation($data['destination'][0]->idDestination);
+            $data['details_prix'] = $this->details_prix->constructeur($data['destination'][0]->idDestination);
+            
+            foreach($data['voyages'] as $voyage){
+                $voyage->date_depart = conv_date($voyage->date_depart);
+                $voyage->date_retour = conv_date($voyage->date_retour);
+                $voyage->nb_reserves = $voyage->nb_places - $this->reservations->count($voyage->idVoyage);
+            }
             $data['title'] = $data['destination'][0]->titre;
             $data['carnets'] = $this->carnetvoyage->get_carnets_alea($data['destination'][0]->idDestination);
             foreach($data['carnets'] as $carnet){

@@ -106,7 +106,7 @@ switch($newsletter){
 
                                         <div class="col-md-8">
 
-                                            <p>'.$actu->titre.'</p><p><span class="published">par <a href="' . base_url() . 'nos-actualites">' . $actu->admin[0]->prenom . ' ' .$actu->admin[0]->nom . '</a>, le ' . $actu->date . '' . '</span></p>
+                                            <p>'.$actu->titre.'</p><p><span class="published">par ' . $actu->admin[0]->prenom . ' ' .$actu->admin[0]->nom . ', le ' . $actu->date . '' . '</span></p>
 
                                         </div>
 

@@ -24,21 +24,21 @@
                         <h2 class="no-sep">Informations</h2>
                         <ul id="introduction_aside--infos">
                             <?php
-                                foreach ($infos_pays[0] as $key => $value) {
-                                    if ($key != 'idPays' && $key != 'nom' && $key != 'code_pays') {
-                                        echo '<li>' . ucfirst($key) . ' : ' . $value . '</li>';
-                                    }
+                            foreach ($infos_pays[0] as $key => $value) {
+                                if ($key != 'idPays' && $key != 'nom' && $key != 'code_pays') {
+                                    echo '<li>' . ucfirst($key) . ' : ' . $value . '</li>';
                                 }
+                            }
                             ?>
                         </ul>
                         <div id="introduction_aside--social">
-                            <a class="item_fb" href="#" target="blank">
+                            <a class="item_fb" href="https://www.facebook.com/walkabout.voyage" target="blank">
                                 <i class="fa fa-facebook"></i>
                             </a>
-                            <a class="item_tw" href="#" target="blank">
+                            <a class="item_tw" href="https://twitter.com/_Walkabout_" target="blank">
                                 <i class="fa fa-twitter"></i>
                             </a>
-                            <a class="item_gp" href="#" target="blank">
+                            <a class="item_gp" href="https://plus.google.com/114606485962340409388" target="blank">
                                 <i class="fa fa-google-plus"></i>
                             </a>
                         </div>
@@ -61,7 +61,7 @@
                 <a class="button" rel="#buttons" id="prices-button">
                     Voir dates et prix
                 </a>
-                <a class="button" rel="#buttons" href="<?php echo site_url('/checkout/dates/'.$destination[0]->idDestination); ?>">
+                <a class="button" rel="#buttons" href="<?php echo site_url('/checkout/dates/' . $destination[0]->idDestination); ?>">
                     Je réserve !
                 </a>
             </div>
@@ -75,92 +75,38 @@
                 <div class="col-md-12 destination__informations" id="infos">
                     <h2 class="sep">Informations générales</h2>
                     <ul class="info-icons">
+                        <?php foreach($infos_destination as $info){ ?>
                         <li>
-                            <img src="<?php echo img_url('info-pics/climat_white.png'); ?>" alt="Climat">
-                            <p><strong>Climat</strong></p>
-                            <p>Varié</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo img_url('info-pics/currency_white.png'); ?>" alt="Monnaie">
-                            <p><strong>Monnaie</strong></p>
-                            <p>Nuevo sol</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo img_url('info-pics/animals_white.png'); ?>" alt="Animaux">
-                            <p><strong>Animaux</strong></p>
-                            <p>Autorisés</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo img_url('info-pics/pension_white.png'); ?>" alt="Pension">
-                            <p><strong>Pension</strong></p>
-                            <p>Chez l'habitant</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo img_url('info-pics/passport_white.png'); ?>" alt="Passeport">
-                            <p><strong>Passeport</strong></p>
-                            <p>Obligatoire</p>
-                        </li>
+                            <img src="<?php echo img_url($info->image); ?>" alt="<?php echo $info->titre; ?>">
+                            <p><strong><?php echo $info->titre; ?></strong></p>
+                            <p><?php echo $info->valeur; ?></p>
+                        </li>                        
+                        <?php } ?>
                     </ul>
                     <div class="info-details">
-                        <div class="row">
+                        <?php 
+                        $x = 0; 
+                        foreach($infos_complementaires as $info){
+                            if($x%2 == 0){
+                                $y = 1;
+                                echo '<div class="row">';
+                            }
+                        ?>
                             <div class="col-md-6">
-                                <h3>Accompagnement</h3>
+                                <h3><?php echo $info->titre; ?></h3>
                                 <p>
-                                    1 guide bilingue français/espagnol sur l’ensemble du séjour + guides locaux selon les spots
+                                    <?php echo $info->value; ?>
                                 </p>
-                            </div>
-                            <div class="col-md-6">
-                                <h3>Déplacements</h3>
-                                <p>
-                                    Transport privé ou bus collectif (selon les régions traversées) + balades à pied, en pirogue, à vélo
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3>Hébergement</h3>
-                                <p>
-                                    5 nuits à l’hôtel / 5 nuits chez l’habitant / 1 nuit en vol
-                                </p>
-                            </div>
-                            <div class="col-md-6">
-                                <h3>Repas &amp; Boissons</h3>
-                                <p>
-                                    Tous les repas sont compris / l’eau minérale est servie pendant les repas
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3>Déroulement du séjour</h3>
-                                <ul class="info-list">
-                                    <li>
-                                        <h4>Jour 1 :</h4>
-                                        Vol pour l’Equateur, premiers pas au Pérou !
-                                    </li>
-                                    <li>
-                                        <h4>Jours 2 à 6 :</h4>
-                                        Direction la cordillère des Andes, au cœur de la tribu Quechuas… chez l’habitant, esprit communautaire dans un village indigène, spécialités : danses folkloriques, artisanat traditionnel, chicha (alcool de maïs) !
-                                    </li>
-                                    <li>
-                                        <h4>Jours 7 à 9 :</h4>
-                                        Direction la forêt amazonienne, rando &amp; vélo le long de la face orientale des Andes jusqu’aux portes de l’Amazonie, à la rencontre des peuples indigènes.
-                                    </li>
-                                    <li>
-                                        <h4>Jours 10 à 12 :</h4>
-                                        Direction la vallée sacrée de Vilcabamba, où la légende dit qu’on y vit jusqu’à plus de cent ans… rando ou balade à cheval (au choix) dans un petit paradis de la partie basse des Andes.
-                                    </li>
-                                    <li>
-                                        <h4>Jour 13 :</h4>
-                                        Rando dans le célèbre parc national ‘El Cajas’, en pleine nature.
-                                    </li>
-                                    <li>
-                                        <h4>Jour 14 :</h4>
-                                        Visite de la ville de Cuenca (patrimoine de l’UNESCO) et retour à Guayaquil.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                            </div>  
+                        <?php 
+                            
+                        if($y == 2){
+                            echo '</div>';
+                        }
+                        $x++;
+                        $y++;
+                        } 
+                        ?>
                     </div>
                 </div>
             </div>
@@ -187,28 +133,21 @@
                     <div class="info-details">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3>Dates prévues :</h3>
+                                <h3><?php echo (sizeof($voyages)>1) ? 'Dates prévues :' : 'Date prévue :'; ?></h3>
                                 <ul class="prices-list">
+                                    <?php
+                                    
+                                        foreach($voyages as $voyage){
+                                    
+                                    ?>
                                     <li>
-                                        du 25 mai au 15 juin
-                                        <span class="small">(places restantes: 5)</span>
+                                        du <?php echo $voyage->date_depart; ?>  au <?php echo $voyage->date_retour; ?>
+                                        <span class="small">(places restantes: <?php echo $voyage->nb_reserves; ?>)</span>
                                     </li>
-                                    <li>
-                                        du 25 juin au 15 juillet
-                                        <span class="small">(places restantes: 5)</span>
-                                    </li>
-                                    <li>
-                                        du 25 juillet au 15 août
-                                        <span class="small">(places restantes: 5)</span>
-                                    </li>
-                                    <li>
-                                        du 25 août au 15 septembre
-                                        <span class="small">(places restantes: 5)</span>
-                                    </li>
-                                    <li>
-                                        du 25 octobre au 15 novembre
-                                        <span class="small">(places restantes: 5)</span>
-                                    </li>
+                                    
+                                    <?php
+                                        }
+                                    ?>
                                 </ul>
                             </div>
                         </div>
@@ -216,10 +155,11 @@
                             <div class="col-md-12">
                                 <h3>Ce prix comprend :</h3>
                                 <ul class="prices-list plus">
-                                    <li>Vol international &amp; Taxes d'aéroport</li>
-                                    <li>Assistance &amp; Transferts à l'aéroport de destination</li>
-                                    <li>Encadrement / Transport / Repas / Hébergement (chambres partagées)</li>
-                                    <li>Visites &amp; Activités au programme</li>
+                                    <?php foreach($details_prix as $detail){
+                                        if($detail->plusoumoins == "plus"){
+                                    ?>
+                                        <li><?php echo $detail->valeur; ?></li>
+                                    <?php }} ?>
                                 </ul>
                             </div>
                         </div>
@@ -227,9 +167,11 @@
                             <div class="col-md-12">
                                 <h3>Ce prix ne comprend pas :</h3>
                                 <ul class="prices-list minus">
-                                    <li>Assurances assistance &amp; annulation</li>
-                                    <li>Supplément chambre single : 100 €</li>
-                                    <li>Extras / Boissons / Dépenses personnelles</li>
+                                    <?php foreach($details_prix as $detail){
+                                        if($detail->plusoumoins == "moins"){
+                                    ?>
+                                        <li><?php echo $detail->valeur; ?></li>
+                                    <?php }} ?>
                                 </ul>
                             </div>
                         </div>
@@ -243,7 +185,7 @@
             <div class="row">
                 <div class="col-md-12 destination__order">
                     <h2 class="sep">Tentez l'expérience !</h2>
-                    <a href="<?php echo site_url('/checkout/dates/'.$destination[0]->idDestination); ?>" class="button">
+                    <a href="<?php echo site_url('/checkout/dates/' . $destination[0]->idDestination); ?>" class="button">
                         Réservez votre place
                     </a>
                     &nbsp;&nbsp;ou&nbsp;&nbsp;
@@ -308,7 +250,6 @@
             <div class="row noPadding">
                 <ul class="grid">
                     <?php
-
                     $photos = array();
                     $photos = explode(";", $destination[0]->photos);
 
@@ -329,7 +270,8 @@
                                 </figure>
                             </li>';
                         }
-                    } ?>
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -361,12 +303,13 @@
                                     <p>
                                         &laquo;&nbsp;' . $carnet->description . '&nbsp;&raquo;
                                     </p>
-                                    <a class="button black" href="'.base_url().'carnets-de-voyage/'.slugify($carnet->titre).'">Feuilletez le carnet&nbsp;</a>
+                                    <a class="button black" href="' . base_url() . 'carnets-de-voyage/' . slugify($carnet->titre) . '">Feuilletez le carnet&nbsp;</a>
                                 </div>
                             </div>
                             <!-- endblock:Travel-log -->
                         </div>';
-                    } ?>
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -380,13 +323,13 @@
                 <h2 class="no-sep">Vous aimez cette destination&nbsp;?</h2>
                 <p class="italic">Partagez-la avec vos amis&nbsp;!</p>
                 <div class="social">
-                    <a class="item_fb" href="#" target="blank">
+                    <a class="item_fb" href="https://www.facebook.com/walkabout.voyage" target="blank">
                         <i class="fa fa-facebook"></i>
                     </a>
-                    <a class="item_tw" href="#" target="blank">
+                    <a class="item_tw" href="https://twitter.com/_Walkabout_" target="blank">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a class="item_gp" href="#" target="blank">
+                    <a class="item_gp" href="https://plus.google.com/114606485962340409388" target="blank">
                         <i class="fa fa-google-plus"></i>
                     </a>
                 </div>
@@ -397,3 +340,194 @@
 
     <!-- Google map API -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4p0PAyfKONlPQH3jTQgPCgV8E8fa48a4"></script>
+
+    <!-- Initialisation de la carte! -->
+    <script type="text/javascript">
+        /***
+         * Google Map function
+         */
+        function TopControl(controlDiv, map) {
+
+            var controlText = document.createElement('div');
+            controlText.innerHTML = '<i class="fa fa-plus noselect"></i>';
+            controlDiv.appendChild(controlText);
+
+            google.maps.event.addDomListener(controlDiv, 'click', function () {
+                var currentZoom = map.getZoom();
+                map.setZoom(++currentZoom);
+            });
+        }
+
+        function BottomControl(controlDiv, map) {
+            var controlText = document.createElement('div');
+            controlText.innerHTML = '<i class="fa fa-minus noselect"></i>';
+            controlDiv.appendChild(controlText);
+
+            google.maps.event.addDomListener(controlDiv, 'click', function () {
+                var currentZoom = map.getZoom();
+                map.setZoom(--currentZoom);
+            });
+        }
+
+        var map;
+
+        function mapInitialize() {
+            var myLatLng = new google.maps.LatLng(<?php echo $destination[0]->coordonnees; ?>);
+            var styles = {
+            }
+            var mapOptions = {
+                zoom: 8,
+                minZoom: 2,
+                maxZoom: 16,
+                center: myLatLng,
+                streetViewControl: false,
+                scrollwheel: false,
+                mapTypeControl: false,
+                rotateControl: false,
+                panControl: false,
+                zoomControl: false,
+                zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.SMALL,
+                    position: google.maps.ControlPosition.BOTTOM
+                },
+                styles: [
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "hue": "#fde29c"
+                            },
+                            {
+                                "saturation": 38
+                            },
+                            {
+                                "lightness": -11
+                            },
+                            {
+                                "visibility": "on"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "hue": "#f0c041"
+                            },
+                            {
+                                "saturation": 0
+                            },
+                            {
+                                "lightness": 0
+                            },
+                            {
+                                "visibility": "on"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "hue": "#fff2d2"
+                            },
+                            {
+                                "saturation": 17
+                            },
+                            {
+                                "lightness": -2
+                            },
+                            {
+                                "visibility": "on"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "hue": "#cccccc"
+                            },
+                            {
+                                "saturation": -100
+                            },
+                            {
+                                "lightness": 13
+                            },
+                            {
+                                "visibility": "on"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative.land_parcel",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "hue": "#5f5855"
+                            },
+                            {
+                                "saturation": 6
+                            },
+                            {
+                                "lightness": -31
+                            },
+                            {
+                                "visibility": "on"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "road.local",
+                        "elementType": "all",
+                        "stylers": [
+                            {
+                                "hue": "#ffffff"
+                            },
+                            {
+                                "saturation": -100
+                            },
+                            {
+                                "lightness": 100
+                            },
+                            {
+                                "visibility": "simplified"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": []
+                    }
+                ]
+            }
+            ;
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            var topControlDiv = document.createElement('div');
+            topControlDiv.setAttribute('class', 'controls');
+            var topControl = new TopControl(topControlDiv, map);
+
+            var bottomControlDiv = document.createElement('div');
+            bottomControlDiv.setAttribute('class', 'controls');
+            var bottomControl = new BottomControl(bottomControlDiv, map);
+
+            topControlDiv.index = 1;
+            bottomControlDiv.index = 1;
+            map.controls[google.maps.ControlPosition.BOTTOM].push(topControlDiv);
+            map.controls[google.maps.ControlPosition.BOTTOM].push(bottomControlDiv);
+
+            var iconBase = '../../assets/images/marker.png';
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Walkabout',
+                icon: iconBase
+            })
+        }
+    </script>
