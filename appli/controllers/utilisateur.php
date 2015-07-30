@@ -19,7 +19,7 @@ class Utilisateur extends CI_Controller {
          *
      */
 
-        public function index($name = "")
+    public function index($name = "")
     {
             if($name == ""){
                 return false;
@@ -40,14 +40,47 @@ class Utilisateur extends CI_Controller {
             $this->load->view('utilisateur', $data);
             $this->load->view('template/footer');
     }
+    
+    public function modify_adress(){
+        
+        $id = $this->session->userdata('user')[0]->idUsers;
+        
+        $this->form_validation->set_rules('adresse1', '"Adresse"', 'trim|required|min_length[5]|max_length[70]|encode_php_tags|xss_clean');
+        $this->form_validation->set_rules('adresse2', '"Complément d\'adresse"', 'trim|min_length[5]|max_length[70]|encode_php_tags|xss_clean');
+        $this->form_validation->set_rules('CP', '"Code postal"', 'trim|required|min_length[4]|max_length[10]|encode_php_tags|xss_clean|numeric');
+        $this->form_validation->set_rules('ville', '"Ville"', 'trim|required|min_length[3]|max_length[50]|encode_php_tags|xss_clean');
+        $this->form_validation->set_rules('pays', '"Pays"', 'trim|required|min_length[3]|max_length[50]|encode_php_tags|xss_clean');
+        
+        if ($this->form_validation->run()) {
+            $donnee = array(
+                'adresse1' => $this->input->post('adresse1'),
+                'adresse2' => $this->input->post('adresse2'),
+                'CP' => $this->input->post('CP'),
+                'pays' => $this->input->post('pays'),
+                'ville' => $this->input->post('ville')
+            );
+
+            $this->user->modify($donnee,$id);
+        }
+        
+        //On réactualise l'utilisateur
+        $user = $this->user->constructeur($id);
+        $this->session->unset_userdata('user');
+        $this->session->set_userdata('user',$user);
+ 
+        
+        redirect('checkout/informations');
+    }
 
     public function _remap($name = "")
     {
-        if ($name == "") {
-            return false;
+        if ($name == "modify_adress") {
+            $this->modify_adress();
+        }else{
+            $this->index($name);
         }
 
-        $this->index($name);
+        
     }
 
 }

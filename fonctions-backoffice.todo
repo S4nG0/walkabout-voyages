@@ -1,7 +1,7 @@
 Modules back office à rajouter :
   ☐ Actualités
   ☐ Carnets de voyages
-  ☐ Destinations ( reste supprimer à faire!)
+  ☐ Destinations (reste supprimer à faire!)
   ✔ Ajouter un administrateur @done (15-07-01 10:32)
   ☐ Gestion des réservations
   ☐ Gestion des renseignements
@@ -14,7 +14,7 @@ Module actualité :
 
 Module carnets de voyages :
   ☐ modérer les carnets
-  ☐ sélectionner les carnets à la une + phrase d'accroche (home page)
+  ☐ sélectionner les carnets à la une (Pour moi c'est une selection de carnets aléatoirements!)
   ☐ sélectionner un carnet phare (page carnet de voyage)
 
 Module destinations :
@@ -22,27 +22,14 @@ Module destinations :
   ✔ rédaction des informations (formulaire avec : capital, monnaie, dirigeant,... l'admin rentre les infos dans le formulaire) @done (15-07-17 09:38)
   ✔ rédaction du descriptif @done (15-07-17 09:38)
   ☐ Suppression des destinations
+  ☐ Pouvoir ajouter le détail du prix pour chaque destination
   ☐ gestion des photos
-
-Informations générales :
-  ☐ gestion des pictogrammes
-  ☐ rédaction accompagnement, déplacements, hébergement, repas&boissons
-  ☐ rédaction du déroulement du séjour (jour 1, jour 2,...)
-  ☐ problème d'encodage utf-8 dans le menu pour accéder au compte.
 
 Localisation :
   ☐ longitude et latitude
-
-Date & prix :
-  ☐ calendrier pour les dates
-  ☐ gestion des places restantes
-  ☐ check box avec les critères de "ce prix comprend" et "ce prix ne comprend pas"
 
 Module commentaires :
   ☐ modération
   ☐ validation
   ☐ suppression
-
-  Checkout :
-    ☐ Impossible de valider le paiement sur la dernière phase.
 

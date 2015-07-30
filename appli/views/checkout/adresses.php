@@ -46,123 +46,31 @@ $step = 'informations';
                     <div class="col-sm-6 col-md-4">
                         <div class="form-group">
                             <button class="button black" type="submit"><i class="fa fa-check-square"></i>J'utilise cette adresse</button>
-                            <a href="<?php echo base_url(); ?>moncompte" class="button black" id="add-address"><i class="fa fa-plus-square"></i>Modifier l'adresse</a>
+                            <a href="#adress-block" class="button black fancybox" id="add-address"><i class="fa fa-plus-square"></i>Modifier l'adresse</a>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
 
-        <!-- Add new address block -->
-        <div class="row" id="new-address">
-            <h1>Entrer une nouvelle adresse</h1>
-
-            <form action="checkout-informations.php" method="POST">
-                <div class="infos-block clearfix">
-
-                    <div class="row">
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                <label for="nom">Nom&nbsp;<sup>*</sup></label>
-                                <input type="text" name="nom" id="nom" placeholder="Entrez votre nom">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="prenom">Prénom&nbsp;<sup>*</sup></label>
-                                <input type="text" name="prenom" id="prenom" placeholder="Entrez votre prénom">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="adresse">Adresse&nbsp;<sup>*</sup></label>
-                                <input type="text" name="adresse" id="adresse" placeholder="Numéro, rue">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="adresse2">Complément d'adresse</label>
-                                <input type="text" name="adresse2" id="adresse2" placeholder="Complément d'adresse">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                <label for="telephone">Téléphone fixe&nbsp;<sup>**</sup></label>
-                                <input type="telephone" name="telephone" id="telephone" placeholder="Entrez un numéro de téléphone">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="mobile">Téléphone Mobile&nbsp;<sup>**</sup></label>
-                                <input type="telephone" name="mobile" id="mobile" placeholder="Entrez un numéro de téléphone">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="additionary_infos">Informations supplémentaires</label>
-                                <textarea name="additionary_infos" id="additionary_infos" rows="7" maxlength="300" placeholder="Des informations supplémentaires ? (300 caractères maximum)"></textarea>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label for="code_postal">Code postal&nbsp;<sup>*</sup></label>
-                                <input type="text" name="code_postal" id="code_postal" pattern="\d*" placeholder="00000">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="ville">Ville&nbsp;<sup>*</sup></label>
-                                <input type="text" name="ville" id="ville" placeholder="Votre ville">
-                            </div>
-                        </div>
-                        <div class="col-md-6 hidden-sm hidden-xs">
-                            <div class="form-group">
-                                <p>
-                                    <sup>*</sup>&nbsp;Champ requis
-                                </p>
-                                <p>
-                                    <sup>**</sup>&nbsp;Vous devez préciser au moins un numéro de téléphone
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group mb0">
-                                <label for="pays">Pays&nbsp;<sup>*</sup></label>
-                                <select name="pays" id="pays">
-                                    <option value="FR">France</option>
-                                    <option value="IT">Italie</option>
-                                    <option value="ES">Espagne</option>
-                                    <option value="UK">Royaume-Uni</option>
-                                    <option value="US">États-Unis</option>
-                                    <option value="DE">Allemagne</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-12 hidden-md hidden-lg">
-                            <div class="form-group mb0 mt25">
-                                <p>
-                                    <sup>*</sup>&nbsp;Champ requis
-                                </p>
-                                <p>
-                                    <sup>**</sup>&nbsp;Vous devez préciser au moins un numéro de téléphone
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Buttons -->
-                    <button class="button black mt25 mb0" type="submit"><i class="fa fa-check-square"></i>J'enregistre l'adresse !</button>
-                </div>
-
-            </form>
+        
+        <div id="adress-block">
+            <h2 class="sep">Changer votre adresse</h2>
+            <?php echo form_open("utilisateur/modify_adress") ?>
+                <label for="adresse1">Adresse</label>
+                <input type="text" name="adresse1" id="adresse1" placeholder="Entrez votre adresse...">
+                <label for="adresse2">Complément d'adresse</label>
+                <input type="text" name="adresse2" id="adresse2" placeholder="Entrez votre complément d'adresse...">
+                <label for="ville">Ville</label>
+                <input type="text" name="ville" id="ville" placeholder="Entrez votre ville...">
+                <label for="CP">Code Postal</label>
+                <input type="text" name="CP" id="CP" placeholder="Entrez votre code postal...">
+                <label for="pays">Pays</label>
+                <input type="text" name="pays" id="pays" placeholder="Entrez votre pays...">
+                <input class="button" type="submit" value="Modifier">
+            <?php echo form_close(); ?>
         </div>
+        
         <div class="row">
             <div class="buttons-block">
                 <a class="button prev"  href="<?php echo base_url()."checkout/identification"; ?>">Retour</a>

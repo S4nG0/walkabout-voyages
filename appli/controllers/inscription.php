@@ -73,7 +73,7 @@ class Inscription extends CI_Controller {
                     "slug" => slugify($id."-".$this->input->post('nom')."-".$this->input->post('prenom'))
                 );
 
-                $this->user->modify($user,$id);
+                $result = $this->user->modify($user,$id);
 
                 if($result != false){
                     $data['erreur'] == false;

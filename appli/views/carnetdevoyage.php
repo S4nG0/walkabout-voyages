@@ -57,13 +57,13 @@
                         </div>
 
                         <div class="hidden-xs col-sm-4 col-md-4 social">
-                            <a class="item_fb" href="#" target="blank">
+                            <a class="item_fb" href="https://www.facebook.com/walkabout.voyage" target="blank">
                                 <i class="fa fa-facebook"></i>
                             </a>
-                            <a class="item_tw" href="#" target="blank">
+                            <a class="item_tw" href="https://twitter.com/_Walkabout_" target="blank">
                                 <i class="fa fa-twitter"></i>
                             </a>
-                            <a class="item_gp" href="#" target="blank">
+                            <a class="item_gp" href="https://plus.google.com/114606485962340409388" target="blank">
                                 <i class="fa fa-google-plus"></i>
                             </a>
                         </div>
@@ -214,13 +214,13 @@
             <h2 class="no-sep">Vous avez aimé ce carnet ?</h2>
             <p class="italic">Partagez-le avec vos amis !</p>
             <div class="social">
-                <a class="item_fb" href="#" target="blank">
+                <a class="item_fb" href="https://www.facebook.com/walkabout.voyage" target="blank">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="item_tw" href="#" target="blank">
+                <a class="item_tw" href="https://twitter.com/_Walkabout_" target="blank">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="item_gp" href="#" target="blank">
+                <a class="item_gp" href="https://plus.google.com/114606485962340409388" target="blank">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </div>

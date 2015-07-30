@@ -138,7 +138,7 @@ $step = 'inscription';
                 </div>
 
                 <div class="buttons-block">
-                    <a class="button prev" href="checkout-sign-in.php">Retour</a>
+                    <a class="button prev" href="<?php echo base_url(); ?>checkout/identification">Retour</a>
                     <input class="button next" type="submit" value="Je m'inscris !">
                 </div>
             </form>
