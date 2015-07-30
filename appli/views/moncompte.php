@@ -221,7 +221,6 @@ $page = "moncompte";
 
     </div>
     <?php 
-        var_dump($voyages_sans_carnets);
         if(sizeof($voyages_sans_carnets) > 0){
     ?>    
     <div id="create-carnet">

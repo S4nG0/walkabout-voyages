@@ -8,10 +8,8 @@ $step = 'payment';
 <div class="main banner">
     <div class="container-fluid noPadding">
     <?php
-
-    set_include_path(dirname(__FILE__)."/../");
-    include 'template/menu.php';
-
+        set_include_path(dirname(__FILE__)."/../");
+        include 'template/menu.php';
     ?>
     </div>
 </div>
@@ -54,7 +52,8 @@ $step = 'payment';
                                         <span class="price" id="price"><span id="prix_personne"><?php echo $voyage->prix; ?></span><sup> €</sup></span>
                                     </td>
                                     <td>
-                                        <input type="number" name="nb_personne" id="nb_personne" value="1" min="1" max="<?php echo $nb_places_restantes; ?>"><br /><span class="small">(places restantes : <?php echo $nb_places_restantes; ?>)</span>
+                                        <input type="number" name="nb_personne" id="nb_personne" step="1" value="1" min="1" max="<?php echo $nb_places_restantes; ?>"/>
+                                        <br /><span class="small">(places restantes : <?php echo $nb_places_restantes; ?>)</span>
                                         <input type="hidden" id="nb_places" value="<?php echo $nb_places_restantes; ?>"/>
                                     </td>
                                     <td>
@@ -101,7 +100,7 @@ $step = 'payment';
 
                     <div class="terms-and-conditions-block">
                         <input type="checkbox" name="gtc" id="gtc">
-                        <label for="gtc"><span></span>En cochant cette case, vous acceptez avoir lu les <a href="#">conditions générales de vente</a> de Walkabout.</label>
+                        <label for="gtc"><span></span>En cochant cette case, vous acceptez avoir lu les <a target="_blank" href="<?php echo base_url("conditions_generales_de_ventes"); ?>">conditions générales de vente</a> de Walkabout.</label>
                         <input class="button black" id="submit_commande" type="submit" value="Je finalise ma réservation !">
                     </div>
 
@@ -109,7 +108,7 @@ $step = 'payment';
 
                 </form>
                 <div class="buttons-block">
-                    <a class="button prev" href="checkout-sign-in.php">Retour</a>
+                    <a class="button prev" href="<?php echo base_url()."checkout/informations"; ?>">Retour</a>
                 </div>
             </div>
         </div>
