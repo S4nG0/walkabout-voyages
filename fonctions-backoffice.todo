@@ -11,6 +11,7 @@ Module actualité :
   ☐ rédaction d'articles
   ☐ ajouter des photos
   ☐ gestion boutons (liens)
+  ☐ supression des actualités
 
 Module carnets de voyages :
   ☐ modérer les carnets
@@ -23,6 +24,7 @@ Module destinations :
   ✔ rédaction du descriptif @done (15-07-17 09:38)
   ☐ Suppression des destinations
   ☐ gestion des photos
+  ☐ gestion des pictogrammes
 
 Informations générales :
   ☐ gestion des pictogrammes
@@ -39,10 +41,10 @@ Date & prix :
   ☐ check box avec les critères de "ce prix comprend" et "ce prix ne comprend pas"
 
 Module commentaires :
-  ☐ modération
+  ☐ modération @done (15-07-17 09:38)
   ☐ validation
-  ☐ suppression
+  ☐ suppression reste à faire
 
-  Checkout :
-    ☐ Impossible de valider le paiement sur la dernière phase.
+Checkout :
+  ☐ Impossible de valider le paiement sur la dernière phase.
 
