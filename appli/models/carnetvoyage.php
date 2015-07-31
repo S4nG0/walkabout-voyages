@@ -146,6 +146,16 @@ class Carnetvoyage extends CI_Model {
 
         return $result;
     }
+
+    public function getNonPublies(){
+        $carnets = $this->db->select('count(*) AS nb')
+                           ->from($this->table)
+                           ->where('publie', "false")
+                           ->get()
+                           ->result();
+
+        return $carnets;
+    }
     
     public function add($carnet){
         
