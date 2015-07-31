@@ -47,8 +47,8 @@
                     <i class="fa fa-support fa-5x "></i>
                 </div>
                 <div class="row">
-                    <div class="huge">13</div>
-                    <div>Demandes de contact!</div>
+                    <div class="huge"><?php echo $contacts; ?></div>
+                    <div>Nouvelle<?php if ($contacts > 1) echo's'; ?> demande de contact<?php if ($contacts > 1) echo's'; ?>!</div>
                 </div>
             </div>
         </a>
