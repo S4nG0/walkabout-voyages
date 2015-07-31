@@ -17,38 +17,38 @@
                                 <tbody>
                                     <tr>
                                         <td><label for="nom">Nom: </label></td>
-                                        <td style="padding-right: 20px;"><span><?php if(isset($user[0]->nom)) echo $user[0]->nom ?></span></td>
+                                        <td style="padding-right: 20px;"><span style="color:black;"><?php if(isset($user[0]->nom)) echo $user[0]->nom ?></span></td>
                                         <td><label for="adresse1">Adresse 1: </label></td>
-                                        <td><span><?php if(isset($user[0]->adresse1)) echo $user[0]->adresse1 ?></span></td>
+                                        <td><span style="color:black;"><?php if(isset($user[0]->adresse1)) echo $user[0]->adresse1 ?></span></td>
                                     </tr>
                                     <tr>
                                         <td><label for="capitale">Prenom: </label></td>
-                                        <td style="padding-right: 20px;"><span><?php if(isset($user[0]->prenom)) echo $user[0]->prenom ?></span></td>
+                                        <td style="padding-right: 20px;"><span style="color:black;"><?php if(isset($user[0]->prenom)) echo $user[0]->prenom ?></span></td>
                                         <td><label for="adresse2">Adresse 2: </label></td>
-                                        <td><span><?php if(isset($user[0]->adresse2)) echo $user[0]->adresse2 ?></span></td>
+                                        <td><span style="color:black;"><?php if(isset($user[0]->adresse2)) echo $user[0]->adresse2 ?></span></td>
                                     </tr>
                                     <tr>
                                         <td><label for="mail">Mail: </label></td>
-                                        <td style="padding-right: 20px;"><span><?php if(isset($user[0]->mail)) echo $user[0]->mail ?></span></td>
+                                        <td style="padding-right: 20px;"><span style="color:black;"><?php if(isset($user[0]->mail)) echo $user[0]->mail ?></span></td>
                                         <td><label for="Code_postal">Code postal: </label></td>
-                                        <td><span><?php if(isset($user[0]->CP)) echo $user[0]->CP ?></span></td>
+                                        <td><span style="color:black;"><?php if(isset($user[0]->CP)) echo $user[0]->CP ?></span></td>
                                     </tr>
                                     <tr>
                                         <td><label for="tel_fixe">Téléphone fixe: </label></td>
-                                        <td style="padding-right: 20px;"><span><?php if(isset($user[0]->tel_fixe)) echo $user[0]->tel_fixe ?></span></td>
+                                        <td style="padding-right: 20px;"><span style="color:black;"><?php if(isset($user[0]->tel_fixe)) echo $user[0]->tel_fixe ?></span></td>
                                         <td><label for="Ville">Ville: </label></td>
-                                        <td><span><?php if(isset($user[0]->ville)) echo $user[0]->ville ?></span></td>
+                                        <td><span style="color:black;"><?php if(isset($user[0]->ville)) echo $user[0]->ville ?></span></td>
                                     </tr>
                                     <tr>
                                         <td><label for="tel_port">Téléphone portable: </label></td>
-                                        <td style="padding-right: 20px;"><span><?php if(isset($user[0]->tel_port)) echo $user[0]->tel_port ?></span></td>
+                                        <td style="padding-right: 20px;"><span style="color:black;"><?php if(isset($user[0]->tel_port)) echo $user[0]->tel_port ?></span></td>
                                         <td><label for="Pays">Pays: </label></td>
-                                        <td><span><?php if(isset($user[0]->pays)) echo $user[0]->pays ?></span></td>
+                                        <td><span style="color:black;"><?php if(isset($user[0]->pays)) echo $user[0]->pays ?></span></td>
                                     </tr>
                                     <tr>
                                         <td><label for="date_naissance">Date de naissance: </label></td>
-                                        <td style="padding-right: 20px;"><span><?php if(isset($user[0]->date_naissance)) echo $user[0]->date_naissance ?></span></td>
-                                        <td colspan="2"><span><?php if(isset($user[0]->active) && $user[0]->active=="true") echo 'le compte est activé';  else echo 'le compte est inactif'; ?><span></td>
+                                        <td style="padding-right: 20px;"><span style="color:black;"><?php if(isset($user[0]->date_naissance)) echo $user[0]->date_naissance ?></span></td>
+                                        <td colspan style="color:black;"="2"><span style="color:black;"><?php if(isset($user[0]->active) && $user[0]->active=="true") echo 'le compte est activé';  else echo 'le compte est inactif'; ?><span style="color:black;"></td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -22,6 +22,16 @@ class Reservations extends CI_Model {
         
         return $reservations;
     }  
+    
+    public function getAll(){
+        
+        $reservations = $this->db->select('*')
+                           ->from($this->table)
+                           ->get()
+                           ->result();
+        
+        return $reservations;
+    }  
 
     public function getReservationAdmin($id= 0){
         if($id == 0){

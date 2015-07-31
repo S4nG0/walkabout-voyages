@@ -26,6 +26,16 @@ class Dashboard extends CI_Controller {
         $data['title'] = 'Tableau de bord';
         $data['commentaires'] = $this->commentaires->count_non_modere();
         $data['reservations'] = $this->reservations->count_en_cours();
+        $data['carnets_non_valides'] = $this->carnetvoyage->getNonPublies()[0]->nb;
+        $reservations = $this->reservations->getAll();
+        $array = Array();
+        foreach($reservations as $reservation){
+            $voyage = $this->voyages->constructeur($reservation->idVoyage)[0];
+            error_reporting(0);
+            $array[str_replace('-','',$reservation->date)] = $array[str_replace('-','',$reservation->date)] + ($reservation->nb_personnes * $voyage->prix);
+        }
+        error_reporting(1);
+        $data['chart'] = $array;
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
