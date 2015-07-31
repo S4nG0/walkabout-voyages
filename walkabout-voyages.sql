@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 31 Juillet 2015 à 00:28
+-- Généré le :  Ven 31 Juillet 2015 à 18:50
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -52,6 +52,7 @@ CREATE TABLE IF NOT EXISTS `wa__administrateur` (
   `idAdministrateur` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(100) DEFAULT NULL,
   `prenom` varchar(100) DEFAULT NULL,
+  `email` varchar(500) NOT NULL,
   `identifiant` varchar(45) DEFAULT NULL,
   `mdp` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idAdministrateur`)
@@ -61,10 +62,10 @@ CREATE TABLE IF NOT EXISTS `wa__administrateur` (
 -- Contenu de la table `wa__administrateur`
 --
 
-INSERT INTO `wa__administrateur` (`idAdministrateur`, `nom`, `prenom`, `identifiant`, `mdp`) VALUES
-(1, 'CAPI', 'Aurélien', 'T4GAD4', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c'),
-(2, 'Julien', 'VANDERMEERSCH', 'ju.vdm', '4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2'),
-(6, 'LAMOOT', 'Alexandre', 'dev', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08');
+INSERT INTO `wa__administrateur` (`idAdministrateur`, `nom`, `prenom`, `email`, `identifiant`, `mdp`) VALUES
+(1, 'CAPI', 'Aurélien', 'capi.aurelien@gmail.com', 'T4GAD4', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c'),
+(2, 'Julien', 'VANDERMEERSCH', '', 'ju.vdm', '4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2'),
+(6, 'LAMOOT', 'Alexandre', '', 'dev', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08');
 
 -- --------------------------------------------------------
 
@@ -130,7 +131,7 @@ INSERT INTO `wa__carnetdevoyage` (`idCarnetDeVoyage`, `date`, `publie`, `titre`,
 (2, '2015-03-05', 'true', 'Moi chez les péruviens', 'moi-chez-les-peruviens', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 15, 2, 1, 'carnets/moi-chez-les-peruviens/yaxhacoucherdesoleil.jpg', 'true'),
 (3, '2015-03-05', 'true', 'Mon expérience Péruvienne', 'mon-experience-peruvienne', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'cdv1.jpg', 'false'),
 (4, '2015-03-05', 'true', 'Mon aventure au Pérou', 'mon-aventure-au-perou', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'carnets/mon-aventure-au-perou/21.JPG', 'false'),
-(5, '2015-06-24', 'true', 'Immersion dans une culture oubliée', 'immersion-dans-une-culture-oubliee', 'Voyage à la découverte de la fascinante culture des Incas', 2, 2, 1, 'voyages/perou/banner-list.jpg', 'false'),
+(5, '2015-06-24', 'false', 'Immersion dans une culture oubliée', 'immersion-dans-une-culture-oubliee', 'Voyage à la découverte de la fascinante culture des Incas', 2, 2, 1, 'voyages/perou/banner-list.jpg', 'false'),
 (6, '2015-06-16', 'true', 'Périple chez les danseurs Nyau', 'periple-chez-les-danseurs-nyau', 'Mon voyage chez les danseurs Nyau de Mozambique', 14, 2, 1, 'voyages/mozambique/dest-img.jpg', 'false'),
 (7, '2015-07-30', 'false', 'Test de création de carnet', 'test-de-creation-de-carnet', '', 12, 2, 1, '', 'false');
 
@@ -194,14 +195,21 @@ INSERT INTO `wa__commentaires` (`idCommentaires`, `idCarnet`, `idUsers`, `date`,
 
 CREATE TABLE IF NOT EXISTS `wa__contact` (
   `idContact` int(11) NOT NULL AUTO_INCREMENT,
-  `idVoyage` int(11) NOT NULL,
   `nom` varchar(45) DEFAULT NULL,
+  `telephone` varchar(25) NOT NULL,
   `mail` varchar(45) DEFAULT NULL,
   `sujet` varchar(45) DEFAULT NULL,
   `message` longtext,
-  PRIMARY KEY (`idContact`),
-  KEY `idVoyage` (`idVoyage`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `ouvert` varchar(5) NOT NULL DEFAULT 'false',
+  PRIMARY KEY (`idContact`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Contenu de la table `wa__contact`
+--
+
+INSERT INTO `wa__contact` (`idContact`, `nom`, `telephone`, `mail`, `sujet`, `message`, `ouvert`) VALUES
+(3, 'CAPI Aurélien', '0623974082', 'capi.aurelien@gmail.com', 'Destination', 'jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz', 'false');
 
 -- --------------------------------------------------------
 
@@ -500,7 +508,7 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('affd74055a5b13c1e9267b7b2fe65f92', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438294598, 'a:3:{s:9:"user_data";s:0:"";s:11:"destination";s:1:"1";s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:31:"aussi rebatisé avenue des cons";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:30:"users/12/Voyage_etranger11.jpg";s:5:"cover";s:31:"users/12/cover/dest-img2111.jpg";}}}');
+('7581ea32c60dfbfdd99a52b0876ebd90', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438361338, 'a:3:{s:9:"user_data";s:0:"";s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:31:"aussi rebatisé avenue des cons";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:30:"users/12/Voyage_etranger11.jpg";s:5:"cover";s:31:"users/12/cover/dest-img2111.jpg";}}s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}');
 
 -- --------------------------------------------------------
 
@@ -602,12 +610,6 @@ ALTER TABLE `wa__carnetdevoyage`
 ALTER TABLE `wa__commentaires`
   ADD CONSTRAINT `id_com_carnet` FOREIGN KEY (`idCarnet`) REFERENCES `wa__carnetdevoyage` (`idCarnetDeVoyage`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `id_com_users` FOREIGN KEY (`idUsers`) REFERENCES `wa__users` (`idUsers`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `wa__contact`
---
-ALTER TABLE `wa__contact`
-  ADD CONSTRAINT `id_contact_voyage` FOREIGN KEY (`idVoyage`) REFERENCES `wa__voyage` (`idVoyage`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `wa__destination`
