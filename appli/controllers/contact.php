@@ -50,7 +50,7 @@ class Contact extends CI_Controller {
                 $this->form_validation->set_rules('tel', '"Téléphone"', 'trim|min_length[10]|max_length[15]|encode_php_tags|xss_clean|numeric');
                 $this->form_validation->set_rules('sujet', '"Sujet"', 'required|callback___check_default');
                 $this->form_validation->set_message('__check_default', 'Vous devez choisir obligatoirement une valeur!');
-                $this->form_validation->set_rules('message', '"Message"', 'trim|required|min_length[50]|max_length[600]|encode_php_tags|xss_clean');
+                $this->form_validation->set_rules('message', '"Message"', 'trim|required|min_length[50]|max_length[6000]|encode_php_tags|xss_clean');
 
                 if ($this->form_validation->run()) {
                     
@@ -80,6 +80,16 @@ class Contact extends CI_Controller {
                     //Retourner erreur
                     $result = "erreur form";
                 }
+                
+                $contact = new StdClass();
+                $contact->nom = $this->input->post('nom') .' '. $this->input->post('prenom');
+                $contact->mail = $this->input->post('mail');
+                $contact->sujet = $this->input->post('sujet');
+                $contact->telephone = $this->input->post('tel');
+                $contact->message = $this->input->post('message');
+                $contact->ouvert = "false";
+                
+                $this->contacts->insert($contact);
             }
         }
         $data['result'] = $result;
