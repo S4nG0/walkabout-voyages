@@ -7,10 +7,14 @@
                         <img src="<?php echo img_url('logo-wk-icon.png') ?>" alt="Walkabout" />
                     </div>
                     <div class="panel-form">
-                        <?php echo form_open(base_url().'walkadmin/'); ?>
+                        <?php if($error){
+                            echo $error;
+                        }
+                        echo form_open(base_url().'walkadmin/'); 
+                        ?>
                             <div class="form-group">
-                                <label for="pseudo">E-mail</label>
-                                <input id="pseudo" name="pseudo" type="text" value="<?php echo set_value('email'); ?>" autofocus />
+                                <label for="pseudo">Pseudo ou Email</label>
+                                <input id="pseudo" name="pseudo" type="text" value="<?php echo set_value('pseudo'); ?>" autofocus />
                                 <?php echo form_error('pseudo'); ?>
                             </div>
                             <div class="form-group">
@@ -33,12 +37,12 @@
 
 <div class="recover-pwd-block" id="recover-pwd">
     <div class="container-fluid">
-        <form>
+        <?php echo form_open('walkadmin/connexion/recoverpassword'); ?>
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="pwd-recover-email">Votre e-mail</label>
-                        <input type="email" name="pwd-recover-email" id="pwd-recover-email">
+                        <label for="email">Votre e-mail</label>
+                        <input type="email" name="email" id="email">
                     </div>
                 </div>
             </div>

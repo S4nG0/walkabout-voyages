@@ -1,3 +1,8 @@
+Connexion:
+  ✔ Ne marche plus! @Aurélien @started(15-07-31 13:34) @done (15-07-31 13:35) @lasted(0:01)
+  ✔ La demande de mot de passe ne marche pas! @Aurélien @started(15-07-31 13:35) @done (15-07-31 15:00) @lasted(1:25)
+  ☐ Bug CSS btn pas centré pour récup mot de passe @Julien
+
 Modules back office à rajouter :
   ☐ Actualités
   ☐ Carnets de voyages
@@ -11,9 +16,10 @@ Module actualité :
   ☐ rédaction d'articles
   ☐ ajouter des photos
   ☐ gestion boutons (liens)
+  ☐ suppression des actualités
 
 Module carnets de voyages :
-  ☐ modérer les carnets
+  ✔ modérer les carnets @done (15-07-31 12:05)
   ☐ sélectionner les carnets à la une (Pour moi c'est une selection de carnets aléatoirements!)
   ☐ sélectionner un carnet phare (page carnet de voyage)
 
@@ -24,12 +30,13 @@ Module destinations :
   ☐ Suppression des destinations
   ☐ Pouvoir ajouter le détail du prix pour chaque destination
   ☐ gestion des photos
+  ☐ gestion des pictogrammes
 
 Localisation :
   ☐ longitude et latitude
 
 Module commentaires :
-  ☐ modération
+  ✔ modération @done (15-07-31 12:05)
   ☐ validation
   ☐ suppression
 
