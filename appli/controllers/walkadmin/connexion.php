@@ -28,7 +28,7 @@ class Connexion extends CI_Controller {
         if($this->form_validation->run()){
             $pseudo = $this->input->post('pseudo');
             $mdp = $this->input->post('password');
-            $admin = $this->admin->getFromPseudo($pseudo);
+            $admin = $this->admin->getFromPseudoOrEmail($pseudo);
             if(!empty($admin)){
                 if($admin[0]->mdp == hash('sha256',$mdp)){
                     $this->session->set_userdata('admin',$admin);
@@ -38,12 +38,60 @@ class Connexion extends CI_Controller {
                 }
             }
         }
+        
+        $data['error'] = $this->session->flashdata('errorrecovery');
 
         $data['title'] = "Connexion";
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/login');
         $this->load->view('wadmin/template/footer');
 
+    }
+    
+    public function recoverpassword()
+    {
+        if($this->session->userdata('admin')){
+            redirect(base_url().'walkadmin/dashboard');
+        }
+        
+        if(!$this->input->post()){
+            redirect(base_url().'walkadmin');
+        }
+
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|encode_php_tags|xss_clean|valid_email');
+        if(!$this->form_validation->run()){
+            $this->session->set_flashdata('errorrecovery', validation_errors());
+        }else{
+            $admin = $this->admin->getFromEmail($this->input->post('email'));
+            if(empty($admin)){
+                $this->session->set_flashdata('errorrecovery','Aucun administrateur n\'est enregistré sous ce pseudo ou adresse mail.');
+            }else{
+                $mdp = code();
+                $administrateur = new StdClass();
+                $administrateur->mdp = hash('sha256',$mdp);
+                
+                $result = $this->admin->modify($administrateur, $admin[0]->idAdministrateur);
+                if($result == false){
+                    $this->session->set_flashdata('errorrecovery','Il y a eu une erreur lors de la procédure du changement de mot de passe, veuillez contacter l\'administrateur du site.');
+                }else{
+                    //Envoie du mot de passe par email
+                    $result = generate_email_forget_password($mdp,$admin[0]);
+                    $this->email->from("password_recovery@walkabout-voyages.fr");
+                    $this->email->to($admin[0]->email);
+
+                    $this->email->subject('Mot de passe oublié Walkadmin');
+                    $this->email->set_mailtype("html");
+                    $this->email->message($result);
+                    $result = $this->email->send();
+                    if($result){
+                        $this->session->set_flashdata('errorrecovery','Votre nouveau mot de passe vous a été envoyé sur votre boite mail, pensez à vérifier vos spams!');
+                    }else{
+                        $this->session->set_flashdata('errorrecovery','Il y a eu un incident lors de l\'envoie de l\'email, veuillez contacter un administrateur du site.');
+                    }
+                }
+            }
+        }
+        redirect(base_url().'walkadmin');
     }
 }
 

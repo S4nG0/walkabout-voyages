@@ -37,6 +37,48 @@ class Admin extends CI_Model {
         return $admin;
     }
     
+    public function getFromEmail($email = ''){
+        if($email == ''){
+            return false;
+        }
+        
+        $admin = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('email', $email)
+                           ->limit(1)
+                           ->get()
+                           ->result();
+        
+        return $admin;
+    }
+    
+    public function getFromPseudoOrEmail($pseudo = ''){
+        if($pseudo == ''){
+            return false;
+        }
+        
+        $admin = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('identifiant', $pseudo)
+                           ->or_where('email', $pseudo)                 
+                           ->limit(1)
+                           ->get()
+                           ->result();
+        
+        return $admin;
+    }
+    
+    public function modify($data = '', $id = 0){
+        
+        if($data == '' || $id == 0){
+            return false;
+        }
+        $result =    $this->db->where('idAdministrateur', $id);
+                     $this->db->update($this->table, $data); 
+                     
+        return $result;
+    }
+    
     public function getAll(){
         $admin = $this->db->select('*')
                            ->from($this->table)
