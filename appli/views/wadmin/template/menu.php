@@ -25,7 +25,7 @@
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user-md fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    <i class="fa fa-user-md fa-fw"></i><i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user-md fa-fw"></i>Bonjour <?php echo $admin[0]->prenom . ' ' . $admin[0]->nom; ?></a>
