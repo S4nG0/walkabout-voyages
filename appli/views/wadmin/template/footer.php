@@ -15,6 +15,7 @@
 <!-- Flot Charts JavaScript -->
 <script src="<?php echo js_url('vendors/flot/excanvas.min'); ?>"></script>
 <script src="<?php echo js_url('vendors/flot/jquery.flot'); ?>"></script>
+<script src="<?php echo js_url('vendors/flot/jquery.flot.pie'); ?>"></script>
 <script src="<?php echo js_url('vendors/flot/jquery.flot.resize'); ?>"></script>
 <script src="<?php echo js_url('vendors/flot/jquery.flot.time'); ?>"></script>
 <script src="<?php echo js_url('vendors/flot/jquery.flot.tooltip.min'); ?>"></script>
