@@ -98,10 +98,6 @@ function search() {
 
 }
 
-
-var texte = $('option:selected').text();
-$('input[name=nom]')[0].value = texte;
-
 $('select[name=code_pays]').on('change', function(){
     var texte = $('option:selected').text();
     $('input[name=nom]')[0].value = texte;

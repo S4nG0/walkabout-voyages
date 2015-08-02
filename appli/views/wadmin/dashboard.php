@@ -44,7 +44,7 @@
         <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>">
             <div class="col-lg-3 col-md-3 centered">
                 <div class="row">
-                    <i class="fa fa-support fa-5x "></i>
+                    <i class="fa fa-pencil-square-o fa-5x "></i>
                 </div>
                 <div class="row">
                     <div class="huge"><?php echo $contacts; ?></div>
@@ -110,7 +110,9 @@
     <!-- /.row -->
 </div>
 <!-- /#page-wrapper -->
-
+<?php
+$result = analytics('ga:pageviewsPerSession', 'ga:country')->rows;
+?>
 </div>
 <!-- /#wrapper -->
 
@@ -132,15 +134,17 @@ $i = 0;
 foreach ($result as $session) {
     if ($session[0] != "(not set)") {
         ?>
-    data = {};
-    data.label = '<?php echo $session[0]; ?>'
-    data.data = [];
-    data.data.push([<?php echo $i; ?>,<?php echo $session[1]; ?>]);
-    data.bars = {};
-    data.bars.show = true;
-    array.push(data);
-    <?php $i++;}    
-} ?>
+                    data = {};
+                    data.label = '<?php echo $session[0]; ?>'
+                    data.data = [];
+                    data.data.push([<?php echo $i; ?>,<?php echo $session[1]; ?>]);
+                    data.bars = {};
+                    data.bars.show = true;
+                    array.push(data);
+        <?php $i++;
+    }
+}
+?>
 
             var barOptions = {
                 series: {
@@ -165,100 +169,95 @@ foreach ($result as $session) {
                     }
                 }
             };
-            
+
             var d1_1 = [
-        [1325376000000, 120],
-        [1328054400000, 70],
-        [1330560000000, 100],
-        [1333238400000, 60],
-        [1335830400000, 35]
-    ];
- 
-    var d1_2 = [
-        [1325376000000, 80],
-        [1328054400000, 60],
-        [1330560000000, 30],
-        [1333238400000, 35],
-        [1335830400000, 30]
-    ];
- 
-    var d1_3 = [
-        [1325376000000, 80],
-        [1328054400000, 40],
-        [1330560000000, 30],
-        [1333238400000, 20],
-        [1335830400000, 10]
-    ];
- 
-    var d1_4 = [
-        [1325376000000, 15],
-        [1328054400000, 10],
-        [1330560000000, 15],
-        [1333238400000, 20],
-        [1335830400000, 15]
-    ];
- 
-    var data1 = [
-        {
-            label: "Product 1",
-            data: d1_1,
-            bars: {
-                show: true,
-                barWidth: 12*24*60*60*300,
-                fill: true,
-                lineWidth: 1,
-                order: 1,
-                fillColor:  "#AA4643"
-            },
-            color: "#AA4643"
-        },
-        {
-            label: "Product 2",
-            data: d1_2,
-            bars: {
-                show: true,
-                barWidth: 12*24*60*60*300,
-                fill: true,
-                lineWidth: 1,
-                order: 2,
-                fillColor:  "#89A54E"
-            },
-            color: "#89A54E"
-        },
-        {
-            label: "Product 3",
-            data: d1_3,
-            bars: {
-                show: true,
-                barWidth: 12*24*60*60*300,
-                fill: true,
-                lineWidth: 1,
-                order: 3,
-                fillColor:  "#4572A7"
-            },
-            color: "#4572A7"
-        },
-        {
-            label: "Product 4",
-            data: d1_4,
-            bars: {
-                    show: true,
-                barWidth: 12*24*60*60*300,
-                fill: true,
-                lineWidth: 1,
-                order: 4,
-                fillColor:  "#80699B"
-            },
-            color: "#80699B"
-        }
-    ];
-    
-    console.log(array);
-    console.log(data1);
-    console.log(typeof(data1));
-    console.log(typeof(array));
-    
-    $.plot($("#flot-bar-chart"), array, barOptions);
+                [1325376000000, 120],
+                [1328054400000, 70],
+                [1330560000000, 100],
+                [1333238400000, 60],
+                [1335830400000, 35]
+            ];
+
+            var d1_2 = [
+                [1325376000000, 80],
+                [1328054400000, 60],
+                [1330560000000, 30],
+                [1333238400000, 35],
+                [1335830400000, 30]
+            ];
+
+            var d1_3 = [
+                [1325376000000, 80],
+                [1328054400000, 40],
+                [1330560000000, 30],
+                [1333238400000, 20],
+                [1335830400000, 10]
+            ];
+
+            var d1_4 = [
+                [1325376000000, 15],
+                [1328054400000, 10],
+                [1330560000000, 15],
+                [1333238400000, 20],
+                [1335830400000, 15]
+            ];
+
+            var data1 = [
+                {
+                    label: "Product 1",
+                    data: d1_1,
+                    bars: {
+                        show: true,
+                        barWidth: 12 * 24 * 60 * 60 * 300,
+                        fill: true,
+                        lineWidth: 1,
+                        order: 1,
+                        fillColor: "#AA4643"
+                    },
+                    color: "#AA4643"
+                },
+                {
+                    label: "Product 2",
+                    data: d1_2,
+                    bars: {
+                        show: true,
+                        barWidth: 12 * 24 * 60 * 60 * 300,
+                        fill: true,
+                        lineWidth: 1,
+                        order: 2,
+                        fillColor: "#89A54E"
+                    },
+                    color: "#89A54E"
+                },
+                {
+                    label: "Product 3",
+                    data: d1_3,
+                    bars: {
+                        show: true,
+                        barWidth: 12 * 24 * 60 * 60 * 300,
+                        fill: true,
+                        lineWidth: 1,
+                        order: 3,
+                        fillColor: "#4572A7"
+                    },
+                    color: "#4572A7"
+                },
+                {
+                    label: "Product 4",
+                    data: d1_4,
+                    bars: {
+                        show: true,
+                        barWidth: 12 * 24 * 60 * 60 * 300,
+                        fill: true,
+                        lineWidth: 1,
+                        order: 4,
+                        fillColor: "#80699B"
+                    },
+                    color: "#80699B"
+                }
+            ];
+
+            $.plot($("#flot-bar-chart"), array, barOptions);
 
         }
 
@@ -278,7 +277,7 @@ foreach ($result as $pays) {
     }
 }
 ?>
-var plotObj = $.plot($("#flot-pie-chart"), pays, {
+            var plotObj = $.plot($("#flot-pie-chart"), pays, {
                 series: {
                     pie: {
                         show: true
@@ -380,15 +379,24 @@ function analytics($metrics, $dimensions) {
     $client->addScope(Google_Service_Analytics::ANALYTICS_READONLY);
 
 
-    if (!$client->getAccessToken()) {
-        $_SESSION['token'] = $client->getAccessToken();
-        $token = json_decode($_SESSION['token']);
-    } else {
-        $authUrl = $client->createAuthUrl();
-	echo "<a class='login' href='$authUrl'>Connect Me!</a>";
-        echo '<script>document.getElementById("connectGoogle").click();</script>';
-        //header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
+//    if ($client->getAccessToken()) {
+//        $_SESSION['token'] = $client->getAccessToken();
+//        $token = json_decode($_SESSION['token']);
+//    } else {
+//        $authUrl = $client->createAuthUrl();
+//	echo "<a class='login' href='$authUrl'>Connect Me!</a>";
+//        echo '<script>document.getElementsByClassName("login")[0].click();</script>';
+//    }
+
+    if (isset($_GET['code'])) {
+        $client->authenticate();
+        $_SESSION['access_token'] = $client->getAccessToken();
     }
+
+    $google_token = json_decode($_SESSION['access_token']);
+    $client->refreshToken($google_token->access_token);
+
+    $_SESSION['access_token'] = $client->getAccessToken();
 
     if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
         // Set the access token on the client.
