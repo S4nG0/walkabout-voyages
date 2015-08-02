@@ -109,7 +109,7 @@
 <script>
     $(document).ready(function () {
 
-        //pie();
+        pie();
         plot();
         //bar();
 
@@ -120,7 +120,6 @@
 
             var array = [];
 
-$result = analytics('ga:pageviewsPerSession', 'ga:country')->rows;
 $i = 0;
 foreach ($result as $session) {
     if ($session[0] != "(not set)") {
@@ -253,20 +252,21 @@ foreach ($result as $session) {
 
         }
 
+        
+*/
+?>
+        
         function pie() {
             var pays = [];
 <?php
 $max = 0;
-$result = analytics('ga:sessions', 'ga:country')->rows;
-foreach ($result as $pays) {
-    if ($pays[0] != "(not set)") {
+foreach ($payss as $pays) {
         ?>
                     var object = {};
-                    object.label = "<?php echo $pays[0] ?>";
-                    object.data = <?php echo $pays[1] ?>;
+                    object.label = "<?php echo $pays->nom ?>";
+                    object.data = <?php echo $pays->nb_reservations ?>;
                     pays.push(object);
         <?php
-    }
 }
 ?>
             var plotObj = $.plot($("#flot-pie-chart"), pays, {
@@ -293,8 +293,7 @@ foreach ($result as $pays) {
                 }
             });
         }
-*/
-?>
+        
         function plot() {
             var ventes = [];
 <?php

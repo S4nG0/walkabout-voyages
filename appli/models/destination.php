@@ -39,6 +39,20 @@ class Destination extends CI_Model {
         return $destination;
     }
 
+    public function getFromPays($id = 0){
+        if($id == 0){
+            return false;
+        }
+        
+        $destination = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idPays', "$id")
+                           ->get()
+                           ->result();
+
+        return $destination;
+    }
+
     public function get_all(){
 
         $destinations = $this->db->select('*')
