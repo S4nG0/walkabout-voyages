@@ -75,7 +75,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 style='text-align:center;'>Provenance des visiteurs du site</h3>
+                    <h3 style='text-align:center;'>Voyages préférés des utilisateurs</h3>
                     <br/>
                     <div class="flot-chart">
                         <div class="flot-chart-content" id="flot-pie-chart"></div>
@@ -88,7 +88,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 style='text-align:center;'>Pages vues par sessions (par pays)</h3>
+                    <h3 style='text-align:center;'>Nombre d'utilisateurs par pays</h3>
                     <br/>
                     <div class="flot-chart">
                         <div class="flot-chart-content" id="flot-bar-chart"></div>
@@ -111,23 +111,20 @@
 
         pie();
         plot();
-        //bar();
+        bar();
 
         //Flot Bar Chart
-<?php
-/*
         function bar() {
-
-            var array = [];
-
+        var array = [];
+<?php
 $i = 0;
-foreach ($result as $session) {
+foreach ($nbUsersPays as $userPays) {
     if ($session[0] != "(not set)") {
         ?>
                     data = {};
-                    data.label = '<?php echo $session[0]; ?>'
+                    data.label = '<?php echo $userPays->pays; ?>'
                     data.data = [];
-                    data.data.push([<?php echo $i; ?>,<?php echo $session[1]; ?>]);
+                    data.data.push(["<?php echo $i; ?>",<?php echo $userPays->nb; ?>]);
                     data.bars = {};
                     data.bars.show = true;
                     array.push(data);
@@ -155,106 +152,15 @@ foreach ($result as $session) {
                 tooltip: true,
                 tooltipOpts: {
                     content: function () {
-                        var tooltip = '<span style="color:black;text-align:center;">%y pages vues par sessions';
+                        var tooltip = '<span style="color:black;text-align:center;">%y utilisateurs dans ce pays';
                         return tooltip;
                     }
                 }
             };
 
-            var d1_1 = [
-                [1325376000000, 120],
-                [1328054400000, 70],
-                [1330560000000, 100],
-                [1333238400000, 60],
-                [1335830400000, 35]
-            ];
-
-            var d1_2 = [
-                [1325376000000, 80],
-                [1328054400000, 60],
-                [1330560000000, 30],
-                [1333238400000, 35],
-                [1335830400000, 30]
-            ];
-
-            var d1_3 = [
-                [1325376000000, 80],
-                [1328054400000, 40],
-                [1330560000000, 30],
-                [1333238400000, 20],
-                [1335830400000, 10]
-            ];
-
-            var d1_4 = [
-                [1325376000000, 15],
-                [1328054400000, 10],
-                [1330560000000, 15],
-                [1333238400000, 20],
-                [1335830400000, 15]
-            ];
-
-            var data1 = [
-                {
-                    label: "Product 1",
-                    data: d1_1,
-                    bars: {
-                        show: true,
-                        barWidth: 12 * 24 * 60 * 60 * 300,
-                        fill: true,
-                        lineWidth: 1,
-                        order: 1,
-                        fillColor: "#AA4643"
-                    },
-                    color: "#AA4643"
-                },
-                {
-                    label: "Product 2",
-                    data: d1_2,
-                    bars: {
-                        show: true,
-                        barWidth: 12 * 24 * 60 * 60 * 300,
-                        fill: true,
-                        lineWidth: 1,
-                        order: 2,
-                        fillColor: "#89A54E"
-                    },
-                    color: "#89A54E"
-                },
-                {
-                    label: "Product 3",
-                    data: d1_3,
-                    bars: {
-                        show: true,
-                        barWidth: 12 * 24 * 60 * 60 * 300,
-                        fill: true,
-                        lineWidth: 1,
-                        order: 3,
-                        fillColor: "#4572A7"
-                    },
-                    color: "#4572A7"
-                },
-                {
-                    label: "Product 4",
-                    data: d1_4,
-                    bars: {
-                        show: true,
-                        barWidth: 12 * 24 * 60 * 60 * 300,
-                        fill: true,
-                        lineWidth: 1,
-                        order: 4,
-                        fillColor: "#80699B"
-                    },
-                    color: "#80699B"
-                }
-            ];
-
             $.plot($("#flot-bar-chart"), array, barOptions);
 
         }
-
-        
-*/
-?>
         
         function pie() {
             var pays = [];
