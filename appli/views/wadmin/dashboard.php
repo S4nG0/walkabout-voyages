@@ -152,9 +152,10 @@ foreach ($nbUsersPays as $userPays) {
                             print "[$i, '$userPays->pays']";
                             $i++;
                         }
-                        echo ']';
+                        echo '],';
                     ?>
                 },
+                yaxis: { tickSize: 1 },
                 grid: {
                     hoverable: true
                 },
