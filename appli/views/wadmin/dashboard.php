@@ -371,6 +371,7 @@ function analytics($metrics, $dimensions) {
     $client = new Google_Client();
     $client->setAuthConfigFile(base_url() . 'client_secrets.json');
     $client->addScope(Google_Service_Analytics::ANALYTICS_READONLY);
+    $client->setAccessType('offline');
 
 
 //    if ($client->getAccessToken()) {
