@@ -141,7 +141,8 @@ foreach ($result as $session) {
                     data.bars = {};
                     data.bars.show = true;
                     array.push(data);
-        <?php $i++;
+        <?php
+        $i++;
     }
 }
 ?>
@@ -392,12 +393,11 @@ function analytics($metrics, $dimensions) {
         $client->authenticate();
         $_SESSION['access_token'] = $client->getAccessToken();
     }
-
-    $google_token = json_decode($_SESSION['access_token']);
-    $client->refreshToken($google_token->access_token);
-
-    $_SESSION['access_token'] = $client->getAccessToken();
-
+    if ($client->isAccessTokenExpired()) {
+        $google_token = json_decode($_SESSION['access_token']);
+        $client->refreshToken($google_token->access_token);
+        $_SESSION['access_token'] = $client->getAccessToken();
+    }
     if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
         // Set the access token on the client.
         $client->setAccessToken($_SESSION['access_token']);
