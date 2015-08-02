@@ -72,13 +72,6 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
-            <h1>Analyse du site Walkabout</h1>
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    <br/><br/>
-    <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -393,11 +386,13 @@ function analytics($metrics, $dimensions) {
         $client->authenticate();
         $_SESSION['access_token'] = $client->getAccessToken();
     }
-    if ($client->isAccessTokenExpired()) {
+    
+    if ($client->isAccessTokenExpired() && isset($_SESSION['access_token'])) {
         $google_token = json_decode($_SESSION['access_token']);
         $client->refreshToken($google_token->access_token);
         $_SESSION['access_token'] = $client->getAccessToken();
     }
+    
     if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
         // Set the access token on the client.
         $client->setAccessToken($_SESSION['access_token']);
