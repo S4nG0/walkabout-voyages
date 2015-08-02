@@ -88,7 +88,7 @@
         <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 style='text-align:center;'>Nombre d'utilisateurs par pays</h3>
+                    <h3 style='text-align:center;'>Nationalité des utilisateurs</h3>
                     <br/>
                     <div class="flot-chart">
                         <div class="flot-chart-content" id="flot-bar-chart"></div>
