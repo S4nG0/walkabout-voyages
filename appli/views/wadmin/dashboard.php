@@ -117,20 +117,20 @@
         function bar() {
         var array = [];
 <?php
-$i = 0;
+$i = 0.5;
 foreach ($nbUsersPays as $userPays) {
-    if ($session[0] != "(not set)") {
         ?>
                     data = {};
                     data.label = '<?php echo $userPays->pays; ?>'
                     data.data = [];
-                    data.data.push(["<?php echo $i; ?>",<?php echo $userPays->nb; ?>]);
+                    data.data.push([<?php echo $i; ?>,<?php echo $userPays->nb; ?>]);
                     data.bars = {};
                     data.bars.show = true;
+                    data.bars.align = "center";
+                    data.bars.lineWidth = 2 ;
                     array.push(data);
         <?php
         $i++;
-    }
 }
 ?>
 
@@ -140,19 +140,31 @@ foreach ($nbUsersPays as $userPays) {
                         show: true,
                     }
                 },
+                xaxis: {
+                    <?php
+                        $i = 0.5;
+                        foreach ($nbUsersPays as $userPays) {
+                            if($i != 0.5){
+                                echo ',';
+                            }else{
+                                echo 'ticks: [';
+                            }
+                            print "[$i, '$userPays->pays']";
+                            $i++;
+                        }
+                        echo ']';
+                    ?>
+                },
                 grid: {
                     hoverable: true
                 },
                 legend: {
                     show: true
                 },
-                xaxis: {
-                    mode: "text"
-                },
                 tooltip: true,
                 tooltipOpts: {
                     content: function () {
-                        var tooltip = '<span style="color:black;text-align:center;">%y utilisateurs dans ce pays';
+                        var tooltip = '<span style="color:black;text-align:center;">%y.0 utilisateurs en %x';
                         return tooltip;
                     }
                 }
