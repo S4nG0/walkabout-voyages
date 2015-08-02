@@ -55,7 +55,7 @@ class Dashboard extends CI_Controller {
             }
             $pays->nb_reservations = $reservations;
         }
-        
+        $data['nbUsersPays'] = $this->user->getNbUsersByPays();
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/dashboard');

@@ -51,6 +51,16 @@ class User extends CI_Model {
 
         return $user;
     }
+    
+    public function getNbUsersByPays(){
+
+        $users = $this->db->select('count(*) as nb ,pays')
+                         ->from($this->table)
+                         ->group_by('pays')
+                         ->get()
+                         ->result();
+        return $users;
+    }
 
     public function getAllUsers(){
 
