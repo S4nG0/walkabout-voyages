@@ -38,6 +38,24 @@ class Dashboard extends CI_Controller {
         error_reporting(1);
         $data['chart'] = $array;
         $data['admin'] = $this->session->userdata('admin');
+        
+        //On va calculer le nb de reservation par pays pour le pie chart
+        $data['payss'] = $this->pays->getPays();
+        foreach($data['payss'] as $pays){
+            $reservations = 0;
+            $destinations = $this->destination->getFromPays($pays->idPays);
+            foreach($destinations as $destination){
+                $voyages = $this->voyages->get_voyages_from_destination($destination->idDestination);
+                foreach($voyages as $voyage){
+                    $reservations += $this->reservations->countFromVoyage($voyage->idVoyage);
+                }
+            }
+            if(!isset($reservations)){
+                $reservations = 0;
+            }
+            $pays->nb_reservations = $reservations;
+        }
+        
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/dashboard');

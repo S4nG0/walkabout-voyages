@@ -126,4 +126,19 @@ class Reservations extends CI_Model {
         
     }
     
+    public function countFromVoyage($id = 0){
+        if($id == 0){
+            return false;
+        }
+        
+        $reservations = $this->db->select('*')->from($this->table)->where('idVoyage',$id)->get()->result();
+        
+        $count = 0;
+        
+        foreach($reservations as $reservation){
+            $count++;      
+        }
+        return $count;
+    }
+    
 }
