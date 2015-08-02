@@ -22,7 +22,6 @@ class Dashboard extends CI_Controller {
      */
     public function index() {
         connecte_admin($this->session->userdata('admin'));
-        $this->load->library('google');
         $data = array();
         $data['title'] = 'Tableau de bord';
         $data['commentaires'] = $this->commentaires->count_non_modere();

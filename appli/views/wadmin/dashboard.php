@@ -103,25 +103,23 @@
     <!-- /.row -->
 </div>
 <!-- /#page-wrapper -->
-<?php
-$result = analytics('ga:pageviewsPerSession', 'ga:country')->rows;
-?>
 </div>
 <!-- /#wrapper -->
 
 <script>
     $(document).ready(function () {
 
-        pie();
+        //pie();
         plot();
-        bar();
+        //bar();
 
         //Flot Bar Chart
-
+<?php
+/*
         function bar() {
 
             var array = [];
-<?php
+
 $result = analytics('ga:pageviewsPerSession', 'ga:country')->rows;
 $i = 0;
 foreach ($result as $session) {
@@ -295,7 +293,8 @@ foreach ($result as $pays) {
                 }
             });
         }
-
+*/
+?>
         function plot() {
             var ventes = [];
 <?php
@@ -357,71 +356,3 @@ foreach ($chart as $key => $value) {
         }
     });
 </script>
-
-
-<?php
-
-function analytics($metrics, $dimensions) {
-// Start a session to persist credentials.
-    session_start();
-
-// Create the clientand set the authorization configuration
-// from the client_secretes.json you downloaded from the developer console.
-
-    $client = new Google_Client();
-    $client->setAuthConfigFile(base_url() . 'client_secrets.json');
-    $client->addScope(Google_Service_Analytics::ANALYTICS_READONLY);
-    $client->setAccessType('offline');
-
-
-//    if ($client->getAccessToken()) {
-//        $_SESSION['token'] = $client->getAccessToken();
-//        $token = json_decode($_SESSION['token']);
-//    } else {
-//        $authUrl = $client->createAuthUrl();
-//	echo "<a class='login' href='$authUrl'>Connect Me!</a>";
-//        echo '<script>document.getElementsByClassName("login")[0].click();</script>';
-//    }
-
-    if (isset($_GET['code'])) {
-        $client->authenticate();
-        $_SESSION['access_token'] = $client->getAccessToken();
-    }
-    
-    if ($client->isAccessTokenExpired() && isset($_SESSION['access_token'])) {
-        $google_token = json_decode($_SESSION['access_token']);
-        $client->refreshToken($google_token->access_token);
-        $_SESSION['access_token'] = $client->getAccessToken();
-    }
-    
-    if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
-        // Set the access token on the client.
-        $client->setAccessToken($_SESSION['access_token']);
-
-
-        // Create an authorized analytics service object.
-        $analytics = new Google_Service_Analytics($client);
-
-        $optParams = array('dimensions' => $dimensions);
-
-        $choiceW = "106175849";
-        $choiceC = "88332300";
-
-
-        try {
-
-            $results = $analytics->data_ga->get('ga:88332300', '30daysAgo', 'yesterday', $metrics, $optParams);
-            // Success. 
-        } catch (apiServiceException $e) {
-            // Handle API service exceptions.
-            $error = $e->getMessage();
-        }
-    } else {
-        $redirect_uri = 'http://' . $_SERVER['HTTP_HOST'] . '/walkadmin/oauthcallback';
-        header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
-    }
-
-
-    return $results;
-}
-?>
