@@ -24,14 +24,23 @@ class Comments extends CI_Controller {
         connecte_admin($this->session->userdata('admin'));
         $data = array();
         $data['title'] = 'Commentaires';
-        $data['commentaires'] = $this->commentaires->count_non_modere();
+        $data['commentaires'] = $this->commentaires->getAllCommentairesNonModere();
         $data['reservations'] = $this->reservations->count_en_cours();
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/pages/Commentaires/liste');
+        $this->load->view('wadmin/pages/Commentaires/liste',$data);
         $this->load->view('wadmin/template/footer');
         //$this->output->enable_profiler(true);
+    }
+
+    public function publie($idCommentaires=0){
+        connecte_admin($this->session->userdata('admin'));
+        if($idCommentaires==0)
+            $this->index();
+        $commentaire['modere'] = "true";
+        $this->commentaires->modify($commentaire,$idCommentaires);
+        redirect('walkadmin/comments');
     }
 
 }
