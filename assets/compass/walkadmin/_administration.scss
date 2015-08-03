@@ -228,6 +228,13 @@ body.admin {
         }
     }
 
+    .no-entry {
+        margin: 0;
+        padding: 15px;
+        font-size: 24px;
+        font-style: italic;
+    }
+
     .nav-tabs {
         margin-top: 25px;
         border: 1px solid $noir;
@@ -276,6 +283,7 @@ body.admin {
 
     .contact {
         position: relative;
+        margin-bottom: 25px;
         border-color: $noir;
         @include border-radius(0);
         @include box-shadow(none);
@@ -365,6 +373,15 @@ body.admin {
                 }
             }
         }
+    }
+}
+
+/*------------------------------------*\
+    #CONTACT
+\*------------------------------------*/
+.contacts {
+    .contact {
+        margin-top: 25px;
     }
 }
 
