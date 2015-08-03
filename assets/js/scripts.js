@@ -171,7 +171,7 @@ $(document).ready(function () {
      * Sticky navbar
      */
     var navHeight = 77;
-    if (!body.hasClass('sign-in'), !body.hasClass('checkout')) {
+    if (!body.hasClass('sign-in'), !body.hasClass('checkout'), !body.hasClass('admin')) {
         $('.navbar').affix({
             offset: {
                 top: navHeight,
@@ -482,7 +482,7 @@ $(document).ready(function () {
             }
         }
     });
-    
+
     $('.cover-change').on('click', function(e){
         e.preventDefault();
         $('.input-upload-cover').click();

@@ -10,10 +10,10 @@
                         <?php if($error){
                             echo $error;
                         }
-                        echo form_open(base_url().'walkadmin/'); 
+                        echo form_open(base_url().'walkadmin/');
                         ?>
                             <div class="form-group">
-                                <label for="pseudo">Pseudo ou Email</label>
+                                <label for="pseudo">Identifiant</label>
                                 <input id="pseudo" name="pseudo" type="text" value="<?php echo set_value('pseudo'); ?>" autofocus />
                                 <?php echo form_error('pseudo'); ?>
                             </div>
