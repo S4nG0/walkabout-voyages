@@ -43,6 +43,7 @@ $route['admin'] = "walkadmin/connexion";
 $route['walkadmin'] = "walkadmin/connexion";
 $route['walkadmin/pays/creer'] = "walkadmin/pays_admin/creer";
 $route['walkadmin/map'] = "walkadmin/pays_admin/index";
+$route['walkadmin/creer-destination'] = "walkadmin/destinations/creer";
 $route['carnets-de-voyage'] = 'carnets_de_voyage';
 $route['tous-les-carnets'] = 'tous_les_carnets/page';
 $route['tous-les-carnets/(:any)'] = "tous_les_carnets/page/$1";
