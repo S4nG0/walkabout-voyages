@@ -4,19 +4,19 @@ Connexion:
   ☐ Bug CSS btn pas centré pour récup mot de passe @Julien
 
 Modules back office à rajouter :
-  ☐ Actualités
-  ☐ Carnets de voyages
-  ☐ Destinations (reste supprimer à faire!)
+  ✔ Actualités @done (15-08-03 18:23)
+  ✔ Carnets de voyages @done (15-08-03 18:23)
+  ✔ Destinations (reste supprimer à faire!) @done (15-08-03 18:23)
   ✔ Ajouter un administrateur @done (15-07-01 10:32)
-  ☐ Gestion des réservations
+  ☐ Gestion des réservations ??? modifier les états sur le bo?
   ☐ Gestion des renseignements
-  ☐ Gestion des contacts
+  ✔ Gestion des contacts @done (15-08-03 18:24)
 
 Module actualité :
   ☐ rédaction d'articles
-  ☐ ajouter des photos
+  ✔ ajouter des photos @done (15-08-03 18:25)
   ☐ gestion boutons (liens)
-  ☐ suppression des actualités
+  ✔ suppression des actualités @done (15-08-03 18:25)
 
 Module carnets de voyages :
   ✔ modérer les carnets @done (15-07-31 12:05)
@@ -27,7 +27,7 @@ Module destinations :
   ✔ ajouter une destination @done (15-07-17 09:36)
   ✔ rédaction des informations (formulaire avec : capital, monnaie, dirigeant,... l'admin rentre les infos dans le formulaire) @done (15-07-17 09:38)
   ✔ rédaction du descriptif @done (15-07-17 09:38)
-  ☐ Suppression des destinations
+  ✔ Suppression des destinations @done (15-08-03 18:27)
   ☐ Pouvoir ajouter le détail du prix pour chaque destination
   ☐ gestion des photos
   ☐ gestion des pictogrammes
@@ -37,6 +37,6 @@ Localisation :
 
 Module commentaires :
   ✔ modération @done (15-07-31 12:05)
-  ☐ validation
-  ☐ suppression
+  ✔ validation @done (15-08-03 18:27)
+  ☐ suppression (pb si les commentaires sont en escalier)
 
