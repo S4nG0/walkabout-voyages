@@ -89,6 +89,7 @@ class Contact extends CI_Controller {
                 $contact->telephone = $this->input->post('tel');
                 $contact->message = $this->input->post('message');
                 $contact->ouvert = "false";
+                $contact->date = date('Y-m-d');
                 
                 $this->contacts->insert($contact);
             }

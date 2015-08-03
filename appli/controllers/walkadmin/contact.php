@@ -22,6 +22,54 @@ class Contact extends CI_Controller{
         $this->load->view('wadmin/pages/Contacts/liste', $data);
         $this->load->view('wadmin/template/footer');
     }
+    
+    public function lu($id = 0){
+        if($id == 0){
+            return false;
+        }
+            
+        connecte_admin($this->session->userdata('admin'));
+        $contact = new stdClass();
+        $contact->ouvert = 'true';
+        $this->contacts->modify($contact,$id);
+        redirect(base_url("walkadmin/contact"));
+    }
+    
+    public function nonlu($id = 0){
+        if($id == 0){
+            return false;
+        }
+            
+        connecte_admin($this->session->userdata('admin'));
+        $contact = new stdClass();
+        $contact->ouvert = 'false';
+        $this->contacts->modify($contact,$id);
+        redirect(base_url("walkadmin/contact"));
+    }
+    
+    public function important($id = 0){
+        if($id == 0){
+            return false;
+        }
+            
+        connecte_admin($this->session->userdata('admin'));
+        $contact = new stdClass();
+        $contact->ouvert = 'important';
+        $this->contacts->modify($contact,$id);
+        redirect(base_url("walkadmin/contact"));
+    }
+    
+    public function archiver($id = 0){
+        if($id == 0){
+            return false;
+        }
+            
+        connecte_admin($this->session->userdata('admin'));
+        $contact = new stdClass();
+        $contact->ouvert = 'archives';
+        $this->contacts->modify($contact,$id);
+        redirect(base_url("walkadmin/contact"));
+    }
 
     public function publie($idCarnetDeVoyage=0){
         if($idCarnetDeVoyage==0)
