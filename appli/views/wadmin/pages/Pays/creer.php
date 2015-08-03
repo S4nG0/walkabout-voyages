@@ -73,6 +73,7 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                         <option value="EE">Estonie</option>
                         <option value="US">Etats-Unis</option>
                         <option value="ET">Ethiopie</option>
+                        <option value="EH">Pays Basque</option>
                         <option value="FO">Féroé</option>
                         <option value="FJ">Fidji</option>
                         <option value="FI">Finlande</option>
@@ -86,8 +87,9 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                         <option value="GL">Groenland</option>
                         <option value="GT">Guatemala</option>
                         <option value="GN">Guinée</option>
-                        <option value="CW">Guinée-Bissau</option>
+                        <option value="GW">Guinée-Bissau</option>
                         <option value="GQ">Guinée équatoriale</option>
+                        <option value="GF">Guyane française</option>
                         <option value="GY">Guyana</option>
                         <option value="HT">Haïti</option>
                         <option value="HN">Honduras</option>
@@ -131,6 +133,7 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                         <option value="MR">Mauritanie</option>
                         <option value="MX">Mexique</option>
                         <option value="FM">Micronésie</option>
+                        <option value="Fk">îles Malouines</option>
                         <option value="MD">Moldavie</option>
                         <option value="MC">Monaco</option>
                         <option value="MN">Mongolie</option>
@@ -141,7 +144,7 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                         <option value="NP">Népal</option>
                         <option value="NI">Nicaragua</option>
                         <option value="NE">Niger</option>
-                        <option value="NC">Nigeria</option>
+                        <option value="NG">Nigeria</option>
                         <option value="XZ">Nioué</option>
                         <option value="NO">Norvège</option>
                         <option value="NZ">Nouvelle Zélande</option>
@@ -149,6 +152,7 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                         <option value="UG">Ouganda</option>
                         <option value="UZ">Ouzbékistan</option>
                         <option value="PK">Pakistan</option>
+                        <option value="PS">Palestine</option>
                         <option value="PA">Panama</option>
                         <option value="PG">Papouasie</option>
                         <option value="PY">Paraguay</option>
@@ -158,8 +162,10 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                         <option value="PN">Pitcairn</option>
                         <option value="PL">Pologne</option>
                         <option value="PT">Portugal</option>
+                        <option value="PR">Porto Rico</option>
                         <option value="QA">Qatar</option>
                         <option value="DO">République Dominicaine</option>
+                        <option value="RS">République de Serbie</option>
                         <option value="RO">Roumanie</option>
                         <option value="GB">Royaume-Uni</option>
                         <option value="RU">Russie</option>
@@ -186,6 +192,7 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                         <option value="SE">Suède</option>
                         <option value="CH">Suisse</option>
                         <option value="SR">Suriname</option>
+                        <option value="SJ">Svalbard Et Île Jan Mayen</option>
                         <option value="SZ">Swaziland</option>
                         <option value="SY">Syrie</option>
                         <option value="TJ">Tadjikistan</option>
@@ -193,6 +200,7 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                         <option value="TZ">Tanzanie</option>
                         <option value="TD">Tchad</option>
                         <option value="CZ">Tchéquie</option>
+                        <option value="TF">Terres Australes Françaises</option>
                         <option value="TH">Thaïlande</option>
                         <option value="TL">Timor</option>
                         <option value="TG">Togo</option>
@@ -201,7 +209,6 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                         <option value="TN">Tunisie</option>
                         <option value="TM">Turkménistan</option>
                         <option value="TR">Turquie</option>
-                        <option value="TV">Tuvalu</option>
                         <option value="UA">Ukraine</option>
                         <option value="UY">Uruguay</option>
                         <option value="VU">Vanuatu</option>

@@ -28,6 +28,7 @@ class Accueil extends CI_Controller {
              */
             $data['actus'] = $this->actualites->get_actus();
             $data['newsletter'] = $this->session->flashdata('newsletter');
+            $data['pays']=$this->pays->getPays();
             $data['title'] = "Accueil";
             foreach($data['actus'] as $actu){
                 $actu->date = conv_date($actu->date); 
