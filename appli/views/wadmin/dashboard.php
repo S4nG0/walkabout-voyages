@@ -1,59 +1,121 @@
 <div id="page-wrapper">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Tableau de bord</h1>
+    <div class="row text-center">
+        <div class="col-sm-12">
+            <h1 class="page-header sep">Tableau de bord</h1>
         </div>
-        <!-- /.col-lg-12 -->
     </div>
 
-    <!-- Nouvelle version du dashboard! -->
-    <div class="row" style='text-align:center;'>
-        <a href="<?php echo base_url() . 'walkadmin/reservation'; ?>">
-            <div class="col-lg-3 col-md-3 centered">
-                <div class="row">
-                    <i class="fa fa-shopping-cart fa-5x "></i>
-                </div>
-                <div class="row">
-                    <div class="huge"><?php echo $reservations; ?></div>
-                    <div>Réservation<?php if ($reservations > 1) echo's'; ?> en cours!</div>
-                </div>
-            </div>
-        </a>
-        <a href="<?php echo base_url() . 'walkadmin/carnets'; ?>">
-            <div class="col-lg-3 col-md-3 centered">
-                <div class="row">
-                    <i class="fa fa-book fa-5x "></i>
-                </div>
-                <div class="row">
-                    <div class="huge"><?php echo $carnets_non_valides; ?></div>
-                    <div><?php echo ($carnets_non_valides > 1) ? "Carnets non publiés" : "Carnet non publié"; ?></div>
-                </div>
-            </div>
-        </a>
-        <a href="<?php echo base_url() . 'walkadmin/comments'; ?>">
-            <div class="col-lg-3 col-md-3 centered">
-                <div class="row">
-                    <i class="fa fa-comments fa-5x "></i>
-                </div>
-                <div class="row">
-                    <div class="huge"><?php echo $commentaires; ?></div>
-                    <div>Nouveau<?php if ($commentaires > 1) echo'x'; ?> commentaire<?php if ($commentaires > 1) echo's'; ?>!</div>
+    <div class="quicklook">
+        <div class="row text-center">
+            <div class="col-md-offset-2 col-md-4 col-sm-6">
+                <div class="panel panel-black">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-shopping-cart fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">
+                                    <?php echo $reservations; ?>
+                                </div>
+                                <span class="small">Réservation<?php if ($reservations > 1) echo's'; ?> en cours!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="" href="<?php echo base_url() . 'walkadmin/reservation'; ?>">
+                        <div class="panel-footer">
+                            <span class="pull-left">Voir les détails</span>
+                            <span class="pull-right">
+                                <i class="fa fa-arrow"></i>
+                            </span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
                 </div>
             </div>
-        </a>
-        <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>">
-            <div class="col-lg-3 col-md-3 centered">
-                <div class="row">
-                    <i class="fa fa-pencil-square-o fa-5x "></i>
-                </div>
-                <div class="row">
-                    <div class="huge"><?php echo $contacts; ?></div>
-                    <div>Nouvelle<?php if ($contacts > 1) echo's'; ?> demande de contact<?php if ($contacts > 1) echo's'; ?>!</div>
+            <div class="col-md-4 col-sm-6">
+                <div class="panel panel-black">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-book fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">
+                                    <?php echo $carnets_non_valides; ?>
+                                </div>
+                                <span class="small"><?php echo ($carnets_non_valides > 1) ? "Carnets non publiés" : "Carnet non publié"; ?></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="" href="<?php echo base_url() . 'walkadmin/carnets'; ?>">
+                        <div class="panel-footer">
+                            <span class="pull-left">Voir les détails</span>
+                            <span class="pull-right">
+                                <i class="fa fa-arrow"></i>
+                            </span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
                 </div>
             </div>
-        </a>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-4 col-sm-6">
+                <div class="panel panel-black">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-comments fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">
+                                    <?php echo $commentaires; ?>
+                                </div>
+                                <span class="small">Nouveau<?php if ($commentaires > 1) echo'x'; ?> commentaire<?php if ($commentaires > 1) echo's'; ?></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="" href="<?php echo base_url() . 'walkadmin/comments'; ?>">
+                        <div class="panel-footer">
+                            <span class="pull-left">Voir les détails</span>
+                            <span class="pull-right">
+                                <i class="fa fa-arrow"></i>
+                            </span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="panel panel-black">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-pencil-square-o fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">
+                                    <?php echo $contacts; ?>
+                                </div>
+                                <span class="small">Nouvelle<?php if ($contacts > 1) echo's'; ?> demande de contact<?php if ($contacts > 1) echo's'; ?></span>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="" href="<?php echo base_url() . 'walkadmin/contacts'; ?>">
+                        <div class="panel-footer">
+                            <span class="pull-left">Voir les détails</span>
+                            <span class="pull-right">
+                                <i class="fa fa-arrow"></i>
+                            </span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Fin nouvelle version du dashboard! -->
+
     <br/>
     <div class="row">
         <div class="col-lg-12">
@@ -173,7 +235,7 @@ foreach ($nbUsersPays as $userPays) {
             $.plot($("#flot-bar-chart"), array, barOptions);
 
         }
-        
+
         function pie() {
             var pays = [];
 <?php
@@ -211,7 +273,7 @@ foreach ($payss as $pays) {
                 }
             });
         }
-        
+
         function plot() {
             var ventes = [];
 <?php
