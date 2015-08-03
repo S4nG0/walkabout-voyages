@@ -49,7 +49,15 @@
                         <a href="<?php echo base_url() . 'walkadmin/reservation'; ?>"><i class="fa fa-shopping-cart fa-fw menu-icons"></i>&nbsp;Réservations</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/destinations'; ?>"><i class="fa fa-plane fa-fw menu-icons"></i>&nbsp;Destinations</a>
+                        <a href="#"><i class="fa fa-plane fa-fw menu-icons"></i>&nbsp;Destinations<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/destinations' ?>">Liste des destinations</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/creer-destination'; ?>">Ajouter une destination</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-globe fa-fw menu-icons"></i>&nbsp;Pays<span class="fa arrow"></span></a>
