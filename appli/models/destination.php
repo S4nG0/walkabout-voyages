@@ -64,12 +64,12 @@ class Destination extends CI_Model {
     }
 
     public function get_infos_destination(){
-
+        //03-08-2015 avec Julien on affiche tous les voyages même ceux désactivés
         $destinations = $this->db->select('*')
                                  ->from($this->table)
                                  ->join('pays','destination.idPays=pays.idPays')
                                  ->join('voyage','voyage.idDestination=destination.idDestination')
-                                 ->where('voyage.active','true')
+                                 //->where('voyage.active','true')
                                  ->get()
                                  ->result();
 
