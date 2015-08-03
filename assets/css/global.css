@@ -6208,6 +6208,23 @@ body.admin .charts h3 {
   body.admin .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {
     width: 50%;
   }
+
+  /*------------------------------------*\
+      #CONTACT
+  \*------------------------------------*/
+  .contacts .contact .contact__message {
+    text-align: center;
+  }
+  .contacts .contact .contact__buttons .button {
+    display: block;
+    width: 250px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .contacts .contact .contact__buttons .button:first-child {
+    margin-right: auto;
+    margin-bottom: 15px;
+  }
 }
 @media screen and (max-width: 480px) {
   body.admin .admin-log-on > .container .login-panel .panel-form .form-group input {
