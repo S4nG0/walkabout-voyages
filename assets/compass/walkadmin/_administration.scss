@@ -195,14 +195,21 @@ body.admin {
 /*------------------------------------*\
     #PAYS
 \*------------------------------------*/
-svg{
-    width:100%;
-    height:650px;
-}
+.countries {
+    svg {
+        width: 100%;
+        height: 650px;
+    }
 
-.contain-svg {
-  width: 100%;
-  margin: 0 auto;
+    .contain-svg {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .button-block {
+        margin-top: 25px;
+    }
+
 }
 
 
