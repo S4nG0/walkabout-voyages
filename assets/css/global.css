@@ -6050,6 +6050,10 @@ svg {
   width: 100%;
   height: 650px;
 }
+svg > g {
+  display: block;
+  margin: 0 auto;
+}
 
 .contain-svg {
   width: 100%;

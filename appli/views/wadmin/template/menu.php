@@ -52,7 +52,15 @@
                         <a href="<?php echo base_url() . 'walkadmin/destinations'; ?>"><i class="fa fa-plane fa-fw menu-icons"></i>&nbsp;Destinations</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/pays_admin'; ?>"><i class="fa fa-globe fa-fw menu-icons"></i>&nbsp;Pays</a>
+                        <a href="#"><i class="fa fa-globe fa-fw menu-icons"></i>&nbsp;Pays<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/pays_admin'; ?>">Liste des pays</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/pays_admin/creer'; ?>">Ajouter un pays</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-book fa-fw menu-icons"></i>&nbsp;Carnets de voyage<span class="fa arrow"></span></a>
