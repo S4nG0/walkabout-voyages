@@ -55,10 +55,10 @@
                         <a href="#"><i class="fa fa-globe fa-fw menu-icons"></i>&nbsp;Pays<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="<?php echo base_url() . 'walkadmin/pays_admin'; ?>">Liste des pays</a>
+                                <a href="<?php echo base_url() . 'walkadmin/map' ?>">Liste des pays</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url() . 'walkadmin/pays_admin/creer'; ?>">Ajouter un pays</a>
+                                <a href="<?php echo base_url() . 'walkadmin/pays/creer'; ?>">Ajouter un pays</a>
                             </li>
                         </ul>
                     </li>

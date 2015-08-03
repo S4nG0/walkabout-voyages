@@ -20,7 +20,7 @@
         </div>
         <div class="row button-block">
             <div class="col-lg-12">
-                 <a class="button black" href="<?php echo base_url() . 'walkadmin/pays_admin/creer/'; ?>"><i class="fa fa-plus"></i> Ajouter un pays</a>
+                 <a class="button black" href="<?php echo base_url() . 'walkadmin/pays/creer'; ?>"><i class="fa fa-plus"></i> Ajouter un pays</a>
             </div>
         </div>
     </div>
