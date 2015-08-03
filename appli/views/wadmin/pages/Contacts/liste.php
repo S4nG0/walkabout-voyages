@@ -18,7 +18,7 @@
         }
     </style>
     <div class="row">
-        <input type="search" class="form-control" id="search" placeholder="Rechercher un carnet non publié"/>
+        <input type="search" class="form-control" id="search" placeholder="Rechercher un message ... "/>
     </div>
     <br/>
     <div class="row">
@@ -37,7 +37,9 @@
                     <?php
                     if (sizeof($non_lus) > 0) {
                         foreach ($non_lus as $contact) {
-                            var_dump($contact);
+                            echo '<div class="searchable" data-search="'.$contact->nom.' '.$contact->mail.' '.$contact->telephone.' '.$contact->message.'">';
+                                var_dump($contact);
+                            echo '</div>';
                         }
                     } else {
                         echo '<div class="travel-log">
