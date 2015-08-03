@@ -40,6 +40,10 @@ body.admin {
         }
     }
 
+    .no-entry {
+        color: $noir;
+    }
+
     .submenu {
         display: block;
         width: 100%;
@@ -212,6 +216,132 @@ body.admin {
 
 }
 
+/*------------------------------------*\
+    #CONTACT
+\*------------------------------------*/
+.contacts {
+    input[type="search"] {
+        border: 1px solid $noir;
+
+        &:focus {
+            border-color: $jaune-or;
+        }
+    }
+
+    .nav-tabs {
+        margin-top: 25px;
+        border: 1px solid $noir;
+        border-bottom-color: $noir;
+
+        li, li.active {
+            width: 100%;
+            // border: 1px solid $gris-tres-clair;
+
+            a {
+                margin-right: 0;
+                border: none;
+                @include border-radius(0);
+                text-decoration: none;
+
+                &:hover {
+                    color: $noir;
+                }
+
+                .badge {
+                    background-color: $noir;
+                    color: $blanc;
+                    @include transition($default-transition);
+                }
+            }
+
+            &:last-child {
+                border-bottom: 1px solid $noir;
+            }
+        }
+
+        li {
+            background-color: $blanc;
+        }
+
+        li.active > a {
+            background-color: $noir;
+            color: $blanc;
+
+            .badge {
+                background-color: $jaune-or;
+                color: $noir;
+            }
+        }
+    }
+
+    .contact {
+        position: relative;
+        border-color: $noir;
+        @include border-radius(0);
+        @include box-shadow(none);
+        .panel-heading {
+            padding: 0;
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 0;
+            color: $noir;
+        }
+
+        .no-style {
+            display: block;
+            width: 100%;
+            padding: 15px;
+
+            .contact__content {
+                display: block;
+                width: 100%;
+                position: relative;
+
+                .content__name {
+                    font-size: 24px;
+                }
+
+                &:after {
+                    font-family: 'FontAwesome';
+                    content: '\f0d8';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    color: $noir;
+                    font-size: 2em;
+                    @include transition($default-transition);
+                }
+            }
+
+            &.collapsed {
+                .contact__content {
+                    &:after {
+                        @include rotate(180);
+                    }
+                }
+            }
+        }
+
+        .contact__buttons {
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+
+            .button {
+                display: inline-block;
+                width: auto;
+
+                &:first-child {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+    }
+}
 
 /*------------------------------------*\
     #RESPONSIVE

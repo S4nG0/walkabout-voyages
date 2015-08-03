@@ -181,7 +181,7 @@ body.single-destination {
                         @include border-radius(4px);
                         background-color: $noir;
                         opacity: 0.6;
-                        @include transition(all 300ms ease-in-out);
+                        @include transition($default-transition);
 
                         &:hover {
                             color: $noir;
