@@ -5913,6 +5913,15 @@ body.admin .button {
   width: 250px;
   letter-spacing: 1px;
 }
+body.admin .button.small {
+  display: inline-block;
+  width: auto;
+  font-size: 60%;
+}
+body.admin .button.black.active {
+  background-color: #242424;
+  color: #fff;
+}
 body.admin a {
   color: #242424;
 }
@@ -6117,6 +6126,9 @@ body.admin .charts h3 {
   background-color: #f0c041;
   color: #242424;
 }
+.contacts .nav-tabs li.active > a:hover {
+  color: #fff;
+}
 .contacts .contact {
   position: relative;
   margin-bottom: 25px;
@@ -6168,6 +6180,9 @@ body.admin .charts h3 {
   -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+.contacts .contact .contact__status {
+  margin-bottom: 25px;
 }
 .contacts .contact .contact__buttons {
   display: block;
