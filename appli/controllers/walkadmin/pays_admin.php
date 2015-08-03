@@ -47,6 +47,7 @@ class Pays_admin extends CI_Controller{
         }
         $data['admin'] = $this->session->userdata('admin');
         $data['page'] = "add_country";
+        $data['title'] = "Ajout de pays";
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Pays/creer',$data);

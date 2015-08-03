@@ -78,7 +78,7 @@
 
                         <?php }
                         } else {
-                            echo '<p class="no-entry">Il n\'y a aucun nouveau contact !</p>';
+                            echo '<p class="no-entry">Aucun contact non lu!</p>';
                         }
                         ?>
                     </div>
@@ -89,12 +89,7 @@
                                 var_dump($contact);
                             }
                         } else {
-                            echo '<div class="travel-log">
-                                       <div class="col-md-12">
-                                           <p class="no-entry">Il n\'y a aucun contact lu !</p>
-                                       </div>
-                                  </div>';
-                        }
+                            echo '<p class="no-entry">Aucun contact lu !</p>';}
                         ?>
                     </div>
                     <div role="tabpanel" class="tab-pane fade"  id="importants">
@@ -104,12 +99,7 @@
                                 var_dump($contact);
                             }
                         } else {
-                            echo '<div class="travel-log">
-                                       <div class="col-md-12">
-                                           <p class="no-entry">Il n\'y a aucun contact marqué comme important !</p>
-                                       </div>
-                                  </div>';
-                        }
+                            echo '<p class="no-entry">Aucun message marqué comme important !</p>';}
                         ?>
                     </div>
                     <div role="tabpanel" class="tab-pane fade"  id="archives">
@@ -119,12 +109,7 @@
                                 var_dump($contact);
                             }
                         } else {
-                            echo '<div class="travel-log">
-                                       <div class="col-md-12">
-                                           <p class="no-entry">Il n\'y a aucun contact marqué comme archivé !</p>
-                                       </div>
-                                  </div>';
-                        }
+                            echo '<p class="no-entry">Aucun message archivé !</p>';}
                         ?>
                     </div>
                 </div>

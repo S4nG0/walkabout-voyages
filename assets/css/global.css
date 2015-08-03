@@ -6070,6 +6070,12 @@ body.admin .charts h3 {
 .contacts input[type="search"]:focus {
   border-color: #f0c041;
 }
+.contacts .no-entry {
+  margin: 0;
+  padding: 15px;
+  font-size: 24px;
+  font-style: italic;
+}
 .contacts .nav-tabs {
   margin-top: 25px;
   border: 1px solid #242424;
@@ -6113,6 +6119,7 @@ body.admin .charts h3 {
 }
 .contacts .contact {
   position: relative;
+  margin-bottom: 25px;
   border-color: #242424;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
@@ -6186,6 +6193,13 @@ body.admin .charts h3 {
     width: 75%;
   }
 }
+/*------------------------------------*\
+    #CONTACT
+\*------------------------------------*/
+.contacts .contact {
+  margin-top: 25px;
+}
+
 @media screen and (max-width: 768px) {
   body.admin .admin-log-on > .container .login-panel .panel-form .form-group input {
     width: 50%;
