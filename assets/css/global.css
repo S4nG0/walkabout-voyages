@@ -2565,28 +2565,6 @@ footer .footer__copyright li {
   margin-top: 25px;
 }
 
-#adress-block {
-  display: none;
-  text-align: center;
-  margin: 35px;
-}
-#adress-block label {
-  display: block;
-  margin-top: 50px;
-  color: #f0c041;
-}
-#adress-block input {
-  display: block;
-  margin-top: 25px;
-  text-align: center;
-}
-#adress-block .button {
-  display: block;
-  width: 150px;
-  margin: 0 auto;
-  margin-top: 25px;
-}
-
 @media screen and (max-width: 992px) {
   footer h1 {
     font-size: 18px;
@@ -5913,11 +5891,29 @@ body.admin {
   width: 100%;
   height: 100%;
   background: url("../images/texture.png");
+  color: #242424;
   letter-spacing: 1px;
 }
-
-.button {
+body.admin h1, body.admin h2, body.admin h3 {
+  color: #242424;
+}
+body.admin h1:after, body.admin h2:after, body.admin h3:after {
+  background-color: #242424;
+}
+body.admin .button {
+  margin: 0 auto;
+  width: 250px;
   letter-spacing: 1px;
+}
+body.admin a {
+  color: #242424;
+}
+body.admin a:hover, body.admin a:focus {
+  color: #848484;
+}
+
+.page-header {
+  margin-bottom: 50px;
 }
 
 #page-wrapper {
@@ -5928,7 +5924,7 @@ body.admin {
   #page-wrapper {
     position: inherit;
     margin: 0 0 0 225px;
-    padding: 0 30px;
+    padding: 0 50px;
     border-left: none;
   }
 }
@@ -5993,6 +5989,17 @@ body.admin {
 /*------------------------------------*\
     #DASHBOARD
 \*------------------------------------*/
+body.admin .quicklook {
+  padding: 50px 0;
+}
+body.admin .quicklook .panel-black {
+  color: #f0c041;
+  background-color: #242424;
+}
+body.admin .quicklook .button {
+  margin-top: 25px;
+}
+
 /*------------------------------------*\
     #PAYS
 \*------------------------------------*/

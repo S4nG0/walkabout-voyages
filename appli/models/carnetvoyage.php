@@ -156,6 +156,17 @@ class Carnetvoyage extends CI_Model {
 
         return $carnets;
     }
+
+    public function getCarnetsNonPublies(){
+        $carnets = $this->db->select('carnetdevoyage.*,users.nom AS nomUsers,users.prenom AS prenomUsers')
+                            ->from($this->table)
+                            ->join('users','users.idUsers=carnetdevoyage.idUsers')
+                            ->where('publie', "false")
+                            ->get()
+                            ->result();
+
+        return $carnets;
+    }
     
     public function add($carnet){
         
