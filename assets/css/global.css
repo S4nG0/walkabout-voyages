@@ -6126,6 +6126,9 @@ body.admin .charts h3 {
   background-color: #f0c041;
   color: #242424;
 }
+.contacts .nav-tabs li.active > a:hover {
+  color: #fff;
+}
 .contacts .contact {
   position: relative;
   margin-bottom: 25px;
