@@ -91,6 +91,9 @@
                     <li>
                         <a href="<?php echo base_url() . 'walkadmin/contact'; ?>"><i class="fa fa-pencil-square-o fa-fw menu-icons"></i>&nbsp;Contacts</a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url() . 'walkadmin/actualite'; ?>"><i class="fa fa-pencil-square-o fa-fw menu-icons"></i>&nbsp;Actualités</a>
+                    </li>
                 </ul>
             </div>
         </div>
