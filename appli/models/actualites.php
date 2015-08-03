@@ -14,7 +14,7 @@ class Actualites extends CI_Model {
         
         $actu = $this->db->select('*')
                            ->from($this->table)
-                           ->where('idActualite', $id)
+                           ->where('idActualites', $id)
                            ->limit(1)
                            ->get()
                            ->result();
@@ -42,6 +42,21 @@ class Actualites extends CI_Model {
                 ->get()
                 ->result();
         
+        return $actus;
+    }
+
+    public function insert($data=''){
+        if($data=='')
+            return false;
+        $actus = $this->db->insert($this->table,$data);
+        return $actus;
+    }
+
+    public function modify($data='',$idActualites=0){
+        if($data==''||$idActualites==0)
+            return false;
+        $this->db->where('idActualites',$idActualites);
+        $actus = $this->db->update($this->table,$data);
         return $actus;
     }
 
