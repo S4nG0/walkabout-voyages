@@ -1,57 +1,51 @@
 <?php
     echo form_open_multipart('walkadmin/pays_admin/detail/'.$idPays);
 ?>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="login-panel panel panel-default">
-                <div class="panel-body">
-                    <form role="form">
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="nom">Nom: </label>
-                                <input class="form-control" placeholder="nom" name="nom" value="<?php echo $pays[0]->nom ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="capitale">Capitale: </label>
-                                <input class="form-control" placeholder="capitale" name="capitale" type="text" value="<?php echo $pays[0]->capitale ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="monnaie">Monnaie: </label>
-                                <input class="form-control" name="monnaie" placeholder="monnaie" value="<?php echo $pays[0]->monnaie ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="dirigeant">Dirigeant(e): </label>
-                                <input class="form-control" placeholder="dirigeant" name="dirigeant" type="text" value="<?php echo $pays[0]->Dirigeant ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="langues">Langues: </label>
-                                <input class="form-control" placeholder="langues" name="langues" type="text" value="<?php echo $pays[0]->langues ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="population">Population: </label>
-                                <input class="form-control" placeholder="population" name="population" type="text" value="<?php echo $pays[0]->population ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="superficie">Superficie: </label>
-                                <input class="form-control" placeholder="superficie" name="superficie" type="text" value="<?php echo $pays[0]->superficie ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="densité">Densité: </label>
-                                <input class="form-control" placeholder="densite" name="densite" type="text" value="<?php echo $pays[0]->densité ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="climat">Climat: </label>
-                                <input class="form-control" placeholder="climat" name="climat" type="text" value="<?php echo $pays[0]->climat ?>">
-                            </div>
-                            <!-- Change this to a button or input when using this as a form -->
-                            <div class="row noPadding">
-                                <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                                    <input type="submit" class="button pull-right" value="Modifier le pays">
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
+<div id="page-wrapper">
+    <div class="countries">
+        <div class="row text-center">
+            <h1 class="panel-header sep"><?php echo $pays[0]->nom; ?></h1>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="capitale">Capitale</label>
+                    <input placeholder="Saississez l'information..." name="capitale" type="text" value="<?php echo $pays[0]->capitale ?>">
+                </div>
+                <div class="form-group">
+                    <label for="monnaie">Monnaie</label>
+                    <input name="monnaie" placeholder="Saississez l'information..." value="<?php echo $pays[0]->monnaie ?>">
+                </div>
+                <div class="form-group">
+                    <label for="dirigeant">Dirigeant(e)</label>
+                    <input placeholder="Saississez l'information..." name="dirigeant" type="text" value="<?php echo $pays[0]->Dirigeant ?>">
+                </div>
+                <div class="form-group">
+                    <label for="langues">Langues</label>
+                    <input placeholder="Saississez l'information..." name="langues" type="text" value="<?php echo $pays[0]->langues ?>">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="population">Population</label>
+                    <input placeholder="Saississez l'information..." name="population" type="text" value="<?php echo $pays[0]->population ?>">
+                </div>
+                <div class="form-group">
+                    <label for="superficie">Superficie</label>
+                    <input placeholder="Saississez l'information..." name="superficie" type="text" value="<?php echo $pays[0]->superficie ?>">
+                </div>
+                <div class="form-group">
+                    <label for="densité">Densité</label>
+                    <input placeholder="Saississez l'information..." name="densite" type="text" value="<?php echo $pays[0]->densité ?>">
+                </div>
+                <div class="form-group">
+                    <label for="climat">Climat</label>
+                    <input placeholder="Saississez l'information..." name="climat" type="text" value="<?php echo $pays[0]->climat ?>">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="submit" class="button black" value="Modifier le pays">
                 </div>
             </div>
         </div>

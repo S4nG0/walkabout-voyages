@@ -2,10 +2,10 @@ WALKADMIN :
 
   ✔ Dashboard @done (15-08-03 13:47)
      ☐ Charts @low
-  ☐ Reservations : pratiquement finie (voir styles sur tableau + responsive)
+  ✔ Reservations : pratiquement finie (voir styles sur tableau + responsive) @done (15-08-03 18:05)
   ☐ Destinations : bug ?
-  ☐ Pays
-    ☐ Ajouter pays
+  ✔ Pays @done (15-08-03 18:05)
+    ✔ Ajouter pays @done (15-08-03 18:05)
     ✔ Liste pays @done (15-08-03 13:51)
   ☐ Carnets
     ☐ Liste

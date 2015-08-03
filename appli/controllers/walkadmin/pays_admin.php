@@ -88,6 +88,7 @@ class Pays_admin extends CI_Controller{
         $data['pays'] = $this->pays->constructeur($idPays);
         $data['idPays'] = $idPays;
         $data['page'] = "modif_country";
+        $data['title'] = "Modifications sur le pays";
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Pays/modifier',$data);

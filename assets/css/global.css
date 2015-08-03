@@ -6053,9 +6053,6 @@ body.admin .charts h3 {
 }
 
 /*------------------------------------*\
-    #RESERVATIONS
-\*------------------------------------*/
-/*------------------------------------*\
     #PAYS
 \*------------------------------------*/
 .countries svg {
@@ -6068,6 +6065,18 @@ body.admin .charts h3 {
 }
 .countries .button-block {
   margin-top: 25px;
+}
+.countries input {
+  text-align: center;
+}
+.countries input[type="submit"] {
+  margin-top: 50px;
+}
+.countries select {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 25px;
 }
 
 /*------------------------------------*\
