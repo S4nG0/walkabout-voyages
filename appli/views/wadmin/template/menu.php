@@ -25,12 +25,11 @@
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user-md fa-fw"></i><i class="fa fa-caret-down"></i>
+                    <i class="fa fa-user-md fa-fw"></i>
+                    Bonjour <?php echo ucfirst(strtolower($admin[0]->prenom)) . ' ' . ucfirst(strtolower($admin[0]->nom)); ?>
+                    <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user-md fa-fw"></i>Bonjour <?php echo $admin[0]->prenom . ' ' . $admin[0]->nom; ?></a>
-                    </li>
-                    <li class="divider"></li>
                     <li><a href="<?php echo base_url() . 'walkadmin/deconnexion'; ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Déconnexion</a>
                     </li>
                 </ul>
@@ -53,7 +52,15 @@
                         <a href="<?php echo base_url() . 'walkadmin/destinations'; ?>"><i class="fa fa-plane fa-fw menu-icons"></i>&nbsp;Destinations</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/pays_admin'; ?>"><i class="fa fa-globe fa-fw menu-icons"></i>&nbsp;Pays</a>
+                        <a href="#"><i class="fa fa-globe fa-fw menu-icons"></i>&nbsp;Pays<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/pays_admin'; ?>">Liste des pays</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/pays_admin/creer'; ?>">Ajouter un pays</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-book fa-fw menu-icons"></i>&nbsp;Carnets de voyage<span class="fa arrow"></span></a>
@@ -82,7 +89,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/contacts'; ?>"><i class="fa fa-pencil-square-o fa-fw menu-icons"></i>&nbsp;Contacts</a>
+                        <a href="<?php echo base_url() . 'walkadmin/contact'; ?>"><i class="fa fa-pencil-square-o fa-fw menu-icons"></i>&nbsp;Contacts</a>
                     </li>
                 </ul>
             </div>
