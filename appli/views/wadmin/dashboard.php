@@ -99,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="" href="<?php echo base_url() . 'walkadmin/contacts'; ?>">
+                    <a class="" href="<?php echo base_url() . 'walkadmin/contact'; ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Voir les détails</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
