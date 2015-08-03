@@ -5905,6 +5905,7 @@ body.admin h1 {
   margin-bottom: 65px;
 }
 body.admin h2 {
+  text-transform: none;
   margin-bottom: 25px;
 }
 body.admin .button {
@@ -5917,6 +5918,31 @@ body.admin a {
 }
 body.admin a:hover, body.admin a:focus {
   color: #848484;
+}
+body.admin .submenu {
+  display: block;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 50px;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+body.admin .submenu .submenu__header {
+  padding: 8px;
+  padding-right: 15px;
+  border: 1px solid transparent;
+  border-right-color: #242424;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+body.admin .submenu li {
+  display: inline-block;
+  margin-right: 15px;
+}
+body.admin .submenu li .active {
+  background-color: #242424;
+  color: #fff;
 }
 
 .page-header {
@@ -6015,6 +6041,9 @@ body.admin .charts h3 {
 }
 
 /*------------------------------------*\
+    #RESERVATIONS
+\*------------------------------------*/
+/*------------------------------------*\
     #PAYS
 \*------------------------------------*/
 svg {
@@ -6108,7 +6137,7 @@ body.admin .navbar-default.sidebar a.active:after {
   width: 0;
   pointer-events: none;
   border-color: rgba(136, 183, 213, 0);
-  border-right-color: #fff;
+  border-right-color: #f5f5f5;
   border-width: 10px;
   margin-top: -8px;
 }
@@ -6116,7 +6145,28 @@ body.admin .navbar-default.sidebar .nav-second-level li a {
   padding-left: 37px;
 }
 body.admin .nav.navbar-top-links a {
+  text-decoration: none;
   color: #f5f5f5;
+}
+body.admin .nav.navbar-top-links a:hover, body.admin .nav.navbar-top-links a:focus {
+  background-color: #fff;
+  color: #242424;
+}
+body.admin .nav.navbar-top-links .dropdown {
+  margin-right: 0;
+}
+body.admin .nav.navbar-top-links .dropdown-menu {
+  margin: 0;
+  border: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+body.admin .nav.navbar-top-links .dropdown-menu a {
+  color: #242424;
+}
+body.admin .nav.navbar-top-links .dropdown-menu a:hover, body.admin .nav.navbar-top-links .dropdown-menu a:focus {
+  color: #848484;
 }
 @media (min-width: 768px) {
   body.admin .sidebar {

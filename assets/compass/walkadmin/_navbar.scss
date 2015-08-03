@@ -62,7 +62,7 @@ body.admin {
                     width: 0;
                     pointer-events: none;
                     border-color: rgba(136, 183, 213, 0);
-                    border-right-color: #fff;
+                    border-right-color: $gris-tres-clair;
                     border-width: 10px;
                     margin-top: -8px;
                 }
@@ -80,7 +80,31 @@ body.admin {
 
     .nav.navbar-top-links {
         a {
+            text-decoration: none;
             color: $gris-tres-clair;
+
+            &:hover, &:focus {
+                background-color: $blanc;
+                color: $noir;
+            }
+        }
+
+        .dropdown {
+            margin-right: 0;
+        }
+
+        .dropdown-menu {
+            margin: 0;
+            border: none;
+            @include border-radius(0);
+
+            a {
+                color: $noir;
+
+                &:hover, &:focus {
+                    color: $gris-clair;
+                }
+            }
         }
     }
 
