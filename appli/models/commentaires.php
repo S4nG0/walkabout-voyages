@@ -40,4 +40,25 @@ class Commentaires extends CI_Model {
         return $result;
     }
 
+    public function getAllCommentairesNonModere(){
+        $actu = $this->db->select('*,users.nom AS nomUsers,users.prenom AS prenomUsers,carnetdevoyage.titre AS titreCarnet,
+                                   carnetdevoyage.url')
+                         ->from($this->table)
+                         ->join('carnetdevoyage','carnetdevoyage.idCarnetDeVoyage=commentaires.idCarnet')
+                         ->join('users','users.idUsers=commentaires.idUsers')
+                         ->where('modere','false')
+                         ->order_by('idCommentaires','ASC')
+                         ->get()
+                         ->result();
+
+        return $actu;
+    }
+
+    public function modify($data='',$idCommentaires=0){
+        if($data==''|| $idCommentaires==0)
+            return false;
+        $this->db->where('idCommentaires',$idCommentaires);
+        $commentaire=$this->db->update($this->table,$data);
+        return $commentaire;
+    }
 }
