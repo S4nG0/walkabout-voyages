@@ -7,27 +7,28 @@
 
     <div class="quicklook">
         <div class="row text-center">
+            <h2 class="no-sep">Mises à jour récentes</h2>
+        </div>
+        <div class="row text-center">
             <div class="col-md-offset-2 col-md-4 col-sm-6">
                 <div class="panel panel-black">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-shopping-cart fa-5x"></i>
+                                <i class="fa fa-shopping-cart fa-6x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">
                                     <?php echo $reservations; ?>
                                 </div>
-                                <span class="small">Réservation<?php if ($reservations > 1) echo's'; ?> en cours!</span>
+                                <span class="small">Réservation<?php if ($reservations > 1) echo's'; ?> en cours</span>
                             </div>
                         </div>
                     </div>
                     <a class="" href="<?php echo base_url() . 'walkadmin/reservation'; ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Voir les détails</span>
-                            <span class="pull-right">
-                                <i class="fa fa-arrow"></i>
-                            </span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
                     </a>
@@ -38,7 +39,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-book fa-5x"></i>
+                                <i class="fa fa-book fa-6x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">
@@ -51,9 +52,7 @@
                     <a class="" href="<?php echo base_url() . 'walkadmin/carnets'; ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Voir les détails</span>
-                            <span class="pull-right">
-                                <i class="fa fa-arrow"></i>
-                            </span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
                     </a>
@@ -66,7 +65,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-comments fa-5x"></i>
+                                <i class="fa fa-comments fa-6x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">
@@ -79,9 +78,7 @@
                     <a class="" href="<?php echo base_url() . 'walkadmin/comments'; ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Voir les détails</span>
-                            <span class="pull-right">
-                                <i class="fa fa-arrow"></i>
-                            </span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
                     </a>
@@ -92,22 +89,20 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-pencil-square-o fa-5x"></i>
+                                <i class="fa fa-pencil-square-o fa-6x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">
                                     <?php echo $contacts; ?>
                                 </div>
-                                <span class="small">Nouvelle<?php if ($contacts > 1) echo's'; ?> demande de contact<?php if ($contacts > 1) echo's'; ?></span>
+                                <span class="small">Nouvelle<?php if ($contacts > 1) echo's'; ?> demande<?php if ($contacts > 1) echo's'; ?></span>
                             </div>
                         </div>
                     </div>
                     <a class="" href="<?php echo base_url() . 'walkadmin/contacts'; ?>">
                         <div class="panel-footer">
                             <span class="pull-left">Voir les détails</span>
-                            <span class="pull-right">
-                                <i class="fa fa-arrow"></i>
-                            </span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                             <div class="clearfix"></div>
                         </div>
                     </a>
@@ -116,51 +111,58 @@
         </div>
     </div>
 
-    <br/>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <h3 style='text-align:center;'>Graphique des ventes</h3>
-                    <br/>
-                    <div class="flot-chart">
-                        <div class="flot-chart-content" id="flot-line-chart"></div>
-                    </div>
-                </div>
-                <!-- /.panel-body -->
+    <div class="charts">
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <h2 class="no-sep">Informations</h2>
             </div>
-            <!-- /.panel -->
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="panel panel-default">
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <h3>Graphique des ventes</h3>
+                        <br/>
+                        <div class="flot-chart">
+                            <div class="flot-chart-content" id="flot-line-chart"></div>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3>Voyages préférés des utilisateurs</h3>
+                        <br/>
+                        <div class="flot-chart">
+                            <div class="flot-chart-content" id="flot-pie-chart"></div>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3>Nationalité des utilisateurs</h3>
+                        <br/>
+                        <div class="flot-chart">
+                            <div class="flot-chart-content" id="flot-bar-chart"></div>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3 style='text-align:center;'>Voyages préférés des utilisateurs</h3>
-                    <br/>
-                    <div class="flot-chart">
-                        <div class="flot-chart-content" id="flot-pie-chart"></div>
-                    </div>
-                </div>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <h3 style='text-align:center;'>Nationalité des utilisateurs</h3>
-                    <br/>
-                    <div class="flot-chart">
-                        <div class="flot-chart-content" id="flot-bar-chart"></div>
-                    </div>
-                </div>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
-        </div>
-    </div>
+
 
     <!-- /.row -->
 </div>
@@ -196,41 +198,42 @@ foreach ($nbUsersPays as $userPays) {
 }
 ?>
 
-            var barOptions = {
-                series: {
-                    bars: {
-                        show: true,
-                    }
-                },
-                xaxis: {
-                    <?php
-                        $i = 0.5;
-                        foreach ($nbUsersPays as $userPays) {
-                            if($i != 0.5){
-                                echo ',';
-                            }else{
-                                echo 'ticks: [';
-                            }
-                            print "[$i, '$userPays->pays']";
-                            $i++;
-                        }
-                        echo ']';
-                    ?>
-                },
-                grid: {
-                    hoverable: true
-                },
-                legend: {
-                    show: true
-                },
-                tooltip: true,
-                tooltipOpts: {
-                    content: function () {
-                        var tooltip = '<span style="color:black;text-align:center;">%y.0 utilisateurs en %x';
-                        return tooltip;
-                    }
-                }
-            };
+        var barOptions = {
+            series: {
+               bars: {
+                   show: true,
+               }
+            },
+            xaxis: {
+               <?php
+                   $i = 0.5;
+                   foreach ($nbUsersPays as $userPays) {
+                       if($i != 0.5){
+                           echo ',';
+                       }else{
+                           echo 'ticks: [';
+                       }
+                       print "[$i, '$userPays->pays']";
+                       $i++;
+                   }
+                   echo ']';
+               ?>
+            },
+            yaxis: { minTickSize: 1 },
+            grid: {
+               hoverable: true
+            },
+            legend: {
+               show: true
+            },
+            tooltip: true,
+            tooltipOpts: {
+               content: function () {
+                   var tooltip = '<span style="color:black;text-align:center;">%y.0 utilisateurs en %x';
+                   return tooltip;
+               }
+            }
+       };
 
             $.plot($("#flot-bar-chart"), array, barOptions);
 
