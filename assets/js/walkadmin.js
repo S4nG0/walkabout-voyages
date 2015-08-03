@@ -103,4 +103,58 @@ $('select[name=code_pays]').on('change', function(){
     $('input[name=nom]')[0].value = texte;
 });
 
+
+$('#reservations-all-content').show();
+$('#reservations-current-content').hide();
+$('#reservations-finished-content').hide();
+
+$('.admin .submenu .button').on('click', function () {
+    var buttonID = $(this).attr('id');
+
+    switch (buttonID) {
+
+        case 'reservations-all':
+            $('#reservations-all').addClass('active');
+            if ($('#reservations-current').hasClass('active')) {
+                $('#reservations-current').removeClass('active');
+            }
+            if ($('#reservations-finished').hasClass('active')) {
+                $('#reservations-finished').removeClass('active');
+            }
+
+            $('#reservations-all-content').fadeIn(300);
+            $('#reservations-current-content').hide();
+            $('#reservations-finished-content').hide();
+            break;
+
+        case 'reservations-current':
+            $('#reservations-current').addClass('active');
+            if ($('#reservations-all').hasClass('active')) {
+                $('#reservations-all').removeClass('active');
+            }
+            if ($('#reservations-finished').hasClass('active')) {
+                $('#reservations-finished').removeClass('active');
+            }
+
+            $('#reservations-all-content').hide();
+            $('#reservations-current-content').fadeIn(300);
+            $('#reservations-finished-content').hide();
+            break;
+
+        case 'reservations-finished':
+            $('#reservations-finished').addClass('active');
+            if ($('#reservations-all').hasClass('active')) {
+                $('#reservations-all').removeClass('active');
+            }
+            if ($('#reservations-current').hasClass('active')) {
+                $('#reservations-current').removeClass('active');
+            }
+
+            $('#reservations-all-content').hide();
+            $('#reservations-current-content').hide();
+            $('#reservations-finished-content').fadeIn(300);
+            break;
+    }
+});
+
 });
