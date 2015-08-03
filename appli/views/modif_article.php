@@ -23,10 +23,10 @@ $page = "editing-article";
         <div class="container-fluid noPadding">
             <div class="article-block">
                 <!-- begin:article -->
-                <div class="row noPadding content--article">
-                    <article class="tb-article">
-                        <div class="tb-article--content">
-                            <div class="medium-editor-start medium-editor-image" placeholder="Cliquez pour commencez à écrire...">
+                <div class="row noPadding content--article" tabindex="-1">
+                    <article class="tb-article" tabindex="-1">
+                        <div class="tb-article--content" tabindex="-1">
+                            <div class="medium-editor-start medium-editor-image" placeholder="Cliquez pour commencez à écrire..." tabindex="-1">
                                 <?php echo $article[0]->texte; ?>
                             </div>
                         </div>
