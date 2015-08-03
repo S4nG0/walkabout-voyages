@@ -5919,6 +5919,9 @@ body.admin a {
 body.admin a:hover, body.admin a:focus {
   color: #848484;
 }
+body.admin .no-entry {
+  color: #242424;
+}
 body.admin .submenu {
   display: block;
   width: 100%;
@@ -6056,6 +6059,120 @@ body.admin .charts h3 {
 }
 .countries .button-block {
   margin-top: 25px;
+}
+
+/*------------------------------------*\
+    #CONTACT
+\*------------------------------------*/
+.contacts input[type="search"] {
+  border: 1px solid #242424;
+}
+.contacts input[type="search"]:focus {
+  border-color: #f0c041;
+}
+.contacts .nav-tabs {
+  margin-top: 25px;
+  border: 1px solid #242424;
+  border-bottom-color: #242424;
+}
+.contacts .nav-tabs li, .contacts .nav-tabs li.active {
+  width: 100%;
+}
+.contacts .nav-tabs li a, .contacts .nav-tabs li.active a {
+  margin-right: 0;
+  border: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  text-decoration: none;
+}
+.contacts .nav-tabs li a:hover, .contacts .nav-tabs li.active a:hover {
+  color: #242424;
+}
+.contacts .nav-tabs li a .badge, .contacts .nav-tabs li.active a .badge {
+  background-color: #242424;
+  color: #fff;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.contacts .nav-tabs li:last-child, .contacts .nav-tabs li.active:last-child {
+  border-bottom: 1px solid #242424;
+}
+.contacts .nav-tabs li {
+  background-color: #fff;
+}
+.contacts .nav-tabs li.active > a {
+  background-color: #242424;
+  color: #fff;
+}
+.contacts .nav-tabs li.active > a .badge {
+  background-color: #f0c041;
+  color: #242424;
+}
+.contacts .contact {
+  position: relative;
+  border-color: #242424;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.contacts .contact .panel-heading {
+  padding: 0;
+}
+.contacts .contact p {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  color: #242424;
+}
+.contacts .contact .no-style {
+  display: block;
+  width: 100%;
+  padding: 15px;
+}
+.contacts .contact .no-style .contact__content {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.contacts .contact .no-style .contact__content .content__name {
+  font-size: 24px;
+}
+.contacts .contact .no-style .contact__content:after {
+  font-family: 'FontAwesome';
+  content: '\f0d8';
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #242424;
+  font-size: 2em;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+.contacts .contact .no-style.collapsed .contact__content:after {
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.contacts .contact .contact__buttons {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+}
+.contacts .contact .contact__buttons .button {
+  display: inline-block;
+  width: auto;
+}
+.contacts .contact .contact__buttons .button:first-child {
+  margin-right: 10px;
 }
 
 /*------------------------------------*\

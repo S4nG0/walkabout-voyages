@@ -230,7 +230,7 @@ body.espace-voyageur {
                 margin-left: -100px;
                 width: 200px;
                 @include translate(0, 15px);
-                @include transition(all 300ms ease-in-out);
+                @include transition($default-transition);
 
                 a {
                     display: block;
@@ -302,7 +302,7 @@ body.espace-voyageur {
             border: 1px solid $gris-clair;
             @include border-radius(50%);
             background-color: $blanc;
-            @include transition(all 300ms ease-in-out);
+            @include transition($default-transition);
         }
     }
 
@@ -526,7 +526,7 @@ body.espace-voyageur {
                         color: $gris-clair;
                         background-color: #fff;
                         border: none;
-                        @include transition(all 300ms ease-in-out);
+                        @include transition($default-transition);
 
                         &:hover, &:focus, &:active, &:visited {
                             color: $noir;
@@ -591,7 +591,7 @@ body.espace-voyageur {
                 display: table;
                 width: 100%;
                 border: 1px solid $blanc;
-                @include transition(all 300ms ease-in-out);
+                @include transition($default-transition);
 
                 &:hover {
                     border-color: $jaune-or;
@@ -689,7 +689,7 @@ body.espace-voyageur {
                     line-height: 26px;
                     padding-bottom: 25px;
                     color: $blanc;
-                    @include transition(all 300ms ease-in-out);
+                    @include transition($default-transition);
                 }
             }
 
@@ -729,7 +729,7 @@ body.espace-voyageur {
                     position: relative;
                     min-height: 80px;
                     margin-bottom: 50px;
-                    @include transition(all 300ms ease-in-out);
+                    @include transition($default-transition);
 
                     .medium-editor-start {
                         max-width: 600px;
@@ -813,7 +813,7 @@ body.espace-voyageur {
                             border-color: $blanc;
                             color: $blanc;
                             text-decoration: none;
-                            @include transition(all 300ms ease-in-out);
+                            @include transition($default-transition);
 
                             &:hover, &:focus {
                                 color: $jaune-or;

@@ -10,7 +10,7 @@
     background-color: $noir;
     border: 1px solid $blanc;
     @include border-radius(50%);
-    @include transition(all 300ms ease-in-out);
+    @include transition($default-transition);
     @include opacity(0);
     text-align: center;
 
@@ -78,7 +78,7 @@ footer {
         text-align: center;
         li {
             margin-top: 15px;
-            @include transition(all 300ms ease-in-out);
+            @include transition($default-transition);
             .fa {
                 margin-right: 5px;
             }
