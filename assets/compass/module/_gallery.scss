@@ -37,7 +37,7 @@
                         margin-left: -100px;
                         width: 200px;
                         @include translate(0, 15px);
-                        @include transition(all 300ms ease-in-out);
+                        @include transition($default-transition);
                         a {
                             color: $noir;
                             text-decoration: none;

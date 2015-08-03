@@ -93,7 +93,7 @@
                             background: $noir;
                             padding: 56px 0;
                             font-size: 4em;
-                            @include transition(all 300ms ease-in-out);
+                            @include transition($default-transition);
                         }
                     }
                     .arrow {
@@ -108,7 +108,7 @@
                         -webkit-transform: rotate(45deg);
                         -ms-transform: rotate(45deg);
                         transform: rotate(45deg);
-                        @include transition(all 300ms ease-in-out);
+                        @include transition($default-transition);
                     }
                     &:hover, &:focus {
                         outline: none;
@@ -236,7 +236,7 @@
                 @include border-radius(4px);
                 background-color: $noir;
                 opacity: 0.6;
-                @include transition(all 300ms ease-in-out);
+                @include transition($default-transition);
                 &:hover {
                     color: $noir;
                     background-color: $jaune-or;
@@ -314,7 +314,7 @@
                             right: 0px;
                             width: 20px;
                             height: 20px;
-                            @include transition(all 300ms ease-in-out);
+                            @include transition($default-transition);
                         }
                         &:hover, &:focus {
                             .arrow {

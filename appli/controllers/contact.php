@@ -82,7 +82,8 @@ class Contact extends CI_Controller {
                 }
                 
                 $contact = new StdClass();
-                $contact->nom = $this->input->post('nom') .' '. $this->input->post('prenom');
+                $contact->nom = $this->input->post('nom');
+                $contact->prenom = $this->input->post('prenom');
                 $contact->mail = $this->input->post('mail');
                 $contact->sujet = $this->input->post('sujet');
                 $contact->telephone = $this->input->post('tel');
