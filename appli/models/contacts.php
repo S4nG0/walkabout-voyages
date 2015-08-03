@@ -42,6 +42,43 @@ class Contacts extends CI_Model {
 
         return $carnets;
     }
+
+    public function getContactsNonLus(){
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('ouvert', "false")
+                           ->get()
+                           ->result();
+
+        return $carnets;
+    }
+    public function getContactsLus(){
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('ouvert', "true")
+                           ->get()
+                           ->result();
+
+        return $carnets;
+    }
+    public function getContactsArchives(){
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('ouvert', "archives")
+                           ->get()
+                           ->result();
+
+        return $carnets;
+    }
+    public function getContactsImportants(){
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('ouvert', "important")
+                           ->get()
+                           ->result();
+
+        return $carnets;
+    }
     
     
     
