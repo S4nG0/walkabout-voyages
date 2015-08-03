@@ -6046,18 +6046,16 @@ body.admin .charts h3 {
 /*------------------------------------*\
     #PAYS
 \*------------------------------------*/
-svg {
+.countries svg {
   width: 100%;
   height: 650px;
 }
-svg > g {
-  display: block;
-  margin: 0 auto;
-}
-
-.contain-svg {
+.countries .contain-svg {
   width: 100%;
   margin: 0 auto;
+}
+.countries .button-block {
+  margin-top: 25px;
 }
 
 /*------------------------------------*\
