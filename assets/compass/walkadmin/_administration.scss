@@ -204,10 +204,6 @@ body.admin {
 }
 
 /*------------------------------------*\
-    #RESERVATIONS
-\*------------------------------------*/
-
-/*------------------------------------*\
     #PAYS
 \*------------------------------------*/
 .countries {
@@ -225,6 +221,20 @@ body.admin {
         margin-top: 25px;
     }
 
+    input {
+        text-align: center;
+    }
+
+    input[type="submit"] {
+        margin-top: 50px;
+    }
+
+    select {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 25px;
+    }
 }
 
 /*------------------------------------*\
