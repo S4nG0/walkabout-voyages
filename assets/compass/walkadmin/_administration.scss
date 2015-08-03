@@ -16,6 +16,15 @@ body.admin {
         }
     }
 
+    h1 {
+        margin-top: 50px;
+        margin-bottom: 65px;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+    }
+
     .button {
         margin: 0 auto;
         width: 250px;
@@ -32,7 +41,7 @@ body.admin {
 }
 
 .page-header {
-    margin-bottom: 50px;
+    margin-bottom: 0;
 }
 
 #page-wrapper {
@@ -125,15 +134,26 @@ body.admin {
 \*------------------------------------*/
 body.admin {
     .quicklook {
-        padding: 50px 0;
+        padding-bottom: 50px;
 
         .panel-black {
             color: $jaune-or;
             background-color: $noir;
         }
 
+        .panel-footer {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
         .button {
             margin-top: 25px;
+        }
+    }
+
+    .charts {
+        h3 {
+            text-align: center;
         }
     }
 }
