@@ -6193,13 +6193,14 @@ body.admin .charts h3 {
     width: 75%;
   }
 }
-/*------------------------------------*\
-    #CONTACT
-\*------------------------------------*/
-.contacts .contact {
-  margin-top: 25px;
+@media screen and (max-width: 992px) {
+  /*------------------------------------*\
+      #CONTACT
+  \*------------------------------------*/
+  .contacts .contact {
+    margin-top: 25px;
+  }
 }
-
 @media screen and (max-width: 768px) {
   body.admin .admin-log-on > .container .login-panel .panel-form .form-group input {
     width: 50%;

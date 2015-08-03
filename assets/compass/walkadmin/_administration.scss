@@ -376,12 +376,14 @@ body.admin {
     }
 }
 
-/*------------------------------------*\
-    #CONTACT
-\*------------------------------------*/
-.contacts {
-    .contact {
-        margin-top: 25px;
+@media screen and (max-width: 992px) {
+    /*------------------------------------*\
+        #CONTACT
+    \*------------------------------------*/
+    .contacts {
+        .contact {
+            margin-top: 25px;
+        }
     }
 }
 
