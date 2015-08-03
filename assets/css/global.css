@@ -5900,6 +5900,13 @@ body.admin h1, body.admin h2, body.admin h3 {
 body.admin h1:after, body.admin h2:after, body.admin h3:after {
   background-color: #242424;
 }
+body.admin h1 {
+  margin-top: 50px;
+  margin-bottom: 65px;
+}
+body.admin h2 {
+  margin-bottom: 25px;
+}
 body.admin .button {
   margin: 0 auto;
   width: 250px;
@@ -5913,7 +5920,7 @@ body.admin a:hover, body.admin a:focus {
 }
 
 .page-header {
-  margin-bottom: 50px;
+  margin-bottom: 0;
 }
 
 #page-wrapper {
@@ -5990,14 +5997,21 @@ body.admin a:hover, body.admin a:focus {
     #DASHBOARD
 \*------------------------------------*/
 body.admin .quicklook {
-  padding: 50px 0;
+  padding-bottom: 50px;
 }
 body.admin .quicklook .panel-black {
   color: #f0c041;
   background-color: #242424;
 }
+body.admin .quicklook .panel-footer {
+  text-transform: uppercase;
+  font-weight: 600;
+}
 body.admin .quicklook .button {
   margin-top: 25px;
+}
+body.admin .charts h3 {
+  text-align: center;
 }
 
 /*------------------------------------*\
