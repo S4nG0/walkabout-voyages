@@ -6187,6 +6187,7 @@ body.admin .charts h3 {
 .destinations .actualites__single .infoBlock,
 .actualites .destinations__single .infoBlock,
 .actualites .actualites__single .infoBlock {
+  padding: 15px;
   text-align: center;
 }
 .destinations .destinations__single .infoBlock .published,
@@ -6218,6 +6219,16 @@ body.admin .charts h3 {
 .actualites .destinations__single .buttonsBlock .button:last-child,
 .actualites .actualites__single .buttonsBlock .button:last-child {
   margin-bottom: 0;
+}
+.destinations .actualites__thumbnail,
+.actualites .actualites__thumbnail {
+  margin-bottom: 25px;
+}
+.destinations .actualites__thumbnail > img,
+.actualites .actualites__thumbnail > img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
 }
 
 /*------------------------------------*\
@@ -6401,6 +6412,9 @@ body.admin .charts h3 {
     width: 50%;
   }
 
+  /*------------------------------------*\
+      #DESTINATIONS || #ACTUALITES
+  \*------------------------------------*/
   /*------------------------------------*\
       #CONTACT
   \*------------------------------------*/

@@ -328,6 +328,7 @@ body.admin {
         }
 
         .infoBlock {
+            padding: 15px;
             text-align: center;
 
             .published {
@@ -350,7 +351,16 @@ body.admin {
                 }
             }
         }
+    }
 
+    .actualites__thumbnail {
+        margin-bottom: 25px;
+
+        > img {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -588,6 +598,17 @@ body.admin {
         }
     }
     /*------------------------------------*\
+        #DESTINATIONS || #ACTUALITES
+    \*------------------------------------*/
+    .destinations,
+    .actualites {
+        .destinations__single,
+        .actualites__single {
+
+        }
+
+    }
+    /*------------------------------------*\
         #CONTACT
     \*------------------------------------*/
     .contacts {
@@ -634,131 +655,3 @@ body.admin {
         }
     }
 }
-
-
-// body.admin {
-//     background: rgba(0, 0, 0, 0) url("../images/texture.png") repeat scroll 0 0;
-//     color: whitesmoke;
-// }
-
-// .form-control{
-//     border-color: -moz-use-text-color -moz-use-text-color #242424;
-//     border-radius: 0;
-//     border-style: none none solid;
-//     border-width: medium medium 1px;
-//     color: #242424;
-//     padding: 15px;
-//     transition: border 300ms ease-in-out 0s;
-//     width: 100%;
-//     height:auto;
-//     box-shadow: none;
-// }
-
-// .form-control:focus {
-//   border-color: #f0c041;
-//   outline: 0;
-//   -webkit-box-shadow: none;
-//   box-shadow: none;
-// }
-
-// .centered{
-//     text-align:center;
-//     color : #f0c041;
-// }
-
-
-// /* Suppression du background color pour faire apparaitre image background */
-
-// #page-wrapper{
-//     background-color:transparent;
-//     border-left : 0px;
-//     color:#f0c041;
-// }
-
-// .navbar-default{
-//     border : none;
-//     background: transparent;
-//     color:white;
-// }
-
-
-// .nav>li>a:hover, .nav>li>a:focus, .nav>li>a.active {
-//   text-decoration: none;
-//   background-color: transparent;
-//   color:#f0c041;
-// }
-
-// .sidebar ul li a.active{
-//     background-color:transparent;
-// }
-
-// .nav>li>a, .nav>li>a, .nav>li>a {
-//   color:whitesmoke;
-// }
-
-// .sidebar ul li {
-//   border:none;
-// }
-
-// .sidebar{
-//     margin-top : auto;
-// }
-
-// .navbar-collapse{
-//     border:none;
-//     box-shadow: none;
-// }
-
-// @media (min-width: 768px){
-//     .sidebar {
-//         margin-top: 51px;
-//     }
-// }
-
-// .page-header{
-//     display:inline-block;
-//     color:#f0c041;
-//     width: 100%;
-// }
-
-// .fa{
-//     color:whitesmoke;
-// }
-
-// h1{
-//     color:#f0c041;
-// }
-
-// .fa:hover{
-//     color:#f0c041;
-// }
-
-// #search{
-//     margin-top : 20px;
-//     margin-bottom : 20px;
-// }
-
-// td{
-//     padding : 15px;
-// }
-
-// .image-wrapper{
-//     padding-bottom: 80%;
-//     background-position: 50% 0;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-// }
-
-// .destination{
-//     padding-bottom: 15px;
-//     padding-top: 15px;
-// }
-
-// .destination .button{
-//     margin-top: 15px;
-// }
-
-// hr{
-//     width:30%;
-//     text-align:center;
-// }
