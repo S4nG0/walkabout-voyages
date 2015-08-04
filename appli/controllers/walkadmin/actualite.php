@@ -94,9 +94,9 @@ class Actualite extends CI_Controller{
                 }else{
                     $data = array('upload_data' => $this->upload->data());
                     $actu['photos']='actus/'.$data['upload_data']['file_name'];
-                    $this->actualites->modify($actu,$idActualites);
-                    redirect('/walkadmin/actualite');
                 }
+                $this->actualites->modify($actu,$idActualites);
+                redirect('/walkadmin/actualite');
             }else{
                 $data['error'] = true;
             }
