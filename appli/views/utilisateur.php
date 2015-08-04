@@ -6,10 +6,11 @@ $nbCarnets = count($carnets);
 <body class="page-utilisateur">
 
     <div class="main banner" id="main" data-stellar-background-ratio="0.5" style="background-image:url('<?php echo img_url("$user->cover"); ?>');">
+        <div class="overlay"></div>
         <div class="container-fluid noPadding">
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>
-            
+
             <div class="caption-wrapper">
                 <div class="caption">
                     <div class="row noPadding">
@@ -19,7 +20,7 @@ $nbCarnets = count($carnets);
                             </div>
                             <h1 class="no-sep"><?php echo $user->prenom . ' ' . $user->nom; ?></h1>
                             <p><?php if ($nbCarnets > 1) { echo $nbCarnets . '&nbsp;histoires à découvrir'; } elseif ($nbCarnets == 0) { echo 'Aucune histoire pour l\'instant'; } else {echo $nbCarnets . '&nbsp;histoire à découvrir'; } ?></p>
-                            <?php 
+                            <?php
                             if($utilisateur_connecte !=  false){
                             if($user->idUsers == $utilisateur_connecte->idUsers){ ?>
                             <a href="#" class="button cover-change file-upload">Changer la couverture</a>

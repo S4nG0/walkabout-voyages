@@ -408,6 +408,17 @@ body.admin {
         }
     }
 
+    .destinations__coordinates {
+        label {
+            display: block;
+        }
+
+        input {
+            display: inline-block;
+            width: 40%;
+        }
+    }
+
     .destinations__gallery {
         .custom-file-input {
             width: 50%;
