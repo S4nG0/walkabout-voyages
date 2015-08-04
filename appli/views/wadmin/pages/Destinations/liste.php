@@ -52,14 +52,14 @@
                         </div>
                     </div>
                 </div>
-                <?php  }
-            } else { ?>
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="no-entry">Il n'y a aucune destination enregistré actuellement !</p>
+                    <?php  }
+                } else { ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="no-entry">Il n'y a aucune destination enregistré actuellement !</p>
+                    </div>
                 </div>
+                <?php } ?>
             </div>
-            <?php } ?>
         </div>
     </div>
-</div>
