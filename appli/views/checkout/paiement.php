@@ -30,6 +30,9 @@ $step = 'payment';
 
                     <div class="recap-block">
                         <h1>Récapitulatif de la réservation</h1>
+                        <?php if($cgv == true){ ?>
+                            <script>alert('Vous devez accepter les conditions générales de ventes afin de pouvoir finaliser votre commande.');</script>
+                        <?php } ?>
                         <p class="small hidden-lg hidden-md hidden-sm">
                             Attention : sur petits écrans (smartphones ou certaines tablettes), n'oubliez pas de préciser le nombre de participants en déplaçant le tableau ci-dessous vers la gauche&nbsp;!
                         </p>
