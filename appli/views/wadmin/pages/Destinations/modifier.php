@@ -81,9 +81,9 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$idDestination);
                 <div class="form-group">
                     <div class="form-group destinations__coordinates">
                         <label for="longitude">Coordonnées GPS</label>
-                        <input placeholder="Longitude" name="longitude" type="text" value="<?php echo set_value('longitude'); ?>">
+                        <input placeholder="Longitude" name="longitude" type="text" value="<?php echo explode(',',$destination[0]->coordonnees)[0]  ?>">
                         <?php echo form_error('longitude'); ?>
-                        <input placeholder="Latitude" name="latitude" type="text" value="<?php echo set_value('latitude'); ?>">
+                        <input placeholder="Latitude" name="latitude" type="text" value="<?php echo explode(',',$destination[0]->coordonnees)[1]  ?>">
                         <?php echo form_error('latitude'); ?>
                     </div>
                     <div class="help-block">
