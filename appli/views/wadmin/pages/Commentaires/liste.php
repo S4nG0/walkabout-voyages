@@ -32,6 +32,7 @@
                                 <td><?php if(isset($commentaire)) echo $commentaire->date ?></td>
                                 <td><?php if(isset($commentaire)) echo $commentaire->texte?></td>
                                 <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/publie/".$commentaire->idCommentaires?> ">Publier</a></td>
+                                <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/supprimer/".$commentaire->idCommentaires?> "><i class="fa fa-trash"></i> Supprimer</a></td>
                             </tr>
                         <?php } else{ ?>
                             <tr class="searchable" data-search="<?php echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?>">
@@ -40,6 +41,7 @@
                                 <td><?php if(isset($commentaire)) echo $commentaire->date ?></td>
                                 <td><?php if(isset($commentaire)) echo $commentaire->texte?></td>
                                 <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/publie/".$commentaire->idCommentaires?> ">Publier</a></td>
+                                <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/supprimer/".$commentaire->idCommentaires?> "><i class="fa fa-trash"></i> Supprimer</a></td>
                             </tr>
                         <?php } ?>
                     <?php } ?>
