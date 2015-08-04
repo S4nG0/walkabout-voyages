@@ -40,6 +40,7 @@ class Utilisateur extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         if($idUsers==0)
             $this->index();
+        $data['title'] = 'Détail de l\'utilisateurs';
         $data['user']=$this->user->constructeur($idUsers);
         $data['admin'] = $this->session->userdata('admin');
         $data['reservation'] = $this->reservations->getReservationAdmin($idUsers);
