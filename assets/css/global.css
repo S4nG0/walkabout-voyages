@@ -6300,6 +6300,15 @@ body.admin .charts h3 {
   width: 100%;
   margin: 0 auto;
 }
+.destinations .destinations__coordinates label,
+.actualites .destinations__coordinates label {
+  display: block;
+}
+.destinations .destinations__coordinates input,
+.actualites .destinations__coordinates input {
+  display: inline-block;
+  width: 40%;
+}
 .destinations .destinations__gallery .custom-file-input,
 .actualites .destinations__gallery .custom-file-input {
   width: 50%;
@@ -7074,7 +7083,6 @@ input[type="radio"]:not(old):checked + label > span {
   -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.6);
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.6);
   border-bottom: 1px solid #f0c041;
-  left: 0;
 }
 .main .overlay {
   position: absolute;

@@ -21,12 +21,10 @@ echo form_open_multipart('walkadmin/destinations/creer');
                     <div class="form-group">
                         <label for="titre">Intitulé de la destination</label>
                         <input placeholder="Titre" name="titre" type="text" value="">
-                        <?php echo form_error('titre'); ?>
                     </div>
                     <div class="form-group">
                         <label for="description">Texte introductif</label>
-                        <textarea name="description" rows="10" placeholder="Description"><?php echo set_value('description'); ?></textarea>
-                        <?php echo form_error('description'); ?>
+                        <textarea name="description" rows="10" placeholder="Description"></textarea>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -36,7 +34,6 @@ echo form_open_multipart('walkadmin/destinations/creer');
                             <img src="<?php echo img_url('default.png'); ?>" alt="Image à la une" class="img-responsive">
                         </div>
                         <input class="custom-file-input" name="banner" type="file">
-                        <?php echo form_error('banner'); ?>
                     </div>
                 </div>
             </div>
@@ -55,31 +52,24 @@ echo form_open_multipart('walkadmin/destinations/creer');
                                 </option>
                             <?php } ?>
                         </select>
-                        <?php echo form_error('pays'); ?>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="ville">Ville</label>
                         <input placeholder="Ville" name="ville" type="text" value="">
-                        <?php echo form_error('ville'); ?>
                     </div>
                 </div>
             </div>
 
             <div class="row text-center">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-4 col-md-offset-4">
                     <div class="form-group">
-                        <div class="form-group destinations__coordinates">
-                            <label for="longitude">Coordonnées GPS</label>
-                            <input placeholder="Longitude" name="longitude" type="text" value="<?php echo set_value('longitude'); ?>">
-                            <?php echo form_error('longitude'); ?>
-                            <input placeholder="Latitude" name="latitude" type="text" value="<?php echo set_value('latitude'); ?>">
-                            <?php echo form_error('latitude'); ?>
-                        </div>
+                        <label for="coordonnees">Coordonnées GPS</label>
                         <div class="help-block">
                             <span class="small">Ces coordonnées sont primordiales pour faire fonctionner l'application Google Maps.</span>
                         </div>
+                        <input placeholder="Coordonnées" name="coordonnees" type="text" value="">
                     </div>
                 </div>
             </div>
@@ -94,14 +84,13 @@ echo form_open_multipart('walkadmin/destinations/creer');
                             <span class="small">Vous pouvez ajouter plusieurs photos, une par une.</span>
                         </div>
                         <input class="custom-file-input" name="images[]" type="file" multiple>
-                        <?php echo form_error('images'); ?>
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="form-group mb50">
+                    <div class="form-group">
                         <input type="submit" class="button black" value="Ajouter la destination"/>
                     </div>
                 </div>
