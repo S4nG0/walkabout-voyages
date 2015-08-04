@@ -1,11 +1,14 @@
 WALKADMIN :
-
+  ☐ Login : manque margin
   ✔ Dashboard @done (15-08-03 13:47)
      ☐ Charts @low
+     ☐ Responsive
   ✔ Reservations : pratiquement finie (voir styles sur tableau + responsive) @done (15-08-03 18:05)
-  ☐ Destinations :
-    ☐ Liste : reponsive une fois que le dev est OK
-    ☐ Add : attente de complétion du dev
+  ✔ Destinations : @done (15-08-04 18:23)
+    ✔ Liste : reponsive une fois que le dev est OK @done (15-08-04 18:23)
+    ✔ Add : attente de complétion du dev @done (15-08-04 18:23)
+    ✔ Modifier @done (15-08-04 18:23)
+    ☐ Affichage de la galerie : voir avec Auré
   ✔ Pays @done (15-08-03 18:05)
     ✔ Ajouter pays @done (15-08-03 18:05)
     ✔ Liste pays @done (15-08-03 13:51)
@@ -17,6 +20,7 @@ WALKADMIN :
     ☐ Admin
     ☐ Users
   ✔ Contact @done (15-08-03 15:50)
-  ☐ Actus :
-    ✔ List : responsive (idem dest) @done (15-08-04 14:33)
+  ✔ Actus : @done (15-08-04 15:27)
+    ✔ List : responsive (idem dest) : bug sur affichage image 403 @done (15-08-04 15:27)
     ✔ Add : attente dev @done (15-08-04 14:33)
+    ✔ Modifier : bug sur upload @done (15-08-04 15:27)
