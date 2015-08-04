@@ -30,7 +30,8 @@ class Actualite extends CI_Controller{
                     "titre" => $this->input->post('titre'),
                     "date" => date("Y-m-d h:i:s"),
                     "texte" => $this->input->post('texte'),
-                    "description" => $this->input->post('description')
+                    "description" => $this->input->post('description'),
+                    "idAdministrateur" => $this->session->userdata('admin')[0]->idAdministrateur
                 );
                 $config =  array(
                     'upload_path'     => 'assets/images/actus/',
@@ -74,7 +75,8 @@ class Actualite extends CI_Controller{
                     "titre" => $this->input->post('titre'),
                     "date" => date("Y-m-d h:i:s"),
                     "texte" => $this->input->post('texte'),
-                    "description" => $this->input->post('description')
+                    "description" => $this->input->post('description'),
+                    "idAdministrateur" => $this->session->userdata('admin')[0]->idAdministrateur
                 );
                 $this->actualites->modify($actu,$idActualites);
                 redirect('/walkadmin/actualite');
