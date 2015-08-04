@@ -2564,27 +2564,6 @@ footer .footer__copyright li {
   margin: 0 auto;
   margin-top: 25px;
 }
-#adress-block {
-  display: none;
-  text-align: center;
-  margin: 35px;
-}
-#adress-block label {
-  display: block;
-  margin-top: 50px;
-  color: #f0c041;
-}
-#adress-block input {
-  display: block;
-  margin-top: 25px;
-  text-align: center;
-}
-#adress-block .button {
-  display: block;
-  width: 150px;
-  margin: 0 auto;
-  margin-top: 25px;
-}
 
 @media screen and (max-width: 992px) {
   footer h1 {
@@ -4570,6 +4549,27 @@ body.checkout .content .sign-in-block .buttons-block .button.prev {
 body.checkout .content #new-address {
   display: none;
 }
+body.checkout .content #adress-block {
+  display: none;
+  text-align: center;
+  margin: 35px;
+}
+body.checkout .content #adress-block label {
+  display: block;
+  margin-top: 50px;
+  color: #f0c041;
+}
+body.checkout .content #adress-block input {
+  display: block;
+  margin-top: 25px;
+  text-align: center;
+}
+body.checkout .content #adress-block .button {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
 body.checkout .content .infos-block {
   margin: 100px 0 50px 0;
 }
@@ -5949,6 +5949,21 @@ body.admin a {
 body.admin a:hover, body.admin a:focus {
   color: #848484;
 }
+body.admin input, body.admin textarea {
+  border: 1px solid #848484;
+  -moz-box-shadow: 0px 0px 10px 0px transparent;
+  -webkit-box-shadow: 0px 0px 10px 0px transparent;
+  box-shadow: 0px 0px 10px 0px transparent;
+}
+body.admin input:focus, body.admin textarea:focus {
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+body.admin hr {
+  margin: 50px 0;
+  border-top-color: #ccc;
+}
 body.admin .no-entry {
   color: #242424;
 }
@@ -5962,7 +5977,7 @@ body.admin .alert > p {
 body.admin .custom-file-input {
   position: relative;
   padding: 15px;
-  border: 1px solid #242424;
+  border: 1px solid #848484;
 }
 body.admin .custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
@@ -5974,7 +5989,7 @@ body.admin .custom-file-input::before {
   left: 0;
   display: inline-block;
   background-color: #fff;
-  border-right: 1px solid #242424;
+  border-right: 1px solid #848484;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -6124,15 +6139,38 @@ body.admin .charts h3 {
 /*------------------------------------*\
     #DESTINATIONS || #ACTUALITES
 \*------------------------------------*/
+.destinations h2,
+.actualites h2 {
+  margin-bottom: 50px !important;
+}
 .destinations input, .destinations textarea,
 .actualites input,
 .actualites textarea {
+  text-align: center;
+}
+.destinations input[type="submit"].button,
+.actualites input[type="submit"].button {
+  width: 250px;
+}
+.destinations select,
+.actualites select {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+.destinations select option,
+.actualites select option {
   text-align: center;
 }
 .destinations .form-group .button,
 .actualites .form-group .button {
   margin-top: 25px;
   width: 100%;
+}
+.destinations .form-group .help-block,
+.actualites .form-group .help-block {
+  margin-top: 0;
 }
 .destinations .destinations__tools,
 .destinations .actualites__tools,
@@ -6150,7 +6188,6 @@ body.admin .charts h3 {
   display: inline-block;
   width: 300px;
   margin-right: 15px;
-  border: 1px solid #242424;
   vertical-align: middle;
 }
 .destinations .destinations__tools input:focus,
@@ -6222,6 +6259,14 @@ body.admin .charts h3 {
 .actualites .destinations__single .infoBlock p,
 .actualites .actualites__single .infoBlock p {
   color: #242424;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+.destinations .destinations__single .infoBlock .button,
+.destinations .actualites__single .infoBlock .button,
+.actualites .destinations__single .infoBlock .button,
+.actualites .actualites__single .infoBlock .button {
+  margin-top: 25px;
 }
 .destinations .destinations__single .buttonsBlock,
 .destinations .actualites__single .buttonsBlock,
@@ -6241,14 +6286,23 @@ body.admin .charts h3 {
 .actualites .actualites__single .buttonsBlock .button:last-child {
   margin-bottom: 0;
 }
+.destinations .destinations__thumbnail,
 .destinations .actualites__thumbnail,
+.actualites .destinations__thumbnail,
 .actualites .actualites__thumbnail {
   margin-bottom: 25px;
 }
+.destinations .destinations__thumbnail > img,
 .destinations .actualites__thumbnail > img,
+.actualites .destinations__thumbnail > img,
 .actualites .actualites__thumbnail > img {
   display: block;
   width: 100%;
+  margin: 0 auto;
+}
+.destinations .destinations__gallery .custom-file-input,
+.actualites .destinations__gallery .custom-file-input {
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -6282,9 +6336,6 @@ body.admin .charts h3 {
 /*------------------------------------*\
     #CONTACT
 \*------------------------------------*/
-.contacts input[type="search"] {
-  border: 1px solid #242424;
-}
 .contacts input[type="search"]:focus {
   border-color: #f0c041;
 }
@@ -6417,12 +6468,53 @@ body.admin .charts h3 {
     width: 75%;
   }
 }
+@media screen and (max-width: 1230px) {
+  body.admin .submenu .submenu__header {
+    border-right: none;
+  }
+  body.admin .submenu li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
 @media screen and (max-width: 992px) {
   /*------------------------------------*\
       #CONTACT
   \*------------------------------------*/
   .contacts .contact {
     margin-top: 25px;
+  }
+
+  /*------------------------------------*\
+      #DESTINATIONS || #ACTUALITES
+  \*------------------------------------*/
+  .destinations .destinations__single .well,
+  .destinations .actualites__single .well,
+  .actualites .destinations__single .well,
+  .actualites .actualites__single .well {
+    display: block;
+  }
+  .destinations .destinations__single .well .single__block,
+  .destinations .actualites__single .well .single__block,
+  .actualites .destinations__single .well .single__block,
+  .actualites .actualites__single .well .single__block {
+    display: block;
+  }
+  .destinations .destinations__single .imageBlock, .destinations .destinations__single .infoBlock, .destinations .destinations__single .buttonsBlock,
+  .destinations .actualites__single .imageBlock,
+  .destinations .actualites__single .infoBlock,
+  .destinations .actualites__single .buttonsBlock,
+  .actualites .destinations__single .imageBlock,
+  .actualites .destinations__single .infoBlock,
+  .actualites .destinations__single .buttonsBlock,
+  .actualites .actualites__single .imageBlock,
+  .actualites .actualites__single .infoBlock,
+  .actualites .actualites__single .buttonsBlock {
+    width: 100%;
+  }
+  .destinations .destinations__gallery .custom-file-input,
+  .actualites .destinations__gallery .custom-file-input {
+    width: 100%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -6433,9 +6525,6 @@ body.admin .charts h3 {
     width: 50%;
   }
 
-  /*------------------------------------*\
-      #DESTINATIONS || #ACTUALITES
-  \*------------------------------------*/
   /*------------------------------------*\
       #CONTACT
   \*------------------------------------*/
@@ -6459,6 +6548,27 @@ body.admin .charts h3 {
   }
   body.admin .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {
     width: 100%;
+  }
+
+  /*------------------------------------*\
+      #DESTINATIONS || #ACTUALITES
+  \*------------------------------------*/
+  .destinations .destinations__tools input, .destinations .destinations__tools .button,
+  .destinations .actualites__tools input,
+  .destinations .actualites__tools .button,
+  .actualites .destinations__tools input,
+  .actualites .destinations__tools .button,
+  .actualites .actualites__tools input,
+  .actualites .actualites__tools .button {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+  }
+  .destinations .destinations__tools input,
+  .destinations .actualites__tools input,
+  .actualites .destinations__tools input,
+  .actualites .actualites__tools input {
+    margin-bottom: 10px;
   }
 }
 /*------------------------------------*\
@@ -7705,6 +7815,10 @@ body.single-carnet .content {
 
 .mb25 {
   margin-bottom: 25px !important;
+}
+
+.mb50 {
+  margin-bottom: 50px !important;
 }
 
 .mt25 {

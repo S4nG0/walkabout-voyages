@@ -33,17 +33,9 @@ echo form_open_multipart('walkadmin/actualite/creer/');
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="photos">Image à la une</label>
-<!--                     <div class="actualites__thumbnail">
-                        <figure>
-                            <figcaption>
-                                <div class="caption-wrapper">
-                                    <div class="caption-content">
-
-                                    </div>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div> -->
+                    <div class="actualites__thumbnail">
+                        <img src="<?php if(!$actualite[0]->photos){echo img_url('default.png');}else{echo img_url($actualite[0]->photos);} ?>" alt="Image à la une" class="img-responsive travel-log-thumbnail">
+                    </div>
                     <input class="custom-file-input" name="photos" type="file" value="Choisir">
                     <input type="submit" class="button black" value="Enregistrer"/>
                 </div>

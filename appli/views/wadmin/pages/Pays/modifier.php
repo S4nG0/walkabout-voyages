@@ -2,50 +2,59 @@
     echo form_open_multipart('walkadmin/pays_admin/detail/'.$idPays);
 ?>
 <div id="page-wrapper">
-    <div class="countries">
-        <div class="row text-center">
-            <h1 class="panel-header sep"><?php echo $pays[0]->nom; ?></h1>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="capitale">Capitale</label>
-                    <input placeholder="Saississez l'information..." name="capitale" type="text" value="<?php echo $pays[0]->capitale ?>">
-                </div>
-                <div class="form-group">
-                    <label for="monnaie">Monnaie</label>
-                    <input name="monnaie" placeholder="Saississez l'information..." value="<?php echo $pays[0]->monnaie ?>">
-                </div>
-                <div class="form-group">
-                    <label for="dirigeant">Dirigeant(e)</label>
-                    <input placeholder="Saississez l'information..." name="dirigeant" type="text" value="<?php echo $pays[0]->Dirigeant ?>">
-                </div>
-                <div class="form-group">
-                    <label for="langues">Langues</label>
-                    <input placeholder="Saississez l'information..." name="langues" type="text" value="<?php echo $pays[0]->langues ?>">
-                </div>
+    <div class="container-fluid">
+        <div class="countries">
+            <div class="row text-center">
+                <h1 class="panel-header sep"><?php echo $pays[0]->nom; ?></h1>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="population">Population</label>
-                    <input placeholder="Saississez l'information..." name="population" type="text" value="<?php echo $pays[0]->population ?>">
+
+            <?php if (isset($error)) { ?>
+
+                <div class="alert alert-danger" role="alert"><strong>Erreur !</strong><br /><?php echo $error; ?></div>
+
+            <?php } ?>
+
+            <div class="row text-center">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="capitale">Capitale</label>
+                        <input placeholder="Saississez l'information..." name="capitale" type="text" value="<?php echo $pays[0]->capitale ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="monnaie">Monnaie</label>
+                        <input name="monnaie" placeholder="Saississez l'information..." value="<?php echo $pays[0]->monnaie ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="dirigeant">Dirigeant(e)</label>
+                        <input placeholder="Saississez l'information..." name="dirigeant" type="text" value="<?php echo $pays[0]->Dirigeant ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="langues">Langues</label>
+                        <input placeholder="Saississez l'information..." name="langues" type="text" value="<?php echo $pays[0]->langues ?>">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="superficie">Superficie</label>
-                    <input placeholder="Saississez l'information..." name="superficie" type="text" value="<?php echo $pays[0]->superficie ?>">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="population">Population</label>
+                        <input placeholder="Saississez l'information..." name="population" type="text" value="<?php echo $pays[0]->population ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="superficie">Superficie</label>
+                        <input placeholder="Saississez l'information..." name="superficie" type="text" value="<?php echo $pays[0]->superficie ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="densité">Densité</label>
+                        <input placeholder="Saississez l'information..." name="densite" type="text" value="<?php echo $pays[0]->densité ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="climat">Climat</label>
+                        <input placeholder="Saississez l'information..." name="climat" type="text" value="<?php echo $pays[0]->climat ?>">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="densité">Densité</label>
-                    <input placeholder="Saississez l'information..." name="densite" type="text" value="<?php echo $pays[0]->densité ?>">
-                </div>
-                <div class="form-group">
-                    <label for="climat">Climat</label>
-                    <input placeholder="Saississez l'information..." name="climat" type="text" value="<?php echo $pays[0]->climat ?>">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <input type="submit" class="button black" value="Modifier le pays">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input type="submit" class="button black" value="Modifier le pays">
+                    </div>
                 </div>
             </div>
         </div>
