@@ -34,7 +34,7 @@
                         <td><?php echo $user->pays ?></td>
                         <td>
                             <?php if($user->active == "false" ){?>
-                            <a class="button" href="'<?php echo base_url()."walkadmin/utilisateur/activer/".$user->idUsers?>'"><i class="fa fa-fw fa-plus"></i></a>
+                            <a class="button" href="<?php echo base_url()."walkadmin/utilisateur/activer/".$user->idUsers?>"><i class="fa fa-fw fa-plus"></i></a>
                             <?php }else {?>
                             <input type="button" value="désactiver le compte" onclick="document.location='<?php echo base_url()."walkadmin/utilisateur/desactiver/".$user->idUsers?>'">
                             <?php }?>

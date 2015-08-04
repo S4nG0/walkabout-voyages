@@ -17,29 +17,29 @@ class Utilisateur extends CI_Controller{
     public function activer($idUsers){
         connecte_admin($this->session->userdata('admin'));
         if($idUsers==0)
-            $this->liste();
+            $this->index();
         $user=array(
             "active" => "true"
         );
         $this->user->modify($user,$idUsers);
-        $this->liste();
+        $this->index();
     }
 
     public function desactiver($idUsers){
         connecte_admin($this->session->userdata('admin'));
         if($idUsers==0)
-            $this->liste();
+            $this->index();
         $user=array(
             "active" => "false"
         );
         $this->user->modify($user,$idUsers);
-        $this->liste();
+        $this->index();
     }
 
     public function detail($idUsers){
         connecte_admin($this->session->userdata('admin'));
         if($idUsers==0)
-            $this->liste();
+            $this->index();
         $data['user']=$this->user->constructeur($idUsers);
         $data['admin'] = $this->session->userdata('admin');
         $data['reservation'] = $this->reservations->getReservationAdmin($idUsers);
