@@ -33,15 +33,14 @@ class Actualite extends CI_Controller{
                     "description" => $this->input->post('description')
                 );
                 $config =  array(
-                    'upload_path'     => './assets/images/actus/',
-                    'upload_url'      => base_url().'/assets/images/actus/',
+                    'upload_path'     => 'assets/images/actus/',
                     'allowed_types'   => "gif|jpg|png",
                     'overwrite'       => TRUE,
                     'max_size'        => "450000",
                     'max_height'      => "450",
                     'max_width'       => "1600"
                 );
-                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
                 if(! $this->upload->do_upload('photos')){
                     $data['error'] =$this->upload->display_errors();
                 }else{
