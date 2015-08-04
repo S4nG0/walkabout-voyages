@@ -204,10 +204,12 @@ body.admin {
 }
 
 /*------------------------------------*\
-    #DESTINATIONS
+    #DESTINATIONS || #ACTUALITES
 \*------------------------------------*/
-.destinations {
-    .destinations__tools {
+.destinations,
+.actualites {
+    .destinations__tools,
+    .actualites__tools {
         display: table;
         width: 100%;
         margin-bottom: 50px;
@@ -237,7 +239,8 @@ body.admin {
         }
     }
 
-    .destinations__single {
+    .destinations__single,
+    .actualites__single {
         .well {
             display: table;
             width: 100%;
@@ -251,7 +254,7 @@ body.admin {
         }
 
         .imageBlock {
-            width: 35%;
+            width: 30%;
 
             .imageBlock__wrapper {
                 background-position: 50% 0;
@@ -264,13 +267,17 @@ body.admin {
         .infoBlock {
             text-align: center;
 
+            .published {
+                margin-top: 10px;
+            }
+
             p {
                 color: $noir;
             }
         }
 
         .buttonsBlock {
-            width: 25%;
+            width: 30%;
 
             .button {
                 margin-bottom: 10px;

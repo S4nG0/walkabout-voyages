@@ -85,6 +85,18 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-newspaper-o fa-fw menu-icons"></i>&nbsp;Actualités<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/actualite'; ?>">Liste</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/creer-actualite'; ?>">Ajouter</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-users fa-fw menu-icons"></i>&nbsp;Utilisateurs<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -98,18 +110,6 @@
                     </li>
                     <li>
                         <a href="<?php echo base_url() . 'walkadmin/contact'; ?>"><i class="fa fa-pencil-square-o fa-fw menu-icons"></i>&nbsp;Contacts</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-newspaper-o fa-fw menu-icons"></i>&nbsp;Actualités<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="<?php echo base_url() . 'walkadmin/actualite'; ?>">Liste</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url() . 'walkadmin/creer-actualite'; ?>">Ajouter</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
                     </li>
                 </ul>
             </div>
