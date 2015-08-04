@@ -36,6 +36,21 @@ class Reservation extends CI_Controller {
         //$this->output->enable_profiler(true);
     }
 
+    public function modifier($idEtatReservation=0){
+        connecte_admin($this->session->userdata('admin'));
+        if($idEtatReservation==0)
+            $this->index();
+        if($this->input->post() != false){
+            $etatReservation = array(
+                "etat" => $this->input->post('etatReservation'),
+                "idReservation" => $this->input->post('idReservation')
+            );
+            $this->etat_reservation->modify($etatReservation,$idEtatReservation);
+            redirect('walkadmin/reservation');
+        }else{
+            $this->index();
+        }
+    }
 }
 
 /* End of file accueil.php */

@@ -50,7 +50,15 @@
                                             <td><?php if(isset($reservations_currents[$key])) echo $reservations_currents[$key]->date_depart ?></td>
                                             <td><?php if(isset($reservations_currents[$key])) echo $reservations_currents[$key]->date_retour ?></td>
                                             <td><?php if(isset($reservations_currents[$key])) echo $reservations_currents[$key]->nb_places ?></td>
-                                            <td><?php if(isset($reservations_currents[$key])) echo "En cours" ?></td>
+                                            <td>
+                                                <?php echo form_open('walkadmin/reservation/modifier/'.$reservations_currents[$key]->idEtatReservation) ?>
+                                                    <select name="etatReservation" onchange="this.form.submit();">
+                                                        <option value="En cours" selected>En cours</option>
+                                                        <option value="Terminée">Terminée</option>
+                                                    </select>
+                                                    <input type="hidden" name="idReservation" value="<?php echo $reservations_currents[$key]->idReservation ?>">
+                                                <?php echo form_close() ?>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
@@ -84,7 +92,15 @@
                                         <td><?php if(isset($reservations_finished[$key])) echo $reservations_finished[$key]->date_depart ?></td>
                                         <td><?php if(isset($reservations_finished[$key])) echo $reservations_finished[$key]->date_retour ?></td>
                                         <td><?php if(isset($reservations_finished[$key])) echo $reservations_finished[$key]->nb_places ?></td>
-                                        <td><?php if(isset($reservations_finished[$key])) echo "Terminée" ?></td>
+                                        <td>
+                                            <?php echo form_open('walkadmin/reservation/modifier/'.$reservations_finished[$key]->idEtatReservation) ?>
+                                            <select name="etatReservation" onchange="this.form.submit();">
+                                                <option value="En cours">En cours</option>
+                                                <option value="Terminée" selected>Terminée</option>
+                                            </select>
+                                            <input type="hidden" name="idReservation" value="<?php echo $reservations_finished[$key]->idReservation ?>">
+                                            <?php echo form_close() ?>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
@@ -118,7 +134,15 @@
                                         <td><?php if(isset($reservations_currents[$key])) echo $reservations_currents[$key]->date_depart ?></td>
                                         <td><?php if(isset($reservations_currents[$key])) echo $reservations_currents[$key]->date_retour ?></td>
                                         <td><?php if(isset($reservations_currents[$key])) echo $reservations_currents[$key]->nb_places ?></td>
-                                        <td><?php if(isset($reservations_currents[$key])) echo "En cours" ?></td>
+                                        <td>
+                                            <?php echo form_open('walkadmin/reservation/modifier/'.$reservations_currents[$key]->idEtatReservation) ?>
+                                                <select name="etatReservation" onchange="this.form.submit();">
+                                                    <option value="En cours" selected>En cours</option>
+                                                    <option value="Terminée">Terminée</option>
+                                                </select>
+                                                <input type="hidden" name="idReservation" value="<?php echo $reservations_currents[$key]->idReservation ?>">
+                                            <?php echo form_close() ?>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                                 <?php foreach($reservations_finished as $key=>$value){ ?>
@@ -129,7 +153,14 @@
                                     <td><?php if(isset($reservations_finished[$key])) echo $reservations_finished[$key]->date_depart ?></td>
                                     <td><?php if(isset($reservations_finished[$key])) echo $reservations_finished[$key]->date_retour ?></td>
                                     <td><?php if(isset($reservations_finished[$key])) echo $reservations_finished[$key]->nb_places ?></td>
-                                    <td><?php if(isset($reservations_finished[$key])) echo "Terminée" ?></td>
+                                    <td><?php echo form_open('walkadmin/reservation/modifier/'.$reservations_finished[$key]->idEtatReservation) ?>
+                                            <select name="etatReservation" onchange="this.form.submit();">
+                                                <option value="En cours">En cours</option>
+                                                <option value="Terminée" selected>Terminée</option>
+                                            </select>
+                                            <input type="hidden" name="idReservation" value="<?php echo $reservations_finished[$key]->idReservation ?>">
+                                        <?php echo form_close() ?>
+                                    </td>
                                 </tr>
                             <?php } ?>
                             </tbody>

@@ -52,7 +52,7 @@ class Reservations extends CI_Model {
 
     public function getReservationCurrent(){
         $reservation= $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays,
-                                         users.nom AS nomClient,users.prenom as prenomClient')
+                                         users.nom AS nomClient,users.prenom as prenomClient,etatreservation.idEtatReservation')
                                ->from($this->table)
                                ->join('etatreservation','etatreservation.idReservation=reservation.idReservation')
                                ->join('users','reservation.idUsers=users.idUsers')
@@ -67,7 +67,7 @@ class Reservations extends CI_Model {
 
     public function getReservationFinished(){
         $reservation= $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays,
-                                         users.nom AS nomClient,users.prenom as prenomClient')
+                                         users.nom AS nomClient,users.prenom as prenomClient,etatreservation.idEtatReservation')
             ->from($this->table)
             ->join('etatreservation','etatreservation.idReservation=reservation.idReservation')
             ->join('users','reservation.idUsers=users.idUsers')
