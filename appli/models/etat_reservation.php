@@ -32,6 +32,14 @@ class Etat_reservation extends CI_Model {
         
         return $etat_reservation;
     }
+
+    public function modify($data='',$idEtatReservation=0){
+        if($data==''||$idEtatReservation==0)
+            return false;
+        $this->db->where('idEtatReservation',$idEtatReservation);
+        $etatReservation=$this->db->update($this->table,$data);
+        return $etatReservation;
+    }
     
     
     
