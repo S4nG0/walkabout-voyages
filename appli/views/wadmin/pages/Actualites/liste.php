@@ -19,9 +19,15 @@
             <div class="row actualites__single searchable" data-search="<?php echo $actualite->titre; ?>">
                 <div class="col-md-12">
                     <div class="well">
+                        <?php if(isset($actualite->photos)){ ?>
                         <div class="single__block imageBlock">
                             <div class="image-wrapper" style="background-image: url('<?php echo img_url($actualite->photos); ?>');"></div>
                         </div>
+                        <?php } else {?>
+                            <div class="single__block imageBlock">
+                                <div class="image-wrapper" style="background-image: url('<?php echo img_url('default.png'); ?>');"></div>
+                            </div>
+                        <?php } ?>
                         <div class="single__block infoBlock">
                             <h3><?php echo $actualite->titre; ?></h3>
                             <p class="published"><?php echo 'Publié le&nbsp;' . $actualite->date; ?></p>
