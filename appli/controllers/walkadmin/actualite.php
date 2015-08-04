@@ -80,8 +80,23 @@ class Actualite extends CI_Controller{
                     "publie" => "true",
                     "idAdministrateur" => $this->session->userdata('admin')[0]->idAdministrateur
                 );
-                $this->actualites->modify($actu,$idActualites);
-                redirect('/walkadmin/actualite');
+                $config =  array(
+                    'upload_path'     => 'assets/images/actus/',
+                    'allowed_types'   => "gif|jpg|png",
+                    'overwrite'       => TRUE,
+                    'max_size'        => "450000",
+                    'max_height'      => "450",
+                    'max_width'       => "1600"
+                );
+                $this->upload->initialize($config);
+                if(! $this->upload->do_upload('photos')){
+                    $data['error'] =$this->upload->display_errors();
+                }else{
+                    $data = array('upload_data' => $this->upload->data());
+                    $actu['photos']='actus/'.$data['upload_data']['file_name'];
+                    $this->actualites->modify($actu,$idActualites);
+                    redirect('/walkadmin/actualite');
+                }
             }else{
                 $data['error'] = true;
             }
