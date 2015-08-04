@@ -1,4 +1,4 @@
-<div id="wrapper"> 
+<div id="wrapper">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -52,10 +52,10 @@
                         <a href="#"><i class="fa fa-plane fa-fw menu-icons"></i>&nbsp;Destinations<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="<?php echo base_url() . 'walkadmin/destinations' ?>">Liste des destinations</a>
+                                <a href="<?php echo base_url() . 'walkadmin/destinations' ?>">Liste</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url() . 'walkadmin/creer-destination'; ?>">Ajouter une destination</a>
+                                <a href="<?php echo base_url() . 'walkadmin/creer-destination'; ?>">Ajouter</a>
                             </li>
                         </ul>
                     </li>
@@ -63,10 +63,10 @@
                         <a href="#"><i class="fa fa-globe fa-fw menu-icons"></i>&nbsp;Pays<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="<?php echo base_url() . 'walkadmin/map' ?>">Liste des pays</a>
+                                <a href="<?php echo base_url() . 'walkadmin/map' ?>">Liste</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url() . 'walkadmin/pays/creer'; ?>">Ajouter un pays</a>
+                                <a href="<?php echo base_url() . 'walkadmin/pays/creer'; ?>">Ajouter</a>
                             </li>
                         </ul>
                     </li>
@@ -100,7 +100,16 @@
                         <a href="<?php echo base_url() . 'walkadmin/contact'; ?>"><i class="fa fa-pencil-square-o fa-fw menu-icons"></i>&nbsp;Contacts</a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/actualite'; ?>"><i class="fa fa-newspaper-o fa-fw menu-icons"></i>&nbsp;Actualités</a>
+                        <a href="#"><i class="fa fa-newspaper-o fa-fw menu-icons"></i>&nbsp;Actualités<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/actualite'; ?>">Liste</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/creer-actualite'; ?>">Ajouter</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
                     </li>
                 </ul>
             </div>
