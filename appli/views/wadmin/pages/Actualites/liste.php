@@ -27,10 +27,6 @@
                         <?php } else {?>
                             <div class="single__block imageBlock" style="background: url('<?php echo img_url('default.png'); ?>');background-size:cover;">
                             </div>
-                            <?php } else {?>
-                                <div class="single__block imageBlock">
-                                    <div class="imageBlock__wrapper" style="background-image: url('<?php echo img_url('default.png'); ?>');"></div>
-                                </div>
                             <?php } ?>
                             <div class="single__block infoBlock">
                                 <h3><?php echo $actualite->titre; ?></h3>

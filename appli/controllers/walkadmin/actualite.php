@@ -25,12 +25,16 @@ class Actualite extends CI_Controller{
             $this->form_validation->set_rules('titre', '"titre"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('texte', '"texte"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('description', '"description"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('btn_url', '"Url bouton"', 'trim|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('btn_name', '"Nom bouton"', 'trim|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $actu=array(
                     "titre" => $this->input->post('titre'),
                     "date" => date("Y-m-d h:i:s"),
                     "texte" => $this->input->post('texte'),
                     "description" => $this->input->post('description'),
+                    "btn_url" => $this->input->post('btn_url'),
+                    "btn_name" => $this->input->post('btn_name'),
                     "publie" => "true",
                     "idAdministrateur" => $this->session->userdata('admin')[0]->idAdministrateur
                 );
@@ -68,12 +72,16 @@ class Actualite extends CI_Controller{
             $this->form_validation->set_rules('titre', '"titre"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('texte', '"texte"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('description', '"description"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('btn_url', '"Url bouton"', 'trim|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('btn_name', '"Nom bouton"', 'trim|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $actu=array(
                     "titre" => $this->input->post('titre'),
                     "date" => date("Y-m-d h:i:s"),
                     "texte" => $this->input->post('texte'),
                     "description" => $this->input->post('description'),
+                    "btn_url" => $this->input->post('btn_url'),
+                    "btn_name" => $this->input->post('btn_name'),
                     "publie" => "true",
                     "idAdministrateur" => $this->session->userdata('admin')[0]->idAdministrateur
                 );

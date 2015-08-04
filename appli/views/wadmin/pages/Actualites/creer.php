@@ -29,6 +29,14 @@ echo form_open_multipart('walkadmin/actualite/creer/');
                     <label for="texte">Message</label>
                     <textarea rows="10" name="texte" placeholder="Saississez votre texte"></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="texte">Nom du bouton</label>
+                    <input placeholder="Saississez votre texte" name="btn_name" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="texte">Lien du bouton</label>
+                    <input placeholder="Saississez votre texte" name="btn_url" type="text">
+                </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
