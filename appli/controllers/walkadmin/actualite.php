@@ -31,6 +31,7 @@ class Actualite extends CI_Controller{
                     "date" => date("Y-m-d h:i:s"),
                     "texte" => $this->input->post('texte'),
                     "description" => $this->input->post('description'),
+                    "publie" => "true",
                     "idAdministrateur" => $this->session->userdata('admin')[0]->idAdministrateur
                 );
                 $config =  array(
@@ -76,6 +77,7 @@ class Actualite extends CI_Controller{
                     "date" => date("Y-m-d h:i:s"),
                     "texte" => $this->input->post('texte'),
                     "description" => $this->input->post('description'),
+                    "publie" => "true",
                     "idAdministrateur" => $this->session->userdata('admin')[0]->idAdministrateur
                 );
                 $this->actualites->modify($actu,$idActualites);
