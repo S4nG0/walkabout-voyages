@@ -23,13 +23,12 @@ class Actualite extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         if($this->input->post()!=false){
             $this->form_validation->set_rules('titre', '"titre"', 'trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('date', '"date"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('texte', '"texte"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('description', '"description"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $actu=array(
                     "titre" => $this->input->post('titre'),
-                    "date" => $this->input->post('date'),
+                    "date" => date("Y-m-d h:i:s"),
                     "texte" => $this->input->post('texte'),
                     "description" => $this->input->post('description')
                 );
@@ -69,13 +68,12 @@ class Actualite extends CI_Controller{
             $this->index();
         if($this->input->post()!=false){
             $this->form_validation->set_rules('titre', '"titre"', 'trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('date', '"date"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('texte', '"texte"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('description', '"description"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $actu=array(
                     "titre" => $this->input->post('titre'),
-                    "date" => $this->input->post('date'),
+                    "date" => date("Y-m-d h:i:s"),
                     "texte" => $this->input->post('texte'),
                     "description" => $this->input->post('description')
                 );
