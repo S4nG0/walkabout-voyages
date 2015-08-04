@@ -1,4 +1,3 @@
-
 <!-- jQuery -->
 <script type="text/javascript" src="<?php echo js_url('jquery'); ?>"></script>
 

@@ -473,7 +473,13 @@ $(document).ready(function () {
                 captions: false,
                 fileUploadOptions : {
                     url: base_url+'article/add_image/'+id_article,
-                    acceptFileTypes: /(.|\/)(jpe?g|png)$/i
+                    acceptFileTypes: /(.|\/)(jpe?g|png)$/i,
+                    change : function (e, data) {
+                        if(data.files.length != 1){
+                            alert("Afin d'éviter des problèmes de navigateur, une photo à la fois est autorisé!");
+                            return false;
+                        }
+                    },
                 },
                 messages: {
                     acceptFileTypesError: 'L\'extension du fichier choisi n\'est pas supportée !',
@@ -536,7 +542,7 @@ $(document).ready(function () {
         $('input[name=titre]').val(titre);
     });
 
-    $('.tb-article--content p').on('DOMSubtreeModified', function() {
+    $('.tb-article--content').on('DOMSubtreeModified', function() {
         var content = editor.serialize()["element-0"].value;
         if(content.trim() == ""){
             $('.content--article').css({'border' :'solid 1px red'});

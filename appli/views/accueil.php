@@ -1,16 +1,14 @@
 <?php
-
 $page = "home";
 
-switch($newsletter){
-        case "reussi":
-            echo '<script>alert("Votre inscription à notre newsletter à bien été prise en compte");</script>';
-            break;
-        case "fail":
-            echo '<script>alert("Une erreur est survenue lors de l\'enregistrement de vos préférences, veuillez contacter le service technique.");</script>';
-            break;
-    };
-
+switch ($newsletter) {
+    case "reussi":
+        echo '<script>alert("Votre inscription à notre newsletter à bien été prise en compte");</script>';
+        break;
+    case "fail":
+        echo '<script>alert("Une erreur est survenue lors de l\'enregistrement de vos préférences, veuillez contacter le service technique.");</script>';
+        break;
+};
 ?>
 
 
@@ -27,7 +25,7 @@ switch($newsletter){
 
             <!-- Navbar -->
 
-            <?php include 'template/menu.php'; ?>
+<?php include 'template/menu.php'; ?>
 
 
 
@@ -79,18 +77,18 @@ switch($newsletter){
 
                     <p>
 
-                    Walkabout est né d'une rencontre entre deux passionnés de  voyage, au détour d'un voyage en Chine.
-                    L'un aventurier et ethnologue, a parcouru les continents pendant plus de
-                    30 ans à la recherche de population reculé. L'autre professionnel du voyage, fabrique
-                    des voyages clé en main et les revends aux tours opérateurs.
-                    Walkabout est une agence de voyage spécialisée dans le voyage en immersion.
-                    Nous donnons à nos client la possibilité de vivre une expérience inoubliable et
-                    enrichissante et de la partager avec la communauté des voyageurs à travers
-                    un carnet de voyage modulable.
+                        Walkabout est né d'une rencontre entre deux passionnés de  voyage, au détour d'un voyage en Chine.
+                        L'un aventurier et ethnologue, a parcouru les continents pendant plus de
+                        30 ans à la recherche de population reculé. L'autre professionnel du voyage, fabrique
+                        des voyages clé en main et les revends aux tours opérateurs.
+                        Walkabout est une agence de voyage spécialisée dans le voyage en immersion.
+                        Nous donnons à nos client la possibilité de vivre une expérience inoubliable et
+                        enrichissante et de la partager avec la communauté des voyageurs à travers
+                        un carnet de voyage modulable.
 
                     </p>
 
-                    <a href="<?php echo base_url().'qui-sommes-nous'; ?>" class="button">En savoir plus</a>
+                    <a href="<?php echo base_url() . 'qui-sommes-nous'; ?>" class="button">En savoir plus</a>
 
                 </div>
 
@@ -98,15 +96,14 @@ switch($newsletter){
 
                     <h2>Nos actualités</h2>
 
-                    <?php
+<?php
+foreach ($actus as $actu) {
 
-                        foreach($actus as $actu){
-
-                              echo '<div class="row news">
+    echo '<div class="row news">
 
                                         <div class="col-md-8">
 
-                                            <p>'.$actu->titre.'</p><p><span class="published">par ' . $actu->admin[0]->prenom . ' ' .$actu->admin[0]->nom . ', le ' . $actu->date . '' . '</span></p>
+                                            <p>' . $actu->titre . '</p><p><span class="published">par ' . $actu->admin[0]->prenom . ' ' . $actu->admin[0]->nom . ', le ' . $actu->date . '' . '</span></p>
 
                                         </div>
 
@@ -117,10 +114,8 @@ switch($newsletter){
                                         </div>
 
                                     </div>';
-
-                        }
-
-                    ?>
+}
+?>
 
                 </div>
 
@@ -144,11 +139,10 @@ switch($newsletter){
 
                 <div class="travel-logs__slider">
 
-                    <?php
+<?php
+foreach ($carnets as $carnet) {
 
-                        foreach($carnets as $carnet){
-
-                            echo '<div class="slider__item">
+    echo '<div class="slider__item">
 
                             <div class="row noPadding">
 
@@ -162,7 +156,7 @@ switch($newsletter){
 
                                             <div class="profile-picture">
 
-                                                <img src="'.img_url($carnet->user[0]->photo).'" alt="Utilisateur">
+                                                <img src="' . img_url($carnet->user[0]->photo) . '" alt="Utilisateur">
 
                                             </div>
 
@@ -170,13 +164,13 @@ switch($newsletter){
 
                                         <div class="col-xs-12 col-md-8">
 
-                                            <h3>'.$carnet->titre.'</h3>
+                                            <h3>' . $carnet->titre . '</h3>
 
-                                            <p class="published">Publié par <a href="utilisateur/'.$carnet->user[0]->slug.'">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a>, le '.$carnet->date.'.</p>
+                                            <p class="published">Publié par <a href="utilisateur/' . $carnet->user[0]->slug . '">' . $carnet->user[0]->prenom . ' ' . $carnet->user[0]->nom . '</a>, le ' . $carnet->date . '.</p>
 
-                                            <blockquote>'.$carnet->description.'</blockquote>
+                                            <blockquote>' . $carnet->description . '</blockquote>
 
-                                            <a href="'.base_url().'carnets-de-voyage/'. slugify($carnet->titre) .'" class="button">Feuilletez le carnet</a>
+                                            <a href="' . base_url() . 'carnets-de-voyage/' . slugify($carnet->titre) . '" class="button">Feuilletez le carnet</a>
 
                                         </div>
 
@@ -184,16 +178,14 @@ switch($newsletter){
 
                                 </div>
 
-                                <div class="col-md-6 slider__item--image" style=\'background-image: url("'.img_url($carnet->image_carnet).'")\'>
+                                <div class="col-md-6 slider__item--image" style=\'background-image: url("' . img_url($carnet->image_carnet) . '")\'>
                                 </div>
 
                             </div>
 
                         </div>';
-
-                        }
-
-                    ?>
+}
+?>
 
 
 
@@ -207,7 +199,7 @@ switch($newsletter){
 
 
 
-    <div class="content block_destinations">
+    <div class="content block_destinations" style="background-color: #efd48d !important;background-image:none !important;">
 
         <div class="container-fluid">
 
@@ -215,48 +207,17 @@ switch($newsletter){
 
                 <h2>Nos destinations</h2>
 
-                <ul class="block_destinations__list">
-
-                    <li class="block_destinations__item" id="peru">
-
-                        <h3>Pérou</h3>
-
-                    </li>
-
-                    <li class="block_destinations__item" id="australia">
-
-                        <h3>Australie</h3>
-
-                    </li>
-
-                    <li class="block_destinations__item" id="benin">
-
-                        <h3>Bénin</h3>
-
-                    </li>
-
-                    <li class="block_destinations__item" id="vietnam">
-
-                        <h3>Vietnam</h3>
-
-                    </li>
-
-                    <li class="block_destinations__item" id="ecuador">
-
-                        <h3>Équateur</h3>
-
-                    </li>
-
-                </ul>
-
             </div>
 
             <div class="row noPadding">
 
                 <div class="col-md-12">
 
-                    <a href="<?php echo base_url(); ?>nos-destinations" class="block_destinations__button">Tous nos voyages</a>
-
+                    <div class="contain-svg" style="margin:0 auto;text-align:center;">
+                        <?php
+                            echo file_get_contents(img_url('walkadmin/worldtest.svg'));
+                        ?>
+                    </div>
                 </div>
 
             </div>
@@ -264,3 +225,17 @@ switch($newsletter){
         </div>
 
     </div>
+    
+<script type="text/javascript">
+    window.onload = function(){
+    <?php foreach($pays as $paysActuel){?>
+        $('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("class", "land active");
+        $('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("onclick", "document.location.href='<?php echo base_url().'walkadmin/pays_admin/detail/'.$paysActuel->idPays; ?>'");
+    <?php } ?>
+        
+        $.each($('[data-toggle="tooltip"]'), function(){
+            console.log(this);
+            $(this).tooltip();
+        });
+    }
+</script>
