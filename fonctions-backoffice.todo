@@ -1,42 +1,52 @@
 Connexion:
-  ✔ Ne marche plus! @Aurélien @started(15-07-31 13:34) @done (15-07-31 13:35) @lasted(0:01)
-  ✔ La demande de mot de passe ne marche pas! @Aurélien @started(15-07-31 13:35) @done (15-07-31 15:00) @lasted(1:25)
   ☐ Bug CSS btn pas centré pour récup mot de passe @Julien
 
 Modules back office à rajouter :
-  ✔ Actualités @done (15-08-03 18:23)
-  ✔ Carnets de voyages @done (15-08-03 18:23)
-  ✔ Destinations (reste supprimer à faire!) @done (15-08-03 18:23)
-  ✔ Ajouter un administrateur @done (15-07-01 10:32)
-  ☐ Gestion des réservations ??? modifier les états sur le bo?
+  ☐ Gestion des réservations ??? modifier les états sur le bo? Manque quand même a ajouter "en attente de réception du dossier" en etat
   ☐ Gestion des renseignements
-  ✔ Gestion des contacts @done (15-08-03 18:24)
 
 Module actualité :
-  ☐ rédaction d'articles
-  ✔ ajouter des photos @done (15-08-03 18:25)
   ☐ gestion boutons (liens)
-  ✔ suppression des actualités @done (15-08-03 18:25)
 
 Module carnets de voyages :
-  ✔ modérer les carnets @done (15-07-31 12:05)
-  ☐ sélectionner les carnets à la une (Pour moi c'est une selection de carnets aléatoirements!)
-  ☐ sélectionner un carnet phare (page carnet de voyage)
+  ☐ sélectionner un carnet phare (page carnet de voyage) (une étoile à cocher)
 
 Module destinations :
-  ✔ ajouter une destination @done (15-07-17 09:36)
-  ✔ rédaction des informations (formulaire avec : capital, monnaie, dirigeant,... l'admin rentre les infos dans le formulaire) @done (15-07-17 09:38)
-  ✔ rédaction du descriptif @done (15-07-17 09:38)
-  ✔ Suppression des destinations @done (15-08-03 18:27)
   ☐ Pouvoir ajouter le détail du prix pour chaque destination
   ☐ gestion des photos
   ☐ gestion des pictogrammes
+  ✔ Ajouter un nom à la destination @started(15-08-04 23:20) @Aurélien  @done (15-08-04 23:23) @lasted(0:03)
+  ✔ Séparer la longitude et la latitude en deux! @started(15-08-04 23:09) @Aurélien  @done (15-08-04 23:13) @lasted(0:04)
+  ☐ détails permet de voir la destination,infos_destination,infos_prix et les voyages de la destination avec suppression de voyage et modification de voyage!
+  ☐ Modifier permet de créer un voyage et non modifier la destination...
+  ✔ WTF!!!!! Supprimer supprime un voyage et pas la destination!!!!!!!!!!! @started(15-08-04 22:45) @Aurélien @done (15-08-04 22:45)
+  ✔ Control du formulaire! @started(15-08-04 23:05)  @Aurélien  @done (15-08-04 23:05) @lasted(a bit)
+  ✔ Ajouter un btn voir les destinations supprimés et faire page controleur et model @started(15-08-04 23:16) @Aurélien  @done (15-08-04 23:19) @lasted(0:03)
 
 Localisation :
   ☐ longitude et latitude
 
 Module commentaires :
-  ✔ modération @done (15-07-31 12:05)
-  ✔ validation @done (15-08-03 18:27)
   ☐ suppression (pb si les commentaires sont en escalier)
 
+
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ Ne marche plus! @Aurélien @started(15-07-31 13:34) @done (15-07-31 13:35) @lasted(0:01) @project(Connexion)
+ ✔ La demande de mot de passe ne marche pas! @Aurélien @started(15-07-31 13:35) @done (15-07-31 15:00) @lasted(1:25) @project(Connexion)
+ ✔ Actualités @done (15-08-03 18:23) @project(Modules back office à rajouter )
+ ✔ Carnets de voyages @done (15-08-03 18:23) @project(Modules back office à rajouter )
+ ✔ Destinations (reste supprimer à faire!) @done (15-08-03 18:23) @project(Modules back office à rajouter )
+ ✔ Ajouter un administrateur @done (15-07-01 10:32) @project(Modules back office à rajouter )
+ ✔ Gestion des contacts @done (15-08-03 18:24) @project(Modules back office à rajouter )
+ ✔ rédaction d'articles @done (15-08-04 22:18) @project(Module actualité )
+ ✔ ajouter des photos @done (15-08-03 18:25) @project(Module actualité )
+ ✔ suppression des actualités @done (15-08-03 18:25) @project(Module actualité )
+ ✔ modérer les carnets @done (15-07-31 12:05) @project(Module carnets de voyages )
+ ✔ ajouter une destination @done (15-07-17 09:36) @project(Module destinations )
+ ✔ rédaction des informations (formulaire avec : capital, monnaie, dirigeant,... l'admin rentre les infos dans le formulaire) @done (15-07-17 09:38) @project(Module destinations )
+ ✔ rédaction du descriptif @done (15-07-17 09:38) @project(Module destinations )
+ ✔ Suppression des destinations @done (15-08-03 18:27) @project(Module destinations )
+ ✔ modération @done (15-07-31 12:05) @project(Module commentaires )
+ ✔ validation @done (15-08-03 18:27) @project(Module commentaires )

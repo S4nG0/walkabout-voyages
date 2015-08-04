@@ -52,11 +52,34 @@ class Destination extends CI_Model {
 
         return $destination;
     }
+    
+    public function get_supprime(){
+
+        $destinations = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('active',"false")
+                           ->get()
+                           ->result();
+
+        return $destinations;
+    }
 
     public function get_all(){
 
         $destinations = $this->db->select('*')
                            ->from($this->table)
+                           ->where('active',"true")
+                           ->get()
+                           ->result();
+
+        return $destinations;
+    }
+
+    public function get_supprimes(){
+
+        $destinations = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('active',"false")
                            ->get()
                            ->result();
 
@@ -90,6 +113,22 @@ class Destination extends CI_Model {
         }
         $this->db->where('idDestination',$idDestination);
         $destination=$this->db->update($this->table,$data);
+        return $destination;
+    }
+    
+    public function deleteDestination($id = 0){
+        if($id==0)
+            return false;
+        $this->db->where('idDestination',$id);
+        $destination = $this->db->update($this->table,array("active" => "false"));
+        return $destination;
+    }
+    
+    public function restaureDestination($id = 0){
+        if($id==0)
+            return false;
+        $this->db->where('idDestination',$id);
+        $destination = $this->db->update($this->table,array("active" => "true"));
         return $destination;
     }
 

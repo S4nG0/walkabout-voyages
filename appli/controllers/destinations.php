@@ -20,7 +20,7 @@ class Destinations extends CI_Controller {
 	public function index()
 	{
             $data = array();
-        $data['title'] = "Nos destinations";
+            $data['title'] = "Nos destinations";
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             
             $data['destinations'] = $this->destination->get_all();
@@ -38,6 +38,9 @@ class Destinations extends CI_Controller {
         {
             $data = array();
             $data['destination'] = $this->destination->getFromName($name);
+            if($data['destination'][0]->active == "false"){
+                redirect(base_url().'nos-destinations');
+            }
             $data['infos_pays'] = $this->pays->constructeur($data['destination'][0]->idPays);
             $data['infos_destination'] = $this->infos_destination->constructeur($data['destination'][0]->idDestination);
             $data['infos_complementaires'] = $this->infos_complementaires->constructeur($data['destination'][0]->idDestination);

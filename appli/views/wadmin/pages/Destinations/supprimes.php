@@ -4,19 +4,13 @@
 <div class="destinations">
     <div class="row text-center">
         <div class="col-lg-12">
-            <h1 class="page-header sep">Liste des destinations</h1>
+            <h1 class="page-header sep">Liste des destinations supprimés</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="destinations__tools">
                 <input type="search" id="search" placeholder="Rechercher une destination"/>
-                <a class="button black" href="<?php echo base_url() . 'walkadmin/creer-destination'; ?>">
-                    <i class="fa fa-plus"></i>&nbsp;Ajouter
-                </a>
-                <a class="button black" href="<?php echo base_url() . 'walkadmin/destinations/supprimes'; ?>">
-                    <i class="fa fa-trash"></i>&nbsp;Voir supprimés
-                </a>
             </div>
         </div>
     </div>
@@ -36,17 +30,9 @@
                                 <p><?php echo $destination->nom; ?>&nbsp;&bull;&nbsp;<?php echo $destination->ville; ?></p>
                             </div>
                             <div class="single__block buttonsBlock">
-                                <a class="button black" href="<?php echo base_url().'walkadmin/destinations/detail/'.$destination->idDestination; ?>">
-                                    <i class="fa fa-info"></i>&nbsp;
-                                    Détails
-                                </a>
-                                <a class="button black" href="<?php echo base_url().'walkadmin/destinations/modifier/'.$destination->idDestination;?>">
+                                <a class="button black" href="<?php echo base_url().'walkadmin/destinations/restaurer/'.$destination->idDestination;?>">
                                     <i class="fa fa-edit"></i>&nbsp;
-                                    Modifier
-                                </a>
-                                <a class="button black" href="<?php echo base_url().'walkadmin/destinations/supprimer/'.$destination->idDestination;?>">
-                                    <i class="fa fa-trash"></i>&nbsp;
-                                    Supprimer
+                                    Restaurer
                                 </a>
                             </div>
                         </div>
@@ -56,7 +42,7 @@
             } else { ?>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="no-entry">Il n'y a aucune destination enregistré actuellement !</p>
+                    <p class="no-entry">Il n'y a aucune destination actuellement supprimés !</p>
                 </div>
             </div>
             <?php } ?>

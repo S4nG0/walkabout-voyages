@@ -131,7 +131,7 @@ $page = "moncompte";
                                                 <select name="voyage" id="voyage">
                                                 <?php
                                                     foreach($voyages_sans_carnets as $voyage_sans_carnet){
-                                                        echo '<option value="'.$voyage_sans_carnet->idVoyage.'">'.$voyage_sans_carnet->destination->titre.'<option>';
+                                                        echo '<option value="'.$voyage_sans_carnet->idVoyage.'">'.$voyage_sans_carnet->destination->titre.'</option>';
                                                     }
                                                 ?>
                                                 </select>
