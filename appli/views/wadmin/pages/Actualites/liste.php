@@ -17,12 +17,15 @@
                 <?php if (sizeof($actualites) > 0) {
                     foreach ($actualites as $actualite) { ?>
 
-                <div class="row actualites__single searchable" data-search="<?php echo $actualite->titre; ?>">
-                    <div class="col-md-12">
-                        <div class="well">
-                            <?php if(isset($actualite->photos)){ ?>
-                            <div class="single__block imageBlock">
-                                <div class="imageBlock__wrapper" style="background-image: url('<?php echo img_url($actualite->photos); ?>');"></div>
+            <div class="row actualites__single searchable" data-search="<?php echo $actualite->titre; ?>">
+                <div class="col-md-12">
+                    <div class="well">
+                        <?php
+                        if(isset($actualite->photos)){ ?>
+                        <div class="single__block imageBlock" style="background: url('<?php echo img_url($actualite->photos); ?>');background-size:cover;">
+                        </div>
+                        <?php } else {?>
+                            <div class="single__block imageBlock" style="background: url('<?php echo img_url('default.png'); ?>');background-size:cover;">
                             </div>
                             <?php } else {?>
                                 <div class="single__block imageBlock">

@@ -30,6 +30,10 @@ class Dates extends CI_Controller {
             }
             $this->session->set_userdata('destination',$id);
             $data['destination'] = $this->session->userdata('destination');
+            $destination = $this->destination->constructeur($data['destination']);
+            if($destination[0]->active == "false"){
+                redirect(base_url().'nos-destinations');
+            }
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $data['voyages'] = $this->voyages->get_voyage_reservation($id);
             foreach($data['voyages'] as $voyage){
