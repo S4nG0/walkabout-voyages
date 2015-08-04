@@ -18,7 +18,7 @@
         <a class="navbar-brand">
             <img class="logo" src="<?php echo img_url('logo.png');?>" alt="Walkabout">
         </a>
-        <a class="button pull-left" href="<?php echo base_url(); ?>"><i class="fa fa-chevron-left"></i><span class="hidden-xs">Retournez à l'accueil</span><span class="hidden-lg hidden-md hidden-sm">Annuler</span></a>
+        <a class="button pull-left" href="<?php echo base_url(); ?>"><i class="fa fa-chevron-left"></i><span class="hidden-xs">Annuler la réservation</span><span class="hidden-lg hidden-md hidden-sm">Annuler</span></a>
     </div>
 </nav>
 

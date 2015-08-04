@@ -25,6 +25,11 @@ $step = 'sign-in';
     </div>
     <div class="container">
         <!-- Sign-in Block -->
+        <?php
+        if(isset($erreur) && $erreur == ""){
+            echo '<div class="row"><p class="success"><i class="fa fa-check-circle">Votre compte à bien été créé, vous allez recevoir un mail de confirmation grâce auquel vous devrez activer le compte avant de pouvoir continuer!</p></div>';
+        }
+        ?>
         <div class="row">
             <div class="sign-in-block">
                 <div class="col-sm-6">
@@ -67,7 +72,7 @@ $step = 'sign-in';
             <div class="col-sm-12">
                 <div class="buttons-block">
                     <!-- Previous button -->
-                    <a onclick="history.go(-1);" class="button prev">Retour</a>
+                    <a href="<?php echo base_url().'checkout/dates/'.$voyage;?>" class="button prev">Retour</a>
                 </div>
             </div>
         </div>

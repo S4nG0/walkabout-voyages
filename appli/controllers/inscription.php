@@ -23,7 +23,8 @@ class Inscription extends CI_Controller {
     public function reservation() {
         $data = Array();
         $data['title'] = "Inscription";
-        $data['erreur'] = true;
+        $data['erreur'] = "";
+        $data['voyage'] = $this->session->userdata('voyage');
         $data['connecte'] = connecte($this->session->userdata('user')[0]);
         $data['destination'] = $this->session->userdata('destination');
         if ($data['connecte'] != false) {
@@ -74,7 +75,6 @@ class Inscription extends CI_Controller {
                 );
 
                 $result = $this->user->modify($user,$id);
-
                 if($result != false){
                     $data['erreur'] == false;
                     //envoyer un mail!
@@ -85,7 +85,7 @@ class Inscription extends CI_Controller {
                     $this->email->subject('Inscription Walkabout');
                     $this->email->set_mailtype("html");
                     $this->email->message($result);
-                    $this->email->send();
+                    $result = $this->email->send();
                     $this->load->view('template/header', $data);
                     $this->load->view('checkout/identification', $data);
                     $this->load->view('template/footer');
