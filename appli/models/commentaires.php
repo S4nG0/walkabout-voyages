@@ -61,4 +61,11 @@ class Commentaires extends CI_Model {
         $commentaire=$this->db->update($this->table,$data);
         return $commentaire;
     }
+
+    public function deleteActu($idCommentaires=0){
+        if($idCommentaires==0)
+            return false;
+        $actus = $this->db->delete($this->table,array('idCommentaires' => $idCommentaires));
+        return $actus;
+    }
 }
