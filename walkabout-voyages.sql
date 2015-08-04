@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 04 Août 2015 à 19:29
+-- Généré le :  Mar 04 Août 2015 à 19:42
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -284,7 +284,7 @@ CREATE TABLE IF NOT EXISTS `wa__etatreservation` (
   `etat` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`idEtatReservation`),
   KEY `idReservation` (`idReservation`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Contenu de la table `wa__etatreservation`
@@ -296,7 +296,8 @@ INSERT INTO `wa__etatreservation` (`idEtatReservation`, `idReservation`, `etat`)
 (11, 23, 'Terminée'),
 (12, 24, 'En cours'),
 (13, 25, 'En cours'),
-(14, 26, 'En cours');
+(14, 26, 'En cours'),
+(15, 27, 'En cours');
 
 -- --------------------------------------------------------
 
@@ -479,7 +480,7 @@ CREATE TABLE IF NOT EXISTS `wa__reservation` (
   PRIMARY KEY (`idReservation`),
   KEY `idVoyage` (`idVoyage`),
   KEY `idUsers` (`idUsers`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Contenu de la table `wa__reservation`
@@ -491,7 +492,8 @@ INSERT INTO `wa__reservation` (`idReservation`, `idVoyage`, `idUsers`, `nb_perso
 (23, 1, 12, 1, '2015-07-30'),
 (24, 1, 12, 1, '2015-07-30'),
 (25, 1, 12, 1, '2015-08-04'),
-(26, 3, 12, 1, '2015-08-04');
+(26, 3, 12, 1, '2015-08-04'),
+(27, 7, 12, 10, '2015-08-04');
 
 -- --------------------------------------------------------
 
@@ -514,10 +516,9 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('1ebd050ca4a304ceff8caf98bdfde9f2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438702753, 'a:1:{s:9:"user_data";s:0:"";}'),
 ('fb3fb7e21df0f29869e43a4614fa6c66', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36', 1438707890, 'a:1:{s:9:"user_data";s:0:"";}'),
 ('acbd0df344a4b209246f60cd1b47fe28', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36', 1438708678, 'a:3:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:30:"users/12/Voyage_etranger11.jpg";s:5:"cover";s:31:"users/12/cover/dest-img2111.jpg";}}}'),
-('c3210c9bfa775dceab6430af813a94ed', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438709183, 'a:3:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}s:11:"destination";s:2:"20";}');
+('1a97ce5a4354f1e1aa836091593ba5b4', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438709901, 'a:3:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:30:"users/12/Voyage_etranger11.jpg";s:5:"cover";s:31:"users/12/cover/dest-img2111.jpg";}}}');
 
 -- --------------------------------------------------------
 
@@ -580,16 +581,21 @@ CREATE TABLE IF NOT EXISTS `wa__voyage` (
   PRIMARY KEY (`idVoyage`),
   KEY `idDestination` (`idDestination`,`idInfos`),
   KEY `idInfos` (`idInfos`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `wa__voyage`
 --
 
 INSERT INTO `wa__voyage` (`idVoyage`, `idDestination`, `idInfos`, `date_depart`, `date_retour`, `prix`, `nb_places`, `active`) VALUES
-(1, 1, 2, '2016-07-13', '2016-11-11', 5200, 20, 'false'),
-(2, 2, 2, '2015-07-16', '2015-06-02', 4700, 10, 'false'),
-(3, 20, 2, '2016-08-10', '2016-08-24', 6300, 23, 'false');
+(1, 1, 2, '2016-07-13', '2016-11-11', 5200, 20, 'true'),
+(2, 2, 2, '2015-07-16', '2015-06-02', 4700, 10, 'true'),
+(3, 20, 2, '2016-08-10', '2016-08-24', 6300, 23, 'true'),
+(4, 20, 2, '2015-09-20', '2015-10-02', 5700, 26, 'true'),
+(5, 21, 2, '2015-08-23', '2015-09-06', 3600, 15, 'true'),
+(6, 21, 2, '2016-07-21', '2016-08-04', 3500, 16, 'true'),
+(7, 21, 2, '2015-10-28', '2015-11-12', 6400, 10, 'true'),
+(8, 20, 2, '2015-12-12', '2015-12-28', 6800, 8, 'true');
 
 --
 -- Contraintes pour les tables exportées
