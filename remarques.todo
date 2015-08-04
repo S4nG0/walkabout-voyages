@@ -23,6 +23,9 @@ Modif-article :
   ☐ IE9 : upload image : "Extension du fichier pas supportée" -> problème peut être insurmontable ou chiant à résoudre
   ☐ IE10,11 : chargement très long lors d'une upload (voir en dessous pour ajout d'un loader)
 
+Checkout :
+  ☐ Refaire page Dates & Prix : insérer détails du prix avant de choisir
+
 --- ✄ ----------------------------
 Archive:
  ✔ Gérer dynamiquement les 'alt' des pictos (zone informations) @critical @Aurélien @started(15-07-30 23:21) @done (15-07-31 00:09) @lasted(0:48) @project(Single-destination )

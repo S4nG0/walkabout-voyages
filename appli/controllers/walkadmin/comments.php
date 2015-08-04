@@ -43,6 +43,15 @@ class Comments extends CI_Controller {
         redirect('walkadmin/comments');
     }
 
+    public function supprimer($idCommentaires=0){
+        connecte_admin($this->session->userdata('admin'));
+        if($idCommentaires==0)
+            $this->index();
+        $commentaire['modere'] = "true";
+        $this->commentaires->deleteActu($idCommentaires);
+        redirect('walkadmin/comments');
+    }
+
 }
 
 /* End of file accueil.php */

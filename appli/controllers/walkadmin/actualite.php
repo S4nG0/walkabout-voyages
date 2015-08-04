@@ -23,26 +23,26 @@ class Actualite extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         if($this->input->post()!=false){
             $this->form_validation->set_rules('titre', '"titre"', 'trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('date', '"date"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('texte', '"texte"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('description', '"description"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $actu=array(
                     "titre" => $this->input->post('titre'),
-                    "date" => $this->input->post('date'),
+                    "date" => date("Y-m-d h:i:s"),
                     "texte" => $this->input->post('texte'),
-                    "description" => $this->input->post('description')
+                    "description" => $this->input->post('description'),
+                    "publie" => "true",
+                    "idAdministrateur" => $this->session->userdata('admin')[0]->idAdministrateur
                 );
                 $config =  array(
-                    'upload_path'     => './assets/images/actus/',
-                    'upload_url'      => base_url().'/assets/images/actus/',
+                    'upload_path'     => 'assets/images/actus/',
                     'allowed_types'   => "gif|jpg|png",
                     'overwrite'       => TRUE,
                     'max_size'        => "450000",
                     'max_height'      => "450",
                     'max_width'       => "1600"
                 );
-                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
                 if(! $this->upload->do_upload('photos')){
                     $data['error'] =$this->upload->display_errors();
                 }else{
@@ -69,16 +69,32 @@ class Actualite extends CI_Controller{
             $this->index();
         if($this->input->post()!=false){
             $this->form_validation->set_rules('titre', '"titre"', 'trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('date', '"date"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('texte', '"texte"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('description', '"description"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $actu=array(
                     "titre" => $this->input->post('titre'),
-                    "date" => $this->input->post('date'),
+                    "date" => date("Y-m-d h:i:s"),
                     "texte" => $this->input->post('texte'),
-                    "description" => $this->input->post('description')
+                    "description" => $this->input->post('description'),
+                    "publie" => "true",
+                    "idAdministrateur" => $this->session->userdata('admin')[0]->idAdministrateur
                 );
+                $config =  array(
+                    'upload_path'     => 'assets/images/actus/',
+                    'allowed_types'   => "gif|jpg|png",
+                    'overwrite'       => TRUE,
+                    'max_size'        => "450000",
+                    'max_height'      => "450",
+                    'max_width'       => "1600"
+                );
+                $this->upload->initialize($config);
+                if(! $this->upload->do_upload('photos')){
+                    $data['error'] =$this->upload->display_errors();
+                }else{
+                    $data = array('upload_data' => $this->upload->data());
+                    $actu['photos']='actus/'.$data['upload_data']['file_name'];
+                }
                 $this->actualites->modify($actu,$idActualites);
                 redirect('/walkadmin/actualite');
             }else{

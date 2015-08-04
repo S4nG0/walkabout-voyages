@@ -55,6 +55,57 @@ body.admin {
         color: $noir;
     }
 
+    .alert {
+        text-align: center;
+        margin-bottom: 50px;
+
+        > p {
+            color: #a94442;
+        }
+    }
+
+    .custom-file-input {
+        position: relative;
+        padding: 15px;
+        border: 1px solid $noir;
+
+        &::-webkit-file-upload-button {
+          visibility: hidden;
+        }
+
+        &::before {
+            content: 'Parcourir';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            background-color: $blanc;
+            border-right: 1px solid $noir;
+            @include border-radius(0);
+            padding: 15px;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            color: $noir;
+            font-size: 16px;
+            font-weight: 600;
+            @include transition(all 300ms ease-in-out);
+        }
+
+        &:hover::before,
+        &:focus::before {
+            background-color: $noir;
+            color: $blanc;
+        }
+
+        &:active::before {
+            background: -webkit-linear-gradient(#e3e3e3, #f9f9f9);
+            background: -o-linear-gradient(#e3e3e3, #f9f9f9);
+            background: linear-gradient(#e3e3e3, #f9f9f9);
+        }
+    }
+
     .submenu {
         display: block;
         width: 100%;
@@ -204,10 +255,24 @@ body.admin {
 }
 
 /*------------------------------------*\
-    #DESTINATIONS
+    #DESTINATIONS || #ACTUALITES
 \*------------------------------------*/
-.destinations {
-    .destinations__tools {
+.destinations,
+.actualites {
+
+    input, textarea {
+        text-align: center;
+    }
+
+    .form-group {
+        .button {
+            margin-top: 25px;
+            width: 100%;
+        }
+    }
+
+    .destinations__tools,
+    .actualites__tools {
         display: table;
         width: 100%;
         margin-bottom: 50px;
@@ -237,7 +302,8 @@ body.admin {
         }
     }
 
-    .destinations__single {
+    .destinations__single,
+    .actualites__single {
         .well {
             display: table;
             width: 100%;
@@ -251,7 +317,7 @@ body.admin {
         }
 
         .imageBlock {
-            width: 35%;
+            width: 30%;
 
             .imageBlock__wrapper {
                 background-position: 50% 0;
@@ -262,7 +328,12 @@ body.admin {
         }
 
         .infoBlock {
+            padding: 15px;
             text-align: center;
+
+            .published {
+                margin-top: 10px;
+            }
 
             p {
                 color: $noir;
@@ -270,7 +341,7 @@ body.admin {
         }
 
         .buttonsBlock {
-            width: 25%;
+            width: 30%;
 
             .button {
                 margin-bottom: 10px;
@@ -280,7 +351,16 @@ body.admin {
                 }
             }
         }
+    }
 
+    .actualites__thumbnail {
+        margin-bottom: 25px;
+
+        > img {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -518,6 +598,17 @@ body.admin {
         }
     }
     /*------------------------------------*\
+        #DESTINATIONS || #ACTUALITES
+    \*------------------------------------*/
+    .destinations,
+    .actualites {
+        .destinations__single,
+        .actualites__single {
+
+        }
+
+    }
+    /*------------------------------------*\
         #CONTACT
     \*------------------------------------*/
     .contacts {
@@ -564,131 +655,3 @@ body.admin {
         }
     }
 }
-
-
-// body.admin {
-//     background: rgba(0, 0, 0, 0) url("../images/texture.png") repeat scroll 0 0;
-//     color: whitesmoke;
-// }
-
-// .form-control{
-//     border-color: -moz-use-text-color -moz-use-text-color #242424;
-//     border-radius: 0;
-//     border-style: none none solid;
-//     border-width: medium medium 1px;
-//     color: #242424;
-//     padding: 15px;
-//     transition: border 300ms ease-in-out 0s;
-//     width: 100%;
-//     height:auto;
-//     box-shadow: none;
-// }
-
-// .form-control:focus {
-//   border-color: #f0c041;
-//   outline: 0;
-//   -webkit-box-shadow: none;
-//   box-shadow: none;
-// }
-
-// .centered{
-//     text-align:center;
-//     color : #f0c041;
-// }
-
-
-// /* Suppression du background color pour faire apparaitre image background */
-
-// #page-wrapper{
-//     background-color:transparent;
-//     border-left : 0px;
-//     color:#f0c041;
-// }
-
-// .navbar-default{
-//     border : none;
-//     background: transparent;
-//     color:white;
-// }
-
-
-// .nav>li>a:hover, .nav>li>a:focus, .nav>li>a.active {
-//   text-decoration: none;
-//   background-color: transparent;
-//   color:#f0c041;
-// }
-
-// .sidebar ul li a.active{
-//     background-color:transparent;
-// }
-
-// .nav>li>a, .nav>li>a, .nav>li>a {
-//   color:whitesmoke;
-// }
-
-// .sidebar ul li {
-//   border:none;
-// }
-
-// .sidebar{
-//     margin-top : auto;
-// }
-
-// .navbar-collapse{
-//     border:none;
-//     box-shadow: none;
-// }
-
-// @media (min-width: 768px){
-//     .sidebar {
-//         margin-top: 51px;
-//     }
-// }
-
-// .page-header{
-//     display:inline-block;
-//     color:#f0c041;
-//     width: 100%;
-// }
-
-// .fa{
-//     color:whitesmoke;
-// }
-
-// h1{
-//     color:#f0c041;
-// }
-
-// .fa:hover{
-//     color:#f0c041;
-// }
-
-// #search{
-//     margin-top : 20px;
-//     margin-bottom : 20px;
-// }
-
-// td{
-//     padding : 15px;
-// }
-
-// .image-wrapper{
-//     padding-bottom: 80%;
-//     background-position: 50% 0;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-// }
-
-// .destination{
-//     padding-bottom: 15px;
-//     padding-top: 15px;
-// }
-
-// .destination .button{
-//     margin-top: 15px;
-// }
-
-// hr{
-//     width:30%;
-//     text-align:center;
-// }

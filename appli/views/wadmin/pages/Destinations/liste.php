@@ -12,7 +12,7 @@
             <div class="destinations__tools">
                 <input type="search" id="search" placeholder="Rechercher une destination"/>
                 <a class="button black" href="<?php echo base_url() . 'walkadmin/destinations/creer/'; ?>">
-                    <i class="fa fa-plus"></i>Ajouter
+                    <i class="fa fa-plus"></i>&nbsp;Ajouter
                 </a>
             </div>
         </div>
@@ -53,7 +53,7 @@
             } else { ?>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="no-entry">Il n\'y a aucune destination enregistré actuellement !</p>
+                    <p class="no-entry">Il n'y a aucune destination enregistré actuellement !</p>
                 </div>
             </div>
             <?php } ?>

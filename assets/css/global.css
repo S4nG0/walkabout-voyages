@@ -5952,6 +5952,54 @@ body.admin a:hover, body.admin a:focus {
 body.admin .no-entry {
   color: #242424;
 }
+body.admin .alert {
+  text-align: center;
+  margin-bottom: 50px;
+}
+body.admin .alert > p {
+  color: #a94442;
+}
+body.admin .custom-file-input {
+  position: relative;
+  padding: 15px;
+  border: 1px solid #242424;
+}
+body.admin .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+body.admin .custom-file-input::before {
+  content: 'Parcourir';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  background-color: #fff;
+  border-right: 1px solid #242424;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 15px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  color: #242424;
+  font-size: 16px;
+  font-weight: 600;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.admin .custom-file-input:hover::before, body.admin .custom-file-input:focus::before {
+  background-color: #242424;
+  color: #fff;
+}
+body.admin .custom-file-input:active::before {
+  background: -webkit-linear-gradient(#e3e3e3, #f9f9f9);
+  background: -o-linear-gradient(#e3e3e3, #f9f9f9);
+  background: linear-gradient(#e3e3e3, #f9f9f9);
+}
 body.admin .submenu {
   display: block;
   width: 100%;
@@ -6074,31 +6122,56 @@ body.admin .charts h3 {
 }
 
 /*------------------------------------*\
-    #DESTINATIONS
+    #DESTINATIONS || #ACTUALITES
 \*------------------------------------*/
-.destinations .destinations__tools {
+.destinations input, .destinations textarea,
+.actualites input,
+.actualites textarea {
+  text-align: center;
+}
+.destinations .form-group .button,
+.actualites .form-group .button {
+  margin-top: 25px;
+  width: 100%;
+}
+.destinations .destinations__tools,
+.destinations .actualites__tools,
+.actualites .destinations__tools,
+.actualites .actualites__tools {
   display: table;
   width: 100%;
   margin-bottom: 50px;
   text-align: center;
 }
-.destinations .destinations__tools input {
+.destinations .destinations__tools input,
+.destinations .actualites__tools input,
+.actualites .destinations__tools input,
+.actualites .actualites__tools input {
   display: inline-block;
   width: 300px;
   margin-right: 15px;
   border: 1px solid #242424;
   vertical-align: middle;
 }
-.destinations .destinations__tools input:focus {
+.destinations .destinations__tools input:focus,
+.destinations .actualites__tools input:focus,
+.actualites .destinations__tools input:focus,
+.actualites .actualites__tools input:focus {
   border-color: #848484;
 }
-.destinations .destinations__tools .button {
+.destinations .destinations__tools .button,
+.destinations .actualites__tools .button,
+.actualites .destinations__tools .button,
+.actualites .actualites__tools .button {
   display: inline-block;
   width: auto;
   padding: 15px;
   vertical-align: middle;
 }
-.destinations .destinations__single .well {
+.destinations .destinations__single .well,
+.destinations .actualites__single .well,
+.actualites .destinations__single .well,
+.actualites .actualites__single .well {
   display: table;
   width: 100%;
   -moz-border-radius: 0;
@@ -6106,14 +6179,23 @@ body.admin .charts h3 {
   border-radius: 0;
   border-color: #242424;
 }
-.destinations .destinations__single .well .single__block {
+.destinations .destinations__single .well .single__block,
+.destinations .actualites__single .well .single__block,
+.actualites .destinations__single .well .single__block,
+.actualites .actualites__single .well .single__block {
   display: table-cell;
   vertical-align: middle;
 }
-.destinations .destinations__single .imageBlock {
-  width: 35%;
+.destinations .destinations__single .imageBlock,
+.destinations .actualites__single .imageBlock,
+.actualites .destinations__single .imageBlock,
+.actualites .actualites__single .imageBlock {
+  width: 30%;
 }
-.destinations .destinations__single .imageBlock .imageBlock__wrapper {
+.destinations .destinations__single .imageBlock .imageBlock__wrapper,
+.destinations .actualites__single .imageBlock .imageBlock__wrapper,
+.actualites .destinations__single .imageBlock .imageBlock__wrapper,
+.actualites .actualites__single .imageBlock .imageBlock__wrapper {
   background-position: 50% 0;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6122,20 +6204,52 @@ body.admin .charts h3 {
   background-repeat: no-repeat;
   padding-bottom: 50%;
 }
-.destinations .destinations__single .infoBlock {
+.destinations .destinations__single .infoBlock,
+.destinations .actualites__single .infoBlock,
+.actualites .destinations__single .infoBlock,
+.actualites .actualites__single .infoBlock {
+  padding: 15px;
   text-align: center;
 }
-.destinations .destinations__single .infoBlock p {
+.destinations .destinations__single .infoBlock .published,
+.destinations .actualites__single .infoBlock .published,
+.actualites .destinations__single .infoBlock .published,
+.actualites .actualites__single .infoBlock .published {
+  margin-top: 10px;
+}
+.destinations .destinations__single .infoBlock p,
+.destinations .actualites__single .infoBlock p,
+.actualites .destinations__single .infoBlock p,
+.actualites .actualites__single .infoBlock p {
   color: #242424;
 }
-.destinations .destinations__single .buttonsBlock {
-  width: 25%;
+.destinations .destinations__single .buttonsBlock,
+.destinations .actualites__single .buttonsBlock,
+.actualites .destinations__single .buttonsBlock,
+.actualites .actualites__single .buttonsBlock {
+  width: 30%;
 }
-.destinations .destinations__single .buttonsBlock .button {
+.destinations .destinations__single .buttonsBlock .button,
+.destinations .actualites__single .buttonsBlock .button,
+.actualites .destinations__single .buttonsBlock .button,
+.actualites .actualites__single .buttonsBlock .button {
   margin-bottom: 10px;
 }
-.destinations .destinations__single .buttonsBlock .button:last-child {
+.destinations .destinations__single .buttonsBlock .button:last-child,
+.destinations .actualites__single .buttonsBlock .button:last-child,
+.actualites .destinations__single .buttonsBlock .button:last-child,
+.actualites .actualites__single .buttonsBlock .button:last-child {
   margin-bottom: 0;
+}
+.destinations .actualites__thumbnail,
+.actualites .actualites__thumbnail {
+  margin-bottom: 25px;
+}
+.destinations .actualites__thumbnail > img,
+.actualites .actualites__thumbnail > img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
 }
 
 /*------------------------------------*\
@@ -6319,6 +6433,9 @@ body.admin .charts h3 {
     width: 50%;
   }
 
+  /*------------------------------------*\
+      #DESTINATIONS || #ACTUALITES
+  \*------------------------------------*/
   /*------------------------------------*\
       #CONTACT
   \*------------------------------------*/
