@@ -263,17 +263,6 @@ $(document).ready(function () {
         $('#result_total').html($(this).val()*$('#prix_personne').html());
     });
 
-    //Checkout price total
-    $('#submit_commande').on('click', function (e) {
-        e.preventDefault();
-        var result = $('input[type=checkbox][name=gtc]').is(':checked');
-        if (result == true) {
-            $('form').submit();
-        }else{
-            alert('Vous devez accepter les conditions générales de ventes afin de pouvoir finaliser votre commande.');
-        }
-    });
-
     /***
      * Single destination information blocks toggling
      */
