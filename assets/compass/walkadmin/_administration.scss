@@ -335,6 +335,7 @@ body.admin {
             display: inline-block;
             width: auto;
             padding: 15px;
+            margin-right: 15px;
 
             vertical-align: middle;
         }
@@ -659,6 +660,20 @@ body.admin {
     \*------------------------------------*/
     .destinations,
     .actualites {
+        .destinations__tools,
+        .actualites__tools {
+            input, .button {
+                display: block;
+                width: 100%;
+                margin-right: auto;
+                margin-bottom: 15px;
+            }
+
+            .button:last-child {
+                margin-bottom: 0;
+            }
+        }
+
         .destinations__single,
         .actualites__single {
             .well {
@@ -745,24 +760,6 @@ body.admin {
                         }
                     }
                 }
-            }
-        }
-    }
-    /*------------------------------------*\
-        #DESTINATIONS || #ACTUALITES
-    \*------------------------------------*/
-    .destinations,
-    .actualites {
-        .destinations__tools,
-        .actualites__tools {
-            input, .button {
-                display: block;
-                width: 100%;
-                margin-right: auto;
-            }
-
-            input {
-                margin-bottom: 10px;
             }
         }
     }
