@@ -53,7 +53,7 @@
             } else { ?>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="no-entry">Il n\'y a aucune destination enregistré actuellement !</p>
+                    <p class="no-entry">Il n'y a aucune destination enregistré actuellement !</p>
                 </div>
             </div>
             <?php } ?>
