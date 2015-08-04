@@ -2564,6 +2564,27 @@ footer .footer__copyright li {
   margin: 0 auto;
   margin-top: 25px;
 }
+#adress-block {
+  display: none;
+  text-align: center;
+  margin: 35px;
+}
+#adress-block label {
+  display: block;
+  margin-top: 50px;
+  color: #f0c041;
+}
+#adress-block input {
+  display: block;
+  margin-top: 25px;
+  text-align: center;
+}
+#adress-block .button {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
 
 @media screen and (max-width: 992px) {
   footer h1 {

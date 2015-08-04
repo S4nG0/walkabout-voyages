@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 03 Août 2015 à 16:29
+-- Généré le :  Mar 04 Août 2015 à 17:42
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -83,14 +83,14 @@ CREATE TABLE IF NOT EXISTS `wa__articles` (
   `etat` varchar(50) NOT NULL DEFAULT 'Brouillon',
   PRIMARY KEY (`idArticles`),
   KEY `idCarnet` (`idCarnet`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Contenu de la table `wa__articles`
 --
 
 INSERT INTO `wa__articles` (`idArticles`, `idCarnet`, `date`, `ordre`, `titre`, `texte`, `etat`) VALUES
-(1, 1, '2015-04-01', '1', 'Mon arrivé au village', '<p class="lead">\r\n     Je suis arrivé dans le village dans lequel j''allais être hébergé pendant 2 semaines\r\n</p>\r\n\r\n<p>\r\nJ''ai réservé mon trek à partir de Cuzco. J''ai pris une agence au hasard qui m''a dit qu''on serait au maximum 20 pour le trek, et on s''est retrouvé à 19 (sans compter le guide et les accompagnateurs), résultat en fait du groupement de plusieurs agences, avec certains qui s''attendaient à être entre eux, à 5... Globalement, le groupe était sympathique, chacun à son rythme. Je me suis bien entendu avec la plupart d''entre eux. On est resté 4 jours ensemble.</p>\r\n<img src="http://mesvoyages.net/Images/Perou/Matchup2.JPG" alt="La photo classique du Matchu Picchu, qu''on ne peut s''empêcher de faire pourtant en arrivant tellement c''est beau">\r\n<p>Le départ de Cuzco se fait en bus jusqu''à un certain point, le km88, où, le long de la voie de chemin de fer qui va de Cuzco jusqu''à Matchu Picchu, l''on descend et d''où l''on marche, notre sac sur le dos. La <a name="1"></a>première journée de marche, commençant à 2200 m, est à peu près plate jusqu''à 2750m, et pas trop longue et l''on est arrivé près d''une petite maison où les accompagnateurs ont planté les tentes, et où l''on a eu un repas fort sympathique. Plus tard, avec la nuit, on s''est demandé comment on allait dormir et là, angoisse... il n''y avait pas assez de place dans les tentes. En fait, ils n''avaient pas pris assez de tentes. Certains sont allés dans la petite maison, partageant la salle commune avec la famille qui était là, d''autres dans les tentes et j''étais sur le balcon devant la maison, dehors, par cette nuit froide. J''ai sorti mon duvet, ma couverture de survie pour me protéger le corps du vent, mes sacs poubelle pour faire un espèce d''abris face au vent, suspendus sur la rambarde du balcon. Je n''avais même pas assez de place pour les jambes car un second trekker se trouvait aussi sur le balcon, dans l''alignement, ses jambes à lui dépassant au dessus de l''escalier. Dur pour une première nuit, mais j''ai finalement bien dormi. Le lendemain soir, avant de nous coucher, le cuisinier, qui était responsable des tentes (et donc était rendu responsable devant tout le monde de l''oubli par le guide, alors que je pense que c''était le guide qui était responsable de ne pas avoir vérifié) et était redescendu à pieds en chercher, était revenu de la même façon avec d''autres tentes. Il a fait l''aller-retour (+ du stop jusqu''à Cuzco) dans la journée !</p>\r\n<img src="http://mesvoyages.net/Images/Perou/Col4200.JPG" alt="Le col à 4200 m">\r\n<p>La <a name="2"></a>seconde journée fut la plus dure, avec une ascension jusqu''à 4200 m dans la matinée, en partant de 2750 m, soient 1450 m de dénivelé d''un trait. C''est dur, mais j''aime cela, et je suis arrivé au col en bon état, en même temps que la plupart. Il y a deux autres cols pendant le trek, mais ils ne sont pas trop durs. Certaines jeunes filles, qui faisaient pourtant partie d''un groupe d''Israéliens sortant de leur service militaire (un grand classique en voyage que ces jeunes qui veulent se changer les idées après trois ans de service militaire - bien sûr l''un d''entre eux n''arrêtait pas de manipuler une machette qu''il portait dans son dos à la Rambo, ce qui mettait mal à l''aise tout le monde vu qu''en plus il ne souriait jamais, mais bon, on fait avec), ont eu beaucoup de mal, parce qu''avec leur sac (plus volumineux qu''elles) sur le dos ce fut très dur. Mais leurs copains sont redescendus les aider, après avoir déposé leur propre sac au col !</p>\r\n<p>On a mangé au col, en plein vent et, comme d''habitude, la nourriture fut excellente. Au soir, on s''est retrouvé en pleine nature, et on a pu dormir dans des tentes. Rien d''autre de spécial à signaler ce second jour. Le <a name="3"></a>troisième jour, après le petit déjeuner, on est parti vers la suite de notre voyage, pour une journée qui m''a semblé longue. On a visité un temple solaire, bien orienté, on a mangé sur un flanc de montagne orienté vers le Nord, dans un coin qui s''appelait la vallée de la pluie... et il a plut. Puis on a marché, toujours sur ce flanc de montagne, dans un paysage très humide, amazonien, avec des lianes, des murs de mousse où l''on peut plonger le bras sans toucher le rocher et un sol glissant. On est passé dans des tunnels creusés par les Incas suivant une technique ancestrale, utilisant le gonflement du bois mouillé pour faire exploser la roche. Le soir on est arrivé près d''un bâtiment en dur où, tout en dormant dans les tentes, on a pu aller prendre une douche (bienvenue), et manger assis sur une chaise, sur une table.</p>', 'Publie'),
+(1, 1, '2015-04-01', '1', 'Mon arrivé au village', '<p class="lead">\r\n     Je suis arrivé dans le village dans lequel j''allais être hébergé pendant 2 semaines\r\n</p>\r\n\r\n<p>\r\nJ''ai réservé mon trek à partir de Cuzco. J''ai pris une agence au hasard qui m''a dit qu''on serait au maximum 20 pour le trek, et on s''est retrouvé à 19 (sans compter le guide et les accompagnateurs), résultat en fait du groupement de plusieurs agences, avec certains qui s''attendaient à être entre eux, à 5... Globalement, le groupe était sympathique, chacun à son rythme. Je me suis bien entendu avec la plupart d''entre eux. On est resté 4 jours ensemble.</p><div class="medium-insert-images"><figure>\r\n    <img src="http://dev.walkabout-voyages.fr/assets/images/carnets/mon-aventure-chez-les-quechuas/articles/peru(10).jpg" alt="">\r\n        \r\n</figure></div>\r\n<br>\r\n<p>Le départ de Cuzco se fait en bus jusqu''à un certain point, le km88, où, le long de la voie de chemin de fer qui va de Cuzco jusqu''à Matchu Picchu, l''on descend et d''où l''on marche, notre sac sur le dos. La <a name="1"></a>première journée de marche, commençant à 2200 m, est à peu près plate jusqu''à 2750m, et pas trop longue et l''on est arrivé près d''une petite maison où les accompagnateurs ont planté les tentes, et où l''on a eu un repas fort sympathique. Plus tard, avec la nuit, on s''est demandé comment on allait dormir et là, angoisse... il n''y avait pas assez de place dans les tentes. En fait, ils n''avaient pas pris assez de tentes. Certains sont allés dans la petite maison, partageant la salle commune avec la famille qui était là, d''autres dans les tentes et j''étais sur le balcon devant la maison, dehors, par cette nuit froide. J''ai sorti mon duvet, ma couverture de survie pour me protéger le corps du vent, mes sacs poubelle pour faire un espèce d''abris face au vent, suspendus sur la rambarde du balcon. Je n''avais même pas assez de place pour les jambes car un second trekker se trouvait aussi sur le balcon, dans l''alignement, ses jambes à lui dépassant au dessus de l''escalier. Dur pour une première nuit, mais j''ai finalement bien dormi. Le lendemain soir, avant de nous coucher, le cuisinier, qui était responsable des tentes (et donc était rendu responsable devant tout le monde de l''oubli par le guide, alors que je pense que c''était le guide qui était responsable de ne pas avoir vérifié) et était redescendu à pieds en chercher, était revenu de la même façon avec d''autres tentes. Il a fait l''aller-retour (+ du stop jusqu''à Cuzco) dans la journée !<br></p><div class="medium-insert-images"><figure>\r\n    <img class="" src="http://dev.walkabout-voyages.fr/assets/images/carnets/mon-aventure-chez-les-quechuas/articles/banner(2).jpg" alt="">\r\n        \r\n</figure></div><div class="medium-insert-images"><figure>\r\n    <img class="" src="http://dev.walkabout-voyages.fr/assets/images/carnets/mon-aventure-chez-les-quechuas/articles/peru(5).jpg" alt="">\r\n        \r\n</figure></div>\r\n\r\n<p>La <a name="2"></a>seconde journée fut la plus dure, avec une ascension jusqu''à 4200 m dans la matinée, en partant de 2750 m, soient 1450 m de dénivelé d''un trait. C''est dur, mais j''aime cela, et je suis arrivé au col en bon état, en même temps que la plupart. Il y a deux autres cols pendant le trek, mais ils ne sont pas trop durs. Certaines jeunes filles, qui faisaient pourtant partie d''un groupe d''Israéliens sortant de leur service militaire (un grand classique en voyage que ces jeunes qui veulent se changer les idées après trois ans de service militaire - bien sûr l''un d''entre eux n''arrêtait pas de manipuler une machette qu''il portait dans son dos à la Rambo, ce qui mettait mal à l''aise tout le monde vu qu''en plus il ne souriait jamais, mais bon, on fait avec), ont eu beaucoup de mal, parce qu''avec leur sac (plus volumineux qu''elles) sur le dos ce fut très dur. Mais leurs copains sont redescendus les aider, après avoir déposé leur propre sac au col !</p>\r\n<p>On a mangé au col, en plein vent et, comme d''habitude, la nourriture fut excellente. Au soir, on s''est retrouvé en pleine nature, et on a pu dormir dans des tentes. Rien d''autre de spécial à signaler ce second jour. Le <a name="3"></a>troisième jour, après le petit déjeuner, on est parti vers la suite de notre voyage, pour une journée qui m''a semblé longue. On a visité un temple solaire, bien orienté, on a mangé sur un flanc de montagne orienté vers le Nord, dans un coin qui s''appelait la vallée de la pluie... et il a plut. Puis on a marché, toujours sur ce flanc de montagne, dans un paysage très humide, amazonien, avec des lianes, des murs de mousse où l''on peut plonger le bras sans toucher le rocher et un sol glissant. On est passé dans des tunnels creusés par les Incas suivant une technique ancestrale, utilisant le gonflement du bois mouillé pour faire exploser la roche. Le soir on est arrivé près d''un bâtiment en dur où, tout en dormant dans les tentes, on a pu aller prendre une douche (bienvenue), et manger assis sur une chaise, sur une table.</p><div class="medium-insert-images"><figure>\r\n    <img class="" src="http://dev.walkabout-voyages.fr/assets/images/carnets/mon-aventure-chez-les-quechuas/articles/arrivee(3).jpg" alt="">\r\n        \r\n</figure></div>                                                                                    <p><br></p>', 'Publie'),
 (5, 3, '2015-07-03', '1', 'Test d''ajout d''article! Ça marche! :)', 'Contenu à ne pas effacer! :) La modification d''article marche enfin! ;) On est super heureux!', 'Brouillon'),
 (8, 5, '2015-07-08', '1', NULL, NULL, 'Brouillon'),
 (9, 5, '2015-07-08', '2', NULL, NULL, 'Brouillon'),
@@ -211,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `wa__contact` (
 --
 
 INSERT INTO `wa__contact` (`idContact`, `nom`, `prenom`, `telephone`, `mail`, `sujet`, `message`, `ouvert`, `date`) VALUES
-(3, 'CAPI', 'Aurélien', '0623974082', 'capi.aurelien@gmail.com', 'Destination', 'jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz', 'true', '2015-07-23');
+(3, 'CAPI', 'Aurélien', '0623974082', 'capi.aurelien@gmail.com', 'Destination', 'jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz', 'false', '2015-07-23');
 
 -- --------------------------------------------------------
 
@@ -229,10 +229,10 @@ CREATE TABLE IF NOT EXISTS `wa__destination` (
   `ville` varchar(100) DEFAULT NULL,
   `coordonnees` varchar(50) NOT NULL,
   `photos` longtext,
-  `banner` varchar(50) NOT NULL,
+  `banner` longtext NOT NULL,
   PRIMARY KEY (`idDestination`),
   KEY `idPays` (`idPays`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Contenu de la table `wa__destination`
@@ -240,7 +240,8 @@ CREATE TABLE IF NOT EXISTS `wa__destination` (
 
 INSERT INTO `wa__destination` (`idDestination`, `idPays`, `titre`, `url`, `nom`, `description`, `ville`, `coordonnees`, `photos`, `banner`) VALUES
 (1, 3, 'À la découverte des Quéchuas du Pérou', 'a-la-decouverte-des-quechuas-du-perou', 'Voyage à Lima', 'Dans les montagnes, les Quechuas élèvent traditionnellement des lamas et des alpagas pour leur laine et leur viande.\n                                Ces animaux vivent en haute altitude ce qui oblige les hommes à s’établir sur des terres arides où rien ne pousse ou presque.\n                                Pourtant, les Quechuas sont également agriculteurs. Ils réussissent l’exploit de cultiver un véritable trésor : la pomme de terre.\n                                Plus qu’un aliment, la pomme de terre est l’emblème de la culture andine, elle symbolise la fertilité. Certaines sont même sacrées.\n                                Elles sont offertes à la Pachamama, « la terre mère », pour la remercier de ses bienfaits et implorer sa protection\n                                pour la récolte à venir.\n                                <br /><br />\n                                Au quotidien, les Quechuas vénèrent la nature sous toutes ses formes. Pour eux, les montagnes sont des Dieux et\n                                ils n’hésitent pas à effectuer un long voyage et à gravir des sommets vertigineux pour recueillir la glace sacrée\n                                qui bénira leur troupeau et leur terre.\n                                <br /><br />\n                                Faites l’expérience de leur culture en vous y immergeant  !', 'Lima', '-12.04,-77.04', 'voyages/perou/01.jpg;voyages/perou/04.jpg;voyages/perou/03.jpg;voyages/perou/02.jpg;voyages/perou/05.jpg;', 'voyages/perou/dest-img.jpg'),
-(2, 4, 'Les incas, une culture oubliée', 'les-incas-une-culture-oubliee', 'Voyage chez les incas', 'La civilisation inca est une civilisation précolombienne du groupe andin. Elle prend naissance au début du XIIIe siècle dans le bassin de Cuzco dans l''actuel Pérou et se développe ensuite le long de l''océan Pacifique et de la cordillère des Andes, couvrant la partie occidentale de l''Amérique du Sud. À son apogée, elle s''étend de la Colombie jusqu''à l''Argentine et au Chili, par-delà l''Équateur, le Pérou et la Bolivie.\r\n\r\nElle est à l''origine de l''empire inca, l''un des trois grands empires de l''Amérique précolombienne. Cet empire avait pour chef suprême le Sapa Inca. L''empire inca fut conquis par les conquistadors espagnols sous les ordres de Francisco Pizarro à partir de 1532.\r\n\r\nL''une des grandes singularités de cet empire fut d''avoir intégré, dans une organisation étatique originale, la multiplicité socioculturelle des populations hétérogènes qui le composaient.', 'Cuzco', '-13.53, -71.93  ', 'voyages/incas/01.jpg;voyages/incas/02.jpg;voyages/incas/03.jpg;', 'voyages/incas/banner-list.jpg');
+(2, 4, 'Les incas, une culture oubliée', 'les-incas-une-culture-oubliee', 'Voyage chez les incas', 'La civilisation inca est une civilisation précolombienne du groupe andin. Elle prend naissance au début du XIIIe siècle dans le bassin de Cuzco dans l''actuel Pérou et se développe ensuite le long de l''océan Pacifique et de la cordillère des Andes, couvrant la partie occidentale de l''Amérique du Sud. À son apogée, elle s''étend de la Colombie jusqu''à l''Argentine et au Chili, par-delà l''Équateur, le Pérou et la Bolivie.\r\n\r\nElle est à l''origine de l''empire inca, l''un des trois grands empires de l''Amérique précolombienne. Cet empire avait pour chef suprême le Sapa Inca. L''empire inca fut conquis par les conquistadors espagnols sous les ordres de Francisco Pizarro à partir de 1532.\r\n\r\nL''une des grandes singularités de cet empire fut d''avoir intégré, dans une organisation étatique originale, la multiplicité socioculturelle des populations hétérogènes qui le composaient.', 'Cuzco', '-13.53, -71.93  ', 'voyages/incas/01.jpg;voyages/incas/02.jpg;voyages/incas/03.jpg;', 'voyages/incas/banner-list.jpg'),
+(20, 2, 'Australie, terre des kangourous', 'australie-terre-des-kangourous', '', 'Découvrez cette magnifique île à travers un voyage de 2 semaines, vous pourrez explorer Sydney, l''Uluru, rocher sacré des aborigènes, le lac Hillier,lac particulier aux couleurs roses. Ainsi qu''une balade en hélicoptère au dessus des îles Withsunday et surtout The Pinnacles avec son paysage unique de morceaux de calcaires qui surgissent du sol tel des stalagmites.', 'Sydney', '-28.61;136.58', 'destinations/australie-terre-des-kangourous/lac_hillier.jpg;destinations/australie-terre-des-kangourous/sydney-nuit.jpg;destinations/australie-terre-des-kangourous/the_pinnacles.jpg;destinations/australie-terre-des-kangourous/uluru.jpg;destinations/australie-terre-des-kangourous/whitsundays.jpg;', 'destinations/australie-terre-des-kangourous/cover/1440_900_200912160112583853484.jpg');
 
 -- --------------------------------------------------------
 
@@ -282,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `wa__etatreservation` (
   `etat` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`idEtatReservation`),
   KEY `idReservation` (`idReservation`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Contenu de la table `wa__etatreservation`
@@ -290,9 +291,10 @@ CREATE TABLE IF NOT EXISTS `wa__etatreservation` (
 
 INSERT INTO `wa__etatreservation` (`idEtatReservation`, `idReservation`, `etat`) VALUES
 (9, 21, 'En cours'),
-(10, 22, 'En cours'),
-(11, 23, 'En cours'),
-(12, 24, 'En cours');
+(10, 22, 'Terminée'),
+(11, 23, 'Terminée'),
+(12, 24, 'En cours'),
+(13, 25, 'En cours');
 
 -- --------------------------------------------------------
 
@@ -432,7 +434,7 @@ CREATE TABLE IF NOT EXISTS `wa__pays` (
   `densité` varchar(45) DEFAULT NULL,
   `climat` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idPays`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `wa__pays`
@@ -442,9 +444,7 @@ INSERT INTO `wa__pays` (`idPays`, `nom`, `code_pays`, `capitale`, `monnaie`, `Di
 (2, 'Australie', 'AU', 'Canberra', 'Dollar australien', 'Élisabeth II', 'Anglais', '23 500 000 Habitants', '7 686 850 Km²', '3 Hab./km²', 'varié'),
 (3, 'Pérou', 'PE', 'Lima', 'Nuevo sol', 'Ollanta Humala', 'Espagnol, Quechua et Aymara', '29 907 003 Habitants', '1 285 315 Km²', '22 Hab./km²', 'varié'),
 (4, 'Canada', 'CA', 'Lima', 'Nuevo sol', 'Ollanta Humala', 'Espagnol, Quechua et Aymara', '29 907 003 Habitants', '1 285 315 Km²', '22 Hab./km²', 'varié'),
-(5, 'Afghanistan', 'AF', 'dzdza', 'dazdaz', 'dzada', 'Anglais', '141551', '250000', '22', 'tropical'),
-(6, 'Arménie', 'AM', 'dkjbbkbk', 'gcjvjhvjh', 'hjvjhvjvj', 'kbhjhvhj', '54165156', '165165165', '651165', 'hvhg'),
-(7, 'Singapour', 'SG', 'vh', 'vhjvjhv', 'vjvhj', 'bkjbjk', '6561', '165165', '61651', 'jbjhjhbhj');
+(5, 'Grèce', 'GR', 'Athènes', 'euro', 'Prokópis Pavlópoulos', 'Grec', '10 815 197 hab.', '131 957 km2', '85,3 hab./km2', 'méditerranéen');
 
 -- --------------------------------------------------------
 
@@ -477,7 +477,7 @@ CREATE TABLE IF NOT EXISTS `wa__reservation` (
   PRIMARY KEY (`idReservation`),
   KEY `idVoyage` (`idVoyage`),
   KEY `idUsers` (`idUsers`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Contenu de la table `wa__reservation`
@@ -487,7 +487,8 @@ INSERT INTO `wa__reservation` (`idReservation`, `idVoyage`, `idUsers`, `nb_perso
 (21, 2, 12, 5, '2015-07-11'),
 (22, 1, 12, 1, '2015-07-15'),
 (23, 1, 12, 1, '2015-07-30'),
-(24, 1, 12, 1, '2015-07-30');
+(24, 1, 12, 1, '2015-07-30'),
+(25, 1, 12, 1, '2015-08-04');
 
 -- --------------------------------------------------------
 
@@ -510,7 +511,9 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('cf42164bd29ee84ac3dd05435490c99e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438611881, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}');
+('1ebd050ca4a304ceff8caf98bdfde9f2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438702753, 'a:1:{s:9:"user_data";s:0:"";}'),
+('af894a653b69e0c9d366ca5d789e8698', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438695131, 'a:3:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:30:"users/12/Voyage_etranger11.jpg";s:5:"cover";s:31:"users/12/cover/dest-img2111.jpg";}}}'),
+('a141f2f200a9838c2074dac01f2531ff', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438702589, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}');
 
 -- --------------------------------------------------------
 
@@ -540,7 +543,7 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
   `cover` varchar(500) NOT NULL,
   PRIMARY KEY (`idUsers`),
   KEY `idLevel` (`idLevel`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Contenu de la table `wa__users`
@@ -549,10 +552,11 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
 INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `slug`, `adresse1`, `adresse2`, `CP`, `ville`, `pays`, `tel_fixe`, `tel_port`, `date_naissance`, `num_activation`, `active`, `photo`, `cover`) VALUES
 (1, 1, 'aurelien.capi@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '1-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'Italie', '0321640744', '0623974082', '1992-10-28', '7851659894615189', 'false', 'profile2.png', ''),
 (2, 1, 'celine@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'Vano', 'Céline', '2-vano-celine', '654 rue du plouy', '', '62232', 'HINGES', 'Italie', '0321643775', '0623974082', '1992-10-28', '549846519181915', 'false', 'profile.png', ''),
-(12, 1, 'capi.aurelien@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '12-capi-aurelien', '654 rue du plouy', 'aussi rebatisé avenue des cons', '62232', 'HINGES', 'FRANCE', '', '', '1992-10-28', '3oKvnpMuhP4lNF2Zka', 'true', 'users/12/Voyage_etranger11.jpg', 'users/12/cover/dest-img2111.jpg'),
+(12, 1, 'capi.aurelien@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '12-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '', '', '1992-10-28', '3oKvnpMuhP4lNF2Zka', 'true', 'users/12/Voyage_etranger11.jpg', 'users/12/cover/dest-img2111.jpg'),
 (13, 1, 'julien.vdm@gmail.com', 'f938f74c4081a8994371697781acc42e163d893149dc255cec3bf1c4ce3ab7ab', 'Vandermeersch', 'Julien', '13-vandermeersch-julien', '87 rue des Orions', '87 rue des Orions', '59200', 'Tourcoing', 'France', '0301020304', '', '1990-03-10', 'eROhZ3kZpa5YhPCY7X', 'false', 'unsigned_user.jpg', ''),
 (14, 1, 'capi.aurelien@yopmail.fr', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'aurélien', '14-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'Belgique', '', '', '1992-10-28', '0xV9E6dv9XR1lcUfCO', 'false', 'unsigned_user.jpg', ''),
-(15, 1, 'aurelien.capi@yopmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'capi', 'Aurélien', '15-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'FRANCE', '', '', '1992-10-28', 'THag5VT6fiojoZiemo', 'false', 'unsigned_user.jpg', '');
+(15, 1, 'aurelien.capi@yopmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'capi', 'Aurélien', '15-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'FRANCE', '', '', '1992-10-28', 'THag5VT6fiojoZiemo', 'false', 'unsigned_user.jpg', ''),
+(25, 1, 'alawakbar@yopmail.fr', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '25-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '', '', '0000-00-00', 'TYVsNKTQFaDY8EFEZm', 'false', 'unsigned_user.jpg', '');
 
 -- --------------------------------------------------------
 
