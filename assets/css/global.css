@@ -6203,6 +6203,7 @@ body.admin .charts h3 {
   display: inline-block;
   width: auto;
   padding: 15px;
+  margin-right: 15px;
   vertical-align: middle;
 }
 .destinations .destinations__single .well,
@@ -6497,6 +6498,24 @@ body.admin .charts h3 {
   /*------------------------------------*\
       #DESTINATIONS || #ACTUALITES
   \*------------------------------------*/
+  .destinations .destinations__tools input, .destinations .destinations__tools .button,
+  .destinations .actualites__tools input,
+  .destinations .actualites__tools .button,
+  .actualites .destinations__tools input,
+  .actualites .destinations__tools .button,
+  .actualites .actualites__tools input,
+  .actualites .actualites__tools .button {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-bottom: 15px;
+  }
+  .destinations .destinations__tools .button:last-child,
+  .destinations .actualites__tools .button:last-child,
+  .actualites .destinations__tools .button:last-child,
+  .actualites .actualites__tools .button:last-child {
+    margin-bottom: 0;
+  }
   .destinations .destinations__single .well,
   .destinations .actualites__single .well,
   .actualites .destinations__single .well,
@@ -6557,27 +6576,6 @@ body.admin .charts h3 {
   }
   body.admin .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {
     width: 100%;
-  }
-
-  /*------------------------------------*\
-      #DESTINATIONS || #ACTUALITES
-  \*------------------------------------*/
-  .destinations .destinations__tools input, .destinations .destinations__tools .button,
-  .destinations .actualites__tools input,
-  .destinations .actualites__tools .button,
-  .actualites .destinations__tools input,
-  .actualites .destinations__tools .button,
-  .actualites .actualites__tools input,
-  .actualites .actualites__tools .button {
-    display: block;
-    width: 100%;
-    margin-right: auto;
-  }
-  .destinations .destinations__tools input,
-  .destinations .actualites__tools input,
-  .actualites .destinations__tools input,
-  .actualites .actualites__tools input {
-    margin-bottom: 10px;
   }
 }
 /*------------------------------------*\

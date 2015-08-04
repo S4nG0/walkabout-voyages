@@ -4,12 +4,16 @@
 <div class="destinations">
     <div class="row text-center">
         <div class="col-lg-12">
-            <h1 class="page-header sep">Liste des destinations supprimés</h1>
+            <h1 class="page-header sep">Corbeille</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="destinations__tools">
+                <a href="<?php echo base_url() . 'walkadmin/destinations' ?>" class="button black">
+                    <i class="fa fa-hand-o-left"></i>&nbsp;
+                    Retour aux destinations
+                </a>
                 <input type="search" id="search" placeholder="Rechercher une destination"/>
             </div>
         </div>

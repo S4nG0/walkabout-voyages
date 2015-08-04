@@ -1,6 +1,8 @@
 
 <div id="page-wrapper">
 
+<div class="container-fluid">
+
 <div class="destinations">
     <div class="row text-center">
         <div class="col-lg-12">
@@ -15,50 +17,53 @@
                     <i class="fa fa-plus"></i>&nbsp;Ajouter
                 </a>
                 <a class="button black" href="<?php echo base_url() . 'walkadmin/destinations/supprimes'; ?>">
-                    <i class="fa fa-trash"></i>&nbsp;Voir supprimés
+                    <i class="fa fa-trash"></i>&nbsp;Corbeille
                 </a>
             </div>
         </div>
     </div>
     <div class="row">
-        <?php
-        if (sizeof($destinations) > 0) {
-            foreach ($destinations as $destination) {
-                ?>
-                <div class="row destinations__single searchable" data-search="<?php echo $destination->titre .' '. $destination->nom .' '. $destination->ville; ?>">
-                    <div class="col-md-12">
-                        <div class="well">
-                            <div class="single__block imageBlock">
-                                <div class="imageBlock__wrapper" style="background-image : url('<?php echo img_url($destination->banner)?>');"></div>
-                            </div>
-                            <div class="single__block infoBlock">
-                                <h3><?php echo $destination->titre; ?></h3>
-                                <p><?php echo $destination->nom; ?>&nbsp;&bull;&nbsp;<?php echo $destination->ville; ?></p>
-                            </div>
-                            <div class="single__block buttonsBlock">
-                                <a class="button black" href="<?php echo base_url().'walkadmin/destinations/detail/'.$destination->idDestination; ?>">
-                                    <i class="fa fa-info"></i>&nbsp;
-                                    Détails
-                                </a>
-                                <a class="button black" href="<?php echo base_url().'walkadmin/destinations/modifier/'.$destination->idDestination;?>">
-                                    <i class="fa fa-edit"></i>&nbsp;
-                                    Modifier
-                                </a>
-                                <a class="button black" href="<?php echo base_url().'walkadmin/destinations/supprimer/'.$destination->idDestination;?>">
-                                    <i class="fa fa-trash"></i>&nbsp;
-                                    Supprimer
-                                </a>
-                            </div>
+
+        <?php if (sizeof($destinations) > 0) { foreach ($destinations as $destination) { ?>
+
+            <div class="row destinations__single searchable" data-search="<?php echo $destination->titre .' '. $destination->nom .' '. $destination->ville; ?>">
+                <div class="col-md-12">
+                    <div class="well">
+                        <div class="single__block imageBlock">
+                            <div class="imageBlock__wrapper" style="background-image : url('<?php echo img_url($destination->banner)?>');"></div>
+                        </div>
+                        <div class="single__block infoBlock">
+                            <h3><?php echo $destination->titre; ?></h3>
+                            <p><?php echo $destination->nom; ?>&nbsp;&bull;&nbsp;<?php echo $destination->ville; ?></p>
+                            <a class="button black" href="<?php echo base_url().'walkadmin/voyage/creer/'.$destination->idDestination;?>">
+                                <i class="fa fa-plane"></i>&nbsp;
+                                Séjours prévus
+                            </a>
+                        </div>
+                        <div class="single__block buttonsBlock">
+                            <a class="button black" href="<?php echo base_url().'walkadmin/destinations/detail/'.$destination->idDestination; ?>">
+                                <i class="fa fa-info"></i>&nbsp;
+                                Détails
+                            </a>
+                            <a class="button black" href="<?php echo base_url().'walkadmin/destinations/supprimer/'.$destination->idDestination;?>">
+                                <i class="fa fa-trash"></i>&nbsp;
+                                Supprimer
+                            </a>
                         </div>
                     </div>
-                    <?php  }
-                } else { ?>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="no-entry">Il n'y a aucune destination enregistré actuellement !</p>
-                    </div>
                 </div>
-                <?php } ?>
             </div>
+
+        <?php  } } else { ?>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="no-entry">Il n'y a aucune destination enregistré actuellement !</p>
+                </div>
+            </div>
+
+        <?php } ?>
         </div>
     </div>
+</div>
+</div>
