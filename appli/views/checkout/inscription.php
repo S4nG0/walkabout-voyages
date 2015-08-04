@@ -30,8 +30,6 @@ $step = 'inscription';
         <?php
             if($erreur == true){
                 echo '<p class="error"><i class="fa fa-exclamation-circle"></i>Une erreur s\'est produite lors de l\'enregistrement de vos informations, veuillez vérifier les champs !</p>';
-            }else if($erreur != ""){
-                echo '<p class="success"><i class="fa fa-check-circle">Votre compte à bien été créé, vous allez recevoir un mail de confirmation gràce auquel vous devrez activer le compte avant de pouvoir continuer!</p>';
             }
             echo form_open('inscription/reservation')
         ?>
