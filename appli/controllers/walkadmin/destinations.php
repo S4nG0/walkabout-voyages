@@ -161,7 +161,7 @@ class Destinations  extends CI_Controller{
 
     public function creer(){
         connecte_admin($this->session->userdata('admin'));
-        
+
         //On charge la librairie
         $this->load->library('upload');
         
@@ -183,10 +183,10 @@ class Destinations  extends CI_Controller{
                     "ville" => $this->input->post('ville'),
                     "coordonnees" => $this->input->post('longitude').','.$this->input->post('latitude')
                 );
-                
-                //Upload chemin for cover 
+
+                //Upload chemin for cover
                 $upload_path = 'assets/images/destinations/'. slugify($this->input->post('titre')).'/cover';
-                
+
                 //On vérifie si le dossier d'upload existe et si non on le crée
                 if (!file_exists($upload_path)){
                     //Création du dossier pour le carnet
@@ -194,7 +194,7 @@ class Destinations  extends CI_Controller{
                         echo 'erreur lors de la création du dossier!';
                     }
                 }
-                
+
                 //On initialise la config
                 $config =  array(
                     'upload_path'     => $upload_path,
@@ -202,7 +202,7 @@ class Destinations  extends CI_Controller{
                 );
                 //On initialise la librairie
                 $this->upload->initialize($config);
-                
+
                 //On effectue l'upload de la cover!
                 if (!$this->upload->do_upload('banner')){
                     $data['error'] =$this->upload->display_errors();
@@ -215,12 +215,12 @@ class Destinations  extends CI_Controller{
                     return false;
                 }else{
                     $destination['banner']='destinations/'.  slugify($this->input->post('titre')).'/cover/'.$this->upload->data()['file_name'];
-                    
+
                     //On va envoyer les photos de la destination
-                   
+
                     //On défii le chemin d'upload des photos
                     $upload_path2 = 'assets/images/destinations/'.  slugify($this->input->post('titre'));
-                
+
                     //On vérifie si le dossier d'upload existe et si non on le crée
                     if (!file_exists($upload_path2)) {
                         //Création du dossier pour le carnet
@@ -228,7 +228,7 @@ class Destinations  extends CI_Controller{
                             echo 'erreur lors de la création du dossier!';
                         }
                     }
-                    
+
                     $config =  array(
                         'upload_path'     => $upload_path2,
                         'allowed_types'   => "gif|jpg|png",
@@ -237,20 +237,20 @@ class Destinations  extends CI_Controller{
                         'max_height'      => "450",
                         'max_width'       => "1600"
                     );
-                    
+
                     //On initialise la librairie
                     $this->upload->initialize($config);
                     $files = $_FILES['images'];
                     $cpt = count($_FILES['images']['name']);
                     $chaine = "";
                     for($i=0; $i<$cpt; $i++)
-                    {           
+                    {
                         $_FILES['images']['name']= $files['name'][$i];
                         $_FILES['images']['type']= $files['type'][$i];
                         $_FILES['images']['tmp_name']= $files['tmp_name'][$i];
                         $_FILES['images']['error']= $files['error'][$i];
-                        $_FILES['images']['size']= $files['size'][$i]; 
-                        
+                        $_FILES['images']['size']= $files['size'][$i];
+
                         if($this->upload->do_upload('images')) {
                             $chaine .= 'destinations/'.  slugify($this->input->post('titre')).'/'.$this->upload->data()['file_name'].';';
                         }

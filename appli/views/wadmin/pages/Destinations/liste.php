@@ -51,7 +51,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
                     <?php  }
                 } else { ?>
                 <div class="row">
