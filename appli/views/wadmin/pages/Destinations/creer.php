@@ -1,5 +1,5 @@
 <?php
-    echo form_open_multipart('walkadmin/destinations/creer');
+echo form_open_multipart('walkadmin/destinations/creer');
 ?>
 <?php
 if (isset($error)) {
@@ -67,4 +67,5 @@ if (isset($error)) {
             </div>
         </div>
     </div>
+</div>
 <?php echo form_close(); ?>

@@ -51,6 +51,20 @@ body.admin {
         }
     }
 
+    input, textarea {
+        border: 1px solid $gris-clair;
+        @include box-shadow(0px 0px 10px 0px rgba(0, 0, 0, 0));
+
+        &:focus {
+            @include box-shadow(0px 0px 10px 0px rgba(0, 0, 0, 0.3));
+        }
+    }
+
+    hr {
+        margin: 50px 0;
+        border-top-color: #ccc;
+    }
+
     .no-entry {
         color: $noir;
     }
@@ -67,7 +81,7 @@ body.admin {
     .custom-file-input {
         position: relative;
         padding: 15px;
-        border: 1px solid $noir;
+        border: 1px solid $gris-clair;
 
         &::-webkit-file-upload-button {
           visibility: hidden;
@@ -80,7 +94,7 @@ body.admin {
             left: 0;
             display: inline-block;
             background-color: $blanc;
-            border-right: 1px solid $noir;
+            border-right: 1px solid $gris-clair;
             @include border-radius(0);
             padding: 15px;
             outline: none;
@@ -260,14 +274,38 @@ body.admin {
 .destinations,
 .actualites {
 
+    h2 {
+        margin-bottom: 50px !important;
+    }
+
     input, textarea {
         text-align: center;
+    }
+
+    input[type="submit"].button {
+        width: 250px;
+    }
+
+    select {
+        display: block;
+        width: 100%;
+        padding: 15px;
+
+        text-align: center;
+
+        option {
+            text-align: center;
+        }
     }
 
     .form-group {
         .button {
             margin-top: 25px;
             width: 100%;
+        }
+
+        .help-block {
+            margin-top: 0;
         }
     }
 
@@ -283,7 +321,7 @@ body.admin {
             width: 300px;
             margin-right: 15px;
 
-            border: 1px solid $noir;
+            // border: 1px solid $noir;
 
             vertical-align: middle;
 
@@ -337,6 +375,12 @@ body.admin {
 
             p {
                 color: $noir;
+                margin-top: 15px;
+                margin-bottom: 0;
+            }
+
+            .button {
+                margin-top: 25px;
             }
         }
 
@@ -353,6 +397,7 @@ body.admin {
         }
     }
 
+    .destinations__thumbnail,
     .actualites__thumbnail {
         margin-bottom: 25px;
 
@@ -362,6 +407,14 @@ body.admin {
             margin: 0 auto;
         }
     }
+
+    .destinations__gallery {
+        .custom-file-input {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+
 }
 
 /*------------------------------------*\
@@ -403,7 +456,7 @@ body.admin {
 \*------------------------------------*/
 .contacts {
     input[type="search"] {
-        border: 1px solid $noir;
+        // border: 1px solid $noir;
 
         &:focus {
             border-color: $jaune-or;
@@ -566,6 +619,21 @@ body.admin {
     }
 }
 
+@media screen and (max-width: 1230px) {
+    body.admin {
+        .submenu {
+            .submenu__header {
+                border-right: none;
+            }
+
+            li {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 992px) {
     /*------------------------------------*\
         #CONTACT
@@ -573,6 +641,32 @@ body.admin {
     .contacts {
         .contact {
             margin-top: 25px;
+        }
+    }
+    /*------------------------------------*\
+        #DESTINATIONS || #ACTUALITES
+    \*------------------------------------*/
+    .destinations,
+    .actualites {
+        .destinations__single,
+        .actualites__single {
+            .well {
+                display: block;
+
+                .single__block {
+                    display: block;
+                }
+            }
+
+            .imageBlock, .infoBlock, .buttonsBlock {
+                width: 100%;
+            }
+        }
+
+        .destinations__gallery {
+            .custom-file-input {
+                width: 100%;
+            }
         }
     }
 }
@@ -596,17 +690,6 @@ body.admin {
                 }
             }
         }
-    }
-    /*------------------------------------*\
-        #DESTINATIONS || #ACTUALITES
-    \*------------------------------------*/
-    .destinations,
-    .actualites {
-        .destinations__single,
-        .actualites__single {
-
-        }
-
     }
     /*------------------------------------*\
         #CONTACT
@@ -651,6 +734,24 @@ body.admin {
                         }
                     }
                 }
+            }
+        }
+    }
+    /*------------------------------------*\
+        #DESTINATIONS || #ACTUALITES
+    \*------------------------------------*/
+    .destinations,
+    .actualites {
+        .destinations__tools,
+        .actualites__tools {
+            input, .button {
+                display: block;
+                width: 100%;
+                margin-right: auto;
+            }
+
+            input {
+                margin-bottom: 10px;
             }
         }
     }
