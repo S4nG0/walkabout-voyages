@@ -5931,6 +5931,54 @@ body.admin a:hover, body.admin a:focus {
 body.admin .no-entry {
   color: #242424;
 }
+body.admin .alert {
+  text-align: center;
+  margin-bottom: 50px;
+}
+body.admin .alert > p {
+  color: #a94442;
+}
+body.admin .custom-file-input {
+  position: relative;
+  padding: 15px;
+  border: 1px solid #242424;
+}
+body.admin .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+body.admin .custom-file-input::before {
+  content: 'Parcourir';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  background-color: #fff;
+  border-right: 1px solid #242424;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 15px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  color: #242424;
+  font-size: 16px;
+  font-weight: 600;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.admin .custom-file-input:hover::before, body.admin .custom-file-input:focus::before {
+  background-color: #242424;
+  color: #fff;
+}
+body.admin .custom-file-input:active::before {
+  background: -webkit-linear-gradient(#e3e3e3, #f9f9f9);
+  background: -o-linear-gradient(#e3e3e3, #f9f9f9);
+  background: linear-gradient(#e3e3e3, #f9f9f9);
+}
 body.admin .submenu {
   display: block;
   width: 100%;
@@ -6055,6 +6103,16 @@ body.admin .charts h3 {
 /*------------------------------------*\
     #DESTINATIONS || #ACTUALITES
 \*------------------------------------*/
+.destinations input, .destinations textarea,
+.actualites input,
+.actualites textarea {
+  text-align: center;
+}
+.destinations .form-group .button,
+.actualites .form-group .button {
+  margin-top: 25px;
+  width: 100%;
+}
 .destinations .destinations__tools,
 .destinations .actualites__tools,
 .actualites .destinations__tools,
