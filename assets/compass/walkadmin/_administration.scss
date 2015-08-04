@@ -204,6 +204,87 @@ body.admin {
 }
 
 /*------------------------------------*\
+    #DESTINATIONS
+\*------------------------------------*/
+.destinations {
+    .destinations__tools {
+        display: table;
+        width: 100%;
+        margin-bottom: 50px;
+        text-align: center;
+
+        input {
+            display: inline-block;
+            width: 300px;
+            margin-right: 15px;
+
+            border: 1px solid $noir;
+
+            vertical-align: middle;
+
+            &:focus {
+                border-color: $gris-clair;
+            }
+        }
+
+
+        .button {
+            display: inline-block;
+            width: auto;
+            padding: 15px;
+
+            vertical-align: middle;
+        }
+    }
+
+    .destinations__single {
+        .well {
+            display: table;
+            width: 100%;
+            @include border-radius(0);
+            border-color: $noir;
+
+            .single__block {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+        .imageBlock {
+            width: 35%;
+
+            .imageBlock__wrapper {
+                background-position: 50% 0;
+                @include background-size(cover);
+                background-repeat: no-repeat;
+                padding-bottom: 50%;
+            }
+        }
+
+        .infoBlock {
+            text-align: center;
+
+            p {
+                color: $noir;
+            }
+        }
+
+        .buttonsBlock {
+            width: 25%;
+
+            .button {
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+    }
+}
+
+/*------------------------------------*\
     #PAYS
 \*------------------------------------*/
 .countries {

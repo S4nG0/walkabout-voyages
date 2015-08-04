@@ -78,6 +78,7 @@ class Destinations  extends CI_Controller{
         }
         $data['pays']=$this->pays->getPays();
         $data['page']="add_travel";
+        $data['title']='Ajout de destination';
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
