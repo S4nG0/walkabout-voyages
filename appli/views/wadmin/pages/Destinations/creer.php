@@ -89,6 +89,61 @@ echo form_open_multipart('walkadmin/destinations/creer');
         <hr>
 
         <div class="row text-center">
+            <h2 class="no-sep">Pictogrammes information</h2>
+            <div class="col-md-12">
+                <ul class="destinations__infoIcons">
+
+                <?php foreach($infos_destination as $info) { var_dump($info); ?>
+
+                    <li class="infoIcons__item">
+                        <img src="<?php echo img_url($info->image); ?>" alt="<?php echo $info->titre; ?>">
+                        <p><strong><?php echo $info->titre; ?></strong></p>
+                        <p><?php echo $info->valeur; ?></p>
+                    </li>
+
+                <?php } ?>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row text-center">
+            <h2 class="no-sep">Informations sur le déroulement</h2>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Accompagnement</label>
+                    <textarea name="accompagnement" id="accompagnement" rows="10" placeholder="Saississez vos informations"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="">Hébergement</label>
+                    <textarea name="hebergement" id="hebergement" rows="10" placeholder="Saississez vos informations"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Déplacements</label>
+                    <textarea name="deplacement" id="deplacement" rows="10" placeholder="Saississez vos informations"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="">Repas &amp; boissons</label>
+                    <textarea name="nourriture" id="nourriture" rows="10" placeholder="Saississez vos informations"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <h2 class="no-sep">Informations sur le déroulement</h2>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="form-group">
+                    <label for="deroulement">Déroulement</label>
+                    <textarea name="deroulement" id="deroulement" rows="10" placeholder="Saississez vos informations"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row text-center">
             <h2 class="no-sep">Galerie</h2>
             <div class="col-md-12">
                 <div class="form-group">

@@ -5,58 +5,58 @@ class Destinations  extends CI_Controller{
     public function index(){
         connecte_admin($this->session->userdata('admin'));
         $data['title'] = 'Destinations';
-        $data['destinations']=$this->destination->get_all();        
+        $data['destinations']=$this->destination->get_all();
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Destinations/liste',$data);
         $this->load->view('wadmin/template/footer');
     }
-    
+
     public function supprimes(){
         connecte_admin($this->session->userdata('admin'));
         $data['title'] = 'Destinations';
-        $data['destinations']=$this->destination->get_supprimes();        
+        $data['destinations']=$this->destination->get_supprimes();
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Destinations/supprimes',$data);
         $this->load->view('wadmin/template/footer');
     }
-    
+
     public function restaurer($idDestination = 0){
         connecte_admin($this->session->userdata('admin'));
-        
+
         if($idDestination == 0)
             redirect('walkadmin/dashboard');
-        
+
         $this->destination->restaureDestination($idDestination);
         redirect('walkadmin/destinations');
     }
-    
-    
+
+
     public function supprimer($idDestination = 0){
         connecte_admin($this->session->userdata('admin'));
-        
+
         if($idDestination == 0)
             redirect('walkadmin/dashboard');
-        
+
         $this->destination->deleteDestination($idDestination);
         redirect('walkadmin/destinations');
     }
-    
+
     public function detail($idDestination = 0){
         connecte_admin($this->session->userdata('admin'));
-        
+
         if($idDestination == 0){
             return false;
         }
         $data['destination'] = $this->destination->constructeur($idDestination)[0];
         $pays = $this->pays->constructeur($data['destination']->idPays)[0];
-        
+
         //Géolocalisation
 //        $geocoder = "http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false";
-//        
+//
 //        $query = sprintf($geocoder, urlencode($data['destination']->ville.' '.$pays->nom));
 //        var_dump($query);
 //        $result = json_decode(file_get_contents($query));
@@ -65,7 +65,7 @@ class Destinations  extends CI_Controller{
 //
 //        $latitude = (string) $json->geometry->location->lat;
 //        $longitude = (string) $json->geometry->location->lng;
-        
+
         //On charge la librairie d'upload
         $this->load->library('upload');
 
@@ -97,7 +97,7 @@ class Destinations  extends CI_Controller{
                         echo 'erreur lors de la création du dossier!';
                     }
                 }
-                
+
                 $destination['photos'] = $data['destination']->photos;
                 if($_FILES['banner']['error'] == 0){
                     //On initialise la config
@@ -118,7 +118,7 @@ class Destinations  extends CI_Controller{
                         $destination['banner']='destinations/'.  slugify($this->input->post('titre')).'/cover/'.$this->upload->data()['file_name'];
                     }
                 }
-                
+
                 if($_FILES['images']['error'][0] == 0){
                     //On va envoyer les photos de la destination
 
@@ -158,7 +158,7 @@ class Destinations  extends CI_Controller{
                     }
                     $destination['photos'] = $chaine;
                 }
-                
+
                 //Ici on a géré toutes les images en ajout, on va supprimer les images qui ont demandé d'être supprimés
                 $a_sup = json_decode($this->input->post('remove'));
                 $tab = explode(';',$destination['photos']);
@@ -167,12 +167,12 @@ class Destinations  extends CI_Controller{
                     unset($tab[$search]);
                     $tab = array_values($tab);
                 }
-               
+
                 $destination['photos'] = implode(';',$tab);
-                
+
               $this->destination->updateDestination($idDestination,$destination);
               redirect('walkadmin/destinations/');
-                
+
             }else{
                 $data['pays']=$this->pays->getPays();
                 $data['page']="add_travel";
@@ -200,8 +200,9 @@ class Destinations  extends CI_Controller{
 
         //On charge la librairie
         $this->load->library('upload');
-        
-        if($this->input->post()){            
+        $data['infos_destination'] = $this->infos_destination->constructeur($data['destination'][0]->idDestination);
+
+        if($this->input->post()){
             $this->form_validation->set_rules('pays', '"pays"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('titre', '"titre"', 'is_unique[destination.titre]|trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('nom', '"nom"', 'trim|required|encode_php_tags|xss_clean');
@@ -316,6 +317,6 @@ class Destinations  extends CI_Controller{
             $this->load->view('wadmin/pages/Destinations/creer',$data);
             $this->load->view('wadmin/template/footer');
         }
-        
+
     }
 }
