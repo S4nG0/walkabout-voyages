@@ -1766,27 +1766,29 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .gallery .grid {
   padding: 0;
   margin: 0;
+  height: 75%;
 }
-.gallery .grid li {
+.gallery .grid .grid__sizer {
+  width: 20%;
+}
+.gallery .grid .grid__item {
   float: left;
   width: 20%;
-  min-height: 100%;
-  background-color: #000;
+  background-color: red;
   list-style-type: none;
 }
-.gallery .grid li figure {
+.gallery .grid .grid__item figure {
   position: relative;
   overflow: hidden;
 }
-.gallery .grid li figure img {
+.gallery .grid .grid__item figure img {
   width: 100%;
-  height: 100%;
   -moz-transition: all 300ms ease-out;
   -o-transition: all 300ms ease-out;
   -webkit-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
 }
-.gallery .grid li figure figcaption {
+.gallery .grid .grid__item figure figcaption {
   position: absolute;
   top: 0;
   left: 0;
@@ -1802,7 +1804,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   transition: all 300ms ease-out;
   text-align: center;
 }
-.gallery .grid li figure figcaption .caption-content {
+.gallery .grid .grid__item figure figcaption .caption-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1818,7 +1820,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.gallery .grid li figure figcaption .caption-content a {
+.gallery .grid .grid__item figure figcaption .caption-content a {
   color: #242424;
   text-decoration: none;
   -moz-transition: all 300ms ease-in-out;
@@ -1826,10 +1828,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.gallery .grid li figure figcaption .caption-content a i {
+.gallery .grid .grid__item figure figcaption .caption-content a i {
   font-size: 40px;
 }
-.gallery .grid li figure figcaption .caption-content a p {
+.gallery .grid .grid__item figure figcaption .caption-content a p {
   margin-top: 10px;
   color: #242424;
   text-transform: uppercase;
@@ -1840,17 +1842,17 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.gallery .grid li figure:hover img {
+.gallery .grid .grid__item figure:hover img {
   -moz-transform: scale(1.1, 1.1);
   -ms-transform: scale(1.1, 1.1);
   -webkit-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1);
 }
-.gallery .grid li figure:hover figcaption {
+.gallery .grid .grid__item figure:hover figcaption {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-.gallery .grid li figure:hover figcaption .caption-content {
+.gallery .grid .grid__item figure:hover figcaption .caption-content {
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   -webkit-transform: translate(0, 0);
@@ -1865,15 +1867,20 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 @media (max-width: 992px) {
-  .gallery .grid li {
+  .gallery .grid .grid__sizer {
+    width: 50%;
+  }
+  .gallery .grid .grid__item {
     width: 50%;
   }
 }
 @media (max-width: 480px) {
-  .gallery .grid li {
+  .gallery .grid .grid__sizer {
+    width: 100%;
+  }
+  .gallery .grid .grid__item {
     float: none;
     width: 100%;
-    min-height: 100%;
   }
 }
 .medium-editor-toolbar {
@@ -3720,6 +3727,10 @@ body.single-destination .travel-logs .travel-logs-slider .travel-log .excerpt .b
   float: none;
   margin-top: 25px;
   width: 200px;
+}
+
+.fancybox-margin {
+  margin-right: 0 !important;
 }
 
 .fancybox-overlay .fancybox-skin {

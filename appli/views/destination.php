@@ -80,12 +80,12 @@
                             <img src="<?php echo img_url($info->image); ?>" alt="<?php echo $info->titre; ?>">
                             <p><strong><?php echo $info->titre; ?></strong></p>
                             <p><?php echo $info->valeur; ?></p>
-                        </li>                        
+                        </li>
                         <?php } ?>
                     </ul>
                     <div class="info-details">
-                        <?php 
-                        $x = 0; 
+                        <?php
+                        $x = 0;
                         foreach($infos_complementaires as $info){
                             if($x%2 == 0){
                                 $y = 1;
@@ -97,15 +97,15 @@
                                 <p>
                                     <?php echo $info->value; ?>
                                 </p>
-                            </div>  
-                        <?php 
-                            
+                            </div>
+                        <?php
+
                         if($y == 2){
                             echo '</div>';
                         }
                         $x++;
                         $y++;
-                        } 
+                        }
                         ?>
                     </div>
                 </div>
@@ -136,15 +136,15 @@
                                 <h3><?php echo (sizeof($voyages)>1) ? 'Dates prévues :' : 'Date prévue :'; ?></h3>
                                 <ul class="prices-list">
                                     <?php
-                                    
+
                                         foreach($voyages as $voyage){
-                                    
+
                                     ?>
                                     <li>
                                         du <?php echo $voyage->date_depart; ?>  au <?php echo $voyage->date_retour; ?>
                                         <span class="small">(places restantes: <?php echo $voyage->nb_reserves; ?>)</span>
                                     </li>
-                                    
+
                                     <?php
                                         }
                                     ?>
@@ -246,33 +246,29 @@
         <!-- endblock:More informations -->
 
         <!-- block:Gallery -->
-        <div class="container-fluid gallery">
-            <div class="row noPadding">
-                <ul class="grid">
-                    <?php
-                    $photos = array();
-                    $photos = explode(";", $destination[0]->photos);
+        <div class="gallery">
+            <div class="grid">
 
-                    foreach ($photos as $key => $photo) {
-                        if ($photo != "") {
-                            echo '<li>
-                                <figure>
-                                    <img src="' . img_url($photo) . '" alt="photo' . $key . '">
-                                    <figcaption>
-                                        <div class="caption-content">
-                                            <!-- Lien vers galerie fancybox -->
-                                            <a class="fancybox" rel="group" href="' . img_url($photo) . '">
-                                                <i class="fa fa-search"></i>
-                                                <p>Agrandir l\'image</p>
-                                            </a>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </li>';
-                        }
-                    }
-                    ?>
-                </ul>
+                <div class="grid__sizer"></div>
+
+                <?php $photos = array(); $photos = explode(";", $destination[0]->photos);
+                foreach ($photos as $key => $photo) { if ($photo != "") { ?>
+
+                <div class="grid__item">
+                    <figure>
+                        <img src="<?php echo img_url($photo); ?>" alt="photo<?php $key; ?>">
+                        <figcaption>
+                            <div class="caption-content">
+                                <a class="fancybox" rel="group" href="<?php echo img_url($photo); ?>">
+                                    <i class="fa fa-search"></i>
+                                    <p>Agrandir l'image</p>
+                                </a>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <?php } } ?>
             </div>
         </div>
 

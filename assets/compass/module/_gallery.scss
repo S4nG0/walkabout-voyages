@@ -1,21 +1,27 @@
 .gallery {
     margin: 0;
     padding: 0;
+
     .grid {
         padding: 0;
         margin: 0;
-        li {
+        height: 75%;
+
+        .grid__sizer {
+            width: 20%;
+        }
+
+        .grid__item {
             float: left;
             width: 20%;
-            min-height: 100%;
-            background-color: #000;
+            background-color: red;
             list-style-type: none;
+
             figure {
                 position: relative;
                 overflow: hidden;
                 img {
                     width: 100%;
-                    height: 100%;
                     @include transition(all 300ms ease-out);
                 }
                 figcaption {
@@ -90,7 +96,10 @@
 @media (max-width: 992px) {
     .gallery {
         .grid {
-            li {
+            .grid__sizer {
+                width: 50%;
+            }
+            .grid__item {
                 width: 50%;
             }
         }
@@ -105,10 +114,12 @@
 @media (max-width: 480px) {
     .gallery {
         .grid {
-            li {
+            .grid__sizer {
+                width: 100%;
+            }
+            .grid__item {
                 float: none;
                 width: 100%;
-                min-height: 100%;
             }
         }
     }

@@ -607,3 +607,15 @@ $(document).ready(function () {
         $('.spirit-content').css({'opacity': (-650 + sb) / 1000});
     });
 });
+
+$(window).load(function(){
+    /***
+     * Masonry gallery
+     */
+    var grid = $('.grid').imagesLoaded(function(){
+        grid.masonry({
+            itemSelector: '.grid__item',
+            columnWidth: '.grid__sizer'
+        })
+    });
+})

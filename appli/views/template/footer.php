@@ -73,9 +73,9 @@
     </footer>
 
 <!-- Loader -->
-        
+
     <div id="spinner">
-        <img src="<?php echo img_url("logo-wk-icon.png"); ?>" /> 
+        <img src="<?php echo img_url("logo-wk-icon.png"); ?>" />
     </div>
 
 <!-- Fin Loader -->
@@ -92,9 +92,11 @@
 <script type="text/javascript" src="<?php echo js_url('vendors/readmore-min'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/stellar'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/owl.carousel.min'); ?>"></script>
-<script type="text/javascript" src="<?php echo js_url('vendors/fancybox-min'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/fancybox.min'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/dotimeout'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/iconate'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/images-loaded'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/masonry.min'); ?>"></script>
 
 <!--Medium editor-->
 <script src="<?php echo js_url('vendors/medium/medium-editor'); ?>"></script>
