@@ -64,13 +64,20 @@ class Voyage extends CI_Controller{
         if($this->input->post() != false) {
             $taille_details = (sizeof($this->input->post())-4)/2;
             $details = array();
-            for($i = 0; $i<$taille_details;$i++){
-                $this->form_validation->set_rules("detail_nom$i", "Titre détail", 'trim|required|encode_php_tags|xss_clean');
-                $this->form_validation->set_rules("detail_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
-            
-                $details[$i]["titre"] = $this->input->post("detail_nom$i");
-                $details[$i]["valeur"] = $this->input->post("detail_valeur$i");
-            }
+            $i = 0;
+            $k = 0;
+            do{
+                var_dump($this->input->post("detail_nom$i"));
+                if($this->input->post("detail_nom$i") != false && $this->input->post("detail_valeur$i") != false){
+                    $this->form_validation->set_rules("detail_nom$i", "Titre détail", 'trim|required|encode_php_tags|xss_clean');
+                    $this->form_validation->set_rules("detail_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
+                
+                    $details[$i]["titre"] = $this->input->post("detail_nom$i");
+                    $details[$i]["valeur"] = $this->input->post("detail_valeur$i");
+                    $k++;
+                }
+                $i++;
+            }while($k != $taille_details);
             $this->form_validation->set_rules('date_debut', '"date_debut"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('date_fin', '"date_fin"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('prix', '"prix"', 'trim|required|encode_php_tags|xss_clean|numeric');
@@ -80,7 +87,6 @@ class Voyage extends CI_Controller{
                 
                 $voyage=array(
                     "idDestination" => $idDestination,
-                    "idInfos" => 2,
                     "date_depart" => $this->input->post('date_debut'),
                     "date_retour" => $this->input->post('date_fin'),
                     "prix" => $this->input->post('prix'),
@@ -152,7 +158,6 @@ class Voyage extends CI_Controller{
                 $details = json_encode($details);
                 
                 $voyage=array(
-                    "idInfos" => 2,
                     "date_depart" => $this->input->post('date_debut'),
                     "date_retour" => $this->input->post('date_fin'),
                     "prix" => $this->input->post('prix'),
