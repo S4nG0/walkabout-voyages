@@ -9,16 +9,20 @@
             <?php echo form_open('walkadmin/administrateur/creer'); ?>
                 <fieldset>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Nom" name="nom" type="text" autofocus>
+                        <input class="form-control" placeholder="Nom" name="nom" type="text" autofocus value="<?php echo set_value('nom'); ?>">
+                        <?php echo form_error('nom'); ?>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="prenom" name="prenom" type="text" >
+                        <input class="form-control" placeholder="prenom" name="prenom" type="text" value="<?php echo set_value('prenom'); ?>">
+                        <?php echo form_error('prenom'); ?>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="identifiant" name="identifiant" type="text">
+                        <input class="form-control" placeholder="identifiant" name="identifiant" type="text" value="<?php echo set_value('identifiant'); ?>">
+                        <?php echo form_error('identifiant'); ?>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="Password" name="password" type="password">
+                        <input class="form-control" placeholder="Password" name="password" type="password" value="<?php echo set_value('password'); ?>">
+                        <?php echo form_error('password'); ?>
                     </div>
                     <!-- Change this to a button or input when using this as a form -->
                     <div class="row noPadding">
