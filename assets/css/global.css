@@ -1847,7 +1847,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.gallery .grid .grid__item figure:hover img {
+.gallery .grid .grid__item figure:hover .grid__image {
   -moz-transform: scale(1.1, 1.1);
   -ms-transform: scale(1.1, 1.1);
   -webkit-transform: scale(1.1, 1.1);
