@@ -97,6 +97,9 @@ class Connexion extends CI_Controller {
                         }
                     }
                 }
+                if($this->session->userdata('voyage') != false){
+                    redirect('/checkout/informations');
+                }
                 redirect(base_url().'connexion');
             }else{
                 $this->session->set_flashdata('errorrecovery', validation_errors());
