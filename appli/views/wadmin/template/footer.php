@@ -3,14 +3,16 @@
 
 <!-- Vendors -->
 <script type="text/javascript" src="<?php echo js_url('vendors/bootstrap.min'); ?>"></script>
-<script type="text/javascript" src="<?php echo js_url('vendors/fancybox-min'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/fancybox.min'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/modernizr'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/readmore-min'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/stellar'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/owl.carousel.min'); ?>"></script>
-<script type="text/javascript" src="<?php echo js_url('vendors/fancybox-min'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/fancybox.min'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/dotimeout'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/iconate'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/images-loaded'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/masonry.min'); ?>"></script>
 
 <!-- Flot Charts JavaScript -->
 <script src="<?php echo js_url('vendors/flot/excanvas.min'); ?>"></script>

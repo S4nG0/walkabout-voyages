@@ -374,6 +374,10 @@ body.single-destination {
 
 
 //Fancybox styling
+.fancybox-margin {
+    margin-right: 0 !important;
+}
+
 .fancybox-overlay {
     .fancybox-skin {
         background: $texture;
