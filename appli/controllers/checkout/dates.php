@@ -31,7 +31,7 @@ class Dates extends CI_Controller {
             $this->session->set_userdata('destination',$id);
             $data['destination'] = $this->session->userdata('destination');
             $destination = $this->destination->constructeur($data['destination']);
-            if($destination[0]->active == "false"){
+            if(empty($destination) || $destination[0]->active == "false"){
                 redirect(base_url().'nos-destinations');
             }
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
