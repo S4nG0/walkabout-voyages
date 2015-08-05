@@ -35,12 +35,11 @@
                             <td style="padding-right: 20px;"><a href="<?php echo base_url().'carnets-de-voyage/'.$articles[$key]->url?>"><?php if(isset($articles[$key])) echo $articles[$key]->ville ?></a></td>
                             <td>
                                 <?php echo form_open('/walkadmin/article/majArticle/'.$articles[$key]->idArticles) ?>
-                                <select name="etat">
+                                <select name="etat" onchange="this.form.submit()">
                                     <option value="Brouillon" <?php if(isset($articles[$key]) && $articles[$key]->etatArticle=="Brouillon") echo 'selected' ?>>Brouillon</option>
                                     <option value="En attente de publication" <?php if(isset($articles[$key]) && $articles[$key]->etatArticle=="En attente de publication") echo 'selected' ?>>En attente de publication</option>
                                     <option value="Publie" <?php if(isset($articles[$key]) && $articles[$key]->etatArticle=="Publie") echo 'selected' ?>>publié</option>
                                 </select>
-                                <input type="submit" name="envoyer" value="Enregistrer les modifs">
                                 <?php echo form_close() ?>
                             </td>
                         </tr>
