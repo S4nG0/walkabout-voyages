@@ -45,32 +45,32 @@ class Destinations  extends CI_Controller{
         redirect('walkadmin/destinations');
     }
     
-    public function modifier($idDestination = 0){
+    public function detail($idDestination = 0){
         connecte_admin($this->session->userdata('admin'));
         
         if($idDestination == 0){
             return false;
         }
-        
+        $data['destination'] = $this->destination->constructeur($idDestination)[0];
         //On charge la librairie
         $this->load->library('upload');
 
         if($this->input->post() != false){
 
             $this->form_validation->set_rules('pays', '"pays"', 'trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('titre', '"titre"', 'is_unique[destination.titre]|trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('nom', '"nom"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('titre', '"titre"', 'update_unique[destination.titre.idDestination.'.$idDestination.']|trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('description', '"description"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('ville', '"ville"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('longitude', '"Longitude"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('latitude', '"Latitude"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $destination=array(
                     "idPays" => $this->input->post('pays'),
                     "titre" => $this->input->post('titre'),
-                    "nom" => $this->input->post('nom'),
                     "url" => slugify($this->input->post('titre')),
                     "description" => $this->input->post('description'),
                     "ville" => $this->input->post('ville'),
-                    "coordonnees" => $this->input->post('coordonnees')
+                    "coordonnees" => $this->input->post('longitude').','.$this->input->post('latitude')
                 );
 
                 //Upload chemin for cover
@@ -83,28 +83,29 @@ class Destinations  extends CI_Controller{
                         echo 'erreur lors de la création du dossier!';
                     }
                 }
+                
+                $destination['photos'] = $data['destination']->photos;
+                if($_FILES['banner']['error'] == 0){
+                    //On initialise la config
+                    $config =  array(
+                        'upload_path'     => $upload_path,
+                        'allowed_types'   => "gif|jpg|png|jpeg"
+                    );
+                    //On initialise la librairie
+                    $this->upload->initialize($config);
 
-                //On initialise la config
-                $config =  array(
-                    'upload_path'     => $upload_path,
-                    'allowed_types'   => "gif|jpg|png|jpeg"
-                );
-                //On initialise la librairie
-                $this->upload->initialize($config);
-
-                //On effectue l'upload de la cover!
-                if (!$this->upload->do_upload('banner')){
-                    $data['error'] =$this->upload->display_errors();
-                    $data['pays']=$this->pays->getPays();
-                    $data['admin'] = $this->session->userdata('admin');
-                    $this->load->view('wadmin/template/header', $data);
-                    $this->load->view('wadmin/template/menu', $data);
-                    $this->load->view('wadmin/pages/Destinations/creer',$data);
-                    $this->load->view('wadmin/template/footer');
-                    return false;
-                }else{
-                    $destination['banner']='destinations/'.  slugify($this->input->post('titre')).'/cover/'.$this->upload->data()['file_name'];
-
+                    //On effectue l'upload de la cover!
+                    if (!$this->upload->do_upload('banner')){
+                        $data['error'] =$this->upload->display_errors();
+                        $data['pays']=$this->pays->getPays();
+                        $data['admin'] = $this->session->userdata('admin');
+                        return false;
+                    }else{
+                        $destination['banner']='destinations/'.  slugify($this->input->post('titre')).'/cover/'.$this->upload->data()['file_name'];
+                    }
+                }
+                
+                if($_FILES['images']['error'][0] == 0){
                     //On va envoyer les photos de la destination
 
                     //On défii le chemin d'upload des photos
@@ -122,16 +123,13 @@ class Destinations  extends CI_Controller{
                         'upload_path'     => $upload_path2,
                         'allowed_types'   => "gif|jpg|png",
                         'overwrite'       => TRUE,
-                        'max_size'        => "450000",
-                        'max_height'      => "450",
-                        'max_width'       => "1600"
                     );
 
                     //On initialise la librairie
                     $this->upload->initialize($config);
                     $files = $_FILES['images'];
                     $cpt = count($_FILES['images']['name']);
-                    $chaine = "";
+                    $chaine = $data['destination']->photos;
                     for($i=0; $i<$cpt; $i++)
                     {
                         $_FILES['images']['name']= $files['name'][$i];
@@ -145,18 +143,42 @@ class Destinations  extends CI_Controller{
                         }
                     }
                     $destination['photos'] = $chaine;
-                    $this->destination->insertDestination($destination);
                 }
+                
+                //Ici on a géré toutes les images en ajout, on va supprimer les images qui ont demandé d'être supprimés
+                $a_sup = json_decode($this->input->post('remove'));
+                $tab = explode(';',$destination['photos']);
+                foreach($a_sup as $sup){
+                    $search = array_search($sup,$tab);
+                    unset($tab[$search]);
+                    $tab = array_values($tab);
+                }
+               
+                $destination['photos'] = implode(';',$tab);
+                
+              $this->destination->updateDestination($idDestination,$destination);
+              redirect('walkadmin/destinations/');
+                
+            }else{
+                $data['pays']=$this->pays->getPays();
+                $data['page']="add_travel";
+                $data['title']='Ajout de destination';
+                $data['admin'] = $this->session->userdata('admin');
+                $this->load->view('wadmin/template/header', $data);
+                $this->load->view('wadmin/template/menu', $data);
+                $this->load->view('wadmin/pages/Destinations/modifier',$data);
+                $this->load->view('wadmin/template/footer');
             }
+        }else{
+            $data['pays']=$this->pays->getPays();
+            $data['page']="add_travel";
+            $data['title']='Ajout de destination';
+            $data['admin'] = $this->session->userdata('admin');
+            $this->load->view('wadmin/template/header', $data);
+            $this->load->view('wadmin/template/menu', $data);
+            $this->load->view('wadmin/pages/Destinations/modifier',$data);
+            $this->load->view('wadmin/template/footer');
         }
-        $data['pays']=$this->pays->getPays();
-        $data['page']="add_travel";
-        $data['title']='Ajout de destination';
-        $data['admin'] = $this->session->userdata('admin');
-        $this->load->view('wadmin/template/header', $data);
-        $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/pages/Destinations/creer',$data);
-        $this->load->view('wadmin/template/footer');
     }
 
     public function creer(){
@@ -281,40 +303,5 @@ class Destinations  extends CI_Controller{
             $this->load->view('wadmin/template/footer');
         }
         
-    }
-
-    public function  detail($idDestination = 0){
-        connecte_admin($this->session->userdata('admin'));
-        if($idDestination==0){
-            redirect('walkadmin/dashboard');
-        }
-        if($this->input->post() != false){
-            $this->form_validation->set_rules('pays', '"pays"', 'trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('titre', '"titre"', 'trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('description', '"description"', 'trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('ville', '"ville"', 'trim|required|encode_php_tags|xss_clean');
-            if($this->form_validation->run()){
-                $destination=array(
-                    "idPays" => $this->input->post('pays'),
-                    "titre" => $this->input->post('titre'),
-                    "description" => $this->input->post('description'),
-                    "ville" => $this->input->post('ville'),
-                    "coordonnees" => $this->input->post('coordonnees')
-                );
-                $this->destination->updateDestination($idDestination,$destination);
-                redirect('walkadmin/dashboard');
-            }
-        }else{
-            $data['destination']=$this->destination->constructeur($idDestination);
-            $data['pays']=$this->pays->getPays();
-            $data['idDestination']=$idDestination;
-            $data['page']="modif_travel";
-            $data['title']='Détails';
-            $data['admin'] = $this->session->userdata('admin');
-            $this->load->view('wadmin/template/header', $data);
-            $this->load->view('wadmin/template/menu', $data);
-            $this->load->view('wadmin/pages/Destinations/modifier',$data);
-            $this->load->view('wadmin/template/footer');
-        }
     }
 }
