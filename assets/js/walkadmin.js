@@ -172,8 +172,8 @@ container.on('click', addSpan, function() {
         .addClass('form-group voyages__detailsPrix')
         .append('<input type="text" name="detail_nom" id=detail_prix" />')
         .append('<input type="text" name="detail_nom" id=detail_prix" />')
-        .append($('<span></span>').addClass('voyages__icon add'))
-        .append($('<span></span>').addClass('voyages__icon remove'))
+        .append($('<span></span>').addClass('voyages__icon add').attr('title', 'Ajouter'))
+        .append($('<span></span>').addClass('voyages__icon remove').attr('title', 'Supprimer'))
     );
 })
 

@@ -44,7 +44,7 @@ echo form_open('walkadmin/voyage/creer/'.$idDestination);
                     <span class="small">Veuillez ajouter tous les détails pour le prix du séjour</span>
                 </div>
                 <div class="form-group voyages__detailsPrix toBeRemoved">
-                    <span class="voyages__icon add"></span><span>Ajouter un détail</span>
+                    <span title="Ajouter" class="voyages__icon add"></span><span>Ajouter un détail</span>
                 </div>
             </div>
         </div>
