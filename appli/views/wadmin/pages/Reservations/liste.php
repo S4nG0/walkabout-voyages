@@ -53,7 +53,8 @@
                                             <td>
                                                 <?php echo form_open('walkadmin/reservation/modifier/'.$reservations_currents[$key]->idEtatReservation) ?>
                                                     <select name="etatReservation" onchange="this.form.submit();">
-                                                        <option value="En cours" selected>En cours</option>
+                                                        <option value="En cours" <?php if($reservations_currents[$key]->etat=="En cours") echo ' selected';?>>En cours</option>
+                                                        <option value="En attente de réception du dossier" <?php if($reservations_currents[$key]->etat=="En attente de réception du dossier") echo ' selected';?>>En attente de réception du dossier</option>
                                                         <option value="Terminée">Terminée</option>
                                                     </select>
                                                     <input type="hidden" name="idReservation" value="<?php echo $reservations_currents[$key]->idReservation ?>">
@@ -96,6 +97,7 @@
                                             <?php echo form_open('walkadmin/reservation/modifier/'.$reservations_finished[$key]->idEtatReservation) ?>
                                             <select name="etatReservation" onchange="this.form.submit();">
                                                 <option value="En cours">En cours</option>
+                                                <option value="En attente de réception du dossier">En attente de réception du dossier</option>
                                                 <option value="Terminée" selected>Terminée</option>
                                             </select>
                                             <input type="hidden" name="idReservation" value="<?php echo $reservations_finished[$key]->idReservation ?>">
@@ -137,7 +139,8 @@
                                         <td>
                                             <?php echo form_open('walkadmin/reservation/modifier/'.$reservations_currents[$key]->idEtatReservation) ?>
                                                 <select name="etatReservation" onchange="this.form.submit();">
-                                                    <option value="En cours" selected>En cours</option>
+                                                    <option value="En cours" <?php if($reservations_currents[$key]->etat=="En cours") echo ' selected';?>>En cours</option>
+                                                    <option value="En attente de réception du dossier" <?php if($reservations_currents[$key]->etat=="En attente de réception du dossier") echo ' selected';?>>En attente de réception du dossier</option>
                                                     <option value="Terminée">Terminée</option>
                                                 </select>
                                                 <input type="hidden" name="idReservation" value="<?php echo $reservations_currents[$key]->idReservation ?>">
@@ -156,6 +159,7 @@
                                     <td><?php echo form_open('walkadmin/reservation/modifier/'.$reservations_finished[$key]->idEtatReservation) ?>
                                             <select name="etatReservation" onchange="this.form.submit();">
                                                 <option value="En cours">En cours</option>
+                                                <option value="En attente de réception du dossier">En attente de réception du dossier</option>
                                                 <option value="Terminée" selected>Terminée</option>
                                             </select>
                                             <input type="hidden" name="idReservation" value="<?php echo $reservations_finished[$key]->idReservation ?>">
