@@ -46,7 +46,7 @@ $step = 'sign-in';
                                 <input type="password" name="password" id="password">
                                 <?php echo form_error('password'); ?>
                                 <p class="forgotten-pwd">
-                                    Vous avez oublié votre mot de passe&nbsp;? <a href="#">Cliquez-ici</a>
+                                    Vous avez oublié votre mot de passe&nbsp;? <a class="fancybox" href="#recover-pwd">Cliquez-ici</a>
                                 </p>
                             </div>
                             <!-- Form submitted via jQuery -->
@@ -76,5 +76,28 @@ $step = 'sign-in';
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="recover-pwd-block" id="recover-pwd">
+    <div class="container-fluid">
+        <?php echo form_open('connexion/oublieMdp') ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="pwd-recover-email">Votre e-mail</label>
+                        <input type="email" name="pwd-recover-email" id="pwd-recover-email" value="<?php if($this->input->get('pwd-recover-email')!=false) echo $this->input->get('pwd-recover-email');?>">
+                        <?php echo form_error('pwd-recover-email') ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button type="submit" class="button">Récupérer votre mot de passe</button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
