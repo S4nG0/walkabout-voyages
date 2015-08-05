@@ -65,12 +65,13 @@
 
     <div class="recover-pwd-block" id="recover-pwd">
         <div class="container-fluid">
-            <form>
+            <?php echo form_open('connexion/oublieMdp') ?>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="pwd-recover-email">Votre e-mail</label>
-                            <input type="email" name="pwd-recover-email" id="pwd-recover-email">
+                            <input type="email" name="pwd-recover-email" id="pwd-recover-email" value="<?php if($this->input->get('pwd-recover-email')!=false) echo $this->input->get('pwd-recover-email');?>">
+                            <?php echo form_error('pwd-recover-email') ?>
                         </div>
                     </div>
                 </div>

@@ -64,6 +64,47 @@ class Connexion extends CI_Controller {
             $this->load->view('template/footer');
             //$this->output->enable_profiler(true);
 	}
+
+    public function oublieMdp(){
+        if($this->input->post()!=false){
+            $this->form_validation->set_rules('pwd-recover-email', '"pwd-recover-email"', 'trim|required|valid_email|encode_php_tags|xss_clean');
+            if($this->form_validation->run()){
+                $mail = $this->input->post('pwd-recover-email');
+                $user = $this->user->select($mail);
+                if(empty($user)){
+                    $this->session->set_flashdata('errorrecovery','Aucun utilisateur n\'est enregistré sous cette adresse mail.');
+                }else{
+                    $mdp = code();
+                    $utilisateur = new StdClass();
+                    $utilisateur->mdp = hash('sha256',$mdp);
+                    $result = $this->user->modify($utilisateur,$user[0]->idUsers);
+                    if($result == false){
+                        $this->session->set_flashdata('errorrecovery','Il y a eu une erreur lors de la procédure du changement de mot de passe, veuillez contacter l\'administrateur du site.');
+                    }else{
+                        //Envoie du mot de passe par email
+                        $result = recoverPasswordUser($mdp,$user[0]);
+                        $this->email->from("password_recovery@walkabout-voyages.fr");
+                        $this->email->to($user[0]->mail);
+
+                        $this->email->subject('Mot de passe oublié');
+                        $this->email->set_mailtype("html");
+                        $this->email->message($result);
+                        $result = $this->email->send();
+                        if($result){
+                            $this->session->set_flashdata('errorrecovery','Votre nouveau mot de passe vous a été envoyé sur votre boite mail, pensez à vérifier vos spams!');
+                        }else{
+                            $this->session->set_flashdata('errorrecovery','Il y a eu un incident lors de l\'envoie de l\'email, veuillez contacter un administrateur du site.');
+                        }
+                    }
+                }
+                redirect(base_url().'connexion');
+            }else{
+                $this->session->set_flashdata('errorrecovery', validation_errors());
+            }
+        }else{
+            redirect($this->index());
+        }
+    }
 }
 
 
