@@ -1774,15 +1774,20 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .gallery .grid .grid__item {
   float: left;
   width: 20%;
-  background-color: red;
   list-style-type: none;
 }
 .gallery .grid .grid__item figure {
   position: relative;
   overflow: hidden;
 }
-.gallery .grid .grid__item figure img {
-  width: 100%;
+.gallery .grid .grid__item figure .grid__image {
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding-bottom: 100%;
   -moz-transition: all 300ms ease-out;
   -o-transition: all 300ms ease-out;
   -webkit-transition: all 300ms ease-out;
