@@ -35,7 +35,7 @@
                             <p> <?php echo $voyage->nb_places_restantes; ?> place<?php if($voyage->nb_places > 0){echo's';}; ?> restantes</p>
                         </div>
                         <div class="single__block buttonsBlock">
-                            <a class="button black" href="<?php echo base_url().'walkadmin/voyage/detail/'.$voyage->idVoyage; ?>">
+                            <a class="button black" href="<?php echo base_url().'walkadmin/voyage/modifier/'.$voyage->idVoyage; ?>">
                                 <i class="fa fa-info"></i>&nbsp;
                                 Détails
                             </a>

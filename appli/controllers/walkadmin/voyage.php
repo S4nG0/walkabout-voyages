@@ -62,29 +62,126 @@ class Voyage extends CI_Controller{
         if($idDestination==0)
             redirect('walkadmin/dashboard');
         if($this->input->post() != false) {
+            $taille_details = (sizeof($this->input->post())-4)/2;
+            $details = array();
+            for($i = 0; $i<$taille_details;$i++){
+                $this->form_validation->set_rules("detail_nom$i", "Titre détail", 'trim|required|encode_php_tags|xss_clean');
+                $this->form_validation->set_rules("detail_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
+            
+                $details[$i]["titre"] = $this->input->post("detail_nom$i");
+                $details[$i]["valeur"] = $this->input->post("detail_valeur$i");
+            }
             $this->form_validation->set_rules('date_debut', '"date_debut"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('date_fin', '"date_fin"', 'trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('prix', '"prix"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('prix', '"prix"', 'trim|required|encode_php_tags|xss_clean|numeric');
+            $this->session->set_flashdata('details',$details);
             if ($this->form_validation->run()) {
+                $details = json_encode($details);
+                
                 $voyage=array(
                     "idDestination" => $idDestination,
                     "idInfos" => 2,
                     "date_depart" => $this->input->post('date_debut'),
                     "date_retour" => $this->input->post('date_fin'),
                     "prix" => $this->input->post('prix'),
-                    "nb_places" => $this->input->post('nb_personne')
+                    "nb_places" => $this->input->post('nb_personne'),
+                    "details" => $details
                 );
                 $this->voyages->insertVoyage($voyage);
-                redirect('walkadmin/destinations/liste');
+                redirect('walkadmin/voyage/'.$idDestination);
+            }else{
+                $data['title'] = 'Ajout d\'un séjour';
+                $data['idDestination']=$idDestination;
+                $data['destination']=$this->destination->constructeur($idDestination);
+                $data['admin'] = $this->session->userdata('admin');
+                $data['details'] = $this->session->flashdata('details');
+                $this->load->view('wadmin/template/header', $data);
+                $this->load->view('wadmin/template/menu', $data);
+                $this->load->view('wadmin/pages/Voyages/creer',$data);
+                $this->load->view('wadmin/template/footer');
+                return false;
             }
         }else{
             $data['title'] = 'Ajout d\'un séjour';
             $data['idDestination']=$idDestination;
             $data['destination']=$this->destination->constructeur($idDestination);
             $data['admin'] = $this->session->userdata('admin');
+            $data['details'] = $this->session->flashdata('details');
             $this->load->view('wadmin/template/header', $data);
             $this->load->view('wadmin/template/menu', $data);
             $this->load->view('wadmin/pages/Voyages/creer',$data);
+            $this->load->view('wadmin/template/footer');
+        }
+    }
+    
+    public function modifier($idVoyage=0){
+        
+        connecte_admin($this->session->userdata('admin'));
+        
+        $data['voyage'] = $this->voyages->constructeur($idVoyage);
+        
+        if($idVoyage==0)
+            redirect('walkadmin/dashboard');
+        
+        if($this->input->post() != false) {
+            var_dump($this->input->post());
+            $taille_details = (sizeof($this->input->post())-4)/2;
+            $details = array();
+            $i = 0;
+            $k = 0;
+            do{
+                var_dump($this->input->post("detail_nom$i"));
+                if($this->input->post("detail_nom$i") != false && $this->input->post("detail_valeur$i") != false){
+                    $this->form_validation->set_rules("detail_nom$i", "Titre détail", 'trim|required|encode_php_tags|xss_clean');
+                    $this->form_validation->set_rules("detail_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
+                
+                    $details[$i]["titre"] = $this->input->post("detail_nom$i");
+                    $details[$i]["valeur"] = $this->input->post("detail_valeur$i");
+                    $k++;
+                }
+                $i++;
+            }while($k != $taille_details);
+            var_dump($details);
+            
+            $this->form_validation->set_rules('date_debut', '"date_debut"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('date_fin', '"date_fin"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('prix', '"prix"', 'trim|required|encode_php_tags|xss_clean|numeric');
+            $this->session->set_flashdata('details',$details);
+            
+            if ($this->form_validation->run()) {
+                $details = json_encode($details);
+                
+                $voyage=array(
+                    "idInfos" => 2,
+                    "date_depart" => $this->input->post('date_debut'),
+                    "date_retour" => $this->input->post('date_fin'),
+                    "prix" => $this->input->post('prix'),
+                    "nb_places" => $this->input->post('nb_personne'),
+                    "details" => $details
+                );
+                $this->voyages->updateVoyage($idVoyage,$voyage);
+                redirect('walkadmin/voyage/'.$data['voyage'][0]->idDestination);
+            }else{
+                $data['title'] = 'Modification du séjour';
+                $data['idDestination']=$data['voyage'][0]->idDestination;
+                $data['destination']=$this->destination->constructeur($data['voyage'][0]->idDestination);
+                $data['admin'] = $this->session->userdata('admin');
+                $data['details'] = $data['voyage'][0]->details;
+                $this->load->view('wadmin/template/header', $data);
+                $this->load->view('wadmin/template/menu', $data);
+                $this->load->view('wadmin/pages/Voyages/modifier',$data);
+                $this->load->view('wadmin/template/footer');
+                return false;
+            }
+        }else{
+            $data['title'] = 'Ajout d\'un séjour';
+            $data['idDestination'] = $data['voyage'][0]->idDestination;
+            $data['destination']=$this->destination->constructeur($data['voyage'][0]->idDestination);
+            $data['admin'] = $this->session->userdata('admin');
+            $data['details'] = $data['voyage'][0]->details;
+            $this->load->view('wadmin/template/header', $data);
+            $this->load->view('wadmin/template/menu', $data);
+            $this->load->view('wadmin/pages/Voyages/modifier',$data);
             $this->load->view('wadmin/template/footer');
         }
     }
