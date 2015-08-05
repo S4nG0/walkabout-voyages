@@ -58,7 +58,10 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <p class="no-entry">Il n'y a aucune destination enregistré actuellement !</p>
+                    <p class="no-entry">Il n'y a aucune destination enregistrée actuellement !</p>
+                    <a href="<?php echo base_url() . 'walkadmin/creer-destination'; ?>" class="button black">
+                        <i class="fa fa-plus"></i>&nbsp;Ajouter ?
+                    </a>
                 </div>
             </div>
 
