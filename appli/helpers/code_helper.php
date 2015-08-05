@@ -960,3 +960,12 @@ function slugify($text,$strict = false) {
     }
     return $text;
 }
+
+function traitementChaineDataUser($chaine){
+    $tabUsers= explode(":",$chaine);
+    $nom = $tabUsers[1];//récupere une première chaine contenant le nom
+    $prenom = $tabUsers[2];//récupere une première chaine contenant le prénom
+    $tabNom = explode('"',$nom);
+    $tabPrenom = explode('"',$prenom);
+    return utf8_decode($tabNom[1]." ".$tabPrenom[1]);//retourne la chaine avec le nom suivi du prénom de la personne
+}
