@@ -419,6 +419,37 @@ body.admin {
         }
     }
 
+    .destinations__infoIcons {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        li {
+            display: block;
+            float: left;
+            width: 20%;
+            padding: 25px;
+
+            img {
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 25px;
+            }
+
+            p {
+                display: block;
+                margin: 0;
+                text-align: center;
+                text-transform: uppercase;
+                color: $noir;
+            }
+
+            input {
+                margin-top: 15px;
+            }
+        }
+    }
+
     .destinations__coordinates,
     .voyages__detailsPrix {
         label {
@@ -759,6 +790,16 @@ body.admin {
 
             .imageBlock, .infoBlock, .buttonsBlock {
                 width: 100%;
+            }
+        }
+
+        .destinations__infoIcons {
+            text-align: center;
+
+            li {
+                display: inline-block;
+                float: none;
+                width: 48%;
             }
         }
 

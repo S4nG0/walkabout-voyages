@@ -200,7 +200,6 @@ class Destinations  extends CI_Controller{
 
         //On charge la librairie
         $this->load->library('upload');
-        $data['infos_destination'] = $this->infos_destination->constructeur($data['destination'][0]->idDestination);
 
         if($this->input->post()){
             $this->form_validation->set_rules('pays', '"pays"', 'trim|required|encode_php_tags|xss_clean');

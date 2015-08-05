@@ -92,16 +92,31 @@ echo form_open_multipart('walkadmin/destinations/creer');
             <h2 class="no-sep">Pictogrammes information</h2>
             <div class="col-md-12">
                 <ul class="destinations__infoIcons">
-
-                <?php foreach($infos_destination as $info) { var_dump($info); ?>
-
-                    <li class="infoIcons__item">
-                        <img src="<?php echo img_url($info->image); ?>" alt="<?php echo $info->titre; ?>">
-                        <p><strong><?php echo $info->titre; ?></strong></p>
-                        <p><?php echo $info->valeur; ?></p>
+                    <li>
+                        <img src="<?php echo img_url('info-pics/climat.png'); ?>" alt="Climat">
+                        <p><strong>Climat</strong></p>
+                        <input type="text" name="climat" id="climat" placeholder="Entrez l'information">
                     </li>
-
-                <?php } ?>
+                    <li>
+                        <img src="<?php echo img_url('info-pics/currency.png'); ?>" alt="Monnaie">
+                        <p><strong>Monnaie</strong></p>
+                        <input type="text" name="monnaie" id="monnaie" placeholder="Entrez l'information">
+                    </li>
+                    <li>
+                        <img src="<?php echo img_url('info-pics/animals.png'); ?>" alt="Animaux">
+                        <p><strong>Animaux</strong></p>
+                        <input type="text" name="animaux" id="animaux" placeholder="Entrez l'information">
+                    </li>
+                    <li>
+                        <img src="<?php echo img_url('info-pics/pension.png'); ?>" alt="Pension">
+                        <p><strong>Pension</strong></p>
+                        <input type="text" name="pension" id="pension" placeholder="Entrez l'information">
+                    </li>
+                    <li>
+                        <img src="<?php echo img_url('info-pics/passport.png'); ?>" alt="Passeport">
+                        <p><strong>Passeport</strong></p>
+                        <input type="text" name="passeport" id="passeport" placeholder="Entrez l'information">
+                    </li>
                 </ul>
             </div>
         </div>
