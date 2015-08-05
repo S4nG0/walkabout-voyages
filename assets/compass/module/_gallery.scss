@@ -14,14 +14,16 @@
         .grid__item {
             float: left;
             width: 20%;
-            background-color: red;
             list-style-type: none;
 
             figure {
                 position: relative;
                 overflow: hidden;
-                img {
-                    width: 100%;
+                .grid__image {
+                    background-position: 50% 0;
+                    background-repeat: no-repeat;
+                    @include background-size(cover);
+                    padding-bottom: 100%;
                     @include transition(all 300ms ease-out);
                 }
                 figcaption {
