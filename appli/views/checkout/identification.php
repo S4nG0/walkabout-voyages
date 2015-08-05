@@ -72,7 +72,7 @@ $step = 'sign-in';
             <div class="col-sm-12">
                 <div class="buttons-block">
                     <!-- Previous button -->
-                    <a href="<?php echo base_url().'checkout/dates/'.$voyage;?>" class="button prev">Retour</a>
+                    <a href="<?php echo base_url().'checkout/dates/'.$destination;?>" class="button prev">Retour</a>
                 </div>
             </div>
         </div>
