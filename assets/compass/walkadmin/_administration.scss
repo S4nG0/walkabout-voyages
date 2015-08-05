@@ -272,11 +272,12 @@ body.admin {
     }
 }
 
-/*------------------------------------*\
-    #DESTINATIONS || #ACTUALITES
-\*------------------------------------*/
+/*--------------------------------------------*\
+    #DESTINATIONS || #ACTUALITES || #VOYAGES
+\*--------------------------------------------*/
 .destinations,
-.actualites {
+.actualites,
+.voyages {
 
     h2 {
         margin-bottom: 50px !important;
@@ -413,14 +414,77 @@ body.admin {
         }
     }
 
-    .destinations__coordinates {
+    .destinations__coordinates,
+    .voyages__detailsPrix {
         label {
             display: block;
         }
 
         input {
             display: inline-block;
-            width: 40%;
+            width: 35%;
+            margin-right: 25px;
+        }
+
+        .voyages__icon {
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            background-color: transparent;
+            border: 1px solid $gris-clair;
+            @include border-radius(100%);
+
+            vertical-align: bottom;
+            text-align: center;
+            @include transition($default-transition);
+
+            &.add:after,
+            &.remove:after {
+                font-family: 'FontAwesome';
+                font-size: 2em;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                line-height: 50px;
+                @include transition($default-transition);
+            }
+
+            &.add:after {
+                content: '\f067';
+            }
+
+            &.remove:after {
+                content: '\f00d';
+            }
+
+            &:hover {
+                background-color: $noir;
+
+                &:after {
+                    color: $blanc;
+                }
+            }
+        }
+
+        span {
+            line-height: 50px;
+        }
+    }
+
+    .voyages__detailsPrix {
+        margin-bottom: 25px;
+
+        &:last-child {
+            margin-bottom: 50px;
+        }
+
+        .button {
+            width: 250px;
         }
     }
 

@@ -6,7 +6,7 @@
 <div class="destinations">
     <div class="row text-center">
         <div class="col-lg-12">
-            <h1 class="page-header sep">Séjours prévus pour&nbsp;: <?php echo $destination[0]->titre; ?></h1>
+            <h1 class="page-header sep">Séjours prévus pour&nbsp;:<br /><span class="small"><?php echo $destination[0]->titre; ?></span></h1>
         </div>
     </div>
     <div class="row">
