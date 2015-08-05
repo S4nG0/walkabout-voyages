@@ -15,6 +15,7 @@ Module pays :
  ☐ Lors de la création d'un pays problème de mémoire, si on remplit pas tous les champs cf capture
 
 Module destinations :
+  ☐ Minimum de 5 images par destination (pour le design...) @critical
   ☐ Pouvoir ajouter le détail du prix pour chaque destination
   ☐ Manque un set_value dans la page de création de destination "titre"
   ☐ Manque un set_value dans la page de création de destination "ville"
