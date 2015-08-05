@@ -52,7 +52,21 @@ class Destinations  extends CI_Controller{
             return false;
         }
         $data['destination'] = $this->destination->constructeur($idDestination)[0];
-        //On charge la librairie
+        $pays = $this->pays->constructeur($data['destination']->idPays)[0];
+        
+        //Géolocalisation
+//        $geocoder = "http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false";
+//        
+//        $query = sprintf($geocoder, urlencode($data['destination']->ville.' '.$pays->nom));
+//        var_dump($query);
+//        $result = json_decode(file_get_contents($query));
+//        var_dump($result);
+//        $json = $result->results[0];
+//
+//        $latitude = (string) $json->geometry->location->lat;
+//        $longitude = (string) $json->geometry->location->lng;
+        
+        //On charge la librairie d'upload
         $this->load->library('upload');
 
         if($this->input->post() != false){
