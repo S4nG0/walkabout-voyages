@@ -2,7 +2,7 @@ Connexion:
   ☐ Bug CSS btn pas centré pour récup mot de passe @Julien
 
 Modules back office à rajouter :
-  ☐ Gestion des réservations ??? modifier les états sur le bo? Manque quand même a ajouter "en attente de réception du dossier" en etat
+  ✔ Gestion des réservations ??? modifier les états sur le bo? Manque quand même a ajouter "en attente de réception du dossier" en etat @done (15-08-05 11:23)
   ☐ Gestion des renseignements
 
 Module actualité :
@@ -27,7 +27,7 @@ Localisation :
   ☐ longitude et latitude
 
 Module commentaires :
-  ☐ suppression (pb si les commentaires sont en escalier)
+  ✔ suppression (pb si les commentaires sont en escalier) @done (15-08-05 11:23)
 
 
 
