@@ -162,23 +162,15 @@ $('.admin .submenu .button').on('click', function () {
 /**
  * Function that adds details that is included in final travel price
  */
-var addSpan = $('.add');
-var removeSpan = $('.remove');
-var container = $('.voyages__detailsContainer');
 
-container.on('click', addSpan, function() {
-    $('.toBeRemoved').fadeOut(300);
-    container.append($('<div></div>').fadeIn(300)
-        .addClass('form-group voyages__detailsPrix')
-        .append('<input type="text" name="detail_nom" id=detail_prix" />')
-        .append('<input type="text" name="detail_nom" id=detail_prix" />')
-        .append($('<span></span>').addClass('voyages__icon add').attr('title', 'Ajouter'))
-        .append($('<span></span>').addClass('voyages__icon remove').attr('title', 'Supprimer'))
-    );
-})
-
-container.on('click', removeSpan, function() {
-    removeSpan.closest($('form-group voyages__detailsPrix')).remove();
-})
-
+i = 0;
+$('#add').on('click', function(){
+    $('#container_details').append('<div class="form-group voyages__detailsPrix" id="detail'+i+'"><input type="text" placeholder="Titre du détail" name="detail_nom" id="detail_prix" /><input type="text" name="detail_valeur" id="detail_prix" placeholder="Insérer le texte du détail" /><span class="voyages__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>');
+    i++;
 });
+});
+
+
+function remove_detail(i){
+    $('#detail'+i).remove();
+}
