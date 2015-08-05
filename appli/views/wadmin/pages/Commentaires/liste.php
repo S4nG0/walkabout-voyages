@@ -36,7 +36,7 @@
                             </tr>
                         <?php } else{ ?>
                             <tr class="searchable" data-search="<?php echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?>">
-                                <td><?php if(isset($commentaire)) echo "" ?></td>
+                                <td><?php if(isset($commentaire)) $personne = traitementChaineDataUser($commentaire->data); echo $personne; ?></td>
                                 <td><a href="<?php echo base_url().'carnets-de-voyage/'.$commentaire->url ?>" target="_blank"><?php if(isset($commentaire)) echo $commentaire->titreCarnet ?></a></td>
                                 <td><?php if(isset($commentaire)) echo $commentaire->date ?></td>
                                 <td><?php if(isset($commentaire)) echo $commentaire->texte?></td>
