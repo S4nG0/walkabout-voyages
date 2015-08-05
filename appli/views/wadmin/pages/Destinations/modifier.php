@@ -1,5 +1,5 @@
 <?php
-echo form_open_multipart('walkadmin/destinations/detail/'.$idDestination);
+echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestination);
 ?>
 
 <div id="page-wrapper">
@@ -8,7 +8,7 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$idDestination);
 
     <div class="destinations">
         <div class="row text-center">
-            <h1 class="page-header sep">Détails de la destination</h1>
+            <h1 class="page-header sep">Ajout d'une destination</h1>
         </div>
 
         <?php if (isset($error)) { ?>
@@ -22,12 +22,12 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$idDestination);
             <div class="col-md-8">
                 <div class="form-group">
                     <label for="titre">Intitulé de la destination</label>
-                    <input placeholder="Titre" name="titre" type="text" value="<?php echo $destination[0]->titre ?>">
+                    <input placeholder="Titre" name="titre" type="text" value="<?php echo $destination->titre; ?>">
                     <?php echo form_error('titre'); ?>
                 </div>
                 <div class="form-group">
                     <label for="description">Texte introductif</label>
-                    <textarea name="description" rows="10" placeholder="Description"><?php echo $destination[0]->description ?></textarea>
+                    <textarea name="description" rows="10" placeholder="Description"><?php echo $destination->description; ?></textarea>
                     <?php echo form_error('description'); ?>
                 </div>
             </div>
@@ -35,10 +35,7 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$idDestination);
                 <div class="form-group">
                     <label for="banner">Image de couverture</label>
                     <div class="destinations__thumbnail">
-                        <img src="<?php if(!$destination[0]->banner){echo img_url('default.png');}else{echo img_url($destination[0]->banner);} ?>" alt="Image à la une" class="img-responsive">
-                        <div class="help-block">
-                            <span class="small">Ceci est l'image affichée par défaut.</span>
-                        </div>
+                        <img src="<?php echo (isset($destination->banner)) ? img_url($destination->banner) : img_url('default.png'); ?>" alt="Image à la une" class="img-responsive">
                     </div>
                     <input class="custom-file-input" name="banner" type="file">
                     <?php echo form_error('banner'); ?>
@@ -55,13 +52,9 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$idDestination);
                     <label for="pays">Pays de la destination</label>
                     <select name="pays">
                         <?php foreach($pays as $paysActuel){ ?>
-                            <option value="<?php echo $paysActuel->idPays?>"
-                                <?php if(isset($destination[0])){
-                                    if($destination[0]->idPays==$paysActuel->idPays)
-                                        echo 'selected';
-                                } ?>>
-                                <?php echo $paysActuel->nom?>
-                            </option>
+                        <option value="<?php echo $paysActuel->idPays?>" <?php if($paysActuel->idPays == $destination->idPays){?> selected <?php } ?>>
+                            <?php echo $paysActuel->nom?>
+                        </option>
                         <?php } ?>
                     </select>
                     <?php echo form_error('pays'); ?>
@@ -70,7 +63,7 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$idDestination);
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="ville">Ville</label>
-                    <input placeholder="Ville" name="ville" type="text" value="<?php echo $destination[0]->ville; ?>">
+                    <input placeholder="Ville" name="ville" type="text" value="<?php echo $destination->ville; ?>">
                     <?php echo form_error('ville'); ?>
                 </div>
             </div>
@@ -81,9 +74,9 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$idDestination);
                 <div class="form-group">
                     <div class="form-group destinations__coordinates">
                         <label for="longitude">Coordonnées GPS</label>
-                        <input placeholder="Longitude" name="longitude" type="text" value="<?php echo explode(',',$destination[0]->coordonnees)[0]  ?>">
+                        <input placeholder="Longitude" name="longitude" type="text" value="<?php echo (isset(explode(',',$destination->coordonnees)[0])) ? explode(',',$destination->coordonnees)[0] : 0 ?>">
                         <?php echo form_error('longitude'); ?>
-                        <input placeholder="Latitude" name="latitude" type="text" value="<?php echo explode(',',$destination[0]->coordonnees)[1]  ?>">
+                        <input placeholder="Latitude" name="latitude" type="text" value="<?php echo (isset(explode(',',$destination->coordonnees)[1])) ? explode(',',$destination->coordonnees)[1] : 0 ?>">
                         <?php echo form_error('latitude'); ?>
                     </div>
                     <div class="help-block">
@@ -97,21 +90,42 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$idDestination);
 
         <div class="row text-center">
             <h2 class="no-sep">Galerie</h2>
+        </div>
+        <div class="row" style='min-height:150px;'>
+            <?php 
+            $images = explode(';',$destination->photos);
+            $i = 0;
+            foreach($images as $image){
+                if($image != ""){ 
+            ?>
+            <div class="col-md-2 noPadding" id="image<?php echo $i; ?>" style='min-height:150px;'>
+                <div style="background : url('<?php echo img_url($image); ?>');background-size:cover;min-height:150px;">
+                    <i class='fa fa-trash' onclick="sup_photo('<?php echo $image; ?>','image<?php echo $i; ?>')" style='cursor:pointer;position:absolute;right:10px;top:10px;color:red;'></i>
+                </div>
+            </div>   
+            <?php
+                }
+            $i++;
+            }
+            ?> 
+        </div>
+        <div class="row text-center">
             <div class="col-md-12">
-                <div class="form-group destinations__gallery">
+                <div class="form-group">
                     <div class="help-block">
-                        <span class="small">Vous pouvez ajouter plusieurs photos en maintenant la touche "CTRL" de votre clavier lors de la sélection de vos images.</span>
+                        <span class="small">Vous pouvez ajouter plusieurs photos, une par une.</span>
                     </div>
                     <input class="custom-file-input" name="images[]" type="file" multiple>
+                    <input class="hidden" name="remove" type="text" />
                     <?php echo form_error('images'); ?>
                 </div>
             </div>
         </div>
 
-        <div class="row text-center">
+        <div class="row">
             <div class="col-md-12">
                 <div class="form-group mb50">
-                    <input type="submit" class="button black" value="Modifier" onClick="alert('Votre destination va être créée. Aucun séjour n'y est associé pour l'instant. Veuillez insérer des séjours depuis la page liste des destinations);"/>
+                    <input type="submit" class="button black" value="Modifier la destination"/>
                 </div>
             </div>
         </div>
@@ -123,3 +137,18 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$idDestination);
 
 <?php echo form_close(); ?>
 
+
+<script type="text/javascript">
+    test=new Array();
+    function sup_photo(name,id){
+        if(!inArray(name,test)){
+            test.push(name);
+        }
+        $('#'+id).remove();
+        $('input[name=remove]').val(JSON.stringify(test));
+    }
+    
+    function inArray(value, array) {
+        return array.indexOf(value) > -1;
+    }
+</script>
