@@ -79,7 +79,7 @@
                         <li>
                             <img src="<?php echo img_url($info->image); ?>" alt="<?php echo $info->titre; ?>">
                             <p><strong><?php echo $info->titre; ?></strong></p>
-                            <p><?php echo $info->valeur; ?></p>
+                            <input type="text" name="info" id="info" placeholder="Saississez l'information">
                         </li>
                         <?php } ?>
                     </ul>
