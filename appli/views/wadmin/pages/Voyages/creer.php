@@ -28,10 +28,9 @@ echo form_open('walkadmin/voyage/creer/'.$idDestination);
                 <label for="nb_personne">Nb place: </label>
                 <input type="number" name="nb_personne" id="nb_personne" value="1" min="1">
             </div>
-            <!-- Change this to a button or input when using this as a form -->
             <div class="row">
                 <div class="col-sm-12">
-                    <input type="submit" class="button pull-right" value="Ajouter la date du voyage">
+                    <input type="submit" class="button black" value="Ajouter la date du voyage">
                 </div>
             </div>
         </div>

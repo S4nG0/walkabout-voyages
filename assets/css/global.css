@@ -5981,7 +5981,11 @@ body.admin hr {
   border-top-color: #ccc;
 }
 body.admin .no-entry {
+  margin-bottom: 25px;
   color: #242424;
+  font-size: 24px;
+  font-style: italic;
+  text-align: center;
 }
 body.admin .alert {
   text-align: center;

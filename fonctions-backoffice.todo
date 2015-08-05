@@ -22,6 +22,10 @@ Module destinations :
   ☐ Lors de l'ajout d'un voyage, si on met autre chose qu'un nombre il est pas bloquant. Puis on a un problème de redirection
   ☐ gestion des photos
   ☐ gestion des pictogrammes
+
+    Corbeille :
+      ☐ Ne pas rediriger vers la page liste quand on restaure une destination/voyage
+
   ✔ Ajouter un nom à la destination @started(15-08-04 23:20) @Aurélien  @done (15-08-04 23:23) @lasted(0:03)
   ✔ Séparer la longitude et la latitude en deux! @started(15-08-04 23:09) @Aurélien  @done (15-08-04 23:13) @lasted(0:04)
   ✔ détails permet de voir la destination,infos_destination,infos_prix et les voyages de la destination avec suppression de voyage et modification de voyage! @Aurélien @done (15-08-05 12:29)
