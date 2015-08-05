@@ -6372,6 +6372,42 @@ body.admin .charts h3 {
   width: 100%;
   margin: 0 auto;
 }
+.destinations .destinations__infoIcons,
+.actualites .destinations__infoIcons,
+.voyages .destinations__infoIcons {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.destinations .destinations__infoIcons li,
+.actualites .destinations__infoIcons li,
+.voyages .destinations__infoIcons li {
+  display: block;
+  float: left;
+  width: 20%;
+  padding: 25px;
+}
+.destinations .destinations__infoIcons li img,
+.actualites .destinations__infoIcons li img,
+.voyages .destinations__infoIcons li img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+.destinations .destinations__infoIcons li p,
+.actualites .destinations__infoIcons li p,
+.voyages .destinations__infoIcons li p {
+  display: block;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #242424;
+}
+.destinations .destinations__infoIcons li input,
+.actualites .destinations__infoIcons li input,
+.voyages .destinations__infoIcons li input {
+  margin-top: 15px;
+}
 .destinations .destinations__coordinates label,
 .destinations .voyages__detailsPrix label,
 .actualites .destinations__coordinates label,
@@ -6723,6 +6759,16 @@ body.admin .charts h3 {
   .actualites .actualites__single .infoBlock,
   .actualites .actualites__single .buttonsBlock {
     width: 100%;
+  }
+  .destinations .destinations__infoIcons,
+  .actualites .destinations__infoIcons {
+    text-align: center;
+  }
+  .destinations .destinations__infoIcons li,
+  .actualites .destinations__infoIcons li {
+    display: inline-block;
+    float: none;
+    width: 48%;
   }
   .destinations .destinations__gallery .custom-file-input,
   .actualites .destinations__gallery .custom-file-input {
