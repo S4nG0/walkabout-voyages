@@ -1776,6 +1776,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   width: 20%;
   list-style-type: none;
 }
+.gallery .grid .grid__item .image-remover {
+  cursor: pointer;
+}
 .gallery .grid .grid__item figure {
   position: relative;
   overflow: hidden;
@@ -6199,6 +6202,12 @@ body.admin .charts h3 {
 .actualites .form-group .help-block,
 .voyages .form-group .help-block {
   margin-top: 0;
+}
+.destinations .form-group .help-block--gallery,
+.actualites .form-group .help-block--gallery,
+.voyages .form-group .help-block--gallery {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .destinations .destinations__tools,
 .destinations .actualites__tools,

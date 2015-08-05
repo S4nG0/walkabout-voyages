@@ -91,36 +91,66 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
         <div class="row text-center">
             <h2 class="no-sep">Galerie</h2>
         </div>
-        <div class="row" style='min-height:150px;'>
-            <?php 
-            $images = explode(';',$destination->photos);
-            $i = 0;
-            foreach($images as $image){
-                if($image != ""){ 
-            ?>
-            <div class="col-md-2 noPadding" id="image<?php echo $i; ?>" style='min-height:150px;'>
-                <div style="background : url('<?php echo img_url($image); ?>');background-size:cover;min-height:150px;">
-                    <i class='fa fa-trash' onclick="sup_photo('<?php echo $image; ?>','image<?php echo $i; ?>')" style='cursor:pointer;position:absolute;right:10px;top:10px;color:red;'></i>
-                </div>
-            </div>   
-            <?php
-                }
-            $i++;
-            }
-            ?> 
-        </div>
-        <div class="row text-center">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <div class="help-block">
-                        <span class="small">Vous pouvez ajouter plusieurs photos, une par une.</span>
+
+        <div class="destinations__gallery">
+            <div class="row gallery">
+                <div class="grid">
+
+                    <div class="grid__sizer"></div>
+
+                    <?php
+                    $images = explode(';',$destination->photos);
+                    $i = 0;
+                    foreach($images as $image){
+                        if($image != ""){
+                    ?>
+
+    <!--                 <div class="grid__item" id="image<?php echo $i; ?>">
+                        <div style="background : url('<?php echo img_url($image); ?>');">
+                            <i class='fa fa-trash' onclick="sup_photo('<?php echo $image; ?>','image<?php echo $i; ?>')" style='cursor:pointer;position:absolute;right:10px;top:10px;color:red;'></i>
+                        </div>
+                    </div> -->
+
+                    <div class="grid__item" id="image<?php echo $i; ?>">
+                        <figure>
+                            <div class="grid__image" style="background-image: url('<?php echo img_url($image); ?>')"></div>
+                            <figcaption>
+                                <div class="caption-content">
+                                    <a class="image-remover" onclick="sup_photo('<?php echo $image; ?>','image<?php echo $i; ?>')">
+                                        <i class="fa fa-trash"></i>
+                                        <p>Supprimer l'image</p>
+                                    </a>
+                                </div>
+                            </figcaption>
+                        </figure>
                     </div>
-                    <input class="custom-file-input" name="images[]" type="file" multiple>
-                    <input class="hidden" name="remove" type="text" />
-                    <?php echo form_error('images'); ?>
+
+                    <?php
+                        }
+                    $i++;
+                    }
+                    ?>
+
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="help-block--gallery">
+                            <span class="small">Passer la souris sur une image pour la supprimer.</span>
+                        </div>
+                        <input class="custom-file-input gallery" name="images[]" type="file" multiple>
+                        <input class="hidden" name="remove" type="text" />
+                        <div class="help-block--gallery">
+                            <span class="small">Vous pouvez sélectionner plusieurs images en maintenant la touche "CTRL" lors de votre sélection.</span>
+                        </div>
+                        <?php echo form_error('images'); ?>
+                    </div>
                 </div>
             </div>
         </div>
+
 
         <div class="row">
             <div class="col-md-12">
@@ -147,7 +177,7 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
         $('#'+id).remove();
         $('input[name=remove]').val(JSON.stringify(test));
     }
-    
+
     function inArray(value, array) {
         return array.indexOf(value) > -1;
     }
