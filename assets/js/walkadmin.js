@@ -163,9 +163,8 @@ $('.admin .submenu .button').on('click', function () {
  * Function that adds details that is included in final travel price
  */
 
-i = 0;
 $('#add').on('click', function(){
-    $('#container_details').append('<div class="form-group voyages__detailsPrix" id="detail'+i+'"><input type="text" placeholder="Titre du détail" name="detail_nom" id="detail_prix" /><input type="text" name="detail_valeur" id="detail_prix" placeholder="Insérer le texte du détail" /><span class="voyages__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>');
+    $('#container_details').append('<div class="form-group voyages__detailsPrix" id="detail'+i+'"><input type="text" placeholder="Titre du détail" name="detail_nom'+i+'" id="detail_prix" /><input type="text" name="detail_valeur'+i+'" id="detail_prix" placeholder="Insérer le texte du détail" /><span class="voyages__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>');
     i++;
 });
 });

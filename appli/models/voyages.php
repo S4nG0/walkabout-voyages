@@ -136,4 +136,12 @@ class Voyages extends CI_Model {
         $voyage=$this->db->update($this->table,array("active" => "true"));
         return $voyage;
     }
+    
+    public function updateVoyage($id = 0,$voyage){
+        if($id==0)
+            return false;
+        $this->db->where('idVoyage',$id);
+        $voyage=$this->db->update($this->table,$voyage);
+        return $voyage;
+    }
 }
