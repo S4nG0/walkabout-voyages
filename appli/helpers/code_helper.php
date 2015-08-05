@@ -861,7 +861,7 @@ function recoverPasswordUser($mdp,$user){
 
                                         <tr>
                                             <td class="twelve columns">
-                                                <h1 class="center">Oublie du mot de passe Walkadmin</h1>
+                                                <h1 class="center">Oublie du mot de passe</h1>
                                             </td>
                                         </tr>
 
