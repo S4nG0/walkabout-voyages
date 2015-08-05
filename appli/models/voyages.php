@@ -57,6 +57,24 @@ class Voyages extends CI_Model {
         $voyages = $this->db->select('*')
                            ->from($this->table)
                            ->where('idDestination', $idDestination)
+                           ->where('active','true')
+                           ->get()
+                           ->result();
+
+        return $voyages;
+    }
+
+
+    public function get_voyages_from_destination_supprimes($idDestination = 0){
+
+        if($idDestination == 0){
+            return false;
+        }
+
+        $voyages = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idDestination', $idDestination)
+                           ->where('active','false')
                            ->get()
                            ->result();
 
@@ -108,6 +126,14 @@ class Voyages extends CI_Model {
             return false;
         $this->db->where('idVoyage',$id);
         $voyage=$this->db->update($this->table,array("active" => "false"));
+        return $voyage;
+    }
+    
+    public function restaureVoyage($id = 0){
+        if($id==0)
+            return false;
+        $this->db->where('idVoyage',$id);
+        $voyage=$this->db->update($this->table,array("active" => "true"));
         return $voyage;
     }
 }

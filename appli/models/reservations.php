@@ -144,4 +144,14 @@ class Reservations extends CI_Model {
         return $count;
     }
     
+    public function getReservationsFromVoyage($id = 0){
+        if($id == 0){
+            return false;
+        }
+        
+        $reservations = $this->db->select('*')->from($this->table)->where('idVoyage',$id)->get()->result();
+        
+        return $reservations;
+    }
+    
 }
