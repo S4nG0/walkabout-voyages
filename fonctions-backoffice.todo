@@ -17,7 +17,7 @@ Module destinations :
   ☐ gestion des pictogrammes
   ✔ Ajouter un nom à la destination @started(15-08-04 23:20) @Aurélien  @done (15-08-04 23:23) @lasted(0:03)
   ✔ Séparer la longitude et la latitude en deux! @started(15-08-04 23:09) @Aurélien  @done (15-08-04 23:13) @lasted(0:04)
-  ☐ détails permet de voir la destination,infos_destination,infos_prix et les voyages de la destination avec suppression de voyage et modification de voyage!
+  ✔ détails permet de voir la destination,infos_destination,infos_prix et les voyages de la destination avec suppression de voyage et modification de voyage! @Aurélien @done (15-08-05 12:29)
   ✔ Modifier permet de créer un voyage et non modifier la destination... @started(15-08-05 10:02) @Aurélien  @done (15-08-05 10:07) @lasted(0:05)
   ✔ WTF!!!!! Supprimer supprime un voyage et pas la destination!!!!!!!!!!! @started(15-08-04 22:45) @Aurélien @done (15-08-04 22:45) @lasted(a bit)
   ✔ Control du formulaire! @started(15-08-04 23:05)  @Aurélien  @done (15-08-04 23:05) @lasted(a bit)
