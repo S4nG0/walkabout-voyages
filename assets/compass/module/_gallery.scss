@@ -16,6 +16,10 @@
             width: 20%;
             list-style-type: none;
 
+            .image-remover {
+                cursor: pointer;
+            }
+
             figure {
                 position: relative;
                 overflow: hidden;

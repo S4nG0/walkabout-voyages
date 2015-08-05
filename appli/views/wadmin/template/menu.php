@@ -71,7 +71,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-book fa-fw menu-icons"></i>&nbsp;Carnets de voyage<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-book fa-fw menu-icons"></i>&nbsp;Modération<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="<?php echo base_url() . 'walkadmin/carnets'; ?>">Carnets</a>
