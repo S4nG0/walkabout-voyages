@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 05 Août 2015 à 00:22
+-- Généré le :  Mer 05 Août 2015 à 14:41
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `wa__carnetdevoyage` (
 --
 
 INSERT INTO `wa__carnetdevoyage` (`idCarnetDeVoyage`, `date`, `publie`, `titre`, `url`, `description`, `idUsers`, `idVoyage`, `idDestination`, `image_carnet`, `favoris`) VALUES
-(1, '2015-03-05', 'true', 'Mon aventure chez les Quéchuas', 'mon-aventure-chez-les-quechuas', 'J''ai passé une merveilleuse expérience durant ce séjour!', 12, 1, 1, 'carnets/mon-aventure-chez-les-quechuas/15B3406D7A2.jpg', 'false'),
+(1, '2015-03-05', 'true', 'Mon aventure chez les Quéchuas', 'mon-aventure-chez-les-quechuas', 'J''ai passé une merveilleuse expérience durant ce séjour!', 12, 1, 1, 'carnets/mon-aventure-chez-les-quechuas/1428245992.jpg', 'false'),
 (2, '2015-03-05', 'true', 'Moi chez les péruviens', 'moi-chez-les-peruviens', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 15, 2, 1, 'carnets/moi-chez-les-peruviens/yaxhacoucherdesoleil.jpg', 'true'),
 (3, '2015-03-05', 'true', 'Mon expérience Péruvienne', 'mon-experience-peruvienne', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'cdv1.jpg', 'false'),
 (4, '2015-03-05', 'true', 'Mon aventure au Pérou', 'mon-aventure-au-perou', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'carnets/mon-aventure-au-perou/21.JPG', 'false'),
@@ -214,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `wa__contact` (
 --
 
 INSERT INTO `wa__contact` (`idContact`, `nom`, `prenom`, `telephone`, `mail`, `sujet`, `message`, `ouvert`, `date`) VALUES
-(3, 'CAPI', 'Aurélien', '0623974082', 'capi.aurelien@gmail.com', 'Destination', 'éèéèéèàààà jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz', 'false', '2015-07-23');
+(3, 'CAPI', 'Aurélien', '0623974082', 'capi.aurelien@gmail.com', 'Destination', 'éèéèéèàààà jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz jbdkzkdkza kd kzakjd za dza kjd ajdkza kjd za dkja zkd nza n,d az dnza ndaz', 'true', '2015-07-23');
 
 -- --------------------------------------------------------
 
@@ -236,16 +236,16 @@ CREATE TABLE IF NOT EXISTS `wa__destination` (
   `active` varchar(6) NOT NULL DEFAULT 'true',
   PRIMARY KEY (`idDestination`),
   KEY `idPays` (`idPays`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
 -- Contenu de la table `wa__destination`
 --
 
 INSERT INTO `wa__destination` (`idDestination`, `idPays`, `titre`, `url`, `nom`, `description`, `ville`, `coordonnees`, `photos`, `banner`, `active`) VALUES
-(1, 3, 'À la découverte des Quéchuas du Pérou', 'a-la-decouverte-des-quechuas-du-perou', 'Voyage à Lima', 'Dans les montagnes, les Quechuas élèvent traditionnellement des lamas et des alpagas pour leur laine et leur viande.\n                                Ces animaux vivent en haute altitude ce qui oblige les hommes à s’établir sur des terres arides où rien ne pousse ou presque.\n                                Pourtant, les Quechuas sont également agriculteurs. Ils réussissent l’exploit de cultiver un véritable trésor : la pomme de terre.\n                                Plus qu’un aliment, la pomme de terre est l’emblème de la culture andine, elle symbolise la fertilité. Certaines sont même sacrées.\n                                Elles sont offertes à la Pachamama, « la terre mère », pour la remercier de ses bienfaits et implorer sa protection\n                                pour la récolte à venir.\n                                <br /><br />\n                                Au quotidien, les Quechuas vénèrent la nature sous toutes ses formes. Pour eux, les montagnes sont des Dieux et\n                                ils n’hésitent pas à effectuer un long voyage et à gravir des sommets vertigineux pour recueillir la glace sacrée\n                                qui bénira leur troupeau et leur terre.\n                                <br /><br />\n                                Faites l’expérience de leur culture en vous y immergeant  !', 'Lima', '-12.04,-77.04', 'voyages/perou/01.jpg;voyages/perou/04.jpg;voyages/perou/03.jpg;voyages/perou/02.jpg;voyages/perou/05.jpg;', 'voyages/perou/dest-img.jpg', 'true'),
+(1, 3, 'À la découverte des Quéchuas du Pérou', 'a-la-decouverte-des-quechuas-du-perou', 'Voyage à Lima', 'Dans les montagnes, les Quechuas élèvent traditionnellement des lamas et des alpagas pour leur laine et leur viande.\r\n                                Ces animaux vivent en haute altitude ce qui oblige les hommes à s’établir sur des terres arides où rien ne pousse ou presque.\r\n                                Pourtant, les Quechuas sont également agriculteurs. Ils réussissent l’exploit de cultiver un véritable trésor : la pomme de terre.\r\n                                Plus qu’un aliment, la pomme de terre est l’emblème de la culture andine, elle symbolise la fertilité. Certaines sont même sacrées.\r\n                                Elles sont offertes à la Pachamama, « la terre mère », pour la remercier de ses bienfaits et implorer sa protection\r\n                                pour la récolte à venir.\r\n                                <br /><br />\r\n                                Au quotidien, les Quechuas vénèrent la nature sous toutes ses formes. Pour eux, les montagnes sont des Dieux et\r\n                                ils n’hésitent pas à effectuer un long voyage et à gravir des sommets vertigineux pour recueillir la glace sacrée\r\n                                qui bénira leur troupeau et leur terre.\r\n                                <br /><br />\r\n                                Faites l’expérience de leur culture en vous y immergeant  !', 'Lima', '-12.0553442,-77.0451853', 'destinations/a-la-decouverte-des-quechuas-du-perou/01.jpg;destinations/a-la-decouverte-des-quechuas-du-perou/02.jpg;destinations/a-la-decouverte-des-quechuas-du-perou/03.jpg;destinations/a-la-decouverte-des-quechuas-du-perou/04.jpg;destinations/a-la-decouverte-des-quechuas-du-perou/05.jpg;destinations/a-la-decouverte-des-quechuas-du-perou/01.jpg;', 'destinations/a-la-decouverte-des-quechuas-du-perou/cover/banner15_huayna-picchu-perou3.jpg', 'true'),
 (2, 3, 'Les incas, une culture oubliée', 'les-incas-une-culture-oubliee', 'Voyage chez les incas', 'La civilisation inca est une civilisation précolombienne du groupe andin. Elle prend naissance au début du XIIIe siècle dans le bassin de Cuzco dans l''actuel Pérou et se développe ensuite le long de l''océan Pacifique et de la cordillère des Andes, couvrant la partie occidentale de l''Amérique du Sud. À son apogée, elle s''étend de la Colombie jusqu''à l''Argentine et au Chili, par-delà l''Équateur, le Pérou et la Bolivie.\r\n\r\nElle est à l''origine de l''empire inca, l''un des trois grands empires de l''Amérique précolombienne. Cet empire avait pour chef suprême le Sapa Inca. L''empire inca fut conquis par les conquistadors espagnols sous les ordres de Francisco Pizarro à partir de 1532.\r\n\r\nL''une des grandes singularités de cet empire fut d''avoir intégré, dans une organisation étatique originale, la multiplicité socioculturelle des populations hétérogènes qui le composaient.', 'Cuzco', '-13.53, -71.93  ', 'voyages/incas/01.jpg;voyages/incas/02.jpg;voyages/incas/03.jpg;', 'voyages/incas/banner-list.jpg', 'false'),
-(20, 2, 'Australie, terre des kangourous', 'australie-terre-des-kangourous', 'Tour de l''Australie', 'Découvrez cette magnifique île à travers un voyage de 2 semaines, vous pourrez explorer Sydney, l''Uluru, rocher sacré des aborigènes, le lac Hillier,lac particulier aux couleurs roses. Ainsi qu''une balade en hélicoptère au dessus des îles Withsunday et surtout The Pinnacles avec son paysage unique de morceaux de calcaires qui surgissent du sol tel des stalagmites.', 'Sydney', '-28.61,136.58', 'destinations/australie-terre-des-kangourous/lac_hillier.jpg;destinations/australie-terre-des-kangourous/sydney-nuit.jpg;destinations/australie-terre-des-kangourous/the_pinnacles.jpg;destinations/australie-terre-des-kangourous/uluru.jpg;destinations/australie-terre-des-kangourous/whitsundays.jpg;', 'destinations/australie-terre-des-kangourous/cover/1440_900_200912160112583853484.jpg', 'true'),
+(20, 2, 'Australie, terre des kangourous', 'australie-terre-des-kangourous', 'Tour de l''Australie', 'Découvrez cette magnifique île à travers un voyage de 2 semaines, vous pourrez explorer Sydney, l''Uluru, rocher sacré des aborigènes, le lac Hillier,lac particulier aux couleurs roses. Ainsi qu''une balade en hélicoptère au dessus des îles Withsunday et surtout The Pinnacles avec son paysage unique de morceaux de calcaires qui surgissent du sol tel des stalagmites.', 'Sydney', '-33.7969235,150.9224326', 'destinations/australie-terre-des-kangourous/lac_hillier.jpg;destinations/australie-terre-des-kangourous/sydney-nuit.jpg;destinations/australie-terre-des-kangourous/the_pinnacles.jpg;destinations/australie-terre-des-kangourous/uluru.jpg;destinations/australie-terre-des-kangourous/whitsundays.jpg;destinations/australie-terre-des-kangourous/01.jpg;', 'destinations/australie-terre-des-kangourous/cover/1440_900_200912160112583853484.jpg', 'true'),
 (21, 5, 'Découverte des monuments de la Grèce antique', 'decouverte-des-monuments-de-la-grece-antique', 'Retour dans l''histoire', 'Voyagez dans le temps avec ce voyage de 3 semaine en Grèce et découvrez ce pays et son histoire extraordinaire.', 'Athènes', '38.27,23.81', 'destinations/decouverte-des-monuments-de-la-grece-antique/01_athenes.jpg;destinations/decouverte-des-monuments-de-la-grece-antique/5360e3ac576a6o.jpg;destinations/decouverte-des-monuments-de-la-grece-antique/athens_02.png;destinations/decouverte-des-monuments-de-la-grece-antique/grece-ile-santorini.jpg;', 'destinations/decouverte-des-monuments-de-la-grece-antique/cover/banner.jpg', 'true');
 
 -- --------------------------------------------------------
@@ -288,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `wa__etatreservation` (
   `etat` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`idEtatReservation`),
   KEY `idReservation` (`idReservation`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Contenu de la table `wa__etatreservation`
@@ -300,8 +300,10 @@ INSERT INTO `wa__etatreservation` (`idEtatReservation`, `idReservation`, `etat`)
 (11, 23, 'Terminée'),
 (12, 24, 'En cours'),
 (13, 25, 'En cours'),
-(14, 26, 'En cours'),
-(15, 27, 'En cours');
+(14, 26, 'Terminée'),
+(15, 27, 'En cours'),
+(16, 28, 'En cours'),
+(17, 29, 'En cours');
 
 -- --------------------------------------------------------
 
@@ -450,7 +452,6 @@ CREATE TABLE IF NOT EXISTS `wa__pays` (
 INSERT INTO `wa__pays` (`idPays`, `nom`, `code_pays`, `capitale`, `monnaie`, `Dirigeant`, `langues`, `population`, `superficie`, `densité`, `climat`) VALUES
 (2, 'Australie', 'AU', 'Canberra', 'Dollar australien', 'Élisabeth II', 'Anglais', '23 500 000 Habitants', '7 686 850 Km²', '3 Hab./km²', 'varié'),
 (3, 'Pérou', 'PE', 'Lima', 'Nuevo sol', 'Ollanta Humala', 'Espagnol, Quechua et Aymara', '29 907 003 Habitants', '1 285 315 Km²', '22 Hab./km²', 'varié'),
-(4, 'Canada', 'CA', 'Lima', 'Nuevo sol', 'Ollanta Humala', 'Espagnol, Quechua et Aymara', '29 907 003 Habitants', '1 285 315 Km²', '22 Hab./km²', 'varié'),
 (5, 'Grèce', 'GR', 'Athènes', 'euro', 'Prokópis Pavlópoulos', 'Grec', '10 815 197 hab.', '131 957 km2', '85,3 hab./km2', 'méditerranéen');
 
 -- --------------------------------------------------------
@@ -484,7 +485,7 @@ CREATE TABLE IF NOT EXISTS `wa__reservation` (
   PRIMARY KEY (`idReservation`),
   KEY `idVoyage` (`idVoyage`),
   KEY `idUsers` (`idUsers`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
 --
 -- Contenu de la table `wa__reservation`
@@ -497,7 +498,9 @@ INSERT INTO `wa__reservation` (`idReservation`, `idVoyage`, `idUsers`, `nb_perso
 (24, 1, 12, 1, '2015-07-30'),
 (25, 1, 12, 1, '2015-08-04'),
 (26, 3, 12, 1, '2015-08-04'),
-(27, 7, 12, 10, '2015-08-04');
+(27, 7, 12, 10, '2015-08-04'),
+(28, 6, 12, 1, '2015-08-05'),
+(29, 8, 12, 3, '2015-08-05');
 
 -- --------------------------------------------------------
 
@@ -520,10 +523,7 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('9237cb3b69667375383f373649608509', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36', 1438721181, ''),
-('98a6acac56320fd55b53af51332efb3e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438726860, 'a:3:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}s:11:"destination";s:1:"2";}'),
-('c7a68c955d263761566ad1ccf2f5b5ae', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36', 1438721181, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}'),
-('8f3affc82ab1073912fd4f91693b2a07', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438719375, 'a:1:{s:9:"user_data";s:0:"";}');
+('e8920d8452e554a2f9b643a8a5deed13', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438777904, 'a:3:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:30:"users/12/Voyage_etranger11.jpg";s:5:"cover";s:31:"users/12/cover/dest-img2112.jpg";}}}');
 
 -- --------------------------------------------------------
 
@@ -562,11 +562,11 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
 INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `slug`, `adresse1`, `adresse2`, `CP`, `ville`, `pays`, `tel_fixe`, `tel_port`, `date_naissance`, `num_activation`, `active`, `photo`, `cover`) VALUES
 (1, 1, 'aurelien.capi@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '1-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'Italie', '0321640744', '0623974082', '1992-10-28', '7851659894615189', 'false', 'profile2.png', ''),
 (2, 1, 'celine@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'Vano', 'Céline', '2-vano-celine', '654 rue du plouy', '', '62232', 'HINGES', 'Italie', '0321643775', '0623974082', '1992-10-28', '549846519181915', 'false', 'profile.png', ''),
-(12, 1, 'capi.aurelien@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '12-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '', '', '1992-10-28', '3oKvnpMuhP4lNF2Zka', 'true', 'users/12/Voyage_etranger11.jpg', 'users/12/cover/dest-img2111.jpg'),
-(13, 1, 'julien.vdm@gmail.com', 'f938f74c4081a8994371697781acc42e163d893149dc255cec3bf1c4ce3ab7ab', 'Vandermeersch', 'Julien', '13-vandermeersch-julien', '87 rue des Orions', '87 rue des Orions', '59200', 'Tourcoing', 'France', '0301020304', '', '1990-03-10', 'eROhZ3kZpa5YhPCY7X', 'false', 'unsigned_user.jpg', ''),
+(12, 1, 'capi.aurelien@gmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '12-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '', '', '1992-10-28', '3oKvnpMuhP4lNF2Zka', 'true', 'users/12/Voyage_etranger11.jpg', 'users/12/cover/dest-img2112.jpg'),
+(13, 1, 'julien.vdm@gmail.com', 'f938f74c4081a8994371697781acc42e163d893149dc255cec3bf1c4ce3ab7ab', 'Vandermeersch', 'Julien', '13-vandermeersch-julien', '87 rue des Orions', '', '59200', 'Tourcoing', 'France', '0301020304', '', '1990-03-10', 'eROhZ3kZpa5YhPCY7X', 'false', 'unsigned_user.jpg', ''),
 (14, 1, 'capi.aurelien@yopmail.fr', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'aurélien', '14-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'Belgique', '', '', '1992-10-28', '0xV9E6dv9XR1lcUfCO', 'false', 'unsigned_user.jpg', ''),
 (15, 1, 'aurelien.capi@yopmail.com', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'capi', 'Aurélien', '15-capi-aurelien', '654 rue du plouy', '', '62232', 'Hinges', 'FRANCE', '', '', '1992-10-28', 'THag5VT6fiojoZiemo', 'false', 'unsigned_user.jpg', ''),
-(25, 1, 'alawakbar@yopmail.fr', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '25-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'FRANCE', '', '', '0000-00-00', 'TYVsNKTQFaDY8EFEZm', 'false', 'unsigned_user.jpg', '');
+(25, 1, 'alawakbar@yopmail.fr', '11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c', 'CAPI', 'Aurélien', '25-capi-aurelien', '654 rue du plouy', '', '62232', 'HINGES', 'Algérie', '', '', '0000-00-00', 'TYVsNKTQFaDY8EFEZm', 'false', 'unsigned_user.jpg', '');
 
 -- --------------------------------------------------------
 
