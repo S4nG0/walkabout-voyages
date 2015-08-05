@@ -1,7 +1,7 @@
 <?php
 
 class Voyage extends CI_Controller{
-    
+
     public function index($idDestination){
         connecte_admin($this->session->userdata('admin'));
         if($idDestination == 0){
@@ -9,21 +9,21 @@ class Voyage extends CI_Controller{
         }
         $data['destination'] = $this->destination->constructeur($idDestination);
         $data['voyages'] = $this->voyages->get_voyages_from_destination($idDestination);
-        foreach($data['voyages'] as $voyage){ 
+        foreach($data['voyages'] as $voyage){
             $voyage->nb_places_restantes = $voyage->nb_places;
             $reservations = $this->reservations->getReservationsFromVoyage($voyage->idVoyage);
             foreach($reservations as $reservation){
                 $voyage->nb_places_restantes -= $reservation->nb_personnes;
             }
         }
-        $data['title'] = 'Voyages';       
+        $data['title'] = 'Voyages';
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Voyages/liste',$data);
         $this->load->view('wadmin/template/footer');
     }
-    
+
     public function supprimer($idVoyage = 0,$idDestination){
         connecte_admin($this->session->userdata('admin'));
         if($idVoyage == 0){
@@ -32,7 +32,7 @@ class Voyage extends CI_Controller{
         $this->voyages->deleteVoyage($idVoyage);
         redirect('walkadmin/voyage/'.$idDestination);
     }
-    
+
     public function restaurer($idVoyage = 0,$idDestination){
         connecte_admin($this->session->userdata('admin'));
         if($idVoyage == 0){
@@ -41,7 +41,7 @@ class Voyage extends CI_Controller{
         $this->voyages->restaureVoyage($idVoyage);
         redirect('walkadmin/voyage/'.$idDestination);
     }
-    
+
     public function supprimes($idDestination){
         connecte_admin($this->session->userdata('admin'));
         if($idDestination == 0){
@@ -49,7 +49,7 @@ class Voyage extends CI_Controller{
         }
         $data['destination'] = $this->destination->constructeur($idDestination);
         $data['voyages'] = $this->voyages->get_voyages_from_destination_supprimes($idDestination);
-        $data['title'] = 'Voyages supprimés';       
+        $data['title'] = 'Voyages supprimés';
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
@@ -78,10 +78,12 @@ class Voyage extends CI_Controller{
                 redirect('walkadmin/destinations/liste');
             }
         }else{
-            $data['title'] = 'Voyages';
+            $data['title'] = 'Ajout d\'un séjour';
             $data['idDestination']=$idDestination;
             $data['destination']=$this->destination->constructeur($idDestination);
+            $data['admin'] = $this->session->userdata('admin');
             $this->load->view('wadmin/template/header', $data);
+            $this->load->view('wadmin/template/menu', $data);
             $this->load->view('wadmin/pages/Voyages/creer',$data);
             $this->load->view('wadmin/template/footer');
         }

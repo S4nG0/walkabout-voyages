@@ -541,31 +541,6 @@ $(document).ready(function () {
         $('input[name=content]').val(content);
     });
 
-
-
-
-//    $('.submit--article').on('click',function(e){
-//        e.preventDefault();
-//        $('.titre--article').css({'border' :'none'});
-//        $('.content--article').css({'border' :'none'});
-//        var titre = $('.titre--article').text();
-//        if(titre.trim() == ""){
-//            $('.titre--article').css({'border' :'solid 1px red'});
-//            alert('Le titre de l\'article ne peut pas être vide!');
-//            return false;
-//        }
-//        var content = editor.serialize()["element-0"].value;
-//        if(content.trim() == ""){
-//            $('.content--article').css({'border' :'solid 1px red'});
-//            alert('Le contenu de l\'article ne peut pas être vide!');
-//            return false;
-//        }
-//        //On ajoute le titre et le content dans les input correpondant
-//        $('input[name=titre]').val(titre);
-//        $('input[name=content]').val(content);
-//        $('form').submit();
-//    });
-
     //Permet de demander avant de quitter la page carnet et article si modification effectuée !
     hasChanged = false;
     form_submit = false;

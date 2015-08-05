@@ -103,7 +103,9 @@ $('select[name=code_pays]').on('change', function(){
     $('input[name=nom]')[0].value = texte;
 });
 
-
+/**
+ * Content fade in/out
+ */
 $('#reservations-all-content').show();
 $('#reservations-current-content').hide();
 $('#reservations-finished-content').hide();
@@ -156,5 +158,27 @@ $('.admin .submenu .button').on('click', function () {
             break;
     }
 });
+
+/**
+ * Function that adds details that is included in final travel price
+ */
+var addSpan = $('.add');
+var removeSpan = $('.remove');
+var container = $('.voyages__detailsContainer');
+
+container.on('click', addSpan, function() {
+    $('.toBeRemoved').fadeOut(300);
+    container.append($('<div></div>').fadeIn(300)
+        .addClass('form-group voyages__detailsPrix')
+        .append('<input type="text" name="detail_nom" id=detail_prix" />')
+        .append('<input type="text" name="detail_nom" id=detail_prix" />')
+        .append($('<span></span>').addClass('voyages__icon add'))
+        .append($('<span></span>').addClass('voyages__icon remove'))
+    );
+})
+
+container.on('click', removeSpan, function() {
+    removeSpan.closest($('form-group voyages__detailsPrix')).remove();
+})
 
 });

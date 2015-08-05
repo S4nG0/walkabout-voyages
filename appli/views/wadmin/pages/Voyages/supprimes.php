@@ -27,7 +27,7 @@
                 <div class="col-md-12">
                     <div class="well">
                         <div class="single__block infoBlock">
-                            <p>Voyage du <?php echo conv_date($voyage->date_depart); ?> au <?php echo conv_date($voyage->date_retour); ?></p>
+                            <h2 class="sep">Voyage du <?php echo conv_date($voyage->date_depart); ?> au <?php echo conv_date($voyage->date_retour); ?></h2>
                             <p> Prix : <?php echo $voyage->prix.' €'; ?> | <?php echo $voyage->nb_places; ?> place<?php if($voyage->nb_places > 0){echo's';}; ?> prévues</p>
                         </div>
                         <div class="single__block buttonsBlock">
