@@ -227,7 +227,8 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                             <option value="ZM">Zambie</option>
                             <option value="ZW">Zimbabwe</option>
                         </select>
-                        <input placeholder="Saississez l'information..." name="nom" value="" class="hidden" >
+                        <input placeholder="Saississez l'information..." name="nom" value="<?php echo set_value('nom'); ?>" class="hidden" >
+                        <?php echo form_error('nom'); ?>
                     </div>
                 </div>
             </div>
@@ -235,37 +236,45 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                 <div class="col-md-4 col-md-offset-2">
                     <div class="form-group">
                         <label for="capitale">Capitale</label>
-                        <input placeholder="Saississez l'information..." name="capitale" type="text" value="">
+                        <input placeholder="Saississez l'information..." name="capitale" type="text" value="<?php echo set_value('capitale'); ?>">
+                        <?php echo form_error('capitale'); ?>
                     </div>
                     <div class="form-group">
                         <label for="monnaie">Monnaie</label>
-                        <input name="monnaie" placeholder="Saississez l'information..." value="">
+                        <input name="monnaie" placeholder="Saississez l'information..." value="<?php echo set_value('monnaie'); ?>">
+                        <?php echo form_error('monnaie'); ?>
                     </div>
                     <div class="form-group">
                         <label for="dirigeant">Dirigeant(e)</label>
-                        <input placeholder="Saississez l'information..." name="dirigeant" type="text" value="">
+                        <input placeholder="Saississez l'information..." name="dirigeant" type="text" value="<?php echo set_value('dirigeant'); ?>">
+                        <?php echo form_error('dirigeant'); ?>
                     </div>
                     <div class="form-group">
                         <label for="langues">Langues</label>
-                        <input placeholder="Saississez l'information..." name="langues" type="text" value="">
+                        <input placeholder="Saississez l'information..." name="langues" type="text" value="<?php echo set_value('langues'); ?>">
+                        <?php echo form_error('langues'); ?>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="population">Population</label>
-                        <input placeholder="Saississez l'information..." name="population" type="text" value="">
+                        <input placeholder="Saississez l'information..." name="population" type="text" value="<?php echo set_value('population'); ?>">
+                        <?php echo form_error('population'); ?>
                     </div>
                     <div class="form-group">
                         <label for="superficie">Superficie</label>
-                        <input placeholder="Saississez l'information..." name="superficie" type="text" value="">
+                        <input placeholder="Saississez l'information..." name="superficie" type="text" value="<?php echo set_value('superficie'); ?>">
+                        <?php echo form_error('superficie'); ?>
                     </div>
                     <div class="form-group">
                         <label for="densité">Densité</label>
-                        <input placeholder="Saississez l'information..." name="densite" type="text" value="">
+                        <input placeholder="Saississez l'information..." name="densite" type="text" value="<?php echo set_value('densite'); ?>">
+                        <?php echo form_error('densite'); ?>
                     </div>
                     <div class="form-group">
                         <label for="climat">Climat</label>
-                        <input placeholder="Saississez l'information..." name="climat" type="text" value="">
+                        <input placeholder="Saississez l'information..." name="climat" type="text" value="<?php echo set_value('climat'); ?>">
+                        <?php echo form_error('climat'); ?>
                     </div>
                 </div>
                 <div class="row">
