@@ -11,8 +11,14 @@ Module actualité :
 Module carnets de voyages :
   ☐ sélectionner un carnet phare (page carnet de voyage) (une étoile à cocher)
 
+Module pays :
+ ☐ Lors de la création d'un pays problème de mémoire, si on remplit pas tous les champs cf capture
+
 Module destinations :
   ☐ Pouvoir ajouter le détail du prix pour chaque destination
+  ☐ Manque un set_value dans la page de création de destination "titre"
+  ☐ Manque un set_value dans la page de création de destination "ville"
+  ☐ Lors de l'ajout d'un voyage, si on met autre chose qu'un nombre il est pas bloquant. Puis on a un problème de redirection
   ☐ gestion des photos
   ☐ gestion des pictogrammes
   ✔ Ajouter un nom à la destination @started(15-08-04 23:20) @Aurélien  @done (15-08-04 23:23) @lasted(0:03)
