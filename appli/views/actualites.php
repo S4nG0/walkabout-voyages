@@ -31,7 +31,7 @@ include 'template/menu.php';
                             <div class="col-md-8">
                                 <h3>'.$actu->titre.'</h3>
                                 <p><span class="published">par '.$actu->admin[0]->prenom.' '.$actu->admin[0]->nom.', le '.$actu->date.'
-                                '.$actu->texte;
+                                </span></p><p>'.$actu->texte.'<p>';
                         if($actu->btn_name != "") {
                             echo "<a href='$actu->btn_url' class='button pull-left'>$actu->btn_name</a>";
                         }       
@@ -51,7 +51,7 @@ include 'template/menu.php';
                             <div class="col-md-8">
                                 <h3>'.$actu->titre.'</h3>
                                 <p><span class="published">par '.$actu->admin[0]->prenom.' '.$actu->admin[0]->nom.', le '.$actu->date.'
-                                '.$actu->texte;
+                                </span></p><p>'.$actu->texte.'<p>';
                         if($actu->btn_name != "") {
                             echo "<a href='$actu->btn_url' class='button pull-left'>$actu->btn_name</a>";
                         }       
