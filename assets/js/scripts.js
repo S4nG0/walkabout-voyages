@@ -132,9 +132,11 @@ $(document).ready(function () {
     /***
      * Stellar initializer
      */
-    $.stellar({
-        horizontalScrolling: false
-    });
+    // if(window.matchMedia("min-width: 1024px").matches) {
+        $.stellar({
+            horizontalScrolling: false
+        });
+    // }
 
     /***
      * Magic Height initializer

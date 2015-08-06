@@ -41,7 +41,7 @@ Module commentaires :
   ✔ suppression (pb si les commentaires sont en escalier) @done (15-08-05 11:23)
 
 Contact :
-  ☐ Le collapse s'effectue uniquement sur le premier, même si on clique sur ceux d'en dessous.
+  ✔ Le collapse s'effectue uniquement sur le premier, même si on clique sur ceux d'en dessous. @done (15-08-06 11:52)
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
