@@ -71,3 +71,7 @@ echo form_open('walkadmin/voyage/creer/' . $idDestination);
 </div>
 
 <?php echo form_close(); ?>
+
+<script>
+i = <?php echo $i; ?>
+</script>
