@@ -75,38 +75,91 @@
                 <div class="col-md-12 destination__informations" id="infos">
                     <h2 class="sep">Informations générales</h2>
                     <ul class="info-icons">
-                        <?php foreach($infos_destination as $info){ ?>
                         <li>
-                            <img src="<?php echo img_url($info->image); ?>" alt="<?php echo $info->titre; ?>">
-                            <p><strong><?php echo $info->titre; ?></strong></p>
-                            <input type="text" name="info" id="info" placeholder="Saississez l'information">
+                            <img src="<?php echo img_url('info-pics/climat_white.png'); ?>" alt="Climat">
+                            <p><strong>Climat</strong></p>
+                            <p><?php if (isset($infos->climat)) {
+                                echo $infos->climat;
+                            } ?></p>
                         </li>
-                        <?php } ?>
+                        <li>
+                            <img src="<?php echo img_url('info-pics/currency_white.png'); ?>" alt="Monnaie">
+                            <p><strong>Monnaie</strong></p>
+                            <p><?php if (isset($infos->monnaie)) {
+                                echo $infos->monnaie;
+                            } ?></p>
+                        </li>
+                        <li>
+                            <img src="<?php echo img_url('info-pics/animals_white.png'); ?>" alt="Animaux">
+                            <p><strong>Animaux</strong></p>
+                            <p><?php if (isset($infos->animaux)) {
+                                echo $infos->animaux;
+                            } ?></p>
+                        </li>
+                        <li>
+                            <img src="<?php echo img_url('info-pics/pension_white.png'); ?>" alt="Pension">
+                            <p><strong>Pension</strong></p>
+                            <p><?php if (isset($infos->pension)) {
+                                echo $infos->pension;
+                            } ?></p>
+                        </li>
+                        <li>
+                            <img src="<?php echo img_url('info-pics/passport_white.png'); ?>" alt="Passeport">
+                            <p><strong>Passeport</strong></p>
+                            <p><?php if (isset($infos->passeport)) {
+                                echo $infos->passeport;
+                            } ?></p>
+                        </li>
                     </ul>
                     <div class="info-details">
-                        <?php
-                        $x = 0;
-                        foreach($infos_complementaires as $info){
-                            if($x%2 == 0){
-                                $y = 1;
-                                echo '<div class="row">';
-                            }
-                        ?>
+                        <div class="row">
                             <div class="col-md-6">
-                                <h3><?php echo $info->titre; ?></h3>
+                                <h3>Accompagnement</h3>
                                 <p>
-                                    <?php echo $info->value; ?>
+<?php if (isset($infos->accompagnement)) {
+    echo $infos->accompagnement;
+} ?>
                                 </p>
                             </div>
-                        <?php
-
-                        if($y == 2){
-                            echo '</div>';
-                        }
-                        $x++;
-                        $y++;
-                        }
-                        ?>
+                            <div class="col-md-6">
+                                <h3>Déplacements</h3>
+                                <p>
+<?php if (isset($infos->deplacement)) {
+    echo $infos->deplacement;
+} ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Hébergement</h3>
+                                <p>
+<?php if (isset($infos->hebergement)) {
+    echo $infos->hebergement;
+} ?>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Repas & boissons</h3>
+                                <p>
+<?php if (isset($infos->repas_boissons)) {
+    echo $infos->repas_boissons;
+} ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Déroulement du séjour</h3>
+                                <ul class="info-list">
+                                    <li>
+                                        <?php if (isset($infos->deroulement)) {
+                                            echo $infos->deroulement;
+                                        } ?>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -133,21 +186,19 @@
                     <div class="info-details">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3><?php echo (sizeof($voyages)>1) ? 'Dates prévues :' : 'Date prévue :'; ?></h3>
+                                <h3><?php echo (sizeof($voyages) > 1) ? 'Dates prévues :' : 'Date prévue :'; ?></h3>
                                 <ul class="prices-list">
-                                    <?php
+<?php
+foreach ($voyages as $voyage) {
+    ?>
+                                        <li>
+                                            du <?php echo $voyage->date_depart; ?>  au <?php echo $voyage->date_retour; ?>
+                                            <span class="small">(places restantes: <?php echo $voyage->nb_reserves; ?>)</span>
+                                        </li>
 
-                                        foreach($voyages as $voyage){
-
-                                    ?>
-                                    <li>
-                                        du <?php echo $voyage->date_depart; ?>  au <?php echo $voyage->date_retour; ?>
-                                        <span class="small">(places restantes: <?php echo $voyage->nb_reserves; ?>)</span>
-                                    </li>
-
-                                    <?php
-                                        }
-                                    ?>
+    <?php
+}
+?>
                                 </ul>
                             </div>
                         </div>
@@ -155,11 +206,13 @@
                             <div class="col-md-12">
                                 <h3>Ce prix comprend :</h3>
                                 <ul class="prices-list plus">
-                                    <?php foreach($details_prix as $detail){
-                                        if($detail->plusoumoins == "plus"){
-                                    ?>
-                                        <li><?php echo $detail->valeur; ?></li>
-                                    <?php }} ?>
+                                    <?php
+                                    foreach ($details_prix as $detail) {
+                                        if ($detail->plusoumoins == "plus") {
+                                            ?>
+                                            <li><?php echo $detail->valeur; ?></li>
+    <?php }
+} ?>
                                 </ul>
                             </div>
                         </div>
@@ -167,11 +220,13 @@
                             <div class="col-md-12">
                                 <h3>Ce prix ne comprend pas :</h3>
                                 <ul class="prices-list minus">
-                                    <?php foreach($details_prix as $detail){
-                                        if($detail->plusoumoins == "moins"){
-                                    ?>
-                                        <li><?php echo $detail->valeur; ?></li>
-                                    <?php }} ?>
+<?php
+foreach ($details_prix as $detail) {
+    if ($detail->plusoumoins == "moins") {
+        ?>
+                                            <li><?php echo $detail->valeur; ?></li>
+    <?php }
+} ?>
                                 </ul>
                             </div>
                         </div>
@@ -251,24 +306,28 @@
 
                 <div class="grid__sizer"></div>
 
-                <?php $photos = array(); $photos = explode(";", $destination[0]->photos);
-                foreach ($photos as $key => $photo) { if ($photo != "") { ?>
+<?php $photos = array();
+$photos = explode(";", $destination[0]->photos);
+foreach ($photos as $key => $photo) {
+    if ($photo != "") {
+        ?>
 
-                <div class="grid__item">
-                    <figure>
-                        <div class="grid__image" style="background-image: url('<?php echo img_url($photo); ?>')"></div>
-                        <figcaption>
-                            <div class="caption-content">
-                                <a class="fancybox" rel="group" href="<?php echo img_url($photo); ?>">
-                                    <i class="fa fa-search"></i>
-                                    <p>Agrandir l'image</p>
-                                </a>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
+                        <div class="grid__item">
+                            <figure>
+                                <div class="grid__image" style="background-image: url('<?php echo img_url($photo); ?>')"></div>
+                                <figcaption>
+                                    <div class="caption-content">
+                                        <a class="fancybox" rel="group" href="<?php echo img_url($photo); ?>">
+                                            <i class="fa fa-search"></i>
+                                            <p>Agrandir l'image</p>
+                                        </a>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </div>
 
-                <?php } } ?>
+                        <?php }
+                    } ?>
             </div>
         </div>
 

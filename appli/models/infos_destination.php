@@ -21,10 +21,20 @@ class Infos_destination extends CI_Model {
         
         return $infos;
     }
-  
     
     
+    public function insert($data){
+        if($data=='')
+            return false;
+        $infos=$this->db->insert($this->table,$data);
+        return $infos;
+    }
     
-    
-    
+    public function update($id = 0,$data=''){
+        if($data==''||$id==0)
+            return false;
+        $this->db->where('idInfosDestinations',$id);
+        $infos = $this->db->update($this->table,$data);
+        return $infos;
+    }
 }

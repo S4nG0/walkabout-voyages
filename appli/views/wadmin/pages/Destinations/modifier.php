@@ -89,6 +89,86 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
         <hr>
 
         <div class="row text-center">
+            <h2 class="no-sep">Pictogrammes information</h2>
+            <div class="col-md-12">
+                <ul class="destinations__infoIcons">
+                    <li>
+                        <img src="<?php echo img_url('info-pics/climat.png'); ?>" alt="Climat">
+                        <p><strong>Climat</strong></p>
+                        <input type="text" name="climat" id="climat" value="<?php if(isset($infos->climat)){echo $infos->climat;} ?>" placeholder="Entrez l'information">
+                        <?php echo form_error('climat'); ?>
+                    </li>
+                    <li>
+                        <img src="<?php echo img_url('info-pics/currency.png'); ?>" alt="Monnaie">
+                        <p><strong>Monnaie</strong></p>
+                        <input type="text" name="monnaie" id="monnaie" value="<?php if(isset($infos->monnaie)){echo $infos->monnaie;} ?>" placeholder="Entrez l'information">
+                        <?php echo form_error('monnaie'); ?>
+                    </li>
+                    <li>
+                        <img src="<?php echo img_url('info-pics/animals.png'); ?>" alt="Animaux">
+                        <p><strong>Animaux</strong></p>
+                        <input type="text" name="animaux" id="animaux" value="<?php if(isset($infos->animaux)){echo $infos->animaux;} ?>" placeholder="Entrez l'information">
+                        <?php echo form_error('animaux'); ?>
+                    </li>
+                    <li>
+                        <img src="<?php echo img_url('info-pics/pension.png'); ?>" alt="Pension">
+                        <p><strong>Pension</strong></p>
+                        <input type="text" name="pension" id="pension" value="<?php if(isset($infos->pension)){echo $infos->pension;} ?>" placeholder="Entrez l'information">
+                        <?php echo form_error('pension'); ?>
+                    </li>
+                    <li>
+                        <img src="<?php echo img_url('info-pics/passport.png'); ?>" alt="Passeport">
+                        <p><strong>Passeport</strong></p>
+                        <input type="text" name="passeport" id="passeport" value="<?php if(isset($infos->passeport)){echo $infos->passeport;} ?>" placeholder="Entrez l'information">
+                        <?php echo form_error('passeport'); ?>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row text-center">
+            <h2 class="no-sep">Informations sur le déroulement</h2>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Accompagnement</label>
+                    <textarea name="accompagnement" id="accompagnement" rows="10" placeholder="Saississez vos informations"><?php if(isset($infos->accompagnement)){echo $infos->accompagnement;} ?></textarea>
+                    <?php echo form_error('accompagnement'); ?>
+                </div>
+                <div class="form-group">
+                    <label for="">Hébergement</label>
+                    <textarea name="hebergement" id="hebergement" rows="10" placeholder="Saississez vos informations"><?php if(isset($infos->hebergement)){echo $infos->hebergement;} ?></textarea>
+                    <?php echo form_error('hebergement'); ?>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Déplacements</label>
+                    <textarea name="deplacement" id="deplacement" rows="10" placeholder="Saississez vos informations"><?php if(isset($infos->deplacement)){echo $infos->deplacement;} ?></textarea>
+                    <?php echo form_error('deplacement'); ?>
+                </div>
+                <div class="form-group">
+                    <label for="">Repas &amp; boissons</label>
+                    <textarea name="nourriture" id="nourriture" rows="10" placeholder="Saississez vos informations"><?php if(isset($infos->repas_boissons)){echo $infos->repas_boissons;} ?></textarea>
+                    <?php echo form_error('nourriture'); ?>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <h2 class="no-sep">Informations sur le déroulement</h2>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="form-group">
+                    <label for="deroulement">Déroulement</label>
+                    <textarea name="deroulement" id="deroulement" rows="10" placeholder="Saississez vos informations"><?php if(isset($infos->deroulement)){echo $infos->deroulement;} ?></textarea>
+                    <?php echo form_error('deroulement'); ?>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row text-center">
             <h2 class="no-sep">Galerie</h2>
         </div>
 
@@ -104,19 +184,12 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
                     foreach($images as $image){
                         if($image != ""){
                     ?>
-
-    <!--                 <div class="grid__item" id="image<?php echo $i; ?>">
-                        <div style="background : url('<?php echo img_url($image); ?>');">
-                            <i class='fa fa-trash' onclick="sup_photo('<?php echo $image; ?>','image<?php echo $i; ?>')" style='cursor:pointer;position:absolute;right:10px;top:10px;color:red;'></i>
-                        </div>
-                    </div> -->
-
                     <div class="grid__item" id="image<?php echo $i; ?>">
                         <figure>
                             <div class="grid__image" style="background-image: url('<?php echo img_url($image); ?>')"></div>
                             <figcaption>
                                 <div class="caption-content">
-                                    <a class="image-remover" onclick="sup_photo('<?php echo $image; ?>','image<?php echo $i; ?>')">
+                                    <a class="image-remover" style="cursor:pointer;" onclick="sup_photo('<?php echo $image; ?>','image<?php echo $i; ?>')">
                                         <i class="fa fa-trash"></i>
                                         <p>Supprimer l'image</p>
                                     </a>

@@ -52,6 +52,9 @@ class Destinations  extends CI_Controller{
             return false;
         }
         $data['destination'] = $this->destination->constructeur($idDestination)[0];
+        if($this->infos_destination->constructeur($idDestination)){
+            $data['infos'] = $this->infos_destination->constructeur($idDestination)[0];
+        }
         $pays = $this->pays->constructeur($data['destination']->idPays)[0];
 
         //Géolocalisation
@@ -77,6 +80,11 @@ class Destinations  extends CI_Controller{
             $this->form_validation->set_rules('ville', '"ville"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('longitude', '"Longitude"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('latitude', '"Latitude"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('climat', '"Climat"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('pension', '"Pension"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('animaux', '"Animaux"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('monnaie', '"Monnaie"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('passeport', '"passeport"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $destination=array(
                     "idPays" => $this->input->post('pays'),
@@ -86,10 +94,30 @@ class Destinations  extends CI_Controller{
                     "ville" => $this->input->post('ville'),
                     "coordonnees" => $this->input->post('longitude').','.$this->input->post('latitude')
                 );
-
+                
+                $id_infos = $this->infos_destination->constructeur($idDestination)[0]->idInfosDestinations;
+                
+                $infos = new stdClass();
+                $infos->idDestination = $idDestination;
+                $infos->climat = $this->input->post('climat');
+                $infos->monnaie = $this->input->post('monnaie');
+                $infos->animaux = $this->input->post('animaux');
+                $infos->pension = $this->input->post('pension');
+                $infos->passeport = $this->input->post('passeport');
+                $infos->repas_boissons = $this->input->post('nourriture');
+                $infos->deroulement = $this->input->post('deroulement');
+                $infos->hebergement = $this->input->post('hebergement');
+                $infos->deplacement = $this->input->post('deplacement');
+                $infos->accompagnement = $this->input->post('accompagnement');
+                
+                if(!$id_infos){
+                    $this->infos_destination->insert($infos);
+                }else{  
+                    $this->infos_destination->update($id_infos,$infos);
+                }
                 //Upload chemin for cover
                 $upload_path = 'assets/images/destinations/'. slugify($this->input->post('titre')).'/cover';
-
+                
                 //On vérifie si le dossier d'upload existe et si non on le crée
                 if (!file_exists($upload_path)){
                     //Création du dossier pour le carnet
@@ -118,7 +146,7 @@ class Destinations  extends CI_Controller{
                         $destination['banner']='destinations/'.  slugify($this->input->post('titre')).'/cover/'.$this->upload->data()['file_name'];
                     }
                 }
-
+                
                 if($_FILES['images']['error'][0] == 0){
                     //On va envoyer les photos de la destination
 
@@ -169,11 +197,11 @@ class Destinations  extends CI_Controller{
                 }
 
                 $destination['photos'] = implode(';',$tab);
-
               $this->destination->updateDestination($idDestination,$destination);
               redirect('walkadmin/destinations/');
 
             }else{
+                echo validation_errors();
                 $data['pays']=$this->pays->getPays();
                 $data['page']="add_travel";
                 $data['title']='Ajout de destination';
@@ -184,6 +212,7 @@ class Destinations  extends CI_Controller{
                 $this->load->view('wadmin/template/footer');
             }
         }else{
+            
             $data['pays']=$this->pays->getPays();
             $data['page']="add_travel";
             $data['title']='Ajout de destination';
@@ -204,22 +233,29 @@ class Destinations  extends CI_Controller{
         if($this->input->post()){
             $this->form_validation->set_rules('pays', '"pays"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('titre', '"titre"', 'is_unique[destination.titre]|trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('nom', '"nom"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('description', '"description"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('ville', '"ville"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('latitude', '"latitude"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('longitude', '"longitude"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('climat', '"Climat"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('pension', '"Pension"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('animaux', '"Animaux"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('monnaie', '"Monnaie"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('passeport', '"passeport"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('deroulement', '"Déroulement"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('nourriture', '"Nourriture"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('deplacement', '"Déplacement"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('hebergement', '"Hébergement"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('accompagnement', '"Accompagnement"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $destination=array(
                     "idPays" => $this->input->post('pays'),
                     "titre" => $this->input->post('titre'),
-                    "nom" => $this->input->post('nom'),
                     "url" => slugify($this->input->post('titre')),
                     "description" => $this->input->post('description'),
                     "ville" => $this->input->post('ville'),
                     "coordonnees" => $this->input->post('longitude').','.$this->input->post('latitude')
                 );
-
                 //Upload chemin for cover
                 $upload_path = 'assets/images/destinations/'. slugify($this->input->post('titre')).'/cover';
 
@@ -292,9 +328,28 @@ class Destinations  extends CI_Controller{
                         }
                     }
                     $destination['photos'] = $chaine;
-                    $this->destination->insertDestination($destination);
+                    $idinsert = $this->destination->insertDestination($destination);
+                    
+                    
+                
+                    $infos = new stdClass();
+                    $infos->idDestination = $idinsert;
+                    $infos->climat = $this->input->post('climat');
+                    $infos->monnaie = $this->input->post('monnaie');
+                    $infos->animaux = $this->input->post('animaux');
+                    $infos->pension = $this->input->post('pension');
+                    $infos->passeport = $this->input->post('passeport');
+                    $infos->repas_boissons = $this->input->post('nourriture');
+                    $infos->deroulement = $this->input->post('deroulement');
+                    $infos->hebergement = $this->input->post('hebergement');
+                    $infos->deplacement = $this->input->post('deplacement');
+                    $infos->accompagnement = $this->input->post('accompagnement');
+
+                    $this->infos_destination->insert($infos);
+                 
+                    redirect('walkadmin/destinations');
                 }
-            }else{
+            }else{var_dump(validation_errors());
                 $data['pays']=$this->pays->getPays();
                 $data['page'] = "add_travel";
                 $data['title']='Ajout de destination';
