@@ -179,8 +179,10 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
 
                     <?php 
                     $iteration = 0; 
+                    if(isset($infos->deroulement)){
                     $informations = json_decode($infos->deroulement); 
-                    if($informations != null){ 
+                    }
+                    if(isset($informations)){ 
                         foreach($informations as $info) { 
                     ?>
 
