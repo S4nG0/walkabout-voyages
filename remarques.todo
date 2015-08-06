@@ -24,6 +24,10 @@ Modif-article :
   ☐ IE9 : upload image : "Extension du fichier pas supportée" -> problème peut être insurmontable ou chiant à résoudre
   ☐ IE10,11 : chargement très long lors d'une upload (voir en dessous pour ajout d'un loader)
 
+Contact :
+  ☐ E-mail ne s'envoie pas
+  ☐ Message enregistré sur le BO, même quand il n'est pas validé...
+
 Checkout :
   ☐ Refaire page Dates & Prix : insérer détails du prix avant de choisir
   ☐ Bug au niveau de la dernière phase du checkout, impossible de revenir en dessous de 10 personnes.
