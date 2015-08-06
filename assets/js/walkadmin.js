@@ -238,7 +238,7 @@ $('#add').on('click', function(){
         i = 0 ;
     }
     $('#container_details').append('<div class="form-group voyages__detailsPrix" id="detail'+i+'"><input type="text" placeholder="Titre du détail" name="detail_nom'+i+'" id="detail_prix" /><input type="text" name="detail_valeur'+i+'" id="detail_prix" placeholder="Insérer le texte du détail" /><span class="voyages__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>');
-    $('#container_deroulement').append('<div class="form-group destinations__deroulement" id="detail'+i+'"><input type="text" placeholder="Jours" name="jour'+i+'" id="jour" /><input type="text" name="jour_valeur'+i+'" id="jour_valeur" placeholder="Évènement du jour" /><span class="destinations__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>');
+    $('#container_deroulement').append('<div class="form-group destinations__deroulement" id="detail'+i+'"><input type="text" placeholder="Jour" name="jour'+i+'" id="jour" value="Jour n°..."/><textarea name="jour_valeur'+i+'" id="jour_valeur" rows="5" placeholder="Décrivez l\'évènement du jour"></textarea><span class="destinations__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>');
     i++;
 });
 });
