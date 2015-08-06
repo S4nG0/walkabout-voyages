@@ -27,48 +27,61 @@ $step = 'choice';
     <div class="container">
 
         <!-- Choice block -->
-        <div class="row">
+        <div class="row text-center">
             <div class="choice-block">
 
                 <?php echo form_open('checkout/identification')?>
 
+                <div class="help-block">
+                    <p>Cliquez sur une des bulles pour sélectionner le séjour qui vous intéresse.</p>
+                </div>
+
                 <ul class="date-list">
 
-                    <?php
-                    $x = 0;
-                    if($no_voyage == true){
-                        echo '<p class="no-entry"><i class="fa fa-exclamation-circle"></i>Pas de date de prévue pour le moment&nbsp;.</p>';
-                    }else{
-                        foreach($voyages as $voyage){
-                            if($voyage_selectionne == $voyage->idVoyage) {
-                                $checked = 'checked';
-                            } else if ($voyage_selectionne == false && $x == 0) {
-                                $checked = 'checked';
-                            } else {
-                                $checked = '';
-                            }
-                            if($voyage->nb_reservés == 0){
-                                $disable = "disable";
-                            }else{
-                                $disable = "";
-                            }
-                            echo '  <li>
-                                <div class="form-group">
-                                    <input '.$disable.' class="radio" type="radio" name="date" id="date'.$x.'" value="'.$voyage->idVoyage.'" '.$checked.'>
-                                    <label for="date'.$x.'"><span></span>'.$voyage->date_depart.' :</label>
-                                    <p>
-                                        <strong>Départ</strong> : '.$voyage->date_depart.'<br />
-                                        <strong>Retour</strong> : '.$voyage->date_retour.'<br />
-                                        <strong>'.$voyage->prix.' € par personnes.</strong><br />
-                                        <strong>Places restantes</strong> : '.$voyage->nb_reservés.' sur '.$voyage->nb_places.'
-                                    </p>
-                                </div>
-                            </li>';
-                            $x++;
-                        }
-                    }
+                    <?php $x = 0; if($no_voyage == true){ ?>
 
-                    ?>
+                        <p class="no-entry"><i class="fa fa-exclamation-circle"></i>Pas de date de prévue pour le moment&nbsp;.</p>
+
+                    <?php } else {
+
+                    foreach($voyages as $voyage){
+                        if($voyage_selectionne == $voyage->idVoyage) {
+                            $checked = 'checked';
+                        } else if ($voyage_selectionne == false && $x == 0) {
+                            $checked = 'checked';
+                        } else {
+                            $checked = '';
+                        }
+                        if($voyage->nb_reservés == 0){
+                            $disable = "disable";
+                        }else{
+                            $disable = "";
+                        } ?>
+
+                    <li>
+                        <div class="form-group">
+                            <input <?php echo $disable ?> class="radio" type="radio" name="date" id="date<?php echo $x; ?>.'" value="<?php echo $voyage->idVoyage; ?>" <?php echo $checked; ?>/>
+                            <label for="date<?php echo $x; ?>"><span></span><?php echo "Destination&nbsp;:&nbsp;<i>" . $destination->titre . "</i>"; ?></label>
+                            <p>
+                                <strong>Départ</strong>&nbsp;:&nbsp;<?php echo $voyage->date_depart; ?>&nbsp;&bull;&nbsp;
+                                <strong>Retour</strong>&nbsp;:&nbsp;<?php echo $voyage->date_retour; ?>
+                            </p>
+                            <p>
+                                <strong>Prix</strong>&nbsp;:&nbsp;<?php echo $voyage->prix; ?>&nbsp;€ par personnes.
+                            </p>
+                            <p>
+                                <strong>Places restantes</strong>&nbsp;:&nbsp;<?php echo $voyage->nb_reservés.' sur '.$voyage->nb_places; ?>
+                            </p>
+                            <?php $details = json_decode($voyage->details); ?>
+                            <?php foreach($details as $detail) { ?>
+                            <p class="date-list__priceDetails">
+                                <strong><?php echo $detail->titre; ?></strong>&nbsp;:&nbsp;<?php echo $detail->valeur . "&nbsp;€"; ?>
+                            </p>
+                            <?php } ?>
+                        </div>
+                    </li>
+
+                    <?php $x++; } } ?>
                 </ul>
             </div>
 
