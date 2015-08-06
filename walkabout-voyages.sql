@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 05 Août 2015 à 14:41
+-- Généré le :  Jeu 06 Août 2015 à 12:26
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -236,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `wa__destination` (
   `active` varchar(6) NOT NULL DEFAULT 'true',
   PRIMARY KEY (`idDestination`),
   KEY `idPays` (`idPays`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- Contenu de la table `wa__destination`
@@ -245,8 +245,9 @@ CREATE TABLE IF NOT EXISTS `wa__destination` (
 INSERT INTO `wa__destination` (`idDestination`, `idPays`, `titre`, `url`, `nom`, `description`, `ville`, `coordonnees`, `photos`, `banner`, `active`) VALUES
 (1, 3, 'À la découverte des Quéchuas du Pérou', 'a-la-decouverte-des-quechuas-du-perou', 'Voyage à Lima', 'Dans les montagnes, les Quechuas élèvent traditionnellement des lamas et des alpagas pour leur laine et leur viande.\r\n                                Ces animaux vivent en haute altitude ce qui oblige les hommes à s’établir sur des terres arides où rien ne pousse ou presque.\r\n                                Pourtant, les Quechuas sont également agriculteurs. Ils réussissent l’exploit de cultiver un véritable trésor : la pomme de terre.\r\n                                Plus qu’un aliment, la pomme de terre est l’emblème de la culture andine, elle symbolise la fertilité. Certaines sont même sacrées.\r\n                                Elles sont offertes à la Pachamama, « la terre mère », pour la remercier de ses bienfaits et implorer sa protection\r\n                                pour la récolte à venir.\r\n                                <br /><br />\r\n                                Au quotidien, les Quechuas vénèrent la nature sous toutes ses formes. Pour eux, les montagnes sont des Dieux et\r\n                                ils n’hésitent pas à effectuer un long voyage et à gravir des sommets vertigineux pour recueillir la glace sacrée\r\n                                qui bénira leur troupeau et leur terre.\r\n                                <br /><br />\r\n                                Faites l’expérience de leur culture en vous y immergeant  !', 'Lima', '-12.0553442,-77.0451853', 'destinations/a-la-decouverte-des-quechuas-du-perou/01.jpg;destinations/a-la-decouverte-des-quechuas-du-perou/02.jpg;destinations/a-la-decouverte-des-quechuas-du-perou/03.jpg;destinations/a-la-decouverte-des-quechuas-du-perou/04.jpg;destinations/a-la-decouverte-des-quechuas-du-perou/05.jpg;destinations/a-la-decouverte-des-quechuas-du-perou/01.jpg;', 'destinations/a-la-decouverte-des-quechuas-du-perou/cover/banner15_huayna-picchu-perou3.jpg', 'true'),
 (2, 3, 'Les incas, une culture oubliée', 'les-incas-une-culture-oubliee', 'Voyage chez les incas', 'La civilisation inca est une civilisation précolombienne du groupe andin. Elle prend naissance au début du XIIIe siècle dans le bassin de Cuzco dans l''actuel Pérou et se développe ensuite le long de l''océan Pacifique et de la cordillère des Andes, couvrant la partie occidentale de l''Amérique du Sud. À son apogée, elle s''étend de la Colombie jusqu''à l''Argentine et au Chili, par-delà l''Équateur, le Pérou et la Bolivie.\r\n\r\nElle est à l''origine de l''empire inca, l''un des trois grands empires de l''Amérique précolombienne. Cet empire avait pour chef suprême le Sapa Inca. L''empire inca fut conquis par les conquistadors espagnols sous les ordres de Francisco Pizarro à partir de 1532.\r\n\r\nL''une des grandes singularités de cet empire fut d''avoir intégré, dans une organisation étatique originale, la multiplicité socioculturelle des populations hétérogènes qui le composaient.', 'Cuzco', '-13.53, -71.93  ', 'voyages/incas/01.jpg;voyages/incas/02.jpg;voyages/incas/03.jpg;', 'voyages/incas/banner-list.jpg', 'false'),
-(20, 2, 'Australie, terre des kangourous', 'australie-terre-des-kangourous', 'Tour de l''Australie', 'Découvrez cette magnifique île à travers un voyage de 2 semaines, vous pourrez explorer Sydney, l''Uluru, rocher sacré des aborigènes, le lac Hillier,lac particulier aux couleurs roses. Ainsi qu''une balade en hélicoptère au dessus des îles Withsunday et surtout The Pinnacles avec son paysage unique de morceaux de calcaires qui surgissent du sol tel des stalagmites.', 'Sydney', '-33.7969235,150.9224326', 'destinations/australie-terre-des-kangourous/lac_hillier.jpg;destinations/australie-terre-des-kangourous/sydney-nuit.jpg;destinations/australie-terre-des-kangourous/the_pinnacles.jpg;destinations/australie-terre-des-kangourous/uluru.jpg;destinations/australie-terre-des-kangourous/whitsundays.jpg;destinations/australie-terre-des-kangourous/01.jpg;', 'destinations/australie-terre-des-kangourous/cover/1440_900_200912160112583853484.jpg', 'true'),
-(21, 5, 'Découverte des monuments de la Grèce antique', 'decouverte-des-monuments-de-la-grece-antique', 'Retour dans l''histoire', 'Voyagez dans le temps avec ce voyage de 3 semaine en Grèce et découvrez ce pays et son histoire extraordinaire.', 'Athènes', '38.27,23.81', 'destinations/decouverte-des-monuments-de-la-grece-antique/01_athenes.jpg;destinations/decouverte-des-monuments-de-la-grece-antique/5360e3ac576a6o.jpg;destinations/decouverte-des-monuments-de-la-grece-antique/athens_02.png;destinations/decouverte-des-monuments-de-la-grece-antique/grece-ile-santorini.jpg;', 'destinations/decouverte-des-monuments-de-la-grece-antique/cover/banner.jpg', 'true');
+(20, 2, 'Australie, terre des kangourous', 'australie-terre-des-kangourous', 'Tour de l''Australie', 'Découvrez cette magnifique île à travers un voyage de 2 semaines, vous pourrez explorer Sydney, l''Uluru, rocher sacré des aborigènes, le lac Hillier,lac particulier aux couleurs roses. Ainsi qu''une balade en hélicoptère au dessus des îles Withsunday et surtout The Pinnacles avec son paysage unique de morceaux de calcaires qui surgissent du sol tel des stalagmites.', 'Sydney', '-33.7969235,150.9224326', 'destinations/australie-terre-des-kangourous/lac_hillier.jpg;destinations/australie-terre-des-kangourous/sydney-nuit.jpg;destinations/australie-terre-des-kangourous/the_pinnacles.jpg;destinations/australie-terre-des-kangourous/uluru.jpg;destinations/australie-terre-des-kangourous/whitsundays.jpg;destinations/australie-terre-des-kangourous/1440_900_20091216011258385348.jpg;', 'destinations/australie-terre-des-kangourous/cover/1440_900_200912160112583853484.jpg', 'true'),
+(21, 5, 'Découverte des monuments de la Grèce antique', 'decouverte-des-monuments-de-la-grece-antique', 'Retour dans l''histoire', 'Voyagez dans le temps avec ce voyage de 3 semaine en Grèce et découvrez ce pays et son histoire extraordinaire.', 'Athènes', '38.27,23.81', 'destinations/decouverte-des-monuments-de-la-grece-antique/01_athenes.jpg;destinations/decouverte-des-monuments-de-la-grece-antique/5360e3ac576a6o.jpg;destinations/decouverte-des-monuments-de-la-grece-antique/athens_02.png;destinations/decouverte-des-monuments-de-la-grece-antique/grece-ile-santorini.jpg;', 'destinations/decouverte-des-monuments-de-la-grece-antique/cover/banner.jpg', 'true'),
+(23, 2, 'igbbjbkbkbkjb bkj kjbk', 'igbbjbkbkbkjb-bkj-kjbk', '', 'bk fbabdbzbd zabkdbzabdkjzabkjd bazbdk zadbza kdbzavaz bkjdbzakj bdb kzabdkjaz', 'Melbourne', '-50,60', '', 'destinations/igbbjbkbkbkjb-bkj-kjbk/cover/1440_900_200912160112583853482.jpg', 'true');
 
 -- --------------------------------------------------------
 
@@ -308,55 +309,33 @@ INSERT INTO `wa__etatreservation` (`idEtatReservation`, `idReservation`, `etat`)
 -- --------------------------------------------------------
 
 --
--- Structure de la table `wa__infoscomplementaire`
---
-
-CREATE TABLE IF NOT EXISTS `wa__infoscomplementaire` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `idDestination` int(11) NOT NULL,
-  `titre` varchar(250) NOT NULL,
-  `value` mediumtext NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `idVoyage` (`idDestination`),
-  KEY `idDestination` (`idDestination`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
-
---
--- Contenu de la table `wa__infoscomplementaire`
---
-
-INSERT INTO `wa__infoscomplementaire` (`id`, `idDestination`, `titre`, `value`) VALUES
-(1, 1, 'Accompagnement', '                                        1 guide bilingue français/espagnol sur l’ensemble du séjour + guides locaux selon les spots'),
-(2, 1, 'Déplacements', 'Transport privé ou bus collectif (selon les régions traversées) + balades à pied, en pirogue, à vélo'),
-(3, 1, 'Hébergements', '5 nuits à l’hôtel / 5 nuits chez l’habitant / 1 nuit en vol'),
-(4, 1, 'Repas & boissons', 'Tous les repas sont compris / l’eau minérale est servie pendant les repas');
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `wa__infosdestinations`
 --
 
 CREATE TABLE IF NOT EXISTS `wa__infosdestinations` (
   `idInfosDestinations` int(11) NOT NULL AUTO_INCREMENT,
   `idDestination` int(11) NOT NULL,
-  `titre` varchar(45) DEFAULT NULL,
-  `valeur` varchar(45) DEFAULT NULL,
-  `image` varchar(455) NOT NULL,
+  `climat` varchar(100) NOT NULL,
+  `monnaie` varchar(100) NOT NULL,
+  `animaux` varchar(100) NOT NULL,
+  `pension` varchar(100) NOT NULL,
+  `passeport` varchar(100) NOT NULL,
+  `accompagnement` longtext NOT NULL,
+  `deplacement` longtext NOT NULL,
+  `hebergement` longtext NOT NULL,
+  `repas_boissons` longtext NOT NULL,
+  `deroulement` longtext NOT NULL,
   PRIMARY KEY (`idInfosDestinations`),
   KEY `idDestination` (`idDestination`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Contenu de la table `wa__infosdestinations`
 --
 
-INSERT INTO `wa__infosdestinations` (`idInfosDestinations`, `idDestination`, `titre`, `valeur`, `image`) VALUES
-(1, 1, 'Habite', 'Chez l''habitant', 'info-pics/pension_white.png'),
-(2, 1, 'Animaux', 'acceptés', 'info-pics/animals_white.png'),
-(3, 1, 'météo', 'varié', 'info-pics/climat_white.png'),
-(4, 1, 'monnaie', 'nuevo sol', 'info-pics/currency_white.png'),
-(6, 1, 'passport', 'obligatoire', 'info-pics/passport_white.png');
+INSERT INTO `wa__infosdestinations` (`idInfosDestinations`, `idDestination`, `climat`, `monnaie`, `animaux`, `pension`, `passeport`, `accompagnement`, `deplacement`, `hebergement`, `repas_boissons`, `deroulement`) VALUES
+(9, 1, 'Varié', 'Nuevo sol (PEN)', 'Acceptés mais pas plus de 50  cm de hauteur', 'Compléte', 'Obligatoire', '1 guide bilingue français/espagnol sur l’ensemble du séjour + guides locaux selon les spots ', 'Transport privé ou bus collectif (selon les régions traversées) + balades à pied, en pirogue, à vélo ', '5 nuits à l’hôtel / 5 nuits chez l’habitant / 1 nuit en vol ', ' Tous les repas sont compris / l’eau minérale est servie pendant les repas\r\n', '\r\n    Jour 1 :\r\n    Vol pour l’Equateur, premiers pas au Pérou !\r\n    Jours 2 à 6 :\r\n    Direction la cordillère des Andes, au cœur de la tribu Quechuas… chez l’habitant, esprit communautaire dans un village indigène, spécialités : danses folkloriques, artisanat traditionnel, chicha (alcool de maïs) !\r\n    Jours 7 à 9 :\r\n    Direction la forêt amazonienne, rando & vélo le long de la face orientale des Andes jusqu’aux portes de l’Amazonie, à la rencontre des peuples indigènes.\r\n    Jours 10 à 12 :\r\n    Direction la vallée sacrée de Vilcabamba, où la légende dit qu’on y vit jusqu’à plus de cent ans… rando ou balade à cheval &#40;au choix&#41; dans un petit paradis de la partie basse des Andes.\r\n    Jour 13 :\r\n    Rando dans le célèbre parc national ‘El Cajas’, en pleine nature.\r\n    Jour 14 :\r\n    Visite de la ville de Cuenca (patrimoine de l’UNESCO) et retour à Guayaquil.\r\n'),
+(10, 23, 'bjkjb', 'bj', 'bjkbkb', 'kbkbljkk', 'bk', 'nkbvhvkb gc', 'bjvhubhvhf', 'jfbj', 'v hvkbhvhg', 'kbjhvgvhjvj');
 
 -- --------------------------------------------------------
 
@@ -523,7 +502,7 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('e8920d8452e554a2f9b643a8a5deed13', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438777904, 'a:3:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}s:4:"user";a:1:{i:0;O:8:"stdClass":19:{s:7:"idUsers";s:2:"12";s:7:"idLevel";s:1:"1";s:4:"mail";s:23:"capi.aurelien@gmail.com";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:4:"slug";s:16:"12-capi-aurelien";s:8:"adresse1";s:16:"654 rue du plouy";s:8:"adresse2";s:0:"";s:2:"CP";s:5:"62232";s:5:"ville";s:6:"HINGES";s:4:"pays";s:6:"FRANCE";s:8:"tel_fixe";s:0:"";s:8:"tel_port";s:0:"";s:14:"date_naissance";s:10:"1992-10-28";s:14:"num_activation";s:18:"3oKvnpMuhP4lNF2Zka";s:6:"active";s:4:"true";s:5:"photo";s:30:"users/12/Voyage_etranger11.jpg";s:5:"cover";s:31:"users/12/cover/dest-img2112.jpg";}}}');
+('5260a0bc061bf18e8523249af797e8ad', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1438855943, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}');
 
 -- --------------------------------------------------------
 
@@ -577,30 +556,31 @@ INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `
 CREATE TABLE IF NOT EXISTS `wa__voyage` (
   `idVoyage` int(11) NOT NULL AUTO_INCREMENT,
   `idDestination` int(11) NOT NULL,
-  `idInfos` int(11) NOT NULL,
   `date_depart` date DEFAULT NULL,
   `date_retour` date DEFAULT NULL,
   `prix` float NOT NULL,
   `nb_places` int(3) NOT NULL,
+  `details` longtext NOT NULL,
   `active` varchar(10) NOT NULL DEFAULT 'false',
   PRIMARY KEY (`idVoyage`),
-  KEY `idDestination` (`idDestination`,`idInfos`),
-  KEY `idInfos` (`idInfos`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+  KEY `idDestination` (`idDestination`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Contenu de la table `wa__voyage`
 --
 
-INSERT INTO `wa__voyage` (`idVoyage`, `idDestination`, `idInfos`, `date_depart`, `date_retour`, `prix`, `nb_places`, `active`) VALUES
-(1, 1, 2, '2016-07-13', '2016-11-11', 5200, 20, 'false'),
-(2, 2, 2, '2015-07-16', '2015-06-02', 4700, 10, 'true'),
-(3, 20, 2, '2016-08-10', '2016-08-24', 6300, 23, 'true'),
-(4, 20, 2, '2015-09-20', '2015-10-02', 5700, 26, 'true'),
-(5, 21, 2, '2015-08-23', '2015-09-06', 3600, 15, 'true'),
-(6, 21, 2, '2016-07-21', '2016-08-04', 3500, 16, 'true'),
-(7, 21, 2, '2015-10-28', '2015-11-12', 6400, 10, 'true'),
-(8, 20, 2, '2015-12-12', '2015-12-28', 6800, 8, 'true');
+INSERT INTO `wa__voyage` (`idVoyage`, `idDestination`, `date_depart`, `date_retour`, `prix`, `nb_places`, `details`, `active`) VALUES
+(1, 1, '2016-07-13', '2016-11-11', 5200, 20, '{"0":{"titre":"test1","valeur":"test1"},"2":{"titre":"test5","valeur":"test5"},"3":{"titre":"test55","valeur":"test54"},"4":{"titre":"test56","valeur":"test58"}}', 'true'),
+(2, 2, '2015-07-16', '2015-06-02', 4700, 10, '', 'true'),
+(3, 20, '2016-08-10', '2016-08-24', 6300, 23, '', 'true'),
+(4, 20, '2015-09-20', '2015-10-02', 5700, 26, '', 'true'),
+(5, 21, '2015-08-23', '2015-09-06', 3600, 15, '', 'true'),
+(6, 21, '2016-07-21', '2016-08-04', 3500, 16, '', 'true'),
+(7, 21, '2015-10-28', '2015-11-12', 6400, 10, '', 'true'),
+(8, 20, '2015-12-12', '2015-12-28', 6800, 8, '', 'true'),
+(9, 20, '2016-07-05', '2016-07-25', 2500, 25, '[{"titre":"Vols","valeur":"inclus, d\\u00e9part de Paris, navette entre votre domicile et l''a\\u00e9roport"},{"titre":"test","valeur":"test"}]', 'true'),
+(10, 20, '2015-08-05', '2015-08-20', 6200.3, 0, '[{"titre":"test1","valeur":"test2"},{"titre":"test3","valeur":"test4"}]', 'true');
 
 --
 -- Contraintes pour les tables exportées
@@ -652,12 +632,6 @@ ALTER TABLE `wa__etatreservation`
   ADD CONSTRAINT `id_etatreservation_reservation` FOREIGN KEY (`idReservation`) REFERENCES `wa__reservation` (`idReservation`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `wa__infoscomplementaire`
---
-ALTER TABLE `wa__infoscomplementaire`
-  ADD CONSTRAINT `wa__infoscomplementaire_ibfk_1` FOREIGN KEY (`idDestination`) REFERENCES `wa__destination` (`idDestination`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Contraintes pour la table `wa__infosdestinations`
 --
 ALTER TABLE `wa__infosdestinations`
@@ -698,5 +672,4 @@ ALTER TABLE `wa__users`
 -- Contraintes pour la table `wa__voyage`
 --
 ALTER TABLE `wa__voyage`
-  ADD CONSTRAINT `id_voyage_destination` FOREIGN KEY (`idDestination`) REFERENCES `wa__destination` (`idDestination`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `id_voyage_infos` FOREIGN KEY (`idInfos`) REFERENCES `wa__infosdestinations` (`idInfosDestinations`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `id_voyage_destination` FOREIGN KEY (`idDestination`) REFERENCES `wa__destination` (`idDestination`) ON DELETE CASCADE ON UPDATE CASCADE;
