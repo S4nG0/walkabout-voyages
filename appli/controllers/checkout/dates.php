@@ -7,10 +7,10 @@ class Dates extends CI_Controller {
 	 *
 	 * Maps to the following URL
 	 * 		http://example.com/index.php/welcome
-	 *	- or -  
+	 *	- or -
 	 * 		http://example.com/index.php/welcome/index
 	 *	- or -
-	 * Since this controller is set as the default controller in 
+	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
@@ -46,12 +46,13 @@ class Dates extends CI_Controller {
             }else{
                 $data['no_voyage'] = false;
             }
+            $data['destination'] = $this->destination->constructeur($data['destination'])[0];
             $this->load->view('template/header',$data);
             $this->load->view('checkout/dates',$data);
             $this->load->view('template/footer');
             //$this->output->enable_profiler(true);
 	}
-        
+
         public function _remap($id)
         {
             if($id > 0){
@@ -60,8 +61,8 @@ class Dates extends CI_Controller {
                 redirect(site_url("voyage"));
             }
         }
-        
-        
+
+
 }
 
 
