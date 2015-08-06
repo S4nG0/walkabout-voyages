@@ -27,7 +27,10 @@ class Reservation extends CI_Controller {
         $data['commentaires'] = $this->commentaires->count_non_modere();
         $data['reservations'] = $this->reservations->count_en_cours();
         $data['reservations_currents'] = $this->reservations->getReservationCurrent();
+        $data['reservations_awaiting_payment'] = $this->reservations->getReservationAwaitingPayment();
+        $data['reservations_awaiting_dossier'] = $this->reservations->getReservationAwaitingDossier();
         $data['reservations_finished'] = $this->reservations->getReservationFinished();
+        $data['reservations_all'] = $this->reservations->getReservationAll();
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);

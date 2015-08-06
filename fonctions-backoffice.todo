@@ -11,6 +11,9 @@ Module actualité :
 Module carnets de voyages :
   ☐ sélectionner un carnet phare (page carnet de voyage) (une étoile à cocher)
 
+Module réservation :
+  ☐ mettre "en attente de confirmation" en mode par défaut (après réservation par un utilisateur)
+
 Module pays :
  ☐ Lors de la création d'un pays problème de mémoire, si on remplit pas tous les champs cf capture
 
