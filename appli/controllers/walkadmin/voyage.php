@@ -67,7 +67,6 @@ class Voyage extends CI_Controller{
             $i = 0;
             $k = 0;
             do{
-                var_dump($this->input->post("detail_nom$i"));
                 if($this->input->post("detail_nom$i") != false && $this->input->post("detail_valeur$i") != false){
                     $this->form_validation->set_rules("detail_nom$i", "Titre détail", 'trim|required|encode_php_tags|xss_clean');
                     $this->form_validation->set_rules("detail_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
@@ -83,6 +82,7 @@ class Voyage extends CI_Controller{
             $this->form_validation->set_rules('prix', '"prix"', 'trim|required|encode_php_tags|xss_clean|numeric');
             $this->session->set_flashdata('details',$details);
             if ($this->form_validation->run()) {
+                $details = array_values($details);
                 $details = json_encode($details);
 
                 $voyage=array(
@@ -155,6 +155,7 @@ class Voyage extends CI_Controller{
             $this->session->set_flashdata('details',$details);
 
             if ($this->form_validation->run()) {
+                $details = array_values($details);
                 $details = json_encode($details);
 
                 $voyage=array(

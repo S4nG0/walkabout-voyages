@@ -165,17 +165,6 @@ echo form_open_multipart('walkadmin/destinations/creer');
                         <span class="small">Veuillez indiquer les activités par jours</span>
                     </div>
                     <div id="container_details"></div>
-
-                    <?php $i = 0; if($infos) { foreach($infos as $info) { ?>
-
-                    <div class="form-group destinations__deroulement" id="detail<?php echo $i; ?>">
-                        <input type="text" placeholder="Titre du détail" name="detail_nom<?php echo $i; ?>" id="jour" value="<?php echo $info['titre']; ?>"/>
-                        <input type="text" name="detail_valeur<?php echo $i; ?>" id="detail_prix" placeholder="Insérer le texte du détail"  value="<?php echo $info['valeur']; ?>"/>
-                        <span class="destinations__icon remove" onclick="javascript:remove_detail(<?php echo $i; ?>);"></span>
-                    </div>
-
-                    <?php $i++; }} ?>
-
                     <div class="form-group destinations__deroulement">
                         <span title="Ajouter" class="destinations__icon add" id="add"></span><span>Ajouter un détail</span>
                     </div>
