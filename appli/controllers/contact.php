@@ -22,7 +22,7 @@ class Contact extends CI_Controller {
      */
     public function index() {
         $data = Array();
-        $data['title'] = "Contact";
+        $data['title'] =  "Contact";
         $data['page'] = "contact";
         $result = '';
 
@@ -76,22 +76,21 @@ class Contact extends CI_Controller {
                     }else{
                         $result = "erreur mail";
                     }
+                    $contact = new StdClass();
+                    $contact->nom = $this->input->post('nom');
+                    $contact->prenom = $this->input->post('prenom');
+                    $contact->mail = $this->input->post('mail');
+                    $contact->sujet = $this->input->post('sujet');
+                    $contact->telephone = $this->input->post('tel');
+                    $contact->message = $this->input->post('message');
+                    $contact->ouvert = "false";
+                    $contact->date = date('Y-m-d');
+
+                    $this->contacts->insert($contact);
                 } else {
                     //Retourner erreur
                     $result = "erreur form";
                 }
-                
-                $contact = new StdClass();
-                $contact->nom = $this->input->post('nom');
-                $contact->prenom = $this->input->post('prenom');
-                $contact->mail = $this->input->post('mail');
-                $contact->sujet = $this->input->post('sujet');
-                $contact->telephone = $this->input->post('tel');
-                $contact->message = $this->input->post('message');
-                $contact->ouvert = "false";
-                $contact->date = date('Y-m-d');
-                
-                $this->contacts->insert($contact);
             }
         }
         $data['result'] = $result;
