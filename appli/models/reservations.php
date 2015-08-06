@@ -50,6 +50,22 @@ class Reservations extends CI_Model {
         return $reservations;
     }
 
+    public function getReservation(){
+        $reservation= $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays,
+                                         users.nom AS nomClient,users.prenom as prenomClient,etatreservation.idEtatReservation,
+                                         etatreservation.etat')
+                            ->from($this->table)
+                            ->join('etatreservation','etatreservation.idReservation=reservation.idReservation')
+                            ->join('users','reservation.idUsers=users.idUsers')
+                            ->join('voyage','reservation.idVoyage=voyage.idVoyage')
+                            ->join('destination','destination.idDestination=voyage.idDestination')
+                            ->join('pays','destination.idPays=pays.idPays')
+                            ->order_by('etatreservation.etat')
+                            ->get()
+                            ->result();
+        return $reservation;
+    }
+
     public function getReservationCurrent(){
         $reservation= $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays,
                                          users.nom AS nomClient,users.prenom as prenomClient,etatreservation.idEtatReservation,
