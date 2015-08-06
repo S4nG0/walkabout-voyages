@@ -42,7 +42,7 @@ class Conclusion extends CI_Controller {
 
                  $donnee2 = array(
                     'idReservation' => $result,
-                    'etat' => "En cours"
+                    'etat' => "En attente de confirmation"
                 );
 
                 $this->etat_reservation->insert($donnee2);
