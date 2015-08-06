@@ -906,19 +906,6 @@ function recoverPasswordUser($mdp,$user){
                                     <table class="twelve columns">
                                         <tr>
                                             <td class="twelve columns">
-                                                <p>Sachez qu\'il vous est toujours possible de vous connecter soit par votre adresse email.</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="wrapper last">
-
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="twelve columns">
                                                 <p>Cordialement, L\'équipe Walkabout</p>
                                             </td>
                                         </tr>
@@ -932,6 +919,7 @@ function recoverPasswordUser($mdp,$user){
             </tr>
         </table>
     </body>';
+    return $email;
 }
 
 function generate_email_forget_password($mdp,$admin){
@@ -1018,6 +1006,7 @@ function generate_email_forget_password($mdp,$admin){
                 border-collapse: collapse !important;
             }
 
+    return $email;
             table, tr, td {
                 padding: 0;
                 vertical-align: top;
@@ -1034,7 +1023,8 @@ function generate_email_forget_password($mdp,$admin){
             /* Responsive Grid */
 
             table.body {
-                height: 100%;
+                h
+    return $email;eight: 100%;
                 width: 100%;
                 background-color:#242424;
             }
@@ -1850,6 +1840,7 @@ function generate_email_forget_password($mdp,$admin){
             </tr>
         </table>
     </body>';
+    return $email;
 }
 
 function slugify($text,$strict = false) {
