@@ -57,20 +57,9 @@ class Destinations  extends CI_Controller{
         }
         $pays = $this->pays->constructeur($data['destination']->idPays)[0];
 
-        //Géolocalisation
-//        $geocoder = "http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false";
-//
-//        $query = sprintf($geocoder, urlencode($data['destination']->ville.' '.$pays->nom));
-//        var_dump($query);
-//        $result = json_decode(file_get_contents($query));
-//        var_dump($result);
-//        $json = $result->results[0];
-//
-//        $latitude = (string) $json->geometry->location->lat;
-//        $longitude = (string) $json->geometry->location->lng;
-
         //On charge la librairie d'upload
         $this->load->library('upload');
+        
 
         if($this->input->post() != false){
 
@@ -85,6 +74,10 @@ class Destinations  extends CI_Controller{
             $this->form_validation->set_rules('animaux', '"Animaux"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('monnaie', '"Monnaie"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('passeport', '"passeport"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('nourriture', '"Nourriture"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('deplacement', '"Déplacement"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('hebergement', '"Hébergement"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('accompagnement', '"Accompagnement"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $destination=array(
                     "idPays" => $this->input->post('pays'),
@@ -96,6 +89,25 @@ class Destinations  extends CI_Controller{
                 );
 
                 $id_infos = $this->infos_destination->constructeur($idDestination)[0]->idInfosDestinations;
+                
+                
+                $taille_details = (sizeof($this->input->post())-16)/2;
+                $details = array();
+                $i = 0;
+                $k = 0;
+                do{
+                    if($this->input->post("detail_nom$i") != false && $this->input->post("detail_valeur$i") != false){
+                        $this->form_validation->set_rules("detail_nom$i", "Titre détail", 'trim|required|encode_php_tags|xss_clean');
+                        $this->form_validation->set_rules("detail_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
+
+                        $details[$i]["titre"] = $this->input->post("detail_nom$i");
+                        $details[$i]["valeur"] = $this->input->post("detail_valeur$i");
+                        $k++;
+                    }
+                    $i++;
+                }while($k != $taille_details);
+                $details = array_values($details);
+                $deroulement = json_encode($details);
 
                 $infos = new stdClass();
                 $infos->idDestination = $idDestination;
@@ -105,7 +117,7 @@ class Destinations  extends CI_Controller{
                 $infos->pension = $this->input->post('pension');
                 $infos->passeport = $this->input->post('passeport');
                 $infos->repas_boissons = $this->input->post('nourriture');
-                $infos->deroulement = $this->input->post('deroulement');
+                $infos->deroulement = $deroulement;
                 $infos->hebergement = $this->input->post('hebergement');
                 $infos->deplacement = $this->input->post('deplacement');
                 $infos->accompagnement = $this->input->post('accompagnement');
@@ -242,12 +254,30 @@ class Destinations  extends CI_Controller{
             $this->form_validation->set_rules('animaux', '"Animaux"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('monnaie', '"Monnaie"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('passeport', '"passeport"', 'trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('deroulement', '"Déroulement"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('nourriture', '"Nourriture"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('deplacement', '"Déplacement"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('hebergement', '"Hébergement"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('accompagnement', '"Accompagnement"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
+                var_dump($this->input->post());
+                
+                $taille_details = (sizeof($this->input->post())-15)/2;
+                $details = array();
+                $i = 0;
+                $k = 0;
+                do{
+                    if($this->input->post("detail_nom$i") != false && $this->input->post("detail_valeur$i") != false){
+                        $this->form_validation->set_rules("detail_nom$i", "Titre détail", 'trim|required|encode_php_tags|xss_clean');
+                        $this->form_validation->set_rules("detail_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
+
+                        $details[$i]["titre"] = $this->input->post("detail_nom$i");
+                        $details[$i]["valeur"] = $this->input->post("detail_valeur$i");
+                        $k++;
+                    }
+                    $i++;
+                }while($k != $taille_details);
+                $details = array_values($details);
+                $deroulement = json_encode($details);
                 $destination=array(
                     "idPays" => $this->input->post('pays'),
                     "titre" => $this->input->post('titre'),
@@ -340,7 +370,7 @@ class Destinations  extends CI_Controller{
                     $infos->pension = $this->input->post('pension');
                     $infos->passeport = $this->input->post('passeport');
                     $infos->repas_boissons = $this->input->post('nourriture');
-                    $infos->deroulement = $this->input->post('deroulement');
+                    $infos->deroulement = $deroulement;
                     $infos->hebergement = $this->input->post('hebergement');
                     $infos->deplacement = $this->input->post('deplacement');
                     $infos->accompagnement = $this->input->post('accompagnement');
@@ -374,3 +404,4 @@ class Destinations  extends CI_Controller{
 
     }
 }
+

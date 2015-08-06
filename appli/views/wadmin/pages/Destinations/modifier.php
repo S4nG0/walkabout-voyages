@@ -171,24 +171,31 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
         <div class="row text-center">
             <div class="col-md-6 col-md-offset-3">
                 <div class="form-group">
-                    <label for="deroulement">Déroulement</label>
-                    <textarea name="deroulement" id="deroulement" rows="10" placeholder="Saississez vos informations"><?php if(isset($infos->deroulement)){echo $infos->deroulement;} ?></textarea>
-
+                    <label>Déroulement du voyage</label>
                     <div class="help-block">
                         <span class="small">Veuillez indiquer les activités par jours</span>
                     </div>
-                    <div id="container_details"></div>
+                    <div id="container_details">
 
-                    <?php $i = 0; if($infos) { foreach($infos as $info) { ?>
+                    <?php 
+                    $iteration = 0; 
+                    $informations = json_decode($infos->deroulement); 
+                    if($informations != null){ 
+                        foreach($informations as $info) { 
+                    ?>
 
-                    <div class="form-group destinations__deroulement" id="detail<?php echo $i; ?>">
-                        <input type="text" placeholder="Titre du détail" name="detail_nom<?php echo $i; ?>" id="jour" value="<?php echo $info['titre']; ?>"/>
-                        <input type="text" name="detail_valeur<?php echo $i; ?>" id="detail_prix" placeholder="Insérer le texte du détail"  value="<?php echo $info['valeur']; ?>"/>
-                        <span class="destinations__icon remove" onclick="javascript:remove_detail(<?php echo $i; ?>);"></span>
+                    <div class="form-group destinations__deroulement" id="detail<?php echo $iteration; ?>">
+                        <input type="text" placeholder="Titre du détail" name="detail_nom<?php echo $iteration; ?>" id="jour" value="<?php echo $info->titre; ?>"/>
+                        <input type="text" name="detail_valeur<?php echo $iteration; ?>" id="detail_prix" placeholder="Insérer le texte du détail"  value="<?php echo $info->valeur; ?>"/>
+                        <span class="destinations__icon remove" onclick="javascript:remove_detail(<?php echo $iteration; ?>);"></span>
                     </div>
 
-                    <?php $i++; }} ?>
-
+                    <?php 
+                            $iteration++; 
+                        }
+                    } 
+                    ?>
+</div>
                     <div class="form-group destinations__deroulement">
                         <span title="Ajouter" class="destinations__icon add" id="add"></span><span>Ajouter un détail</span>
                     </div>
@@ -274,6 +281,8 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
 
 
 <script type="text/javascript">
+    i = <?php echo $iteration; ?>;
+    
     test=new Array();
     function sup_photo(name,id){
         if(!inArray(name,test)){

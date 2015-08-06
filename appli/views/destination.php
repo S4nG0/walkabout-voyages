@@ -153,9 +153,12 @@
                                 <h3>Déroulement du séjour</h3>
                                 <ul class="info-list">
                                     <li>
-                                        <?php if (isset($infos->deroulement)) {
-                                            echo $infos->deroulement;
-                                        } ?>
+                                        <?php $deroulement = json_decode($infos->deroulement); if (isset($deroulement)) {
+                                            foreach($deroulement as $etape){
+                                        ?>
+                                        <h4><?php echo $etape->titre; ?></h4>
+                                        <?php echo '<p>'.$etape->valeur.'</p>'; ?>
+                                        <?php }} ?>
                                     </li>
                                 </ul>
                             </div>
