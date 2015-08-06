@@ -91,8 +91,8 @@ class Destinations  extends CI_Controller{
                 $id_infos = $this->infos_destination->constructeur($idDestination)[0]->idInfosDestinations;
 
 
-                $taille_details = (sizeof($this->input->post())-16)/2;
-                $details = array();
+                $taille_jours = (sizeof($this->input->post())-16)/2;
+                $jours = array();
                 $i = 0;
                 $k = 0;
                 do{
@@ -100,14 +100,14 @@ class Destinations  extends CI_Controller{
                         $this->form_validation->set_rules("jour$i", "Jour", 'trim|required|encode_php_tags|xss_clean');
                         $this->form_validation->set_rules("jour_valeur$i", "Valeur jour", 'trim|required|encode_php_tags|xss_clean');
 
-                        $details[$i]["titre"] = $this->input->post("jour$i");
-                        $details[$i]["valeur"] = $this->input->post("jour_valeur$i");
+                        $jours[$i]["titre"] = $this->input->post("jour$i");
+                        $jours[$i]["valeur"] = $this->input->post("jour_valeur$i");
                         $k++;
                     }
                     $i++;
-                }while($k != $taille_details);
-                $details = array_values($details);
-                $deroulement = json_encode($details);
+                }while($k != $taille_jours);
+                $jours = array_values($jours);
+                $deroulement = json_encode($jours);
 
                 $infos = new stdClass();
                 $infos->idDestination = $idDestination;
@@ -261,8 +261,8 @@ class Destinations  extends CI_Controller{
             if($this->form_validation->run()){
                 var_dump($this->input->post());
 
-                $taille_details = (sizeof($this->input->post())-15)/2;
-                $details = array();
+                $taille_jours = (sizeof($this->input->post())-15)/2;
+                $jours = array();
                 $i = 0;
                 $k = 0;
                 do{
@@ -270,14 +270,14 @@ class Destinations  extends CI_Controller{
                         $this->form_validation->set_rules("jour$i", "Jour", 'trim|required|encode_php_tags|xss_clean');
                         $this->form_validation->set_rules("jour_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
 
-                        $details[$i]["titre"] = $this->input->post("jour$i");
-                        $details[$i]["valeur"] = $this->input->post("jour_valeur$i");
+                        $jours[$i]["titre"] = $this->input->post("jour$i");
+                        $jours[$i]["valeur"] = $this->input->post("jour_valeur$i");
                         $k++;
                     }
                     $i++;
-                }while($k != $taille_details);
-                $details = array_values($details);
-                $deroulement = json_encode($details);
+                }while($k != $taille_jours);
+                $jours = array_values($jours);
+                $deroulement = json_encode($jours);
                 $destination=array(
                     "idPays" => $this->input->post('pays'),
                     "titre" => $this->input->post('titre'),

@@ -237,13 +237,13 @@ $('#add').on('click', function(){
     if(typeof i == 'undefined'){
         i = 0 ;
     }
-    $('#container_details').append('<div class="form-group voyages__detailsPrix" id="detail'+i+'"><input type="text" placeholder="Titre du détail" name="detail_nom'+i+'" id="detail_prix" /><input type="text" name="detail_valeur'+i+'" id="detail_prix" placeholder="Insérer le texte du détail" /><span class="voyages__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>');
-    $('#container_deroulement').append('<div class="form-group destinations__deroulement" id="detail'+i+'"><input type="text" placeholder="Jour" name="jour'+i+'" id="jour" value="Jour n°..."/><textarea name="jour_valeur'+i+'" id="jour_valeur" rows="5" placeholder="Décrivez l\'évènement du jour"></textarea><span class="destinations__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>');
+    $('#container_details').append($('<div class="form-group voyages__detailsPrix" id="detail'+i+'"><input type="text" placeholder="Titre du détail" name="detail_nom'+i+'" id="detail_prix" /><input type="text" name="detail_valeur'+i+'" id="detail_prix" placeholder="Insérer le texte du détail" /><span class="voyages__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>').hide().fadeIn(300));
+    $('#container_deroulement').append($('<div class="form-group destinations__deroulement fieldBlock" id="detail'+i+'"><input type="text" placeholder="Jour" name="jour'+i+'" id="jour" value="Jour n°..."/><textarea name="jour_valeur'+i+'" id="jour_valeur" rows="5" placeholder="Décrivez l\'évènement du jour"></textarea><span class="destinations__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>').hide().fadeIn(300));
     i++;
 });
 });
 
 
 function remove_detail(i){
-    $('#detail'+i).remove();
+    $('#detail'+i).fadeOut(300, function(){this.remove()});
 }
