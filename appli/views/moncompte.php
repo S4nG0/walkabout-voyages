@@ -70,7 +70,7 @@ $page = "moncompte";
                                     <td>Date de réservation</td>
                                     <td>Participants</td>
                                     <td>Prix total</td>
-                                    <td>Status</td>
+                                    <td>Statut</td>
                                 </thead>';
                             foreach($reservations as $reservation){
                                 $pluriel = '';
@@ -82,7 +82,7 @@ $page = "moncompte";
                                 echo  '
                                 <tr>
                                     <td>
-                                        <h3><a class="no-style" href="single-destination.php">'.$reservation->destination[0]->titre.'</a></h3>
+                                        <h3><a class="no-style" href="'.base_url().'nos-destinations/'.$reservation->destination[0]->url.'">'.$reservation->destination[0]->titre.'</a></h3>
                                         <p>'.$reservation->pays[0]->nom.'&nbsp;&bull;&nbsp;du '.$reservation->voyage[0]->date_depart.' au '.$reservation->voyage[0]->date_retour.'</p>
                                     </td>
                                     <td>'.$reservation->date.'</td>
