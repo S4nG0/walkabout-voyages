@@ -16,7 +16,7 @@ class Voyage extends CI_Controller{
                 $voyage->nb_places_restantes -= $reservation->nb_personnes;
             }
         }
-        $data['title'] = 'Voyages';
+        $data['title'] = 'Destination - Séjours';
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
@@ -49,7 +49,7 @@ class Voyage extends CI_Controller{
         }
         $data['destination'] = $this->destination->constructeur($idDestination);
         $data['voyages'] = $this->voyages->get_voyages_from_destination_supprimes($idDestination);
-        $data['title'] = 'Voyages supprimés';
+        $data['title'] = 'Séjours - Corbeille';
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
@@ -71,7 +71,7 @@ class Voyage extends CI_Controller{
                 if($this->input->post("detail_nom$i") != false && $this->input->post("detail_valeur$i") != false){
                     $this->form_validation->set_rules("detail_nom$i", "Titre détail", 'trim|required|encode_php_tags|xss_clean');
                     $this->form_validation->set_rules("detail_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
-                
+
                     $details[$i]["titre"] = $this->input->post("detail_nom$i");
                     $details[$i]["valeur"] = $this->input->post("detail_valeur$i");
                     $k++;
@@ -84,7 +84,7 @@ class Voyage extends CI_Controller{
             $this->session->set_flashdata('details',$details);
             if ($this->form_validation->run()) {
                 $details = json_encode($details);
-                
+
                 $voyage=array(
                     "idDestination" => $idDestination,
                     "date_depart" => $this->input->post('date_debut'),
@@ -96,7 +96,7 @@ class Voyage extends CI_Controller{
                 $this->voyages->insertVoyage($voyage);
                 redirect('walkadmin/voyage/'.$idDestination);
             }else{
-                $data['title'] = 'Ajout d\'un séjour';
+                $data['title'] = 'Destination - Ajout de séjour';
                 $data['idDestination']=$idDestination;
                 $data['destination']=$this->destination->constructeur($idDestination);
                 $data['admin'] = $this->session->userdata('admin');
@@ -119,16 +119,16 @@ class Voyage extends CI_Controller{
             $this->load->view('wadmin/template/footer');
         }
     }
-    
+
     public function modifier($idVoyage=0){
-        
+
         connecte_admin($this->session->userdata('admin'));
-        
+
         $data['voyage'] = $this->voyages->constructeur($idVoyage);
-        
+
         if($idVoyage==0)
             redirect('walkadmin/dashboard');
-        
+
         if($this->input->post() != false) {
             var_dump($this->input->post());
             $taille_details = (sizeof($this->input->post())-4)/2;
@@ -140,7 +140,7 @@ class Voyage extends CI_Controller{
                 if($this->input->post("detail_nom$i") != false && $this->input->post("detail_valeur$i") != false){
                     $this->form_validation->set_rules("detail_nom$i", "Titre détail", 'trim|required|encode_php_tags|xss_clean');
                     $this->form_validation->set_rules("detail_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
-                
+
                     $details[$i]["titre"] = $this->input->post("detail_nom$i");
                     $details[$i]["valeur"] = $this->input->post("detail_valeur$i");
                     $k++;
@@ -148,15 +148,15 @@ class Voyage extends CI_Controller{
                 $i++;
             }while($k != $taille_details);
             var_dump($details);
-            
+
             $this->form_validation->set_rules('date_debut', '"date_debut"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('date_fin', '"date_fin"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('prix', '"prix"', 'trim|required|encode_php_tags|xss_clean|numeric');
             $this->session->set_flashdata('details',$details);
-            
+
             if ($this->form_validation->run()) {
                 $details = json_encode($details);
-                
+
                 $voyage=array(
                     "date_depart" => $this->input->post('date_debut'),
                     "date_retour" => $this->input->post('date_fin'),

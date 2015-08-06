@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo $title . " < Walkadmin"; ?></title>
+    <title><?php echo $title . " | Walkadmin"; ?></title>
     <link rel="icon" href="<?php echo img_url('favicon.png'); ?>" type="image/png">
     <link rel="apple-touch-icon" href="<?php echo img_url('apple-touch-icon.png'); ?>">
     <link rel="alternate" hreflang="fr" href="http://fr.walkabout-voyages.fr/walkadmin" />

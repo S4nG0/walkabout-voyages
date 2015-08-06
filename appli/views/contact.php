@@ -14,17 +14,6 @@ $page = "contact";
     <div class="content contact-form">
         <div class="container">
 
-            <?php
-                switch($result){
-                    case "erreur mail":
-                        echo '<div class="alert alert-danger" role="alert"><strong>Erreur!</strong> Un erreur s\'est produite. Votre email ne s\'est pas envoyé correctement, veuillez réessayer !<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
-                        break;
-                    case "ok":
-                        echo '<div class="alert alert-success" role="alert"><strong>Merci!</strong> Votre mail s\'est bien envoyé, nous vous répondrons sous peu !<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>';
-                        break;
-                }
-            ?>
-
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h1 class="sep">Envie de nous contacter ?</h1>
@@ -33,6 +22,34 @@ $page = "contact";
             <?php
                 echo form_open('contact');
             ?>
+
+
+            <?php switch($result) { case "erreur mail" : ?>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        Une erreur s'est produite. Votre email ne s'est pas envoyé correctement, veuillez réessayer ultérieuremenbt.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </div>
+                </div>
+            </div>
+
+
+                <?php break; case "ok": ?>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-success" role="alert">Nous vous remercions pour votre demande.<br />Vous allez recevoir une réponse sous peu.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </div>
+                </div>
+            </div>
+
+                <?php break; } ?>
+
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-md-offset-2">
                     <div class="form-group">

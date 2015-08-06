@@ -6162,6 +6162,11 @@ body.admin .charts h3 {
 /*--------------------------------------------*\
     #DESTINATIONS || #ACTUALITES || #VOYAGES
 \*--------------------------------------------*/
+.destinations,
+.actualites,
+.voyages {
+  position: relative;
+}
 .destinations h2,
 .actualites h2,
 .voyages h2 {
@@ -6208,6 +6213,11 @@ body.admin .charts h3 {
 .voyages .form-group .help-block--gallery {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+.destinations .destinations__previewBlock,
+.actualites .destinations__previewBlock,
+.voyages .destinations__previewBlock {
+  margin-bottom: 50px;
 }
 .destinations .destinations__tools,
 .destinations .actualites__tools,
@@ -6409,29 +6419,47 @@ body.admin .charts h3 {
   margin-top: 15px;
 }
 .destinations .destinations__coordinates label,
+.destinations .destinations__deroulement label,
 .destinations .voyages__detailsPrix label,
 .actualites .destinations__coordinates label,
+.actualites .destinations__deroulement label,
 .actualites .voyages__detailsPrix label,
 .voyages .destinations__coordinates label,
+.voyages .destinations__deroulement label,
 .voyages .voyages__detailsPrix label {
   display: block;
 }
 .destinations .destinations__coordinates input,
+.destinations .destinations__deroulement input,
 .destinations .voyages__detailsPrix input,
 .actualites .destinations__coordinates input,
+.actualites .destinations__deroulement input,
 .actualites .voyages__detailsPrix input,
 .voyages .destinations__coordinates input,
+.voyages .destinations__deroulement input,
 .voyages .voyages__detailsPrix input {
   display: inline-block;
   width: 35%;
   margin-right: 25px;
 }
 .destinations .destinations__coordinates .voyages__icon,
+.destinations .destinations__coordinates .destinations__icon,
+.destinations .destinations__deroulement .voyages__icon,
+.destinations .destinations__deroulement .destinations__icon,
 .destinations .voyages__detailsPrix .voyages__icon,
+.destinations .voyages__detailsPrix .destinations__icon,
 .actualites .destinations__coordinates .voyages__icon,
+.actualites .destinations__coordinates .destinations__icon,
+.actualites .destinations__deroulement .voyages__icon,
+.actualites .destinations__deroulement .destinations__icon,
 .actualites .voyages__detailsPrix .voyages__icon,
+.actualites .voyages__detailsPrix .destinations__icon,
 .voyages .destinations__coordinates .voyages__icon,
-.voyages .voyages__detailsPrix .voyages__icon {
+.voyages .destinations__coordinates .destinations__icon,
+.voyages .destinations__deroulement .voyages__icon,
+.voyages .destinations__deroulement .destinations__icon,
+.voyages .voyages__detailsPrix .voyages__icon,
+.voyages .voyages__detailsPrix .destinations__icon {
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -6451,16 +6479,40 @@ body.admin .charts h3 {
   transition: all 300ms ease-in-out;
 }
 .destinations .destinations__coordinates .voyages__icon.add:after, .destinations .destinations__coordinates .voyages__icon.remove:after,
+.destinations .destinations__coordinates .destinations__icon.add:after,
+.destinations .destinations__coordinates .destinations__icon.remove:after,
+.destinations .destinations__deroulement .voyages__icon.add:after,
+.destinations .destinations__deroulement .voyages__icon.remove:after,
+.destinations .destinations__deroulement .destinations__icon.add:after,
+.destinations .destinations__deroulement .destinations__icon.remove:after,
 .destinations .voyages__detailsPrix .voyages__icon.add:after,
 .destinations .voyages__detailsPrix .voyages__icon.remove:after,
+.destinations .voyages__detailsPrix .destinations__icon.add:after,
+.destinations .voyages__detailsPrix .destinations__icon.remove:after,
 .actualites .destinations__coordinates .voyages__icon.add:after,
 .actualites .destinations__coordinates .voyages__icon.remove:after,
+.actualites .destinations__coordinates .destinations__icon.add:after,
+.actualites .destinations__coordinates .destinations__icon.remove:after,
+.actualites .destinations__deroulement .voyages__icon.add:after,
+.actualites .destinations__deroulement .voyages__icon.remove:after,
+.actualites .destinations__deroulement .destinations__icon.add:after,
+.actualites .destinations__deroulement .destinations__icon.remove:after,
 .actualites .voyages__detailsPrix .voyages__icon.add:after,
 .actualites .voyages__detailsPrix .voyages__icon.remove:after,
+.actualites .voyages__detailsPrix .destinations__icon.add:after,
+.actualites .voyages__detailsPrix .destinations__icon.remove:after,
 .voyages .destinations__coordinates .voyages__icon.add:after,
 .voyages .destinations__coordinates .voyages__icon.remove:after,
+.voyages .destinations__coordinates .destinations__icon.add:after,
+.voyages .destinations__coordinates .destinations__icon.remove:after,
+.voyages .destinations__deroulement .voyages__icon.add:after,
+.voyages .destinations__deroulement .voyages__icon.remove:after,
+.voyages .destinations__deroulement .destinations__icon.add:after,
+.voyages .destinations__deroulement .destinations__icon.remove:after,
 .voyages .voyages__detailsPrix .voyages__icon.add:after,
-.voyages .voyages__detailsPrix .voyages__icon.remove:after {
+.voyages .voyages__detailsPrix .voyages__icon.remove:after,
+.voyages .voyages__detailsPrix .destinations__icon.add:after,
+.voyages .voyages__detailsPrix .destinations__icon.remove:after {
   font-family: 'FontAwesome';
   font-size: 2em;
   position: absolute;
@@ -6475,42 +6527,93 @@ body.admin .charts h3 {
   transition: all 300ms ease-in-out;
 }
 .destinations .destinations__coordinates .voyages__icon.add:after,
+.destinations .destinations__coordinates .destinations__icon.add:after,
+.destinations .destinations__deroulement .voyages__icon.add:after,
+.destinations .destinations__deroulement .destinations__icon.add:after,
 .destinations .voyages__detailsPrix .voyages__icon.add:after,
+.destinations .voyages__detailsPrix .destinations__icon.add:after,
 .actualites .destinations__coordinates .voyages__icon.add:after,
+.actualites .destinations__coordinates .destinations__icon.add:after,
+.actualites .destinations__deroulement .voyages__icon.add:after,
+.actualites .destinations__deroulement .destinations__icon.add:after,
 .actualites .voyages__detailsPrix .voyages__icon.add:after,
+.actualites .voyages__detailsPrix .destinations__icon.add:after,
 .voyages .destinations__coordinates .voyages__icon.add:after,
-.voyages .voyages__detailsPrix .voyages__icon.add:after {
+.voyages .destinations__coordinates .destinations__icon.add:after,
+.voyages .destinations__deroulement .voyages__icon.add:after,
+.voyages .destinations__deroulement .destinations__icon.add:after,
+.voyages .voyages__detailsPrix .voyages__icon.add:after,
+.voyages .voyages__detailsPrix .destinations__icon.add:after {
   content: '\f067';
 }
 .destinations .destinations__coordinates .voyages__icon.remove:after,
+.destinations .destinations__coordinates .destinations__icon.remove:after,
+.destinations .destinations__deroulement .voyages__icon.remove:after,
+.destinations .destinations__deroulement .destinations__icon.remove:after,
 .destinations .voyages__detailsPrix .voyages__icon.remove:after,
+.destinations .voyages__detailsPrix .destinations__icon.remove:after,
 .actualites .destinations__coordinates .voyages__icon.remove:after,
+.actualites .destinations__coordinates .destinations__icon.remove:after,
+.actualites .destinations__deroulement .voyages__icon.remove:after,
+.actualites .destinations__deroulement .destinations__icon.remove:after,
 .actualites .voyages__detailsPrix .voyages__icon.remove:after,
+.actualites .voyages__detailsPrix .destinations__icon.remove:after,
 .voyages .destinations__coordinates .voyages__icon.remove:after,
-.voyages .voyages__detailsPrix .voyages__icon.remove:after {
+.voyages .destinations__coordinates .destinations__icon.remove:after,
+.voyages .destinations__deroulement .voyages__icon.remove:after,
+.voyages .destinations__deroulement .destinations__icon.remove:after,
+.voyages .voyages__detailsPrix .voyages__icon.remove:after,
+.voyages .voyages__detailsPrix .destinations__icon.remove:after {
   content: '\f00d';
 }
 .destinations .destinations__coordinates .voyages__icon:hover,
+.destinations .destinations__coordinates .destinations__icon:hover,
+.destinations .destinations__deroulement .voyages__icon:hover,
+.destinations .destinations__deroulement .destinations__icon:hover,
 .destinations .voyages__detailsPrix .voyages__icon:hover,
+.destinations .voyages__detailsPrix .destinations__icon:hover,
 .actualites .destinations__coordinates .voyages__icon:hover,
+.actualites .destinations__coordinates .destinations__icon:hover,
+.actualites .destinations__deroulement .voyages__icon:hover,
+.actualites .destinations__deroulement .destinations__icon:hover,
 .actualites .voyages__detailsPrix .voyages__icon:hover,
+.actualites .voyages__detailsPrix .destinations__icon:hover,
 .voyages .destinations__coordinates .voyages__icon:hover,
-.voyages .voyages__detailsPrix .voyages__icon:hover {
+.voyages .destinations__coordinates .destinations__icon:hover,
+.voyages .destinations__deroulement .voyages__icon:hover,
+.voyages .destinations__deroulement .destinations__icon:hover,
+.voyages .voyages__detailsPrix .voyages__icon:hover,
+.voyages .voyages__detailsPrix .destinations__icon:hover {
   background-color: #242424;
 }
 .destinations .destinations__coordinates .voyages__icon:hover:after,
+.destinations .destinations__coordinates .destinations__icon:hover:after,
+.destinations .destinations__deroulement .voyages__icon:hover:after,
+.destinations .destinations__deroulement .destinations__icon:hover:after,
 .destinations .voyages__detailsPrix .voyages__icon:hover:after,
+.destinations .voyages__detailsPrix .destinations__icon:hover:after,
 .actualites .destinations__coordinates .voyages__icon:hover:after,
+.actualites .destinations__coordinates .destinations__icon:hover:after,
+.actualites .destinations__deroulement .voyages__icon:hover:after,
+.actualites .destinations__deroulement .destinations__icon:hover:after,
 .actualites .voyages__detailsPrix .voyages__icon:hover:after,
+.actualites .voyages__detailsPrix .destinations__icon:hover:after,
 .voyages .destinations__coordinates .voyages__icon:hover:after,
-.voyages .voyages__detailsPrix .voyages__icon:hover:after {
+.voyages .destinations__coordinates .destinations__icon:hover:after,
+.voyages .destinations__deroulement .voyages__icon:hover:after,
+.voyages .destinations__deroulement .destinations__icon:hover:after,
+.voyages .voyages__detailsPrix .voyages__icon:hover:after,
+.voyages .voyages__detailsPrix .destinations__icon:hover:after {
   color: #fff;
 }
 .destinations .destinations__coordinates span,
+.destinations .destinations__deroulement span,
 .destinations .voyages__detailsPrix span,
 .actualites .destinations__coordinates span,
+.actualites .destinations__deroulement span,
 .actualites .voyages__detailsPrix span,
 .voyages .destinations__coordinates span,
+.voyages .destinations__deroulement span,
 .voyages .voyages__detailsPrix span {
   line-height: 50px;
 }

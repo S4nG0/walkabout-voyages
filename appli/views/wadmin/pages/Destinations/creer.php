@@ -130,37 +130,56 @@ echo form_open_multipart('walkadmin/destinations/creer');
 
         <div class="row text-center">
             <h2 class="no-sep">Informations sur le déroulement</h2>
-            <div class="col-md-6">
+            <div class="col-md-4 col-md-offset-2">
                 <div class="form-group">
                     <label for="">Accompagnement</label>
-                    <textarea name="accompagnement" id="accompagnement" rows="10" placeholder="Saississez vos informations"><?php echo set_value('accompagnement'); ?></textarea>
+                    <textarea name="accompagnement" id="accompagnement" rows="5" placeholder="Saississez vos informations"><?php echo set_value('accompagnement'); ?></textarea>
                     <?php echo form_error('accompagnement'); ?>
                 </div>
                 <div class="form-group">
                     <label for="">Hébergement</label>
-                    <textarea name="hebergement" id="hebergement" rows="10" placeholder="Saississez vos informations"><?php echo set_value('hebergement'); ?></textarea>
+                    <textarea name="hebergement" id="hebergement" rows="5" placeholder="Saississez vos informations"><?php echo set_value('hebergement'); ?></textarea>
                     <?php echo form_error('hebergement'); ?>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="">Déplacements</label>
-                    <textarea name="deplacement" id="deplacement" rows="10" placeholder="Saississez vos informations"><?php echo set_value('deplacement'); ?></textarea>
+                    <textarea name="deplacement" id="deplacement" rows="5" placeholder="Saississez vos informations"><?php echo set_value('deplacement'); ?></textarea>
                     <?php echo form_error('deplacement'); ?>
                 </div>
                 <div class="form-group">
                     <label for="">Repas &amp; boissons</label>
-                    <textarea name="nourriture" id="nourriture" rows="10" placeholder="Saississez vos informations"><?php echo set_value('nourriture'); ?></textarea>
+                    <textarea name="nourriture" id="nourriture" rows="5" placeholder="Saississez vos informations"><?php echo set_value('nourriture'); ?></textarea>
                     <?php echo form_error('nourriture'); ?>
                 </div>
             </div>
         </div>
         <div class="row text-center">
-            <h2 class="no-sep">Informations sur le déroulement</h2>
             <div class="col-md-6 col-md-offset-3">
                 <div class="form-group">
                     <label for="deroulement">Déroulement</label>
-                    <textarea name="deroulement" id="deroulement" rows="10" placeholder="Saississez vos informations"><?php echo set_value('deroulement'); ?></textarea>
+                    <!-- <textarea name="deroulement" id="deroulement" rows="10" placeholder="Saississez vos informations"><?php echo set_value('deroulement'); ?></textarea> -->
+
+                    <div class="help-block">
+                        <span class="small">Veuillez indiquer les activités par jours</span>
+                    </div>
+                    <div id="container_details"></div>
+
+                    <?php $i = 0; if($infos) { foreach($infos as $info) { ?>
+
+                    <div class="form-group destinations__deroulement" id="detail<?php echo $i; ?>">
+                        <input type="text" placeholder="Titre du détail" name="detail_nom<?php echo $i; ?>" id="jour" value="<?php echo $info['titre']; ?>"/>
+                        <input type="text" name="detail_valeur<?php echo $i; ?>" id="detail_prix" placeholder="Insérer le texte du détail"  value="<?php echo $info['valeur']; ?>"/>
+                        <span class="destinations__icon remove" onclick="javascript:remove_detail(<?php echo $i; ?>);"></span>
+                    </div>
+
+                    <?php $i++; }} ?>
+
+                    <div class="form-group destinations__deroulement">
+                        <span title="Ajouter" class="destinations__icon add" id="add"></span><span>Ajouter un détail</span>
+                    </div>
+
                     <?php echo form_error('deroulement'); ?>
                 </div>
             </div>

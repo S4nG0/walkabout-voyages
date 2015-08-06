@@ -41,6 +41,10 @@
                             </a>
                         </div>
                         <div class="single__block buttonsBlock">
+                            <a class="button black" href="<?php echo base_url() . 'nos-destinations/' . slugify($destination->titre); ?>" target="blank">
+                                <i class="fa fa-eye"></i>&nbsp;
+                                Voir la destination
+                            </a>
                             <a class="button black" href="<?php echo base_url().'walkadmin/destinations/detail/'.$destination->idDestination; ?>">
                                 <i class="fa fa-info"></i>&nbsp;
                                 Détails

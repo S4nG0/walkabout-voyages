@@ -94,9 +94,9 @@ class Destinations  extends CI_Controller{
                     "ville" => $this->input->post('ville'),
                     "coordonnees" => $this->input->post('longitude').','.$this->input->post('latitude')
                 );
-                
+
                 $id_infos = $this->infos_destination->constructeur($idDestination)[0]->idInfosDestinations;
-                
+
                 $infos = new stdClass();
                 $infos->idDestination = $idDestination;
                 $infos->climat = $this->input->post('climat');
@@ -109,15 +109,15 @@ class Destinations  extends CI_Controller{
                 $infos->hebergement = $this->input->post('hebergement');
                 $infos->deplacement = $this->input->post('deplacement');
                 $infos->accompagnement = $this->input->post('accompagnement');
-                
+
                 if(!$id_infos){
                     $this->infos_destination->insert($infos);
-                }else{  
+                }else{
                     $this->infos_destination->update($id_infos,$infos);
                 }
                 //Upload chemin for cover
                 $upload_path = 'assets/images/destinations/'. slugify($this->input->post('titre')).'/cover';
-                
+
                 //On vérifie si le dossier d'upload existe et si non on le crée
                 if (!file_exists($upload_path)){
                     //Création du dossier pour le carnet
@@ -146,7 +146,7 @@ class Destinations  extends CI_Controller{
                         $destination['banner']='destinations/'.  slugify($this->input->post('titre')).'/cover/'.$this->upload->data()['file_name'];
                     }
                 }
-                
+
                 if($_FILES['images']['error'][0] == 0){
                     //On va envoyer les photos de la destination
 
@@ -212,10 +212,10 @@ class Destinations  extends CI_Controller{
                 $this->load->view('wadmin/template/footer');
             }
         }else{
-            
+
             $data['pays']=$this->pays->getPays();
             $data['page']="add_travel";
-            $data['title']='Ajout de destination';
+            $data['title']='Destination - Détails';
             $data['admin'] = $this->session->userdata('admin');
             $this->load->view('wadmin/template/header', $data);
             $this->load->view('wadmin/template/menu', $data);
@@ -329,9 +329,9 @@ class Destinations  extends CI_Controller{
                     }
                     $destination['photos'] = $chaine;
                     $idinsert = $this->destination->insertDestination($destination);
-                    
-                    
-                
+
+
+
                     $infos = new stdClass();
                     $infos->idDestination = $idinsert;
                     $infos->climat = $this->input->post('climat');
@@ -346,7 +346,7 @@ class Destinations  extends CI_Controller{
                     $infos->accompagnement = $this->input->post('accompagnement');
 
                     $this->infos_destination->insert($infos);
-                 
+
                     redirect('walkadmin/destinations');
                 }
             }else{var_dump(validation_errors());
