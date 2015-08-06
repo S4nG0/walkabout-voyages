@@ -255,22 +255,27 @@ foreach ($details_prix as $detail) {
         <!-- endblock:Order button -->
 
         <!-- block:More informations -->
-        <form class="destination__form" id="info_form">
+        <form class="destination__form" id="info_form" action="<?php echo base_url().'contact/requestInformation/'.$destination[0]->url ?>" method="post">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="sep">Nous sommes à votre écoute !</h2>
                     </div>
+                    <?php if($this->input->get('error')!= false){ ?>
+                        <div class="alert alert-danger" role="alert">Une erreur s'est produite dans le formulaire</div>
+                    <?php } ?>
                     <div class="col-md-4 col-md-offset-2">
                         <div class="form-group">
                             <label for="nom">Votre nom</label>
-                            <input type="text" name="nom" id="nom" placeholder="Entrez votre nom">
+                            <input type="text" name="nom" id="nom" placeholder="Entrez votre nom" value="<?php set_value('nom') ?>">
+                            <?php echo form_error('nom') ?>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="prenom">Votre prénom</label>
-                            <input type="text" name="prenom" id="prenom" placeholder="Entrez votre prénom">
+                            <input type="text" name="prenom" id="prenom" placeholder="Entrez votre prénom" value="<?php set_value('prenom') ?>">
+                            <?php echo form_error('prenom') ?>
                         </div>
                     </div>
                 </div>
@@ -278,13 +283,15 @@ foreach ($details_prix as $detail) {
                     <div class="col-md-8 col-md-offset-2">
                         <div class="form-group">
                             <label for="email">Votre e-mail</label>
-                            <input type="email" name="email" id="email" placeholder="Entrez votre e-mail">
+                            <input type="email" name="email" id="email" placeholder="Entrez votre e-mail" value="<?php set_value('email') ?>">
+                            <?php echo form_error('email') ?>
                         </div>
                     </div>
                     <div class="col-md-8 col-md-offset-2">
                         <div class="form-group">
                             <label for="message">Votre demande</label>
-                            <textarea name="message" id="message" rows="10" placeholder="Écrivez votre message ici..."></textarea>
+                            <textarea name="message" id="message" rows="10" placeholder="Écrivez votre message ici..."><?php set_value('message') ?></textarea>
+                            <?php echo form_error('message') ?>
                         </div>
                     </div>
                     <div class="col-md-8 col-md-offset-2">
