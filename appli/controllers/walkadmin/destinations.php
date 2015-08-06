@@ -59,7 +59,7 @@ class Destinations  extends CI_Controller{
 
         //On charge la librairie d'upload
         $this->load->library('upload');
-        
+
 
         if($this->input->post() != false){
 
@@ -89,19 +89,19 @@ class Destinations  extends CI_Controller{
                 );
 
                 $id_infos = $this->infos_destination->constructeur($idDestination)[0]->idInfosDestinations;
-                
-                
+
+
                 $taille_details = (sizeof($this->input->post())-16)/2;
                 $details = array();
                 $i = 0;
                 $k = 0;
                 do{
-                    if($this->input->post("detail_nom$i") != false && $this->input->post("detail_valeur$i") != false){
-                        $this->form_validation->set_rules("detail_nom$i", "Titre détail", 'trim|required|encode_php_tags|xss_clean');
-                        $this->form_validation->set_rules("detail_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
+                    if($this->input->post("jour$i") != false && $this->input->post("jour_valeur$i") != false){
+                        $this->form_validation->set_rules("jour$i", "Jour", 'trim|required|encode_php_tags|xss_clean');
+                        $this->form_validation->set_rules("jour_valeur$i", "Valeur jour", 'trim|required|encode_php_tags|xss_clean');
 
-                        $details[$i]["titre"] = $this->input->post("detail_nom$i");
-                        $details[$i]["valeur"] = $this->input->post("detail_valeur$i");
+                        $details[$i]["titre"] = $this->input->post("jour$i");
+                        $details[$i]["valeur"] = $this->input->post("jour_valeur$i");
                         $k++;
                     }
                     $i++;
@@ -260,18 +260,18 @@ class Destinations  extends CI_Controller{
             $this->form_validation->set_rules('accompagnement', '"Accompagnement"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 var_dump($this->input->post());
-                
+
                 $taille_details = (sizeof($this->input->post())-15)/2;
                 $details = array();
                 $i = 0;
                 $k = 0;
                 do{
-                    if($this->input->post("detail_nom$i") != false && $this->input->post("detail_valeur$i") != false){
-                        $this->form_validation->set_rules("detail_nom$i", "Titre détail", 'trim|required|encode_php_tags|xss_clean');
-                        $this->form_validation->set_rules("detail_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
+                    if($this->input->post("jour$i") != false && $this->input->post("jour_valeur$i") != false){
+                        $this->form_validation->set_rules("jour$i", "Jour", 'trim|required|encode_php_tags|xss_clean');
+                        $this->form_validation->set_rules("jour_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
 
-                        $details[$i]["titre"] = $this->input->post("detail_nom$i");
-                        $details[$i]["valeur"] = $this->input->post("detail_valeur$i");
+                        $details[$i]["titre"] = $this->input->post("jour$i");
+                        $details[$i]["valeur"] = $this->input->post("jour_valeur$i");
                         $k++;
                     }
                     $i++;

@@ -6442,6 +6442,17 @@ body.admin .charts h3 {
   width: 35%;
   margin-right: 25px;
 }
+.destinations .destinations__coordinates textarea,
+.destinations .destinations__deroulement textarea,
+.destinations .voyages__detailsPrix textarea,
+.actualites .destinations__coordinates textarea,
+.actualites .destinations__deroulement textarea,
+.actualites .voyages__detailsPrix textarea,
+.voyages .destinations__coordinates textarea,
+.voyages .destinations__deroulement textarea,
+.voyages .voyages__detailsPrix textarea {
+  margin-top: 25px;
+}
 .destinations .destinations__coordinates .voyages__icon,
 .destinations .destinations__coordinates .destinations__icon,
 .destinations .destinations__deroulement .voyages__icon,
@@ -6616,6 +6627,24 @@ body.admin .charts h3 {
 .voyages .destinations__deroulement span,
 .voyages .voyages__detailsPrix span {
   line-height: 50px;
+}
+.destinations .destinations__deroulement,
+.actualites .destinations__deroulement,
+.voyages .destinations__deroulement {
+  margin-top: 25px;
+}
+.destinations .destinations__deroulement input,
+.actualites .destinations__deroulement input,
+.voyages .destinations__deroulement input {
+  display: block;
+  margin: 0 auto;
+  margin-right: auto;
+}
+.destinations .destinations__deroulement .destinations__icon.remove,
+.actualites .destinations__deroulement .destinations__icon.remove,
+.voyages .destinations__deroulement .destinations__icon.remove {
+  display: block;
+  margin: 0 auto;
 }
 .destinations .voyages__detailsPrix,
 .actualites .voyages__detailsPrix,
@@ -8162,6 +8191,10 @@ body.single-carnet .content {
 
 .mt25 {
   margin-top: 25px !important;
+}
+
+.mt50 {
+  margin-top: 50px !important;
 }
 
 ::-webkit-input-placeholder {
