@@ -164,7 +164,7 @@ echo form_open_multipart('walkadmin/destinations/creer');
                     <div class="help-block">
                         <span class="small">Veuillez indiquer les activités par jours</span>
                     </div>
-                    <div id="container_details"></div>
+                    <div id="container_deroulement"></div>
                     <div class="form-group destinations__deroulement">
                         <span title="Ajouter" class="destinations__icon add" id="add"></span><span>Ajouter un détail</span>
                     </div>

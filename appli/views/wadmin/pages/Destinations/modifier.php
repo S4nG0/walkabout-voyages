@@ -177,27 +177,29 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
                     </div>
                     <div id="container_deroulement">
 
-                    <?php
-                    $iteration = 0;
-                    if(isset($infos->deroulement)){
-                    $informations = json_decode($infos->deroulement);
-                    }
-                    if(isset($informations)){
-                        foreach($informations as $info) {
-                    ?>
+                        <?php
+                        $iteration = 0;
+                        if(isset($infos->deroulement)){
+                        $informations = json_decode($infos->deroulement);
+                        }
+                        if(isset($informations)){
+                            foreach($informations as $info) {
+                        ?>
 
-                    <div class="form-group destinations__deroulement" id="detail<?php echo $iteration; ?>">
-                        <input type="text" placeholder="Jour" name="jour<?php echo $iteration; ?>" id="jour" value="<?php echo $info->titre; ?>"/>
-                        <textarea type="text" name="jour_valeur<?php echo $iteration; ?>" id="jour_valeur" rows="5" placeholder="Décrivez l'évènement du jour"><?php echo $info->valeur; ?></textarea>
-                        <span class="destinations__icon remove" onclick="javascript:remove_detail(<?php echo $iteration; ?>);"></span>
+                        <div class="form-group destinations__deroulement fieldBlock" id="detail<?php echo $iteration; ?>">
+                            <input type="text" placeholder="Jour" name="jour<?php echo $iteration; ?>" id="jour" value="<?php echo $info->titre; ?>"/>
+                            <textarea type="text" name="jour_valeur<?php echo $iteration; ?>" id="jour_valeur" rows="5" placeholder="Décrivez l'évènement du jour"><?php echo $info->valeur; ?></textarea>
+                            <span class="destinations__icon remove" onclick="javascript:remove_detail(<?php echo $iteration; ?>);"></span>
+                        </div>
+
+                        <?php
+                                $iteration++;
+                            }
+                        }
+                        ?>
+
                     </div>
 
-                    <?php
-                            $iteration++;
-                        }
-                    }
-                    ?>
-</div>
                     <div class="form-group destinations__deroulement">
                         <span title="Ajouter" class="destinations__icon add" id="add"></span><span>Ajouter un détail</span>
                     </div>
