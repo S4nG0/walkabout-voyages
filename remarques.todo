@@ -26,7 +26,10 @@ Modif-article :
 
 Checkout :
   ☐ Refaire page Dates & Prix : insérer détails du prix avant de choisir
+  ☐ Bug au niveau de la dernière phase du checkout, impossible de revenir en dessous de 10 personnes.
 
+Mon compte :
+  ☐ petit détail, il y a une option en plus dans le select, lors de la création du carnet
 --- ✄ ----------------------------
 Archive:
  ✔ Gérer dynamiquement les 'alt' des pictos (zone informations) @critical @Aurélien @started(15-07-30 23:21) @done (15-07-31 00:09) @lasted(0:48) @project(Single-destination )
