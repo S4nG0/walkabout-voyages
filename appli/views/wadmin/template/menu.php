@@ -109,7 +109,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/contact'; ?>"><i class="fa fa-pencil-square-o fa-fw menu-icons"></i>&nbsp;Contacts</a>
+                        <a href="<?php echo base_url() . 'walkadmin/contact'; ?>"><i class="fa fa-pencil-square-o fa-fw menu-icons"></i>&nbsp;Demandes</a>
                     </li>
                 </ul>
             </div>

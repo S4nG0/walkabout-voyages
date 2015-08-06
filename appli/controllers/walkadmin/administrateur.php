@@ -40,7 +40,7 @@ class Administrateur extends CI_Controller {
         $data['admins']=$this->admin->getAll();
         connecte_admin($this->session->userdata('admin'));
         $data['admin'] = $this->session->userdata('admin');
-        $data['title'] = "Gestion des administrateurs";
+        $data['title'] = "Utilisateurs - Administrateurs";
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Admin/liste',$data);

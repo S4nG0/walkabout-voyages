@@ -1,11 +1,13 @@
-Accueil :
-  ☐ Changer tous nos voyages en toutes nos destinations @low @Julien
 Générales :
 
   ☐ Image par défaut : gérer le style pour le cas où aucune image ne serait enregistrée
   ✔ Localiser les fichiers (pour la présentation au cas où) @low @done (15-07-30 20:52)
   ☐ Faire l'envoi d'email pour l'oubli de mot de passe @low
   ☐ Check matchMedia pour annuler parallax sur mobile @Julien
+  ☐ Styliser les erreurs partout
+
+Accueil :
+  ☐ Changer tous nos voyages en toutes nos destinations @low @Julien
 Destination :
  ☐ Ajouter un bouton je me lance et Personne n'a encore profité de cette destination, si on a aucune personne pour ce voyage.
 Single carnet :
@@ -25,7 +27,7 @@ Modif-article :
   ☐ IE10,11 : chargement très long lors d'une upload (voir en dessous pour ajout d'un loader)
 
 Contact :
-  ☐ E-mail ne s'envoie pas
+  ✔ E-mail ne s'envoie pas  @done (15-08-06 12:07)
   ☐ Message enregistré sur le BO, même quand il n'est pas validé...
 
 Checkout :

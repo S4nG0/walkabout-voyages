@@ -23,34 +23,40 @@ $page='destinations';
         <div class="container-fluid noPadding">
 
 
-            <?php
+            <?php foreach($destinations as $destination){ $image = img_url($destination->banner); ?>
 
-            foreach($destinations as $destination){
-                $image = img_url($destination->banner);
-                echo '<!-- Destination -->
-                <div class="destination-block">
+               <div class="destination-block">
                     <div class="row noPadding">
                         <div class="image-wrapper">
-                            <a class="no-style" href="'.base_url().'nos-destinations/'.slugify($destination->titre).'">
-                                <div class="image-container" style=\'background-image: url("'.$image.'");\'></div>
+                            <a class="no-style" href="<?php echo base_url() . 'nos-destinations/' . slugify($destination->titre); ?>">
+                                <div class="image-container" style="background-image: url('<?php echo $image; ?>')"></div>
                             </a>
                         </div>
                         <div class="text-container">
-                            <a class="no-style" href="'.base_url().'nos-destinations/'.slugify($destination->titre).'">
-                                <h2>'.$destination->titre.'</h2>
-                                <h3>'.$destination->pays[0]->nom.'&nbsp;&bull;&nbsp;'.$destination->ville.'</h3>
-                                <p>'.$destination->nom.'</p>';
-                            if(isset($destination->prix_min)){
-                                echo '<p class="price">À partir de <strong>'.$destination->prix_min.' € par personne</strong></p>';
-                            }else{
-                                echo '<br/><br/>';
-                            }
-                         echo '<a href="'.base_url().'nos-destinations/'.slugify($destination->titre).'" class="button align-left">Voir la destination</a>
+                            <a class="no-style" href="<?php echo base_url() . 'nos-destinations/' . slugify($destination->titre); ?>">
+                                <h2><?php echo $destination->titre; ?></h2>
+                                <h3><?php echo $destination->pays[0]->nom; ?>&nbsp;&bull;&nbsp;<?php echo $destination->ville; ?></h3>
+                                <p><?php echo $destination->nom; ?></p>
+
+                                <?php if(isset($destination->prix_min)){ ?>
+
+                                <p class="price">À partir de <strong><?php echo $destination->prix_min; ?>&nbsp;€ par personne</strong></p>
+
+                                <?php } else { ?>
+
+                                <br/><br/>
+
+                                <?php } ?>
+
+                                <a href="<?php echo base_url() . 'nos-destinations/' . slugify($destination->titre); ?>" class="button align-left">
+                                    Voir la destination
+                                </a>
                             </a>
                         </div>
                     </div>
                 </div>
-                <!-- end:Destination -->';
-            } ?>
+
+            <?php } ?>
+
         </div>
     </div>

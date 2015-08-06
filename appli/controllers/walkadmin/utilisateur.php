@@ -4,7 +4,7 @@
 class Utilisateur extends CI_Controller{
 
     public function index(){
-        $data['title'] = 'Liste des utilisateurs';
+        $data['title'] = 'Utilisateurs';
         connecte_admin($this->session->userdata('admin'));
         $data['users']=$this->user->getAllUsers();
         $data['admin'] = $this->session->userdata('admin');
@@ -40,7 +40,7 @@ class Utilisateur extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         if($idUsers==0)
             $this->index();
-        $data['title'] = 'Détail de l\'utilisateurs';
+        $data['title'] = 'Utilisateur - Détails';
         $data['user']=$this->user->constructeur($idUsers);
         $data['admin'] = $this->session->userdata('admin');
         $data['reservation'] = $this->reservations->getReservationAdmin($idUsers);

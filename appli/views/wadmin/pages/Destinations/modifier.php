@@ -8,8 +8,21 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
 
     <div class="destinations">
         <div class="row text-center">
-            <h1 class="page-header sep">Ajout d'une destination</h1>
+            <div class="col-md-12">
+                <h1 class="page-header sep"><?php echo $destination->titre; ?></h1>
+            </div>
         </div>
+
+        <div class="row destinations__previewBlock text-center">
+            <div class="col-md-12">
+                <a class="button black" href="<?php echo base_url() . 'nos-destinations/' . slugify($destination->titre); ?>" target="blank">
+                    <i class="fa fa-eye"></i>&nbsp;
+                    Afficher la destination
+                </a>
+            </div>
+        </div>
+
+        <hr>
 
         <?php if (isset($error)) { ?>
 
@@ -130,37 +143,56 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
 
         <div class="row text-center">
             <h2 class="no-sep">Informations sur le déroulement</h2>
-            <div class="col-md-6">
+            <div class="col-md-4 col-md-offset-2">
                 <div class="form-group">
                     <label for="">Accompagnement</label>
-                    <textarea name="accompagnement" id="accompagnement" rows="10" placeholder="Saississez vos informations"><?php if(isset($infos->accompagnement)){echo $infos->accompagnement;} ?></textarea>
+                    <textarea name="accompagnement" id="accompagnement" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->accompagnement)){echo $infos->accompagnement;} ?></textarea>
                     <?php echo form_error('accompagnement'); ?>
                 </div>
                 <div class="form-group">
                     <label for="">Hébergement</label>
-                    <textarea name="hebergement" id="hebergement" rows="10" placeholder="Saississez vos informations"><?php if(isset($infos->hebergement)){echo $infos->hebergement;} ?></textarea>
+                    <textarea name="hebergement" id="hebergement" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->hebergement)){echo $infos->hebergement;} ?></textarea>
                     <?php echo form_error('hebergement'); ?>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label for="">Déplacements</label>
-                    <textarea name="deplacement" id="deplacement" rows="10" placeholder="Saississez vos informations"><?php if(isset($infos->deplacement)){echo $infos->deplacement;} ?></textarea>
+                    <textarea name="deplacement" id="deplacement" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->deplacement)){echo $infos->deplacement;} ?></textarea>
                     <?php echo form_error('deplacement'); ?>
                 </div>
                 <div class="form-group">
                     <label for="">Repas &amp; boissons</label>
-                    <textarea name="nourriture" id="nourriture" rows="10" placeholder="Saississez vos informations"><?php if(isset($infos->repas_boissons)){echo $infos->repas_boissons;} ?></textarea>
+                    <textarea name="nourriture" id="nourriture" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->repas_boissons)){echo $infos->repas_boissons;} ?></textarea>
                     <?php echo form_error('nourriture'); ?>
                 </div>
             </div>
         </div>
         <div class="row text-center">
-            <h2 class="no-sep">Informations sur le déroulement</h2>
             <div class="col-md-6 col-md-offset-3">
                 <div class="form-group">
                     <label for="deroulement">Déroulement</label>
                     <textarea name="deroulement" id="deroulement" rows="10" placeholder="Saississez vos informations"><?php if(isset($infos->deroulement)){echo $infos->deroulement;} ?></textarea>
+
+                    <div class="help-block">
+                        <span class="small">Veuillez indiquer les activités par jours</span>
+                    </div>
+                    <div id="container_details"></div>
+
+                    <?php $i = 0; if($infos) { foreach($infos as $info) { ?>
+
+                    <div class="form-group destinations__deroulement" id="detail<?php echo $i; ?>">
+                        <input type="text" placeholder="Titre du détail" name="detail_nom<?php echo $i; ?>" id="jour" value="<?php echo $info['titre']; ?>"/>
+                        <input type="text" name="detail_valeur<?php echo $i; ?>" id="detail_prix" placeholder="Insérer le texte du détail"  value="<?php echo $info['valeur']; ?>"/>
+                        <span class="destinations__icon remove" onclick="javascript:remove_detail(<?php echo $i; ?>);"></span>
+                    </div>
+
+                    <?php $i++; }} ?>
+
+                    <div class="form-group destinations__deroulement">
+                        <span title="Ajouter" class="destinations__icon add" id="add"></span><span>Ajouter un détail</span>
+                    </div>
+
                     <?php echo form_error('deroulement'); ?>
                 </div>
             </div>

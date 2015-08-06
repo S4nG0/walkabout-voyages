@@ -56,7 +56,7 @@ class Actualite extends CI_Controller{
                 $data['error'] = true;
             }
         }
-        $data['title'] = 'Ajouter une actualité';
+        $data['title'] = 'Actualités - Ajout';
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
@@ -103,7 +103,7 @@ class Actualite extends CI_Controller{
                 $data['error'] = true;
             }
         }
-        $data['title'] = 'Modification d\'une actualité';
+        $data['title'] = 'Actualités - Modification';
         $data['admin'] = $this->session->userdata('admin');
         $data['actualite'] = $this->actualites->constructeur($idActualites);
         $this->load->view('wadmin/template/header', $data);

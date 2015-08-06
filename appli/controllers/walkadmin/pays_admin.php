@@ -47,7 +47,7 @@ class Pays_admin extends CI_Controller{
         }
         $data['admin'] = $this->session->userdata('admin');
         $data['page'] = "add_country";
-        $data['title'] = "Ajout de pays";
+        $data['title'] = "Pays - Ajout";
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Pays/creer',$data);
@@ -88,7 +88,7 @@ class Pays_admin extends CI_Controller{
         $data['pays'] = $this->pays->constructeur($idPays);
         $data['idPays'] = $idPays;
         $data['page'] = "modif_country";
-        $data['title'] = "Modifications sur le pays";
+        $data['title'] = "Pays - Modifications";
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Pays/modifier',$data);
