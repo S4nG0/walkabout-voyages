@@ -100,6 +100,34 @@ class Contact extends CI_Controller {
         $this->load->view('template/footer');
     }
 
+    public function requestInformation($urlDestination=''){
+        if($urlDestination=='')
+            redirect('nos-destinations');
+        if($this->input->post()){
+            $this->form_validation->set_rules('nom', '"Nom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('prenom', '"Prénom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('email', '"email"', 'trim|required|valid_email|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('message', '"message"', 'trim|required|encode_php_tags|xss_clean');
+            if($this->form_validation->run()){
+                $contact= new stdClass();
+                $contact->nom = $this->input->post('nom');
+                $contact->prenom = $this->input->post('prenom');
+                $contact->mail = $this->input->post('email');
+                $contact->sujet = "Demande d'information sur la destination ".$urlDestination;
+                $contact->telephone = "";
+                $contact->message = $this->input->post('message');
+                $contact->ouvert = "false";
+                $contact->date = date('Y-m-d');
+                $this->contacts->insert($contact);
+                if($this->input->post('sign-up')==false)
+                    redirect('nos-destinations');
+            }else{
+                redirect('nos-destinations/'.$urlDestination.'?error=true');
+            }
+        }else{
+            redirect('nos-destinations/'.$urlDestination);
+        }
+    }
     //Fonction de callback
     function __check_default($post_string) {
         return $post_string == '0' ? FALSE : TRUE;
