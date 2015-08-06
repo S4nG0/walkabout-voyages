@@ -22,7 +22,7 @@ class Contact extends CI_Controller {
      */
     public function index() {
         $data = Array();
-        $data['title'] = "Contact";
+        $data['title'] =  "Contact";
         $data['page'] = "contact";
         $result = '';
 

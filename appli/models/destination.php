@@ -103,8 +103,9 @@ class Destination extends CI_Model {
         if($data==''){
             return false;
         }
-        $destinations = $this->db->insert($this->table, $data);
-        return $destinations;
+        $destination = $this->db->insert($this->table, $data);
+        $id = $this->db->insert_id();
+        return $id;
     }
 
     public function updateDestination($idDestination=0,$data=''){

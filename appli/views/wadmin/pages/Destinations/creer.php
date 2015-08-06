@@ -22,7 +22,7 @@ echo form_open_multipart('walkadmin/destinations/creer');
             <div class="col-md-8">
                 <div class="form-group">
                     <label for="titre">Intitulé de la destination</label>
-                    <input placeholder="Titre" name="titre" type="text" value="">
+                    <input placeholder="Titre" name="titre" type="text" value="<?php echo set_value('titre'); ?>">
                     <?php echo form_error('titre'); ?>
                 </div>
                 <div class="form-group">
@@ -63,7 +63,7 @@ echo form_open_multipart('walkadmin/destinations/creer');
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="ville">Ville</label>
-                    <input placeholder="Ville" name="ville" type="text" value="">
+                    <input placeholder="Ville" name="ville" type="text" value="<?php echo set_value('ville'); ?>">
                     <?php echo form_error('ville'); ?>
                 </div>
             </div>
@@ -95,27 +95,32 @@ echo form_open_multipart('walkadmin/destinations/creer');
                     <li>
                         <img src="<?php echo img_url('info-pics/climat.png'); ?>" alt="Climat">
                         <p><strong>Climat</strong></p>
-                        <input type="text" name="climat" id="climat" placeholder="Entrez l'information">
+                        <input type="text" name="climat" id="climat" value="<?php echo set_value('climat'); ?>" placeholder="Entrez l'information">
+                        <?php echo form_error('climat'); ?>
                     </li>
                     <li>
                         <img src="<?php echo img_url('info-pics/currency.png'); ?>" alt="Monnaie">
                         <p><strong>Monnaie</strong></p>
-                        <input type="text" name="monnaie" id="monnaie" placeholder="Entrez l'information">
+                        <input type="text" name="monnaie" id="monnaie" value="<?php echo set_value('monnaie'); ?>" placeholder="Entrez l'information">
+                        <?php echo form_error('monnaie'); ?>
                     </li>
                     <li>
                         <img src="<?php echo img_url('info-pics/animals.png'); ?>" alt="Animaux">
                         <p><strong>Animaux</strong></p>
-                        <input type="text" name="animaux" id="animaux" placeholder="Entrez l'information">
+                        <input type="text" name="animaux" id="animaux" value="<?php echo set_value('animaux'); ?>" placeholder="Entrez l'information">
+                        <?php echo form_error('animaux'); ?>
                     </li>
                     <li>
                         <img src="<?php echo img_url('info-pics/pension.png'); ?>" alt="Pension">
                         <p><strong>Pension</strong></p>
-                        <input type="text" name="pension" id="pension" placeholder="Entrez l'information">
+                        <input type="text" name="pension" id="pension" value="<?php echo set_value('pension'); ?>" placeholder="Entrez l'information">
+                        <?php echo form_error('pension'); ?>
                     </li>
                     <li>
                         <img src="<?php echo img_url('info-pics/passport.png'); ?>" alt="Passeport">
                         <p><strong>Passeport</strong></p>
-                        <input type="text" name="passeport" id="passeport" placeholder="Entrez l'information">
+                        <input type="text" name="passeport" id="passeport" value="<?php echo set_value('passeport'); ?>" placeholder="Entrez l'information">
+                        <?php echo form_error('passeport'); ?>
                     </li>
                 </ul>
             </div>
@@ -128,21 +133,25 @@ echo form_open_multipart('walkadmin/destinations/creer');
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Accompagnement</label>
-                    <textarea name="accompagnement" id="accompagnement" rows="10" placeholder="Saississez vos informations"></textarea>
+                    <textarea name="accompagnement" id="accompagnement" rows="10" placeholder="Saississez vos informations"><?php echo set_value('accompagnement'); ?></textarea>
+                    <?php echo form_error('accompagnement'); ?>
                 </div>
                 <div class="form-group">
                     <label for="">Hébergement</label>
-                    <textarea name="hebergement" id="hebergement" rows="10" placeholder="Saississez vos informations"></textarea>
+                    <textarea name="hebergement" id="hebergement" rows="10" placeholder="Saississez vos informations"><?php echo set_value('hebergement'); ?></textarea>
+                    <?php echo form_error('hebergement'); ?>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="">Déplacements</label>
-                    <textarea name="deplacement" id="deplacement" rows="10" placeholder="Saississez vos informations"></textarea>
+                    <textarea name="deplacement" id="deplacement" rows="10" placeholder="Saississez vos informations"><?php echo set_value('deplacement'); ?></textarea>
+                    <?php echo form_error('deplacement'); ?>
                 </div>
                 <div class="form-group">
                     <label for="">Repas &amp; boissons</label>
-                    <textarea name="nourriture" id="nourriture" rows="10" placeholder="Saississez vos informations"></textarea>
+                    <textarea name="nourriture" id="nourriture" rows="10" placeholder="Saississez vos informations"><?php echo set_value('nourriture'); ?></textarea>
+                    <?php echo form_error('nourriture'); ?>
                 </div>
             </div>
         </div>
@@ -151,7 +160,8 @@ echo form_open_multipart('walkadmin/destinations/creer');
             <div class="col-md-6 col-md-offset-3">
                 <div class="form-group">
                     <label for="deroulement">Déroulement</label>
-                    <textarea name="deroulement" id="deroulement" rows="10" placeholder="Saississez vos informations"></textarea>
+                    <textarea name="deroulement" id="deroulement" rows="10" placeholder="Saississez vos informations"><?php echo set_value('deroulement'); ?></textarea>
+                    <?php echo form_error('deroulement'); ?>
                 </div>
             </div>
         </div>

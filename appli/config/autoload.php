@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('actualites','articles','contacts','carnetvoyage','commentaires','destination','user','admin','infos_destination','pays','infos_complementaires','voyages','reservations','etat_reservation','newsletters','details_prix');
+$autoload['model'] = array('actualites','articles','contacts','carnetvoyage','commentaires','destination','user','admin','infos_destination','pays','voyages','reservations','etat_reservation','newsletters','details_prix');
 
 
 /* End of file autoload.php */

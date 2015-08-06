@@ -42,8 +42,7 @@ class Destinations extends CI_Controller {
                 redirect(base_url().'nos-destinations');
             }
             $data['infos_pays'] = $this->pays->constructeur($data['destination'][0]->idPays);
-            $data['infos_destination'] = $this->infos_destination->constructeur($data['destination'][0]->idDestination);
-            $data['infos_complementaires'] = $this->infos_complementaires->constructeur($data['destination'][0]->idDestination);
+            $data['infos'] = $this->infos_destination->constructeur($data['destination'][0]->idDestination)[0];
             $data['voyages'] = $this->voyages->get_voyage_reservation($data['destination'][0]->idDestination);
             $data['details_prix'] = $this->details_prix->constructeur($data['destination'][0]->idDestination);
             
