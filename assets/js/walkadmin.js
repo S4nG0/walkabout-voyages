@@ -108,6 +108,8 @@ $('select[name=code_pays]').on('change', function(){
  */
 $('#reservations-all-content').show();
 $('#reservations-current-content').hide();
+$('#reservations-payment-content').hide();
+$('#reservations-dossier-content').hide();
 $('#reservations-finished-content').hide();
 
 $('.admin .submenu .button').on('click', function () {
@@ -120,12 +122,20 @@ $('.admin .submenu .button').on('click', function () {
             if ($('#reservations-current').hasClass('active')) {
                 $('#reservations-current').removeClass('active');
             }
+            if ($('#reservations-payment').hasClass('active')) {
+                $('#reservations-payment').removeClass('active');
+            }
+            if ($('#reservations-dossier').hasClass('active')) {
+                $('#reservations-dossier').removeClass('active');
+            }
             if ($('#reservations-finished').hasClass('active')) {
                 $('#reservations-finished').removeClass('active');
             }
 
             $('#reservations-all-content').fadeIn(300);
             $('#reservations-current-content').hide();
+            $('#reservations-payment-content').hide();
+            $('#reservations-dossier-content').hide();
             $('#reservations-finished-content').hide();
             break;
 
@@ -134,12 +144,64 @@ $('.admin .submenu .button').on('click', function () {
             if ($('#reservations-all').hasClass('active')) {
                 $('#reservations-all').removeClass('active');
             }
+            if ($('#reservations-payment').hasClass('active')) {
+                $('#reservations-payment').removeClass('active');
+            }
+            if ($('#reservations-dossier').hasClass('active')) {
+                $('#reservations-dossier').removeClass('active');
+            }
             if ($('#reservations-finished').hasClass('active')) {
                 $('#reservations-finished').removeClass('active');
             }
 
             $('#reservations-all-content').hide();
             $('#reservations-current-content').fadeIn(300);
+            $('#reservations-payment-content').hide();
+            $('#reservations-dossier-content').hide();
+            $('#reservations-finished-content').hide();
+            break;
+
+        case 'reservations-payment':
+            $('#reservations-payment').addClass('active');
+            if ($('#reservations-all').hasClass('active')) {
+                $('#reservations-all').removeClass('active');
+            }
+            if ($('#reservations-current').hasClass('active')) {
+                $('#reservations-current').removeClass('active');
+            }
+            if ($('#reservations-dossier').hasClass('active')) {
+                $('#reservations-dossier').removeClass('active');
+            }
+            if ($('#reservations-finished').hasClass('active')) {
+                $('#reservations-finished').removeClass('active');
+            }
+
+            $('#reservations-all-content').hide();
+            $('#reservations-current-content').hide();
+            $('#reservations-payment-content').fadeIn(300);
+            $('#reservations-dossier-content').hide();
+            $('#reservations-finished-content').hide();
+            break;
+
+        case 'reservations-dossier':
+            $('#reservations-dossier').addClass('active');
+            if ($('#reservations-all').hasClass('active')) {
+                $('#reservations-all').removeClass('active');
+            }
+            if ($('#reservations-current').hasClass('active')) {
+                $('#reservations-current').removeClass('active');
+            }
+            if ($('#reservations-payment').hasClass('active')) {
+                $('#reservations-payment').removeClass('active');
+            }
+            if ($('#reservations-finished').hasClass('active')) {
+                $('#reservations-finished').removeClass('active');
+            }
+
+            $('#reservations-all-content').hide();
+            $('#reservations-current-content').hide();
+            $('#reservations-payment-content').hide();
+            $('#reservations-dossier-content').fadeIn(300);
             $('#reservations-finished-content').hide();
             break;
 
@@ -151,9 +213,17 @@ $('.admin .submenu .button').on('click', function () {
             if ($('#reservations-current').hasClass('active')) {
                 $('#reservations-current').removeClass('active');
             }
+            if ($('#reservations-payment').hasClass('active')) {
+                $('#reservations-payment').removeClass('active');
+            }
+            if ($('#reservations-dossier').hasClass('active')) {
+                $('#reservations-dossier').removeClass('active');
+            }
 
             $('#reservations-all-content').hide();
             $('#reservations-current-content').hide();
+            $('#reservations-payment-content').hide();
+            $('#reservations-dossier-content').hide();
             $('#reservations-finished-content').fadeIn(300);
             break;
     }

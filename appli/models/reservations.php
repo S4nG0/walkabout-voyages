@@ -6,32 +6,32 @@ if (!defined('BASEPATH'))
 class Reservations extends CI_Model {
 
     protected $table = 'reservation';
-    
-    
+
+
     public function constructeur($id = 0){
-        
+
         if($id == 0){
             return false;
         }
-        
+
         $reservations = $this->db->select('*')
                            ->from($this->table)
                            ->where('idUsers', $id)
                            ->get()
                            ->result();
-        
+
         return $reservations;
-    }  
-    
+    }
+
     public function getAll(){
-        
+
         $reservations = $this->db->select('*')
                            ->from($this->table)
                            ->get()
                            ->result();
-        
+
         return $reservations;
-    }  
+    }
 
     public function getReservationAdmin($id= 0){
         if($id == 0){
@@ -60,8 +60,8 @@ class Reservations extends CI_Model {
                                ->join('voyage','reservation.idVoyage=voyage.idVoyage')
                                ->join('destination','destination.idDestination=voyage.idDestination')
                                ->join('pays','destination.idPays=pays.idPays')
-                               ->where('etatreservation.etat','En cours')
-                               ->or_where('etatreservation.etat','En attente de réception du dossier')
+                               ->where('etatreservation.etat','En attente de confirmation')
+                               ->or_where('etatreservation.etat','En attente de confirmation')
                                ->get()
                                ->result();
         return $reservation;
@@ -83,21 +83,69 @@ class Reservations extends CI_Model {
         return $reservation;
     }
 
+    public function getReservationAwaitingPayment(){
+        $reservation= $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays,
+                                         users.nom AS nomClient,users.prenom as prenomClient,etatreservation.idEtatReservation,
+                                         etatreservation.etat')
+            ->from($this->table)
+            ->join('etatreservation','etatreservation.idReservation=reservation.idReservation')
+            ->join('users','reservation.idUsers=users.idUsers')
+            ->join('voyage','reservation.idVoyage=voyage.idVoyage')
+            ->join('destination','destination.idDestination=voyage.idDestination')
+            ->join('pays','destination.idPays=pays.idPays')
+            ->where('etatreservation.etat','En attente du premier versement')
+            ->or_where('etatreservation.etat','En attente du paiement final')
+            ->get()
+            ->result();
+        return $reservation;
+    }
+
+    public function getReservationAwaitingDossier(){
+        $reservation= $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays,
+                                         users.nom AS nomClient,users.prenom as prenomClient,etatreservation.idEtatReservation,
+                                         etatreservation.etat')
+            ->from($this->table)
+            ->join('etatreservation','etatreservation.idReservation=reservation.idReservation')
+            ->join('users','reservation.idUsers=users.idUsers')
+            ->join('voyage','reservation.idVoyage=voyage.idVoyage')
+            ->join('destination','destination.idDestination=voyage.idDestination')
+            ->join('pays','destination.idPays=pays.idPays')
+            ->where('etatreservation.etat','En attente de réception du dossier')
+            ->get()
+            ->result();
+        return $reservation;
+    }
+
+    public function getReservationAll(){
+        $reservation= $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays,
+                                         users.nom AS nomClient,users.prenom as prenomClient,etatreservation.idEtatReservation,
+                                         etatreservation.etat')
+            ->from($this->table)
+            ->join('etatreservation','etatreservation.idReservation=reservation.idReservation')
+            ->join('users','reservation.idUsers=users.idUsers')
+            ->join('voyage','reservation.idVoyage=voyage.idVoyage')
+            ->join('destination','destination.idDestination=voyage.idDestination')
+            ->join('pays','destination.idPays=pays.idPays')
+            ->get()
+            ->result();
+        return $reservation;
+    }
+
     public function insert($data = ''){
         if($data == ''){
             return false;
         }
-        
+
         $this->db->insert($this->table, $data);
-        
+
         $reservation = $this->db->insert_id();
-        
+
         return $reservation;
     }
-    
-    
+
+
     public function count($id = 0){
-        
+
         if($id == 0){
             return false;
         }
@@ -106,52 +154,52 @@ class Reservations extends CI_Model {
                        ->where('idVoyage', $id)
                        ->get()
                        ->result()[0]->nb_personnes;
-        
+
         if($nb == NULL){
             $nb = 0;
-        }   
+        }
         return $nb;
-    }  
-    
+    }
+
     public function count_en_cours(){
-        
+
         $reservations = $this->db->select('*')->from($this->table)->get()->result();
-        
+
         $count = 0;
-        
+
         foreach($reservations as $reservation){
             $etat = $this->db->select('etat')->from('etatreservation')->where('idReservation',$reservation->idReservation)->get()->result();
-            if($etat[0]->etat == "En cours"){
+            if($etat[0]->etat == "En attente de confirmation"){
                 $count++;
-            }       
+            }
         }
         return $count;
-        
+
     }
-    
+
     public function countFromVoyage($id = 0){
         if($id == 0){
             return false;
         }
-        
+
         $reservations = $this->db->select('*')->from($this->table)->where('idVoyage',$id)->get()->result();
-        
+
         $count = 0;
-        
+
         foreach($reservations as $reservation){
-            $count++;      
+            $count++;
         }
         return $count;
     }
-    
+
     public function getReservationsFromVoyage($id = 0){
         if($id == 0){
             return false;
         }
-        
+
         $reservations = $this->db->select('*')->from($this->table)->where('idVoyage',$id)->get()->result();
-        
+
         return $reservations;
     }
-    
+
 }
