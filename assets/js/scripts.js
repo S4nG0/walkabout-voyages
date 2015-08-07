@@ -132,11 +132,32 @@ $(document).ready(function () {
     /***
      * Stellar initializer
      */
-    // if(window.matchMedia("min-width: 1024px").matches) {
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+
+    if(!isMobile.any()) {
         $.stellar({
             horizontalScrolling: false
         });
-    // }
+    }
 
     /***
      * Magic Height initializer
@@ -219,7 +240,7 @@ $(document).ready(function () {
         helpers: {
             overlay: {
                 css: {
-                    'background': 'rgba(33, 33, 33, 0.8)',
+                    'background': 'rgba(22, 22, 22, 0.9)',
                 }
             }
         }
@@ -229,7 +250,7 @@ $(document).ready(function () {
         helpers: {
             overlay: {
                 css: {
-                    'background': 'rgba(33, 33, 33, 0.8)',
+                    'background': 'rgba(22, 22, 22, 0.9)',
                 }
             },
             thumbs  : {
@@ -238,7 +259,9 @@ $(document).ready(function () {
             }
         },
         nextEffect: 'fade',
-        prevEffect: 'fade'
+        prevEffect: 'fade',
+        openEffect: 'fade',
+        closeEffect: 'fade'
     });
 
 

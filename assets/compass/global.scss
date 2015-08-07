@@ -606,8 +606,11 @@ body.single-carnet {
     display: block;
     width: 100%;
     min-height: 250px;
-    background: url('../images/parallax.jpg') 0 0 fixed;
-    background-size: cover;
+    background-image: url('../images/parallax-travel-logs.jpg');
+    background-position: 0 0;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    @include background-size(cover);
 }
 
 .content.travel-logs{
