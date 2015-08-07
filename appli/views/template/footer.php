@@ -92,7 +92,10 @@
 <script type="text/javascript" src="<?php echo js_url('vendors/readmore-min'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/stellar'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/owl.carousel.min'); ?>"></script>
-<script type="text/javascript" src="<?php echo js_url('vendors/fancybox.min'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/fancybox/fancybox.min'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/fancybox/fancybox-buttons'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/fancybox/fancybox-media'); ?>"></script>
+<script type="text/javascript" src="<?php echo js_url('vendors/fancybox/fancybox-thumbs'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/dotimeout'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/iconate'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/images-loaded'); ?>"></script>
