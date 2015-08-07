@@ -118,10 +118,16 @@ class Contact extends CI_Controller {
                 $contact->message = $this->input->post('message');
                 $contact->ouvert = "false";
                 $contact->date = date('Y-m-d');
-                $this->contacts->insert($contact);
-                if($this->input->post('sign-up')==false)
+                $result = $this->contacts->insert($contact);
+                echo output($result);
+                /*if($this->input->post('sign-up')==false){
                     redirect('nos-destinations');
+                }
+                */
+                
             }else{
+                $result = validation_errors();
+                echo output($result);
                 redirect('nos-destinations/'.$urlDestination.'?error=true');
             }
         }else{
