@@ -46,13 +46,13 @@ $page = "moncompte";
                 <div class="col-md-12">
                     <ul class="submenu">
                         <li>
-                            <a class="button active" id="reservations">Mes réservations</a>
+                            <a href="#mes-reservations" class="button active" id="reservations">Mes réservations</a>
                         </li>
                         <li>
-                            <a class="button" id="carnets">Mes carnets de voyages</a>
+                            <a href="#mes-carnets" class="button" id="carnets">Mes carnets de voyages</a>
                         </li>
                         <li>
-                            <a class="button" id="infos">Mes informations</a>
+                            <a href="#mes-informations" class="button" id="infos">Mes informations</a>
                         </li>
                     </ul>
                 </div>
@@ -60,7 +60,7 @@ $page = "moncompte";
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="reservations-block" id="reservations-content">
+                    <div class="reservations-block" id="mes-reservations">
                         <?php
                         if(sizeof($reservations) > 0){
                           echo '<div class="table-responsive">
@@ -99,97 +99,99 @@ $page = "moncompte";
                         } ?>
 
                     </div>
-                    <div class="carnets-block" id="carnets-content">
-                        <!--Design a faire par Julien ! :)  -->
+                    <div class="carnets-block" id="mes-carnets">
+                        <div class="travel-logs-wrapper">
 
-                        <?php
-                            if(sizeof($voyages_sans_carnets) > 0){
-                                if(sizeof($voyages_sans_carnets) > 1){
-                                    echo '<p>
-                                    Vous pouvez créer des carnets de voyage grâce à vos réservation!</p>
-                                    <a href="#create-carnet" class="fancybox btn"> Créer mon carnet </a>';
-                                }else{
-                                    echo '<p>
-                                    Vous pouvez créer un carnet de voyage grâce à votre réservation!</p>
-                                    <a href="#create-carnet" class="fancybox btn"> Créer mon carnet </a>';
-                                }
-                            }
-                            if(sizeof($voyages_sans_carnets) > 0){
-                        ?>
-                            <div id="create-carnet">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <h2 class="sep">Création d'un carnet de voyage</h2>
-                                        </div>
+                        <?php if(sizeof($voyages_sans_carnets) > 0){ if(sizeof($voyages_sans_carnets) > 1){ ?>
+
+                        <div class="travel-log">
+                            <p class="travel-log__createNew">
+                                <i class="fa fa-thumbs-o-up fa-3x"></i>
+                                Vous pouvez créer des carnets de voyage grâce à vos réservations !
+                            </p>
+                            <a class="fancybox button" href="#create-carnet">Créer un carnet</a>
+                        </div>
+
+                        <hr>
+
+                        <?php } else { ?>
+
+                        <div class="travel-log">
+                            <p class="travel-log__createNew">
+                                <i class="fa fa-thumbs-o-up fa-3x"></i>
+                                Vous pouvez créer un carnet de voyage grâce à votre réservation !
+                            </p>
+                            <a class="fancybox button" href="#create-carnet">Créer mon carnet</a>
+                        </div>
+
+                        <hr>
+
+                        <?php } } if(sizeof($voyages_sans_carnets) > 0){ ?>
+
+                        <div id="create-carnet">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h2 class="sep">Création d'un carnet de voyage</h2>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                        <?php echo form_open("carnets-de-voyage/creer") ?>
-                                            <div class="form-group">
-                                                <label for="voyage">Choisissez le voyage sur lequel vous souhaitez créer ce carnet :</label>
-                                                <select name="voyage" id="voyage">
-                                                <?php
-                                                    foreach($voyages_sans_carnets as $voyage_sans_carnet){
-                                                        echo '<option value="'.$voyage_sans_carnet->idVoyage.'">'.$voyage_sans_carnet->destination->titre.'</option>';
-                                                    }
-                                                ?>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="titre">Renseignez le titre de votre carnet :</label>
-                                                <input type="text" name="titre" id="titre" placeholder="Entrez le titre de votre carnet...">
-                                            </div>
-                                            <div class="buttons-block">
-                                                <input class="button" type="submit" value="Créer !">
-                                            </div>
-                                        <?php echo form_close(); ?>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                    <?php echo form_open("carnets-de-voyage/creer") ?>
+                                        <div class="form-group">
+                                            <label for="voyage">Choisissez le voyage sur lequel vous souhaitez créer ce carnet :</label>
+                                            <select name="voyage" id="voyage">
+                                            <?php
+                                                foreach($voyages_sans_carnets as $voyage_sans_carnet){
+                                                    echo '<option value="'.$voyage_sans_carnet->idVoyage.'">'.$voyage_sans_carnet->destination->titre.'</option>';
+                                                }
+                                            ?>
+                                            </select>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="titre">Renseignez le titre de votre carnet :</label>
+                                            <input type="text" name="titre" id="titre" placeholder="Entrez le titre de votre carnet...">
+                                        </div>
+                                        <div class="buttons-block">
+                                            <input class="button" type="submit" value="Créer !">
+                                        </div>
+                                    <?php echo form_close(); ?>
                                     </div>
                                 </div>
                             </div>
-                        <?php
-                        }
-                        ?>
+                        </div>
 
-                        <!-- Fin design julien! :) -->
+                        <?php } ?>
 
-                        <div class="travel-logs-wrapper">
-                        <?php
+                        <?php if (sizeof($carnets) > 0) { foreach ($carnets as $carnet) { ?>
 
-                        if (sizeof($carnets) > 0) {
-                            foreach ($carnets as $carnet) {
-                                echo '
-                                <!-- begin:Travel-log-->
-                                <div class="travel-log">
-                                    <div class="col-md-3">
-                                        <div class="image-wrapper" style="background-image : url('.img_url($carnet->image_carnet).');"></div>
-                                    </div>
-                                    <div class="col-md-6 excerpt-wrapper">
-                                        <h3>'.$carnet->titre.'</h3>
-                                        <p>'.$carnet->pays[0]->nom.'&nbsp;&bull;&nbsp;du '.$carnet->voyage[0]->date_depart.' au '.$carnet->voyage[0]->date_retour.'</p>
-                                        <p>'.$carnet->description.'</p>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="buttons-wrapper">
-                                            <a href="'.base_url().'carnets-de-voyage/'. slugify($carnet->titre) .'" class="button">Voir le carnet</a>
-                                            <a href="'.base_url().'carnets-de-voyage/modifier/'. slugify($carnet->titre) .'" class="button">Modifier le carnet</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- endblock:Travel-log -->
-                                ';
-                            }
-                        } else {
-                            echo '<div class="travel-log">
-                                <div class="col-md-12">
-                                    <p class="no-entry">Il n\'y a aucun carnet enregistré pour votre compte !</p>
-                                </div>
-                            </div>';
-                        } ?>
+                        <div class="travel-log">
+                            <div class="travel-log__block image-wrapper" style="background-image : url('<?php echo img_url($carnet->image_carnet); ?>');">
+                            </div>
+                            <div class="travel-log__block excerpt-wrapper">
+                                <h3 class="no-sep"><?php echo $carnet->titre; ?></h3>
+                                <p><?php echo $carnet->pays[0]->nom.'&nbsp;&bull;&nbsp;du '.$carnet->voyage[0]->date_depart.' au '.$carnet->voyage[0]->date_retour; ?></p>
+                                <p><?php echo $carnet->description; ?></p>
+                            </div>
+                            <div class="travel-log__block buttons-wrapper">
+                                <a href="<?php echo base_url().'carnets-de-voyage/'. slugify($carnet->titre); ?>" class="button">Voir le carnet</a>
+                                <a href="<?php echo base_url().'carnets-de-voyage/modifier/'. slugify($carnet->titre); ?>" class="button">Modifier le carnet</a>
+                            </div>
+                        </div>
+
+                        <?php } } else { ?>
+
+                        <div class="travel-log">
+                            <div class="col-md-12">
+                                <p class="no-entry">Il n\'y a aucun carnet enregistré pour votre compte !</p>
+                            </div>
+                        </div>
+
+                        <?php } ?>
+
                         </div>
                     </div>
-                    <div class="infos-block" id="infos-content">
+                    <div class="infos-block" id="mes-informations">
 
                         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <h3>Votre couverture</h3>
