@@ -213,7 +213,7 @@ $(document).ready(function () {
     });
 
     /***
-     * Fancybox gallery
+     * Fancybox & Galleries
      */
     $(".fancybox").fancybox({
         helpers: {
@@ -223,6 +223,22 @@ $(document).ready(function () {
                 }
             }
         }
+    });
+
+    $(".fancybox-thumb").fancybox({
+        helpers: {
+            overlay: {
+                css: {
+                    'background': 'rgba(33, 33, 33, 0.8)',
+                }
+            },
+            thumbs  : {
+                width   : 75,
+                height  : 75
+            }
+        },
+        nextEffect: 'fade',
+        prevEffect: 'fade'
     });
 
 

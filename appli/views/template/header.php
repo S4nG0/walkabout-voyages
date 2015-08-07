@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="<?php echo css_url('bootstrap.min'); ?>">
     <link rel="stylesheet" href="<?php echo css_url('font-awesome');?>">
     <link rel="stylesheet" href="<?php echo css_url('fancybox');?>">
+    <link rel="stylesheet" href="<?php echo css_url('helpers/fancybox-thumbs');?>">
+    <link rel="stylesheet" href="<?php echo css_url('helpers/fancybox-buttons');?>">
     <link rel="stylesheet" href="<?php echo css_url('iconate.min');?>">
     <link rel="stylesheet" href="<?php echo css_url('owl.carousel');?>">
 

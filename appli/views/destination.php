@@ -316,28 +316,28 @@ foreach ($details_prix as $detail) {
 
                 <div class="grid__sizer"></div>
 
-<?php $photos = array();
-$photos = explode(";", $destination[0]->photos);
-foreach ($photos as $key => $photo) {
-    if ($photo != "") {
-        ?>
+                <?php $photos = array();
+                $photos = explode(";", $destination[0]->photos);
+                foreach ($photos as $key => $photo) {
+                    if ($photo != "") {
+                        ?>
 
-                        <div class="grid__item">
-                            <figure>
-                                <div class="grid__image" style="background-image: url('<?php echo img_url($photo); ?>')"></div>
-                                <figcaption>
-                                    <div class="caption-content">
-                                        <a class="fancybox" rel="group" href="<?php echo img_url($photo); ?>">
-                                            <i class="fa fa-search"></i>
-                                            <p>Agrandir l'image</p>
-                                        </a>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
+                    <div class="grid__item">
+                        <figure>
+                            <div class="grid__image" style="background-image: url('<?php echo img_url($photo); ?>')"></div>
+                            <figcaption>
+                                <div class="caption-content">
+                                    <a class="fancybox-thumb" rel="fancybox-thumb" href="<?php echo img_url($photo); ?>">
+                                        <i class="fa fa-search"></i>
+                                        <p>Agrandir l'image</p>
+                                    </a>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
 
-                        <?php }
-                    } ?>
+                    <?php }
+                } ?>
             </div>
         </div>
 
