@@ -16,8 +16,8 @@ Espace voyageur :
   ☐ Photo de couverture profil : peut-on faire un changement d'image un ajax plutot que reload la page ? (quand ça reload, on retourne sur le 1er onglet, c'est pas top niveau expérience utilisateur)
 
 Single carnet :
-  ☐ Revoir zone de comm : affichage en escalier pour montrer les réponses à une question (pas urgent) @Julien/ + gérer pagination sur les comm  @Aurélien @low
-  ☐ Sur la page des carnets de voyages, es ce qu'on met pas de bouton "feuilleter le carnet" ? @Steph
+  ☐ Gérer pagination sur les comm  @Aurélien @low
+  ✔ Sur la page des carnets de voyages, es ce qu'on met pas de bouton "feuilleter le carnet" ? @Steph @done (15-08-07 16:56)
 
 Modif-carnet :
   ☐ Placeholder bug sur Firefox @low
