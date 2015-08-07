@@ -15,7 +15,6 @@ $step = 'informations';
     ?>
     </div>
 </div>
-
 <div class="content">
     <div class="container-fluid noPadding">
         <div class="row noPadding">
@@ -29,6 +28,13 @@ $step = 'informations';
         <div class="row">
            <?php echo form_open('checkout/paiement'); ?>
                 <div class="infos-block existing-address clearfix">
+                    <p style="text-align:center;">
+                        <?php 
+                            if($error != false){
+                                echo $error;
+                            } 
+                        ?>
+                    </p>
                     <div class="col-sm-6 col-md-8">
                         <div class="form-group">
                             <h3 for="adresses">Mon adresse</h3>

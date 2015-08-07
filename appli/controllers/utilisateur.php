@@ -45,11 +45,11 @@ class Utilisateur extends CI_Controller {
         
         $id = $this->session->userdata('user')[0]->idUsers;
         
-        $this->form_validation->set_rules('adresse1', '"Adresse"', 'trim|required|min_length[5]|max_length[70]|encode_php_tags|xss_clean');
-        $this->form_validation->set_rules('adresse2', '"Complément d\'adresse"', 'trim|min_length[5]|max_length[70]|encode_php_tags|xss_clean');
-        $this->form_validation->set_rules('CP', '"Code postal"', 'trim|required|min_length[4]|max_length[10]|encode_php_tags|xss_clean|numeric');
-        $this->form_validation->set_rules('ville', '"Ville"', 'trim|required|min_length[3]|max_length[50]|encode_php_tags|xss_clean');
-        $this->form_validation->set_rules('pays', '"Pays"', 'trim|required|min_length[3]|max_length[50]|encode_php_tags|xss_clean');
+        $this->form_validation->set_rules('adresse1', '"Adresse"', 'trim|required|encode_php_tags|xss_clean');
+        $this->form_validation->set_rules('adresse2', '"Complément d\'adresse"', 'trim|encode_php_tags|xss_clean');
+        $this->form_validation->set_rules('CP', '"Code postal"', 'trim|required|encode_php_tags|xss_clean|numeric');
+        $this->form_validation->set_rules('ville', '"Ville"', 'trim|required|encode_php_tags|xss_clean');
+        $this->form_validation->set_rules('pays', '"Pays"', 'trim|required|encode_php_tags|xss_clean');
         
         if ($this->form_validation->run()) {
             $donnee = array(
@@ -61,6 +61,8 @@ class Utilisateur extends CI_Controller {
             );
 
             $this->user->modify($donnee,$id);
+        }else{
+            $this->session->set_flashdata('error_modify_adress',  validation_errors());
         }
         
         //On réactualise l'utilisateur

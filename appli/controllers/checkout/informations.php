@@ -22,6 +22,7 @@ class Informations extends CI_Controller {
             $data = array();
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $data['title'] = "Réservation";
+            $data['error'] = $this->session->flashdata('error_modify_adress');
             if($data['connecte'] == false){
                 redirect('/connexion');
             }
