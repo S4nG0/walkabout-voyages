@@ -130,16 +130,16 @@ $page = "moncompte";
 
                         <div id="create-carnet">
                             <div class="container">
-                                <div class="row">
+                                <div class="row text-center">
                                     <div class="col-sm-12">
                                         <h2 class="sep">Création d'un carnet de voyage</h2>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-6 col-md-offset-3">
                                     <?php echo form_open("carnets-de-voyage/creer") ?>
                                         <div class="form-group">
-                                            <label for="voyage">Choisissez le voyage sur lequel vous souhaitez créer ce carnet :</label>
+                                            <label for="voyage">Choisissez le voyage sur lequel vous souhaitez créer un carnet :</label>
                                             <select name="voyage" id="voyage">
                                             <?php
                                                 foreach($voyages_sans_carnets as $voyage_sans_carnet){

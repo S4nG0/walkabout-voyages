@@ -3737,54 +3737,6 @@ body.single-destination .travel-logs .travel-logs-slider .travel-log .excerpt .b
   width: 200px;
 }
 
-.fancybox-margin {
-  margin-right: 0 !important;
-}
-
-.fancybox-overlay .fancybox-skin {
-  background: url("../images/texture.png");
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-}
-.fancybox-overlay .fancybox-skin .destination__form h2 {
-  position: relative;
-  margin-bottom: 50px;
-  padding-bottom: 0;
-  text-align: center;
-  border-bottom: none;
-}
-.fancybox-overlay .fancybox-skin .destination__form h2:after {
-  content: '';
-  position: absolute;
-  display: block;
-  left: 50%;
-  width: 100px;
-  height: 1px;
-  bottom: -15px;
-  background-color: #f0c041;
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-.fancybox-overlay .fancybox-skin .destination__form .form-group {
-  margin-bottom: 25px;
-  text-align: center;
-}
-.fancybox-overlay .fancybox-skin .destination__form .form-group label {
-  color: #f0c041;
-}
-.fancybox-overlay .fancybox-skin .destination__form .form-group .button {
-  display: block;
-  width: 200px;
-  margin: 0 auto;
-}
-
-.fancybox-overlay {
-  z-index: 9999;
-}
-
 /*------------------------------------*\
     #RESPONSIVE
 \*------------------------------------*/
@@ -5448,7 +5400,6 @@ body.espace-voyageur .content .carnets-block {
 }
 body.espace-voyageur .content .carnets-block #create-carnet {
   display: none;
-  text-align: center;
 }
 body.espace-voyageur .content .carnets-block .travel-logs-wrapper {
   width: 100%;
@@ -5990,6 +5941,70 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
     text-align: center;
   }
 }
+.fancybox-margin {
+  margin-right: 0 !important;
+}
+
+.fancybox-overlay .fancybox-skin {
+  background: url("../images/texture.png");
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.fancybox-overlay .fancybox-skin .destination__form h2 {
+  position: relative;
+  margin-bottom: 50px;
+  padding-bottom: 0;
+  text-align: center;
+  border-bottom: none;
+}
+.fancybox-overlay .fancybox-skin .destination__form h2:after {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 50%;
+  width: 100px;
+  height: 1px;
+  bottom: -15px;
+  background-color: #f0c041;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.fancybox-overlay .fancybox-skin .destination__form .form-group {
+  margin-bottom: 25px;
+  text-align: center;
+}
+.fancybox-overlay .fancybox-skin .destination__form .form-group label {
+  color: #f0c041;
+}
+.fancybox-overlay .fancybox-skin .destination__form .form-group .button {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+.fancybox-overlay .fancybox-skin #create-carnet label {
+  display: block;
+  margin: 50px auto 15px auto;
+  color: #f0c041;
+  text-align: center;
+}
+.fancybox-overlay .fancybox-skin #create-carnet select {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+}
+.fancybox-overlay .fancybox-skin #create-carnet input[type="submit"] {
+  width: 200px;
+  margin: 25px auto 0 auto;
+}
+
+.fancybox-overlay {
+  z-index: 9999;
+}
+
 /*------------------------------------*\
     #WALKADMIN STYLES
 \*------------------------------------*/
