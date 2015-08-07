@@ -184,6 +184,14 @@ body.checkout {
             width: 100%;
             margin: 100px 0 50px 0;
             padding: 0;
+
+            .help-block {
+                p {
+                    margin-bottom: 25px;
+                    font-style: italic;
+                }
+            }
+
             .date-list {
                 display: table;
                 width: 100%;
@@ -204,12 +212,6 @@ body.checkout {
                     }
                 }
 
-                .help-block {
-                    p {
-                        margin-bottom: 25px;
-                    }
-                }
-
                 li {
                     vertical-align: top;
                     margin-bottom: 25px;
@@ -217,7 +219,6 @@ body.checkout {
                     background-color: $fond-blanc;
 
                     .form-group {
-                        padding: 25px;
                         margin-bottom: 0;
                         font-size: 18px;
                         color: $noir;
@@ -228,11 +229,40 @@ body.checkout {
 
                         p {
                             margin-top: 15px;
-                            padding-left: 25px;
+                            margin-bottom: 15px;
                             color: $noir;
                             font-size: 16px;
                             line-height: 26px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
                         }
+
+                        hr {
+                            margin: 25px 0;
+                        }
+
+                        h3 {
+                            color: $noir;
+                        }
+
+                        .button.small {
+                            display: inline-block;
+                            vertical-align: top;
+                            width: 100px;
+                            font-size: 60%;
+                            line-height: 100%;
+                            margin-left: 15px;
+                        }
+
+                        .priceDetails {
+                            display: none;
+                        }
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
                     }
                 }
             }

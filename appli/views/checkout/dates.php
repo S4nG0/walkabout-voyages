@@ -60,24 +60,29 @@ $step = 'choice';
 
                     <li>
                         <div class="form-group">
-                            <input <?php echo $disable ?> class="radio" type="radio" name="date" id="date<?php echo $x; ?>.'" value="<?php echo $voyage->idVoyage; ?>" <?php echo $checked; ?>/>
+                            <input <?php echo $disable ?> class="radio" type="radio" name="date<?php echo $x; ?>" id="date<?php echo $x; ?>" value="<?php echo $voyage->idVoyage; ?>" <?php echo $checked; ?>/>
                             <label for="date<?php echo $x; ?>"><span></span><?php echo "Destination&nbsp;:&nbsp;<i>" . $destination->titre . "</i>"; ?></label>
                             <p>
                                 <strong>Départ</strong>&nbsp;:&nbsp;<?php echo $voyage->date_depart; ?>&nbsp;&bull;&nbsp;
                                 <strong>Retour</strong>&nbsp;:&nbsp;<?php echo $voyage->date_retour; ?>
                             </p>
                             <p>
-                                <strong>Prix</strong>&nbsp;:&nbsp;<?php echo $voyage->prix; ?>&nbsp;€ par personnes.
+                                <strong>Prix</strong>&nbsp;:&nbsp;<?php echo $voyage->prix; ?>&nbsp;€ par personnes&nbsp;&nbsp;&nbsp;&bull;
+                                <a href="#details<?php echo $x; ?>" class="button black small" id="showDetails<?php echo $x; ?>">Voir détails</a>
                             </p>
                             <p>
                                 <strong>Places restantes</strong>&nbsp;:&nbsp;<?php echo $voyage->nb_reservés.' sur '.$voyage->nb_places; ?>
                             </p>
-                            <?php $details = json_decode($voyage->details); ?>
-                            <?php foreach($details as $detail) { ?>
-                            <p class="date-list__priceDetails">
-                                <strong><?php echo $detail->titre; ?></strong>&nbsp;:&nbsp;<?php echo $detail->valeur . "&nbsp;€"; ?>
-                            </p>
-                            <?php } ?>
+                            <div class="priceDetails" id="details<?php echo $x; ?>">
+                                <hr>
+                                <h3>Détails du prix pour ce séjour</h3>
+                                <?php $details = json_decode($voyage->details); ?>
+                                <?php foreach($details as $detail) { ?>
+                                <p>
+                                    <strong><?php echo $detail->titre; ?></strong>&nbsp;:&nbsp;<?php echo $detail->valeur . "&nbsp;€"; ?>
+                                </p>
+                                <?php } ?>
+                            </div>
                         </div>
                     </li>
 

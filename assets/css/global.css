@@ -4467,6 +4467,10 @@ body.checkout .content .choice-block {
   margin: 100px 0 50px 0;
   padding: 0;
 }
+body.checkout .content .choice-block .help-block p {
+  margin-bottom: 25px;
+  font-style: italic;
+}
 body.checkout .content .choice-block .date-list {
   display: table;
   width: 100%;
@@ -4485,9 +4489,6 @@ body.checkout .content .choice-block .date-list .no-entry .fa {
   font-size: 3em;
   margin-bottom: 25px;
 }
-body.checkout .content .choice-block .date-list .help-block p {
-  margin-bottom: 25px;
-}
 body.checkout .content .choice-block .date-list li {
   vertical-align: top;
   margin-bottom: 25px;
@@ -4495,7 +4496,6 @@ body.checkout .content .choice-block .date-list li {
   background-color: #e4e4e4;
 }
 body.checkout .content .choice-block .date-list li .form-group {
-  padding: 25px;
   margin-bottom: 0;
   font-size: 18px;
   color: #242424;
@@ -4505,10 +4505,33 @@ body.checkout .content .choice-block .date-list li .form-group label {
 }
 body.checkout .content .choice-block .date-list li .form-group p {
   margin-top: 15px;
-  padding-left: 25px;
+  margin-bottom: 15px;
   color: #242424;
   font-size: 16px;
   line-height: 26px;
+}
+body.checkout .content .choice-block .date-list li .form-group p:last-child {
+  margin-bottom: 0;
+}
+body.checkout .content .choice-block .date-list li .form-group hr {
+  margin: 25px 0;
+}
+body.checkout .content .choice-block .date-list li .form-group h3 {
+  color: #242424;
+}
+body.checkout .content .choice-block .date-list li .form-group .button.small {
+  display: inline-block;
+  vertical-align: top;
+  width: 100px;
+  font-size: 60%;
+  line-height: 100%;
+  margin-left: 15px;
+}
+body.checkout .content .choice-block .date-list li .form-group .priceDetails {
+  display: none;
+}
+body.checkout .content .choice-block .date-list li:last-child {
+  margin-bottom: 0;
 }
 body.checkout .content .buttons-block .button {
   width: 250px;

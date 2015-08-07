@@ -288,11 +288,24 @@ $(document).ready(function () {
         $('html, body').animate({scrollTop: $(page).offset().top}, 300);
     });
 
+    /***
+     * Show price details
+     */
+    $('a[href^="#details"]').on('click', function(e){
+        e.preventDefault();
+        this.innerHTML = this.innerHTML === "Voir détails" ? "Fermer" : "Voir détails";
+        var element = $(this).attr('href');
+        $(element).fadeToggle(300);
+    })
+
     $('#delete-address').on('click', function () {
         confirm('Êtes-vous sûr de vouloir supprimer cette adresse ?');
     });
 
-    //Fonction changement prix pour réservation
+    /***
+     * Function thats updates the price depending on
+     * the number of participants
+     */
     $('input[name=nb_personne]').on('change',function(){
         var nb_reserve = $(this).val();
         var nb_places = $('#nb_places').val();
