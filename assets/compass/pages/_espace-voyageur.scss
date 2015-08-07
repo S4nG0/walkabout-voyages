@@ -214,7 +214,7 @@ body.espace-voyageur {
             position: absolute;
             top: 0;
             left: 0;
-            padding: 25% 0;
+            // padding: 25% 0;
             width: 100%;
             height: 100%;
             background-color: rgba(240, 192, 65, 0.85);
@@ -431,13 +431,51 @@ body.espace-voyageur {
             .travel-logs-wrapper {
                 width: 100%;
 
+                hr {
+                    margin: 50px 0;
+                    padding: 0 15px;
+                    border-top-color: $blanc;
+                }
+
                 .travel-log {
                     display: table;
                     width: 100%;
                     margin-bottom: 50px;
 
+                    .travel-log__createNew {
+                        margin: 0;
+                        color: $jaune-or;
+                        font-size: 24px;
+                        line-height: 34px;
+                        font-style: italic;
+
+                        .fa {
+                            display: block;
+                            width: 100px;
+                            height: 100px;
+                            margin: 0 auto;
+                            margin-bottom: 25px;
+                            @include border-radius(100%);
+                            background-color: $jaune-or;
+                            color: $noir;
+                            line-height: 1.4em;
+                        }
+                    }
+
+                    .button {
+                        width: 250px;
+                        margin: 0 auto;
+                        margin-top: 50px;
+                    }
+
+                    .travel-log__block {
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+
                     .image-wrapper {
-                        padding-bottom: 80%;
+                        width: 30%;
+                        padding-bottom: 20%;
                         background-image: url('../images/cdv1.jpg');
                         background-position: 50% 0;
                         background-repeat: no-repeat;
@@ -445,20 +483,22 @@ body.espace-voyageur {
                     }
 
                     .excerpt-wrapper {
-                        h1 {
-                            border-bottom: none;
-                        }
+                        width: 50%;
                     }
 
                     .buttons-wrapper {
-                        padding: 19% 0;
+                        width: 20%;
 
                         .button {
                             display: block;
-                            float: none;
+                            float: right;
                             width: 200px;
                             margin: 0 auto;
                             margin-bottom: 15px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
                         }
                     }
                 }
@@ -542,7 +582,7 @@ body.espace-voyageur {
                 .button {
                     display: inline-block;
                     float: none;
-                    width: 150px;
+                    width: 200px;
                     margin-right: 15px;
 
                     &:first-child {
@@ -887,18 +927,6 @@ body.espace-voyageur {
                 }
             }
         }
-
-        .content {
-            .carnets-block {
-                .travel-logs-wrapper {
-                    .travel-log {
-                        .buttons-wrapper {
-                            padding: 14% 0;
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -917,22 +945,31 @@ body.espace-voyageur {
             .carnets-block {
                 .travel-logs-wrapper {
                     .travel-log {
-                        .image-wrapper {
-                            padding: 32% 0;
-                            margin-bottom: 25px;
-                            @include background-size(cover);
+                        .travel-log__block {
+                            display: block;
+                            width: 100%;
+                            margin: 0 auto;
+                            margin-bottom: 50px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
                         }
 
-                        .excerpt-wrapper {
-                            text-align: center;
+                        .image-wrapper {
+                            width: 60%;
+                            padding-bottom: 50%;
                         }
 
                         .buttons-wrapper {
-                            padding-top: 25px;
-                            padding-bottom: 0;
-
                             .button {
-                                width: 200px;
+                                display: inline-block;
+                                float: none;
+                                margin-right: 15px;
+
+                                &:last-child {
+                                    margin-right: 0;
+                                }
                             }
                         }
                     }
@@ -974,6 +1011,19 @@ body.espace-voyageur {
         }
 
         .content {
+            .carnets-block {
+                .travel-logs-wrapper {
+                    .travel-log {
+                        .image-wrapper {
+                            width: 100%;
+                            padding-bottom: 50%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .content {
             .submenu {
                 li {
                     display: block;
@@ -985,6 +1035,10 @@ body.espace-voyageur {
                     }
                 }
             }
+        }
+
+        .travel-logs-wrapper {
+
         }
 
         //MODIF-CARNET
@@ -1058,6 +1112,25 @@ body.espace-voyageur {
 
                     .button {
                         width: 75%;
+                    }
+                }
+            }
+        }
+
+        .content {
+            .carnets-block {
+                .travel-logs-wrapper {
+                    .travel-log {
+                        .buttons-wrapper {
+                            .button {
+                                display: block;
+                                margin-right: auto;
+
+                                &:last-child {
+                                    margin-right: auto;
+                                }
+                            }
+                        }
                     }
                 }
             }

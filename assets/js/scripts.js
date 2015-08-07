@@ -381,12 +381,13 @@ $(document).ready(function () {
     //Hide password recovery block in login page
     $('#recover-pwd').hide();
 
-    $('#reservations-content').show();
-    $('#carnets-content').hide();
-    $('#infos-content').hide();
+    $('#mes-reservations').show();
+    $('#mes-carnets').hide();
+    $('#mes-informations').hide();
 
-    $('.espace-voyageur .content .submenu .button').on('click', function () {
+    $('.espace-voyageur .content .submenu .button').on('click', function (e) {
         var buttonID = $(this).attr('id');
+        e.preventDefault();
 
         switch (buttonID) {
 
@@ -399,9 +400,9 @@ $(document).ready(function () {
                     $('#infos').removeClass('active');
                 }
 
-                $('#reservations-content').fadeIn(300);
-                $('#carnets-content').hide();
-                $('#infos-content').hide();
+                $('#mes-reservations').fadeIn(300);
+                $('#mes-carnets').hide();
+                $('#mes-informations').hide();
                 break;
 
             case 'carnets':
@@ -413,9 +414,9 @@ $(document).ready(function () {
                     $('#infos').removeClass('active');
                 }
 
-                $('#reservations-content').hide();
-                $('#carnets-content').fadeIn(300);
-                $('#infos-content').hide();
+                $('#mes-reservations').hide();
+                $('#mes-carnets').fadeIn(300);
+                $('#mes-informations').hide();
                 break;
 
             case 'infos':
@@ -427,9 +428,9 @@ $(document).ready(function () {
                     $('#carnets').removeClass('active');
                 }
 
-                $('#reservations-content').hide();
-                $('#carnets-content').hide();
-                $('#infos-content').fadeIn(300);
+                $('#mes-reservations').hide();
+                $('#mes-carnets').hide();
+                $('#mes-informations').fadeIn(300);
                 break;
         }
     });

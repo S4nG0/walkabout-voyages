@@ -1,22 +1,27 @@
 Générales :
 
   ☐ Image par défaut : gérer le style pour le cas où aucune image ne serait enregistrée
-  ✔ Localiser les fichiers (pour la présentation au cas où) @low @done (15-07-30 20:52)
   ☐ Faire l'envoi d'email pour l'oubli de mot de passe @low
-  ☐ Check matchMedia pour annuler parallax sur mobile @Julien
   ☐ Styliser les erreurs partout
 
 Accueil :
-  ☐ Changer tous nos voyages en toutes nos destinations @low @Julien
-  ☐ Manque du bouton toutes nos destinations sur la carte
-  ☐ Problème de redirection de lorsqu'on clique, on est redirigé vers le bo
+  ☐ Manque du bouton toutes nos destinations sur la carte @high
+  ☐ Problème de redirection de lorsqu'on clique, on est redirigé vers le bo @high
+    --> Attente de voir ce qu'on met vraiment dans cette zone
+
 Destination :
- ☐ Ajouter un bouton je me lance et Personne n'a encore profité de cette destination, si on a aucune personne pour ce voyage.
+ ☐ Ajouter un bouton je me lance et Personne n'a encore profité de cette destination, si on a aucune personne pour ce voyage. @high
+
+Espace voyageur :
+  ☐ Photo de couverture profil : peut-on faire un changement d'image un ajax plutot que reload la page ? (quand ça reload, on retourne sur le 1er onglet, c'est pas top niveau expérience utilisateur)
+
 Single carnet :
   ☐ Revoir zone de comm : affichage en escalier pour montrer les réponses à une question (pas urgent) @Julien/ + gérer pagination sur les comm  @Aurélien @low
   ☐ Sur la page des carnets de voyages, es ce qu'on met pas de bouton "feuilleter le carnet" ? @Steph
+
 Modif-carnet :
   ☐ Placeholder bug sur Firefox @low
+  ☐ Pas de message d'erreur quand on upload une image de trop grosse taille ou poids
 
 Modif-article :
   ☐ Quand on ajoute une image, le texte revient pas automatiquement à la ligne -> quand on écrit du texte direct après avoir ajouté une image, ça l'écrit en dehors dans une div à part @high
@@ -29,18 +34,24 @@ Modif-article :
   ☐ IE10,11 : chargement très long lors d'une upload (voir en dessous pour ajout d'un loader)
 
 Contact :
-  ✔ E-mail ne s'envoie pas  @done (15-08-06 12:07)
   ☐ Message enregistré sur le BO, même quand il n'est pas validé...
 
 Checkout :
   ☐ Refaire page Dates & Prix : insérer détails du prix avant de choisir
   ☐ Bug au niveau de la dernière phase du checkout, impossible de revenir en dessous de 10 personnes.
+  ☐ Insérer pop up CGV
+  ☐ Design pop up changement d'adresse
+  ☐ Changer le input "pays" en un select de pays
 
 Mon compte :
   ☐ petit détail, il y a une option en plus dans le select, lors de la création du carnet
   ☐ Lors que je modifie mes informations du compte, je suis redirigé vers la home
+
 --- ✄ ----------------------------
 Archive:
+  ✔ Localiser les fichiers (pour la présentation au cas où) @low @done (15-07-30 20:52)
+  ✔ E-mail ne s'envoie pas  @done (15-08-06 12:07)
+  ✔ Check matchMedia pour annuler parallax sur mobile @Julien @done (15-08-07 14:58) --> used a custom mobile recognizer
  ✔ Gérer dynamiquement les 'alt' des pictos (zone informations) @critical @Aurélien @started(15-07-30 23:21) @done (15-07-31 00:09) @lasted(0:48) @project(Single-destination )
  ✔ Gérer le contenu dynamiquement avec bdd (toutes les informations en dessous de l'intro : infos générales, google map et prix) @critical @Aurélien @started(15-07-30 23:20) @done (15-07-31 00:09) @lasted(0:49) @project(Single-destination )
  ✔ Pagination : quand on a trop de carnets affichés @started(15-07-30 22:38) @done (15-07-30 23:18) @lasted(0:40) @project(Générales  / Développer soit )
