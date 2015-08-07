@@ -23,7 +23,9 @@ $page='destinations';
         <div class="container-fluid noPadding">
 
 
-            <?php foreach($destinations as $destination){ $image = img_url($destination->banner); ?>
+            <?php 
+            if(sizeof($destinations) > 0){
+            foreach($destinations as $destination){ $image = img_url($destination->banner); ?>
 
                <div class="destination-block">
                     <div class="row noPadding">
@@ -56,6 +58,14 @@ $page='destinations';
                     </div>
                 </div>
 
+            <?php }}else{ ?>
+            
+            <div class="destination-block">
+                <div class="row noPadding">
+                    <h4 style="text-align:center;vertical-align:middle;padding:60px;">Il n'y a aucune destination de prévue, revenez plus tard! </h4>
+                </div>
+            </div>
+            
             <?php } ?>
 
         </div>

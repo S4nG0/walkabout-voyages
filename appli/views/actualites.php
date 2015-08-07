@@ -19,6 +19,8 @@ include 'template/menu.php';
 
             <?php
 
+            if(sizeof($actus) > 0){
+            
             foreach($actus as $actu){
                 if($actu->photos != null){
                         echo ''
@@ -61,6 +63,8 @@ include 'template/menu.php';
                     <!-- end:Actualité -->'
                                 . '';
                 }
+            }}else{
+                echo '<h4 style="text-align:center;vertical-align:middle;padding:60px;">Aucune actualité pour le moment! :/ </h4>';
             }
             ?>
 

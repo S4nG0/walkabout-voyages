@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-
+    <?php if(isset($favoris)){ ?>
     <div class="featured-travel-log">
         <div class="col-xs-12 col-sm-6 col-md-7 image-wrapper" style="background-image: url('<?php echo img_url($favoris->image_carnet); ?>');"></div>
         <div class="col-xs-12 col-sm-6 col-md-5 aside">
@@ -29,11 +29,14 @@
             <a class="button" href="<?php echo base_url(); ?>carnets-de-voyage/<?php echo slugify($favoris->titre) ?>">Feuilleter le carnet</a>
         </div>
     </div>
-
-    <div class="content">
-        <div class="stories">
+    <?php } ?>
             <?php
-
+                if(sizeof($nonfavoris) > 0){
+                    
+                    echo '
+    <div class="content">
+        <div class="stories">';
+                    
                 foreach($nonfavoris as $carnet){
                     echo ''. '<!-- begin:Block-travel -->
                     <div class="story-block">
@@ -56,11 +59,18 @@
                     </div>
                     <!-- endblock:Block-travel -->' . '';
                 }
-
-            ?>
-        </div>
-    </div>
-
+                
+                echo '</div>
+    </div>';
+                
+                }else{
+                    echo '<h4 style="text-align:center;vertical-align:middle;padding:60px;">Aucun utilisateur n\'a enregistré son histoire, revenez plus tard! </h4>';
+                }
+            ?>        
+    <?php if(isset($favoris) && sizeof($nonfavoris)>0){ ?>
+   
     <div class="see-more-block">
         <a href="<?php echo base_url(); ?>tous-les-carnets" class="button">Voir tous les carnets</a>
     </div>
+    
+    <?php } ?>
