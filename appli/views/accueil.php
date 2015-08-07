@@ -96,7 +96,7 @@ switch ($newsletter) {
 
                     <h2>Nos actualités</h2>
 
-<?php
+<?php if(sizeof($actus) >0){
 foreach ($actus as $actu) {
 
     echo '<div class="row news">
@@ -114,6 +114,8 @@ foreach ($actus as $actu) {
                                         </div>
 
                                     </div>';
+}}else{
+    echo '<div class="row news"> <h4 style=text-align:center;vertical-align:middle;"> Aucune actualité pour l\'instant</h4></div>';
 }
 ?>
 
@@ -131,15 +133,20 @@ foreach ($actus as $actu) {
 
 
 
-    <div class="content travel-logs noPadding" id="travel-logs">
+
+
+<?php
+
+if(sizeof($carnets) > 0){
+    echo '    <div class="content travel-logs noPadding" id="travel-logs">
 
         <div class="container-fluid">
 
             <div class="row">
 
-                <div class="travel-logs__slider">
+                <div class="travel-logs__slider">';
 
-<?php
+
 foreach ($carnets as $carnet) {
 
     echo '<div class="slider__item">
@@ -185,17 +192,20 @@ foreach ($carnets as $carnet) {
 
                         </div>';
 }
-?>
-
-
-
-                </div>
+echo'  </div>
 
             </div>
 
         </div>
 
-    </div>
+    </div>';
+
+}
+?>
+
+
+
+               
 
 
 
