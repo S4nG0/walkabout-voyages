@@ -6081,6 +6081,14 @@ body.admin .button {
 body.admin .button.small {
   width: auto;
 }
+body.admin .button.delete {
+  border-color: red;
+  color: red;
+}
+body.admin .button.delete:hover, body.admin .button.delete:focus, body.admin .button.delete:active {
+  background-color: red;
+  color: #fff;
+}
 body.admin .button.black.active {
   background-color: #242424;
   color: #fff;
@@ -6462,18 +6470,6 @@ body.admin .charts h3 {
   margin-right: 15px;
   vertical-align: middle;
 }
-.destinations .carnets__tools input,
-.destinations .articles__tools input,
-.actualites .carnets__tools input,
-.actualites .articles__tools input,
-.voyages .carnets__tools input,
-.voyages .articles__tools input,
-.carnets .carnets__tools input,
-.carnets .articles__tools input,
-.articles .carnets__tools input,
-.articles .articles__tools input {
-  margin-right: 0;
-}
 .destinations .articles__help-block,
 .actualites .articles__help-block,
 .voyages .articles__help-block,
@@ -6492,23 +6488,18 @@ body.admin .charts h3 {
 .destinations .destinations__single .well,
 .destinations .actualites__single .well,
 .destinations .carnets__single .well,
-.destinations .articles__single .well,
 .actualites .destinations__single .well,
 .actualites .actualites__single .well,
 .actualites .carnets__single .well,
-.actualites .articles__single .well,
 .voyages .destinations__single .well,
 .voyages .actualites__single .well,
 .voyages .carnets__single .well,
-.voyages .articles__single .well,
 .carnets .destinations__single .well,
 .carnets .actualites__single .well,
 .carnets .carnets__single .well,
-.carnets .articles__single .well,
 .articles .destinations__single .well,
 .articles .actualites__single .well,
-.articles .carnets__single .well,
-.articles .articles__single .well {
+.articles .carnets__single .well {
   display: table;
   width: 100%;
   -moz-border-radius: 0;
@@ -6519,68 +6510,53 @@ body.admin .charts h3 {
 .destinations .destinations__single .well .single__block,
 .destinations .actualites__single .well .single__block,
 .destinations .carnets__single .well .single__block,
-.destinations .articles__single .well .single__block,
 .actualites .destinations__single .well .single__block,
 .actualites .actualites__single .well .single__block,
 .actualites .carnets__single .well .single__block,
-.actualites .articles__single .well .single__block,
 .voyages .destinations__single .well .single__block,
 .voyages .actualites__single .well .single__block,
 .voyages .carnets__single .well .single__block,
-.voyages .articles__single .well .single__block,
 .carnets .destinations__single .well .single__block,
 .carnets .actualites__single .well .single__block,
 .carnets .carnets__single .well .single__block,
-.carnets .articles__single .well .single__block,
 .articles .destinations__single .well .single__block,
 .articles .actualites__single .well .single__block,
-.articles .carnets__single .well .single__block,
-.articles .articles__single .well .single__block {
+.articles .carnets__single .well .single__block {
   display: table-cell;
   vertical-align: middle;
 }
 .destinations .destinations__single .imageBlock,
 .destinations .actualites__single .imageBlock,
 .destinations .carnets__single .imageBlock,
-.destinations .articles__single .imageBlock,
 .actualites .destinations__single .imageBlock,
 .actualites .actualites__single .imageBlock,
 .actualites .carnets__single .imageBlock,
-.actualites .articles__single .imageBlock,
 .voyages .destinations__single .imageBlock,
 .voyages .actualites__single .imageBlock,
 .voyages .carnets__single .imageBlock,
-.voyages .articles__single .imageBlock,
 .carnets .destinations__single .imageBlock,
 .carnets .actualites__single .imageBlock,
 .carnets .carnets__single .imageBlock,
-.carnets .articles__single .imageBlock,
 .articles .destinations__single .imageBlock,
 .articles .actualites__single .imageBlock,
-.articles .carnets__single .imageBlock,
-.articles .articles__single .imageBlock {
+.articles .carnets__single .imageBlock {
   width: 30%;
 }
 .destinations .destinations__single .imageBlock .imageBlock__wrapper,
 .destinations .actualites__single .imageBlock .imageBlock__wrapper,
 .destinations .carnets__single .imageBlock .imageBlock__wrapper,
-.destinations .articles__single .imageBlock .imageBlock__wrapper,
 .actualites .destinations__single .imageBlock .imageBlock__wrapper,
 .actualites .actualites__single .imageBlock .imageBlock__wrapper,
 .actualites .carnets__single .imageBlock .imageBlock__wrapper,
-.actualites .articles__single .imageBlock .imageBlock__wrapper,
 .voyages .destinations__single .imageBlock .imageBlock__wrapper,
 .voyages .actualites__single .imageBlock .imageBlock__wrapper,
 .voyages .carnets__single .imageBlock .imageBlock__wrapper,
-.voyages .articles__single .imageBlock .imageBlock__wrapper,
 .carnets .destinations__single .imageBlock .imageBlock__wrapper,
 .carnets .actualites__single .imageBlock .imageBlock__wrapper,
 .carnets .carnets__single .imageBlock .imageBlock__wrapper,
-.carnets .articles__single .imageBlock .imageBlock__wrapper,
 .articles .destinations__single .imageBlock .imageBlock__wrapper,
 .articles .actualites__single .imageBlock .imageBlock__wrapper,
-.articles .carnets__single .imageBlock .imageBlock__wrapper,
-.articles .articles__single .imageBlock .imageBlock__wrapper {
+.articles .carnets__single .imageBlock .imageBlock__wrapper {
   background-position: 50% 0;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6592,68 +6568,53 @@ body.admin .charts h3 {
 .destinations .destinations__single .infoBlock,
 .destinations .actualites__single .infoBlock,
 .destinations .carnets__single .infoBlock,
-.destinations .articles__single .infoBlock,
 .actualites .destinations__single .infoBlock,
 .actualites .actualites__single .infoBlock,
 .actualites .carnets__single .infoBlock,
-.actualites .articles__single .infoBlock,
 .voyages .destinations__single .infoBlock,
 .voyages .actualites__single .infoBlock,
 .voyages .carnets__single .infoBlock,
-.voyages .articles__single .infoBlock,
 .carnets .destinations__single .infoBlock,
 .carnets .actualites__single .infoBlock,
 .carnets .carnets__single .infoBlock,
-.carnets .articles__single .infoBlock,
 .articles .destinations__single .infoBlock,
 .articles .actualites__single .infoBlock,
-.articles .carnets__single .infoBlock,
-.articles .articles__single .infoBlock {
+.articles .carnets__single .infoBlock {
   padding: 0 25px;
   text-align: center;
 }
 .destinations .destinations__single .infoBlock .published,
 .destinations .actualites__single .infoBlock .published,
 .destinations .carnets__single .infoBlock .published,
-.destinations .articles__single .infoBlock .published,
 .actualites .destinations__single .infoBlock .published,
 .actualites .actualites__single .infoBlock .published,
 .actualites .carnets__single .infoBlock .published,
-.actualites .articles__single .infoBlock .published,
 .voyages .destinations__single .infoBlock .published,
 .voyages .actualites__single .infoBlock .published,
 .voyages .carnets__single .infoBlock .published,
-.voyages .articles__single .infoBlock .published,
 .carnets .destinations__single .infoBlock .published,
 .carnets .actualites__single .infoBlock .published,
 .carnets .carnets__single .infoBlock .published,
-.carnets .articles__single .infoBlock .published,
 .articles .destinations__single .infoBlock .published,
 .articles .actualites__single .infoBlock .published,
-.articles .carnets__single .infoBlock .published,
-.articles .articles__single .infoBlock .published {
+.articles .carnets__single .infoBlock .published {
   margin-top: 10px;
 }
 .destinations .destinations__single .infoBlock p,
 .destinations .actualites__single .infoBlock p,
 .destinations .carnets__single .infoBlock p,
-.destinations .articles__single .infoBlock p,
 .actualites .destinations__single .infoBlock p,
 .actualites .actualites__single .infoBlock p,
 .actualites .carnets__single .infoBlock p,
-.actualites .articles__single .infoBlock p,
 .voyages .destinations__single .infoBlock p,
 .voyages .actualites__single .infoBlock p,
 .voyages .carnets__single .infoBlock p,
-.voyages .articles__single .infoBlock p,
 .carnets .destinations__single .infoBlock p,
 .carnets .actualites__single .infoBlock p,
 .carnets .carnets__single .infoBlock p,
-.carnets .articles__single .infoBlock p,
 .articles .destinations__single .infoBlock p,
 .articles .actualites__single .infoBlock p,
-.articles .carnets__single .infoBlock p,
-.articles .articles__single .infoBlock p {
+.articles .carnets__single .infoBlock p {
   color: #242424;
   margin-top: 15px;
   margin-bottom: 0;
@@ -6661,113 +6622,187 @@ body.admin .charts h3 {
 .destinations .destinations__single .infoBlock .button,
 .destinations .actualites__single .infoBlock .button,
 .destinations .carnets__single .infoBlock .button,
-.destinations .articles__single .infoBlock .button,
 .actualites .destinations__single .infoBlock .button,
 .actualites .actualites__single .infoBlock .button,
 .actualites .carnets__single .infoBlock .button,
-.actualites .articles__single .infoBlock .button,
 .voyages .destinations__single .infoBlock .button,
 .voyages .actualites__single .infoBlock .button,
 .voyages .carnets__single .infoBlock .button,
-.voyages .articles__single .infoBlock .button,
 .carnets .destinations__single .infoBlock .button,
 .carnets .actualites__single .infoBlock .button,
 .carnets .carnets__single .infoBlock .button,
-.carnets .articles__single .infoBlock .button,
 .articles .destinations__single .infoBlock .button,
 .articles .actualites__single .infoBlock .button,
-.articles .carnets__single .infoBlock .button,
-.articles .articles__single .infoBlock .button {
+.articles .carnets__single .infoBlock .button {
   margin-top: 25px;
 }
 .destinations .destinations__single .buttonsBlock,
 .destinations .actualites__single .buttonsBlock,
 .destinations .carnets__single .buttonsBlock,
-.destinations .articles__single .buttonsBlock,
 .actualites .destinations__single .buttonsBlock,
 .actualites .actualites__single .buttonsBlock,
 .actualites .carnets__single .buttonsBlock,
-.actualites .articles__single .buttonsBlock,
 .voyages .destinations__single .buttonsBlock,
 .voyages .actualites__single .buttonsBlock,
 .voyages .carnets__single .buttonsBlock,
-.voyages .articles__single .buttonsBlock,
 .carnets .destinations__single .buttonsBlock,
 .carnets .actualites__single .buttonsBlock,
 .carnets .carnets__single .buttonsBlock,
-.carnets .articles__single .buttonsBlock,
 .articles .destinations__single .buttonsBlock,
 .articles .actualites__single .buttonsBlock,
-.articles .carnets__single .buttonsBlock,
-.articles .articles__single .buttonsBlock {
+.articles .carnets__single .buttonsBlock {
   width: 30%;
 }
 .destinations .destinations__single .buttonsBlock .button,
 .destinations .actualites__single .buttonsBlock .button,
 .destinations .carnets__single .buttonsBlock .button,
-.destinations .articles__single .buttonsBlock .button,
 .actualites .destinations__single .buttonsBlock .button,
 .actualites .actualites__single .buttonsBlock .button,
 .actualites .carnets__single .buttonsBlock .button,
-.actualites .articles__single .buttonsBlock .button,
 .voyages .destinations__single .buttonsBlock .button,
 .voyages .actualites__single .buttonsBlock .button,
 .voyages .carnets__single .buttonsBlock .button,
-.voyages .articles__single .buttonsBlock .button,
 .carnets .destinations__single .buttonsBlock .button,
 .carnets .actualites__single .buttonsBlock .button,
 .carnets .carnets__single .buttonsBlock .button,
-.carnets .articles__single .buttonsBlock .button,
 .articles .destinations__single .buttonsBlock .button,
 .articles .actualites__single .buttonsBlock .button,
-.articles .carnets__single .buttonsBlock .button,
-.articles .articles__single .buttonsBlock .button {
+.articles .carnets__single .buttonsBlock .button {
   margin-bottom: 10px;
 }
 .destinations .destinations__single .buttonsBlock .button:last-child,
 .destinations .actualites__single .buttonsBlock .button:last-child,
 .destinations .carnets__single .buttonsBlock .button:last-child,
-.destinations .articles__single .buttonsBlock .button:last-child,
 .actualites .destinations__single .buttonsBlock .button:last-child,
 .actualites .actualites__single .buttonsBlock .button:last-child,
 .actualites .carnets__single .buttonsBlock .button:last-child,
-.actualites .articles__single .buttonsBlock .button:last-child,
 .voyages .destinations__single .buttonsBlock .button:last-child,
 .voyages .actualites__single .buttonsBlock .button:last-child,
 .voyages .carnets__single .buttonsBlock .button:last-child,
-.voyages .articles__single .buttonsBlock .button:last-child,
 .carnets .destinations__single .buttonsBlock .button:last-child,
 .carnets .actualites__single .buttonsBlock .button:last-child,
 .carnets .carnets__single .buttonsBlock .button:last-child,
-.carnets .articles__single .buttonsBlock .button:last-child,
 .articles .destinations__single .buttonsBlock .button:last-child,
 .articles .actualites__single .buttonsBlock .button:last-child,
-.articles .carnets__single .buttonsBlock .button:last-child,
-.articles .articles__single .buttonsBlock .button:last-child {
+.articles .carnets__single .buttonsBlock .button:last-child {
   margin-bottom: 0;
 }
-.destinations .articles__single .well .single__block,
-.actualites .articles__single .well .single__block,
-.voyages .articles__single .well .single__block,
-.carnets .articles__single .well .single__block,
-.articles .articles__single .well .single__block {
-  display: block;
-  width: 100% !important;
+.destinations .carnets__single,
+.actualites .carnets__single,
+.voyages .carnets__single,
+.carnets .carnets__single,
+.articles .carnets__single {
+  position: relative;
 }
-.destinations .articles__single .infoBlock,
-.actualites .articles__single .infoBlock,
-.voyages .articles__single .infoBlock,
-.carnets .articles__single .infoBlock,
-.articles .articles__single .infoBlock {
-  padding: 0;
+.destinations .carnets__single .well,
+.actualites .carnets__single .well,
+.voyages .carnets__single .well,
+.carnets .carnets__single .well,
+.articles .carnets__single .well {
+  margin-bottom: 50px;
+  padding: 50px;
 }
-.destinations .articles__single .infoBlock select,
-.actualites .articles__single .infoBlock select,
-.voyages .articles__single .infoBlock select,
-.carnets .articles__single .infoBlock select,
-.articles .articles__single .infoBlock select {
+.destinations .carnets__single .carnets__header,
+.actualites .carnets__single .carnets__header,
+.voyages .carnets__single .carnets__header,
+.carnets .carnets__single .carnets__header,
+.articles .carnets__single .carnets__header {
+  position: absolute;
+  top: -20px;
+  left: 25px;
+  background-color: #f5f5f5;
+}
+.destinations .carnets__single .carnets__article,
+.actualites .carnets__single .carnets__article,
+.voyages .carnets__single .carnets__article,
+.carnets .carnets__single .carnets__article,
+.articles .carnets__single .carnets__article {
+  position: relative;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+.destinations .carnets__single .carnets__article:after,
+.actualites .carnets__single .carnets__article:after,
+.voyages .carnets__single .carnets__article:after,
+.carnets .carnets__single .carnets__article:after,
+.articles .carnets__single .carnets__article:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 60%;
+  height: 1px;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #848484;
+}
+.destinations .carnets__single .carnets__article:last-child,
+.actualites .carnets__single .carnets__article:last-child,
+.voyages .carnets__single .carnets__article:last-child,
+.carnets .carnets__single .carnets__article:last-child,
+.articles .carnets__single .carnets__article:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.destinations .carnets__single .carnets__article:last-child:after,
+.actualites .carnets__single .carnets__article:last-child:after,
+.voyages .carnets__single .carnets__article:last-child:after,
+.carnets .carnets__single .carnets__article:last-child:after,
+.articles .carnets__single .carnets__article:last-child:after {
+  display: none;
+}
+.destinations .carnets__single .carnets__article .infoBlock .button.small,
+.actualites .carnets__single .carnets__article .infoBlock .button.small,
+.voyages .carnets__single .carnets__article .infoBlock .button.small,
+.carnets .carnets__single .carnets__article .infoBlock .button.small,
+.articles .carnets__single .carnets__article .infoBlock .button.small {
   display: block;
-  width: 300px;
+  margin-left: 25px;
+  width: 150px;
+}
+.destinations .carnets__single .carnets__article .buttonsBlock,
+.actualites .carnets__single .carnets__article .buttonsBlock,
+.voyages .carnets__single .carnets__article .buttonsBlock,
+.carnets .carnets__single .carnets__article .buttonsBlock,
+.articles .carnets__single .carnets__article .buttonsBlock {
+  width: 17%;
+}
+.destinations .carnets__single .carnets__article h4, .destinations .carnets__single .carnets__article p,
+.actualites .carnets__single .carnets__article h4,
+.actualites .carnets__single .carnets__article p,
+.voyages .carnets__single .carnets__article h4,
+.voyages .carnets__single .carnets__article p,
+.carnets .carnets__single .carnets__article h4,
+.carnets .carnets__single .carnets__article p,
+.articles .carnets__single .carnets__article h4,
+.articles .carnets__single .carnets__article p {
+  color: #242424;
+  text-align: left;
+}
+.destinations .carnets__single .carnets__article h4,
+.actualites .carnets__single .carnets__article h4,
+.voyages .carnets__single .carnets__article h4,
+.carnets .carnets__single .carnets__article h4,
+.articles .carnets__single .carnets__article h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.destinations .carnets__single .carnets__article p,
+.actualites .carnets__single .carnets__article p,
+.voyages .carnets__single .carnets__article p,
+.carnets .carnets__single .carnets__article p,
+.articles .carnets__single .carnets__article p {
+  padding-left: 25px;
+}
+.destinations .carnets__single .carnets__article select,
+.actualites .carnets__single .carnets__article select,
+.voyages .carnets__single .carnets__article select,
+.carnets .carnets__single .carnets__article select,
+.articles .carnets__single .carnets__article select {
+  display: block;
+  width: 100%;
   margin: 0 auto;
 }
 .destinations .destinations__thumbnail,
@@ -7465,10 +7500,34 @@ body.admin .charts h3 {
   .destinations .destinations__tools input, .destinations .destinations__tools .button,
   .destinations .actualites__tools input,
   .destinations .actualites__tools .button,
+  .destinations .carnets__tools input,
+  .destinations .carnets__tools .button,
+  .destinations .articles__tools input,
+  .destinations .articles__tools .button,
   .actualites .destinations__tools input,
   .actualites .destinations__tools .button,
   .actualites .actualites__tools input,
-  .actualites .actualites__tools .button {
+  .actualites .actualites__tools .button,
+  .actualites .carnets__tools input,
+  .actualites .carnets__tools .button,
+  .actualites .articles__tools input,
+  .actualites .articles__tools .button,
+  .carnets .destinations__tools input,
+  .carnets .destinations__tools .button,
+  .carnets .actualites__tools input,
+  .carnets .actualites__tools .button,
+  .carnets .carnets__tools input,
+  .carnets .carnets__tools .button,
+  .carnets .articles__tools input,
+  .carnets .articles__tools .button,
+  .articles .destinations__tools input,
+  .articles .destinations__tools .button,
+  .articles .actualites__tools input,
+  .articles .actualites__tools .button,
+  .articles .carnets__tools input,
+  .articles .carnets__tools .button,
+  .articles .articles__tools input,
+  .articles .articles__tools .button {
     display: block;
     width: 100%;
     margin-right: auto;
@@ -7476,46 +7535,119 @@ body.admin .charts h3 {
   }
   .destinations .destinations__tools .button:last-child,
   .destinations .actualites__tools .button:last-child,
+  .destinations .carnets__tools .button:last-child,
+  .destinations .articles__tools .button:last-child,
   .actualites .destinations__tools .button:last-child,
-  .actualites .actualites__tools .button:last-child {
+  .actualites .actualites__tools .button:last-child,
+  .actualites .carnets__tools .button:last-child,
+  .actualites .articles__tools .button:last-child,
+  .carnets .destinations__tools .button:last-child,
+  .carnets .actualites__tools .button:last-child,
+  .carnets .carnets__tools .button:last-child,
+  .carnets .articles__tools .button:last-child,
+  .articles .destinations__tools .button:last-child,
+  .articles .actualites__tools .button:last-child,
+  .articles .carnets__tools .button:last-child,
+  .articles .articles__tools .button:last-child {
     margin-bottom: 0;
   }
   .destinations .destinations__single .well,
   .destinations .actualites__single .well,
+  .destinations .carnets__single .well,
   .actualites .destinations__single .well,
-  .actualites .actualites__single .well {
+  .actualites .actualites__single .well,
+  .actualites .carnets__single .well,
+  .carnets .destinations__single .well,
+  .carnets .actualites__single .well,
+  .carnets .carnets__single .well,
+  .articles .destinations__single .well,
+  .articles .actualites__single .well,
+  .articles .carnets__single .well {
     display: block;
   }
   .destinations .destinations__single .well .single__block,
   .destinations .actualites__single .well .single__block,
+  .destinations .carnets__single .well .single__block,
   .actualites .destinations__single .well .single__block,
-  .actualites .actualites__single .well .single__block {
+  .actualites .actualites__single .well .single__block,
+  .actualites .carnets__single .well .single__block,
+  .carnets .destinations__single .well .single__block,
+  .carnets .actualites__single .well .single__block,
+  .carnets .carnets__single .well .single__block,
+  .articles .destinations__single .well .single__block,
+  .articles .actualites__single .well .single__block,
+  .articles .carnets__single .well .single__block {
     display: block;
   }
   .destinations .destinations__single .imageBlock, .destinations .destinations__single .infoBlock, .destinations .destinations__single .buttonsBlock,
   .destinations .actualites__single .imageBlock,
   .destinations .actualites__single .infoBlock,
   .destinations .actualites__single .buttonsBlock,
+  .destinations .carnets__single .imageBlock,
+  .destinations .carnets__single .infoBlock,
+  .destinations .carnets__single .buttonsBlock,
   .actualites .destinations__single .imageBlock,
   .actualites .destinations__single .infoBlock,
   .actualites .destinations__single .buttonsBlock,
   .actualites .actualites__single .imageBlock,
   .actualites .actualites__single .infoBlock,
-  .actualites .actualites__single .buttonsBlock {
+  .actualites .actualites__single .buttonsBlock,
+  .actualites .carnets__single .imageBlock,
+  .actualites .carnets__single .infoBlock,
+  .actualites .carnets__single .buttonsBlock,
+  .carnets .destinations__single .imageBlock,
+  .carnets .destinations__single .infoBlock,
+  .carnets .destinations__single .buttonsBlock,
+  .carnets .actualites__single .imageBlock,
+  .carnets .actualites__single .infoBlock,
+  .carnets .actualites__single .buttonsBlock,
+  .carnets .carnets__single .imageBlock,
+  .carnets .carnets__single .infoBlock,
+  .carnets .carnets__single .buttonsBlock,
+  .articles .destinations__single .imageBlock,
+  .articles .destinations__single .infoBlock,
+  .articles .destinations__single .buttonsBlock,
+  .articles .actualites__single .imageBlock,
+  .articles .actualites__single .infoBlock,
+  .articles .actualites__single .buttonsBlock,
+  .articles .carnets__single .imageBlock,
+  .articles .carnets__single .infoBlock,
+  .articles .carnets__single .buttonsBlock {
     width: 100%;
   }
+  .destinations .destinations__single .infoBlock,
+  .destinations .actualites__single .infoBlock,
+  .destinations .carnets__single .infoBlock,
+  .actualites .destinations__single .infoBlock,
+  .actualites .actualites__single .infoBlock,
+  .actualites .carnets__single .infoBlock,
+  .carnets .destinations__single .infoBlock,
+  .carnets .actualites__single .infoBlock,
+  .carnets .carnets__single .infoBlock,
+  .articles .destinations__single .infoBlock,
+  .articles .actualites__single .infoBlock,
+  .articles .carnets__single .infoBlock {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
   .destinations .destinations__infoIcons,
-  .actualites .destinations__infoIcons {
+  .actualites .destinations__infoIcons,
+  .carnets .destinations__infoIcons,
+  .articles .destinations__infoIcons {
     text-align: center;
   }
   .destinations .destinations__infoIcons li,
-  .actualites .destinations__infoIcons li {
+  .actualites .destinations__infoIcons li,
+  .carnets .destinations__infoIcons li,
+  .articles .destinations__infoIcons li {
     display: inline-block;
     float: none;
     width: 48%;
   }
   .destinations .destinations__gallery .custom-file-input,
-  .actualites .destinations__gallery .custom-file-input {
+  .actualites .destinations__gallery .custom-file-input,
+  .carnets .destinations__gallery .custom-file-input,
+  .articles .destinations__gallery .custom-file-input {
     width: 100%;
   }
 }

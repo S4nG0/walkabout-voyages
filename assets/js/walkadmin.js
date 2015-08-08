@@ -230,6 +230,15 @@ $('.admin .submenu .button').on('click', function () {
 });
 
 /**
+ * Confirm remove
+ */
+$('#delete').on('click', function(){
+    confirm("Êtes-vous sûr de vouloir supprimer cet article ?");
+})
+
+
+
+/**
  * Function that adds details that is included in final travel price
  */
 
