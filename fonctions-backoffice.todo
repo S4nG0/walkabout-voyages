@@ -12,19 +12,19 @@ Module carnets de voyages :
   ☐ sélectionner un carnet phare (page carnet de voyage) (une étoile à cocher)
 
 Module réservation :
-  ☐ mettre "en attente de confirmation" en mode par défaut (après réservation par un utilisateur)
+  ✔ mettre "en attente de confirmation" en mode par défaut (après réservation par un utilisateur) @done (15-08-08 10:50)
 
 Module pays :
  ☐ Lors de la création d'un pays problème de mémoire, si on remplit pas tous les champs cf capture
 
 Module destinations :
   ☐ Minimum de 5 images par destination (pour le design...) @critical
-  ☐ Pouvoir ajouter le détail du prix pour chaque destination
+  ✔ Pouvoir ajouter le détail du prix pour chaque destination @done (15-08-08 10:51)
   ☐ Manque un set_value dans la page de création de destination "titre"
   ☐ Manque un set_value dans la page de création de destination "ville"
   ☐ Lors de l'ajout d'un voyage, si on met autre chose qu'un nombre il est pas bloquant. Puis on a un problème de redirection
-  ☐ gestion des photos
-  ☐ gestion des pictogrammes
+  ✔ gestion des photos @done (15-08-08 10:51)
+  ✔ gestion des pictogrammes @done (15-08-08 10:51)
 
     Corbeille :
       ☐ Ne pas rediriger vers la page liste quand on restaure une destination/voyage
