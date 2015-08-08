@@ -940,6 +940,7 @@ body.admin {
         .carnets__single {
             .well {
                 display: block;
+                padding: 25px;
 
                 .single__block {
                     display: block;
@@ -954,6 +955,35 @@ body.admin {
                 h3 {
                     font-size: 20px;
                     line-height: 30px;
+                }
+            }
+
+            .carnets__article {
+                text-align: center;
+
+                .infoBlock {
+                    padding-top: 0;
+
+                    h4, p {
+                        text-align: center;
+                    }
+
+                    > h4 {
+                        font-size: 16px;
+                        line-height: 26px;
+                    }
+
+                    > p {
+                        padding: 0;
+                    }
+
+                    .button.small {
+                        margin-left: auto;
+                    }
+                }
+
+                .buttonsBlock {
+                    width: 100%;
                 }
             }
 
