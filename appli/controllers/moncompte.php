@@ -1,37 +1,40 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class Moncompte extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
+    /**
+     * Index Page for this controller.
+     *
+     * Maps to the following URL
+     * 		http://example.com/index.php/welcome
+     * 	- or -  
+     * 		http://example.com/index.php/welcome/index
+     * 	- or -
+     * Since this controller is set as the default controller in 
+     * config/routes.php, it's displayed at http://example.com/
+     *
+     * So any other public methods not prefixed with an underscore will
+     * map to /index.php/welcome/<method_name>
+     * @see http://codeigniter.com/user_guide/general/urls.html
+     */
+    public function index() {
+        $this->session->unset_userdata('voyage');
         $data['connecte'] = connecte($this->session->userdata('user')[0]);
         $data['title'] = "Compte";
         $data['upload'] = $this->session->flashdata('upload');
-        if($data['connecte'] == false){
+        if ($data['connecte'] == false) {
             redirect('/connexion');
-        }else{
+        } else {
             $data['user'] = $this->session->userdata('user')[0];
             $data['uploader'] = $this->session->flashdata('upload');
             $data['utilisateur_connecte'] = $this->session->userdata('user')[0];
             $data['newsletter'] = $this->newsletters->constructeur($data['user']->mail);
             $data['reservations'] = $this->reservations->constructeur($data['user']->idUsers);
-            if(sizeof($data['reservations']) > 0){
-                foreach( $data['reservations'] as $reservation){
+            if (sizeof($data['reservations']) > 0) {
+                foreach ($data['reservations'] as $reservation) {
                     $reservation->voyage = $this->voyages->constructeur($reservation->idVoyage);
                     $reservation->destination = $this->destination->constructeur($reservation->voyage[0]->idDestination);
                     $reservation->pays = $this->pays->constructeur($reservation->destination[0]->idPays);
@@ -42,7 +45,7 @@ class Moncompte extends CI_Controller {
                 }
             }
             $data['carnets'] = $this->carnetvoyage->get_carnet_for_user($data['user']->idUsers);
-            foreach($data['carnets'] as $carnet){
+            foreach ($data['carnets'] as $carnet) {
                 $carnet->date = conv_date($carnet->date);
                 $carnet->user = $this->user->constructeur($carnet->idUsers);
                 $carnet->voyage = $this->voyages->constructeur($carnet->idVoyage);
@@ -52,50 +55,48 @@ class Moncompte extends CI_Controller {
                 $carnet->voyage[0]->date_retour = conv_date($carnet->voyage[0]->date_retour);
             }
             $data['voyages_sans_carnets'] = $this->voyages->get_where_non_carnet($data['user']->idUsers);
-            foreach($data['voyages_sans_carnets'] as $voyage_sans_carnet){
+            foreach ($data['voyages_sans_carnets'] as $voyage_sans_carnet) {
                 $voyage_sans_carnet->destination = $this->destination->constructeur($voyage_sans_carnet->idDestination)[0];
             }
             $this->load->view('template/header', $data);
-            $this->load->view('moncompte',$data);
+            $this->load->view('moncompte', $data);
             $this->load->view('template/footer');
         }
-            
-	}
+    }
 
-    public function majUser(){
-        if($this->input->post() != false) {
+    public function majUser() {
+        if ($this->input->post() != false) {
             $this->form_validation->set_rules('email', '"email"', 'trim|required|valid_email|encode_php_tags|xss_clean');
             if ($this->form_validation->run()) {
-                $mail=$this->input->post('email');
-                $user=array(
+                $mail = $this->input->post('email');
+                $user = array(
                     "mail" => $mail,
-                    "mdp" => hash('sha256',$this->input->post('new_password'))
+                    "mdp" => hash('sha256', $this->input->post('new_password'))
                 );
-                if($this->input->post('old_password')!= ''){
-                    $old_password = hash('sha256',$this->input->post('old_password'));
-                    if($this->session->userdata('user')[0]->mdp == $old_password && $this->input->post('new_password') == $this->input->post('confirmation_password')){
-                        $this->user->modify($user,$this->session->userdata('user')[0]->idUsers);
+                if ($this->input->post('old_password') != '') {
+                    $old_password = hash('sha256', $this->input->post('old_password'));
+                    if ($this->session->userdata('user')[0]->mdp == $old_password && $this->input->post('new_password') == $this->input->post('confirmation_password')) {
+                        $this->user->modify($user, $this->session->userdata('user')[0]->idUsers);
                     }
                 }
-                $newsPost=$this->input->post('newsletter');
-                if(isset($newsPost)){
-                    $newsletters=$this->newsletters->constructeur($mail);
-                    if(empty($newsletters)){
-                        $news['email']=$mail;
+                $newsPost = $this->input->post('newsletter');
+                if (isset($newsPost)) {
+                    $newsletters = $this->newsletters->constructeur($mail);
+                    if (empty($newsletters)) {
+                        $news['email'] = $mail;
                         $this->newsletters->insert($news);
-                    }else{
+                    } else {
                         $this->newsletters->deleteNews($mail);
                     }
                 }
                 redirect($this->index());
-            }else{
+            } else {
                 redirect($this->index());
             }
         }
     }
-        
-}
 
+}
 
 /* End of file accueil.php */
 /* Location: ./application/controllers/accueil.php */

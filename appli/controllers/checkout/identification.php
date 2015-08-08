@@ -25,11 +25,11 @@ class Identification extends CI_Controller {
             $data['title'] = "Réservation";
 
             if ($this->input->post() != false) {
-                $voyage = $this->input->post('date');
-                $this->session->set_userdata('voyage', $voyage);
+                $date = $this->input->post('date');
+                $this->session->set_userdata('voyage', $date);
             }else{
                 if($this->session->userdata('voyage') == false){
-                    redirect($_SERVER["HTTP_REFERER"]);
+                    redirect(base_url().'checkout/dates/'.$this->session->userdata('destination'));
                 }
             }
             
