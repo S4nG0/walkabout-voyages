@@ -46,7 +46,7 @@ class Article extends CI_Controller{
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
-        $config['base_url'] = base_url().'walkadmin/article/';
+        $config['base_url'] = base_url().'walkadmin/article/supprimes';
         $config['total_rows'] = $count;// faire attention taille totale
         $nb_articles = $config['per_page'] = 1;
         $config['num_links'] = 3;
