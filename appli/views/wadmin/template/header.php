@@ -15,7 +15,7 @@
     <link rel="alternate" hreflang="fr" href="http://fr.walkabout-voyages.fr/walkadmin" />
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="<?php echo css_url('bootstrap.min'); ?>">
+    <link rel="stylesheet" href="<?php echo css_url('walkadmin/bootstrap.min'); ?>">
     <link rel="stylesheet" href="<?php echo css_url('sb-admin-2'); ?>">
 
     <!-- Vendors -->
