@@ -168,7 +168,7 @@ class Carnetvoyage extends CI_Model {
     }
 
     public function countWhereArticles(){
-        $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles)";
+        $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles WHere etat <> \"Brouillon\")";
         
         $carnets = $this->db->query($query)->result();
 

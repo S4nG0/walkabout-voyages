@@ -44,13 +44,12 @@
                                                 <p><?php echo substr(strip_tags($article->texte), 0, 400) . ' ... ' ?><a href="<?php echo base_url().'walkadmin/lire-article/'.$article->idArticles; ?>">Lire plus ...</a></p>
             <?php echo form_open('/walkadmin/article/majArticle/' . $article->idArticles) ?>
                                                 <select name="etat" onchange="this.form.submit()">
-                                                    <option value="Brouillon" <?php if (isset($article) && $article->etat == "Brouillon") echo 'selected' ?>>Brouillon</option>
                                                     <option value="En attente de modération" <?php if (isset($article) && $article->etat == "En attente de modération") echo 'selected' ?>>En attente de modération</option>
                                                     <option value="Publie" <?php if (isset($article) && $article->etat == "Publie") echo 'selected' ?>>Publié</option>
                                                 </select>
                                             <?php echo form_close() ?>
                                             </div>
-                                        <?php } ?>
+                                            <?php } ?>
                                 </div>
                             </div>
                         </div>
