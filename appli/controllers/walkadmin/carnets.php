@@ -12,7 +12,7 @@ class Carnets extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         $data=array();
         $data['title'] = "Carnets";
-        $count = $this->db->count_all('carnetdevoyage');      
+        $count = $this->db->count_all('carnetdevoyage');
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
@@ -29,13 +29,12 @@ class Carnets extends CI_Controller{
         $data['pagination'] = $this->pagination->create_links();
         /*Création des variables de selection des carnets*/
         $start = ($page*$nb_articles)-$nb_articles;
-        
-        
+
+
         $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_admin($start, $nb_articles);
         foreach($data['carnets'] as $carnet){
             $carnet->user = $this->user->constructeur($carnet->idUsers);
         }
-        
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);

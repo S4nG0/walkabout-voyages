@@ -13,6 +13,7 @@
         <div class="col-md-12">
             <div class="carnets__tools">
                 <input type="search" id="search" placeholder="Rechercher un carnet"/>
+                <a href="<?php echo base_url() . 'walkadmin/carnets/supprimes'; ?>" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
             </div>
         </div>
     </div>
@@ -37,6 +38,10 @@
                     <a class="button black" href="<?php echo base_url()."walkadmin/carnets/publie/".$carnet->idCarnetDeVoyage; ?>">
                         <i class="fa fa-thumbs-o-up"></i>&nbsp;Publier le carnet
                     </a>
+                    <a class="button black delete" href="<?php echo base_url().'walkadmin/carnets/supprimer/'.$carnet->idCarnetDeVoyage;?>">
+                        <i class="fa fa-remove"></i>&nbsp;
+                        Supprimer
+                    </a>
                 </div>
             </div>
         </div>
@@ -52,8 +57,10 @@
 
     <?php } ?>
 
-</div>
-<?php echo "<br/><center>$pagination</center><br/>"; ?>
-</div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="paged"><?php echo $pagination; ?></div>
+        </div>
+    </div>
 
 </div>

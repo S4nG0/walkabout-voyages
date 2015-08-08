@@ -946,6 +946,17 @@ body.admin {
                 }
             }
 
+            .carnets__header {
+                left: 25px;
+                right: 25px;
+                text-align: center;
+
+                h3 {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+
             .imageBlock, .infoBlock, .buttonsBlock {
                 width: 100%;
             }

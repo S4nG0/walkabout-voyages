@@ -7579,6 +7579,37 @@ body.admin .charts h3 {
   .articles .carnets__single .well .single__block {
     display: block;
   }
+  .destinations .destinations__single .carnets__header,
+  .destinations .actualites__single .carnets__header,
+  .destinations .carnets__single .carnets__header,
+  .actualites .destinations__single .carnets__header,
+  .actualites .actualites__single .carnets__header,
+  .actualites .carnets__single .carnets__header,
+  .carnets .destinations__single .carnets__header,
+  .carnets .actualites__single .carnets__header,
+  .carnets .carnets__single .carnets__header,
+  .articles .destinations__single .carnets__header,
+  .articles .actualites__single .carnets__header,
+  .articles .carnets__single .carnets__header {
+    left: 25px;
+    right: 25px;
+    text-align: center;
+  }
+  .destinations .destinations__single .carnets__header h3,
+  .destinations .actualites__single .carnets__header h3,
+  .destinations .carnets__single .carnets__header h3,
+  .actualites .destinations__single .carnets__header h3,
+  .actualites .actualites__single .carnets__header h3,
+  .actualites .carnets__single .carnets__header h3,
+  .carnets .destinations__single .carnets__header h3,
+  .carnets .actualites__single .carnets__header h3,
+  .carnets .carnets__single .carnets__header h3,
+  .articles .destinations__single .carnets__header h3,
+  .articles .actualites__single .carnets__header h3,
+  .articles .carnets__single .carnets__header h3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
   .destinations .destinations__single .imageBlock, .destinations .destinations__single .infoBlock, .destinations .destinations__single .buttonsBlock,
   .destinations .actualites__single .imageBlock,
   .destinations .actualites__single .infoBlock,
