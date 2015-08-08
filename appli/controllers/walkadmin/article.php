@@ -6,13 +6,13 @@ class Article extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         $data=array();
         $data['title'] = "Carnet de voyage - Articles";
-        $count = $this->carnetvoyage->countWhereArticles()[0]->nb_carnets;        
+        $count = $this->carnetvoyage->countWhereArticles()[0]->nb_carnets;
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
         $config['base_url'] = base_url().'walkadmin/article/';
         $config['total_rows'] = $count;// faire attention taille totale
-        $nb_articles = $config['per_page'] = 3;
+        $nb_articles = $config['per_page'] = 1;
         $config['num_links'] = 3;
         $config['use_page_numbers'] = true;
         $config['last_link'] = 'Dernier';
@@ -25,16 +25,72 @@ class Article extends CI_Controller{
         $start = ($page*$nb_articles)-$nb_articles;
         
         
-        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination($start, $nb_articles);
+        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_admin($start, $nb_articles);
         foreach($data['carnets'] as $carnet){
-            $carnet->articles = $this->articles->getFromCarnetWhereNoBrouillon($carnet->idCarnetDeVoyage);
+            $carnet->articles = $this->articles->getFromCarnetWherePublie($carnet->idCarnetDeVoyage);
         }
-
+        
+        
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Articles/liste',$data);
         $this->load->view('wadmin/template/footer');
+    }
+    
+    public function supprimes($page = 1){
+        connecte_admin($this->session->userdata('admin'));
+        $data=array();
+        $data['title'] = "Carnet de voyage - Articles";
+        $count = $this->carnetvoyage->countWhereArticlesDelete()[0]->nb_carnets;
+        /*Load des helpers et librairies*/
+        $this->load->library('pagination');
+        /*Parametrage de la pagination*/
+        $config['base_url'] = base_url().'walkadmin/article/';
+        $config['total_rows'] = $count;// faire attention taille totale
+        $nb_articles = $config['per_page'] = 1;
+        $config['num_links'] = 3;
+        $config['use_page_numbers'] = true;
+        $config['last_link'] = 'Dernier';
+        $config['first_link'] = 'Premier';
+        /*Initialisation de la pagination*/
+        $this->pagination->initialize($config);
+        /*Affichage de la pagination*/
+        $data['pagination'] = $this->pagination->create_links();
+        /*Création des variables de selection des carnets*/
+        $start = ($page*$nb_articles)-$nb_articles;
+        
+        
+        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_articles_supprimes($start, $nb_articles);
+        foreach($data['carnets'] as $carnet){
+            $carnet->articles = $this->articles->getFromCarnetWhereSupprimes($carnet->idCarnetDeVoyage);
+        }
+        
+        
+        $data['admin'] = $this->session->userdata('admin');
+        $this->load->view('wadmin/template/header', $data);
+        $this->load->view('wadmin/template/menu', $data);
+        $this->load->view('wadmin/pages/Articles/supprimes',$data);
+        $this->load->view('wadmin/template/footer');
+    }
+    
+    public function supprimer($idArticle=0){
+        if($idArticle == 0){
+            $this->index();
+        }
+        connecte_admin($this->session->userdata('admin'));
+        $article['etat'] = 'Supprimes';
+        $this->articles->modify($article,$idArticle);
+        redirect('walkadmin/article');
+    }
+    
+    public function restaurer($idArticle=0){
+        if($idArticle==0)
+            $this->index();
+        connecte_admin($this->session->userdata('admin'));
+        $article['etat'] = 'Publie';
+        $this->articles->modify($article,$idArticle);
+        redirect('walkadmin/article');
     }
 
     public function majArticle($idArticles=0){
