@@ -6,14 +6,14 @@
         <div class="articles">
             <div class="row text-center">
                 <div class="col-lg-12">
-                    <h1 class="page-header sep">Modération<br /><span class="small">Articles de carnet</span></h1>
+                    <h1 class="page-header sep">Corbeille<br /><span class="small">Articles de carnet</span></h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="articles__tools">
+                        <a href="<?php echo base_url() . 'walkadmin/article/'; ?>" class="button black"><i class="fa fa-hand-o-left"></i>&nbsp;Revenir aux articles</a>
                         <input type="search" id="search" placeholder="Rechercher un article"/>
-                        <a href="<?php echo base_url() . 'walkadmin/article/supprimes'; ?>" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                                     <div class="single__block buttonsBlock">
                                         <?php echo form_open('/walkadmin/article/majArticle/' . $article->idArticles) ?>
                                         <div class="form-group">
-                                            <a href="<?php echo base_url().'walkadmin/article/restaurer/'.$article->idArticles;?>" class="button black delete" id="delete"><i class="fa fa-remove"></i>&nbsp;Restaurer</a>
+                                            <a class="button black restore" href="<?php echo base_url().'walkadmin/article/restaurer/'.$article->idArticles;?>" id="restore"><i class="fa fa-check"></i>&nbsp;Restaurer</a>
                                         </div>
                                         <?php echo form_close() ?>
                                     </div>

@@ -127,7 +127,7 @@
                                 <div class="arrow"></div>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <span class="username"><a href="#">' . $commentaire->user[0]->prenom . ' ' . $commentaire->user[0]->nom . '</a></span>
+                                        <span class="username"><a href="'.base_url().'utilisateur/'.$commentaire->user[0]->slug.'">' . ucfirst(mb_strtolower($commentaire->user[0]->prenom)) . ' ' . ucfirst(mb_strtolower($commentaire->user[0]->nom)) . '</a></span>
                                         <span class="bull">&bull;</span>
                                         <span class="published">Publié le ' . $commentaire->date . '</span>
                                         <p>

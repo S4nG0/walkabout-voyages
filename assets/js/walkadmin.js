@@ -230,10 +230,14 @@ $('.admin .submenu .button').on('click', function () {
 });
 
 /**
- * Confirm remove
+ * Confirm remove & restore
  */
 $('#delete').on('click', function(){
-    confirm("Êtes-vous sûr de vouloir supprimer cet article ?");
+    confirm("Êtes-vous sûr de vouloir supprimer cet élément ?");
+})
+
+$('#restore').on('click', function(){
+    confirm("Êtes-vous sûr de vouloir restaurer cet élément ?");
 })
 
 

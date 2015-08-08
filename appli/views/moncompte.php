@@ -32,7 +32,7 @@ $page = "moncompte";
                 <?php echo  form_close(); ?>
                     <span><?php if(gettype($upload) != "boolean")echo '<script> alert("'.strip_tags (html_entity_decode($upload)).'"); </script>';?></span>
                 <p>
-                    Bonjour&nbsp;<?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span></a>"; ?>
+                    Bonjour&nbsp;<?php echo ucfirst(mb_strtolower($user->prenom)) . '&nbsp;' . ucfirst(mb_strtolower($user->nom)) . "</a>"; ?>
                 </p>
                 <a class="button small" href="<?php echo base_url() . 'utilisateur/' . $user->slug ?>">Voir mon mur</a>
             </div>

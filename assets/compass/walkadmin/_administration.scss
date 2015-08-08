@@ -46,6 +46,16 @@ body.admin {
         }
     }
 
+    .button.restore {
+        border-color: green;
+        color: green;
+
+        &:hover, &:focus, &:active {
+            background-color: green;
+            color: $blanc;
+        }
+    }
+
     .button.black.active {
         background-color: $noir;
         color: $blanc;
@@ -683,7 +693,36 @@ body.admin {
             margin: 0 auto;
         }
     }
+}
 
+.articles {
+    .articles__content,
+    .articles__aside {
+        .well {
+            width: 100%;
+            @include border-radius(0);
+            border-color: $noir;
+            padding: 25px;
+
+            > p {
+                color: $noir;
+                margin-top: 25px;
+                margin-bottom: 25px;
+            }
+
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .articles__help-block {
+                > p {
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
 
 /*------------------------------------*\
