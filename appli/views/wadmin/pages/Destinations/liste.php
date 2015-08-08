@@ -48,8 +48,8 @@
                         <i class="fa fa-info"></i>&nbsp;
                         Détails
                     </a>
-                    <a class="button black" href="<?php echo base_url().'walkadmin/destinations/supprimer/'.$destination->idDestination;?>">
-                        <i class="fa fa-trash"></i>&nbsp;
+                    <a class="button black delete" href="<?php echo base_url().'walkadmin/destinations/supprimer/'.$destination->idDestination;?>">
+                        <i class="fa fa-remove"></i>&nbsp;
                         Supprimer
                     </a>
                 </div>

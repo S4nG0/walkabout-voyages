@@ -15,7 +15,7 @@ WALKADMIN :
     ✔ Liste pays @done (15-08-03 13:51)
   ☐ Carnets
     ☐ Liste
-    ☐ Articles
+    ✔ Articles @done (15-08-08 16:43)
     ☐ Commentaires
   ☐ Users
     ☐ Admin
@@ -25,3 +25,4 @@ WALKADMIN :
     ✔ List : responsive (idem dest) : bug sur affichage image 403 @done (15-08-04 15:27)
     ✔ Add : attente dev @done (15-08-04 14:33)
     ✔ Modifier : bug sur upload @done (15-08-04 15:27)
+  ☐ Pagination

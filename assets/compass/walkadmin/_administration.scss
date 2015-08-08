@@ -36,6 +36,16 @@ body.admin {
         width: auto;
     }
 
+    .button.delete {
+        border-color: red;
+        color: red;
+
+        &:hover, &:focus, &:active {
+            background-color: red;
+            color: $blanc;
+        }
+    }
+
     .button.black.active {
         background-color: $noir;
         color: $blanc;
@@ -355,13 +365,6 @@ body.admin {
         }
     }
 
-    .carnets__tools,
-    .articles__tools {
-        input {
-            margin-right: 0;
-        }
-    }
-
     .articles__help-block {
         margin: 0 auto 25px auto;
         > p { color: $gris-clair; margin: 0; }
@@ -369,8 +372,7 @@ body.admin {
 
     .destinations__single,
     .actualites__single,
-    .carnets__single,
-    .articles__single {
+    .carnets__single {
         .well {
             display: table;
             width: 100%;
@@ -426,20 +428,76 @@ body.admin {
         }
     }
 
-    .articles__single {
+    .carnets__single {
+        position: relative;
+
         .well {
-            .single__block {
-                display: block;
-                width: 100% !important;
-            }
+            margin-bottom: 50px;
+            padding: 50px;
         }
 
-        .infoBlock {
-            padding: 0;
+        .carnets__header {
+            position: absolute;
+            top: -20px;
+            left: 25px;
+            background-color: $gris-tres-clair;
+        }
+
+        .carnets__article {
+            position: relative;
+            padding-bottom: 50px;
+            margin-bottom: 50px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                width: 60%;
+                height: 1px;
+                @include translateX(-50%);
+                background-color: $gris-clair;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            .infoBlock {
+
+                .button.small {
+                    display: block;
+                    margin-left: 25px;
+                    width: 150px;
+                }
+            }
+
+            .buttonsBlock {
+                width: 17%;
+            }
+
+            h4, p {
+                color: $noir;
+                text-align: left;
+            }
+
+            h4 {
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            p {
+                padding-left: 25px;
+            }
 
             select {
                 display: block;
-                width: 300px;
+                width: 100%;
                 margin: 0 auto;
             }
         }
@@ -858,9 +916,13 @@ body.admin {
         #DESTINATIONS || #ACTUALITES
     \*------------------------------------*/
     .destinations,
-    .actualites {
+    .actualites,
+    .carnets,
+    .articles {
         .destinations__tools,
-        .actualites__tools {
+        .actualites__tools,
+        .carnets__tools,
+        .articles__tools {
             input, .button {
                 display: block;
                 width: 100%;
@@ -874,7 +936,8 @@ body.admin {
         }
 
         .destinations__single,
-        .actualites__single {
+        .actualites__single,
+        .carnets__single {
             .well {
                 display: block;
 
@@ -885,6 +948,11 @@ body.admin {
 
             .imageBlock, .infoBlock, .buttonsBlock {
                 width: 100%;
+            }
+
+            .infoBlock {
+                padding-top: 25px;
+                padding-bottom: 25px;
             }
         }
 
