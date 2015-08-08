@@ -13,7 +13,7 @@
                 <div class="col-md-12">
                     <div class="articles__tools">
                         <input type="search" id="search" placeholder="Rechercher un article"/>
-                        <a href="#" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
+                        <a href="<?php echo base_url() . 'walkadmin/articles/supprimes'; ?>" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                                                 <option value="En attente de modération" <?php if (isset($article) && $article->etat == "En attente de modération") echo 'selected' ?>>En attente de modération</option>
                                                 <option value="Publie" <?php if (isset($article) && $article->etat == "Publie") echo 'selected' ?>>Publié</option>
                                             </select>
-                                            <a href="#" class="button black delete" id="delete"><i class="fa fa-remove"></i>&nbsp;Supprimer</a>
+                                            <a href="<?php echo base_url().'walkadmin/articles/supprimer/'.$article->idArticles;?>" class="button black delete" id="delete"><i class="fa fa-remove"></i>&nbsp;Supprimer</a>
                                         </div>
                                         <?php echo form_close() ?>
                                     </div>

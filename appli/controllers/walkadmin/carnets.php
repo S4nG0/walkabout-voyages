@@ -12,7 +12,7 @@ class Carnets extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         $data=array();
         $data['title'] = "Carnets";
-        $data['carnets'] = $this->carnetvoyage->getCarnetsNonPublies();
+        $data['carnets'] = $this->carnetvoyage->getCarnetsAndUsers();
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
