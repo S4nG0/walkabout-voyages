@@ -4538,27 +4538,6 @@ body.checkout .content .sign-in-block .buttons-block .button.prev {
 body.checkout .content #new-address {
   display: none;
 }
-body.checkout .content #adress-block {
-  display: none;
-  text-align: center;
-  margin: 35px;
-}
-body.checkout .content #adress-block label {
-  display: block;
-  margin-top: 50px;
-  color: #f0c041;
-}
-body.checkout .content #adress-block input {
-  display: block;
-  margin-top: 25px;
-  text-align: center;
-}
-body.checkout .content #adress-block .button {
-  display: block;
-  width: 150px;
-  margin: 0 auto;
-  margin-top: 25px;
-}
 body.checkout .content .infos-block {
   margin: 100px 0 50px 0;
 }
@@ -4578,9 +4557,17 @@ body.checkout .content .infos-block .success {
   color: green;
 }
 body.checkout .content .infos-block .infos-block__personal,
-body.checkout .content .infos-block .infos-block__address, body.checkout .content .infos-block.existing-address {
+body.checkout .content .infos-block .infos-block__address, body.checkout .content .infos-block.existing-address, body.checkout .content .infos-block.modifyAddress {
   padding: 50px;
   background-color: #e4e4e4;
+}
+body.checkout .content .infos-block.modifyAddress {
+  display: none;
+  margin-top: 0;
+}
+body.checkout .content .infos-block.modifyAddress .buttons-block {
+  margin-top: 35px;
+  margin-bottom: 0;
 }
 body.checkout .content .infos-block h2 {
   color: #242424;
@@ -4630,6 +4617,15 @@ body.checkout .content .infos-block select {
 body.checkout .content .infos-block select option {
   color: #242424;
 }
+body.checkout .content .infos-block.existing-address {
+  display: table;
+  width: 100%;
+}
+body.checkout .content .infos-block.existing-address .existing-address__block {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
 body.checkout .content .infos-block.existing-address .form-group {
   margin-bottom: 0;
 }
@@ -4662,6 +4658,14 @@ body.checkout .content .terms-and-conditions-block {
   background-color: #e4e4e4;
   color: #242424;
   padding-top: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+body.checkout .content .recap-block hr,
+body.checkout .content .payment-method-block hr,
+body.checkout .content .terms-and-conditions-block hr {
+  margin: 50px 0;
+  border-top-color: #848484;
 }
 body.checkout .content .recap-block h1,
 body.checkout .content .payment-method-block h1,
@@ -4672,8 +4676,6 @@ body.checkout .content .terms-and-conditions-block h1 {
 }
 body.checkout .content .recap-block {
   margin-top: 100px;
-  padding-left: 25px;
-  padding-right: 25px;
 }
 body.checkout .content .recap-block .small {
   display: block;
@@ -4731,6 +4733,9 @@ body.checkout .content .recap-block table tr td .price {
   font-style: italic;
   font-weight: 600;
 }
+body.checkout .content .payment-method-block {
+  padding-top: 0;
+}
 body.checkout .content .payment-method-block .small {
   display: block;
   margin: 0 auto;
@@ -4774,7 +4779,7 @@ body.checkout .content .payment-method-block .methods .method label span {
 }
 body.checkout .content .terms-and-conditions-block {
   margin-bottom: 50px;
-  padding: 25px 0 50px 0;
+  padding: 0 0 50px 0;
   text-align: center;
 }
 body.checkout .content .terms-and-conditions-block label {
@@ -4789,6 +4794,9 @@ body.checkout .content .terms-and-conditions-block .button {
   float: none;
   margin: 0 auto;
   margin-top: 25px;
+}
+body.checkout .content #cgv-pop-up {
+  display: none;
 }
 body.checkout .content .conclusion {
   font-size: 18px;
@@ -4881,6 +4889,12 @@ body.checkout footer {
   body.checkout .content .sign-in-block .user-log-in {
     margin-bottom: 50px;
   }
+  body.checkout .content .infos-block .existing-address__block,
+  body.checkout .content .infos-block.existing-address .existing-address__block {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
   body.checkout .content .infos-block .button,
   body.checkout .content .infos-block.existing-address .button {
     width: 75%;
@@ -4896,7 +4910,11 @@ body.checkout footer {
   body.checkout .content .infos-block .form-group .button,
   body.checkout .content .infos-block.existing-address .form-group .button {
     display: block;
-    margin: 15px auto 0 auto;
+    margin: 50px auto 0 auto;
+  }
+  body.checkout .content .infos-block .form-group .button:last-child,
+  body.checkout .content .infos-block.existing-address .form-group .button:last-child {
+    margin-top: 15px;
   }
   body.checkout .content .infos-block .infos-block__address,
   body.checkout .content .infos-block.existing-address .infos-block__address {
@@ -5999,6 +6017,9 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
 .fancybox-overlay .fancybox-skin #create-carnet input[type="submit"] {
   width: 200px;
   margin: 25px auto 0 auto;
+}
+.fancybox-overlay .fancybox-skin #cgv-pop-up {
+  padding: 50px;
 }
 
 .fancybox-overlay {
