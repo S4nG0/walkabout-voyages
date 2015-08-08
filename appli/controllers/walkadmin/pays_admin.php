@@ -42,7 +42,14 @@ class Pays_admin extends CI_Controller{
                 $this->pays->insertPays($pays);
                 redirect('walkadmin/dashboard');
             }else{
-                $this->creer();
+                $data['admin'] = $this->session->userdata('admin');
+                $data['page'] = "add_country";
+                $data['title'] = "Pays - Ajout";
+                $this->load->view('wadmin/template/header', $data);
+                $this->load->view('wadmin/template/menu', $data);
+                $this->load->view('wadmin/pages/Pays/creer',$data);
+                $this->load->view('wadmin/template/footer');
+                return false;
             }
         }
         $data['admin'] = $this->session->userdata('admin');

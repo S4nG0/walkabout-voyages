@@ -227,7 +227,7 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                             <option value="ZM">Zambie</option>
                             <option value="ZW">Zimbabwe</option>
                         </select>
-                        <input placeholder="Saississez l'information..." name="nom" value="<?php echo set_value('nom'); ?>" class="hidden" >
+                        <input placeholder="Saississez l'information..." name="nom" value="<?php echo (set_value('nom')=='')? 'Afghanistan':set_value('nom'); ?>" class="hidden" >
                         <?php echo form_error('nom'); ?>
                     </div>
                 </div>

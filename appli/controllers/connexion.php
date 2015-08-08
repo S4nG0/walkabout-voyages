@@ -64,7 +64,7 @@ class Connexion extends CI_Controller {
             $this->load->view('template/footer');
             //$this->output->enable_profiler(true);
 	}
-
+        
     public function oublieMdp(){
         if($this->input->post()!=false){
             $this->form_validation->set_rules('pwd-recover-email', '"pwd-recover-email"', 'trim|required|valid_email|encode_php_tags|xss_clean');

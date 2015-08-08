@@ -53,36 +53,43 @@ $step = 'choice';
                             $checked = '';
                         }
                         if($voyage->nb_reservés == 0){
-                            $disable = "disable";
+                            $disable = "disabled";
                         }else{
                             $disable = "";
                         } ?>
 
                     <li>
                         <div class="form-group">
-                            <input <?php echo $disable ?> class="radio" type="radio" name="date<?php echo $x; ?>" id="date<?php echo $x; ?>" value="<?php echo $voyage->idVoyage; ?>" <?php echo $checked; ?>/>
+                            <input <?php echo $disable ?> class="radio" type="radio" name="date" value="<?php echo $voyage->idVoyage; ?>" id="date<?php echo $x; ?>" value="<?php echo $voyage->idVoyage; ?>" <?php echo $checked; ?>/>
                             <label for="date<?php echo $x; ?>"><span></span><?php echo "Destination&nbsp;:&nbsp;<i>" . $destination->titre . "</i>"; ?></label>
                             <p>
                                 <strong>Départ</strong>&nbsp;:&nbsp;<?php echo $voyage->date_depart; ?>&nbsp;&bull;&nbsp;
                                 <strong>Retour</strong>&nbsp;:&nbsp;<?php echo $voyage->date_retour; ?>
                             </p>
                             <p>
-                                <strong>Prix</strong>&nbsp;:&nbsp;<?php echo $voyage->prix; ?>&nbsp;€ par personnes&nbsp;&nbsp;&nbsp;&bull;
-                                <a href="#details<?php echo $x; ?>" class="button black small" id="showDetails<?php echo $x; ?>">Voir détails</a>
+                                <strong>Prix</strong>&nbsp;:&nbsp;<?php echo $voyage->prix; ?>&nbsp;€ par personnes&nbsp;&nbsp;&nbsp;
+                                <?php 
+                                $details = json_decode($voyage->details);
+                                if(sizeof($details) > 0) {
+                                    echo '&bull;
+                                <a href="#details'.$x.'" class="button black small" id="showDetails'.$x.'">Voir détails</a>';
+                                }
+                                ?>
                             </p>
                             <p>
                                 <strong>Places restantes</strong>&nbsp;:&nbsp;<?php echo $voyage->nb_reservés.' sur '.$voyage->nb_places; ?>
                             </p>
+                            <?php if(sizeof($details) > 0){ ?>
                             <div class="priceDetails" id="details<?php echo $x; ?>">
                                 <hr>
                                 <h3>Détails du prix pour ce séjour</h3>
-                                <?php $details = json_decode($voyage->details); ?>
                                 <?php foreach($details as $detail) { ?>
                                 <p>
-                                    <strong><?php echo $detail->titre; ?></strong>&nbsp;:&nbsp;<?php echo $detail->valeur . "&nbsp;€"; ?>
+                                    <strong><?php echo $detail->titre; ?></strong>&nbsp;:&nbsp;<?php echo $detail->valeur; ?>
                                 </p>
                                 <?php } ?>
                             </div>
+                            <?php } ?>
                         </div>
                     </li>
 
