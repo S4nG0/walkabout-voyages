@@ -26,6 +26,7 @@
 
             <?php
             foreach ($carnets as $carnet) {
+                if(sizeof($carnet->articles)>0){
                 ?>
 
                 <div class="row articles__single searchable">
@@ -36,7 +37,7 @@
                                     <h3 class="text-center"><?php echo $carnet->titre; ?></h3>
                                 </div>
                                 <div style="padding:30px;">
-                                    <?php if (sizeof($carnet->articles) > 0) {
+                                    <?php
                                         foreach ($carnet->articles as $article) { ?>
                                             <div class="single__block infoBlock" style="border:solid 1px black;padding:10px;">
                                                 <h5><b><?php echo $article->titre; ?></b></h5>
@@ -49,22 +50,14 @@
                                                 </select>
                                             <?php echo form_close() ?>
                                             </div>
-        <?php }
-    }else { ?>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <p class="no-entry">Il n'y a aucun article dans ce carnet !</p>
-                                            </div>
-                                        </div>
-    <?php } ?>
-
+                                        <?php } ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-<?php } ?>
+            <?php }} ?>
         </div>
 
     </div>
