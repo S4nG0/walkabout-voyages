@@ -126,7 +126,33 @@ class Carnetvoyage extends CI_Model {
 
         $carnets = $this->db->select('*')
                            ->from($this->table)
-                           ->where('idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> "Brouillon")')
+                           ->where('idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> "Brouillon" and etat <> "Supprimes")')
+                           ->limit($nb, $start)
+                           ->get()
+                           ->result();
+
+        return $carnets;
+
+    }
+
+    public function get_carnet_pagination_articles_supprimes($start,$nb){
+
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat = "Supprimes")')
+                           ->limit($nb, $start)
+                           ->get()
+                           ->result();
+
+        return $carnets;
+
+    }
+
+    public function get_carnet_pagination_supprimes($start,$nb){
+
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('publie','Suppr')
                            ->limit($nb, $start)
                            ->get()
                            ->result();
@@ -181,7 +207,14 @@ class Carnetvoyage extends CI_Model {
     }
 
     public function countWhereArticles(){
-        $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles WHere etat <> \"Brouillon\")";
+        $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles WHere etat <> \"Brouillon\" and etat <> \"Supprimes\")";
+        $carnets = $this->db->query($query)->result();
+
+        return $carnets;
+    }
+
+    public function countWhereArticlesDelete(){
+        $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat = \"Supprimes\")";
         $carnets = $this->db->query($query)->result();
 
         return $carnets;
@@ -197,7 +230,7 @@ class Carnetvoyage extends CI_Model {
 
         return $carnets;
     }
-
+    
     public function getCarnetsAndUsers(){
         $carnets = $this->db->select('carnetdevoyage.*,users.nom AS nomUsers,users.prenom AS prenomUsers')
                             ->from($this->table)

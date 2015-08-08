@@ -12,7 +12,9 @@ class Carnets extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         $data=array();
         $data['title'] = "Carnets";
-        $count = $this->db->count_all('carnetdevoyage');
+        $this->db->where('publie <> "Suppr"');
+        $this->db->from('carnetdevoyage');
+        $count = $this->db->count_all_results();
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
@@ -48,6 +50,49 @@ class Carnets extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         $carnet['publie'] = 'true';
         $this->carnetvoyage->modify($carnet,$idCarnetDeVoyage);
-        $this->index();
+        redirect('walkadmin/carnets/supprimes');
+    }
+    
+    public function supprimer($idCarnetDeVoyage=0){
+        if($idCarnetDeVoyage==0)
+            $this->index();
+        connecte_admin($this->session->userdata('admin'));
+        $carnet['publie'] = 'Suppr';
+        $this->carnetvoyage->modify($carnet,$idCarnetDeVoyage);
+        redirect('walkadmin/carnets');
+    }
+    
+    public function supprimes($page = 1){
+        connecte_admin($this->session->userdata('admin'));
+        $data=array();
+        $data['title'] = "Carnets supprimés";
+        $count = $this->db->count_all('carnetdevoyage');
+        /*Load des helpers et librairies*/
+        $this->load->library('pagination');
+        /*Parametrage de la pagination*/
+        $config['base_url'] = base_url().'walkadmin/carnets/';
+        $config['total_rows'] = $count;// faire attention taille totale
+        $nb_articles = $config['per_page'] = 10;
+        $config['num_links'] = 3;
+        $config['use_page_numbers'] = true;
+        $config['last_link'] = 'Dernier';
+        $config['first_link'] = 'Premier';
+        /*Initialisation de la pagination*/
+        $this->pagination->initialize($config);
+        /*Affichage de la pagination*/
+        $data['pagination'] = $this->pagination->create_links();
+        /*Création des variables de selection des carnets*/
+        $start = ($page*$nb_articles)-$nb_articles;
+
+
+        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_supprimes($start, $nb_articles);
+        foreach($data['carnets'] as $carnet){
+            $carnet->user = $this->user->constructeur($carnet->idUsers);
+        }
+        $data['admin'] = $this->session->userdata('admin');
+        $this->load->view('wadmin/template/header', $data);
+        $this->load->view('wadmin/template/menu', $data);
+        $this->load->view('wadmin/pages/Carnets/supprimes', $data);
+        $this->load->view('wadmin/template/footer');
     }
 }

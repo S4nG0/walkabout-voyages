@@ -69,6 +69,22 @@ class Articles extends CI_Model {
         return $articles;
     }
 
+    public function getFromCarnetWhereSupprimes($id_carnet = 0){
+        if($id_carnet == 0){
+            return false;
+        }
+
+        $articles = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idCarnet', $id_carnet)
+                           ->where('etat', 'Supprimes')
+                           ->order_by("ordre", "ASC")
+                           ->get()
+                           ->result();
+
+        return $articles;
+    }
+
     public function getMaxOrdre($id_carnet = 0){
         if($id_carnet == 0){
             return false;
