@@ -1,50 +1,59 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 03/08/15
- * Time: 10:19
- */
-?>
+
 <div id="page-wrapper">
-    <div class="row">
+
+<div class="container-fluid">
+
+<div class="carnets">
+    <div class="row text-center">
         <div class="col-lg-12">
-            <h1 class="page-header">Liste des carnets non publiés </h1>
+            <h1 class="page-header sep">Carnets de voyages à publier</h1>
         </div>
     </div>
-    <style>
-        .black{
-            color: black;
-        }
-    </style>
     <div class="row">
-        <input type="search" class="form-control" id="search" placeholder="Rechercher un carnet non publié"/>
-        <?php
-        if (sizeof($carnets) > 0) {
-            foreach ($carnets as $carnet) {
-                echo '
-                    <div class="row destination searchable" data-search="'.$carnet->titre.' '.$carnet->nomUsers.''.$carnet->prenomUsers.'">
-                        <div class="col-md-10 excerpt-wrapper">
-                            <h3>' . $carnet->titre . '</h3>
-                            <p class="black">' . $carnet->nomUsers." ".$carnet->prenomUsers . '</p>
-                            <p class="black">' . $carnet->description . '</p>
-                            <p><a href="'.base_url().'carnets-de-voyage/'.$carnet->url.'" target="_blank">' . $carnet->url . '</a></p>
-                        </div>
-                        <div class="col-md-2">
-                            <a class="button black" href="'. base_url()."walkadmin/carnets/publie/".$carnet->idCarnetDeVoyage .'"><i class="fa fa-edit"></i> Publier</a>
-                        </div>
-                    </div>
-                    <hr/>
-                    ';
-            }
-        } else {
-            echo '<div class="travel-log">
-                                <div class="col-md-12">
-                                    <p class="no-entry black">Il n\'y a aucun carnet non publié actuellement !</p>
-                                </div>
-                            </div>';
-        }
-        ?>
+        <div class="col-md-12">
+            <div class="carnets__tools">
+                <input type="search" id="search" placeholder="Rechercher un carnet"/>
+            </div>
+        </div>
+    </div>
+
+    <?php if (sizeof($carnets) > 0) { foreach ($carnets as $carnet) { ?>
+
+    <div class="row carnets__single searchable" data-search="<?php echo $carnet->titre.' '.$carnet->nomUsers.''.$carnet->prenomUsers;?>">
+        <div class="col-md-12">
+            <div class="well">
+                <div class="single__block imageBlock">
+                    <div class="imageBlock__wrapper" style="background-image : url('<?php echo img_url($carnet->image_carnet)?>');"></div>
+                </div>
+                <div class="single__block infoBlock">
+                    <h3><?php echo $carnet->titre; ?></h3>
+                    <p><?php echo $carnet->nomUsers." ".$carnet->prenomUsers; ?></p>
+                    <p><?php echo $carnet->description; ?></p>
+                </div>
+                <div class="single__block buttonsBlock">
+                    <a class="button black" href="<?php echo base_url().'carnets-de-voyage/'.$carnet->url;?>" target="_blank">
+                        <i class="fa fa-eye"></i>&nbsp;Aperçu du carnet
+                    </a>
+                    <a class="button black" href="<?php echo base_url()."walkadmin/carnets/publie/".$carnet->idCarnetDeVoyage; ?>">
+                        <i class="fa fa-thumbs-o-up"></i>&nbsp;Publier le carnet
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php } } else {  ?>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p class="no-entry">Aucun carnet non publié actuellement !</p>
+        </div>
+    </div>
+
+    <?php } ?>
 
 </div>
+
+</div>
+
 </div>
