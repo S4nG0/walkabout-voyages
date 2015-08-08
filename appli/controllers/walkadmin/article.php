@@ -6,7 +6,10 @@ class Article extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         $data=array();
         $data['title'] = "Carnet de voyage - Articles";
-        $data['articles']=$this->articles->getCarnetAll();
+        $data['carnets']=$this->carnetvoyage->getAll();
+        foreach($data['carnets'] as $carnet){
+            $carnet->articles = $this->articles->getFromCarnet($carnet->idCarnetDeVoyage);
+        }
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);

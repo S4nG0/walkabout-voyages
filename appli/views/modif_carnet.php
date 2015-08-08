@@ -51,8 +51,7 @@ $page = "editing-carnet";
 
                     <?php
                     foreach($articles as $article){
-                        $texte = strip_tags($article->texte);
-                        $texte = substr($texte, 0, 95).' ... ' ;
+                        $texte = substr(strip_tags($article->texte), 0, 95).' ... ' ;
                     ?>
                     <!-- begin:Article -->
                     <div class="article">
