@@ -34,7 +34,7 @@ $page = "moncompte";
                 <p>
                     Bonjour&nbsp;<?php echo $user->prenom . ' <span class="text-uppercase">' . $user->nom . "</span></a>"; ?>
                 </p>
-                <a href="<?php echo base_url() . 'utilisateur/' . $user->slug ?>">Voir mon mur</a>
+                <a class="button small" href="<?php echo base_url() . 'utilisateur/' . $user->slug ?>">Voir mon mur</a>
             </div>
         </div>
     </div>

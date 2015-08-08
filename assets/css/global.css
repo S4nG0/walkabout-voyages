@@ -5081,7 +5081,7 @@ body.espace-voyageur .navbar.affix .navbar-collapse .nav li a {
   margin: 30px 25px 15px 0;
 }
 body.espace-voyageur .main.banner {
-  height: 400px;
+  height: 425px;
 }
 body.espace-voyageur .main.banner.modification.article {
   height: 200px;
@@ -5184,7 +5184,7 @@ body.espace-voyageur .main .big-title-wrapper .big-title h2:focus {
   box-shadow: 0 0 10px 0 rgba(240, 192, 65, 0.6);
 }
 body.espace-voyageur .main .big-title-wrapper .big-title p {
-  display: block;
+  display: inline-block;
   max-width: 700px;
   width: 90%;
   margin: 0 auto;
@@ -5192,12 +5192,20 @@ body.espace-voyageur .main .big-title-wrapper .big-title p {
   font-size: 20px;
   font-style: italic;
   color: #848484;
-  line-height: 30px;
+  line-height: 20px;
+  vertical-align: middle;
 }
 body.espace-voyageur .main .big-title-wrapper .big-title .button {
   display: inline-block;
   margin-top: 25px;
   margin-right: 15px;
+}
+body.espace-voyageur .main .big-title-wrapper .big-title .button.small {
+  display: block;
+  width: 150px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 body.espace-voyageur .main .big-title-wrapper .big-title .travel-log__description {
   color: #fff;
@@ -5822,8 +5830,8 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
   }
 }
 @media screen and (max-width: 992px) {
-  body.espace-voyageur .main .big-title-wrapper .big-title .button {
-    width: 300px;
+  body.espace-voyageur .main .big-title-wrapper .big-title .button.small {
+    width: auto;
   }
   body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .travel-log__block {
     display: block;
@@ -5856,7 +5864,22 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
 }
 @media screen and (max-width: 768px) {
   body.espace-voyageur .main .big-title-wrapper .big-title .button {
-    margin-right: 0;
+    display: block;
+    width: 250px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+  }
+  body.espace-voyageur .main .big-title-wrapper .big-title .button:last-child {
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  body.espace-voyageur .main .big-title-wrapper .big-title .button.small {
+    display: block;
+    width: 150px;
+    margin-top: 15px;
+    margin-right: auto;
   }
   body.espace-voyageur .main.banner.modification.carnet {
     height: 350px;
@@ -6056,9 +6079,7 @@ body.admin .button {
   letter-spacing: 1px;
 }
 body.admin .button.small {
-  display: inline-block;
   width: auto;
-  font-size: 60%;
 }
 body.admin .button.black.active {
   background-color: #242424;
@@ -7363,6 +7384,12 @@ strong {
   text-decoration: none;
   border-color: #f0c041;
   color: #f0c041;
+}
+
+.button.small {
+  display: inline-block;
+  width: auto;
+  font-size: 60%;
 }
 
 .button.black {

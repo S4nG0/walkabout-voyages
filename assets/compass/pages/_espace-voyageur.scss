@@ -54,7 +54,7 @@ body.espace-voyageur {
     }
 
     .main.banner {
-        height: 400px;
+        height: 425px;
 
         &.modification {
             &.article {
@@ -175,7 +175,7 @@ body.espace-voyageur {
                 }
 
                 p {
-                    display: block;
+                    display: inline-block;
                     max-width: 700px;
                     width: 90%;
                     margin: 0 auto;
@@ -183,13 +183,23 @@ body.espace-voyageur {
                     font-size: 20px;
                     font-style: italic;
                     color: $gris-clair;
-                    line-height: 30px;
+                    line-height: 20px;
+
+                    vertical-align: middle;
                 }
 
                 .button {
                     display: inline-block;
                     margin-top: 25px;
                     margin-right: 15px;
+                }
+
+                .button.small {
+                    display: block;
+                    width: 150px;
+                    margin-top: 15px;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
 
                 .travel-log__description {
@@ -935,8 +945,8 @@ body.espace-voyageur {
         .main {
             .big-title-wrapper {
                 .big-title {
-                    .button {
-                        width: 300px;
+                    .button.small {
+                        width: auto;
                     }
                 }
             }
@@ -998,7 +1008,24 @@ body.espace-voyageur {
             .big-title-wrapper {
                 .big-title {
                     .button {
-                        margin-right: 0;
+                        display: block;
+                        width: 250px;
+                        margin-right: auto;
+                        margin-left: auto;
+                        margin-bottom: 10px;
+
+                        &:last-child {
+                            margin-top: 0;
+                            margin-right: auto;
+                            margin-bottom: 0;
+                        }
+                    }
+
+                    .button.small {
+                        display: block;
+                        width: 150px;
+                        margin-top: 15px;
+                        margin-right: auto;
                     }
                 }
             }
@@ -1035,10 +1062,6 @@ body.espace-voyageur {
                     }
                 }
             }
-        }
-
-        .travel-logs-wrapper {
-
         }
 
         //MODIF-CARNET

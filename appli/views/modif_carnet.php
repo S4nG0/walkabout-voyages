@@ -17,14 +17,16 @@ $page = "editing-carnet";
                 <p class="travel-log__description" contenteditable="true" name="description_p" placeholder="Insérer une description de votre voyage..."><?php echo $carnet[0]->description; ?></p>
                 <input type="hidden" name="description"/>
                 <input type="hidden" name="idcarnet" value="<?php echo $carnet[0]->idCarnetDeVoyage; ?>"/>
-                <button type="submit" class="button description_submit">
-                    <i class="fa fa-check-square-o"></i>
-                    Enregistrer les modifications
-                </button>
-                <a class="button" href="<?php echo base_url(); ?>carnets-de-voyage/<?php echo slugify($carnet[0]->titre) ?>">
-                    <i class="fa fa-eye"></i>
-                    Voir le carnet
-                </a>
+                <div class="buttons-block">
+                    <button type="submit" class="button description_submit">
+                        <i class="fa fa-check-square-o"></i>
+                        Enregistrer les modifications
+                    </button>
+                    <a class="button" href="<?php echo base_url(); ?>carnets-de-voyage/<?php echo slugify($carnet[0]->titre) ?>">
+                        <i class="fa fa-eye"></i>
+                        Voir le carnet
+                    </a>
+                </div>
                 <?php echo form_close(); ?>
             </div>
         </div>

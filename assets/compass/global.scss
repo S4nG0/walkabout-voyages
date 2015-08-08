@@ -198,6 +198,12 @@ strong {
     }
 }
 
+.button.small {
+    display: inline-block;
+    width: auto;
+    font-size: 60%;
+}
+
 .button.black {
     border-color: $noir;
     background-color: $blanc;
