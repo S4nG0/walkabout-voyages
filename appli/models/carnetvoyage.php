@@ -167,6 +167,14 @@ class Carnetvoyage extends CI_Model {
         return $carnets;
     }
 
+    public function countWhereArticles(){
+        $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles)";
+        
+        $carnets = $this->db->query($query)->result();
+
+        return $carnets;
+    }
+
     public function getCarnetsNonPublies(){
         $carnets = $this->db->select('carnetdevoyage.*,users.nom AS nomUsers,users.prenom AS prenomUsers')
                             ->from($this->table)

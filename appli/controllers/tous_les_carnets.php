@@ -19,17 +19,15 @@ class Tous_les_carnets extends CI_Controller {
          *
      */
 
-    public function page($page = 1)
+    public function index($page = 1)
     {
         $data = array();
         $data['title'] = "Carnets de voyage";
-
-
         $count = $this->db->where('publie','true')->from('carnetdevoyage')->count_all_results();
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
-        $config['base_url'] = base_url().'tous-les-carnets/page';
+        $config['base_url'] = base_url().'tous-les-carnets/';
         $config['total_rows'] = $count;// faire attention taille totale
         $nb_articles = $config['per_page'] = 3;
         $config['num_links'] = 3;
