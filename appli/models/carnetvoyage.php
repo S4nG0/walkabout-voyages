@@ -84,6 +84,16 @@ class Carnetvoyage extends CI_Model {
         return $destination;
     }
 
+    public function getAll(){
+
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->get()
+                           ->result();
+
+        return $carnets;
+    }
+
     public function getFromUser($id = ''){
         if($id == ''){
             return false;
