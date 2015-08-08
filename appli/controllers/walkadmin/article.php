@@ -36,4 +36,19 @@ class Article extends CI_Controller{
             $this->index();
         }
     }
+    
+    public function voir($idArticle = 0){
+        if($idArticle == 0){
+            redirect('walkadmin/article');
+        }
+        connecte_admin($this->session->userdata('admin'));
+        $data=array();
+        $data['article']=$this->articles->constructeur($idArticle)[0];
+        $data['title'] = $data['article']->titre;
+        $data['admin'] = $this->session->userdata('admin');
+        $this->load->view('wadmin/template/header', $data);
+        $this->load->view('wadmin/template/menu', $data);
+        $this->load->view('wadmin/pages/Articles/vue',$data);
+        $this->load->view('wadmin/template/footer');
+    }
 }
