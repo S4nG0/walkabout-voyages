@@ -363,7 +363,7 @@ foreach ($details_prix as $detail) {
                                 <div class="excerpt">
                                     <h3>' . $carnet->titre . '</h2>
                                     <p class="published">
-                                        par <a href="#">' . $carnet->user[0]->prenom . ' ' . $carnet->user[0]->nom . '</a>, le ' . $carnet->date . '
+                                        par <a href="#">' . ucfirst(mb_strtolower($carnet->user[0]->prenom)) . ' ' . ucfirst(mb_strtolower($carnet->user[0]->nom)) . '</a>, le ' . $carnet->date . '
                                     </p>
                                     <p>
                                         &laquo;&nbsp;' . $carnet->description . '&nbsp;&raquo;

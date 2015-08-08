@@ -12,8 +12,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="carnets__tools">
+                <a href="<?php echo base_url() . 'walkadmin/carnets/'; ?>" class="button black"><i class="fa fa-hand-o-left"></i>&nbsp;Revenir aux carnets</a>
                 <input type="search" id="search" placeholder="Rechercher un carnet"/>
-                <a href="<?php echo base_url() . 'walkadmin/carnets/supprimes'; ?>" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
             </div>
         </div>
     </div>
@@ -32,8 +32,8 @@
                     <p><?php echo $carnet->description; ?></p>
                 </div>
                 <div class="single__block buttonsBlock">
-                    <a class="button black delete" href="<?php echo base_url().'walkadmin/carnets/publie/'.$carnet->idCarnetDeVoyage;?>">
-                        <i class="fa fa-remove"></i>&nbsp;
+                    <a class="button black restore" id="restore" href="<?php echo base_url().'walkadmin/carnets/publie/'.$carnet->idCarnetDeVoyage;?>">
+                        <i class="fa fa-check"></i>&nbsp;
                         Restaurer
                     </a>
                 </div>

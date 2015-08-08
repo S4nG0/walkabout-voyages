@@ -5192,7 +5192,7 @@ body.espace-voyageur .main .big-title-wrapper .big-title p {
   font-size: 20px;
   font-style: italic;
   color: #848484;
-  line-height: 20px;
+  line-height: 30px;
   vertical-align: middle;
 }
 body.espace-voyageur .main .big-title-wrapper .big-title .button {
@@ -6087,6 +6087,14 @@ body.admin .button.delete {
 }
 body.admin .button.delete:hover, body.admin .button.delete:focus, body.admin .button.delete:active {
   background-color: red;
+  color: #fff;
+}
+body.admin .button.restore {
+  border-color: green;
+  color: green;
+}
+body.admin .button.restore:hover, body.admin .button.restore:focus, body.admin .button.restore:active {
+  background-color: green;
   color: #fff;
 }
 body.admin .button.black.active {
@@ -7313,6 +7321,32 @@ body.admin .charts h3 {
 .articles .destinations__gallery .custom-file-input {
   width: 50%;
   margin: 0 auto;
+}
+
+.articles .articles__content .well,
+.articles .articles__aside .well {
+  width: 100%;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-color: #242424;
+  padding: 25px;
+}
+.articles .articles__content .well > p,
+.articles .articles__aside .well > p {
+  color: #242424;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.articles .articles__content .well img,
+.articles .articles__aside .well img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.articles .articles__content .well .articles__help-block > p,
+.articles .articles__aside .well .articles__help-block > p {
+  text-align: center;
 }
 
 /*------------------------------------*\
