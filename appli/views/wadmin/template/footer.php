@@ -3,7 +3,6 @@
 
 <!-- Vendors -->
 <script type="text/javascript" src="<?php echo js_url('vendors/bootstrap.min'); ?>"></script>
-<script type="text/javascript" src="<?php echo js_url('vendors/fancybox.min'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/modernizr'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/readmore-min'); ?>"></script>
 <script type="text/javascript" src="<?php echo js_url('vendors/stellar'); ?>"></script>
