@@ -6,13 +6,13 @@ class Article extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         $data=array();
         $data['title'] = "Carnet de voyage - Articles";
-        $count = $this->carnetvoyage->countWhereArticles()[0]->nb_carnets;        
+        $count = $this->carnetvoyage->countWhereArticles()[0]->nb_carnets;
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
         $config['base_url'] = base_url().'walkadmin/article/';
         $config['total_rows'] = $count;// faire attention taille totale
-        $nb_articles = $config['per_page'] = 3;
+        $nb_articles = $config['per_page'] = 1;
         $config['num_links'] = 3;
         $config['use_page_numbers'] = true;
         $config['last_link'] = 'Dernier';
@@ -25,11 +25,12 @@ class Article extends CI_Controller{
         $start = ($page*$nb_articles)-$nb_articles;
         
         
-        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination($start, $nb_articles);
+        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_admin($start, $nb_articles);
         foreach($data['carnets'] as $carnet){
             $carnet->articles = $this->articles->getFromCarnetWhereNoBrouillon($carnet->idCarnetDeVoyage);
         }
-
+        
+        
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);

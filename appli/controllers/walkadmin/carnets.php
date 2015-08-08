@@ -31,7 +31,7 @@ class Carnets extends CI_Controller{
         $start = ($page*$nb_articles)-$nb_articles;
 
 
-        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_admin($start, $nb_articles);
+        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination($start, $nb_articles);
         foreach($data['carnets'] as $carnet){
             $carnet->user = $this->user->constructeur($carnet->idUsers);
         }

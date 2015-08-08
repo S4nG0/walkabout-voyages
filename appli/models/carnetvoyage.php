@@ -126,6 +126,7 @@ class Carnetvoyage extends CI_Model {
 
         $carnets = $this->db->select('*')
                            ->from($this->table)
+                           ->where('idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> "Brouillon")')
                            ->limit($nb, $start)
                            ->get()
                            ->result();
