@@ -59,7 +59,7 @@
 
             <?php }} ?>
         </div>
-
+<?php echo "<br/><center>$pagination</center><br/>"; ?>
     </div>
 
 </div>
