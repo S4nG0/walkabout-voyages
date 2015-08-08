@@ -13,6 +13,7 @@
                 <div class="col-md-12">
                     <div class="articles__tools">
                         <input type="search" id="search" placeholder="Rechercher un article"/>
+                        <a href="#" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
                     </div>
                 </div>
             </div>
@@ -29,12 +30,12 @@
                 if(sizeof($carnet->articles)>0){
                 ?>
 
-                <div class="row articles__single searchable">
+                <div class="row carnets__single searchable">
                     <div class="col-md-12">
-                        <div class="articles__single">
+                        <div class="carnets__single">
                             <div class="well">
-                                <div class="single__block header">
-                                    <h3 class="text-center"><?php echo $carnet->titre; ?></h3>
+                                <div class="carnets__header">
+                                    <h3 class="text-center">&nbsp;&nbsp;<?php echo $carnet->titre; ?>&nbsp;&nbsp;</h3>
                                 </div>
                                 <div style="padding:30px;">
                                     <?php
@@ -51,6 +52,7 @@
                                             </div>
                                             <?php } ?>
                                 </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -58,7 +60,9 @@
 
             <?php }} ?>
         </div>
-<?php echo "<br/><center>$pagination</center><br/>"; ?>
+        <div class="paged">
+            <?php echo $pagination; ?>
+        </div>
     </div>
 
 </div>
