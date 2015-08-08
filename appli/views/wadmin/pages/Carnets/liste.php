@@ -20,7 +20,7 @@
 
     <?php if (sizeof($carnets) > 0) { foreach ($carnets as $carnet) { ?>
 
-    <div class="row carnets__single searchable" data-search="<?php echo $carnet->titre.' '.$carnet->nomUsers.''.$carnet->prenomUsers;?>">
+    <div class="row carnets__single searchable" data-search="<?php echo $carnet->titre.' '.$carnet->user[0]->nom.''.$carnet->user[0]->prenom;?>">
         <div class="col-md-12">
             <div class="well">
                 <div class="single__block imageBlock">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="single__block infoBlock">
                     <h3><?php echo $carnet->titre; ?></h3>
-                    <p><?php echo $carnet->nomUsers." ".$carnet->prenomUsers; ?></p>
+                    <p><?php echo $carnet->user[0]->nom." ".$carnet->user[0]->prenom; ?></p>
                     <p><?php echo $carnet->description; ?></p>
                 </div>
                 <div class="single__block buttonsBlock">
@@ -62,9 +62,5 @@
             <div class="paged"><?php echo $pagination; ?></div>
         </div>
     </div>
-
-</div>
-
-</div>
 
 </div>

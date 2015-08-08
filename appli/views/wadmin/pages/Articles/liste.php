@@ -51,7 +51,6 @@
                                         <div class="form-group">
                                             <label class="small" for="etat">Status de l'article :</label>
                                             <select name="etat" onchange="this.form.submit()">
-                                                <option value="Brouillon" <?php if (isset($article) && $article->etat == "Brouillon") echo 'selected' ?>>Brouillon</option>
                                                 <option value="En attente de modération" <?php if (isset($article) && $article->etat == "En attente de modération") echo 'selected' ?>>En attente de modération</option>
                                                 <option value="Publie" <?php if (isset($article) && $article->etat == "Publie") echo 'selected' ?>>Publié</option>
                                             </select>
@@ -59,7 +58,6 @@
                                         </div>
                                         <?php echo form_close() ?>
                                     </div>
-                                </div>
                                 <?php } ?>
                             </div>
                         </div>
@@ -72,7 +70,5 @@
             <?php echo $pagination; ?>
         </div>
     </div>
-
-</div>
 
 </div>

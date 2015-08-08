@@ -122,6 +122,18 @@ class Carnetvoyage extends CI_Model {
 
     }
 
+    public function get_carnet_pagination_admin($start,$nb){
+
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->limit($nb, $start)
+                           ->get()
+                           ->result();
+
+        return $carnets;
+
+    }
+
     public function get_carnet_for_user($id=''){
 
         $carnets = $this->db->select('*')
@@ -168,8 +180,7 @@ class Carnetvoyage extends CI_Model {
     }
 
     public function countWhereArticles(){
-        $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles)";
-
+        $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles WHere etat <> \"Brouillon\")";
         $carnets = $this->db->query($query)->result();
 
         return $carnets;
