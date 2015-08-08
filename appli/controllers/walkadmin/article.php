@@ -27,7 +27,7 @@ class Article extends CI_Controller{
         
         $data['carnets'] = $this->carnetvoyage->get_carnet_pagination($start, $nb_articles);
         foreach($data['carnets'] as $carnet){
-            $carnet->articles = $this->articles->getFromCarnet($carnet->idCarnetDeVoyage);
+            $carnet->articles = $this->articles->getFromCarnetWhereNoBrouillon($carnet->idCarnetDeVoyage);
         }
 
         $data['admin'] = $this->session->userdata('admin');

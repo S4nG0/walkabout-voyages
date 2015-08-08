@@ -37,28 +37,20 @@
                                 <div class="carnets__header">
                                     <h3 class="text-center">&nbsp;&nbsp;<?php echo $carnet->titre; ?>&nbsp;&nbsp;</h3>
                                 </div>
-                                <?php foreach ($carnet->articles as $article) { ?>
-                                <div class="carnets__article">
-                                    <div class="single__block infoBlock">
-                                        <h4><?php echo $article->titre; ?></h4>
-                                        <p>
-                                            <?php echo substr(strip_tags($article->texte), 0, 200) . '&nbsp;... ' ?>
-                                        </p>
-                                        <a class="button black small" href="<?php echo base_url().'walkadmin/lire-article/'.$article->idArticles; ?>"><i class="fa fa-eye"></i>&nbsp;Lire plus...</a>
-                                    </div>
-                                    <div class="single__block buttonsBlock">
-                                        <?php echo form_open('/walkadmin/article/majArticle/' . $article->idArticles) ?>
-                                        <div class="form-group">
-                                            <label class="small" for="etat">Status de l'article :</label>
-                                            <select name="etat" onchange="this.form.submit()">
-                                                <option value="Brouillon" <?php if (isset($article) && $article->etat == "Brouillon") echo 'selected' ?>>Brouillon</option>
-                                                <option value="En attente de modération" <?php if (isset($article) && $article->etat == "En attente de modération") echo 'selected' ?>>En attente de modération</option>
-                                                <option value="Publie" <?php if (isset($article) && $article->etat == "Publie") echo 'selected' ?>>Publié</option>
-                                            </select>
-                                            <a href="#" class="button black delete" id="delete"><i class="fa fa-remove"></i>&nbsp;Supprimer</a>
-                                        </div>
-                                        <?php echo form_close() ?>
-                                    </div>
+                                <div style="padding:30px;">
+                                    <?php
+                                        foreach ($carnet->articles as $article) { ?>
+                                            <div class="single__block infoBlock" style="border:solid 1px black;padding:10px;">
+                                                <h5><b><?php echo $article->titre; ?></b></h5>
+                                                <p><?php echo substr(strip_tags($article->texte), 0, 400) . ' ... ' ?><a href="<?php echo base_url().'walkadmin/lire-article/'.$article->idArticles; ?>">Lire plus ...</a></p>
+            <?php echo form_open('/walkadmin/article/majArticle/' . $article->idArticles) ?>
+                                                <select name="etat" onchange="this.form.submit()">
+                                                    <option value="En attente de modération" <?php if (isset($article) && $article->etat == "En attente de modération") echo 'selected' ?>>En attente de modération</option>
+                                                    <option value="Publie" <?php if (isset($article) && $article->etat == "Publie") echo 'selected' ?>>Publié</option>
+                                                </select>
+                                            <?php echo form_close() ?>
+                                            </div>
+                                            <?php } ?>
                                 </div>
                                 <?php } ?>
                             </div>
@@ -72,7 +64,5 @@
             <?php echo $pagination; ?>
         </div>
     </div>
-
-</div>
 
 </div>

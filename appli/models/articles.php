@@ -37,6 +37,22 @@ class Articles extends CI_Model {
         return $articles;
     }
 
+    public function getFromCarnetWhereNoBrouillon($id_carnet = 0){
+        if($id_carnet == 0){
+            return false;
+        }
+
+        $articles = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idCarnet', $id_carnet)
+                           ->where('etat <> "Brouillon"')
+                           ->order_by("ordre", "ASC")
+                           ->get()
+                           ->result();
+
+        return $articles;
+    }
+
     public function getFromCarnetWherePublie($id_carnet = 0){
         if($id_carnet == 0){
             return false;
