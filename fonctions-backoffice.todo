@@ -15,7 +15,7 @@ Module réservation :
   ✔ mettre "en attente de confirmation" en mode par défaut (après réservation par un utilisateur) @done (15-08-08 10:50)
 
 Module pays :
- ☐ Lors de la création d'un pays problème de mémoire, si on remplit pas tous les champs cf capture
+ ✔ Lors de la création d'un pays problème de mémoire, si on remplit pas tous les champs cf capture @done (15-08-08 15:35)
 
 Module destinations :
   ☐ Minimum de 5 images par destination (pour le design...) @critical
