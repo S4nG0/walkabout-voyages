@@ -349,31 +349,6 @@ body.checkout {
             display: none;
         }
 
-        #adress-block {
-            display: none;
-            text-align: center;
-            margin: 35px;
-        }
-
-        #adress-block label {
-            display: block;
-            margin-top: 50px;
-            color: #f0c041;
-        }
-
-        #adress-block input {
-            display: block;
-            margin-top: 25px;
-            text-align: center;
-        }
-
-        #adress-block .button {
-            display: block;
-            width: 150px;
-            margin: 0 auto;
-            margin-top: 25px;
-        }
-
         .infos-block {
             margin: 100px 0 50px 0;
 
@@ -398,9 +373,20 @@ body.checkout {
 
             .infos-block__personal,
             .infos-block__address,
-            &.existing-address {
+            &.existing-address,
+            &.modifyAddress {
                 padding: 50px;
                 background-color: $fond-blanc;
+            }
+
+            &.modifyAddress {
+                display: none;
+                margin-top: 0;
+
+                .buttons-block {
+                    margin-top: 35px;
+                    margin-bottom: 0;
+                }
             }
 
             h2 {
@@ -468,6 +454,14 @@ body.checkout {
         }
 
         .infos-block.existing-address {
+            display: table;
+            width: 100%;
+
+            .existing-address__block {
+                display: table-cell;
+                vertical-align: middle;
+                width: 100%;
+            }
 
             .form-group {
                 margin-bottom: 0;
@@ -511,10 +505,18 @@ body.checkout {
         .recap-block,
         .payment-method-block,
         .terms-and-conditions-block {
+
             width: 100%;
             background-color: $fond-blanc;
             color: $noir;
             padding-top: 50px;
+            padding-left: 25px;
+            padding-right: 25px;
+
+            hr {
+                margin: 50px 0;
+                border-top-color: $gris-clair;
+            }
 
             h1 {
                 color: $noir;
@@ -525,8 +527,6 @@ body.checkout {
 
         .recap-block {
             margin-top: 100px;
-            padding-left: 25px;
-            padding-right: 25px;
 
             .small {
                 display: block;
@@ -599,6 +599,8 @@ body.checkout {
 
         .payment-method-block {
 
+            padding-top: 0;
+
             .small {
                 display: block;
                 margin: 0 auto;
@@ -650,7 +652,7 @@ body.checkout {
 
         .terms-and-conditions-block {
             margin-bottom: 50px;
-            padding: 25px 0 50px 0;
+            padding: 0 0 50px 0;
             text-align: center;
 
             label {
@@ -670,6 +672,11 @@ body.checkout {
                 margin: 0 auto;
                 margin-top: 25px;
             }
+
+        }
+
+        #cgv-pop-up {
+            display: none;
         }
     }
 
@@ -851,6 +858,13 @@ body.checkout {
 
             .infos-block,
             .infos-block.existing-address {
+
+                .existing-address__block {
+                    display: block;
+                    margin: 0 auto;
+                    width: 100%;
+                }
+
                 .button {
                     width: 75%;
                 }
@@ -864,7 +878,11 @@ body.checkout {
 
                     .button {
                         display: block;
-                        margin: 15px auto 0 auto;
+                        margin: 50px auto 0 auto;
+
+                        &:last-child {
+                            margin-top: 15px;
+                        }
                     }
                 }
 

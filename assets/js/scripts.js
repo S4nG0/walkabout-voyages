@@ -298,6 +298,13 @@ $(document).ready(function () {
         $(element).fadeToggle(300);
     })
 
+    $('#modifyAddress-button').on('click', function() {
+        $('#modifier').fadeIn(600);
+        var page = $(this).attr('href'); // Page cible
+        var speed = 600; // Durée de l'animation (en ms)
+        $('html, body').animate({scrollTop: $(page).offset().top - navHeight}, speed);
+    })
+
     $('#delete-address').on('click', function () {
         confirm('Êtes-vous sûr de vouloir supprimer cette adresse ?');
     });

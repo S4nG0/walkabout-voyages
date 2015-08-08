@@ -37,11 +37,11 @@ Contact :
   ☐ Message enregistré sur le BO, même quand il n'est pas validé...
 
 Checkout :
-  ☐ Refaire page Dates & Prix : insérer détails du prix avant de choisir
-  ☐ Bug au niveau de la dernière phase du checkout, impossible de revenir en dessous de 10 personnes.
-  ☐ Insérer pop up CGV
-  ☐ Design pop up changement d'adresse
-  ☐ Changer le input "pays" en un select de pays
+  ✔ Refaire page Dates & Prix : insérer détails du prix avant de choisir @done (15-08-07 19:04)
+  ☐ Bug au niveau de la dernière phase du checkout, impossible de revenir en dessous de 10 personnes. @critical
+  ☐ Changer le input "pays" en un select de pays @critical
+  ☐ Insérer pop up CGV @critical
+  ✔ Design pop up changement d'adresse @critical @done (15-08-08 12:03)
 
 Mon compte :
   ☐ petit détail, il y a une option en plus dans le select, lors de la création du carnet

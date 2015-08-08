@@ -1,5 +1,5 @@
 <?php
-$page = 'payment';
+$page = 'confirmation';
 ?>
 
 <body class="checkout">
