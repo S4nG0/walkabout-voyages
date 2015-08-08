@@ -55,7 +55,7 @@
                                         <div class="panel-heading" role="tab" id="heading<?php echo $contact->idContact; ?>">
                                             <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $contact->idContact; ?>" aria-expanded="false" aria-controls="collapse<?php echo $contact->idContact; ?>">
                                                 <div class="contact__content">
-                                                    <p class="content__name"><?php echo ucfirst(strtolower($contact->nom)) . '&nbsp;' . ucfirst(strtolower($contact->prenom)); ?></p>
+                                                    <p class="content__name"><?php echo ucfirst(mb_strtolower($contact->nom)) . '&nbsp;' . ucfirst(mb_strtolower($contact->prenom)); ?></p>
                                                     <p class="published">Envoyé le <?php echo conv_date($contact->date); ?></p>
                                                     <p class="content__subject">
                                                         Sujet : <?php echo $contact->sujet; ?>
@@ -99,7 +99,7 @@
                                         <div class="panel-heading" role="tab" id="headingOne">
                                             <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                                 <div class="contact__content">
-                                                    <p class="content__name"><?php echo ucfirst(strtolower($contact->nom)) . '&nbsp;' . ucfirst(strtolower($contact->prenom)); ?></p>
+                                                    <p class="content__name"><?php echo ucfirst(mb_strtolower($contact->nom)) . '&nbsp;' . ucfirst(mb_strtolower($contact->prenom)); ?></p>
                                                     <p class="published">Envoyé le <?php echo conv_date($contact->date); ?></p>
                                                     <p class="content__subject">
                                                         Sujet : <?php echo $contact->sujet; ?>
@@ -143,7 +143,7 @@ if (sizeof($importants) > 0) {
                                         <div class="panel-heading" role="tab" id="headingOne">
                                             <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                                 <div class="contact__content">
-                                                    <p class="content__name"><?php echo ucfirst(strtolower($contact->nom)) . '&nbsp;' . ucfirst(strtolower($contact->prenom)); ?></p>
+                                                    <p class="content__name"><?php echo ucfirst(mb_strtolower($contact->nom)) . '&nbsp;' . ucfirst(mb_strtolower($contact->prenom)); ?></p>
                                                     <p class="published">Envoyé le <?php echo conv_date($contact->date); ?></p>
                                                     <p class="content__subject">
                                                         Sujet : <?php echo $contact->sujet; ?>
@@ -187,7 +187,7 @@ if (sizeof($archives) > 0) {
                                         <div class="panel-heading" role="tab" id="headingOne">
                                             <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                                 <div class="contact__content">
-                                                    <p class="content__name"><?php echo ucfirst(strtolower($contact->nom)) . '&nbsp;' . ucfirst(strtolower($contact->prenom)); ?></p>
+                                                    <p class="content__name"><?php echo ucfirst(mb_strtolower($contact->nom)) . '&nbsp;' . ucfirst(mb_strtolower($contact->prenom)); ?></p>
                                                     <p class="published">Envoyé le <?php echo conv_date($contact->date); ?></p>
                                                     <p class="content__subject">
                                                         Sujet : <?php echo $contact->sujet; ?>
