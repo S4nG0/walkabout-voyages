@@ -28,8 +28,9 @@ class  Paiement extends CI_Controller {
             if($data['connecte'] == false){
                 redirect('/connexion');
             }
+            
             if($data['voyage'] == false){
-                redirect('/voyage');
+                redirect(base_url().'checkout/dates/'.$this->session->userdata('destination'));
             }
             
             $data['nb_places_restantes'] = $this->voyages->constructeur($data['voyage'])[0]->nb_places - $this->reservations->count($data['destination']);

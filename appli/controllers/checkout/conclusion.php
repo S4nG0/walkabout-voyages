@@ -29,7 +29,7 @@ class Conclusion extends CI_Controller {
                     redirect('/connexion');
                 }
                 if($data['voyage'] == false){
-                    redirect('/voyage');
+                    redirect(base_url().'checkout/dates/'.$this->session->userdata('destination'));
                 }
                 $donnee = array(
                     'idVoyage' => $this->session->userdata('voyage'),
