@@ -14,7 +14,7 @@
                     <div class="module__tools">
                         <div class="custom-search">
                             <?php echo form_open('walkadmin/article/search'); ?>
-                                <input class="custom-search-input" type="search" name="search" placeholder="Rechercher"/>
+                                <input class="custom-search-input" type="search" name="search" placeholder="Rechercher" value="<?php echo $search; ?>"/>
                                 <button class="custom-search-button"><i class="fa fa-search"></i></button>
                             <?php echo form_close(); ?>
                         </div>
@@ -22,6 +22,7 @@
                     </div>
                 </div>
             </div>
+            <?php if(sizeof($carnets) != 0) {?>
             <div class="row text-center">
                 <div class="col-md-12">
                     <div class="articles__help-block">
@@ -29,8 +30,8 @@
                     </div>
                 </div>
             </div>
-
-            <?php
+            <?php } 
+            
             foreach ($carnets as $carnet) {
                 if(sizeof($carnet->articles)>0){
                 ?>
@@ -69,7 +70,13 @@
                     </div>
                 </div>
             </div>
-            <?php }} ?>
+            <?php }} if(sizeof($carnets) == 0) {?>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="no-entry">Aucun article correspondant à la recherche : <br/><?php echo $search; ?></p>
+                </div>
+            </div>
+            <?php } ?>
             <div class="row">
                 <div class="col-sm-12">
                     <?php echo $pagination; ?>
