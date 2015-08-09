@@ -84,6 +84,18 @@ class Carnetvoyage extends CI_Model {
         return $destination;
     }
 
+    public function getFavoris(){
+
+        $carnet = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('favoris', "true")
+                           ->limit(1)
+                           ->get()
+                           ->result();
+
+        return $carnet;
+    }
+
     public function getAll(){
 
         $carnets = $this->db->select('*')
