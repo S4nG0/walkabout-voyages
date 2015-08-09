@@ -29,9 +29,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($carnets as $carnet){
-                    if(sizeof($carnet->commentaires)>0){?>
-                        <?php foreach ($carnet->commentaires as $commentaire) { ?>
+                    <?php foreach($commentaires as $commentaire){
+                    if(sizeof($commentaire->carnet)>0){?>
+                        <?php foreach ($commentaire->carnet as $carnet) { ?>
                             <?php if($commentaire->data==''){ ?>
                                 <tr class="searchable" data-search="<?php echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?>">
                                     <td><?php if(isset($commentaire)) echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?></td>
