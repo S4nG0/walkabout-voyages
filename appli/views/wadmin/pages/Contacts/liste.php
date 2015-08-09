@@ -16,7 +16,10 @@
 
         <div class="row">
             <div class="col-md-3">
-                <input type="search" id="search" placeholder="Rechercher un message ... "/>
+                <div class="custom-search">
+                    <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
+                    <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                </div>
 
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="non_lus" class="active">

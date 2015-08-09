@@ -246,6 +246,17 @@ $('#restore').on('click', function(e){
     }
 })
 
+/**
+ * Function that adds details that is included in final travel price
+ */
+$('.custom-search-input').focus(function(){
+    $('.custom-search').toggleClass('isFocused');
+})
+
+$('.custom-search-input').blur(function(){
+    $('.custom-search').removeClass('isFocused');
+})
+
 
 
 /**

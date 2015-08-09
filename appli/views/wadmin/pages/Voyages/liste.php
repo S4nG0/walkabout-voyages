@@ -11,7 +11,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="destinations__tools">
+            <div class="module__tools">
                 <input type="search" id="search" placeholder="Rechercher un voyage"/>
                 <a class="button black" href="<?php echo base_url() . 'walkadmin/creer-voyage/'.$destination[0]->idDestination; ?>">
                     <i class="fa fa-plus"></i>&nbsp;Ajouter

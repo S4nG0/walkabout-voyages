@@ -7,8 +7,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="actualites__tools">
-                    <input type="search" id="search" placeholder="Rechercher une actualité"/>
+                <div class="module__tools">
+                    <div class="custom-search">
+                        <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
+                        <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                    </div>
                     <a class="button black" href="<?php echo base_url() . 'walkadmin/actualite/creer/'; ?>">
                         <i class="fa fa-plus"></i>&nbsp;Ajouter
                     </a>
@@ -23,10 +26,12 @@
                     <div class="well">
                         <?php
                         if(isset($actualite->photos)){ ?>
-                        <div class="single__block imageBlock" style="background: url('<?php echo img_url($actualite->photos); ?>');background-size:cover;">
+                        <div class="single__block imageBlock">
+                            <div class="imageBlock__wrapper" style="background: url('<?php echo img_url($actualite->photos); ?>');background-size:cover;"></div>
                         </div>
                         <?php } else {?>
-                            <div class="single__block imageBlock" style="background: url('<?php echo img_url('default.png'); ?>');background-size:cover;">
+                            <div class="single__block imageBlock">
+                                <div class="imageBlock__wrapper"style="background: url('<?php echo img_url('default.png'); ?>');background-size:cover;"></div>
                             </div>
                             <?php } ?>
                             <div class="single__block infoBlock">

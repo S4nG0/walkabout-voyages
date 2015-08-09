@@ -11,7 +11,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="destinations__tools">
+            <div class="module__tools">
                 <a class="button black" href="<?php echo base_url() . 'walkadmin/voyage/'.$destination[0]->idDestination; ?>">
                     <i class="fa fa-hand-o-left"></i>&nbsp;Retourner à la liste
                 </a>
