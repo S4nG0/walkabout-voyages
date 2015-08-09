@@ -18,16 +18,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Fonts -->
-    <link src='<?php echo fonts_url('Dosis/Dosis-Semibold') ?>' rel='stylesheet' type='text/css'>
-    <link src='<?php echo fonts_url('Dosis/Dosis-Bold') ?>' rel='stylesheet' type='text/css'>
-    <link src='<?php echo fonts_url('Dosis/Dosis-Medium') ?>' rel='stylesheet' type='text/css'>
-    <link src='<?php echo fonts_url('Dosis/Dosis-Light') ?>' rel='stylesheet' type='text/css'>
-    <link src='<?php echo fonts_url('Dosis/Dosis-Regular') ?>' rel='stylesheet' type='text/css'>
-    <link src='<?php echo fonts_url('OpenSans/OpenSans-Semibold') ?>' rel='stylesheet' type='text/css'>
-    <link src='<?php echo fonts_url('OpenSans/OpenSans-Bold') ?>' rel='stylesheet' type='text/css'>
-    <link src='<?php echo fonts_url('OpenSans/OpenSans-Medium') ?>' rel='stylesheet' type='text/css'>
-    <link src='<?php echo fonts_url('OpenSans/OpenSans-Light') ?>' rel='stylesheet' type='text/css'>
-    <link src='<?php echo fonts_url('OpenSans/OpenSans-Regular') ?>' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Dosis:400,300,600,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 
     <!-- Vendors -->
     <link rel="stylesheet" href="<?php echo css_url('bootstrap.min'); ?>">
