@@ -104,6 +104,8 @@ body.admin {
         display: block;
         width: 100%;
         text-align: center;
+        margin-top: 0;
+        margin-bottom: 50px;
 
         > li > a,
         > li > span {
@@ -795,10 +797,14 @@ body.admin {
             border-color: $noir;
             padding: 25px;
 
-            > p {
+            p {
                 color: $noir;
                 margin-top: 25px;
                 margin-bottom: 25px;
+            }
+
+            hr {
+                margin: 25px 0 !important;
             }
 
             img {
@@ -806,11 +812,20 @@ body.admin {
                 margin: 0 auto;
                 width: 100%;
             }
+        }
 
-            .articles__help-block {
-                > p {
-                    text-align: center;
-                }
+        &.author {
+            .profile-picture {
+                width: 100px;
+                height: 100px;
+                border: 3px solid $noir;
+                margin: 0 auto;
+            }
+        }
+
+        &.help-block {
+            > p {
+                text-align: center;
             }
         }
     }

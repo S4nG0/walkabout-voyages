@@ -6190,6 +6190,8 @@ body.admin .pagination {
   display: block;
   width: 100%;
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 50px;
 }
 body.admin .pagination > li > a,
 body.admin .pagination > li > span {
@@ -7414,11 +7416,15 @@ body.admin .charts h3 {
   border-color: #242424;
   padding: 25px;
 }
-.articles .articles__content .well > p,
-.articles .articles__aside .well > p {
+.articles .articles__content .well p,
+.articles .articles__aside .well p {
   color: #242424;
   margin-top: 25px;
   margin-bottom: 25px;
+}
+.articles .articles__content .well hr,
+.articles .articles__aside .well hr {
+  margin: 25px 0 !important;
 }
 .articles .articles__content .well img,
 .articles .articles__aside .well img {
@@ -7426,8 +7432,15 @@ body.admin .charts h3 {
   margin: 0 auto;
   width: 100%;
 }
-.articles .articles__content .well .articles__help-block > p,
-.articles .articles__aside .well .articles__help-block > p {
+.articles .articles__content.author .profile-picture,
+.articles .articles__aside.author .profile-picture {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #242424;
+  margin: 0 auto;
+}
+.articles .articles__content.help-block > p,
+.articles .articles__aside.help-block > p {
   text-align: center;
 }
 
