@@ -8,14 +8,69 @@
  */
 class Actualite extends CI_Controller{
 
-    public function index(){
+    public function index($page = 1){
         connecte_admin($this->session->userdata('admin'));
         $data['title'] = 'Actualités';
         $data['admin'] = $this->session->userdata('admin');
-        $data['actualites'] = $this->actualites->get_all_actus();
+        
+         $this->db->where('publie = "true"');
+        $this->db->from('actualites');
+        $count = $this->db->count_all_results();
+        /*Load des helpers et librairies*/
+        $this->load->library('pagination');
+        /*Parametrage de la pagination*/
+        $config['base_url'] = base_url().'walkadmin/actualite/';
+        $config['total_rows'] = $count;// faire attention taille totale
+        $nb_articles = $config['per_page'] = 2;
+        $config['num_links'] = 3;
+        $config['use_page_numbers'] = true;
+        $config['last_link'] = 'Dernier';
+        $config['first_link'] = 'Premier';
+        /*Initialisation de la pagination*/
+        $this->pagination->initialize($config);
+        /*Affichage de la pagination*/
+        $data['pagination'] = $this->pagination->create_links();
+        /*Création des variables de selection des carnets*/
+        $start = ($page*$nb_articles)-$nb_articles;
+      
+        $data['actualites'] = $this->actualites->get_all_actus_non_supprimes($start, $nb_articles);
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Actualites/liste',$data);
+        $this->load->view('wadmin/template/footer');
+    }
+    
+    public function supprimes($page = 1){
+        connecte_admin($this->session->userdata('admin'));
+        $data['title'] = 'Actualités';
+        $data['admin'] = $this->session->userdata('admin');
+        
+         $this->db->where('publie = "false"');
+        $this->db->from('actualites');
+        $count = $this->db->count_all_results();
+        /*Load des helpers et librairies*/
+        $this->load->library('pagination');
+        /*Parametrage de la pagination*/
+        $config['base_url'] = base_url().'walkadmin/actualite/supprimes/';
+        $config['total_rows'] = $count;// faire attention taille totale
+        $nb_articles = $config['per_page'] = 2;
+        $config['num_links'] = 3;
+        $config['uri_segment'] = 4;
+        $config['use_page_numbers'] = true;
+        $config['last_link'] = 'Dernier';
+        $config['first_link'] = 'Premier';
+        /*Initialisation de la pagination*/
+        $this->pagination->initialize($config);
+        /*Affichage de la pagination*/
+        $data['pagination'] = $this->pagination->create_links();
+        /*Création des variables de selection des carnets*/
+        $start = ($page*$nb_articles)-$nb_articles;
+        
+        
+        $data['actualites'] = $this->actualites->get_all_actus_supprimes($start, $nb_articles);
+        $this->load->view('wadmin/template/header', $data);
+        $this->load->view('wadmin/template/menu', $data);
+        $this->load->view('wadmin/pages/Actualites/supprimes',$data);
         $this->load->view('wadmin/template/footer');
     }
 
@@ -117,6 +172,15 @@ class Actualite extends CI_Controller{
         if($idActualites==0)
             $this->index();
         $actualite['publie'] = "false";
+        $this->actualites->modify($actualite,$idActualites);
+        redirect('walkadmin/actualite');
+    }
+    
+    public function restaurer($idActualites=0){
+        connecte_admin($this->session->userdata('admin'));
+        if($idActualites==0)
+            $this->index();
+        $actualite['publie'] = "true";
         $this->actualites->modify($actualite,$idActualites);
         redirect('walkadmin/actualite');
     }
