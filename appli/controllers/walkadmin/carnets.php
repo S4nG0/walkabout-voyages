@@ -69,6 +69,17 @@ class Carnets extends CI_Controller{
         redirect('walkadmin/carnets/supprimes');
     }
 
+    public function favoris(){
+        $idCarnet = $this->input->post('valeur-favoris');
+        $carnet = $this->carnetvoyage->getFavoris();
+        $carnet[0]->favoris = "false";
+        $this->carnetvoyage->modify($carnet[0],$carnet[0]->idCarnetDeVoyage);
+        $favoris = new StdClass();
+        $favoris->favoris = "true";
+        $this->carnetvoyage->modify($favoris,$idCarnet);
+        redirect('walkadmin/carnets');
+    }
+
     public function supprimer($idCarnetDeVoyage=0){
         if($idCarnetDeVoyage==0)
             $this->index();

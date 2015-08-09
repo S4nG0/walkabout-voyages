@@ -273,7 +273,12 @@ $('#add').on('click', function(){
 });
 });
 
+$('input[name=star]').on('click',function(){
+    $('input[name=valeur-favoris]').val($(this).data('id'));
+    $('#formulaire form').submit();
+});
+
 
 function remove_detail(i){
-    $('#detail'+i).fadeOut(300, function(){this.remove()});
+    $('#detail'+i).fadeOut(300, function(){this.remove();});
 }
