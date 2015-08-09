@@ -22,7 +22,22 @@ class Commentaires extends CI_Model {
         
         return $actu;
     }
-    
+
+    public function selectCommentaireByCarnet($id = 0){
+        if($id == 0){
+            return false;
+        }
+
+        $actu = $this->db->select('commentaires.*,users.nom AS nomUsers,users.prenom AS prenomUsers')
+                        ->from($this->table)
+                        ->join('users','users.idUsers=commentaires.idUsers')
+                        ->where('idCarnet', $id)
+                        ->order_by('idCommentaires','ASC')
+                        ->get()
+                        ->result();
+
+        return $actu;
+    }
     
     public function add($commentaire){
         

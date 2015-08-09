@@ -20,12 +20,33 @@ class Comments extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
-    public function index() {
+    public function index($page = 1) {
         connecte_admin($this->session->userdata('admin'));
-        $data = array();
-        $data['title'] = 'Commentaires';
-        $data['commentaires'] = $this->commentaires->getAllCommentairesNonModere();
-        $data['reservations'] = $this->reservations->count_en_cours();
+        $data=array();
+        $data['title'] = "Carnet de voyage - Commentaires";
+        $count = $this->carnetvoyage->countWhereCommentaires()[0]->nb_commentaires;
+        /*Load des helpers et librairies*/
+        $this->load->library('pagination');
+        /*Parametrage de la pagination*/
+        $config['base_url'] = base_url().'walkadmin/comments/';
+        $config['total_rows'] = $count;// faire attention taille totale
+        $nb_commentaires = $config['per_page'] = 10;
+        $config['num_links'] = 3;
+        $config['use_page_numbers'] = true;
+        $config['last_link'] = 'Dernier';
+        $config['first_link'] = 'Premier';
+        /*Initialisation de la pagination*/
+        $this->pagination->initialize($config);
+        /*Affichage de la pagination*/
+        $data['pagination'] = $this->pagination->create_links();
+        /*Création des variables de selection des carnets*/
+        $start = ($page*$nb_commentaires)-$nb_commentaires;
+
+
+        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_commentaires($start, $nb_commentaires);
+        foreach($data['carnets'] as $carnet){
+            $carnet->commentaires = $this->commentaires->selectCommentaireByCarnet($carnet->idCarnetDeVoyage);
+        }
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
