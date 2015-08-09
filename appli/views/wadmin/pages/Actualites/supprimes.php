@@ -35,13 +35,9 @@
                                 <p><?php echo $actualite->description; ?></p>
                             </div>
                             <div class="single__block buttonsBlock">
-                                <a class="button black" href="<?php echo base_url().'walkadmin/actualite/modifier/'.$actualite->idActualites;?>">
-                                    <i class="fa fa-edit"></i>&nbsp;
-                                    Modifier
-                                </a>
-                                <a class="button black delete" href="<?php echo base_url().'walkadmin/actualite/supprimer/'.$actualite->idActualites;?>">
-                                    <i class="fa fa-remove"></i>&nbsp;
-                                    Supprimer
+                                <a class="button black restore" href="<?php echo base_url().'walkadmin/actualite/restaurer/'.$actualite->idActualites;?>">
+                                    <i class="fa fa-check"></i>&nbsp;
+                                    Restaurer
                                 </a>
                             </div>
                         </div>
@@ -59,11 +55,11 @@
                 <?php } ?>
 
             </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="paged"><?php echo $pagination; ?></div>
-        </div>
-    </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="paged"><?php echo $pagination; ?></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

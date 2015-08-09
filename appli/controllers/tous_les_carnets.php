@@ -32,6 +32,7 @@ class Tous_les_carnets extends CI_Controller {
         $nb_articles = $config['per_page'] = 3;
         $config['num_links'] = 3;
         $config['use_page_numbers'] = true;
+        $config['uri_segment'] = 2;
         $config['last_link'] = 'Dernier';
         $config['first_link'] = 'Premier';
         /*Initialisation de la pagination*/

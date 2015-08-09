@@ -8,7 +8,7 @@
                 <div class="col-lg-12">
                     <h1 class="page-header sep">
                         <?php echo $article->titre; ?><br />
-                        <span class="small">Enregistré le&nbsp;<?php echo $article->date; ?></span>
+                        <span class="small">Enregistré le&nbsp;<?php echo conv_date($article->date); ?></span>
                     </h1>
                 </div>
             </div>
@@ -17,6 +17,26 @@
                     <div class="articles__content">
                         <div class="well">
                             <?php echo $article->texte; ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="articles__aside">
+                        <div class="well">
+                            <center>
+                                <div class="row">
+                                    <h4 class="page-header sep" style="margin:0px; color:black;margin-bottom:15px;">Auteur</h4>
+                                <div class="profile-picture">
+                                    <figure>
+                                        <img src="<?php echo img_url($user->photo); ?>" alt="<?php echo $user->nom.' '. $user->prenom; ?>">
+                                    </figure>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <h5><b><?php echo $user->nom.' '. $user->prenom; ?></b></h5>
+                            </div>
+                            </center>
                         </div>
                     </div>
                 </div>

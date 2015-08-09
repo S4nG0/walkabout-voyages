@@ -232,12 +232,18 @@ $('.admin .submenu .button').on('click', function () {
 /**
  * Confirm remove & restore
  */
-$('#delete').on('click', function(){
-    confirm("Êtes-vous sûr de vouloir supprimer cet élément ?");
+$('#delete').on('click', function(e){
+    e.preventDefault();
+    if(confirm("Êtes-vous sûr de vouloir supprimer cet élément ?")){
+        document.location.href = $(this).attr('href');
+    }
 })
 
-$('#restore').on('click', function(){
-    confirm("Êtes-vous sûr de vouloir restaurer cet élément ?");
+$('#restore').on('click', function(e){
+    e.preventDefault();
+    if(confirm("Êtes-vous sûr de vouloir restaurer cet élément ?")){
+        document.location.href = $(this).attr('href');
+    }
 })
 
 

@@ -37,6 +37,21 @@ class User extends CI_Model {
         return $user;
     }
 
+    public function getFromCarnet($idCarnet = 0){
+        if($idCarnet == 0){
+            return false;
+        }
+
+        $user = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idUsers = (SELECT idUsers FROM `WA__carnetdevoyage` WHERE idCarnetDeVoyage = '.$idCarnet.')')
+                           ->limit(1)
+                           ->get()
+                           ->result();
+
+        return $user;
+    }
+
     public function select($email = ''){
         if($email == ''){
             return false;
