@@ -100,6 +100,44 @@ body.admin {
         }
     }
 
+    .pagination {
+        display: block;
+        width: 100%;
+        text-align: center;
+
+        > li > a,
+        > li > span {
+            display: inline-block;
+            float: none;
+            border-color: $gris-clair;
+            background-color: $gris-tres-clair;
+
+            &:hover {
+                background-color: $noir;
+                border-color: $noir;
+                color: $blanc;
+            }
+        }
+
+        > li.active > span {
+            background-color: $noir;
+            border-color: $noir;
+            color: $blanc;
+        }
+
+        > li:first-child > a,
+        > li:first-child > span {
+            @include border-top-left-radius(0);
+            @include border-bottom-left-radius(0);
+        }
+
+        > li:last-child > a,
+        > li:last-child > span {
+            @include border-top-right-radius(0);
+            @include border-bottom-right-radius(0);
+        }
+    }
+
     .custom-search {
         position: relative;
         display: inline-block;
@@ -490,7 +528,7 @@ body.admin {
 
         .well {
             margin-bottom: 50px;
-            padding: 50px;
+            padding: 25px;
         }
 
         .carnets__header {
@@ -743,6 +781,12 @@ body.admin {
 }
 
 .articles {
+    .carnets__single {
+        .well {
+            padding: 50px;
+        }
+    }
+
     .articles__content,
     .articles__aside {
         .well {

@@ -33,46 +33,47 @@
                 if(sizeof($carnet->articles)>0){
                 ?>
 
-                <div class="row carnets__single searchable">
-                    <div class="col-md-12">
-                        <div class="carnets__single">
-                            <div class="well">
-                                <div class="carnets__header">
-                                    <h3 class="text-center">&nbsp;&nbsp;<?php echo $carnet->titre; ?>&nbsp;&nbsp;</h3>
+            <div class="row carnets__single searchable">
+                <div class="col-md-12">
+                    <div class="carnets__single">
+                        <div class="well">
+                            <div class="carnets__header">
+                                <h3 class="text-center">&nbsp;&nbsp;<?php echo $carnet->titre; ?>&nbsp;&nbsp;</h3>
+                            </div>
+                            <?php foreach ($carnet->articles as $article) { ?>
+                            <div class="carnets__article">
+                                <div class="single__block infoBlock">
+                                    <h4><?php echo $article->titre; ?></h4>
+                                    <p>
+                                        <?php echo substr(strip_tags($article->texte), 0, 200) . '&nbsp;... ' ?>
+                                    </p>
+                                    <a class="button black small" href="<?php echo base_url().'walkadmin/lire-article/'.$article->idArticles; ?>"><i class="fa fa-eye"></i>&nbsp;Lire plus...</a>
                                 </div>
-                                <?php foreach ($carnet->articles as $article) { ?>
-                                <div class="carnets__article">
-                                    <div class="single__block infoBlock">
-                                        <h4><?php echo $article->titre; ?></h4>
-                                        <p>
-                                            <?php echo substr(strip_tags($article->texte), 0, 200) . '&nbsp;... ' ?>
-                                        </p>
-                                        <a class="button black small" href="<?php echo base_url().'walkadmin/lire-article/'.$article->idArticles; ?>"><i class="fa fa-eye"></i>&nbsp;Lire plus...</a>
+                                <div class="single__block buttonsBlock">
+                                    <?php echo form_open('/walkadmin/article/majArticle/' . $article->idArticles) ?>
+                                    <div class="form-group">
+                                        <label class="small" for="etat">Status de l'article :</label>
+                                        <select name="etat" onchange="this.form.submit()">
+                                            <option value="En attente de modération" <?php if (isset($article) && $article->etat == "En attente de modération") echo 'selected' ?>>En attente de modération</option>
+                                            <option value="Publie" <?php if (isset($article) && $article->etat == "Publie") echo 'selected' ?>>Publié</option>
+                                        </select>
+                                        <a href="<?php echo base_url().'walkadmin/article/supprimer/'.$article->idArticles;?>" class="button black delete" id="delete"><i class="fa fa-remove"></i>&nbsp;Supprimer</a>
                                     </div>
-                                    <div class="single__block buttonsBlock">
-                                        <?php echo form_open('/walkadmin/article/majArticle/' . $article->idArticles) ?>
-                                        <div class="form-group">
-                                            <label class="small" for="etat">Status de l'article :</label>
-                                            <select name="etat" onchange="this.form.submit()">
-                                                <option value="En attente de modération" <?php if (isset($article) && $article->etat == "En attente de modération") echo 'selected' ?>>En attente de modération</option>
-                                                <option value="Publie" <?php if (isset($article) && $article->etat == "Publie") echo 'selected' ?>>Publié</option>
-                                            </select>
-                                            <a href="<?php echo base_url().'walkadmin/article/supprimer/'.$article->idArticles;?>" class="button black delete" id="delete"><i class="fa fa-remove"></i>&nbsp;Supprimer</a>
-                                        </div>
-                                        <?php echo form_close() ?>
-                                    </div>
-                                <?php } ?>
+                                    <?php echo form_close() ?>
+                                </div>
+                            <?php } ?>
                             </div>
                         </div>
                     </div>
                 </div>
-
+            </div>
             <?php }} ?>
+            <div class="row">
+                <div class="col-sm-12">
+                    <?php echo $pagination; ?>
+                </div>
+            </div>
         </div>
-        <div class="paged">
-            <?php echo $pagination; ?>
-        </div>
-    </div>
 
-</div>
+    </div>
 </div>
