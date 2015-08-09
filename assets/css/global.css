@@ -1940,6 +1940,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .infoBlock__featured span #featured:hover + i, .infoBlock__featured span #featured:checked + i {
   opacity: 1;
 }
+.infoBlock__featured span.featured-travel-log i {
+  opacity: 1;
+}
 
 .medium-editor-toolbar {
   background-color: #242424;
@@ -6455,6 +6458,13 @@ body.admin .charts h3 {
 .carnets h2,
 .articles h2 {
   margin-bottom: 50px !important;
+}
+.destinations blockquote,
+.actualites blockquote,
+.voyages blockquote,
+.carnets blockquote,
+.articles blockquote {
+  color: #848484;
 }
 .destinations input, .destinations textarea,
 .actualites input,

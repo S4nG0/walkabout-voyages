@@ -31,8 +31,23 @@
                 </div>
                 <div class="single__block infoBlock">
                     <h3><?php echo $carnet->titre; ?></h3>
-                    <p><?php echo $carnet->user[0]->nom." ".$carnet->user[0]->prenom; ?></p>
+                    <p class="published">Publié par&nbsp;<?php echo ucfirst(mb_strtolower($carnet->user[0]->nom))." ".ucfirst(mb_strtolower($carnet->user[0]->prenom)); ?></p>
                     <p><?php echo $carnet->description; ?></p>
+                    <?php if($carnet->favoris != "true"){ ?>
+                    <div class="infoBlock__featured">
+                        <span>
+                            <input type="checkbox" name="star" id="featured" data-id="<?php echo $carnet->idCarnetDeVoyage; ?>" value="featured"><i></i>
+                        </span>
+                        <strong class="subtitle">Définir en carnet phare</strong>
+                    </div>
+                    <?php }else{ ?>
+                    <div class="infoBlock__featured">
+                        <span class="featured-travel-log">
+                            <input type="checkbox" name="star" id="featured" data-id="<?php echo $carnet->idCarnetDeVoyage; ?>" value="featured"><i></i>
+                        </span>
+                        <strong class="subtitle">Définir en carnet phare</strong>
+                    </div>
+                    <?php } ?>
                 </div>
                 <div class="single__block buttonsBlock">
                     <a class="button black restore" id="restore" href="<?php echo base_url().'walkadmin/carnets/publie/'.$carnet->idCarnetDeVoyage;?>">

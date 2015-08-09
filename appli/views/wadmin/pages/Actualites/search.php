@@ -59,18 +59,18 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="no-entry">Il n'y a aucune actualité correspondant à la recherche : <br/> <?php echo $search; ?></p>
+                        <p class="no-entry">Il n'y a aucune actualité correspondant à la recherche : <blockquote><?php echo $search; ?></blockquote></p>
                     </div>
                 </div>
 
                 <?php } ?>
 
             </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <?php echo $pagination; ?>
-        </div>
-    </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <?php echo $pagination; ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>

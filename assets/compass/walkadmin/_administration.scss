@@ -394,6 +394,10 @@ body.admin {
         margin-bottom: 50px !important;
     }
 
+    blockquote {
+        color: $gris-clair;
+    }
+
     input, textarea {
         text-align: center;
     }
@@ -1068,6 +1072,7 @@ body.admin {
     .actualites,
     .carnets,
     .articles {
+
         .module__tools {
             .custom-search { margin-right: 0; width: 200px; }
             input, .button {
