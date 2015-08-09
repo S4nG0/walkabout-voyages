@@ -30,6 +30,12 @@
                     <h3><?php echo $carnet->titre; ?></h3>
                     <p class="published">Publié par&nbsp;<?php echo ucfirst(mb_strtolower($carnet->user[0]->nom))." ".ucfirst(mb_strtolower($carnet->user[0]->prenom)); ?></p>
                     <p><?php echo $carnet->description; ?></p>
+                    <div class="infoBlock__featured">
+                        <span>
+                            <input type="checkbox" name="featured" id="featured" value="featured"><i></i>
+                        </span>
+                        <strong class="subtitle">Définir en carnet phare</strong>
+                    </div>
                 </div>
                 <div class="single__block buttonsBlock">
                     <a class="button black" href="<?php echo base_url().'carnets-de-voyage/'.$carnet->url;?>" target="_blank">
