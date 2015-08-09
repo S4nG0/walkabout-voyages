@@ -12,13 +12,13 @@
     <div class="row">
         <div class="col-md-12">
             <div class="module__tools">
+                <a href="<?php echo base_url() . 'walkadmin/carnets/'; ?>" class="button black"><i class="fa fa-hand-o-left"></i>&nbsp;Retour en arrière</a>
                 <div class="custom-search">
                     <?php echo form_open('walkadmin/carnets/search'); ?>
                     <input class="custom-search-input" type="search" name="search" placeholder="Rechercher" value="<?php echo $search; ?>"/>
                     <button class="custom-search-button"><i class="fa fa-search"></i></button>
                     <?php echo form_close(); ?>
                 </div>
-                <a href="<?php echo base_url() . 'walkadmin/carnets/supprimes'; ?>" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
             </div>
         </div>
     </div>
@@ -47,6 +47,7 @@
                         <span class="featured-travel-log" >
                             <input type="checkbox" name="star" id="featured" data-id="<?php echo $carnet->idCarnetDeVoyage; ?>" value="featured"><i></i>
                         </span>
+                        <strong class="subtitle">Définir en carnet phare</strong>
                     </div>
                     <?php } ?>
                 </div>
@@ -67,7 +68,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <p class="no-entry">Aucun carnet correspondant à la recherche : <span class="search__result"><?php echo $search; ?></span></p>
+            <p class="no-entry">Aucun carnet correspondant à la recherche : <blockquote><?php echo $search; ?></blockquote></p>
         </div>
     </div>
 

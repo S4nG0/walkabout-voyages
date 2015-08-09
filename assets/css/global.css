@@ -6459,6 +6459,13 @@ body.admin .charts h3 {
 .articles h2 {
   margin-bottom: 50px !important;
 }
+.destinations blockquote,
+.actualites blockquote,
+.voyages blockquote,
+.carnets blockquote,
+.articles blockquote {
+  color: #848484;
+}
 .destinations input, .destinations textarea,
 .actualites input,
 .actualites textarea,
