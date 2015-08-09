@@ -12,12 +12,12 @@
     <div class="row">
         <div class="col-md-12">
             <div class="module__tools">
-                <?php echo form_open('walkadmin/carnets/search'); ?>
                 <div class="custom-search">
+                    <?php echo form_open('walkadmin/carnets/search'); ?>
                     <input class="custom-search-input" type="search" name="search" placeholder="Rechercher"/>
                     <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                    <?php echo form_close(); ?>
                 </div>
-                <?php echo form_close(); ?>
                 <a href="<?php echo base_url() . 'walkadmin/carnets/supprimes'; ?>" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
             </div>
         </div>
@@ -44,7 +44,10 @@
                     </div>
                     <?php }else{ ?>
                     <div class="infoBlock__featured">
-                        <strong class="subtitle"><i class="fa fa-star" style="color:yellow;"></i>Défini comme carnet phare</strong>
+                        <span class="featured-travel-log">
+                            <input type="checkbox" name="star" id="featured" data-id="<?php echo $carnet->idCarnetDeVoyage; ?>" value="featured"><i></i>
+                        </span>
+                        <strong class="subtitle">Définir en carnet phare</strong>
                     </div>
                     <?php } ?>
                 </div>
@@ -54,7 +57,7 @@
                     </a>
                     <a class="button black delete" id="delete" href="<?php echo base_url().'walkadmin/carnets/supprimer/'.$carnet->idCarnetDeVoyage;?>">
                         <i class="fa fa-remove"></i>&nbsp;
-                        Dépublier
+                        Supprimer
                     </a>
                 </div>
             </div>
@@ -71,15 +74,15 @@
 
     <?php } ?>
 
-    
-    
+
+
     <div id="formulaire">
         <?php echo form_open('walkadmin/carnets/favoris'); ?>
             <input name="valeur-favoris" type="hidden"/>
         <?php echo form_close(); ?>
     </div>
-    
-    
+
+
     <div class="row">
         <div class="col-sm-12">
             <?php echo $pagination; ?>

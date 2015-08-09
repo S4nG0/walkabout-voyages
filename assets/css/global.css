@@ -1940,6 +1940,9 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 .infoBlock__featured span #featured:hover + i, .infoBlock__featured span #featured:checked + i {
   opacity: 1;
 }
+.infoBlock__featured span.featured-travel-log i {
+  opacity: 1;
+}
 
 .medium-editor-toolbar {
   background-color: #242424;
