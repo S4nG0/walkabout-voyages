@@ -10,7 +10,7 @@
                 <div class="module__tools">
                     <div class="custom-search">
                         <?php echo form_open('walkadmin/actualite/search'); ?>
-                            <input class="custom-search-input" type="search" name="search" placeholder="Rechercher"/>
+                            <input class="custom-search-input" type="search" name="search" placeholder="Rechercher" value="<?php echo $search; ?>"/>
                             <button class="custom-search-button"><i class="fa fa-search"></i></button>
                         <?php echo form_close(); ?>
                     </div>
@@ -59,7 +59,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="no-entry">Il n'y a aucune actualité enregistrée actuellement !</p>
+                        <p class="no-entry">Il n'y a aucune actualité correspondant à la recherche : <br/> <?php echo $search; ?></p>
                     </div>
                 </div>
 

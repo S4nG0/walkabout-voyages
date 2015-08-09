@@ -46,6 +46,19 @@ class Actualites extends CI_Model {
         return $actus;
     }
     
+    public function get_all_actus_search($search,$nb,$start) {
+        $actus = $this->db->select('*')
+                ->from($this->table)
+                ->like('texte', $search)
+                ->or_like('titre', $search)
+                ->limit($nb, $start)
+                ->order_by('idActualites','DESC')
+                ->get()
+                ->result();
+        
+        return $actus;
+    }
+    
     public function get_all_actus_supprimes($start, $nb) {
         $actus = $this->db->select('*')
                 ->from($this->table)
