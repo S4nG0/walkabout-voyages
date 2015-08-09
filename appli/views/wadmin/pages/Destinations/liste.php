@@ -11,8 +11,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="destinations__tools">
-                <input type="search" id="search" placeholder="Rechercher une destination"/>
+            <div class="module__tools">
+                <div class="custom-search">
+                    <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
+                    <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                </div>
                 <a class="button black" href="<?php echo base_url() . 'walkadmin/creer-destination'; ?>">
                     <i class="fa fa-plus"></i>&nbsp;Ajouter
                 </a>

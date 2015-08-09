@@ -6186,6 +6186,54 @@ body.admin .alert {
 body.admin .alert > p {
   color: #a94442;
 }
+body.admin .custom-search {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 52px;
+  margin-right: 15px;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.admin .custom-search .custom-search-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  background-color: #242424;
+  color: #fff;
+  border: 1px solid #242424;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.admin .custom-search .custom-search-button:hover, body.admin .custom-search .custom-search-button:focus {
+  background-color: #f5f5f5;
+  color: #242424;
+}
+body.admin .custom-search .custom-search-input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #242424;
+  background-color: #f5f5f5;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  text-align: left;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.admin .custom-search.isFocused {
+  width: 350px;
+}
+body.admin .custom-search.isFocused .custom-search-input {
+  border-color: #848484;
+}
 body.admin .custom-file-input {
   position: relative;
   padding: 15px;
@@ -6430,98 +6478,38 @@ body.admin .charts h3 {
 .articles .destinations__previewBlock {
   margin-bottom: 50px;
 }
-.destinations .destinations__tools,
-.destinations .actualites__tools,
-.destinations .carnets__tools,
-.destinations .articles__tools,
-.actualites .destinations__tools,
-.actualites .actualites__tools,
-.actualites .carnets__tools,
-.actualites .articles__tools,
-.voyages .destinations__tools,
-.voyages .actualites__tools,
-.voyages .carnets__tools,
-.voyages .articles__tools,
-.carnets .destinations__tools,
-.carnets .actualites__tools,
-.carnets .carnets__tools,
-.carnets .articles__tools,
-.articles .destinations__tools,
-.articles .actualites__tools,
-.articles .carnets__tools,
-.articles .articles__tools {
+.destinations .module__tools,
+.actualites .module__tools,
+.voyages .module__tools,
+.carnets .module__tools,
+.articles .module__tools {
   display: table;
   width: 100%;
   margin-bottom: 50px;
   text-align: center;
 }
-.destinations .destinations__tools input,
-.destinations .actualites__tools input,
-.destinations .carnets__tools input,
-.destinations .articles__tools input,
-.actualites .destinations__tools input,
-.actualites .actualites__tools input,
-.actualites .carnets__tools input,
-.actualites .articles__tools input,
-.voyages .destinations__tools input,
-.voyages .actualites__tools input,
-.voyages .carnets__tools input,
-.voyages .articles__tools input,
-.carnets .destinations__tools input,
-.carnets .actualites__tools input,
-.carnets .carnets__tools input,
-.carnets .articles__tools input,
-.articles .destinations__tools input,
-.articles .actualites__tools input,
-.articles .carnets__tools input,
-.articles .articles__tools input {
+.destinations .module__tools input,
+.actualites .module__tools input,
+.voyages .module__tools input,
+.carnets .module__tools input,
+.articles .module__tools input {
   display: inline-block;
   width: 300px;
   margin-right: 15px;
   vertical-align: middle;
 }
-.destinations .destinations__tools input:focus,
-.destinations .actualites__tools input:focus,
-.destinations .carnets__tools input:focus,
-.destinations .articles__tools input:focus,
-.actualites .destinations__tools input:focus,
-.actualites .actualites__tools input:focus,
-.actualites .carnets__tools input:focus,
-.actualites .articles__tools input:focus,
-.voyages .destinations__tools input:focus,
-.voyages .actualites__tools input:focus,
-.voyages .carnets__tools input:focus,
-.voyages .articles__tools input:focus,
-.carnets .destinations__tools input:focus,
-.carnets .actualites__tools input:focus,
-.carnets .carnets__tools input:focus,
-.carnets .articles__tools input:focus,
-.articles .destinations__tools input:focus,
-.articles .actualites__tools input:focus,
-.articles .carnets__tools input:focus,
-.articles .articles__tools input:focus {
+.destinations .module__tools input:focus,
+.actualites .module__tools input:focus,
+.voyages .module__tools input:focus,
+.carnets .module__tools input:focus,
+.articles .module__tools input:focus {
   border-color: #848484;
 }
-.destinations .destinations__tools .button,
-.destinations .actualites__tools .button,
-.destinations .carnets__tools .button,
-.destinations .articles__tools .button,
-.actualites .destinations__tools .button,
-.actualites .actualites__tools .button,
-.actualites .carnets__tools .button,
-.actualites .articles__tools .button,
-.voyages .destinations__tools .button,
-.voyages .actualites__tools .button,
-.voyages .carnets__tools .button,
-.voyages .articles__tools .button,
-.carnets .destinations__tools .button,
-.carnets .actualites__tools .button,
-.carnets .carnets__tools .button,
-.carnets .articles__tools .button,
-.articles .destinations__tools .button,
-.articles .actualites__tools .button,
-.articles .carnets__tools .button,
-.articles .articles__tools .button {
+.destinations .module__tools .button,
+.actualites .module__tools .button,
+.voyages .module__tools .button,
+.carnets .module__tools .button,
+.articles .module__tools .button {
   display: inline-block;
   width: auto;
   padding: 15px;
@@ -6621,7 +6609,7 @@ body.admin .charts h3 {
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-bottom: 50%;
+  padding-bottom: 56%;
 }
 .destinations .destinations__single .infoBlock,
 .destinations .actualites__single .infoBlock,
@@ -7429,8 +7417,8 @@ body.admin .charts h3 {
 /*------------------------------------*\
     #CONTACT
 \*------------------------------------*/
-.contacts input[type="search"]:focus {
-  border-color: #f0c041;
+.contacts .custom-search.isFocused {
+  width: 100% !important;
 }
 .contacts .no-entry {
   margin: 0;
@@ -7569,6 +7557,9 @@ body.admin .charts h3 {
     display: block;
     margin-bottom: 10px;
   }
+  body.admin .custom-search {
+    margin-bottom: 15px;
+  }
 }
 @media screen and (max-width: 992px) {
   /*------------------------------------*\
@@ -7581,58 +7572,29 @@ body.admin .charts h3 {
   /*------------------------------------*\
       #DESTINATIONS || #ACTUALITES
   \*------------------------------------*/
-  .destinations .destinations__tools input, .destinations .destinations__tools .button,
-  .destinations .actualites__tools input,
-  .destinations .actualites__tools .button,
-  .destinations .carnets__tools input,
-  .destinations .carnets__tools .button,
-  .destinations .articles__tools input,
-  .destinations .articles__tools .button,
-  .actualites .destinations__tools input,
-  .actualites .destinations__tools .button,
-  .actualites .actualites__tools input,
-  .actualites .actualites__tools .button,
-  .actualites .carnets__tools input,
-  .actualites .carnets__tools .button,
-  .actualites .articles__tools input,
-  .actualites .articles__tools .button,
-  .carnets .destinations__tools input,
-  .carnets .destinations__tools .button,
-  .carnets .actualites__tools input,
-  .carnets .actualites__tools .button,
-  .carnets .carnets__tools input,
-  .carnets .carnets__tools .button,
-  .carnets .articles__tools input,
-  .carnets .articles__tools .button,
-  .articles .destinations__tools input,
-  .articles .destinations__tools .button,
-  .articles .actualites__tools input,
-  .articles .actualites__tools .button,
-  .articles .carnets__tools input,
-  .articles .carnets__tools .button,
-  .articles .articles__tools input,
-  .articles .articles__tools .button {
+  .destinations .module__tools .custom-search,
+  .actualites .module__tools .custom-search,
+  .carnets .module__tools .custom-search,
+  .articles .module__tools .custom-search {
+    margin-right: 0;
+    width: 200px;
+  }
+  .destinations .module__tools input, .destinations .module__tools .button,
+  .actualites .module__tools input,
+  .actualites .module__tools .button,
+  .carnets .module__tools input,
+  .carnets .module__tools .button,
+  .articles .module__tools input,
+  .articles .module__tools .button {
     display: block;
-    width: 100%;
+    width: 200px;
     margin-right: auto;
     margin-bottom: 15px;
   }
-  .destinations .destinations__tools .button:last-child,
-  .destinations .actualites__tools .button:last-child,
-  .destinations .carnets__tools .button:last-child,
-  .destinations .articles__tools .button:last-child,
-  .actualites .destinations__tools .button:last-child,
-  .actualites .actualites__tools .button:last-child,
-  .actualites .carnets__tools .button:last-child,
-  .actualites .articles__tools .button:last-child,
-  .carnets .destinations__tools .button:last-child,
-  .carnets .actualites__tools .button:last-child,
-  .carnets .carnets__tools .button:last-child,
-  .carnets .articles__tools .button:last-child,
-  .articles .destinations__tools .button:last-child,
-  .articles .actualites__tools .button:last-child,
-  .articles .carnets__tools .button:last-child,
-  .articles .articles__tools .button:last-child {
+  .destinations .module__tools .button:last-child,
+  .actualites .module__tools .button:last-child,
+  .carnets .module__tools .button:last-child,
+  .articles .module__tools .button:last-child {
     margin-bottom: 0;
   }
   .destinations .destinations__single .well,
@@ -7878,11 +7840,19 @@ body.admin .charts h3 {
   }
 }
 @media screen and (max-width: 768px) {
+  body.admin #page-wrapper {
+    padding: 0;
+  }
   body.admin .admin-log-on > .container .login-panel .panel-form .form-group input {
     width: 50%;
   }
   body.admin .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {
     width: 50%;
+  }
+
+  .destinations .destinations__single .infoBlock {
+    padding-right: 0;
+    padding-left: 0;
   }
 
   /*------------------------------------*\
@@ -7908,6 +7878,9 @@ body.admin .charts h3 {
   }
   body.admin .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {
     width: 100%;
+  }
+  body.admin .custom-search.isFocused {
+    width: 250px;
   }
 }
 /*------------------------------------*\

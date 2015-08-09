@@ -3,7 +3,12 @@
             <div class="col-lg-12">
                 <h1 class="page-header">Commentaires</h1>
             </div>
-            <!-- /.col-lg-12 -->
+            <div class="module__tools">
+                <div class="custom-search">
+                    <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
+                    <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
         </div>
         <!-- /.row -->
         <div class="row">
@@ -50,7 +55,7 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            
+
         </div>
         <!-- /.row -->
     </div>

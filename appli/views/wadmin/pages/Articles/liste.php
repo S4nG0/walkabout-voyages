@@ -11,8 +11,11 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="articles__tools">
-                        <input type="search" id="search" placeholder="Rechercher un article"/>
+                    <div class="module__tools">
+                        <div class="custom-search">
+                            <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
+                            <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                        </div>
                         <a href="<?php echo base_url() . 'walkadmin/article/supprimes'; ?>" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
                     </div>
                 </div>

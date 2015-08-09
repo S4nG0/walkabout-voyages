@@ -100,6 +100,56 @@ body.admin {
         }
     }
 
+    .custom-search {
+        position: relative;
+        display: inline-block;
+        width: 150px;
+        height: 52px;
+        margin-right: 15px;
+        @include transition($default-transition);
+
+        .custom-search-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 50px;
+            background-color: $noir;
+            color: $blanc;
+            border: 1px solid $noir;
+            @include transition($default-transition);
+
+            &:hover, &:focus {
+                background-color: $gris-tres-clair;
+                color: $noir;
+            }
+        }
+
+        .custom-search-input {
+            width: 100%;
+            padding: 15px;
+
+            border: 1px solid $noir;
+            background-color: $gris-tres-clair;
+            background-position: 15px center;
+            background-repeat: no-repeat;
+
+            text-align: left;
+
+            @include transition($default-transition);
+
+        }
+
+        &.isFocused {
+            width: 350px;
+
+            .custom-search-input {
+                border-color: $gris-clair;
+            }
+        }
+    }
+
+
     .custom-file-input {
         position: relative;
         padding: 15px;
@@ -344,10 +394,7 @@ body.admin {
         margin-bottom: 50px;
     }
 
-    .destinations__tools,
-    .actualites__tools,
-    .carnets__tools,
-    .articles__tools {
+    .module__tools {
         display: table;
         width: 100%;
         margin-bottom: 50px;
@@ -402,7 +449,7 @@ body.admin {
                 background-position: 50% 0;
                 @include background-size(cover);
                 background-repeat: no-repeat;
-                padding-bottom: 50%;
+                padding-bottom: 56%;
             }
         }
 
@@ -763,11 +810,10 @@ body.admin {
     #CONTACT
 \*------------------------------------*/
 .contacts {
-    input[type="search"] {
-        // border: $dark-border;
 
-        &:focus {
-            border-color: $jaune-or;
+    .custom-search {
+        &.isFocused {
+            width: 100% !important;
         }
     }
 
@@ -929,6 +975,7 @@ body.admin {
 
 @media screen and (max-width: 1230px) {
     body.admin {
+
         .submenu {
             .submenu__header {
                 border-right: none;
@@ -938,6 +985,10 @@ body.admin {
                 display: block;
                 margin-bottom: 10px;
             }
+        }
+
+        .custom-search {
+            margin-bottom: 15px;
         }
     }
 }
@@ -958,13 +1009,11 @@ body.admin {
     .actualites,
     .carnets,
     .articles {
-        .destinations__tools,
-        .actualites__tools,
-        .carnets__tools,
-        .articles__tools {
+        .module__tools {
+            .custom-search { margin-right: 0; width: 200px; }
             input, .button {
                 display: block;
-                width: 100%;
+                width: 200px;
                 margin-right: auto;
                 margin-bottom: 15px;
             }
@@ -1056,6 +1105,10 @@ body.admin {
 
 @media screen and (max-width: 768px) {
     body.admin {
+        #page-wrapper {
+            padding: 0;
+        }
+
         .admin-log-on {
             > .container {
                 .login-panel {
@@ -1071,6 +1124,14 @@ body.admin {
                         }
                     }
                 }
+            }
+        }
+    }
+    .destinations {
+        .destinations__single {
+            .infoBlock {
+                padding-right: 0;
+                padding-left: 0;
             }
         }
     }
@@ -1117,6 +1178,11 @@ body.admin {
                         }
                     }
                 }
+            }
+        }
+        .custom-search {
+            &.isFocused {
+                width: 250px;
             }
         }
     }

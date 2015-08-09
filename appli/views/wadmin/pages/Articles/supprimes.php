@@ -11,9 +11,12 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="articles__tools">
+                    <div class="module__tools">
                         <a href="<?php echo base_url() . 'walkadmin/article/'; ?>" class="button black"><i class="fa fa-hand-o-left"></i>&nbsp;Revenir aux articles</a>
-                        <input type="search" id="search" placeholder="Rechercher un article"/>
+                        <div class="custom-search">
+                            <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
+                            <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>

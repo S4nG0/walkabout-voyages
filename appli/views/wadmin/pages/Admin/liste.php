@@ -7,7 +7,10 @@
         <!-- /.row -->
         <div class="row">
             <div class="col-md-12">
-                <input type="search" class="form-control" id="search" placeholder="Rechercher un administrateur"/>
+                <div class="custom-search">
+                    <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
+                    <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                </div>
                 <table>
                     <thead>
                         <tr>

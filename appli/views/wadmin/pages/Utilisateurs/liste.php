@@ -6,9 +6,14 @@
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
-    
+
     <div class="row">
-        <input type="search" class="form-control" id="search" placeholder="Rechercher un utilisateur"/>
+        <div class="module__tools">
+            <div class="custom-search">
+                <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
+                <button class="custom-search-button"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-12">

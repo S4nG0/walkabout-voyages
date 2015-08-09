@@ -9,12 +9,15 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="destinations__tools">
+            <div class="module__tools">
                 <a href="<?php echo base_url() . 'walkadmin/destinations' ?>" class="button black">
                     <i class="fa fa-hand-o-left"></i>&nbsp;
                     Retour aux destinations
                 </a>
-                <input type="search" id="search" placeholder="Rechercher une destination"/>
+                <div class="custom-search">
+                    <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
+                    <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                </div>
             </div>
         </div>
     </div>
