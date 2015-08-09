@@ -27,7 +27,7 @@
                                 <hr>
                             </div>
                             <div class="articles__aside help-block">
-                                <p class="small">Sélectionner une option pour changer le status de l'article.</p>
+                                <p class="small">Sélectionner une option pour changer le statut de l'article.</p>
                             </div>
                             <?php echo form_open('/walkadmin/article/majArticle/' . $article->idArticles) ?>
                                 <select name="etat" onchange="this.form.submit()">
