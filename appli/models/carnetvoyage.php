@@ -148,6 +148,19 @@ class Carnetvoyage extends CI_Model {
 
     }
 
+    public function get_carnet_pagination_commentaires($start,$nb){
+
+        $carnets = $this->db->select('*')
+            ->from($this->table)
+            ->where('idCarnetDeVoyage IN (Select idCarnet from wa__commentaires)')
+            ->limit($nb, $start)
+            ->get()
+            ->result();
+
+        return $carnets;
+
+    }
+
     public function get_carnet_pagination_supprimes($start,$nb){
 
         $carnets = $this->db->select('*')
@@ -215,6 +228,13 @@ class Carnetvoyage extends CI_Model {
 
     public function countWhereArticlesDelete(){
         $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat = \"Supprimes\")";
+        $carnets = $this->db->query($query)->result();
+
+        return $carnets;
+    }
+
+    public function countWhereCommentaires(){
+        $query = "SELECT count(*) AS nb_commentaires FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__commentaires)";
         $carnets = $this->db->query($query)->result();
 
         return $carnets;

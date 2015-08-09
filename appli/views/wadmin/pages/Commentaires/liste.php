@@ -29,29 +29,35 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($commentaires as $commentaire){ ?>
-                        <?php if($commentaire->data==''){ ?>
-                            <tr class="searchable" data-search="<?php echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?>">
-                                <td><?php if(isset($commentaire)) echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?></td>
-                                <td><a href="<?php echo base_url().'carnets-de-voyage/'.$commentaire->url ?>" target="_blank"><?php if(isset($commentaire)) echo $commentaire->titreCarnet ?></a></td>
-                                <td><?php if(isset($commentaire)) echo $commentaire->date ?></td>
-                                <td><?php if(isset($commentaire)) echo $commentaire->texte?></td>
-                                <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/publie/".$commentaire->idCommentaires?> ">Publier</a></td>
-                                <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/supprimer/".$commentaire->idCommentaires?> "><i class="fa fa-trash"></i> Supprimer</a></td>
-                            </tr>
-                        <?php } else{ ?>
-                            <tr class="searchable" data-search="<?php echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?>">
-                                <td><?php if(isset($commentaire)) $personne = traitementChaineDataUser($commentaire->data); echo $personne; ?></td>
-                                <td><a href="<?php echo base_url().'carnets-de-voyage/'.$commentaire->url ?>" target="_blank"><?php if(isset($commentaire)) echo $commentaire->titreCarnet ?></a></td>
-                                <td><?php if(isset($commentaire)) echo $commentaire->date ?></td>
-                                <td><?php if(isset($commentaire)) echo $commentaire->texte?></td>
-                                <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/publie/".$commentaire->idCommentaires?> ">Publier</a></td>
-                                <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/supprimer/".$commentaire->idCommentaires?> "><i class="fa fa-trash"></i> Supprimer</a></td>
-                            </tr>
+                    <?php foreach($carnets as $carnet){
+                    if(sizeof($carnet->commentaires)>0){?>
+                        <?php foreach ($carnet->commentaires as $commentaire) { ?>
+                            <?php if($commentaire->data==''){ ?>
+                                <tr class="searchable" data-search="<?php echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?>">
+                                    <td><?php if(isset($commentaire)) echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?></td>
+                                    <td><a href="<?php echo base_url().'carnets-de-voyage/'.$carnet->url ?>" target="_blank"><?php if(isset($carnet)) echo $carnet->titre ?></a></td>
+                                    <td><?php if(isset($commentaire)) echo $commentaire->date ?></td>
+                                    <td><?php if(isset($commentaire)) echo $commentaire->texte?></td>
+                                    <td><?php if(isset($commentaire) && $commentaire->modere=="false"){ ?><a class="button black" href="<?php echo base_url()."walkadmin/comments/publie/".$commentaire->idCommentaires?> ">Publier</a><?php } ?></td>
+                                    <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/supprimer/".$commentaire->idCommentaires?> "><i class="fa fa-trash"></i> Supprimer</a></td>
+                                </tr>
+                            <?php } else{ ?>
+                                <tr class="searchable" data-search="<?php echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?>">
+                                    <td><?php if(isset($commentaire)) $personne = traitementChaineDataUser($commentaire->data); echo $personne; ?></td>
+                                    <td><a href="<?php echo base_url().'carnets-de-voyage/'.$carnet->url ?>" target="_blank"><?php if(isset($carnet)) echo $carnet->titre ?></a></td>
+                                    <td><?php if(isset($commentaire)) echo $commentaire->date ?></td>
+                                    <td><?php if(isset($commentaire)) echo $commentaire->texte?></td>
+                                    <td><?php if(isset($commentaire) && $commentaire->modere=="false"){ ?><a class="button black" href="<?php echo base_url()."walkadmin/comments/publie/".$commentaire->idCommentaires?> ">Publier</a><?php } ?></td>
+                                    <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/supprimer/".$commentaire->idCommentaires?> "><i class="fa fa-trash"></i> Supprimer</a></td>
+                                </tr>
+                            <?php } ?>
                         <?php } ?>
-                    <?php } ?>
+                    <?php }} ?>
                 </tbody>
             </table>
+            <div class="paged">
+                <?php echo $pagination; ?>
+            </div>
         </div>
         <!-- /.row -->
         <div class="row">
