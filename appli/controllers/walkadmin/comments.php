@@ -23,7 +23,7 @@ class Comments extends CI_Controller {
     public function index($page = 1) {
         connecte_admin($this->session->userdata('admin'));
         $data=array();
-        $data['title'] = "Carnet de voyage - Commentaires";
+        $data['title'] = "Commentaires - Carnets";
         $count = $this->commentaires->countWhereCommentaires()[0]->nb_commentaires;
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
@@ -42,11 +42,11 @@ class Comments extends CI_Controller {
         /*Création des variables de selection des carnets*/
         $start = ($page*$nb_commentaires)-$nb_commentaires;
 
-
-        $data['commentaires'] = $this->commentaires->get_commentaire_pagination($start, $nb_commentaires);
-        foreach($data['commentaires'] as $commentaire){
-            $commentaire->carnet = $this->carnetvoyage->constructeur($commentaire->idCarnet);
+        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_admin($start, $nb_commentaires);
+        foreach($data['carnets'] as $carnet){
+            $carnet->commentaires = $this->commentaires->selectCommentaireByCarnet($carnet->idCarnetDeVoyage);
         }
+
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);

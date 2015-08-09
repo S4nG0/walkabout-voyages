@@ -6,12 +6,12 @@ if (!defined('BASEPATH'))
 class Commentaires extends CI_Model {
 
     protected $table = 'commentaires';
-    
+
     public function constructeur($id = 0){
         if($id == 0){
             return false;
         }
-        
+
         $actu = $this->db->select('*')
                            ->from($this->table)
                            ->where('idCarnet', $id)
@@ -19,7 +19,7 @@ class Commentaires extends CI_Model {
                            ->order_by('idCommentaires','ASC')
                            ->get()
                            ->result();
-        
+
         return $actu;
     }
 
@@ -48,7 +48,7 @@ class Commentaires extends CI_Model {
             return false;
         }
 
-        $actu = $this->db->select('commentaires.*,users.nom AS nomUsers,users.prenom AS prenomUsers')
+        $commentaires = $this->db->select('commentaires.*,users.nom AS nomUsers,users.prenom AS prenomUsers')
                         ->from($this->table)
                         ->join('users','users.idUsers=commentaires.idUsers')
                         ->where('idCarnet', $id)
@@ -56,22 +56,22 @@ class Commentaires extends CI_Model {
                         ->get()
                         ->result();
 
-        return $actu;
+        return $commentaires;
     }
-    
+
     public function add($commentaire){
-        
-        $result = $this->db->insert($this->table, $commentaire); 
-        
+
+        $result = $this->db->insert($this->table, $commentaire);
+
         return $result;
     }
-    
+
     public function count_non_modere(){
-        
+
         $this->db->like('modere', 'false');
         $this->db->from($this->table);
         $result =  $this->db->count_all_results();
-        
+
         return $result;
     }
 

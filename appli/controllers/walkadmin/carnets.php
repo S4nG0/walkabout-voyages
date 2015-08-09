@@ -11,7 +11,7 @@ class Carnets extends CI_Controller{
     public function index($page = 1){
         connecte_admin($this->session->userdata('admin'));
         $data=array();
-        $data['title'] = "Carnets";
+        $data['title'] = "Carnets de voyage";
         $this->db->where('publie <> "Suppr"');
         $this->db->from('carnetdevoyage');
         $count = $this->db->count_all_results();
