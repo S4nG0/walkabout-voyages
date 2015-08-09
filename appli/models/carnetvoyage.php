@@ -134,11 +134,38 @@ class Carnetvoyage extends CI_Model {
 
     }
 
+    public function get_carnet_pagination_search($search,$start,$nb){
+
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('publie', 'true')
+                           ->like('titre' ,$search)
+                           ->limit($nb, $start)
+                           ->get()
+                           ->result();
+
+        return $carnets;
+
+    }
+
     public function get_carnet_pagination_admin($start,$nb){
 
         $carnets = $this->db->select('*')
                            ->from($this->table)
                            ->where('idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> "Brouillon" and etat <> "Supprimes")')
+                           ->limit($nb, $start)
+                           ->get()
+                           ->result();
+
+        return $carnets;
+
+    }
+
+    public function get_carnet_pagination_admin_search($search, $start,$nb){
+
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> "Brouillon" and titre like "%'.$search.'%" OR texte like "%'.$search.'%")')
                            ->limit($nb, $start)
                            ->get()
                            ->result();
@@ -233,6 +260,13 @@ class Carnetvoyage extends CI_Model {
 
     public function countWhereArticles(){
         $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles WHere etat <> \"Brouillon\" and etat <> \"Supprimes\")";
+        $carnets = $this->db->query($query)->result();
+
+        return $carnets;
+    }
+    
+    public function countWhereArticlesSearch($search){
+        $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> \"Brouillon\" and titre LIKE '%$search%' OR texte LIKE '%$search%')";
         $carnets = $this->db->query($query)->result();
 
         return $carnets;
