@@ -23,6 +23,26 @@ class Commentaires extends CI_Model {
         return $actu;
     }
 
+    public function get_commentaire_pagination($start,$nb){
+        $commentaires = $this->db->select('commentaires.*,users.nom AS nomUsers,users.prenom AS prenomUsers')
+                                ->from($this->table)
+                                ->join('users','users.idUsers=commentaires.idUsers')
+                                ->where('idCarnet IN (Select idCarnetDeVoyage from wa__carnetdevoyage)')
+                                ->order_by('commentaires.date','ASC')
+                                ->limit($nb, $start)
+                                ->get()
+                                ->result();
+
+        return $commentaires;
+    }
+
+    public function countWhereCommentaires(){
+        $query = "SELECT count(*) AS nb_commentaires FROM `wa__commentaires` WHERE idCarnet IN (Select idCarnetDeVoyage from wa__carnetdevoyage)";
+        $carnets = $this->db->query($query)->result();
+
+        return $carnets;
+    }
+
     public function selectCommentaireByCarnet($id = 0){
         if($id == 0){
             return false;

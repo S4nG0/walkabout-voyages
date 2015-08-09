@@ -24,7 +24,7 @@ class Comments extends CI_Controller {
         connecte_admin($this->session->userdata('admin'));
         $data=array();
         $data['title'] = "Carnet de voyage - Commentaires";
-        $count = $this->carnetvoyage->countWhereCommentaires()[0]->nb_commentaires;
+        $count = $this->commentaires->countWhereCommentaires()[0]->nb_commentaires;
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
@@ -43,9 +43,9 @@ class Comments extends CI_Controller {
         $start = ($page*$nb_commentaires)-$nb_commentaires;
 
 
-        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_commentaires($start, $nb_commentaires);
-        foreach($data['carnets'] as $carnet){
-            $carnet->commentaires = $this->commentaires->selectCommentaireByCarnet($carnet->idCarnetDeVoyage);
+        $data['commentaires'] = $this->commentaires->get_commentaire_pagination($start, $nb_commentaires);
+        foreach($data['commentaires'] as $commentaire){
+            $commentaire->carnet = $this->carnetvoyage->constructeur($commentaire->idCarnet);
         }
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
