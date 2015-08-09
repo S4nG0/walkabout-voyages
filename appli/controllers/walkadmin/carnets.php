@@ -23,8 +23,24 @@ class Carnets extends CI_Controller{
         $nb_articles = $config['per_page'] = 3;
         $config['num_links'] = 3;
         $config['use_page_numbers'] = true;
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
         $config['last_link'] = 'Dernier';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
         $config['first_link'] = 'Premier';
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><span>';
+        $config['cur_tag_close'] = '<span></li>';
+        $config['next_link'] = '&raquo;';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo;';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
         /*Initialisation de la pagination*/
         $this->pagination->initialize($config);
         /*Affichage de la pagination*/
@@ -52,7 +68,7 @@ class Carnets extends CI_Controller{
         $this->carnetvoyage->modify($carnet,$idCarnetDeVoyage);
         redirect('walkadmin/carnets/supprimes');
     }
-    
+
     public function supprimer($idCarnetDeVoyage=0){
         if($idCarnetDeVoyage==0)
             $this->index();
@@ -61,7 +77,7 @@ class Carnets extends CI_Controller{
         $this->carnetvoyage->modify($carnet,$idCarnetDeVoyage);
         redirect('walkadmin/carnets');
     }
-    
+
     public function supprimes($page = 1){
         connecte_admin($this->session->userdata('admin'));
         $data=array();

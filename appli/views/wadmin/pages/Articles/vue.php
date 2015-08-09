@@ -12,38 +12,21 @@
                     </h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="articles__content">
-                        <div class="well">
-                            <?php echo $article->texte; ?>
-                        </div>
-                    </div>
-                </div>
+            <div class="row text-center">
                 <div class="col-md-3">
                     <div class="articles__aside">
                         <div class="well">
-                            <center>
-                                <div class="row">
-                                    <h4 class="page-header sep" style="margin:0px; color:black;margin-bottom:15px;">Auteur</h4>
+                            <div class="articles__aside author">
+                                <h2 class="sep">Auteur</h4>
                                 <div class="profile-picture">
                                     <figure>
                                         <img src="<?php echo img_url($user->photo); ?>" alt="<?php echo $user->nom.' '. $user->prenom; ?>">
                                     </figure>
                                 </div>
-                                
+                                <p><?php echo $user->nom.' '. $user->prenom; ?></p>
+                                <hr>
                             </div>
-                            <div class="row">
-                                <h5><b><?php echo $user->nom.' '. $user->prenom; ?></b></h5>
-                            </div>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="articles__aside">
-                        <div class="well">
-                            <div class="articles__help-block">
+                            <div class="articles__aside help-block">
                                 <p class="small">Sélectionner une option pour changer le status de l'article.</p>
                             </div>
                             <?php echo form_open('/walkadmin/article/majArticle/' . $article->idArticles) ?>
@@ -53,6 +36,16 @@
                                     <option value="Publie" <?php if (isset($article) && $article->etat == "Publie") echo 'selected' ?>>Publié</option>
                                 </select>
                             <?php echo form_close() ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="articles__content">
+                        <div class="well">
+                            <h2 class="sep">
+                                Contenu de l'article
+                            </h2>
+                            <?php echo $article->texte; ?>
                         </div>
                     </div>
                 </div>

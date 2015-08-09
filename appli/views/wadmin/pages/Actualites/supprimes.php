@@ -60,7 +60,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="paged"><?php echo $pagination; ?></div>
+                    <?php echo $pagination; ?>
                 </div>
             </div>
         </div>

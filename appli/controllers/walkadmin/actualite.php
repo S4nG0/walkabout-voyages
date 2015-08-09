@@ -12,8 +12,8 @@ class Actualite extends CI_Controller{
         connecte_admin($this->session->userdata('admin'));
         $data['title'] = 'Actualités';
         $data['admin'] = $this->session->userdata('admin');
-        
-         $this->db->where('publie = "true"');
+
+        $this->db->where('publie = "true"');
         $this->db->from('actualites');
         $count = $this->db->count_all_results();
         /*Load des helpers et librairies*/
@@ -26,25 +26,43 @@ class Actualite extends CI_Controller{
         $config['use_page_numbers'] = true;
         $config['last_link'] = 'Dernier';
         $config['first_link'] = 'Premier';
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['last_link'] = 'Dernier';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['first_link'] = 'Premier';
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><span>';
+        $config['cur_tag_close'] = '<span></li>';
+        $config['next_link'] = '&raquo;';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo;';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
         /*Initialisation de la pagination*/
         $this->pagination->initialize($config);
         /*Affichage de la pagination*/
         $data['pagination'] = $this->pagination->create_links();
         /*Création des variables de selection des carnets*/
         $start = ($page*$nb_articles)-$nb_articles;
-      
+
         $data['actualites'] = $this->actualites->get_all_actus_non_supprimes($start, $nb_articles);
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Actualites/liste',$data);
         $this->load->view('wadmin/template/footer');
     }
-    
+
     public function supprimes($page = 1){
         connecte_admin($this->session->userdata('admin'));
         $data['title'] = 'Actualités';
         $data['admin'] = $this->session->userdata('admin');
-        
+
          $this->db->where('publie = "false"');
         $this->db->from('actualites');
         $count = $this->db->count_all_results();
@@ -65,8 +83,8 @@ class Actualite extends CI_Controller{
         $data['pagination'] = $this->pagination->create_links();
         /*Création des variables de selection des carnets*/
         $start = ($page*$nb_articles)-$nb_articles;
-        
-        
+
+
         $data['actualites'] = $this->actualites->get_all_actus_supprimes($start, $nb_articles);
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
@@ -175,7 +193,7 @@ class Actualite extends CI_Controller{
         $this->actualites->modify($actualite,$idActualites);
         redirect('walkadmin/actualite');
     }
-    
+
     public function restaurer($idActualites=0){
         connecte_admin($this->session->userdata('admin'));
         if($idActualites==0)
