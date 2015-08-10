@@ -26,7 +26,7 @@
             <div class="row text-center">
                 <div class="col-md-12">
                     <div class="articles__help-block">
-                        <p class="small">Sélectionner une option pour changer le status de l'article.</p>
+                        <p class="small">Sélectionner une option pour changer le statut de l'article.</p>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                                 <div class="single__block buttonsBlock">
                                     <?php echo form_open('/walkadmin/article/majArticle/' . $article->idArticles) ?>
                                     <div class="form-group">
-                                        <label class="small" for="etat">Status de l'article :</label>
+                                        <label class="small" for="etat">statut de l'article :</label>
                                         <select name="etat" onchange="this.form.submit()">
                                             <option value="En attente de modération" <?php if (isset($article) && $article->etat == "En attente de modération") echo 'selected' ?>>En attente de modération</option>
                                             <option value="Publie" <?php if (isset($article) && $article->etat == "Publie") echo 'selected' ?>>Publié</option>

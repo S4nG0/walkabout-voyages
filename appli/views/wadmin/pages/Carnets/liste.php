@@ -13,10 +13,10 @@
         <div class="col-md-12">
             <div class="module__tools">
                 <div class="custom-search">
-                    <?php echo form_open('walkadmin/carnets/search'); ?>
+                <?php echo form_open('walkadmin/carnets/search'); ?>
                     <input class="custom-search-input" type="search" name="search" placeholder="Rechercher"/>
                     <button class="custom-search-button"><i class="fa fa-search"></i></button>
-                    <?php echo form_close(); ?>
+                <?php echo form_close(); ?>
                 </div>
                 <a href="<?php echo base_url() . 'walkadmin/carnets/supprimes'; ?>" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
             </div>

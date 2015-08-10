@@ -23,7 +23,7 @@
             <div class="row text-center">
                 <div class="col-md-12">
                     <div class="articles__help-block">
-                        <p class="small">Sélectionner une option pour changer le status de l'article.</p>
+                        <p class="small">Sélectionner une option pour changer le statut de l'article.</p>
                     </div>
                 </div>
             </div>
