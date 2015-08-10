@@ -261,11 +261,13 @@ body.admin {
 }
 
 .page-header {
+    margin-top: 50px;
     margin-bottom: 0;
+    border-bottom: none
 }
 
 #page-wrapper {
-    background: $gris-tres-clair;
+    background: $gris-tres-clair;;
 }
 
 @media(min-width:768px) {
@@ -379,7 +381,7 @@ body.admin {
 }
 
 /*--------------------------------------------*\
-    #LISTING
+    #RESERVATIONS || #UTILISATEURS
 \*--------------------------------------------*/
 .reservations,
 .utilisateurs {
@@ -387,6 +389,13 @@ body.admin {
 
     input[type="submit"] {
         margin-top: 50px;
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+        border: 3px solid $noir;
+        margin: 0 auto;
     }
 
     .table-responsive {
@@ -425,11 +434,36 @@ body.admin {
             }
         }
 
-        .button {
-            display: block;
-            width: 150px;
-            margin-top: 10px;
-            margin-left: 0;
+        .buttonsCell {
+            width: 15%;
+
+            .button {
+                display: block;
+                width: 150px;
+                margin-top: 10px;
+                margin-left: 0;
+            }
+        }
+    }
+
+    .utilisateurs__infos {
+        p {
+            color: $noir;
+        }
+
+        .form-group {
+            display: table;
+            width: 100%;
+        }
+
+        label, input {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        label {
+            width: 35%;
+            text-align: left;
         }
     }
 }
@@ -665,7 +699,18 @@ body.admin {
                 color: $noir;
                 padding-left: 25px;
                 text-align: left;
+
+                &.check {
+                    margin-top: 0;
+                    color: green;
+                }
+
+                &.denied {
+                    margin-top: 0;
+                    color: red;
+                }
             }
+
 
             select {
                 display: block;

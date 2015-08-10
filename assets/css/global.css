@@ -6346,7 +6346,9 @@ body.admin .submenu li .active {
 }
 
 .page-header {
+  margin-top: 50px;
   margin-bottom: 0;
+  border-bottom: none;
 }
 
 #page-wrapper {
@@ -6441,7 +6443,7 @@ body.admin .charts h3 {
 }
 
 /*--------------------------------------------*\
-    #LISTING
+    #RESERVATIONS || #UTILISATEURS
 \*--------------------------------------------*/
 .reservations,
 .utilisateurs {
@@ -6450,6 +6452,13 @@ body.admin .charts h3 {
 .reservations input[type="submit"],
 .utilisateurs input[type="submit"] {
   margin-top: 50px;
+}
+.reservations .profile-picture,
+.utilisateurs .profile-picture {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #242424;
+  margin: 0 auto;
 }
 .reservations .table-responsive,
 .utilisateurs .table-responsive {
@@ -6488,12 +6497,36 @@ body.admin .charts h3 {
 .utilisateurs .table-responsive .table tbody > tr:nth-child(even) > td {
   background-color: #fff;
 }
-.reservations .table-responsive .button,
-.utilisateurs .table-responsive .button {
+.reservations .table-responsive .buttonsCell,
+.utilisateurs .table-responsive .buttonsCell {
+  width: 15%;
+}
+.reservations .table-responsive .buttonsCell .button,
+.utilisateurs .table-responsive .buttonsCell .button {
   display: block;
   width: 150px;
   margin-top: 10px;
   margin-left: 0;
+}
+.reservations .utilisateurs__infos p,
+.utilisateurs .utilisateurs__infos p {
+  color: #242424;
+}
+.reservations .utilisateurs__infos .form-group,
+.utilisateurs .utilisateurs__infos .form-group {
+  display: table;
+  width: 100%;
+}
+.reservations .utilisateurs__infos label, .reservations .utilisateurs__infos input,
+.utilisateurs .utilisateurs__infos label,
+.utilisateurs .utilisateurs__infos input {
+  display: table-cell;
+  vertical-align: middle;
+}
+.reservations .utilisateurs__infos label,
+.utilisateurs .utilisateurs__infos label {
+  width: 35%;
+  text-align: left;
 }
 
 /*--------------------------------------------*\
@@ -7157,6 +7190,40 @@ body.admin .charts h3 {
   color: #242424;
   padding-left: 25px;
   text-align: left;
+}
+.destinations .carnets__single .carnets__article p.check,
+.destinations .carnets__single .carnets__commentaire p.check,
+.actualites .carnets__single .carnets__article p.check,
+.actualites .carnets__single .carnets__commentaire p.check,
+.voyages .carnets__single .carnets__article p.check,
+.voyages .carnets__single .carnets__commentaire p.check,
+.carnets .carnets__single .carnets__article p.check,
+.carnets .carnets__single .carnets__commentaire p.check,
+.articles .carnets__single .carnets__article p.check,
+.articles .carnets__single .carnets__commentaire p.check,
+.commentaires .carnets__single .carnets__article p.check,
+.commentaires .carnets__single .carnets__commentaire p.check,
+.utilisateurs .carnets__single .carnets__article p.check,
+.utilisateurs .carnets__single .carnets__commentaire p.check {
+  margin-top: 0;
+  color: green;
+}
+.destinations .carnets__single .carnets__article p.denied,
+.destinations .carnets__single .carnets__commentaire p.denied,
+.actualites .carnets__single .carnets__article p.denied,
+.actualites .carnets__single .carnets__commentaire p.denied,
+.voyages .carnets__single .carnets__article p.denied,
+.voyages .carnets__single .carnets__commentaire p.denied,
+.carnets .carnets__single .carnets__article p.denied,
+.carnets .carnets__single .carnets__commentaire p.denied,
+.articles .carnets__single .carnets__article p.denied,
+.articles .carnets__single .carnets__commentaire p.denied,
+.commentaires .carnets__single .carnets__article p.denied,
+.commentaires .carnets__single .carnets__commentaire p.denied,
+.utilisateurs .carnets__single .carnets__article p.denied,
+.utilisateurs .carnets__single .carnets__commentaire p.denied {
+  margin-top: 0;
+  color: red;
 }
 .destinations .carnets__single .carnets__article select,
 .destinations .carnets__single .carnets__commentaire select,

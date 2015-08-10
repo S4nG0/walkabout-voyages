@@ -35,21 +35,31 @@
                 </div>
             </div>
 
-           <?php var_dump($commentaires); ?>
-<!-- 
+            <?php foreach ($commentaires as $commentaire) { ?>
+
             <div class="row carnets__single searchable">
                 <div class="col-sm-12 col-md-10 col-md-offset-1">
                     <div class="carnets__single">
                         <div class="well">
-                            <div class="carnets__header">
-                                <h3 class="text-center">&nbsp;&nbsp;<?php echo $carnet->titre; ?>&nbsp;&nbsp;</h3>
-                            </div>
-                            <?php foreach ($carnet->commentaires as $commentaire) { ?>
                             <div class="carnets__commentaire">
                                 <div class="commentaire__content">
-                                    <h4><span>Commentaire par&nbsp;:&nbsp;</span><?php echo ucfirst(mb_strtolower($commentaire->nomUsers)).' '.ucfirst(mb_strtolower($commentaire->prenomUsers)); ?></h4>
+                                    <h4><span>Commentaire par&nbsp;:&nbsp;</span><?php echo ucfirst(mb_strtolower($commentaire->user->nom)).' '.ucfirst(mb_strtolower($commentaire->user->prenom)); ?></h4>
+                                    <p class="published">Publié le&nbsp;<?php echo $commentaire->date; ?></p>
+                                    <?php if ($commentaire->data != '') { ?>
+                                    <p class="small denied"><i class="fa fa-remove"></i>&nbsp;L'utilisateur n'est pas un membre du site</p>
+                                    <?php } else { ?>
+                                    <p class="small check"><i class="fa fa-check"></i>&nbsp;Membre Walkabout</p>
+                                    <?php } ?>
                                     <p>
                                         <?php echo $commentaire->texte; ?>
+                                    </p>
+
+                                    <p>
+                                        Provenance&nbsp;:&nbsp;
+                                        <a href="<?php echo base_url() . 'carnets-de-voyage/' . $commentaire->carnet->url; ?>"><?php echo $commentaire->carnet->titre; ?></a>&nbsp;&nbsp;&bull;&nbsp;
+                                        <a href="<?php echo base_url() . 'walkadmin/comments/voir-carnet'; ?>" class="button black small">
+                                            Voir tous les commentaires pour ce carnet
+                                        </a>
                                     </p>
                                 </div>
                                 <div class="commentaire__status">
@@ -57,11 +67,12 @@
                                     <a href="#" class="button black small denied"><i class="fa fa-exclamation-triangle"></i>&nbsp;Indésirable</a>
                                 </div>
                             </div>
-                            <?php } ?>
                         </div>
                     </div>
                 </div>
-            </div>-->
+            </div>
+
+            <?php } ?>
 
             <div class="row">
                 <div class="col-sm-12">
