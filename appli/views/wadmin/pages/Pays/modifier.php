@@ -15,7 +15,7 @@
             <?php } ?>
 
             <div class="row text-center">
-                <div class="col-md-6">
+                <div class="col-md-4 col-md-offset-2">
                     <div class="form-group">
                         <label for="capitale">Capitale</label>
                         <input placeholder="Saississez l'information..." name="capitale" type="text" value="<?php echo $pays[0]->capitale ?>">
@@ -37,7 +37,7 @@
                         <?php echo form_error('langues'); ?>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="form-group">
                         <label for="population">Population</label>
                         <input placeholder="Saississez l'information..." name="population" type="text" value="<?php echo $pays[0]->population ?>">
