@@ -14,7 +14,6 @@
                             <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
                             <button class="custom-search-button"><i class="fa fa-search"></i></button>
                         </div>
-                        <a class="button black" href="<?php echo base_url() . 'walkadmin/comments/supprimes'; ?>"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
                     </div>
                 </div>
             </div>
@@ -30,6 +29,9 @@
                         </li>
                         <li>
                             <a class="button black small<?php if($publie == "true"){echo ' active';} ?>" href="<?php echo base_url('walkadmin/comments/approuves'); ?>">Approuvés</a>
+                        </li>
+                        <li>
+                            <a class="button black small<?php if($publie == "suppr"){echo ' active';} ?>" href="<?php echo base_url('walkadmin/comments/indesirables'); ?>">Indésirables</a>
                         </li>
                     </ul>
                 </div>
@@ -57,15 +59,19 @@
                                     <p>
                                         Provenance&nbsp;:&nbsp;
                                         <a href="<?php echo base_url() . 'carnets-de-voyage/' . $commentaire->carnet->url; ?>"><?php echo $commentaire->carnet->titre; ?></a>&nbsp;&nbsp;&bull;&nbsp;
-                                        <a href="<?php echo base_url() . 'walkadmin/comments/voir-carnet'; ?>" class="button black small">
+                                        <a href="<?php echo base_url() . 'walkadmin/comments/carnet/'.$commentaire->carnet->idCarnetDeVoyage; ?>" class="button black small">
                                             Voir tous les commentaires pour ce carnet
                                         </a>
                                     </p>
                                 </div>
+                                <?php if($commentaire->modere != "suppr"){ ?>
                                 <div class="commentaire__status">
-                                    <a href="#" class="button black small check"><i class="fa fa-check"></i>&nbsp;Approuver</a>
-                                    <a href="#" class="button black small denied"><i class="fa fa-exclamation-triangle"></i>&nbsp;Indésirable</a>
+                                    <?php if($commentaire->modere != "true"){ ?><a href="<?php echo base_url() . 'walkadmin/comments/publie/'.$commentaire->idCommentaires; ?>" class="button black small check"><i class="fa fa-check"></i>&nbsp;Approuver</a><?php } ?>
+                                    <a href="<?php echo base_url() . 'walkadmin/comments/supprimer/'.$commentaire->idCommentaires; ?>" class="button black small denied"><i class="fa fa-exclamation-triangle"></i>&nbsp;Indésirable</a>
                                 </div>
+                                <?php }else{ ?>
+                                    <a href="<?php echo base_url() . 'walkadmin/comments/publie/'.$commentaire->idCommentaires; ?>" class="button black small check"><i class="fa fa-check"></i>&nbsp;Restaurer</a>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
