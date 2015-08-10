@@ -6457,7 +6457,7 @@ body.admin .charts h3 {
 .utilisateurs .profile-picture {
   width: 100px;
   height: 100px;
-  border: 3px solid #242424;
+  border: none;
   margin: 0 auto;
 }
 .reservations .table-responsive,
@@ -7951,7 +7951,7 @@ body.admin .charts h3 {
 .articles .articles__aside.author .profile-picture {
   width: 100px;
   height: 100px;
-  border: 3px solid #242424;
+  border: none;
   margin: 0 auto;
 }
 .articles .articles__content.help-block > p,
