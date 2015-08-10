@@ -30,8 +30,8 @@
                     </div>
                 </div>
             </div>
-            <?php } 
-            
+            <?php }
+
             foreach ($carnets as $carnet) {
                 if(sizeof($carnet->articles)>0){
                 ?>
@@ -73,7 +73,7 @@
             <?php }} if(sizeof($carnets) == 0) {?>
             <div class="row">
                 <div class="col-sm-12">
-                    <p class="no-entry">Aucun article correspondant à la recherche : <br/><?php echo $search; ?></p>
+                    <p class="no-entry">Aucun article correspondant à la recherche : <blockquote><?php echo $search; ?></blockquote></p>
                 </div>
             </div>
             <?php } ?>

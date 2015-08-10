@@ -11,7 +11,7 @@ class Carnets extends CI_Controller{
     public function index($page = 1){
         connecte_admin($this->session->userdata('admin'));
         $data=array();
-        $data['title'] = "Carnets";
+        $data['title'] = "Carnets de voyage";
         $this->db->where('publie <> "Suppr"');
         $this->db->from('carnetdevoyage');
         $count = $this->db->count_all_results();
@@ -59,11 +59,11 @@ class Carnets extends CI_Controller{
         $this->load->view('wadmin/pages/Carnets/liste', $data);
         $this->load->view('wadmin/template/footer');
     }
-    
+
     public function search($page = 1){
         connecte_admin($this->session->userdata('admin'));
         $data=array();
-        
+
         if(!$this->input->post()){
             $data['search'] = $this->session->flashdata('search');
         }else{
@@ -72,10 +72,10 @@ class Carnets extends CI_Controller{
             }
             $data['search'] = $this->input->post('search');
         }
-        
+
         $this->session->set_flashdata('search',$data['search']);
-        
-        $data['title'] = "Carnets";
+
+        $data['title'] = "Résultats";
         $this->db->where('publie <> "Suppr"');
         $this->db->like('titre' ,$data['search']);
         $this->db->from('carnetdevoyage');
@@ -121,7 +121,7 @@ class Carnets extends CI_Controller{
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/pages/Carnets/search', $data);
+        $this->load->view('wadmin/pages/carnets/search', $data);
         $this->load->view('wadmin/template/footer');
     }
 

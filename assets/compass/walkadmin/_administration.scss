@@ -387,11 +387,16 @@ body.admin {
 .actualites,
 .voyages,
 .carnets,
-.articles {
+.articles,
+.commentaires {
     position: relative;
 
     h2 {
         margin-bottom: 50px !important;
+    }
+
+    blockquote {
+        color: $gris-clair;
     }
 
     input, textarea {
@@ -540,7 +545,8 @@ body.admin {
             background-color: $gris-tres-clair;
         }
 
-        .carnets__article {
+        .carnets__article,
+        .carnets__commentaire {
             position: relative;
             padding-bottom: 50px;
             margin-bottom: 50px;
@@ -831,6 +837,12 @@ body.admin {
     }
 }
 
+.commentaires {
+    .module__tools {
+        margin-bottom: 50px;
+    }
+}
+
 /*------------------------------------*\
     #PAYS
 \*------------------------------------*/
@@ -1067,7 +1079,9 @@ body.admin {
     .destinations,
     .actualites,
     .carnets,
-    .articles {
+    .articles,
+    .commentaires {
+
         .module__tools {
             .custom-search { margin-right: 0; width: 200px; }
             input, .button {
@@ -1105,7 +1119,8 @@ body.admin {
                 }
             }
 
-            .carnets__article {
+            .carnets__article,
+            .carnets__commentaire {
                 text-align: center;
 
                 .infoBlock {
@@ -1191,6 +1206,20 @@ body.admin {
             .infoBlock {
                 padding-right: 0;
                 padding-left: 0;
+            }
+        }
+    }
+    .articles,
+    .commentaires {
+        .carnets__single {
+            .well {
+                padding-top: 50px;
+            }
+
+            .carnets__article,
+            .carnets__commentaire {
+                padding-bottom: 25px;
+                margin-bottom: 25px;
             }
         }
     }
