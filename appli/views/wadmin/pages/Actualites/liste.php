@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="module__tools">
                     <div class="custom-search">
-                        <?php echo form_open('walkadmin/actualite/search'); ?>
+                        <?php echo form_open('walkadmin/actualite/recherche'); ?>
                             <input class="custom-search-input" type="search" name="search" placeholder="Rechercher"/>
                             <button class="custom-search-button"><i class="fa fa-search"></i></button>
                         <?php echo form_close(); ?>

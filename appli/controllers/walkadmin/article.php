@@ -54,7 +54,7 @@ class Article extends CI_Controller{
         $this->load->view('wadmin/template/footer');
     }
 
-    public function search($page = 1){
+    public function recherche($page = 1){
         connecte_admin($this->session->userdata('admin'));
         $data['title'] = 'Actualités';
         $data['admin'] = $this->session->userdata('admin');
@@ -75,7 +75,7 @@ class Article extends CI_Controller{
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
-        $config['base_url'] = base_url().'walkadmin/article/search';
+        $config['base_url'] = base_url().'walkadmin/article/recherche';
         $config['total_rows'] = $count;// faire attention taille totale
         $nb_articles = $config['per_page'] = 2;
         $config['num_links'] = 3;

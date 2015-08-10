@@ -14,7 +14,7 @@
             <div class="module__tools">
                 <a href="<?php echo base_url() . 'walkadmin/carnets/'; ?>" class="button black"><i class="fa fa-hand-o-left"></i>&nbsp;Retour en arrière</a>
                 <div class="custom-search">
-                <?php echo form_open('walkadmin/carnets/search'); ?>
+                <?php echo form_open('walkadmin/carnets/recherche'); ?>
                     <input class="custom-search-input" type="search" name="search" placeholder="Rechercher" value="<?php echo $search; ?>"/>
                     <button class="custom-search-button"><i class="fa fa-search"></i></button>
                     <?php echo form_close(); ?>

@@ -13,7 +13,7 @@
         <div class="col-md-12">
             <div class="module__tools">
                 <div class="custom-search">
-                <?php echo form_open('walkadmin/carnets/search'); ?>
+                <?php echo form_open('walkadmin/carnets/recherche'); ?>
                     <input class="custom-search-input" type="search" name="search" placeholder="Rechercher"/>
                     <button class="custom-search-button"><i class="fa fa-search"></i></button>
                 <?php echo form_close(); ?>

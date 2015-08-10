@@ -60,7 +60,7 @@ class Carnets extends CI_Controller{
         $this->load->view('wadmin/template/footer');
     }
 
-    public function search($page = 1){
+    public function recherche($page = 1){
         connecte_admin($this->session->userdata('admin'));
         $data=array();
 
@@ -83,7 +83,7 @@ class Carnets extends CI_Controller{
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
-        $config['base_url'] = base_url().'walkadmin/carnets/';
+        $config['base_url'] = base_url().'walkadmin/carnets/recherche';
         $config['total_rows'] = $count;// faire attention taille totale
         $nb_articles = $config['per_page'] = 3;
         $config['num_links'] = 3;
