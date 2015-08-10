@@ -36,7 +36,7 @@ body.admin {
         width: auto;
     }
 
-    .button.delete {
+    .button.denied {
         border-color: red;
         color: red;
 
@@ -46,7 +46,7 @@ body.admin {
         }
     }
 
-    .button.restore {
+    .button.check {
         border-color: green;
         color: green;
 
@@ -243,9 +243,7 @@ body.admin {
 
         .submenu__header {
             padding: 8px;
-            padding-right: 15px;
-            border: 1px solid transparent;
-            border-right-color: $noir;
+            border: 1px solid $noir;
             font-weight: 600;
             text-transform: uppercase;
         }
@@ -388,7 +386,8 @@ body.admin {
 .voyages,
 .carnets,
 .articles,
-.commentaires {
+.commentaires,
+.utilisateurs {
     position: relative;
 
     h2 {
@@ -535,7 +534,7 @@ body.admin {
 
         .well {
             margin-bottom: 50px;
-            padding: 25px;
+            padding: 50px;
         }
 
         .carnets__header {
@@ -584,24 +583,35 @@ body.admin {
                 width: 17%;
             }
 
-            h4, p {
-                color: $noir;
-                text-align: left;
-            }
-
             h4 {
+                color: $gris-clair;
                 font-size: 18px;
                 font-weight: 600;
+                text-align: left;
+
+                span {
+                    color: $noir;
+                    font-style: normal;
+                }
             }
 
             p {
+                color: $noir;
                 padding-left: 25px;
+                text-align: left;
             }
 
             select {
                 display: block;
                 width: 100%;
                 margin: 0 auto;
+            }
+        }
+
+        .carnets__commentaire {
+            .commentaire__status {
+                padding-left: 25px;
+                margin-top: 25px;
             }
         }
     }
@@ -1147,6 +1157,16 @@ body.admin {
                 .buttonsBlock {
                     width: 100%;
                 }
+
+                .commentaire__content {
+                    h4 {
+                        text-align: center;
+                    }
+                }
+
+                .commentaire__status {
+                    padding-left: 0;
+                }
             }
 
             .imageBlock, .infoBlock, .buttonsBlock {
@@ -1175,6 +1195,21 @@ body.admin {
             }
         }
     }
+
+    body.admin {
+        .commentaires {
+            .submenu {
+                .submenu__header {
+                    border-right: 1px solid $noir;
+                }
+
+                > li {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
 }
 
 @media screen and (max-width: 768px) {

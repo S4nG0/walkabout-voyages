@@ -52,7 +52,7 @@
                                     <div class="single__block buttonsBlock">
                                         <?php echo form_open('/walkadmin/article/majArticle/' . $article->idArticles) ?>
                                         <div class="form-group">
-                                            <a class="button black restore" href="<?php echo base_url().'walkadmin/article/restaurer/'.$article->idArticles;?>" id="restore"><i class="fa fa-check"></i>&nbsp;Restaurer</a>
+                                            <a class="button black check" href="<?php echo base_url().'walkadmin/article/restaurer/'.$article->idArticles;?>" id="restore"><i class="fa fa-check"></i>&nbsp;Restaurer</a>
                                         </div>
                                         <?php echo form_close() ?>
                                     </div>

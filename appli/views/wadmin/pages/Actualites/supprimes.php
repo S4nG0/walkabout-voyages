@@ -38,7 +38,7 @@
                                 <p><?php echo $actualite->description; ?></p>
                             </div>
                             <div class="single__block buttonsBlock">
-                                <a class="button black restore" href="<?php echo base_url().'walkadmin/actualite/restaurer/'.$actualite->idActualites;?>">
+                                <a class="button black check" href="<?php echo base_url().'walkadmin/actualite/restaurer/'.$actualite->idActualites;?>">
                                     <i class="fa fa-check"></i>&nbsp;
                                     Restaurer
                                 </a>
