@@ -28,7 +28,7 @@ class Comments extends CI_Controller {
         switch($value){
             case "attente" : $data['publie'] = "false";$config['base_url'] = base_url().'walkadmin/comments/attente'; break;
             case "approuves" : $data['publie'] = "true";$config['base_url'] = base_url().'walkadmin/comments/approuves'; break;
-            case "supprimes" : $data['publie'] = "suppr";$config['base_url'] = base_url().'walkadmin/comments/supprimes'; break;
+            case "indesirables" : $data['publie'] = "suppr";$config['base_url'] = base_url().'walkadmin/comments/supprimes'; break;
         }
         $data['title'] = "Commentaires - Carnets";
         $count = $this->commentaires->countWhereCommentaires($data['publie'])[0]->nb_commentaires;
@@ -42,6 +42,25 @@ class Comments extends CI_Controller {
         $config['use_page_numbers'] = true;
         $config['last_link'] = 'Dernier';
         $config['first_link'] = 'Premier';
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['last_link'] = 'Dernier';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['first_link'] = 'Premier';
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><span>';
+        $config['cur_tag_close'] = '<span></li>';
+        $config['next_link'] = '&raquo;';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo;';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['uri_segment'] = 4;
         /*Initialisation de la pagination*/
         $this->pagination->initialize($config);
         /*Affichage de la pagination*/
@@ -58,11 +77,7 @@ class Comments extends CI_Controller {
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
-        if($value != "supprimes"){
-            $this->load->view('wadmin/pages/Commentaires/liste',$data);
-        }else{
-            $this->load->view('wadmin/pages/Commentaires/corbeille',$data);
-        }
+        $this->load->view('wadmin/pages/Commentaires/liste',$data);
         $this->load->view('wadmin/template/footer');
         //$this->output->enable_profiler(true);
     }
@@ -73,16 +88,22 @@ class Comments extends CI_Controller {
             redirect('walkadmin/comments');
         $commentaire['modere'] = "true";
         $this->commentaires->modify($commentaire,$idCommentaires);
-        redirect('walkadmin/comments');
+        redirect($_SERVER['HTTP_REFERER']);
     }
     
-    public function depublie($idCommentaires=0){
+    public function carnet($idCommentaire = 0){
         connecte_admin($this->session->userdata('admin'));
-        if($idCommentaires==0)
+        if($idCommentaire == 0)
             redirect('walkadmin/comments');
-        $commentaire['modere'] = "false";
-        $this->commentaires->modify($commentaire,$idCommentaires);
-        redirect('walkadmin/comments/approuves');
+        $commentaire = $this->commentaires->get($idCommentaire)[0];
+        $data['carnet'] = $this->carnetvoyage->constructeur($commentaire->idCarnet)[0];
+        $data['carnet']->commentaires = $this->commentaires->getAllFromCarnet($data['carnet']->idCarnetDeVoyage);
+        $data['title'] = "Commentaires - Carnet";
+        $data['admin'] = $this->session->userdata('admin');
+        $this->load->view('wadmin/template/header', $data);
+        $this->load->view('wadmin/template/menu', $data);
+        $this->load->view('wadmin/pages/Commentaires/vue-carnet',$data);
+        $this->load->view('wadmin/template/footer');        
     }
 
     public function supprimer($idCommentaires=0){
@@ -91,7 +112,7 @@ class Comments extends CI_Controller {
             redirect('walkadmin/comments');
         $commentaire['modere'] = "suppr";
         $this->commentaires->modify($commentaire,$idCommentaires);
-        redirect('walkadmin/comments/supprimes');
+        redirect($_SERVER['HTTP_REFERER']);
     }
 
 }

@@ -12,7 +12,7 @@ class Commentaires extends CI_Model {
             return false;
         }
 
-        $actu = $this->db->select('*')
+        $commentaires = $this->db->select('*')
                            ->from($this->table)
                            ->where('idCarnet', $id)
                            ->where('modere','true')
@@ -20,7 +20,37 @@ class Commentaires extends CI_Model {
                            ->get()
                            ->result();
 
-        return $actu;
+        return $commentaires;
+    }
+
+    public function getAllFromCarnet($id = 0){
+        if($id == 0){
+            return false;
+        }
+
+        $commentaires = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idCarnet', $id)
+                           ->order_by('idCommentaires','ASC')
+                           ->get()
+                           ->result();
+
+        return $commentaires;
+    }
+
+    public function get($id = 0){
+        if($id == 0){
+            return false;
+        }
+
+        $commentaires = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idCommentaires', $id)
+                           ->limit(1)
+                           ->get()
+                           ->result();
+
+        return $commentaires;
     }
 
     public function get_commentaire_pagination($start,$nb){
@@ -89,7 +119,7 @@ class Commentaires extends CI_Model {
     }
 
     public function getAllCommentairesNonModere(){
-        $actu = $this->db->select('*,users.nom AS nomUsers,users.prenom AS prenomUsers,carnetdevoyage.titre AS titreCarnet,
+        $commentaires = $this->db->select('*,users.nom AS nomUsers,users.prenom AS prenomUsers,carnetdevoyage.titre AS titreCarnet,
                                    carnetdevoyage.url')
                          ->from($this->table)
                          ->join('carnetdevoyage','carnetdevoyage.idCarnetDeVoyage=commentaires.idCarnet')
@@ -99,7 +129,7 @@ class Commentaires extends CI_Model {
                          ->get()
                          ->result();
 
-        return $actu;
+        return $commentaires;
     }
 
     public function modify($data='',$idCommentaires=0){
@@ -113,7 +143,7 @@ class Commentaires extends CI_Model {
     public function deleteActu($idCommentaires=0){
         if($idCommentaires==0)
             return false;
-        $actus = $this->db->delete($this->table,array('idCommentaires' => $idCommentaires));
-        return $actus;
+        $commentairess = $this->db->delete($this->table,array('idCommentaires' => $idCommentaires));
+        return $commentairess;
     }
 }

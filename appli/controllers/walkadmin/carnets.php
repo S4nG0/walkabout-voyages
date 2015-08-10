@@ -169,6 +169,24 @@ class Carnets extends CI_Controller{
         $config['use_page_numbers'] = true;
         $config['last_link'] = 'Dernier';
         $config['first_link'] = 'Premier';
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['last_link'] = 'Dernier';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['first_link'] = 'Premier';
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><span>';
+        $config['cur_tag_close'] = '<span></li>';
+        $config['next_link'] = '&raquo;';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo;';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
         /*Initialisation de la pagination*/
         $this->pagination->initialize($config);
         /*Affichage de la pagination*/
