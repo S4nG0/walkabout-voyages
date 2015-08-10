@@ -32,7 +32,6 @@ class Comments extends CI_Controller {
         }
         $data['title'] = "Commentaires - Carnets";
         $count = $this->commentaires->countWhereCommentaires($data['publie'])[0]->nb_commentaires;
-        var_dump($count);
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
@@ -56,7 +55,6 @@ class Comments extends CI_Controller {
             $commentaire->carnet = $this->carnetvoyage->constructeur($commentaire->idCarnet)[0];
         }
         
-        var_dump(sizeof($data['commentaires']));
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
@@ -72,19 +70,28 @@ class Comments extends CI_Controller {
     public function publie($idCommentaires=0){
         connecte_admin($this->session->userdata('admin'));
         if($idCommentaires==0)
-            $this->index();
+            redirect('walkadmin/comments');
         $commentaire['modere'] = "true";
         $this->commentaires->modify($commentaire,$idCommentaires);
         redirect('walkadmin/comments');
+    }
+    
+    public function depublie($idCommentaires=0){
+        connecte_admin($this->session->userdata('admin'));
+        if($idCommentaires==0)
+            redirect('walkadmin/comments');
+        $commentaire['modere'] = "false";
+        $this->commentaires->modify($commentaire,$idCommentaires);
+        redirect('walkadmin/comments/approuves');
     }
 
     public function supprimer($idCommentaires=0){
         connecte_admin($this->session->userdata('admin'));
         if($idCommentaires==0)
-            $this->index();
-        $commentaire['modere'] = "true";
-        $this->commentaires->deleteActu($idCommentaires);
-        redirect('walkadmin/comments');
+            redirect('walkadmin/comments');
+        $commentaire['modere'] = "suppr";
+        $this->commentaires->modify($commentaire,$idCommentaires);
+        redirect('walkadmin/comments/supprimes');
     }
 
 }
