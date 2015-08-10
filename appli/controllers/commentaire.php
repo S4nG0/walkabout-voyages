@@ -66,8 +66,6 @@ class Commentaire extends CI_Controller {
                     $this->session->set_flashdata('commentaire', 'fail');
                     redirect($_SERVER["HTTP_REFERER"]);
                 }
-            }else{
-                var_dump(validation_errors());
             }
             
             redirect($_SERVER["HTTP_REFERER"]);
