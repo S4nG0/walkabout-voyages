@@ -699,7 +699,18 @@ body.admin {
                 color: $noir;
                 padding-left: 25px;
                 text-align: left;
+
+                &.check {
+                    margin-top: 0;
+                    color: green;
+                }
+
+                &.denied {
+                    margin-top: 0;
+                    color: red;
+                }
             }
+
 
             select {
                 display: block;

@@ -7191,6 +7191,40 @@ body.admin .charts h3 {
   padding-left: 25px;
   text-align: left;
 }
+.destinations .carnets__single .carnets__article p.check,
+.destinations .carnets__single .carnets__commentaire p.check,
+.actualites .carnets__single .carnets__article p.check,
+.actualites .carnets__single .carnets__commentaire p.check,
+.voyages .carnets__single .carnets__article p.check,
+.voyages .carnets__single .carnets__commentaire p.check,
+.carnets .carnets__single .carnets__article p.check,
+.carnets .carnets__single .carnets__commentaire p.check,
+.articles .carnets__single .carnets__article p.check,
+.articles .carnets__single .carnets__commentaire p.check,
+.commentaires .carnets__single .carnets__article p.check,
+.commentaires .carnets__single .carnets__commentaire p.check,
+.utilisateurs .carnets__single .carnets__article p.check,
+.utilisateurs .carnets__single .carnets__commentaire p.check {
+  margin-top: 0;
+  color: green;
+}
+.destinations .carnets__single .carnets__article p.denied,
+.destinations .carnets__single .carnets__commentaire p.denied,
+.actualites .carnets__single .carnets__article p.denied,
+.actualites .carnets__single .carnets__commentaire p.denied,
+.voyages .carnets__single .carnets__article p.denied,
+.voyages .carnets__single .carnets__commentaire p.denied,
+.carnets .carnets__single .carnets__article p.denied,
+.carnets .carnets__single .carnets__commentaire p.denied,
+.articles .carnets__single .carnets__article p.denied,
+.articles .carnets__single .carnets__commentaire p.denied,
+.commentaires .carnets__single .carnets__article p.denied,
+.commentaires .carnets__single .carnets__commentaire p.denied,
+.utilisateurs .carnets__single .carnets__article p.denied,
+.utilisateurs .carnets__single .carnets__commentaire p.denied {
+  margin-top: 0;
+  color: red;
+}
 .destinations .carnets__single .carnets__article select,
 .destinations .carnets__single .carnets__commentaire select,
 .actualites .carnets__single .carnets__article select,
