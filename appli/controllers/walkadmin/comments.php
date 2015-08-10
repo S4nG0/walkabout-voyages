@@ -20,15 +20,22 @@ class Comments extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
-    public function index($page = 1) {
+    
+    //Affichage de tous les commentaires
+    public function index($value = "attente", $page = 1) {
         connecte_admin($this->session->userdata('admin'));
         $data=array();
+        switch($value){
+            case "attente" : $data['publie'] = "false";$config['base_url'] = base_url().'walkadmin/comments/attente'; break;
+            case "approuves" : $data['publie'] = "true";$config['base_url'] = base_url().'walkadmin/comments/approuves'; break;
+            case "supprimes" : $data['publie'] = "suppr";$config['base_url'] = base_url().'walkadmin/comments/supprimes'; break;
+        }
         $data['title'] = "Commentaires - Carnets";
-        $count = $this->commentaires->countWhereCommentaires()[0]->nb_commentaires;
+        $count = $this->commentaires->countWhereCommentaires($data['publie'])[0]->nb_commentaires;
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
-        $config['base_url'] = base_url().'walkadmin/comments/';
+        
         $config['total_rows'] = $count;// faire attention taille totale
         $nb_commentaires = $config['per_page'] = 10;
         $config['num_links'] = 3;
@@ -41,36 +48,50 @@ class Comments extends CI_Controller {
         $data['pagination'] = $this->pagination->create_links();
         /*Création des variables de selection des carnets*/
         $start = ($page*$nb_commentaires)-$nb_commentaires;
-
-        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_admin($start, $nb_commentaires);
-        foreach($data['carnets'] as $carnet){
-            $carnet->commentaires = $this->commentaires->selectCommentaireByCarnet($carnet->idCarnetDeVoyage);
+        
+        $data['commentaires'] = $this->commentaires->getCommentairesStatut($data['publie'],$nb_commentaires,$start);
+        foreach($data['commentaires'] as $commentaire){
+            $commentaire->user = $this->user->constructeur($commentaire->idUsers)[0];
+            $commentaire->carnet = $this->carnetvoyage->constructeur($commentaire->idCarnet)[0];
         }
-
+        
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
-        $this->load->view('wadmin/pages/Commentaires/liste',$data);
+        if($value != "supprimes"){
+            $this->load->view('wadmin/pages/Commentaires/liste',$data);
+        }else{
+            $this->load->view('wadmin/pages/Commentaires/corbeille',$data);
+        }
         $this->load->view('wadmin/template/footer');
         //$this->output->enable_profiler(true);
     }
-
+    
     public function publie($idCommentaires=0){
         connecte_admin($this->session->userdata('admin'));
         if($idCommentaires==0)
-            $this->index();
+            redirect('walkadmin/comments');
         $commentaire['modere'] = "true";
         $this->commentaires->modify($commentaire,$idCommentaires);
         redirect('walkadmin/comments');
+    }
+    
+    public function depublie($idCommentaires=0){
+        connecte_admin($this->session->userdata('admin'));
+        if($idCommentaires==0)
+            redirect('walkadmin/comments');
+        $commentaire['modere'] = "false";
+        $this->commentaires->modify($commentaire,$idCommentaires);
+        redirect('walkadmin/comments/approuves');
     }
 
     public function supprimer($idCommentaires=0){
         connecte_admin($this->session->userdata('admin'));
         if($idCommentaires==0)
-            $this->index();
-        $commentaire['modere'] = "true";
-        $this->commentaires->deleteActu($idCommentaires);
-        redirect('walkadmin/comments');
+            redirect('walkadmin/comments');
+        $commentaire['modere'] = "suppr";
+        $this->commentaires->modify($commentaire,$idCommentaires);
+        redirect('walkadmin/comments/supprimes');
     }
 
 }
