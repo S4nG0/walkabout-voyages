@@ -42,11 +42,11 @@
                     <div class="bottom-wrapper">
                         <div class="col-xs-12 col-sm-4 col-md-4 details">
                             <span class="author">
-                                <a href="<?php echo base_url() . 'utilisateur/' . $user[0]->slug; ?>"><?php echo $user[0]->prenom . ' ' . $user[0]->nom ?></a>
+                                <a href="<?php echo base_url() . 'utilisateur/' . $user[0]->slug; ?>"><?php echo ucfirst(mb_strtolower($user[0]->prenom)) . ' ' . ucfirst(mb_strtolower($user[0]->nom)) ?></a>
                             </span>
                             <span class="bull">&bull;</span>
                             <span class="location">
-                                <?php echo $pays[0]->nom ?>, <?php echo 'Le ' . $carnet[0]->date ?>
+                                <?php echo $pays[0]->nom ?>, <?php echo 'le ' . $carnet[0]->date ?>
                             </span>
                         </div>
 
