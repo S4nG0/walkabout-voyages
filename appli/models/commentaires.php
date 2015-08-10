@@ -35,9 +35,22 @@ class Commentaires extends CI_Model {
 
         return $commentaires;
     }
+    
 
-    public function countWhereCommentaires(){
-        $query = "SELECT count(*) AS nb_commentaires FROM `wa__commentaires` WHERE idCarnet IN (Select idCarnetDeVoyage from wa__carnetdevoyage)";
+    public function getCommentairesStatut($value,$nb,$start){
+        $commentaires = $this->db->select('*')
+                                ->from($this->table)
+                                ->where('modere',$value)
+                                ->order_by('commentaires.date','ASC')
+                                ->limit($nb, $start)
+                                ->get()
+                                ->result();
+
+        return $commentaires;
+    }
+
+    public function countWhereCommentaires($publie = "true"){
+        $query = "SELECT count(*) AS nb_commentaires FROM `wa__commentaires` WHERE modere = '$publie'";
         $carnets = $this->db->query($query)->result();
 
         return $carnets;
