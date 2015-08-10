@@ -6488,8 +6488,12 @@ body.admin .charts h3 {
 .utilisateurs .table-responsive .table tbody > tr:nth-child(even) > td {
   background-color: #fff;
 }
-.reservations .table-responsive .button,
-.utilisateurs .table-responsive .button {
+.reservations .table-responsive .buttonsCell,
+.utilisateurs .table-responsive .buttonsCell {
+  width: 15%;
+}
+.reservations .table-responsive .buttonsCell .button,
+.utilisateurs .table-responsive .buttonsCell .button {
   display: block;
   width: 150px;
   margin-top: 10px;

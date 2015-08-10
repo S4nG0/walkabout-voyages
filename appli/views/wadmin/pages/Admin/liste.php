@@ -26,7 +26,7 @@
                                     <td>Identifiant</td>
                                     <td>Nom</td>
                                     <td>E-mail</td>
-                                    <td>Actions</td>
+                                    <td class="buttonsCell">Actions</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,7 +35,7 @@
                                     <td><?php echo $admin->identifiant; ?></td>
                                     <td><?php echo ucfirst(mb_strtolower($admin->nom)); ?></td>
                                     <td><a href="mailto:<?php echo $admin->email; ?>"><?php echo $admin->email; ?></a></td>
-                                    <td>
+                                    <td class="buttonsCell">
                                         <a class="button black" href="<?php echo base_url().'walkadmin/administrateur/modifier/'.$admin->idAdministrateur;?>">
                                             <i class="fa fa-edit"></i>&nbsp;Modifier
                                         </a>

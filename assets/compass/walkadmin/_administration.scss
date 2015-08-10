@@ -425,11 +425,15 @@ body.admin {
             }
         }
 
-        .button {
-            display: block;
-            width: 150px;
-            margin-top: 10px;
-            margin-left: 0;
+        .buttonsCell {
+            width: 15%;
+
+            .button {
+                display: block;
+                width: 150px;
+                margin-top: 10px;
+                margin-left: 0;
+            }
         }
     }
 }
