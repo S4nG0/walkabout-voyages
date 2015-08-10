@@ -55,7 +55,7 @@
                     <a class="button black" href="<?php echo base_url().'carnets-de-voyage/'.$carnet->url;?>" target="_blank">
                         <i class="fa fa-eye"></i>&nbsp;Aperçu du carnet
                     </a>
-                    <a class="button black delete" id="delete" href="<?php echo base_url().'walkadmin/carnets/supprimer/'.$carnet->idCarnetDeVoyage;?>">
+                    <a class="button black denied" id="delete" href="<?php echo base_url().'walkadmin/carnets/supprimer/'.$carnet->idCarnetDeVoyage;?>">
                         <i class="fa fa-remove"></i>&nbsp;
                         Dépublier
                     </a>

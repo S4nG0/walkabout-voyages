@@ -5,20 +5,46 @@
                 <div class="col-lg-12">
                     <h1 class="page-header sep">Commentaires</h1>
                 </div>
-                <div class="module__tools">
-                    <div class="custom-search">
-                        <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
-                        <button class="custom-search-button"><i class="fa fa-search"></i></button>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="module__tools">
+                        <div class="custom-search">
+                            <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
+                            <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                        </div>
+                        <a class="button black" href="<?php echo base_url() . 'walkadmin/commentaires/supprimes'; ?>"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
                     </div>
                 </div>
             </div>
 
-            <?php var_dump($carnets); ?>
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="submenu">
+                        <li class="submenu__header">
+                            Catégories
+                        </li>
+                        <li>
+                            <a class="button black small active" href="#">Tous</a>
+                        </li>
+                        <li>
+                            <a class="button black small" href="#">En attente</a>
+                        </li>
+                        <li>
+                            <a class="button black small" href="#">Approuvés</a>
+                        </li>
+                        <li>
+                            <a class="button black small" href="#">Indésirables</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
             <?php foreach($carnets as $carnet){ if(sizeof($carnet->commentaires)>0){ ?>
 
             <div class="row carnets__single searchable">
-                <div class="col-md-12">
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
                     <div class="carnets__single">
                         <div class="well">
                             <div class="carnets__header">
@@ -26,17 +52,15 @@
                             </div>
                             <?php foreach ($carnet->commentaires as $commentaire) { ?>
                             <div class="carnets__commentaire">
-                                <div class="single__block infoBlock">
-                                    <h4><?php echo ucfirst(mb_strtolower($commentaire->nomUsers)).' '.ucfirst(mb_strtolower($commentaire->prenomUsers)); ?></h4>
+                                <div class="commentaire__content">
+                                    <h4><span>Commentaire par&nbsp;:&nbsp;</span><?php echo ucfirst(mb_strtolower($commentaire->nomUsers)).' '.ucfirst(mb_strtolower($commentaire->prenomUsers)); ?></h4>
                                     <p>
                                         <?php echo $commentaire->texte; ?>
                                     </p>
                                 </div>
-                                <div class="single__block buttonsBlock">
-                                    <div class="form-group">
-                                        <a class="button black restore" href="<?php echo base_url()."walkadmin/comments/publie/".$commentaire->idCommentaires?>"><i class="fa fa-check"></i>&nbsp;Publier</a>
-                                        <a class="button black delete" href="<?php echo base_url()."walkadmin/comments/supprimer/".$commentaire->idCommentaires?>"><i class="fa fa-trash"></i>&nbsp;Supprimer</a>
-                                    </div>
+                                <div class="commentaire__status">
+                                    <a href="#" class="button black small check"><i class="fa fa-check"></i>&nbsp;Approuver</a>
+                                    <a href="#" class="button black small denied"><i class="fa fa-exclamation-triangle"></i>&nbsp;Indésirable</a>
                                 </div>
                             </div>
                             <?php } ?>
@@ -47,49 +71,11 @@
 
             <?php }} ?>
 
-                <div class="table-responsive">
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <td>Personne</td>
-                                <td>Carnet</td>
-                                <td>Commentaire</td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach($carnets as $carnet){ if(sizeof($carnet->commentaires)>0){ ?>
-                            <?php foreach ($carnet->commentaires as $commentaire) { ?>
-                            <?php if($commentaire->data==''){ ?>
-                            <tr class="searchable" data-search="<?php echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?>">
-                                <td><?php if(isset($commentaire)) echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?></td>
-                                <td><a href="<?php echo base_url().'carnets-de-voyage/'.$carnet->url ?>" target="_blank"><?php if(isset($carnet)) echo $carnet->titre ?></a></td>
-                                <td><?php if(isset($commentaire)) echo $commentaire->texte?></td>
-                                <td><?php if(isset($commentaire) && $commentaire->modere=="false"){ ?><a class="button black" href="<?php echo base_url()."walkadmin/comments/publie/".$commentaire->idCommentaires?> ">Publier</a><?php } ?></td>
-                                <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/supprimer/".$commentaire->idCommentaires?> "><i class="fa fa-trash"></i> Supprimer</a></td>
-                            </tr>
-                            <?php } else{ ?>
-                            <tr class="searchable" data-search="<?php echo $commentaire->nomUsers." ".$commentaire->prenomUsers ?>">
-                                <td><?php if(isset($commentaire)) $personne = traitementChaineDataUser($commentaire->data); echo $personne; ?></td>
-                                <td><a href="<?php echo base_url().'carnets-de-voyage/'.$carnet->url ?>" target="_blank"><?php if(isset($carnet)) echo $carnet->titre ?></a></td>
-                                <td><?php if(isset($commentaire)) echo $commentaire->texte?></td>
-                                <td><?php if(isset($commentaire) && $commentaire->modere=="false"){ ?><a class="button black" href="<?php echo base_url()."walkadmin/comments/publie/".$commentaire->idCommentaires?> ">Publier</a><?php } ?></td>
-                                <td><a class="button black" href="<?php echo base_url()."walkadmin/comments/supprimer/".$commentaire->idCommentaires?> "><i class="fa fa-trash"></i> Supprimer</a></td>
-                            </tr>
-                            <?php } ?>
-                            <?php } ?>
-                            <?php }} ?>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <?php echo $pagination; ?>
-                    </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <?php echo $pagination; ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- /#wrapper -->

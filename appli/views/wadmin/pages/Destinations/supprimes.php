@@ -37,7 +37,7 @@
                                 <p><?php echo $destination->nom; ?>&nbsp;&bull;&nbsp;<?php echo $destination->ville; ?></p>
                             </div>
                             <div class="single__block buttonsBlock">
-                                <a class="button black restore" id="restore" href="<?php echo base_url().'walkadmin/destinations/restaurer/'.$destination->idDestination;?>">
+                                <a class="button black check" id="restore" href="<?php echo base_url().'walkadmin/destinations/restaurer/'.$destination->idDestination;?>">
                                     <i class="fa fa-check"></i>&nbsp;
                                     Restaurer
                                 </a>

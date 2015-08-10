@@ -51,7 +51,7 @@
                         <i class="fa fa-info"></i>&nbsp;
                         Détails
                     </a>
-                    <a class="button black delete" href="<?php echo base_url().'walkadmin/destinations/supprimer/'.$destination->idDestination;?>">
+                    <a class="button black denied" href="<?php echo base_url().'walkadmin/destinations/supprimer/'.$destination->idDestination;?>">
                         <i class="fa fa-remove"></i>&nbsp;
                         Supprimer
                     </a>

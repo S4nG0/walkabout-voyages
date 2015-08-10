@@ -46,7 +46,7 @@
                                     <i class="fa fa-edit"></i>&nbsp;
                                     Modifier
                                 </a>
-                                <a class="button black delete" href="<?php echo base_url().'walkadmin/actualite/supprimer/'.$actualite->idActualites;?>">
+                                <a class="button black denied" href="<?php echo base_url().'walkadmin/actualite/supprimer/'.$actualite->idActualites;?>">
                                     <i class="fa fa-remove"></i>&nbsp;
                                     Supprimer
                                 </a>

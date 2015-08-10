@@ -60,7 +60,7 @@
                                             <option value="En attente de modération" <?php if (isset($article) && $article->etat == "En attente de modération") echo 'selected' ?>>En attente de modération</option>
                                             <option value="Publie" <?php if (isset($article) && $article->etat == "Publie") echo 'selected' ?>>Publié</option>
                                         </select>
-                                        <a href="<?php echo base_url().'walkadmin/article/supprimer/'.$article->idArticles;?>" class="button black delete" id="delete"><i class="fa fa-remove"></i>&nbsp;Supprimer</a>
+                                        <a href="<?php echo base_url().'walkadmin/article/supprimer/'.$article->idArticles;?>" class="button black denied" id="delete"><i class="fa fa-remove"></i>&nbsp;Supprimer</a>
                                     </div>
                                     <?php echo form_close() ?>
                                 </div>
