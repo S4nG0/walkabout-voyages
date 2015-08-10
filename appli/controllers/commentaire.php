@@ -26,16 +26,17 @@ class Commentaire extends CI_Controller {
             $user = connecte($this->session->userdata('user'));
             
             if($user === true){
-                $this->form_validation->set_rules('message','"Message"', 'trim|required|xss_clean|min_length[50]');
+                $this->form_validation->set_rules('message','"Message"', 'trim|required|xss_clean');
             }else{
                 //Mettre les rules formulaire quand on est pas connecte!
                 $this->form_validation->set_rules('last-name','"Nom"', 'trim|required|xss_clean');
                 $this->form_validation->set_rules('first-name','"Prénom"', 'trim|required|xss_clean');
                 $this->form_validation->set_rules('email','"Email"', 'trim|required|xss_clean|valid_email');
-                $this->form_validation->set_rules('message','"Message"', 'trim|required|xss_clean|min_length[50]');
+                $this->form_validation->set_rules('message','"Message"', 'trim|required|xss_clean');
             }
             
             if($this->form_validation->run()){
+                echo 'test';
                 $data = array();
                 $commentaire = new stdClass();
                 $commentaire->texte = $this->input->post('message');
@@ -60,11 +61,13 @@ class Commentaire extends CI_Controller {
                 $result = $this->commentaires->add($array);
                 if($result == true){
                     $this->session->set_flashdata('commentaire', 'reussi');
-                    redirect('/carnet/'.$idCarnet);
+                    redirect($_SERVER["HTTP_REFERER"]);
                 }else{
                     $this->session->set_flashdata('commentaire', 'fail');
-                    redirect('/carnet/'.$idCarnet);
+                    redirect($_SERVER["HTTP_REFERER"]);
                 }
+            }else{
+                var_dump(validation_errors());
             }
             
             redirect($_SERVER["HTTP_REFERER"]);
