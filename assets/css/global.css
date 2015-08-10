@@ -6441,6 +6441,62 @@ body.admin .charts h3 {
 }
 
 /*--------------------------------------------*\
+    #LISTING
+\*--------------------------------------------*/
+.reservations,
+.utilisateurs {
+  margin-bottom: 50px;
+}
+.reservations input[type="submit"],
+.utilisateurs input[type="submit"] {
+  margin-top: 50px;
+}
+.reservations .table-responsive,
+.utilisateurs .table-responsive {
+  border: 1px solid #848484;
+  -moz-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.reservations .table-responsive .table,
+.utilisateurs .table-responsive .table {
+  margin-bottom: 0;
+}
+.reservations .table-responsive .table thead > tr > td, .reservations .table-responsive .table tbody > tr > td,
+.utilisateurs .table-responsive .table thead > tr > td,
+.utilisateurs .table-responsive .table tbody > tr > td {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.reservations .table-responsive .table thead,
+.utilisateurs .table-responsive .table thead {
+  background-color: #fff;
+  border-bottom: 2px solid #848484;
+}
+.reservations .table-responsive .table thead > tr > td,
+.utilisateurs .table-responsive .table thead > tr > td {
+  font-size: 18px;
+  font-weight: 600;
+}
+.reservations .table-responsive .table tbody > tr > td,
+.utilisateurs .table-responsive .table tbody > tr > td {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  vertical-align: middle;
+}
+.reservations .table-responsive .table tbody > tr:nth-child(even) > td,
+.utilisateurs .table-responsive .table tbody > tr:nth-child(even) > td {
+  background-color: #fff;
+}
+.reservations .table-responsive .button,
+.utilisateurs .table-responsive .button {
+  display: block;
+  width: 150px;
+  margin-top: 10px;
+  margin-left: 0;
+}
+
+/*--------------------------------------------*\
     #CONTENT
 \*--------------------------------------------*/
 .destinations,
@@ -6515,6 +6571,15 @@ body.admin .charts h3 {
 .utilisateurs select option {
   text-align: center;
 }
+.destinations .form-group.required label,
+.actualites .form-group.required label,
+.voyages .form-group.required label,
+.carnets .form-group.required label,
+.articles .form-group.required label,
+.commentaires .form-group.required label,
+.utilisateurs .form-group.required label {
+  margin-bottom: 3px;
+}
 .destinations .form-group .button,
 .actualites .form-group .button,
 .voyages .form-group .button,
@@ -6543,6 +6608,17 @@ body.admin .charts h3 {
 .utilisateurs .form-group .help-block--gallery {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+.destinations .well,
+.actualites .well,
+.voyages .well,
+.carnets .well,
+.articles .well,
+.commentaires .well,
+.utilisateurs .well {
+  -moz-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 .destinations .destinations__previewBlock,
 .actualites .destinations__previewBlock,

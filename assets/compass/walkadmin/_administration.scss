@@ -379,6 +379,62 @@ body.admin {
 }
 
 /*--------------------------------------------*\
+    #LISTING
+\*--------------------------------------------*/
+.reservations,
+.utilisateurs {
+    margin-bottom: 50px;
+
+    input[type="submit"] {
+        margin-top: 50px;
+    }
+
+    .table-responsive {
+        border: 1px solid $gris-clair;
+        @include box-shadow(0 0 1px 1px rgba(0,0,0,0.1));
+
+        .table {
+            margin-bottom: 0;
+
+            thead, tbody {
+                > tr > td {
+                    padding-left: 25px;
+                    padding-right: 25px;
+                }
+            }
+
+            thead {
+                background-color: $blanc;
+                border-bottom: 2px solid $gris-clair;
+                > tr > td {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+
+            tbody {
+                > tr > td {
+                    padding-top: 25px;
+                    padding-bottom: 25px;
+                    vertical-align: middle;
+                }
+
+                > tr:nth-child(even) > td {
+                    background-color: $blanc;
+                }
+            }
+        }
+
+        .button {
+            display: block;
+            width: 150px;
+            margin-top: 10px;
+            margin-left: 0;
+        }
+    }
+}
+
+/*--------------------------------------------*\
     #CONTENT
 \*--------------------------------------------*/
 .destinations,
@@ -419,6 +475,12 @@ body.admin {
     }
 
     .form-group {
+        &.required {
+            label {
+                margin-bottom: 3px;
+            }
+        }
+
         .button {
             margin-top: 25px;
             width: 100%;
@@ -432,6 +494,10 @@ body.admin {
             margin-top: 15px;
             margin-bottom: 15px;
         }
+    }
+
+    .well {
+        @include box-shadow(0 0 1px 1px rgba(0,0,0,0.1));
     }
 
     .destinations__previewBlock {

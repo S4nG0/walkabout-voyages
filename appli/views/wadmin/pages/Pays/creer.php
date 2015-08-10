@@ -277,10 +277,10 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
                         <?php echo form_error('climat'); ?>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <input type="submit" class="button black" value="Ajouter le pays">
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="submit" class="button black" value="Ajouter le pays">
                 </div>
             </div>
         </div>
