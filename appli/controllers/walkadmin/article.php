@@ -5,7 +5,7 @@ class Article extends CI_Controller{
     public function index($page = 1){
         connecte_admin($this->session->userdata('admin'));
         $data=array();
-        $data['title'] = "Carnet de voyage - Articles";
+        $data['title'] = "Articles - Carnets de voyage";
         $count = $this->carnetvoyage->countWhereArticles()[0]->nb_carnets;
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
@@ -53,12 +53,12 @@ class Article extends CI_Controller{
         $this->load->view('wadmin/pages/Articles/liste',$data);
         $this->load->view('wadmin/template/footer');
     }
-    
+
     public function search($page = 1){
         connecte_admin($this->session->userdata('admin'));
         $data['title'] = 'Actualités';
-        $data['admin'] = $this->session->userdata('admin');  
-        
+        $data['admin'] = $this->session->userdata('admin');
+
         if(!$this->input->post()){
             $data['search'] = $this->session->flashdata('search');
         }else{
@@ -67,11 +67,11 @@ class Article extends CI_Controller{
             }
             $data['search'] = $this->input->post('search');
         }
-        
+
         $this->session->set_flashdata('search',$data['search']);
-        
+
         $count = $this->carnetvoyage->countWhereArticlesSearch($data['search'])[0]->nb_carnets;
-        
+
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
@@ -112,7 +112,7 @@ class Article extends CI_Controller{
         foreach($data['carnets'] as $carnet){
             $carnet->articles = $this->articles->getFromCarnetWherePublie($carnet->idCarnetDeVoyage);
         }
-        
+
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Articles/search',$data);
