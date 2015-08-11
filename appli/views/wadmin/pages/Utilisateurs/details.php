@@ -11,10 +11,9 @@
                     </div>
                 </div>
             </div>
-            <?php var_dump($user[0]); ?>
             <div class="row text-center">
                 <div class="utilisateurs__infos">
-                    <div class="col-sm-4 col-sm-offset-1">
+                    <div class="col-lg-6">
                         <h2 class="sep">Dénomination</h2>
                         <div class="form-group">
                             <label for="nom">Nom</label>
@@ -37,7 +36,7 @@
                             <input type="text" name="mobile" id="mobile" value="<?php echo substr($user[0]->tel_port, 0, 2).".".substr($user[0]->tel_port, 2, 2).".".substr($user[0]->tel_port,4,2).".".substr($user[0]->tel_port,6,2).".".substr($user[0]->tel_port,8,2); ?>">
                         </div>
                     </div>
-                    <div class="col-sm-4 col-sm-offset-1">
+                    <div class="col-lg-6">
                         <h2 class="sep">Adresse</h2>
                         <div class="form-group">
                             <label for="rue">Adresse</label>
@@ -69,78 +68,88 @@
                     </div>
                 </div>
             </div>
-            <?php if(count($reservation) > 0){ ?>
+
+            <hr>
+
+            <!-- User's reservations -->
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <h2 class="sep"> Réservation<?php if(count($reservation) > 1) echo 's'; ?> </h2>
+                </div>
+            </div>
+            <?php if(count($reservation) > 0) { ?>
             <div class="row">
-                <div class="col-md-10 col-md-offset-2">
-                    <div class="panel panel-default">
-                        <div class="panel-body" style="display: inline-block">
-                            <fieldset>
-                                <h2> Réservation<?php if(count($reservation) > 1) echo 's'; ?> </h2>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <td style="padding-right: 20px">Destination</td>
-                                            <td style="padding-right: 20px">Titre du voyage</td>
-                                            <td style="padding-right: 20px">date de Départ</td>
-                                            <td style="padding-right: 20px">Date de retour</td>
-                                            <td style="padding-right: 20px">Ville</td>
-                                            <td style="padding-right: 20px">Pays</td>
-                                            <td style="padding-right: 20px">Prix</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php foreach($reservation as $key=>$value){ ?>
-                                        <tr>
-                                            <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->nom ?></a></td>
-                                            <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->titre ?></a></td>
-                                            <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->date_depart ?></a></td>
-                                            <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->date_retour ?></a></td>
-                                            <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->ville ?></a></td>
-                                            <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->nomPays ?></a></td>
-                                            <td style="padding-right: 20px"><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation[$key]->titre) ?>"><?php if(isset($reservation[$key])) echo $reservation[$key]->prix ?></a></td>
-                                        </tr>
-                                    <?php } ?>
-                                    </tbody>
-                                </table>
-                            </fieldset>
+                <div class="col-sm-12">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td>Destination</td>
+                                    <td>Départ</td>
+                                    <td>Retour</td>
+                                    <td>Pays</td>
+                                    <td>Statut</td>
+                                    <td><span class="pull-right">Prix total</span></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($reservation as $reservation){ ?>
+                                <tr>
+                                    <td><a href="<?php echo base_url().'nos-destinations/'.slugify($reservation->titre) ?>"><?php if(isset($reservation)) echo $reservation->titre; ?></a></td>
+                                    <td><?php if(isset($reservation)) echo $reservation->date_depart; ?></td>
+                                    <td><?php if(isset($reservation)) echo $reservation->date_retour; ?></td>
+                                    <td><?php if(isset($reservation)) echo $reservation->nomPays; ?></td>
+                                    <td><?php if(isset($reservation)) echo $reservation->etat; ?></td>
+                                    <td><span class="pull-right"><?php if(isset($reservation)) echo $reservation->prix; ?></span></td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
+
+            <hr>
+
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <h2 class="sep">Ses carnets publiés</h2>
+                </div>
+            </div>
+            <!-- User's travel-log(s) -->
+            <?php if (sizeof($carnets) > 0) { foreach ($carnets as $carnet) { ?>
+            <div class="row carnets__single">
+                <div class="col-sm-12">
+                    <div class="well">
+                        <div class="single__block imageBlock">
+                            <div class="imageBlock__wrapper" style="background-image : url('<?php echo img_url($carnet->image_carnet)?>');"></div>
+                        </div>
+                        <div class="single__block infoBlock">
+                            <h3><?php echo $carnet->titre; ?></h3>
+                            <p><?php echo $carnet->description; ?></p>
+                        </div>
+                        <div class="single__block buttonsBlock">
+                            <a class="button black" href="<?php echo base_url().'carnets-de-voyage/'.$carnet->url;?>" target="_blank">
+                                <i class="fa fa-eye"></i>&nbsp;Aperçu du carnet
+                            </a>
+                            <a class="button black denied" id="delete" href="<?php echo base_url().'walkadmin/carnets/supprimer/'.$carnet->idCarnetDeVoyage;?>">
+                                <i class="fa fa-remove"></i>&nbsp;
+                                Supprimer
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <?php } if(count($carnet)>0){ ?>
+
+            <?php } } else {  ?>
+
             <div class="row">
-                <div class="col-md-10 col-md-offset-2">
-                    <div class="panel panel-default">
-                        <div class="panel-body" style="display: inline-block">
-                            <fieldset>
-                                <h2><?php if(count($carnet)>1) echo 'Ses carnets'; else echo 'Son carnet' ; ?></h2>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <td style="padding-right: 20px">Titre du carnet</td>
-                                            <td style="padding-right: 20px">Description</td>
-                                            <td style="padding-right: 20px">Date du carnet</td>
-                                            <td style="padding-right: 20px">Nom du voyage</td>
-                                            <td style="padding-right: 20px">Publié</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach($carnet as $key=>$value){ ?>
-                                            <tr>
-                                                <td style="padding-right: 20px"><a href="<?php echo base_url().'carnets-de-voyage/'. slugify($carnet[$key]->titre) ?>"><?php if(isset($carnet[$key])) echo $carnet[$key]->titre ?></a></td>
-                                                <td style="padding-right: 20px"><a href="<?php echo base_url().'carnets-de-voyage/'. slugify($carnet[$key]->titre) ?>"><?php if(isset($carnet[$key])) echo $carnet[$key]->description ?></a></td>
-                                                <td style="padding-right: 20px"><a href="<?php echo base_url().'carnets-de-voyage/'. slugify($carnet[$key]->titre) ?>"><?php if(isset($carnet[$key])) echo $carnet[$key]->date ?></a></td>
-                                                <td style="padding-right: 20px"><a href="<?php echo base_url().'carnets-de-voyage/'. slugify($carnet[$key]->titre) ?>"><?php if(isset($carnet[$key])) echo $carnet[$key]->nomDestination ?></a></td>
-                                                <td style="padding-right: 20px"><a href="<?php echo base_url().'carnets-de-voyage/'. slugify($carnet[$key]->titre) ?>"><?php if(isset($carnet[$key]) && $carnet[$key]->publie == "true") echo 'publié'; else echo 'non publié'; ?></a></td>
-                                            </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
-                            </fieldset>
-                        </div>
-                    </div>
+                <div class="col-md-12">
+                    <p class="no-entry">Cet utilisateur n'a aucun carnet publié.</p>
                 </div>
             </div>
+
             <?php } ?>
         </div>
     </div>

@@ -462,8 +462,9 @@ body.admin {
         }
 
         label {
+            padding-right: 25px;
             width: 35%;
-            text-align: left;
+            text-align: right;
         }
     }
 }
@@ -1201,7 +1202,8 @@ body.admin {
     .actualites,
     .carnets,
     .articles,
-    .commentaires {
+    .commentaires,
+    .utilisateurs {
 
         .module__tools {
             .custom-search { margin-right: 0; width: 200px; }
@@ -1417,6 +1419,20 @@ body.admin {
         .custom-search {
             &.isFocused {
                 width: 250px;
+            }
+        }
+    }
+    .utilisateurs {
+        .utilisateurs__infos {
+            label, input {
+                display: block;
+                width: 100%;
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .col-lg-6:nth-child(2) {
+                margin-top: 50px;
             }
         }
     }
