@@ -26,7 +26,7 @@ class Nos_actualites extends CI_Controller {
              * Chargement des administrateurs de actualités
              * 
              */
-            $data['actus'] = $this->actualites->get_all_actus();
+            $data['actus'] = $this->actualites->get_actus();
             foreach($data['actus'] as $actu){
                 $actu->date = conv_date($actu->date); 
                 $actu->admin = $this->admin->constructeur($actu->idAdministrateur);
