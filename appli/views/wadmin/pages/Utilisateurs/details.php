@@ -13,7 +13,7 @@
             </div>
             <div class="row text-center">
                 <div class="utilisateurs__infos">
-                    <div class="col-sm-4 col-sm-offset-1">
+                    <div class="col-lg-6">
                         <h2 class="sep">Dénomination</h2>
                         <div class="form-group">
                             <label for="nom">Nom</label>
@@ -36,7 +36,7 @@
                             <input type="text" name="mobile" id="mobile" value="<?php echo substr($user[0]->tel_port, 0, 2).".".substr($user[0]->tel_port, 2, 2).".".substr($user[0]->tel_port,4,2).".".substr($user[0]->tel_port,6,2).".".substr($user[0]->tel_port,8,2); ?>">
                         </div>
                     </div>
-                    <div class="col-sm-4 col-sm-offset-2">
+                    <div class="col-lg-6">
                         <h2 class="sep">Adresse</h2>
                         <div class="form-group">
                             <label for="rue">Adresse</label>
@@ -79,7 +79,7 @@
             </div>
             <?php if(count($reservation) > 0) { ?>
             <div class="row">
-                <div class="col-sm-10 col-sm-offset-1">
+                <div class="col-sm-12">
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -120,7 +120,7 @@
             <!-- User's travel-log(s) -->
             <?php if (sizeof($carnets) > 0) { foreach ($carnets as $carnet) { ?>
             <div class="row carnets__single">
-                <div class="col-sm-8 col-sm-offset-2">
+                <div class="col-sm-12">
                     <div class="well">
                         <div class="single__block imageBlock">
                             <div class="imageBlock__wrapper" style="background-image : url('<?php echo img_url($carnet->image_carnet)?>');"></div>
