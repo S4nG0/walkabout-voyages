@@ -384,7 +384,8 @@ body.admin {
     #RESERVATIONS || #UTILISATEURS
 \*--------------------------------------------*/
 .reservations,
-.utilisateurs {
+.utilisateurs,
+.commentaires {
     margin-bottom: 50px;
 
     input[type="submit"] {
@@ -712,11 +713,117 @@ body.admin {
                 }
             }
 
-
             select {
                 display: block;
                 width: 100%;
                 margin: 0 auto;
+            }
+        }
+
+        &.all-comments {
+            .carnets__commentaire {
+                display: block;
+                width: 100%;
+                padding-bottom: 0;
+
+                p, .commentaire__status {
+                    padding-left: 0;
+                }
+
+                &:after {
+                    display: none;
+                }
+
+                .commentaire__content {
+                    position: relative;
+                    background-color: $blanc;
+                    padding: 25px;
+
+                    .profile-picture {
+                        position: absolute;
+                        top: 50%;
+                        @include translateY(-50%);
+                    }
+
+                    .published {
+                        margin-top: 5px;
+                    }
+
+                    &:after, &:before {
+                        top: 50%;
+                        border: solid transparent;
+                        content: " ";
+                        height: 0;
+                        width: 0;
+                        position: absolute;
+                        pointer-events: none;
+                    }
+                }
+
+                &:nth-child(odd) {
+                    .commentaire__content {
+                        text-align: left;
+
+                        .profile-picture {
+                            left: -150px;
+                        }
+
+                        p {
+                            text-align: left;
+                        }
+
+                        &:after, &:before {
+                            right: 100%;
+                        }
+
+                        &:after {
+                            border-color: rgba(255, 255, 255, 0);
+                            border-right-color: $blanc;
+                            border-width: 15px;
+                            margin-top: -15px;
+                        }
+
+                        &:before {
+                            border-color: rgba(255, 255, 255, 0);
+                            border-right-color: $blanc;
+                            border-width: 15px;
+                            margin-top: -15px;
+                        }
+                    }
+                }
+
+                &:nth-child(even) {
+                    .commentaire__content {
+                        text-align: right;
+
+                        p {
+                            text-align: right;
+                        }
+
+                        .profile-picture {
+                            position: absolute;
+                            right: -150px;
+                        }
+
+                        &:after, &:before {
+                            left: 100%;
+                        }
+
+                        &:after {
+                            border-color: rgba(255, 255, 255, 0);
+                            border-left-color: $blanc;
+                            border-width: 15px;
+                            margin-top: -15px;
+                        }
+
+                        &:before {
+                            border-color: rgba(255, 255, 255, 0);
+                            border-left-color: $blanc;
+                            border-width: 15px;
+                            margin-top: -15px;
+                        }
+                    }
+                }
             }
         }
 
@@ -1280,6 +1387,8 @@ body.admin {
                 .commentaire__status {
                     padding-left: 0;
                 }
+
+
             }
 
             .imageBlock, .infoBlock, .buttonsBlock {
@@ -1289,6 +1398,41 @@ body.admin {
             .infoBlock {
                 padding-top: 25px;
                 padding-bottom: 25px;
+            }
+
+
+
+            &.all-comments {
+                .carnets__commentaire {
+                    .commentaire__content {
+                        &:nth-child(odd), &:nth-child(even) {
+                            text-align: center;
+
+                            .profile-picture {
+                                position: relative;
+                                top: auto;
+                                left: auto;
+                                right: auto;
+                                margin-bottom: 25px;
+                                @include translateY(0);
+                            }
+
+                            p {
+                                text-align: center;
+                            }
+
+                            &:after, &:before {
+                                top: 50%;
+                                border: solid transparent;
+                                content: " ";
+                                height: 0;
+                                width: 0;
+                                position: absolute;
+                                pointer-events: none;
+                            }
+                        }
+                    }
+                }
             }
         }
 

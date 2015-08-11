@@ -20,7 +20,7 @@ class Comments extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
-    
+
     //Affichage de tous les commentaires
     public function index($value = "attente", $page = 1) {
         connecte_admin($this->session->userdata('admin'));
@@ -35,7 +35,7 @@ class Comments extends CI_Controller {
         /*Load des helpers et librairies*/
         $this->load->library('pagination');
         /*Parametrage de la pagination*/
-        
+
         $config['total_rows'] = $count;// faire attention taille totale
         $nb_commentaires = $config['per_page'] = 10;
         $config['num_links'] = 3;
@@ -67,13 +67,13 @@ class Comments extends CI_Controller {
         $data['pagination'] = $this->pagination->create_links();
         /*Création des variables de selection des carnets*/
         $start = ($page*$nb_commentaires)-$nb_commentaires;
-        
+
         $data['commentaires'] = $this->commentaires->getCommentairesStatut($data['publie'],$nb_commentaires,$start);
         foreach($data['commentaires'] as $commentaire){
             $commentaire->user = $this->user->constructeur($commentaire->idUsers)[0];
             $commentaire->carnet = $this->carnetvoyage->constructeur($commentaire->idCarnet)[0];
         }
-        
+
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
@@ -81,7 +81,7 @@ class Comments extends CI_Controller {
         $this->load->view('wadmin/template/footer');
         //$this->output->enable_profiler(true);
     }
-    
+
     public function publie($idCommentaires=0){
         connecte_admin($this->session->userdata('admin'));
         if($idCommentaires==0)
@@ -90,7 +90,7 @@ class Comments extends CI_Controller {
         $this->commentaires->modify($commentaire,$idCommentaires);
         redirect($_SERVER['HTTP_REFERER']);
     }
-    
+
     public function carnet($idCommentaire = 0){
         connecte_admin($this->session->userdata('admin'));
         if($idCommentaire == 0)
@@ -103,7 +103,7 @@ class Comments extends CI_Controller {
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Commentaires/vue-carnet',$data);
-        $this->load->view('wadmin/template/footer');        
+        $this->load->view('wadmin/template/footer');
     }
 
     public function supprimer($idCommentaires=0){
