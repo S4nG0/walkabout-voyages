@@ -55,5 +55,8 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <?php echo $pagination; ?>
+        </div>
     </div>
 </div>

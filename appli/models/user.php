@@ -76,6 +76,18 @@ class User extends CI_Model {
                          ->result();
         return $users;
     }
+    
+    public function getAllUsersPagination($start,$nb){
+
+        $users = $this->db->select('*')
+                           ->from($this->table)
+                           ->limit($nb, $start)
+                           ->get()
+                           ->result();
+
+        return $users;
+
+    }
 
     public function getAllUsers(){
 
