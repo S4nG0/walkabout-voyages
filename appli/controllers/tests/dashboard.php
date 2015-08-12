@@ -21,7 +21,8 @@ class Dashboard extends CI_Controller {
     {
         $data = array();
         $this->load->model('test');
-        $data['tests'] = $this->test->getAll();
+        $data['front'] = $this->test->getFront();
+        $data['back'] = $this->test->getBack();
         
         $this->load->view('tests/dashboard',$data);
         

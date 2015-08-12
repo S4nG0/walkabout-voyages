@@ -22,9 +22,20 @@ class Test extends CI_Model {
         return $actu;
     }
     
-    public function getAll(){        
+    public function getFront(){        
         $tests = $this->db->select('*')
                            ->from($this->table)
+                           ->where('categorie', 'Front office')
+                           ->get()
+                           ->result();
+        
+        return $tests;
+    }
+    
+    public function getBack(){        
+        $tests = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('categorie', 'Back office')
                            ->get()
                            ->result();
         
