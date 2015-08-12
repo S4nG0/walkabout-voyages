@@ -17,7 +17,7 @@
 
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <a href="<?php echo base_url() . 'walkadmin/params'; ?>">
+                <a href="<?php echo base_url() . 'walkadmin/administrateur/modifier/'.$admin[0]->idAdministrateur; ?>">
                     <i class="fa fa-wrench fa-fw"></i>
                 </a>
                 <!-- /.dropdown-alerts -->
