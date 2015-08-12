@@ -37,7 +37,8 @@
                 </div>
             </div>
 
-            <?php foreach ($commentaires as $commentaire) { ?>
+            <?php if(sizeof($commentaires) > 0) { 
+                foreach ($commentaires as $commentaire) { ?>
 
             <div class="row carnets__single searchable">
                 <div class="col-sm-12 col-md-10 col-md-offset-1">
@@ -78,6 +79,14 @@
                 </div>
             </div>
 
+            <?php }}else{ ?>
+            
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="no-entry">Il n'y a aucun commentaire à afficher</p>
+                    </div>
+                </div>
+            
             <?php } ?>
 
             <div class="row">
