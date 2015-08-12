@@ -20,12 +20,13 @@ class Params extends CI_Controller {
 	public function index()
 	{
             connecte_admin($this->session->userdata('admin'));
-            $data = array();
+            redirect('walkadmin/administrateur/modifier/'.$this->session->userdata('admin')[0]->idAdministrateur);
+            /*$data = array();
             $data['admin'] = $this->session->userdata('admin');
             $this->load->view('wadmin/template/header', $data);
             $this->load->view('wadmin/template/menu',$data);
             $this->load->view('wadmin/dashboard');
-            $this->load->view('wadmin/template/footer');
+            $this->load->view('wadmin/template/footer');*/
             //$this->output->enable_profiler(true);
 	}
 }
