@@ -36,9 +36,11 @@
                                     <td><?php echo ucfirst(mb_strtolower($admin->nom)); ?></td>
                                     <td><a href="mailto:<?php echo $admin->email; ?>"><?php echo $admin->email; ?></a></td>
                                     <td class="buttonsCell">
+                                        <?php if($admin->idAdministrateur == $this->session->userdata('admin')[0]->idAdministrateur){ ?>
                                         <a class="button black" href="<?php echo base_url().'walkadmin/administrateur/modifier/'.$admin->idAdministrateur;?>">
                                             <i class="fa fa-edit"></i>&nbsp;Modifier
                                         </a>
+                                        <?php } ?>
                                         <a class="button black denied" href="<?php echo base_url().'walkadmin/administrateur/supprimer/'.$admin->idAdministrateur;?>">
                                             <i class="fa fa-trash"></i>&nbsp;Supprimer
                                         </a>
