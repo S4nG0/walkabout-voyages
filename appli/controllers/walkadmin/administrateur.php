@@ -41,11 +41,15 @@ class Administrateur extends CI_Controller {
         if($idAdministrateur==0 || $idAdministrateur!=$this->session->userdata('admin')[0]->idAdministrateur)
             redirect("walkadmin/administrateur");
         if ($this->input->post() != false) {
+            $this->form_validation->set_rules('nom', '"nom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('prenom', '"prenom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('password', '"Mot de passe"', 'trim|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('confirm-password', '"Mot de passe"', 'trim|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('email', '"email"', 'trim|required|valid_email|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
                 $admin = array(
+                    'nom' => $this->input->post('nom'),
+                    'prenom' => $this->input->post('prenom'),
                     'email' => $this->input->post('email')
                 );
                 if($this->input->post('password') != false && $this->input->post('confirm-password') != false){
@@ -86,7 +90,6 @@ class Administrateur extends CI_Controller {
     public function index(){
         connecte_admin($this->session->userdata('admin'));
         $data['admins']=$this->admin->getAll();
-        connecte_admin($this->session->userdata('admin'));
         $data['admin'] = $this->session->userdata('admin');
         $data['title'] = "Administrateurs";
         $this->load->view('wadmin/template/header', $data);
