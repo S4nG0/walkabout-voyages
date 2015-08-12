@@ -21,6 +21,44 @@ class Admin extends CI_Model {
         
         return $admin;
     }
+
+    public function countAdministrateur(){
+        $admin = $this->db->select('COUNT(*) AS nb_administrateurs')
+                          ->from($this->table)
+                          ->get()
+                          ->result();
+        return $admin;
+    }
+
+    public function countAdministrateurSearch($search){
+        $query = "SELECT COUNT(*) AS nb_administrateurs FROM `wa__administrateur` WHERE nom LIKE '%$search%' OR prenom LIKE '%$search%' OR email LIKE '%$search%' OR identifiant LIKE '%$search%'";
+        $admin = $this->db->query($query)->result();
+
+        return $admin;
+    }
+
+    public function getAdministrateur($nb,$start){
+        $admin = $this->db->select('*')
+                          ->from($this->table)
+                          ->order_by('idAdministrateur','ASC')
+                          ->limit($nb, $start)
+                          ->get()
+                          ->result();
+
+        return $admin;
+    }
+
+    public function getAdministrateurSearch($search,$nb,$start){
+        $admin = $this->db->select('*')
+                          ->from($this->table)
+                          ->where('nom LIKE "%'.$search.'%" OR prenom LIKE "%'.$search.'%" OR email LIKE "%'.$search.'%" OR identifiant LIKE "%'.$search.'%"')
+                          ->order_by('idAdministrateur','ASC')
+                          ->limit($nb, $start)
+                          ->get()
+                          ->result();
+
+        return $admin;
+    }
     
     public function getFromPseudo($pseudo = ''){
         if($pseudo == ''){
