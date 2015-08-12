@@ -98,14 +98,16 @@ class Carnets_de_voyage extends CI_Controller {
             $data['carnet'] = $this->carnetvoyage->getFromName($id_carnet);
             $data['title'] = $data['carnet'][0]->titre;
             $data['carnet'][0]->date = conv_date($data['carnet'][0]->date);
-            $data['user'] = $this->user->constructeur($data['carnet'][0]->idUsers);
+            $data['user'] = $this->user->constructeur($data['carnet'][0]->idUsers)[0];
             $data['destination'] = $this->destination->constructeur($data['carnet'][0]->idDestination);
             $data['pays'] = $this->pays->constructeur($data['destination'][0]->idPays);
             $data['articles'] = $this->articles->getFromCarnetWherePublie($data['carnet'][0]->idCarnetDeVoyage);
             $data['commentaires'] = $this->commentaires->constructeur($data['carnet'][0]->idCarnetDeVoyage);
             foreach($data['commentaires'] as $commentaire){
                 $commentaire->date = conv_date($commentaire->date);
-                $commentaire->user = $this->user->constructeur($commentaire->idUsers);
+                if($commentaire->idUsers != null){
+                    $commentaire->user = $this->user->constructeur($commentaire->idUsers)[0];
+                }
             }
 
             $this->load->view('template/header', $data);
