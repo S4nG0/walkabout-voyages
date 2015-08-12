@@ -4,7 +4,7 @@
 
             <div class="row text-center">
                 <div class="col-lg-12">
-                    <h1 class="page-header sep">Ajouter un administrateur</h1>
+                    <h1 class="page-header sep">Modifier un administrateur</h1>
                 </div>
             </div>
             <div class="row">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
             </div>
-            <?php echo form_open('walkadmin/administrateur/creer'); ?>
+            <?php echo form_open('walkadmin/administrateur/modifier/'.$administrateur[0]->idAdministrateur) ?>
             <div class="row text-center">
                 <div class="col-md-4 col-md-offset-2">
                     <div class="form-group required">
@@ -22,12 +22,12 @@
                         <div class="help-block">
                             <span class="small">Obligatoire</span>
                         </div>
-                        <input placeholder="Saississez votre texte" name="identifiant" type="text" value="<?php echo set_value('identifiant'); ?>">
+                        <input placeholder="Saississez votre texte" name="identifiant" type="text" value="<?php echo $administrateur[0]->identifiant; ?>">
                         <?php echo form_error('identifiant'); ?>
                     </div>
                     <div class="form-group">
                         <label for="nom">Nom</label>
-                        <input placeholder="Saississez votre texte" name="nom" type="text" autofocus value="<?php echo set_value('nom'); ?>">
+                        <input placeholder="Saississez votre texte" name="nom" type="text" autofocus value="<?php echo $administrateur[0]->nom; ?>">
                         <?php echo form_error('nom'); ?>
                     </div>
                     <div class="form-group required">
@@ -45,12 +45,12 @@
                         <div class="help-block">
                             <span class="small">Obligatoire</span>
                         </div>
-                        <input placeholder="Saississez votre texte" name="email" type="email" value="<?php echo set_value('email'); ?>">
+                        <input placeholder="Saississez votre texte" name="email" type="email" value="<?php echo $administrateur[0]->email; ?>">
                         <?php echo form_error('email'); ?>
                     </div>
                     <div class="form-group">
                         <label for="prenom">Prénom</label>
-                        <input placeholder="Saississez votre texte" name="prenom" type="text" value="<?php echo set_value('prenom'); ?>">
+                        <input placeholder="Saississez votre texte" name="prenom" type="text" value="<?php echo $administrateur[0]->prenom; ?>">
                         <?php echo form_error('prenom'); ?>
                     </div>
                     <div class="form-group required">
@@ -66,9 +66,10 @@
 
             <div class="row">
                 <div class="col-sm-12">
-                    <input class="button black" type="submit" value="Enregistrer">
+                    <input class="button black" type="submit" value="Modifier">
                 </div>
             </div>
+
             <?php echo form_close(); ?>
         </div>
     </div>
