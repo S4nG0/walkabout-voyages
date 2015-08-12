@@ -49,8 +49,11 @@ class Carnets extends CI_Controller{
         /*Création des variables de selection des carnets*/
         $start = ($page*$nb_articles)-$nb_articles;
 
-        $data['favoris'] = $this->carnetvoyage->getFavoris()[0];
-        $data['favoris']->user = $this->user->constructeur($data['favoris']->idUsers);
+        $data['favoris'] = $this->carnetvoyage->getFavoris();
+        if($data['favoris'] != null){
+            $data['favoris'] = $data['favoris'][0];
+            $data['favoris']->user = $this->user->constructeur($data['favoris']->idUsers);
+        }
 
         $data['carnets'] = $this->carnetvoyage->get_carnet_pagination($start, $nb_articles);
         foreach($data['carnets'] as $carnet){
