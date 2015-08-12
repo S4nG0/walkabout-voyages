@@ -81,7 +81,7 @@ class Utilisateur extends CI_Controller{
         /*Parametrage de la pagination*/
         $config['base_url'] = base_url().'walkadmin/utilisateur/recherche';
         $config['total_rows'] = $count;// faire attention taille totale
-        $nb_articles = $config['per_page'] = 1;
+        $nb_articles = $config['per_page'] = 10;
         $config['num_links'] = 3;
         $config['uri_segment'] = 4;
         $config['use_page_numbers'] = true;

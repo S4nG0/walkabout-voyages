@@ -22,6 +22,35 @@
             </div>
         </div>
     </div>
+    
+    <?php if(sizeof($favoris) > 0){ ?>
+        <div class="row carnets__single searchable" data-search="<?php echo $favoris->titre.' '.$favoris->user[0]->nom.''.$favoris->user[0]->prenom;?>">
+        <div class="col-md-12">
+            <div class="well" style="border-color:gold;box-shadow:none;">
+                <div class="carnets__header">
+                    <h3 class="text-center">&nbsp;&nbsp;Carnet favori&nbsp;&nbsp;</h3>
+                </div>
+                <div class="single__block imageBlock">
+                    <div class="imageBlock__wrapper" style="background-image : url('<?php echo img_url($favoris->image_carnet)?>');"></div>
+                </div>
+                <div class="single__block infoBlock">
+                    <h3><?php echo $favoris->titre; ?></h3>
+                    <p class="published">Publié par&nbsp;<?php echo ucfirst(mb_strtolower($favoris->user[0]->nom))." ".ucfirst(mb_strtolower($favoris->user[0]->prenom)); ?></p>
+                    <p><?php echo $favoris->description; ?></p>
+                </div>
+                <div class="single__block buttonsBlock">
+                    <a class="button black" href="<?php echo base_url().'carnets-de-voyage/'.$favoris->url;?>" target="_blank">
+                        <i class="fa fa-eye"></i>&nbsp;Aperçu du carnet
+                    </a>
+                    <a class="button black denied" id="delete" href="<?php echo base_url().'walkadmin/carnets/supprimer/'.$favoris->idCarnetDeVoyage;?>">
+                        <i class="fa fa-remove"></i>&nbsp;
+                        Supprimer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
 
     <?php if (sizeof($carnets) > 0) { foreach ($carnets as $carnet) { ?>
 

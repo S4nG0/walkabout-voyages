@@ -17,6 +17,9 @@
                     </div>
                 </div>
             </div>
+            <?php
+            if(!empty($users)){
+            ?>
             <div class="row">
                 <div class="col-md-12">
                     <div class="table-responsive">
@@ -56,6 +59,16 @@
                     </div>
                 </div>
             </div>
+            
+            <?php }else{ ?>
+            
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="no-entry">Il n'y a aucun utilisateur correspondant à la recherche : <blockquote><?php echo $search; ?></blockquote></p>
+                    </div>
+                </div>
+            
+            <?php } ?>
         </div>
         <div class="row">
             <?php echo $pagination; ?>
