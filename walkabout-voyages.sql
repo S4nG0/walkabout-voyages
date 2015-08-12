@@ -3,18 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 09 Août 2015 à 12:57
+-- Généré le :  Mer 12 Août 2015 à 11:53
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données :  `walkabout-voyages`
@@ -174,7 +168,7 @@ INSERT INTO `wa__civilite` (`idCivilite`, `civilite`) VALUES
 CREATE TABLE IF NOT EXISTS `wa__commentaires` (
   `idCommentaires` int(11) NOT NULL AUTO_INCREMENT,
   `idCarnet` int(11) NOT NULL,
-  `idUsers` int(11) NOT NULL,
+  `idUsers` int(11) DEFAULT NULL,
   `date` date NOT NULL,
   `texte` longtext,
   `modere` varchar(5) DEFAULT NULL,
@@ -182,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `wa__commentaires` (
   PRIMARY KEY (`idCommentaires`),
   KEY `idCarnet` (`idCarnet`,`idUsers`),
   KEY `idUsers` (`idUsers`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Contenu de la table `wa__commentaires`
@@ -195,7 +189,8 @@ INSERT INTO `wa__commentaires` (`idCommentaires`, `idCarnet`, `idUsers`, `date`,
 (5, 2, 1, '2015-04-04', 'Tu m''as vraiment donné envie de visiter les Quechuas ! Ils ont vraiment l''air d''être un peuple facinant. As-tu été visité le temple ? Des amis m''ont dit que c''était l''un des plus beaux qu''ils aient vu !', 'true', ''),
 (6, 2, 2, '2015-04-04', 'Merci pour ton commentaire !<br/>\r\nOui, j''ai visité le temple ! Je prépare actuellement un article à ce sujet.', 'true', ''),
 (7, 2, 1, '2015-04-05', 'J''ai hâte de lire ce que tu en as pensé !', 'true', ''),
-(11, 3, 1, '2015-05-14', 'Hé béh!! Il manque beaucoup de contenu sur ce carnet! ;)', 'true', '{"nom":"CAPI","prenom":"Aur\\u00e9lien","email":null}');
+(11, 3, 1, '2015-05-14', 'Hé béh!! Il manque beaucoup de contenu sur ce carnet! ;)', 'true', '{"nom":"CAPI","prenom":"Aur\\u00e9lien","email":null}'),
+(12, 2, NULL, '2015-08-12', 'capi et j''aimerai que Julien vienne me la mettre! ;)', 'true', '{"nom":"Bijour","prenom":"connard","email":"jemappel@aurelien.com"}');
 
 -- --------------------------------------------------------
 
@@ -515,10 +510,7 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('41fab095e2981e2f3db1a40ad90d90d2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36', 1439114342, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"2";s:3:"nom";s:6:"Julien";s:6:"prenom";s:13:"VANDERMEERSCH";s:5:"email";s:0:"";s:11:"identifiant";s:6:"ju.vdm";s:3:"mdp";s:64:"4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2";}}}'),
-('2199c7538a0195a9b4d22a8d5641faac', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36', 1439112785, ''),
-('e5cc260fbbfc05e0f3ad50a858131590', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36', 1439117543, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"2";s:3:"nom";s:6:"Julien";s:6:"prenom";s:13:"VANDERMEERSCH";s:5:"email";s:0:"";s:11:"identifiant";s:6:"ju.vdm";s:3:"mdp";s:64:"4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2";}}}'),
-('abf4b1ae98e6fdb129821fe2ab8af3ac', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36', 1439117543, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"2";s:3:"nom";s:6:"Julien";s:6:"prenom";s:13:"VANDERMEERSCH";s:5:"email";s:0:"";s:11:"identifiant";s:6:"ju.vdm";s:3:"mdp";s:64:"4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2";}}}');
+('608d95514987741222b118e089e1e328', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1439368506, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}');
 
 -- --------------------------------------------------------
 
@@ -690,7 +682,3 @@ ALTER TABLE `wa__users`
 --
 ALTER TABLE `wa__voyage`
   ADD CONSTRAINT `id_voyage_destination` FOREIGN KEY (`idDestination`) REFERENCES `wa__destination` (`idDestination`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
