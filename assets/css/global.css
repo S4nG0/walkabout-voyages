@@ -6398,7 +6398,7 @@ body.admin .submenu li .active {
   margin: 0 auto;
   text-align: center;
 }
-.admin-log-on > .container .login-panel .panel-form .form-group:nth-child(2) {
+.admin-log-on > .container .login-panel .panel-form .form-group:last-child {
   margin-bottom: 0 !important;
 }
 .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {

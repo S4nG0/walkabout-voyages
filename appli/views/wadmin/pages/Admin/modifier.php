@@ -16,14 +16,35 @@
             </div>
             <?php echo form_open('walkadmin/administrateur/modifier/'.$administrateur[0]->idAdministrateur) ?>
             <div class="row text-center">
-                <div class="col-md-4 col-md-offset-2">
-                    <div class="form-group">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="form-group required">
+                        <label for="email">E-mail</label>
+                        <div class="help-block">
+                            <span class="small">Obligatoire</span>
+                        </div>
+                        <input placeholder="Saississez votre texte" name="email" type="email" value="<?php echo $administrateur[0]->email; ?>">
+                        <?php echo form_error('email'); ?>
                     </div>
+                </div>
+            </div>
+            <div class="row text-center mt25">
+                <div class="col-md-4 col-md-offset-2">
                     <div class="form-group">
                         <label for="nom">Nom</label>
                         <input placeholder="Saississez votre texte" name="nom" type="text" autofocus value="<?php echo $administrateur[0]->nom; ?>">
                         <?php echo form_error('nom'); ?>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="prenom">Prénom</label>
+                        <input placeholder="Saississez votre texte" name="prenom" type="text" value="<?php echo $administrateur[0]->prenom; ?>">
+                        <?php echo form_error('prenom'); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4 col-md-offset-2">
                     <div class="form-group required">
                         <label for="password">Mot de passe</label>
                         <div class="help-block">
@@ -34,19 +55,6 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="form-group required">
-                        <label for="email">E-mail</label>
-                        <div class="help-block">
-                            <span class="small">Obligatoire</span>
-                        </div>
-                        <input placeholder="Saississez votre texte" name="email" type="email" value="<?php echo $administrateur[0]->email; ?>">
-                        <?php echo form_error('email'); ?>
-                    </div>
-                    <div class="form-group">
-                        <label for="prenom">Prénom</label>
-                        <input placeholder="Saississez votre texte" name="prenom" type="text" value="<?php echo $administrateur[0]->prenom; ?>">
-                        <?php echo form_error('prenom'); ?>
-                    </div>
                     <div class="form-group required">
                         <label for="confirm-password">Répétez le mot de passe</label>
                         <div class="help-block">
