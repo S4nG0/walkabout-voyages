@@ -65,10 +65,77 @@
             </div>
             <br/><br/>
             <div class="row">
+                <h1>Test sur le Front office : </h1>
+            </div>
+            <div class="row">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <?php 
                 $i = 0;
-                foreach ($tests as $test) { 
+                foreach ($front as $test) { 
+                switch($test->etat){
+                case "A tester": $color = "grey";break;
+                case "En cours de test": $color = "darkslategrey";break;
+                case "Marche": $color = "green";break;
+                case "Bug": $color = "orange";break;
+                case "Marche pas": $color = "red";break;
+                }
+                ?>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i; ?>" aria-expanded="false" aria-controls="collapseOne">
+                              <p style="margin: 0;"><span class="glyphicon <?php if($test->etat == "En cours de test"){echo  "glyphicon-refresh";}elseif($test->etat == "Marche"){echo "glyphicon-thumbs-up";}elseif($test->etat == "Marche pas"){echo "glyphicon-fire";}else{echo "glyphicon-alert";}?> " style="color:<?php echo $color; ?>;margin-right:10px;"></span> <b><?php echo $test->titre; ?></b><?php if($test->etat == "En cours de test"){ ?><span class="pull-right">En cours de test par : <?php echo $test->testeur; ?></span><?php } ?><?php if($test->etat != "A tester" && $test->etat != "En cours de test"){ ?><span class="pull-right">Testé par : <?php echo $test->testeur; ?></span><?php } ?></p>
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12"><h4>Description du test: </h4><br/><span style="text-indent:2em;"><?php echo ($test->explication == '') ? "Aucune explication" : $test->explication ?></span></div>
+                            </div>
+                            <?php if($test->etat == "Marche" || $test->etat == "Bug" || $test->etat == "Marche pas"){ ?>
+                            <hr/>
+                            <?php if($test->commentaire !=""){ ?>
+                            <div class="row">
+                                <div class="col-md-12"><h4>Commentaire du testeur sur le test: </h4><br/><span style="text-indent:2em;"><?php echo $test->commentaire ?></span></div>
+                            </div>
+                            <?php }else{ ?>
+                            <div class="row">
+                                <div class="col-md-12"><h4>Aucun commentaire de la part du testeur</h4></div>
+                            </div>
+                            <?php }} ?>
+                            <div class="row">
+                                <div class="pull-right" style='padding-right:20px;'>
+                                    <?php if($test->etat == "A tester"){ ?>
+                                        <a href="#" onclick="tester(<?php echo $test->idTest; ?>)" class="btn btn-default pull-right" role="button"><span class="glyphicon glyphicon-thumbs-up"> Je m'en occupe</span></a>
+                                    <?php } ?>
+                                    <?php if($test->etat == "En cours de test"){ ?>    
+                                        <a href="#" class="fin_test btn btn-default pull-right" role="button" data-id="<?php echo $test->idTest; ?>" data-etat="Marche pas"><span class="glyphicon glyphicon-fire" style="color:red;"></span> Marche pas!</a>
+                                        <a href="#" class="fin_test btn btn-default pull-right" role="button" data-id="<?php echo $test->idTest; ?>" data-etat="Bug"><span class="glyphicon glyphicon-alert" style="color:orange;"></span> Bugs!</a>
+                                        <a href="#" class="fin_test btn btn-default pull-right" role="button" data-id="<?php echo $test->idTest; ?>" data-etat="Marche"><span class="glyphicon glyphicon-thumbs-up" style="color:green;"></span> Marche!</a>
+                                    <?php } ?>
+                                    <?php if($test->etat == "Marche pas" || $test->etat == "Bug"){ ?>    
+                                        <a href="<?php echo base_url().'tests/resolu/'.$test->idTest;?>" class="btn btn-default pull-right" role="button" ><span class="glyphicon glyphicon-alert" style="color:green;"></span> Probléme résolu</a>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                <?php 
+                $i++;
+                }
+                ?>
+                </div>
+            </div>
+            <div class="row">
+                <h1>Test sur le Back office : </h1>
+            </div>
+            <div class="row">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <?php 
+                $i = 0;
+                foreach ($back as $test) { 
                 switch($test->etat){
                 case "A tester": $color = "grey";break;
                 case "En cours de test": $color = "darkslategrey";break;
