@@ -39,8 +39,8 @@
 */
 
 $route['default_controller'] = "accueil";
-$route['admin'] = "walkadmin/connexion";
 $route['walkadmin'] = "walkadmin/connexion";
+$route['conditions-generales-de-ventes'] = "conditions_generales_de_ventes";
 $route['walkadmin/pays/creer'] = "walkadmin/pays_admin/creer";
 $route['walkadmin/map'] = "walkadmin/pays_admin/index";
 $route['walkadmin/voyage/(:num)'] = "walkadmin/voyage/index/$1";
@@ -70,6 +70,12 @@ $route['nos-destinations'] = 'destinations';
 $route['nos-destinations/(:any)'] = 'destinations/$1';
 $route['qui-sommes-nous'] = 'qui_sommes_nous';
 $route['404_override'] = '';
+
+
+
+//A supprimer a la fin des tests
+$route['tests'] = 'tests/dashboard/index';
+$route['tests/(:any)'] = 'tests/dashboard/$1';
 
 
 /* End of file routes.php */

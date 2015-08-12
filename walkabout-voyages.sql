@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 12 Août 2015 à 11:53
+-- Généré le :  Mer 12 Août 2015 à 23:43
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `wa__carnetdevoyage` (
 
 INSERT INTO `wa__carnetdevoyage` (`idCarnetDeVoyage`, `date`, `publie`, `titre`, `url`, `description`, `idUsers`, `idVoyage`, `idDestination`, `image_carnet`, `favoris`) VALUES
 (1, '2015-03-05', 'true', 'Mon aventure chez les Quéchuas', 'mon-aventure-chez-les-quechuas', 'J''ai passé une merveilleuse expérience durant ce séjour!', 12, 1, 1, 'carnets/mon-aventure-chez-les-quechuas/1428245992.jpg', 'false'),
-(2, '2015-03-05', 'true', 'Moi chez les péruviens', 'moi-chez-les-peruviens', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 15, 2, 1, 'carnets/moi-chez-les-peruviens/yaxhacoucherdesoleil.jpg', 'true'),
+(2, '2015-03-05', 'true', 'Moi chez les péruviens', 'moi-chez-les-peruviens', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 15, 2, 1, 'carnets/moi-chez-les-peruviens/yaxhacoucherdesoleil.jpg', 'false'),
 (3, '2015-03-05', 'true', 'Mon expérience Péruvienne', 'mon-experience-peruvienne', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'cdv1.jpg', 'false'),
 (4, '2015-03-05', 'true', 'Mon aventure au Pérou', 'mon-aventure-au-perou', 'Une destination magnifique,<br/>et une expérience de voyage inoubliable', 2, 2, 1, 'carnets/mon-aventure-au-perou/21.JPG', 'false'),
 (5, '2015-06-24', 'true', 'Immersion dans une culture oubliée', 'immersion-dans-une-culture-oubliee', 'Voyage à la découverte de la fascinante culture des Incas', 2, 2, 1, 'voyages/perou/banner-list.jpg', 'false'),
@@ -510,7 +510,34 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('608d95514987741222b118e089e1e328', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1439368506, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"1";s:3:"nom";s:4:"CAPI";s:6:"prenom";s:9:"Aurélien";s:5:"email";s:23:"capi.aurelien@gmail.com";s:11:"identifiant";s:6:"T4GAD4";s:3:"mdp";s:64:"11f8114ae7af9eb95f365e33205ef0bb1941451f4fe84282437b820a1e70784c";}}}');
+('14c96b05dbadb5eae53de173568b9525', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0', 1439415708, 'a:1:{s:9:"user_data";s:0:"";}');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `wa__test`
+--
+
+CREATE TABLE IF NOT EXISTS `wa__test` (
+  `idTest` int(11) NOT NULL AUTO_INCREMENT,
+  `titre` longtext NOT NULL,
+  `explication` longtext NOT NULL,
+  `categorie` longtext NOT NULL,
+  `testeur` longtext NOT NULL,
+  `statut` longtext NOT NULL,
+  `etat` longtext NOT NULL,
+  `commentaire` longtext NOT NULL,
+  PRIMARY KEY (`idTest`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Contenu de la table `wa__test`
+--
+
+INSERT INTO `wa__test` (`idTest`, `titre`, `explication`, `categorie`, `testeur`, `statut`, `etat`, `commentaire`) VALUES
+(1, 'test1', 'nkldnknldazn', 'Front office', 'Aurelien', '', 'Marche', 'test'),
+(2, 'test2', '', 'Front office', 'Aurelien', '', 'Bug', 'fazdzdzad'),
+(3, 'Tester le backoffice', 'zakdbzbkdjbzadkjbza', 'Back office', 'Aurelien', '', 'En cours de test', '');
 
 -- --------------------------------------------------------
 

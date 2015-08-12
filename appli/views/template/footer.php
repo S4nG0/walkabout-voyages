@@ -57,7 +57,7 @@
                         <hr>
                         <li>©&nbsp;Walkabout &bull; 2015</li><br />
                         <li><a href="<?php echo base_url(); ?>mentions">Mentions légales</a> &bull; </li>
-                        <li><a href="<?php echo base_url(); ?>conditions_generales_de_ventes">Conditions Générales de Vente</a></li>
+                        <li><a href="<?php echo base_url(); ?>conditions-generales-de-ventes">Conditions Générales de Vente</a></li>
                     </ul>
                 </div>
             </div>
