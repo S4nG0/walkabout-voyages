@@ -17,13 +17,7 @@
             <?php echo form_open('walkadmin/administrateur/modifier/'.$administrateur[0]->idAdministrateur) ?>
             <div class="row text-center">
                 <div class="col-md-4 col-md-offset-2">
-                    <div class="form-group required">
-                        <label for="identifiant">Identifiant</label>
-                        <div class="help-block">
-                            <span class="small">Obligatoire</span>
-                        </div>
-                        <input placeholder="Saississez votre texte" name="identifiant" type="text" value="<?php echo $administrateur[0]->identifiant; ?>">
-                        <?php echo form_error('identifiant'); ?>
+                    <div class="form-group">
                     </div>
                     <div class="form-group">
                         <label for="nom">Nom</label>
@@ -63,6 +57,7 @@
                     </div>
                 </div>
             </div>
+            <?php echo form_close(); ?>
 
             <div class="row">
                 <div class="col-sm-12">
@@ -70,7 +65,6 @@
                 </div>
             </div>
 
-            <?php echo form_close(); ?>
         </div>
     </div>
 </div>
