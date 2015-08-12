@@ -13,6 +13,7 @@ class Carnets extends CI_Controller{
         $data=array();
         $data['title'] = "Carnets de voyage";
         $this->db->where('publie <> "Suppr"');
+        $this->db->where('favoris <> "true"');
         $this->db->from('carnetdevoyage');
         $count = $this->db->count_all_results();
         /*Load des helpers et librairies*/
@@ -48,6 +49,11 @@ class Carnets extends CI_Controller{
         /*Création des variables de selection des carnets*/
         $start = ($page*$nb_articles)-$nb_articles;
 
+        $data['favoris'] = $this->carnetvoyage->getFavoris();
+        if($data['favoris'] != null){
+            $data['favoris'] = $data['favoris'][0];
+            $data['favoris']->user = $this->user->constructeur($data['favoris']->idUsers);
+        }
 
         $data['carnets'] = $this->carnetvoyage->get_carnet_pagination($start, $nb_articles);
         foreach($data['carnets'] as $carnet){

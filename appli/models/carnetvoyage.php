@@ -126,6 +126,7 @@ class Carnetvoyage extends CI_Model {
         $carnets = $this->db->select('*')
                            ->from($this->table)
                            ->where('publie', 'true')
+                           ->where('favoris <> "true"')
                            ->limit($nb, $start)
                            ->get()
                            ->result();
