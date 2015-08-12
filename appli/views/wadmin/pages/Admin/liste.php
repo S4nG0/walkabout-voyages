@@ -10,8 +10,10 @@
                 <div class="col-sm-12">
                     <div class="module__tools">
                         <div class="custom-search">
-                            <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
-                            <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                            <?php echo form_open('walkadmin/administrateur/recherche') ?>
+                                <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
+                                <button class="custom-search-button"><i class="fa fa-search"></i></button>
+                            <?php echo form_close() ?>
                         </div>
                         <a class="button black" href="<?php echo base_url().'walkadmin/administrateur/creer/' ;?>"><i class="fa fa-plus"></i>&nbsp;Ajouter</a>
                     </div>
@@ -49,6 +51,11 @@
                                 <?php } ?>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <?php echo $pagination; ?>
+                        </div>
                     </div>
                 </div>
             </div>
