@@ -47,7 +47,7 @@ class Commentaire extends CI_Controller {
                     $data['prenom'] = $this->session->userdata('user')[0]->prenom;
                     $data['email'] = $this->session->userdata('user')[0]->mail;
                 }else{
-                    $commentaire->idUsers = 3;
+                    $commentaire->idUsers = null;
                     $data['nom'] = $this->input->post('last-name');
                     $data['prenom'] = $this->input->post('first-name');
                     $data['email'] = $this->input->post('email');

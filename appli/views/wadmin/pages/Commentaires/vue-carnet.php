@@ -14,9 +14,9 @@
                             <div class="carnets__commentaire">
                                 <div class="commentaire__content">
                                     <div class="profile-picture">
-                                        <img src="<?php echo img_url($commentaire->photo); ?>" alt="Photo membre">
+                                        <img src="<?php echo img_url($commentaire->user->photo); ?>" alt="Photo membre">
                                     </div>
-                                    <h3><?php echo ucfirst(mb_strtolower($commentaire->prenom)).' '.ucfirst(mb_strtolower($commentaire->nom)); ?></h3>
+                                    <h3><?php echo ucfirst(mb_strtolower($commentaire->user->prenom)).' '.ucfirst(mb_strtolower($commentaire->user->nom)); ?></h3>
                                     <p class="published">Enregistré le&nbsp;<?php echo $commentaire->date; ?></p>
                                     <p><?php echo $commentaire->texte; ?></p>
                                     <?php if($commentaire->modere != "suppr"){ ?>

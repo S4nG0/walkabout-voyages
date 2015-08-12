@@ -47,7 +47,7 @@
                                 <div class="commentaire__content">
                                     <h4><span>Commentaire par&nbsp;:&nbsp;</span><?php echo ucfirst(mb_strtolower($commentaire->user->nom)).' '.ucfirst(mb_strtolower($commentaire->user->prenom)); ?></h4>
                                     <p class="published">Publié le&nbsp;<?php echo $commentaire->date; ?></p>
-                                    <?php if ($commentaire->data != '') { ?>
+                                    <?php if ($commentaire->idUsers == null) { ?>
                                     <p class="small denied"><i class="fa fa-remove"></i>&nbsp;L'utilisateur n'est pas un membre du site</p>
                                     <?php } else { ?>
                                     <p class="small check"><i class="fa fa-check"></i>&nbsp;Membre Walkabout</p>

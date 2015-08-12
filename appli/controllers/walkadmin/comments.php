@@ -70,7 +70,14 @@ class Comments extends CI_Controller {
 
         $data['commentaires'] = $this->commentaires->getCommentairesStatut($data['publie'],$nb_commentaires,$start);
         foreach($data['commentaires'] as $commentaire){
-            $commentaire->user = $this->user->constructeur($commentaire->idUsers)[0];
+            if($commentaire->idUsers == null){
+                $commentaire->user = new stdClass();
+                $commentaire->user->nom = json_decode($commentaire->data)->nom;
+                $commentaire->user->prenom = json_decode($commentaire->data)->prenom;
+                $commentaire->user->email = json_decode($commentaire->data)->email;
+            }else{
+                $commentaire->user = $this->user->constructeur($commentaire->idUsers)[0];
+            }
             $commentaire->carnet = $this->carnetvoyage->constructeur($commentaire->idCarnet)[0];
         }
 
@@ -91,13 +98,23 @@ class Comments extends CI_Controller {
         redirect($_SERVER['HTTP_REFERER']);
     }
 
-    public function carnet($idCommentaire = 0){
+    public function carnet($idCarnet = 0){
         connecte_admin($this->session->userdata('admin'));
-        if($idCommentaire == 0)
+        if($idCarnet == 0)
             redirect('walkadmin/comments');
-        $commentaire = $this->commentaires->get($idCommentaire)[0];
-        $data['carnet'] = $this->carnetvoyage->constructeur($commentaire->idCarnet)[0];
-        $data['carnet']->commentaires = $this->commentaires->getAllFromCarnet($data['carnet']->idCarnetDeVoyage);
+        $data['carnet'] = $this->carnetvoyage->constructeur($idCarnet)[0];
+        $data['carnet']->commentaires = $this->commentaires->getAllFromCarnet($idCarnet);
+        foreach($data['carnet']->commentaires as $commentaire){
+            if($commentaire->idUsers == null){
+                $commentaire->user = new stdClass();
+                $commentaire->user->nom = json_decode($commentaire->data)->nom;
+                $commentaire->user->prenom = json_decode($commentaire->data)->prenom;
+                $commentaire->user->email = json_decode($commentaire->data)->email;
+                $commentaire->user->photo = "unsigned_user.jpg";
+            }else{
+                $commentaire->user = $this->user->constructeur($commentaire->idUsers)[0];
+            }
+        }
         $data['title'] = "Commentaires - Carnet";
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);

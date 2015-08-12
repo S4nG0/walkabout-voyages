@@ -31,7 +31,6 @@ class Commentaires extends CI_Model {
         $commentaires = $this->db->select('*')
                            ->from($this->table)
                            ->where('idCarnet', $id)
-                           ->join('users','users.idUsers=commentaires.idUsers')
                            ->order_by('idCommentaires','ASC')
                            ->get()
                            ->result();

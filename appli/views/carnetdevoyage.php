@@ -23,7 +23,7 @@
                     <div class="row noPadding">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="profile-picture">
-                                <img src="<?php echo img_url($user[0]->photo); ?>" alt="Profil" />
+                                <img src="<?php echo img_url($user->photo); ?>" alt="Profil" />
                             </div>
 
                             <h1 class="no-sep">
@@ -42,7 +42,7 @@
                     <div class="bottom-wrapper">
                         <div class="col-xs-12 col-sm-4 col-md-4 details">
                             <span class="author">
-                                <a href="<?php echo base_url() . 'utilisateur/' . $user[0]->slug; ?>"><?php echo ucfirst(mb_strtolower($user[0]->prenom)) . ' ' . ucfirst(mb_strtolower($user[0]->nom)) ?></a>
+                                <a href="<?php echo base_url() . 'utilisateur/' . $user->slug; ?>"><?php echo ucfirst(mb_strtolower($user->prenom)) . ' ' . ucfirst(mb_strtolower($user->nom)) ?></a>
                             </span>
                             <span class="bull">&bull;</span>
                             <span class="location">
@@ -108,17 +108,19 @@
         <!-- Comment -->
         <?php
         foreach ($commentaires as $key => $commentaire) {
-            if($commentaire->idUsers == 3){
+            if($commentaire->idUsers == null){
+                $commentaire->user = new stdClass();
                 $data = json_decode($commentaire->data, true);
-                $commentaire->user[0]->prenom = $data['prenom'];
-                $commentaire->user[0]->nom = $data['nom'];
+                $commentaire->user->prenom = $data['prenom'];
+                $commentaire->user->nom = $data['nom'];
+                $commentaire->user->photo = "unsigned_user.jpg";
             }
             echo '<section class="comment">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-2 col-md-2 col-md-offset-2">
                             <div class="profile-picture">
-                                <img src="' . img_url($commentaire->user[0]->photo) . '" alt="Profile">
+                                <img src="' . img_url($commentaire->user->photo) . '" alt="Profile">
                             </div>
                         </div>
 
@@ -126,9 +128,13 @@
                             <div class="comment--content">
                                 <div class="arrow"></div>
                                 <div class="row">
-                                    <div class="col-sm-12">
-                                        <span class="username"><a href="'.base_url().'utilisateur/'.$commentaire->user[0]->slug.'">' . ucfirst(mb_strtolower($commentaire->user[0]->prenom)) . ' ' . ucfirst(mb_strtolower($commentaire->user[0]->nom)) . '</a></span>
-                                        <span class="bull">&bull;</span>
+                                    <div class="col-sm-12">';
+            
+            if($commentaire->idUsers != null){ echo '<span class="username"><a href="'.base_url().'utilisateur/'.$commentaire->user->slug.'">' . ucfirst(mb_strtolower($commentaire->user->prenom)) . ' ' . ucfirst(mb_strtolower($commentaire->user->nom)) . '</a></span>';}
+            else{
+                echo '<span class="username"><a href="#">' . ucfirst(mb_strtolower($commentaire->user->prenom)) . ' ' . ucfirst(mb_strtolower($commentaire->user->nom)) . '</a></span>';
+            }
+                echo '                        <span class="bull">&bull;</span>
                                         <span class="published">Publié le ' . $commentaire->date . '</span>
                                         <p>
                                             ' . $commentaire->texte . '
