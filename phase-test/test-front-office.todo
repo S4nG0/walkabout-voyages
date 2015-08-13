@@ -80,3 +80,25 @@ Mission 1 Client réticent:
   ☐ Il va changer son adresse par 146 rue nationale 59000 Lille
   ☐ Il va réserver pour 5 personnes.
   ☐ Et vu le prix important, il décide de faire retour jusqu'à l'annulation de la commmande.
+
+Mission 2: @Steph et les mots de passe:
+  ☐ Stephane a oublié son mon de passe -> espace de connexion
+  ☐ Cliquez sur Vous avez oublié votre mot de passe
+  ☐ Steph a reçu son nouveau mot de passe par mail
+  ☐ Il se connecte à son espace de voyageur
+  ☐ Ensuite il se dirige vers mes informations pour changer le mot de passe
+  ☐ rentrer comme nouveau mot de passe "s.mignot"
+  ☐ Ensuite déconnexion pour reconnexion avec le mot de passe "s.mignot"
+
+Mission 3: Les anonymous:
+  ☐ Vous venez de rentrer dans une célèbre communauté de hackeurs "Les anonymous". Pour cette mission, vous êtes chargé de hacker les données du site walkabout-voyages, et si possible de mettre le site down. Des indices vous seront donnés pour cette progression.
+  Hack d'un compte voyageur:
+    ☐ Dans l'espace connexion, entrez dans le champs email votre adresse mail suivi de " ' OR 1=1--" et ce que vous voulez en mot de passe.
+  Hack des adresses url:
+    ☐ Relever les urls dans l'espace voyageurs, et rentrer les dans la barre d'adresse en étant déconnecter!!!
+
+Mission 4: Partage de mon expérience:
+  ☐ De retour de son voyage George déside de faire partager son expérience aux autres.
+  ☐ Aller sur l'espace de connexion et se connecter
+  ☐ Ensuite créer un carnet de voyage sous le "partage de mon expérience au pérou"
+  ☐ 
