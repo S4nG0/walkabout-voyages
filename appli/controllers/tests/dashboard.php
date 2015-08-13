@@ -23,6 +23,7 @@ class Dashboard extends CI_Controller {
         $this->load->model('test');
         $data['front'] = $this->test->getFront();
         $data['back'] = $this->test->getBack();
+        $data['missions'] = $this->test->getMissions();
         
         $this->load->view('tests/dashboard',$data);
         
@@ -68,6 +69,48 @@ class Dashboard extends CI_Controller {
             $test = new StdClass();
             $test->etat = $this->input->post('etat');
             $test->commentaire = $this->input->post('explication');
+            
+            //Upload des photos
+            //On défii le chemin d'upload des photos
+            $upload_path2 = 'assets/images/tests/';
+
+            //On vérifie si le dossier d'upload existe et si non on le crée
+            if (!file_exists($upload_path2)) {
+                //Création du dossier pour le carnet
+                if(!mkdir($upload_path2,0777,true)){
+                    echo 'erreur lors de la création du dossier!';
+                }
+            }
+
+            $config =  array(
+                'upload_path'     => $upload_path2,
+                'allowed_types'   => "gif|jpg|png|jpeg",
+                'overwrite'       => TRUE
+            );
+
+            //On initialise la librairie
+            $this->upload->initialize($config);
+            $files = $_FILES['images'];
+            var_dump($files);
+            $cpt = count($_FILES['images']['name']);
+            $chaine = "";
+            for($i=0; $i<$cpt; $i++)
+            {
+                $_FILES['images']['name']= $files['name'][$i];
+                $_FILES['images']['type']= $files['type'][$i];
+                $_FILES['images']['tmp_name']= $files['tmp_name'][$i];
+                $_FILES['images']['error']= $files['error'][$i];
+                $_FILES['images']['size']= $files['size'][$i];
+
+                if($this->upload->do_upload('images')) {
+                    $chaine .= 'tests/'.$this->upload->data()['file_name'].';';
+                }else{
+                    var_dump($this->upload->display_errors());
+                }
+            }
+            
+            $test->statut = $chaine;
+            
             $this->test->modify($test,$this->input->post('idTest'));
         } 
         redirect('tests/');

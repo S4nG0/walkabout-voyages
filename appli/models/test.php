@@ -42,6 +42,16 @@ class Test extends CI_Model {
         return $tests;
     }
     
+    public function getMissions(){        
+        $tests = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('categorie', 'Mission')
+                           ->get()
+                           ->result();
+        
+        return $tests;
+    }
+    
     public function insert($data=''){
         if($data=='')
             return false;
