@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="<?php echo css_url('metisMenu.min'); ?>">
     <link rel="stylesheet" href="<?php echo css_url('fancybox'); ?>">
 
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Dosis:400,300,600,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?php echo css_url('global'); ?>">
 
