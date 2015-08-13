@@ -1,11 +1,17 @@
-Tests :
-
+Connexion :
  ☐ Faire des erreurs de connexion à la connexion
  ☐ Demander un nouveau mot de passe
- ☐ Se connecter normalement
+ ☐ Se connecter normalement avec son identifiant
+ ☐ Se connecter normalement avec son adresse mail
+Menu:
  ☐ Vérifier tout les liens du menu vertical et horizontal (sauf deconnexion)
- ☐ Créer un pays sans remplir tout les champs afin de générer des erreurs puis en remplissant tout les champs
- ☐ Vérifier que les pays créés s'affichent bien sur la carte
+ ☐ Se déconnecter
+ Dashboard:
+ ☐ Tester les liens du tableau de bord
+ ☐ Tester la véracité des graphique
+  Reservations:
+ ☐ Tester les réservations (modification d'un statut, filtres)
+ Destinations:
  ☐ Créer une destination sans remplir tout les champs afin de générer des erreurs puis en remplissant tout les champs
  ☐ Rechercher une destination
  ☐ Créer 5 voyages sur une destination
@@ -23,11 +29,39 @@ Tests :
  ☐ Modifier les valeurs dans les pictos
  ☐ Modifier le pays et la ville plus les localisation
  ☐ Modifier le texte de présentation de la destination
+ ☐ Restaurer une destination
+Pays: 
+ ☐ Créer un pays sans remplir tout les champs afin de générer des erreurs puis en remplissant tout les champs
+ ☐ Vérifier que les pays créés s'affichent bien sur la carte
  ☐ Modifier les informations d'un pays
+Modération:
+   Carnets:
+     ☐ Définir un carnet phare
+     ☐ Faire un aperçu d'un carnet
+     ☐ Supprimer un carnet de voyage
+     ☐ Faire une recherche d'un carnet de voyage
+     ☐ Restaurer un carnet de voyage depuis la corbeille
+ Modération:
+   Articles:
+      ☐ Tester la pagination des articles
+      ☐ Modifier l'etat d'un article
+      ☐ Supprimer un article
+      ☐ Restaurer un article depuis la corbeille
+      ☐ Effectuer une recherche d'article
+      ☐ En lire plus sur l'article
+Modération:
+   Commentaires:
+     ☐ Tester les différents filtres
+     ☐ Voir tous les commentaires pour un carnet
+     ☐ Mettre un commentaire en indésirable
+     ☐ Restaurer un commentaire
+     ☐ Rechercher un commentaire
+ Actus:
  ☐ Créer une actualité
  ☐ Rechercher une actualité
  ☐ Modifier l'image une actualité
  ☐ Modifier le contenu d'une actualité ( titre,texte et bouton)
+ Administration: 
  ☐ @ALEX Créer un administrateur (Steph)
  ☐ @Steph Créer un administrateur (Céline)
  ☐ @Céline Supprimer un administrateur (Alex) et le recréer
@@ -37,14 +71,9 @@ Tests :
  ☐ Voir les détails d'un membre
  ☐ Désactiver un membre
  ☐ Activer un membre
+ Contacts: 
  ☐ Tester le système des demandes ( changement de boite de reception, répondre par mail, Recherche)
- ☐ Tester les réservations (modification d'un statut, filtres)
- ☐ Tester les liens du tableau de bord
- ☐ Tester la véracité des graphique
- ☐ Restaurer une destination
- ☐ Se déconnecter
-
-
+ ☐ Tester chaque collapse lorsqu'il y a plusieurs demandes.
 
 
 
