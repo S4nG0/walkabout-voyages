@@ -19,6 +19,7 @@ Destination :
  ☐ Tester la demande d'information par rapport à la destination.
  ☐ Tester la demande de création dans la popup de demande d'information.
  ☐ Vérifier la conformité des informations des dates et des prix.
+ ☐ Vérifier sur le front que les destinations supprimés ne s'affichent pas et assayer d'accéder a l'url de cette destination
 
 Carnet de voyage :
  ☐ Tester de poster un commentaire en tant qu'anonyme
@@ -63,3 +64,14 @@ Mon compte :
  ☐ Essayer les différents modes de paiement.
  ☐ Afficher les conditions générales de vente (popup).
  ☐ Tester la finalisation de la commande.
+
+Mission 1 Client réticent:
+  ☐ Aller sur la page nos destinations.
+  ☐ Ensuite le client souhaite aller a la decouverte des quechuas du perou
+  ☐ Le client décide de reserver ma place pour le Départ : 13 Juillet 2016 •  Retour : 11 Novembre 2016
+  ☐ Il est nouveau sur le site walkabout et décide de créer un compte.
+  ☐ Une fois la manipulation faite, il se connecte directement. (blocage compte non activé)
+  ☐ Il active son compte avec le lien reçu dans son email.
+  ☐ Il va changer son adresse par 146 rue nationale 59000 Lille
+  ☐ Il va réserver pour 5 personnes. 
+  ☐ Et vu le prix important, il décide de faire retour jusqu'à l'annulation de la commmande.
