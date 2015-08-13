@@ -1,0 +1,39 @@
+Géneralité :
+ ☐ Tester les mentions légales et les conditions générales de vente
+
+Home-page :
+  ☐ Tester l'inscription à la newsletter présente dans le footer
+  ☐ Tester le défilement des carnets de voyages 
+  ☐ Tester l'accés à l'espace utilisateur dans la liste des carnet (nom de la personne)
+  ☐ Vérification du lien vers notre esprit
+  ☐ Vérifier l'intégrité des actus présents
+  ☐ Redirection des destinations sur la carte @Bug @solutionEnCours
+
+Destination :
+ ☐ Vérifier que les carnets correspondent à la destination choisie
+ ☐ Google maps pour la localisation @bug Google Api
+ ☐ Tester le zoom des images dans la page de la destination.
+ ☐ Tester la réservation du voyage.
+ ☐ Possibilité de feuilleter un carnet. 
+ ☐ Tester le partage de la destination avec vos amis.
+ ☐ Tester la demande d'information par rapport à la destination.
+ ☐ Tester la demande de création dans la popup de demande d'information.
+ ☐ Vérifier la conformité des informations des dates et des prix.
+
+Carnet de voyage :
+ ☐ Tester de poster un commentaire en tant qu'anonyme
+ ☐ Tester de poster un commentaire en utilisant votre compte
+
+ Notre esprit :
+ ☐ Tester de la découverte de nos destination.
+ ☐ Tester d'explorer les carnets de voyages.
+
+Nos actualités :
+☐ Vérifier l'intégrité des liens des actus.
+
+Nous contacter :
+ ☐ Effectuer des tests en remplissant pas tout les champs ou en erronant des champs (ex l'adresse mail ou aucun sujet).
+
+Se connecter :
+☐ Envoyer des informations incorrecte lors de la demande de connexion.
+☐ Tester la récupération de mot de passe. Vous receverez un mail 

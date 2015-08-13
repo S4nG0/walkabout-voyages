@@ -1,39 +1,61 @@
-Géneralité :
- ☐ Tester les mentions légales et les conditions générales de vente
+Tests :
 
-Home-page :
-  ☐ Tester l'inscription à la newsletter présente dans le footer
-  ☐ Tester le défilement des carnets de voyages 
-  ☐ Tester l'accés à l'espace utilisateur dans la liste des carnet (nom de la personne)
-  ☐ Vérification du lien vers notre esprit
-  ☐ Vérifier l'intégrité des actus présents
-  ☐ Redirection des destinations sur la carte @Bug @solutionEnCours
+ ☐ Faire des erreurs de connexion à la connexion
+ ☐ Demander un nouveau mot de passe
+ ☐ Se connecter normalement
+ ☐ Vérifier tout les liens du menu vertical et horizontal (sauf deconnexion)
+ ☐ Créer un pays sans remplir tout les champs afin de générer des erreurs puis en remplissant tout les champs
+ ☐ Vérifier que les pays créés s'affichent bien sur la carte
+ ☐ Créer une destination sans remplir tout les champs afin de générer des erreurs puis en remplissant tout les champs
+ ☐ Rechercher une destination
+ ☐ Créer 5 voyages sur une destination
+ ☐ Rechercher un voyage
+ ☐ Supprimer un voyage
+ ☐ Modifier le prix d'un voyage
+ ☐ Modifier les dates d'un voyage
+ ☐ Modifier le nombre de personnes autorisés
+ ☐ Modifier le détail de prix d'un voyage (suppression et ajout)
+ ☐ Supprimer une destination
+ ☐ Modifier le titre d'une destination
+ ☐ Modifier la photo de couverture
+ ☐ Modifier les photos la gallerie
+ ☐ Modifier le déroulement du voyage de la destination (accompagnement, manger, deroulement, ...)
+ ☐ Modifier les valeurs dans les pictos
+ ☐ Modifier le pays et la ville plus les localisation
+ ☐ Modifier le texte de présentation de la destination
+ ☐ Modifier les informations d'un pays
+ ☐ Créer une actualité
+ ☐ Rechercher une actualité
+ ☐ Modifier l'image une actualité
+ ☐ Modifier le contenu d'une actualité ( titre,texte et bouton)
+ ☐ @ALEX Créer un administrateur (Steph)
+ ☐ @Steph Créer un administrateur (Céline)
+ ☐ @Céline Supprimer un administrateur (Alex) et le recréer
+ ☐ Modifier les information de son compte administrateur
+ ☐ Rechercher un administrateur
+ ☐ Rechercher un membre Walkabout
+ ☐ Voir les détails d'un membre
+ ☐ Désactiver un membre
+ ☐ Activer un membre
+ ☐ Tester le système des demandes ( changement de boite de reception, répondre par mail, Recherche)
+ ☐ Tester les réservations (modification d'un statut, filtres)
+ ☐ Tester les liens du tableau de bord
+ ☐ Tester la véracité des graphique
+ ☐ Restaurer une destination
+ ☐ Se déconnecter
 
-Destination :
- ☐ Vérifier que les carnets correspondent à la destination choisie
- ☐ Google maps pour la localisation @bug Google Api
- ☐ Tester le zoom des images dans la page de la destination.
- ☐ Tester la réservation du voyage.
- ☐ Possibilité de feuilleter un carnet. 
- ☐ Tester le partage de la destination avec vos amis.
- ☐ Tester la demande d'information par rapport à la destination.
- ☐ Tester la demande de création dans la popup de demande d'information.
- ☐ Vérifier la conformité des informations des dates et des prix.
 
-Carnet de voyage :
- ☐ Tester de poster un commentaire en tant qu'anonyme
- ☐ Tester de poster un commentaire en utilisant votre compte
 
- Notre esprit :
- ☐ Tester de la découverte de nos destination.
- ☐ Tester d'explorer les carnets de voyages.
 
-Nos actualités :
-☐ Vérifier l'intégrité des liens des actus.
 
-Nous contacter :
- ☐ Effectuer des tests en remplissant pas tout les champs ou en erronant des champs (ex l'adresse mail ou aucun sujet).
-
-Se connecter :
-☐ Envoyer des informations incorrecte lors de la demande de connexion.
-☐ Tester la récupération de mot de passe. Vous receverez un mail 
+Missions :
+  Mission 1 :
+    Parcours sans faute :
+      ☐ Se connecter à l'administration
+      ☐ Créer Le Groenland
+      ☐ Vérifier qu'il s'affiche bien sur la carte
+      ☐ Créer une destination pour Nuuk (Capitale du Groenland)
+      ☐ Créer sur cette destination 5 voyages
+      ☐ Supprimer un voyage sur 5
+      ☐ Modifier le prix du voyage 3
+      ☐ Modifier les dates du voyage 2
