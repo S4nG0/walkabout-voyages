@@ -19,7 +19,7 @@
                 </div>
             <?php } ?>
 
-            <?php echo form_open('tests/add'); ?>
+            <?php echo form_open_multipart('tests/add'); ?>
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
                         <div class="form-group col-md-12">
@@ -45,6 +45,14 @@
                           <label for="explication">Descriptif du test</label>
                           <textarea name="explication" class="form-control" rows="5"></textarea>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="help-block">
+                            <span class="small">Vous pouvez ajouter plusieurs photos, une par une.</span>
+                        </div>
+                        <input class="custom-file-input" name="images[]" type="file" multiple>
                     </div>
                 </div>
                 <div class="row">
