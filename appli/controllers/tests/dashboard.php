@@ -20,6 +20,21 @@ class Dashboard extends CI_Controller {
     public function index()
     {
         $data = array();
+        $this->db->where('etat','A tester');
+        $this->db->from('test');
+        $data['count_1'] = $this->db->count_all_results();
+        $this->db->where('etat','En cours de test');
+        $this->db->from('test');
+        $data['count_2'] = $this->db->count_all_results();
+        $this->db->where('etat','Marche');
+        $this->db->from('test');
+        $data['count_3'] = $this->db->count_all_results();
+        $this->db->where('etat','Bug');
+        $this->db->from('test');
+        $data['count_4'] = $this->db->count_all_results();
+        $this->db->where('etat','Marche pas');
+        $this->db->from('test');
+        $data['count_5'] = $this->db->count_all_results();
         $this->load->model('test');
         $data['front'] = $this->test->getFront();
         $data['back'] = $this->test->getBack();

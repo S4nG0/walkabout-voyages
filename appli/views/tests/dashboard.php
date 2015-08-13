@@ -48,19 +48,19 @@
             </div>
             <div class="row" style="font-size:18px;text-align:center;">
                 <div class="col-md-2">
-                    <p><span class="glyphicon glyphicon-alert" style="color:grey;"></span> A tester</p>
+                    <p><span class="glyphicon glyphicon-alert" style="color:grey;"></span> A tester <br/><span class="badge"><?php echo $count_1;?></span></span></p>
                 </div>
                 <div class="col-md-2">
-                    <p><span class="glyphicon glyphicon-refresh" style="color:darkslategrey;"></span> En test</p>
+                    <p><span class="glyphicon glyphicon-refresh" style="color:darkslategrey;"></span> En test <br/><span class="badge"><?php echo $count_2;?></span></p>
                 </div>
                 <div class="col-md-3">
-                    <p><span class="glyphicon glyphicon-thumbs-up" style="color:green;"></span> Marche très bien</p>
+                    <p><span class="glyphicon glyphicon-thumbs-up" style="color:green;"></span> Marche très bien <br/><span class="badge"><?php echo $count_3;?></span></p>
                 </div>
                 <div class="col-md-2">
-                    <p><span class="glyphicon glyphicon-alert" style="color:orange;"></span> Bug sur ce test</p>
+                    <p><span class="glyphicon glyphicon-alert" style="color:orange;"></span> Bug sur ce test <br/><span class="badge"><?php echo $count_4;?></span></p>
                 </div>
                 <div class="col-md-3">
-                    <p><span class="glyphicon glyphicon-fire" style="color:red;padding-right:20px;"></span> Ne marche pas</p>
+                    <p><span class="glyphicon glyphicon-fire" style="color:red;padding-right:20px;"></span> Ne marche pas <br/><span class="badge"><?php echo $count_5;?></span></p>
                 </div>
             </div>
             <br/><br/>
