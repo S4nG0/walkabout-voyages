@@ -30,7 +30,7 @@ Menu:
  ☐ Modifier le pays et la ville plus les localisation
  ☐ Modifier le texte de présentation de la destination
  ☐ Restaurer une destination
-Pays: 
+Pays:
  ☐ Créer un pays sans remplir tout les champs afin de générer des erreurs puis en remplissant tout les champs
  ☐ Vérifier que les pays créés s'affichent bien sur la carte
  ☐ Modifier les informations d'un pays
@@ -61,7 +61,7 @@ Modération:
  ☐ Rechercher une actualité
  ☐ Modifier l'image une actualité
  ☐ Modifier le contenu d'une actualité ( titre,texte et bouton)
- Administration: 
+ Administration:
  ☐ @ALEX Créer un administrateur (Steph)
  ☐ @Steph Créer un administrateur (Céline)
  ☐ @Céline Supprimer un administrateur (Alex) et le recréer
@@ -71,13 +71,14 @@ Modération:
  ☐ Voir les détails d'un membre
  ☐ Désactiver un membre
  ☐ Activer un membre
- Contacts: 
+ Contacts:
  ☐ Tester le système des demandes ( changement de boite de reception, répondre par mail, Recherche)
  ☐ Tester chaque collapse lorsqu'il y a plusieurs demandes.
 
 
 
 Missions :
+
   Mission 1 :
     Parcours sans faute :
       ☐ Se connecter à l'administration
@@ -88,3 +89,46 @@ Missions :
       ☐ Supprimer un voyage sur 5
       ☐ Modifier le prix du voyage 3
       ☐ Modifier les dates du voyage 2
+
+  Mission 2 :
+    Le serial killer :
+      ☐ Se connecter à l'administration
+      ☐ Supprimer un voyage
+      ☐ Supprimer une destination
+      ☐ Supprimer un pays
+      ☐ Supprimer un administrateur
+      ☐ Supprimer un utilisateur
+      ☐ Supprimer un carnet
+      ☐ Supprimer un article
+      ☐ Supprimer un commentaire
+      ☐ Supprimer une actualité
+
+  Mission 3 :
+    Je suis Jésus :
+      ☐ Se connecter à l'administration
+      ☐ Créer un voyage
+      ☐ Créer une destination
+      ☐ Créer un pays
+      ☐ Créer un administrateur
+      ☐ Créer un utilisateur
+      ☐ Créer un carnet
+      ☐ Créer un article
+      ☐ Créer un commentaire
+
+ Mission 4 :
+    Le necrophile :
+      Deterrer = Restaurer/Activer
+      ☐ Se connecter à l'administration
+      ☐ Déterrer une destination
+      ☐ Déterrer un commentaire
+      ☐ Déterrer un utilisateur mort
+      ☐ Déterrer un article
+
+ Mission 5 :
+    Le Jean-Pierre Pernaut :
+      ☐ Se connecter à l'administration
+      ☐ Ajouter 3 actualites avec photos et boutons
+
+ Mission 6 :
+    Le voyeur :
+      ☐ Tester l'administration et son responsive design sur tout les navigateurs et appareils possible (chrome, Firefox, IE, Edge, Tablette, Smartphone, Pc portable, PC tour)
