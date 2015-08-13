@@ -3,27 +3,27 @@ Géneralité :
 
 Home-page :
   ☐ Tester l'inscription à la newsletter présente dans le footer
-  ☐ Tester le défilement des carnets de voyages 
+  ☐ Tester le défilement des carnets de voyages
   ☐ Tester l'accés à l'espace utilisateur dans la liste des carnet (nom de la personne)
   ☐ Vérification du lien vers notre esprit
   ☐ Vérifier l'intégrité des actus présents
   ☐ Redirection des destinations sur la carte
 
 Destination :
- ☐ Vérifier que les carnets correspondent à la destination choisie
+ ☐ Vérifier que les carnets aleatoires correspondent à la destination choisie
  ☐ Google maps pour la localisation
  ☐ Tester le zoom des images dans la page de la destination.
- ☐ Tester la réservation du voyage.
- ☐ Possibilité de feuilleter un carnet. 
+ ☐ Possibilité de feuilleter un carnet.
  ☐ Tester le partage de la destination avec vos amis.
- ☐ Tester la demande d'information par rapport à la destination.
- ☐ Tester la demande de création dans la popup de demande d'information.
- ☐ Vérifier la conformité des informations des dates et des prix.
- ☐ Vérifier sur le front que les destinations supprimés ne s'affichent pas et assayer d'accéder a l'url de cette destination
+ ☐ Tester la demande d'information par rapport à la destination sans création de compte puis avec.
+ ☐ Tester la création de compte.
+ ☐ Vérifier sur le front que les destinations supprimés ne s'affichent pas et essayer d'accéder a l'url de cette destination
 
 Carnet de voyage :
  ☐ Tester de poster un commentaire en tant qu'anonyme
  ☐ Tester de poster un commentaire en utilisant votre compte
+ ☐ Tester l'accés a tout les carnets depuis cette page ( bouton tout les carnets)
+ ☐ Tester les collapse des articles
 
  Notre esprit :
   ☐ Tester de la découverte de nos destination.
@@ -33,7 +33,7 @@ Nos actualités :
  ☐ Vérifier l'intégrité des liens des actus.
 
 Nous contacter :
-  ☐ Effectuer des tests en remplissant pas tout les champs ou en erronant des champs (ex l'adresse mail ou aucun sujet).
+  ☐ Effectuer des tests en remplissant pas tout les champs ou en erronant des champs (ex l'adresse mail ou aucun sujet, captcha incorrect).
 
 Se connecter :
  ☐ Envoyer des informations incorrecte lors de la demande de connexion.
@@ -45,25 +45,30 @@ Mon compte :
  ☐ Possibilité de feuilleter ses carnets depuis son mur.
  ☐ Changer la photo de son mur.
  ☐ Créer un carnet de voyage.
- ☐ Modifier un article.
+ ☐ Modifier un article (ajouter photo, supprimer photo, mettre en forme le texte : citations, gras, italique, ...).
  ☐ Ajouter un article.
  ☐ Supprimer un article.
  ☐ Changer l'image de couverture du carnet.
- ☐ Changer les renseignement de votre compte mot de passe, newsletter et photo depuis l'onglet "mes informations".
+ ☐ Changer les renseignement de votre compte : mot de passe, newsletter et photo depuis l'onglet "mes informations".
+ ☐ Vérifier que les commandes s'affichent bien sur le compte
 
- Espace de paiement :
+ Réservations :
  ☐ Tester chaque retour dans les différentes étapes du tunnel de commande.
  ☐ Tester l'annulation de la commande.
+ ☐ Vérifier la conformité des informations des dates et des prix (dates de départ pas inférieur a la date actuelle).
  ☐ Tester la création de compte avec une adresse mail déjà existante.
  ☐ Tester la création de compte avec une nouvelle adresse mail.
+ ☐ Tester la création de compte avec des champs mals remplis
  ☐ Tester l'oubli du mot de passe. Vous receverez un mail indiquant votre nouveau mot de passe.
  ☐ Identification lorsque vous êtes connecté et non connecté
- ☐ Tester le changement d'adresse lors de la 3eme étapes
+ ☐ Tester le changement d'adresse lors de la 3eme étape
  ☐ Tester de modifier le nombre de participant dans la dernière étape.
  ☐ Tester de rentrer un nombre supérieur au nombre de place restante.
  ☐ Essayer les différents modes de paiement.
  ☐ Afficher les conditions générales de vente (popup).
  ☐ Tester la finalisation de la commande.
+
+
 
 Mission 1 Client réticent:
   ☐ Aller sur la page nos destinations.
@@ -73,5 +78,5 @@ Mission 1 Client réticent:
   ☐ Une fois la manipulation faite, il se connecte directement. (blocage compte non activé)
   ☐ Il active son compte avec le lien reçu dans son email.
   ☐ Il va changer son adresse par 146 rue nationale 59000 Lille
-  ☐ Il va réserver pour 5 personnes. 
+  ☐ Il va réserver pour 5 personnes.
   ☐ Et vu le prix important, il décide de faire retour jusqu'à l'annulation de la commmande.
