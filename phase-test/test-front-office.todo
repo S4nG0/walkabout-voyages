@@ -7,11 +7,11 @@ Home-page :
   ☐ Tester l'accés à l'espace utilisateur dans la liste des carnet (nom de la personne)
   ☐ Vérification du lien vers notre esprit
   ☐ Vérifier l'intégrité des actus présents
-  ☐ Redirection des destinations sur la carte @Bug @solutionEnCours
+  ☐ Redirection des destinations sur la carte
 
 Destination :
  ☐ Vérifier que les carnets correspondent à la destination choisie
- ☐ Google maps pour la localisation @bug Google Api
+ ☐ Google maps pour la localisation
  ☐ Tester le zoom des images dans la page de la destination.
  ☐ Tester la réservation du voyage.
  ☐ Possibilité de feuilleter un carnet. 
@@ -25,15 +25,41 @@ Carnet de voyage :
  ☐ Tester de poster un commentaire en utilisant votre compte
 
  Notre esprit :
- ☐ Tester de la découverte de nos destination.
- ☐ Tester d'explorer les carnets de voyages.
+  ☐ Tester de la découverte de nos destination.
+  ☐ Tester d'explorer les carnets de voyages.
 
 Nos actualités :
-☐ Vérifier l'intégrité des liens des actus.
+ ☐ Vérifier l'intégrité des liens des actus.
 
 Nous contacter :
- ☐ Effectuer des tests en remplissant pas tout les champs ou en erronant des champs (ex l'adresse mail ou aucun sujet).
+  ☐ Effectuer des tests en remplissant pas tout les champs ou en erronant des champs (ex l'adresse mail ou aucun sujet).
 
 Se connecter :
-☐ Envoyer des informations incorrecte lors de la demande de connexion.
-☐ Tester la récupération de mot de passe. Vous receverez un mail 
+ ☐ Envoyer des informations incorrecte lors de la demande de connexion.
+ ☐ Tester la récupération de mot de passe. Vous receverez un mail indiquant votre nouveau mot de passe.
+
+Mon compte :
+ ☐ Modification de l'image de profil.
+ ☐ Acceder à son mur.
+ ☐ Possibilité de feuilleter ses carnets depuis son mur.
+ ☐ Changer la photo de son mur.
+ ☐ Créer un carnet de voyage.
+ ☐ Modifier un article.
+ ☐ Ajouter un article.
+ ☐ Supprimer un article.
+ ☐ Changer l'image de couverture du carnet.
+ ☐ Changer les renseignement de votre compte mot de passe, newsletter et photo depuis l'onglet "mes informations".
+
+ Espace de paiement :
+ ☐ Tester chaque retour dans les différentes étapes du tunnel de commande.
+ ☐ Tester l'annulation de la commande.
+ ☐ Tester la création de compte avec une adresse mail déjà existante.
+ ☐ Tester la création de compte avec une nouvelle adresse mail.
+ ☐ Tester l'oubli du mot de passe. Vous receverez un mail indiquant votre nouveau mot de passe.
+ ☐ Identification lorsque vous êtes connecté et non connecté
+ ☐ Tester le changement d'adresse lors de la 3eme étapes
+ ☐ Tester de modifier le nombre de participant dans la dernière étape.
+ ☐ Tester de rentrer un nombre supérieur au nombre de place restante.
+ ☐ Essayer les différents modes de paiement.
+ ☐ Afficher les conditions générales de vente (popup).
+ ☐ Tester la finalisation de la commande.
