@@ -100,8 +100,12 @@ body.admin {
         }
     }
 
-    p > .required {
-        color: red;
+    .error-form {
+        margin-top: 5px;
+        font-size: 80%;
+        > .required {
+            color: red;
+        }
     }
 
     .pagination {
