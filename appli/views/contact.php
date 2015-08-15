@@ -24,12 +24,12 @@ $page = "contact";
             ?>
 
 
-            <?php switch($result) { case "erreur mail" : ?>
+            <?php if(isset($result)){ switch($result) { case "erreur mail" : ?>
 
             <div class="row">
                 <div class="col-md-12">
                     <div class="alert alert-danger" role="alert">
-                        Une erreur s'est produite. Votre email ne s'est pas envoyé correctement, veuillez réessayer ultérieuremenbt.
+                        Une erreur s'est produite. Votre email ne s'est pas envoyé correctement, veuillez réessayer ultérieurement.
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </div>
@@ -48,7 +48,19 @@ $page = "contact";
                 </div>
             </div>
 
-                <?php break; } ?>
+                 <?php break; case "erreur form": ?>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        Des erreurs se sont glissées dans le formulaire, veuillez les corriger!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </div>
+                </div>
+            </div>
+
+            <?php break; }} ?>
 
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-md-offset-2">

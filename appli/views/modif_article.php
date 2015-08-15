@@ -9,7 +9,21 @@ $page = "editing-article";
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>
         </div>
-
+            <div class="row">
+            <?php if($article[0]->etat == "Brouillon"){?>
+                <p>Cet article est enregistré en tant que brouillon, publiez le! :)</p>
+                <a href="<?php echo base_url().'article/publier/'.$article[0]->idArticles; ?>" class="button back-to-account">
+                    Demander la publication de cet article
+                </a>
+            <?php } ?>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </div>
         <div class="big-title-wrapper">
             <div class="big-title">
                 <h2 class="no-sep titre--article" contenteditable="true" placeholder="Titre de l'article">

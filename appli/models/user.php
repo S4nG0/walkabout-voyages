@@ -44,7 +44,7 @@ class User extends CI_Model {
 
         $user = $this->db->select('*')
                 ->from($this->table)
-                ->where('idUsers = (SELECT idUsers FROM `WA__carnetdevoyage` WHERE idCarnetDeVoyage = ' . $idCarnet . ')')
+                ->where('idUsers = (SELECT idUsers FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage = ' . $idCarnet . ')')
                 ->limit(1)
                 ->get()
                 ->result();

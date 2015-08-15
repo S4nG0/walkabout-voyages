@@ -66,7 +66,6 @@ class Pays_admin extends CI_Controller{
         if($idPays==0)
             redirect('walkadmin/dashboard');
         if($this->input->post() != false) {
-            $this->form_validation->set_rules('nom', '"nom"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('capitale', '"capitale"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('monnaie', '"monnaie"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('dirigeant', '"dirigeant"', 'trim|required|encode_php_tags|xss_clean');
@@ -77,7 +76,6 @@ class Pays_admin extends CI_Controller{
             $this->form_validation->set_rules('climat', '"climat"', 'trim|required|encode_php_tags|xss_clean');
             if ($this->form_validation->run()) {
                 $pays=array(
-                    "nom" => $this->input->post('nom'),
                     "capitale" => $this->input->post('capitale'),
                     "monnaie" => $this->input->post('monnaie'),
                     "Dirigeant" => $this->input->post('dirigeant'),
@@ -88,7 +86,7 @@ class Pays_admin extends CI_Controller{
                     "climat" => $this->input->post('climat')
                 );
                 $this->pays->updatePays($idPays,$pays);
-                redirect('walkadmin/dashboard');
+                redirect('walkadmin/map');
             }
         }
         $data['admin'] = $this->session->userdata('admin');

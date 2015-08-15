@@ -563,11 +563,13 @@ $(document).ready(function () {
         });
         $('.submit-cover').click();
     });
-
-    $('.description_submit').on('click',function(e){
-        e.preventDefault();
+    
+    $('#travel-log__description').on('blur keyup paste input',function(){
         var texte = $('[name=description_p]').text();
         $('input[name=description]').val(texte);
+    });
+    
+    $('.description_submit').on('click',function(){
         $(this).parent('form').submit();
     });
 

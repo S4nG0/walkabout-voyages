@@ -43,61 +43,65 @@ class Contact extends CI_Controller {
                 }
             }
 
-            if ($result == "captcha ok") {
-                $this->form_validation->set_rules('nom', '"Nom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
-                $this->form_validation->set_rules('prenom', '"Prénom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
-                $this->form_validation->set_rules('mail', '"E-mail"', 'trim|required|min_length[5]|valid_email|max_length[52]|encode_php_tags|xss_clean');
-                $this->form_validation->set_rules('tel', '"Téléphone"', 'trim|min_length[10]|max_length[15]|encode_php_tags|xss_clean|numeric');
-                $this->form_validation->set_rules('sujet', '"Sujet"', 'required|callback___check_default');
-                $this->form_validation->set_message('__check_default', 'Vous devez choisir obligatoirement une valeur!');
-                $this->form_validation->set_rules('message', '"Message"', 'trim|required|min_length[50]|max_length[6000]|encode_php_tags|xss_clean');
+            
+            $this->form_validation->set_rules('nom', '"Nom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('prenom', '"Prénom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('mail', '"E-mail"', 'trim|required|min_length[5]|valid_email|max_length[52]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('tel', '"Téléphone"', 'trim|min_length[10]|max_length[15]|encode_php_tags|xss_clean|numeric');
+            $this->form_validation->set_rules('sujet', '"Sujet"', 'required|callback___check_default');
+            $this->form_validation->set_message('__check_default', 'Vous devez choisir obligatoirement une valeur!');
+            $this->form_validation->set_rules('message', '"Message"', 'trim|required|min_length[50]|max_length[6000]|encode_php_tags|xss_clean');
 
-                if ($this->form_validation->run()) {
-                    
-                    //recuperation des valeurs
-                    $form = array();
-                    $form['nom'] = $this->input->post('nom');
-                    $form['prenom'] = $this->input->post('prenom');
-                    $form['mail'] = $this->input->post('mail');
-                    $form['tel'] = $this->input->post('tel');
-                    $form['sujet'] = $this->input->post('sujet');
-                    $form['message'] = $this->input->post('message');
-                    
-                    $result = $this->__construct_email($form);
-                    
-                    $this->email->from($form['mail'], $form['prenom'].' '.$form['nom']);
-                    $this->email->to('capi.aurelien@gmail.com'); 
+            if ($this->form_validation->run() && $result == "captcha ok") {
 
-                    $this->email->subject('Nouveau contact Walkabout');
-                    $this->email->set_mailtype("html");
-                    $this->email->message($result);
-                    if($this->email->send()){
-                        $result = "ok";
-                    }else{
-                        $result = "erreur mail";
-                    }
-                    $contact = new StdClass();
-                    $contact->nom = $this->input->post('nom');
-                    $contact->prenom = $this->input->post('prenom');
-                    $contact->mail = $this->input->post('mail');
-                    $contact->sujet = $this->input->post('sujet');
-                    $contact->telephone = $this->input->post('tel');
-                    $contact->message = $this->input->post('message');
-                    $contact->ouvert = "false";
-                    $contact->date = date('Y-m-d');
+                //recuperation des valeurs
+                $form = array();
+                $form['nom'] = $this->input->post('nom');
+                $form['prenom'] = $this->input->post('prenom');
+                $form['mail'] = $this->input->post('mail');
+                $form['tel'] = $this->input->post('tel');
+                $form['sujet'] = $this->input->post('sujet');
+                $form['message'] = $this->input->post('message');
 
-                    $this->contacts->insert($contact);
-                } else {
-                    //Retourner erreur
-                    $result = "erreur form";
+                $result = $this->__construct_email($form);
+
+                $this->email->from($form['mail'], $form['prenom'].' '.$form['nom']);
+                $this->email->to('capi.aurelien@gmail.com'); 
+
+                $this->email->subject('Nouveau contact Walkabout');
+                $this->email->set_mailtype("html");
+                $this->email->message($result);
+                if($this->email->send()){
+                    $result = "ok";
+                }else{
+                    $result = "erreur mail";
                 }
+                $contact = new StdClass();
+                $contact->nom = $this->input->post('nom');
+                $contact->prenom = $this->input->post('prenom');
+                $contact->mail = $this->input->post('mail');
+                $contact->sujet = $this->input->post('sujet');
+                $contact->telephone = $this->input->post('tel');
+                $contact->message = $this->input->post('message');
+                $contact->ouvert = "false";
+                $contact->date = date('Y-m-d');
+
+                $this->contacts->insert($contact);
+            } else {
+                //Retourner erreur
+                $result = "erreur form";
+                $data['result'] = $result;
+                $data['connecte'] = connecte($this->session->userdata('user')[0]);
+                $this->load->view('template/header', $data);
+                $this->load->view('contact', $data);
+                $this->load->view('template/footer');
             }
+        }else{
+            $data['connecte'] = connecte($this->session->userdata('user')[0]);
+            $this->load->view('template/header', $data);
+            $this->load->view('contact', $data);
+            $this->load->view('template/footer');
         }
-        $data['result'] = $result;
-        $data['connecte'] = connecte($this->session->userdata('user')[0]);
-        $this->load->view('template/header', $data);
-        $this->load->view('contact', $data);
-        $this->load->view('template/footer');
     }
 
     public function requestInformation($urlDestination=''){

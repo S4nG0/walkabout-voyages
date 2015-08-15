@@ -6,6 +6,22 @@
             .modal-backdrop{
                 z-index : 0;
             }
+            .activer{
+                margin-left:10px;
+                margin-right:10px;
+                background-color: rgba(50,50,50,0.1);
+                border-radius : 10px;
+            }
+            #tri div p{
+                padding : 10px
+            }
+            #tri div:hover p{
+                margin-left:10px;
+                margin-right:10px;
+                background-color: rgba(50,50,50,0.1);
+                border-radius : 10px;
+                cursor:pointer;
+            }
             .fin_test{
                 margin-right:20px;
             }
@@ -46,33 +62,33 @@
                 </h1>
                 <hr/>
             </div>
-            <div class="row" style="font-size:18px;text-align:center;">
+            <div class="row" style="font-size:18px;text-align:center;" id="tri">
                 <div class="col-md-2">
-                    <p><span class="glyphicon glyphicon-alert" style="color:grey;"></span> A tester <br/><span class="badge"><?php echo $count_1;?></span></span></p>
+                    <p class="trieur" data-tri = 'atester'><span class="glyphicon glyphicon-alert" style="color:grey;margin-right:20px;"></span> A tester <br/><span class="badge"><?php echo $count_1;?></span></span></p>
                 </div>
-                <div class="col-md-2">
-                    <p><span class="glyphicon glyphicon-refresh" style="color:darkslategrey;"></span> En test <br/><span class="badge"><?php echo $count_2;?></span></p>
+                <div class="col-md-2"> 
+                    <p class="trieur"  data-tri = 'entest'><span class="glyphicon glyphicon-refresh" style="color:darkslategrey;margin-right:20px;"></span> En test <br/><span class="badge"><?php echo $count_2;?></span></p>
                 </div>
                 <div class="col-md-3">
-                    <p><span class="glyphicon glyphicon-thumbs-up" style="color:green;"></span> Marche très bien <br/><span class="badge"><?php echo $count_3;?></span></p>
+                    <p class="trieur" data-tri = 'marche'><span class="glyphicon glyphicon-thumbs-up" style="color:green;margin-right:20px;"></span> Marche très bien <br/><span class="badge"><?php echo $count_3;?></span></p>
                 </div>
                 <div class="col-md-2">
-                    <p><span class="glyphicon glyphicon-alert" style="color:orange;"></span> Bug sur ce test <br/><span class="badge"><?php echo $count_4;?></span></p>
+                    <p class="trieur" data-tri = 'bug'><span class="glyphicon glyphicon-alert" style="color:orange;margin-right:20px;"></span> Bug <br/><span class="badge"><?php echo $count_4;?></span></p>
                 </div>
                 <div class="col-md-3">
-                    <p><span class="glyphicon glyphicon-fire" style="color:red;padding-right:20px;"></span> Ne marche pas <br/><span class="badge"><?php echo $count_5;?></span></p>
+                    <p class="trieur" data-tri = 'marchepas'><span class="glyphicon glyphicon-fire" style="color:red;margin-right:20px;"></span> Ne marche pas <br/><span class="badge"><?php echo $count_5;?></span></p>
                 </div>
             </div>
             <br/><br/>
-            <a href="#front" aria-controls="front" role="tab" data-toggle="tab" class="btn btn-default">Front Office</a>
-            <a href="#back" aria-controls="back" role="tab" data-toggle="tab" class="btn btn-default">Back Office</a>
-            <a href="#missions" aria-controls="missions" role="tab" data-toggle="tab" class="btn btn-default">Missions</a>
+            <a href="#front" aria-controls="front" role="tab" data-toggle="tab" class="btn btn-default">Front Office <span class="badge"><?php echo $count_6;?></span></a>
+            <a href="#back" aria-controls="back" role="tab" data-toggle="tab" class="btn btn-default">Back Office <span class="badge"><?php echo $count_7;?></span></a>
+            <a href="#missions" aria-controls="missions" role="tab" data-toggle="tab" class="btn btn-default">Missions <span class="badge"><?php echo $count_8;?></span></a>
             <br/><br/>
 
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="front">
                     <div class="row">
-                        <h1>Test sur le Front office : </h1>
+                        <h1>Tests sur le Front office : </h1>
                     </div>
                     <div class="row">
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -80,19 +96,19 @@
                             $i = 0;
                             foreach ($front as $test) {
                                 switch ($test->etat) {
-                                    case "A tester": $color = "grey";
+                                    case "A tester": $color = "grey";$tri = "atester";
                                         break;
-                                    case "En cours de test": $color = "darkslategrey";
+                                    case "En cours de test": $color = "darkslategrey";$tri = "entest";
                                         break;
-                                    case "Marche": $color = "green";
+                                    case "Marche": $color = "green";$tri = "marche";
                                         break;
-                                    case "Bug": $color = "orange";
+                                    case "Bug": $color = "orange";$tri = "bug";
                                         break;
-                                    case "Marche pas": $color = "red";
+                                    case "Marche pas": $color = "red";$tri = "marchepas";
                                         break;
                                 }
                                 ?>
-                                <div class="panel panel-default">
+                                <div class="panel panel-default <?php echo $tri; ?>">
                                     <div class="panel-heading" role="tab" id="headingOne">
                                         <h4 class="panel-title">
                                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#front<?php echo $i; ?>" aria-expanded="false" aria-controls="collapseOne">
@@ -161,39 +177,39 @@
                 </div>
                 <div role="tabpanel" class="tab-pane" id="back">
                     <div class="row">
-                        <h1>Test sur le Back office : </h1>
+                        <h1>Tests sur le Back office : </h1>
                     </div>
                     <div class="row">
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-<?php
-$i = 0;
-foreach ($back as $test) {
-    switch ($test->etat) {
-        case "A tester": $color = "grey";
-            break;
-        case "En cours de test": $color = "darkslategrey";
-            break;
-        case "Marche": $color = "green";
-            break;
-        case "Bug": $color = "orange";
-            break;
-        case "Marche pas": $color = "red";
-            break;
-    }
-    ?>
-                                <div class="panel panel-default">
+                            <?php
+                            $i = 0;
+                            foreach ($back as $test) {
+                                switch ($test->etat) {
+                                    case "A tester": $color = "grey";$tri = "atester";
+                                        break;
+                                    case "En cours de test": $color = "darkslategrey";$tri = "entest";
+                                        break;
+                                    case "Marche": $color = "green";$tri = "marche";
+                                        break;
+                                    case "Bug": $color = "orange";$tri = "bug";
+                                        break;
+                                    case "Marche pas": $color = "red";$tri = "marchepas";
+                                        break;
+                                }
+                            ?>
+                                <div class="panel panel-default  <?php echo $tri; ?>">
                                     <div class="panel-heading" role="tab" id="headingOne">
                                         <h4 class="panel-title">
                                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#back<?php echo $i; ?>" aria-expanded="false" aria-controls="collapseOne">
                                                 <p style="margin: 0;"><span class="glyphicon <?php if ($test->etat == "En cours de test") {
-        echo "glyphicon-refresh";
-    } elseif ($test->etat == "Marche") {
-        echo "glyphicon-thumbs-up";
-    } elseif ($test->etat == "Marche pas") {
-        echo "glyphicon-fire";
-    } else {
-        echo "glyphicon-alert";
-    } ?> " style="color:<?php echo $color; ?>;margin-right:10px;"></span> <b><?php echo $test->titre; ?></b><?php if ($test->etat == "En cours de test") { ?><span class="pull-right">En cours de test par : <?php echo $test->testeur; ?></span><?php } ?><?php if ($test->etat != "A tester" && $test->etat != "En cours de test") { ?><span class="pull-right">Testé par : <?php echo $test->testeur; ?></span><?php } ?></p>
+                                                    echo "glyphicon-refresh";
+                                                } elseif ($test->etat == "Marche") {
+                                                    echo "glyphicon-thumbs-up";
+                                                } elseif ($test->etat == "Marche pas") {
+                                                    echo "glyphicon-fire";
+                                                } else {
+                                                    echo "glyphicon-alert";
+                                                } ?> " style="color:<?php echo $color; ?>;margin-right:10px;"></span> <b><?php echo $test->titre; ?></b><?php if ($test->etat == "En cours de test") { ?><span class="pull-right">En cours de test par : <?php echo $test->testeur; ?></span><?php } ?><?php if ($test->etat != "A tester" && $test->etat != "En cours de test") { ?><span class="pull-right">Testé par : <?php echo $test->testeur; ?></span><?php } ?></p>
                                             </a>
                                         </h4>
                                     </div>
@@ -252,23 +268,23 @@ foreach ($back as $test) {
                     </div>
                     <div class="row">
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-<?php
-$i = 0;
-foreach ($missions as $test) {
-    switch ($test->etat) {
-        case "A tester": $color = "grey";
-            break;
-        case "En cours de test": $color = "darkslategrey";
-            break;
-        case "Marche": $color = "green";
-            break;
-        case "Bug": $color = "orange";
-            break;
-        case "Marche pas": $color = "red";
-            break;
-    }
-    ?>
-                                <div class="panel panel-default">
+                            <?php
+                            $i = 0;
+                            foreach ($missions as $test) {
+                                switch ($test->etat) {
+                                    case "A tester": $color = "grey";$tri = "atester";
+                                        break;
+                                    case "En cours de test": $color = "darkslategrey";$tri = "entest";
+                                        break;
+                                    case "Marche": $color = "green";$tri = "marche";
+                                        break;
+                                    case "Bug": $color = "orange";$tri = "bug";
+                                        break;
+                                    case "Marche pas": $color = "red";$tri = "marchepas";
+                                        break;
+                                }
+                            ?>
+                                <div class="panel panel-default <?php echo $tri; ?>">
                                     <div class="panel-heading" role="tab" id="headingOne">
                                         <h4 class="panel-title">
                                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#mission<?php echo $i; ?>" aria-expanded="false" aria-controls="collapseOne">
@@ -376,59 +392,84 @@ foreach ($missions as $test) {
     <script type="text/javascript" src="<?php echo js_url('jquery'); ?>"></script>
     <script type="text/javascript" src="<?php echo js_url('vendors/bootstrap.min'); ?>"></script>
     <script type="text/javascript">
-                                            $(document).ready(function () {
-                                                $('.collapse').collapse("hide");
+        $(document).ready(function () {
+            $('.collapse').collapse("hide");
 
-                                                $('.fin_test').on('click', function (e) {
-                                                    e.preventDefault();
-                                                    $('input[name=etat]').val($(this).data('etat'));
-                                                    $('input[name=idTest]').val($(this).data('id'));
-                                                    $('#myModal').modal('show');
-                                                });
-                                            });
+            $('.fin_test').on('click', function (e) {
+                e.preventDefault();
+                $('input[name=etat]').val($(this).data('etat'));
+                $('input[name=idTest]').val($(this).data('id'));
+                $('#myModal').modal('show');
+            });
+            
+            $('.trieur').on('click', function (){
+                var str = $(this).attr("class");
+                if(str.indexOf('activer') != -1){
+                    $.each($('.trieur'),function(){
+                        $(this).removeClass('activer');
+                    });
+                    $.each($('.panel-default'),function(){
+                        $(this).removeClass('hidden');
+                    });
+                    return false;
+                }
+                var tri = $(this).data('tri');
+                $.each($('.trieur'),function(){
+                    $(this).removeClass('activer');
+                });
+                $.each($('.panel-default'),function(){
+                    $(this).addClass('hidden');
+                });
+                $.each($('.'+tri),function(){
+                    $(this).removeClass('hidden');
+                });
+                $(this).addClass('activer');
 
-                                            function tester($idTest) {
-                                                var testeur = "";
-                                                do {
-                                                    testeur = prompt(' entrez votre prenom et nom');
-                                                } while (testeur == "");
-                                                if (testeur != "") {
-                                                    testeur = sans_accents(testeur);
-                                                    $.ajax({
-                                                        type: "POST",
-                                                        url: "<?php echo base_url(); ?>tests/tester/" + $idTest + "/" + urlencode(testeur),
-                                                        dataType: "text",
-                                                        cache: false,
-                                                        success:
-                                                                function (data) {
-                                                                    document.location.reload();
-                                                                }
-                                                    });// you have missed this bracket
-                                                    return false;
-                                                }
-                                            }
+            });
+        });
 
-                                            function urlencode(str) {
-                                                return escape(str.replace(/%/g, '%25').replace(/\+/g, '%2B')).replace(/%25/g, '%');
-                                            }
+        function tester($idTest) {
+            var testeur = "";
+            do {
+                testeur = prompt(' entrez votre prenom et nom');
+            } while (testeur == "");
+            if (testeur != "") {
+                testeur = sans_accents(testeur);
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo base_url(); ?>tests/tester/" + $idTest + "/" + urlencode(testeur),
+                    dataType: "text",
+                    cache: false,
+                    success:
+                            function (data) {
+                                document.location.reload();
+                            }
+                });// you have missed this bracket
+                return false;
+            }
+        }
 
-                                            //Fonctions pour la recherche!
-                                            function sans_accents(str) {
-                                                var accent = [
-                                                    /[\300-\306]/g, /[\340-\346]/g, // A, a
-                                                    /[\310-\313]/g, /[\350-\353]/g, // E, e
-                                                    /[\314-\317]/g, /[\354-\357]/g, // I, i
-                                                    /[\322-\330]/g, /[\362-\370]/g, // O, o
-                                                    /[\331-\334]/g, /[\371-\374]/g, // U, u
-                                                    /[\321]/g, /[\361]/g, // N, n
-                                                    /[\307]/g, /[\347]/g, // C, c
-                                                ];
-                                                var noaccent = ['A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u', 'N', 'n', 'C', 'c'];
+        function urlencode(str) {
+            return escape(str.replace(/%/g, '%25').replace(/\+/g, '%2B')).replace(/%25/g, '%');
+        }
 
-                                                for (var i = 0; i < accent.length; i++) {
-                                                    str = str.replace(accent[i], noaccent[i]);
-                                                }
-                                                return str;
-                                            }
+        //Fonctions pour la recherche!
+        function sans_accents(str) {
+            var accent = [
+                /[\300-\306]/g, /[\340-\346]/g, // A, a
+                /[\310-\313]/g, /[\350-\353]/g, // E, e
+                /[\314-\317]/g, /[\354-\357]/g, // I, i
+                /[\322-\330]/g, /[\362-\370]/g, // O, o
+                /[\331-\334]/g, /[\371-\374]/g, // U, u
+                /[\321]/g, /[\361]/g, // N, n
+                /[\307]/g, /[\347]/g, // C, c
+            ];
+            var noaccent = ['A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u', 'N', 'n', 'C', 'c'];
+
+            for (var i = 0; i < accent.length; i++) {
+                str = str.replace(accent[i], noaccent[i]);
+            }
+            return str;
+        }
     </script>
 </html>

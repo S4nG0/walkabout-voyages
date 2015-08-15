@@ -36,6 +36,8 @@ class Connexion extends CI_Controller {
                 }else{
                     echo '<script>alert("Votre mot de passe est incorrect!");</script>';
                 }
+            }else{
+                echo '<script>alert("Votre identifiant ou email n\'appartient a aucun compte!");</script>';
             }
         }
         

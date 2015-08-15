@@ -69,19 +69,21 @@ class Carnets_de_voyage extends CI_Controller {
              * du voyage de ce carnet,
              * de la destination du carnet
             */
-            $data['carnets'] = $this->carnetvoyage->get_carnet_pagination($start,$nb_articles);
-            $data['nonfavoris'] = array();
-            foreach($data['carnets'] as $carnet){
+            $data['nonfavoris'] = $this->carnetvoyage->get_carnet_pagination($start,$nb_articles);
+            foreach($data['nonfavoris'] as $carnet){
                 $carnet->date = conv_date($carnet->date);
                 $carnet->user = $this->user->constructeur($carnet->idUsers);
                 $carnet->voyage = $this->voyages->constructeur($carnet->idVoyage);
                 $carnet->destination = $this->destination->constructeur($carnet->idDestination);
                 $carnet->pays = $this->pays->constructeur($carnet->destination[0]->idPays);
-                if($carnet->favoris == 'true'){
-                    $data['favoris'] = $carnet;
-                }else{
-                    array_push($data['nonfavoris'],$carnet);
-                }
+            }
+            $data['favoris'] = $this->carnetvoyage->getFavoris()[0];
+            if(!empty($data['favoris'])){
+                $data['favoris']->date = conv_date($data['favoris']->date);
+                $data['favoris']->user = $this->user->constructeur($data['favoris']->idUsers);
+                $data['favoris']->voyage = $this->voyages->constructeur($data['favoris']->idVoyage);
+                $data['favoris']->destination = $this->destination->constructeur($data['favoris']->idDestination);
+                $data['favoris']->pays = $this->pays->constructeur($data['favoris']->destination[0]->idPays);
             }
             $this->load->view('carnets', $data);
             $this->load->view('template/footer');

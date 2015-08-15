@@ -14,8 +14,8 @@ $page = "editing-carnet";
             <div class="big-title">
                 <h1 class="sep"><?php echo $carnet[0]->titre; ?></h1>
                 <?php echo form_open(base_url()."carnets_de_voyage/modifierDescription/".slugify($carnet[0]->titre)); ?>
-                <p class="travel-log__description" contenteditable="true" name="description_p" placeholder="Insérer une description de votre voyage..."><?php echo $carnet[0]->description; ?></p>
-                <input type="hidden" name="description"/>
+                <p class="travel-log__description" id="travel-log__description" contenteditable="true" name="description_p" placeholder="Insérer une description de votre voyage..."><?php echo $carnet[0]->description; ?></p>
+                <input type="hidden" name="description"  value="<?php echo $carnet[0]->description; ?>"/>
                 <input type="hidden" name="idcarnet" value="<?php echo $carnet[0]->idCarnetDeVoyage; ?>"/>
                 <div class="buttons-block">
                     <button type="submit" class="button description_submit">
@@ -60,7 +60,12 @@ $page = "editing-carnet";
                                 <h2 class="no-sep"><?php echo $article->titre; ?></h2>
                                 <p><?php echo $texte; ?></p>
                                 <p class="published">Ajouté le <?php echo conv_date($article->date); ?></p>
-                                <p><?php echo $article->etat; ?></p>
+                                <p><?php echo $article->etat; if($article->etat == "Brouillon"){?>
+                                <span class="bull">&bull;</span>
+                                <a href="<?php echo base_url().'article/publier/'.$article->idArticles; ?>" class="button back-to-account">
+                                    Demander la publication de cet article
+                                </a>
+                                <?php } ?></p>
                             </div>
                             <div class="article-block controls">
                                 <div class="controls-wrapper">
