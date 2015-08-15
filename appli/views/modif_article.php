@@ -13,7 +13,7 @@ $page = "editing-article";
             <div class="big-title">
                 <?php if($article[0]->etat == "Brouillon"){?>
                 <div class="article__publication">
-                    <p>Votre article n'est actuellement pas visible, envoyez-le en modération&nbsp;!</p>
+                    <p>Votre article est en mode "Brouillon" et n'est pas publié.<br />Envoyez-le en modération&nbsp;!</p>
                     <a class="button" href="<?php echo base_url().'article/publier/'.$article[0]->idArticles; ?>">
                         Demander la publication de cet article
                     </a>

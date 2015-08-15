@@ -4786,6 +4786,32 @@ body.checkout .content .recap-block table tr td .price {
   font-style: italic;
   font-weight: 600;
 }
+body.checkout .content .recap-block table tr td.price__total {
+  width: 15%;
+}
+body.checkout .content .recap-block table tr td .participants .substractParticipants,
+body.checkout .content .recap-block table tr td .participants .addParticipants,
+body.checkout .content .recap-block table tr td .participants #nombre_participants {
+  display: inline-block;
+  padding: 8px;
+  text-align: center;
+}
+body.checkout .content .recap-block table tr td .participants .substractParticipants,
+body.checkout .content .recap-block table tr td .participants .addParticipants {
+  cursor: pointer;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.checkout .content .recap-block table tr td .participants .substractParticipants:hover, body.checkout .content .recap-block table tr td .participants .substractParticipants:focus,
+body.checkout .content .recap-block table tr td .participants .addParticipants:hover,
+body.checkout .content .recap-block table tr td .participants .addParticipants:focus {
+  color: #f0c041;
+}
+body.checkout .content .recap-block table tr td .participants #nombre_participants {
+  width: 40px;
+}
 body.checkout .content .payment-method-block {
   padding-top: 0;
 }
@@ -5671,6 +5697,7 @@ body.espace-voyageur .content.edit-travel-log .article .travel-log__article .art
 }
 body.espace-voyageur .content.edit-travel-log .article .travel-log__article .article-block.text > .button.small {
   margin-top: 25px;
+  margin-right: auto;
   margin-left: 0;
   width: 200px;
 }

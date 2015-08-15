@@ -592,6 +592,35 @@ body.checkout {
                             font-style: italic;
                             font-weight: 600;
                         }
+
+                        &.price__total {
+                            width: 15%;
+                        }
+
+                        .participants {
+                            .substractParticipants,
+                            .addParticipants,
+                            #nombre_participants {
+                                display: inline-block;
+                                padding: 8px;
+                                text-align: center;
+                            }
+
+                            .substractParticipants,
+                            .addParticipants {
+                                cursor: pointer;
+                                @include transition($default-transition);
+
+                                &:hover, &:focus {
+                                    color: $jaune-or;
+                                }
+                            }
+
+                            #nombre_participants {
+                                width: 40px
+                            }
+                        }
+
                     }
                 }
             }
