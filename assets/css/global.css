@@ -6235,7 +6235,11 @@ body.admin .alert {
 body.admin .alert > p {
   color: #a94442;
 }
-body.admin p > .required {
+body.admin .error-form {
+  margin-top: 5px;
+  font-size: 80%;
+}
+body.admin .error-form > .required {
   color: red;
 }
 body.admin .pagination {

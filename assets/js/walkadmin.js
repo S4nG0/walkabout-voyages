@@ -28,6 +28,10 @@ $(function() {
 });
 
 $('document').ready(function(){
+
+
+    $('.required').parent().addClass('error-form');
+
     //set active class to navbar 'a's
     var url = window.location;
     var element = $('ul.nav a').filter(function() {
@@ -271,6 +275,7 @@ $('#add').on('click', function(){
     $('#container_deroulement').append($('<div class="form-group destinations__deroulement fieldBlock" id="detail'+i+'"><input type="text" placeholder="Jour" name="jour'+i+'" id="jour" value="Jour n°..."/><textarea name="jour_valeur'+i+'" id="jour_valeur" rows="5" placeholder="Décrivez l\'évènement du jour"></textarea><span class="destinations__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>').hide().fadeIn(300));
     i++;
 });
+
 });
 
 $('input[name=star]').on('click',function(){
