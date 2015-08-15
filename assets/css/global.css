@@ -5139,6 +5139,16 @@ body.espace-voyageur .main.banner {
 body.espace-voyageur .main.banner.modification.article {
   height: 200px;
 }
+body.espace-voyageur .main.banner.modification.article .big-title-wrapper .big-title .article__publication {
+  margin-bottom: 50px;
+}
+body.espace-voyageur .main.banner.modification.article .big-title-wrapper .big-title .article__publication > p {
+  display: block;
+  margin: 0 auto;
+}
+body.espace-voyageur .main.banner.modification.article .big-title-wrapper .big-title .article__publication .button {
+  margin-right: auto;
+}
 body.espace-voyageur .main.banner.modification.carnet {
   height: 300px;
 }
@@ -5174,12 +5184,6 @@ body.espace-voyageur .main .big-title-wrapper .big-title {
   width: 100%;
   height: 150px;
   text-align: center;
-}
-body.espace-voyageur .main .big-title-wrapper .big-title.vam {
-  vertical-align: middle;
-}
-body.espace-voyageur .main .big-title-wrapper .big-title.vab {
-  vertical-align: bottom;
 }
 body.espace-voyageur .main .big-title-wrapper .big-title .button:last-child {
   margin-right: 0;
@@ -5665,6 +5669,11 @@ body.espace-voyageur .content.edit-travel-log .article .travel-log__article .art
   padding: 25px;
   width: 80%;
 }
+body.espace-voyageur .content.edit-travel-log .article .travel-log__article .article-block.text > .button.small {
+  margin-top: 25px;
+  margin-left: 0;
+  width: 200px;
+}
 body.espace-voyageur .content.edit-travel-log .article .travel-log__article .article-block.controls {
   padding-right: 25px;
   width: 20%;
@@ -5886,6 +5895,9 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
   body.espace-voyageur .main .big-title-wrapper .big-title .button.small {
     width: auto;
   }
+  body.espace-voyageur .main.banner.modification.article .big-title-wrapper .big-title .article__publication .button {
+    width: auto;
+  }
   body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .travel-log__block {
     display: block;
     width: 100%;
@@ -5936,6 +5948,13 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
   }
   body.espace-voyageur .main.banner.modification.carnet {
     height: 350px;
+  }
+  body.espace-voyageur .main.banner.modification.article .big-title-wrapper .big-title .article__publication > p {
+    margin-bottom: 25px;
+    font-size: 18px;
+  }
+  body.espace-voyageur .main.banner.modification.article .big-title-wrapper .big-title .article__publication .button {
+    width: 300px;
   }
   body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .image-wrapper {
     width: 100%;
