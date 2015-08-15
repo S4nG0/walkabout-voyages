@@ -87,6 +87,14 @@ class Contact extends CI_Controller {
                 $contact->date = date('Y-m-d');
 
                 $this->contacts->insert($contact);
+                
+                
+                $result = "ok";
+                $data['result'] = $result;
+                $data['connecte'] = connecte($this->session->userdata('user')[0]);
+                $this->load->view('template/header', $data);
+                $this->load->view('contact', $data);
+                $this->load->view('template/footer');
             } else {
                 //Retourner erreur
                 $result = "erreur form";
@@ -96,7 +104,8 @@ class Contact extends CI_Controller {
                 $this->load->view('contact', $data);
                 $this->load->view('template/footer');
             }
-        }else{
+        }
+        else{
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $this->load->view('template/header', $data);
             $this->load->view('contact', $data);

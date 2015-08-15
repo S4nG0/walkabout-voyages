@@ -134,7 +134,7 @@ $page = "contact";
                         <span class="required">Obligatoire</span>
                         <div class="g-recaptcha" data-sitekey="6Lf5ygYTAAAAAH4TFzuywIHLQieSVV_wK_B99nJa"></div>
                         <?php
-                        if ($result == "erreur captcha") {
+                        if (isset($result) && $result == "erreur captcha") {
                             echo '<span class="erreur_form">Êtes-vous sûr de ne pas être un robot?</span>';
                         }
                         ?>

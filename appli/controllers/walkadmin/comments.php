@@ -25,6 +25,8 @@ class Comments extends CI_Controller {
     public function index($value = "attente", $page = 1) {
         connecte_admin($this->session->userdata('admin'));
         $data=array();
+        
+        $data['value'] = $value;
         switch($value){
             case "attente" : $data['publie'] = "false";$config['base_url'] = base_url().'walkadmin/comments/attente'; break;
             case "approuves" : $data['publie'] = "true";$config['base_url'] = base_url().'walkadmin/comments/approuves'; break;
@@ -37,7 +39,8 @@ class Comments extends CI_Controller {
         /*Parametrage de la pagination*/
 
         $config['total_rows'] = $count;// faire attention taille totale
-        $nb_commentaires = $config['per_page'] = 10;
+        $nb_commentaires = $config['per_page'] = 3;
+        $config['base_url'] = base_url().'walkadmin/comments/'.$value.'/';
         $config['num_links'] = 3;
         $config['use_page_numbers'] = true;
         $config['last_link'] = 'Dernier';
@@ -85,6 +88,87 @@ class Comments extends CI_Controller {
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Commentaires/liste',$data);
+        $this->load->view('wadmin/template/footer');
+        //$this->output->enable_profiler(true);
+    }
+    
+    public function recherche($value = "attente", $page = 1) {
+        connecte_admin($this->session->userdata('admin'));
+        $data=array();
+        $data['value'] = $value;
+        if(!$this->input->post()){
+            $data['search'] = $this->session->flashdata('search');
+        }else{
+            if($this->input->post('search') == ''){
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+            $data['search'] = $this->input->post('search');
+        }
+
+        $this->session->set_flashdata('search',$data['search']);
+        
+        switch($value){
+            case "attente" : $data['publie'] = "false";$config['base_url'] = base_url().'walkadmin/comments/attente'; break;
+            case "approuves" : $data['publie'] = "true";$config['base_url'] = base_url().'walkadmin/comments/approuves'; break;
+            case "indesirables" : $data['publie'] = "suppr";$config['base_url'] = base_url().'walkadmin/comments/supprimes'; break;
+        }
+        
+        $data['title'] = "Commentaires - Carnets";
+        $count = $this->commentaires->countWhereCommentairesSearch($data['publie'],$data['search'])[0]->nb_commentaires;
+        /*Load des helpers et librairies*/
+        $this->load->library('pagination');
+        /*Parametrage de la pagination*/
+
+        $config['total_rows'] = $count;// faire attention taille totale
+        $nb_commentaires = $config['per_page'] = 10;
+        $config['base_url'] = base_url().'walkadmin/comments/recherche/'.$value.'/';
+        $config['num_links'] = 3;
+        $config['use_page_numbers'] = true;
+        $config['last_link'] = 'Dernier';
+        $config['first_link'] = 'Premier';
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['last_link'] = 'Dernier';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['first_link'] = 'Premier';
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><span>';
+        $config['cur_tag_close'] = '<span></li>';
+        $config['next_link'] = '&raquo;';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo;';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['uri_segment'] = 4;
+        /*Initialisation de la pagination*/
+        $this->pagination->initialize($config);
+        /*Affichage de la pagination*/
+        $data['pagination'] = $this->pagination->create_links();
+        /*Création des variables de selection des carnets*/
+        $start = ($page*$nb_commentaires)-$nb_commentaires;
+
+        $data['commentaires'] = $this->commentaires->getCommentairesStatutSearch($data['publie'],$data['search'],$nb_commentaires,$start);
+        foreach($data['commentaires'] as $commentaire){
+            if($commentaire->idUsers == null){
+                $commentaire->user = new stdClass();
+                $commentaire->user->nom = json_decode($commentaire->data)->nom;
+                $commentaire->user->prenom = json_decode($commentaire->data)->prenom;
+                $commentaire->user->email = json_decode($commentaire->data)->email;
+            }else{
+                $commentaire->user = $this->user->constructeur($commentaire->idUsers)[0];
+            }
+            $commentaire->carnet = $this->carnetvoyage->constructeur($commentaire->idCarnet)[0];
+        }
+
+        $data['admin'] = $this->session->userdata('admin');
+        $this->load->view('wadmin/template/header', $data);
+        $this->load->view('wadmin/template/menu', $data);
+        $this->load->view('wadmin/pages/Commentaires/search',$data);
         $this->load->view('wadmin/template/footer');
         //$this->output->enable_profiler(true);
     }

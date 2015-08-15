@@ -79,8 +79,28 @@ class Commentaires extends CI_Model {
         return $commentaires;
     }
 
+    public function getCommentairesStatutSearch($value,$search,$nb,$start){
+        $commentaires = $this->db->select('*')
+                                ->from($this->table)
+                                ->where('modere',$value)
+                                ->like('texte',$search)
+                                ->order_by('commentaires.date','ASC')
+                                ->limit($nb, $start)
+                                ->get()
+                                ->result();
+
+        return $commentaires;
+    }
+
     public function countWhereCommentaires($publie = "true"){
         $query = "SELECT count(*) AS nb_commentaires FROM `wa__commentaires` WHERE modere = '$publie'";
+        $carnets = $this->db->query($query)->result();
+
+        return $carnets;
+    }
+
+    public function countWhereCommentairesSearch($publie = "true",$search){
+        $query = "SELECT count(*) AS nb_commentaires FROM `wa__commentaires` WHERE modere = '$publie' AND texte LIKE '%".$search."%'";
         $carnets = $this->db->query($query)->result();
 
         return $carnets;

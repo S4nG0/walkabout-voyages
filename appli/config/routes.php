@@ -45,6 +45,7 @@ $route['walkadmin/pays/creer'] = "walkadmin/pays_admin/creer";
 $route['walkadmin/map'] = "walkadmin/pays_admin/index";
 $route['walkadmin/voyage/(:num)'] = "walkadmin/voyage/index/$1";
 $route['walkadmin/lire-article/(:num)'] = "walkadmin/article/voir/$1";
+$route['walkadmin/comments/recherche/(:any)'] = "walkadmin/comments/recherche/$1";
 $route['walkadmin/comments/(:num)'] = "walkadmin/comments/index/$1";
 $route['walkadmin/carnets/(:num)'] = "walkadmin/carnets/index/$1";
 $route['walkadmin/actualite/(:num)'] = "walkadmin/actualite/index/$1";
