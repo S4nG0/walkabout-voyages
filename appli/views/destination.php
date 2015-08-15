@@ -32,13 +32,13 @@
                             ?>
                         </ul>
                         <div id="introduction_aside--social">
-                            <a class="item_fb" href="https://www.facebook.com/walkabout.voyage" target="blank">
+                            <a class="item_fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
                                 <i class="fa fa-facebook"></i>
                             </a>
-                            <a class="item_tw" href="https://twitter.com/_Walkabout_" target="blank">
+                            <a class="item_tw" href="http://twitter.com/intent/tweet/?url=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
                                 <i class="fa fa-twitter"></i>
                             </a>
-                            <a class="item_gp" href="https://plus.google.com/114606485962340409388" target="blank">
+                            <a class="item_gp" href="https://plus.google.com/share?url=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
                                 <i class="fa fa-google-plus"></i>
                             </a>
                         </div>
@@ -388,13 +388,13 @@ foreach ($details_prix as $detail) {
                 <h2 class="no-sep">Vous aimez cette destination&nbsp;?</h2>
                 <p class="italic">Partagez-la avec vos amis&nbsp;!</p>
                 <div class="social">
-                    <a class="item_fb" href="https://www.facebook.com/walkabout.voyage" target="blank">
+                    <a class="item_fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
                         <i class="fa fa-facebook"></i>
                     </a>
-                    <a class="item_tw" href="https://twitter.com/_Walkabout_" target="blank">
+                    <a class="item_tw" href="http://twitter.com/intent/tweet/?url=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
                         <i class="fa fa-twitter"></i>
                     </a>
-                    <a class="item_gp" href="https://plus.google.com/114606485962340409388" target="blank">
+                    <a class="item_gp" href="https://plus.google.com/share?url=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
                         <i class="fa fa-google-plus"></i>
                     </a>
                 </div>

@@ -247,6 +247,7 @@ class Destinations  extends CI_Controller{
             $this->form_validation->set_rules('titre', '"titre"', 'is_unique[destination.titre]|trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('description', '"description"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('ville', '"ville"', 'trim|required|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('banner', '"Banniére"', 'required');
             $this->form_validation->set_rules('latitude', '"latitude"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('longitude', '"longitude"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('climat', '"Climat"', 'trim|required|encode_php_tags|xss_clean');
@@ -259,7 +260,6 @@ class Destinations  extends CI_Controller{
             $this->form_validation->set_rules('hebergement', '"Hébergement"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('accompagnement', '"Accompagnement"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()){
-                var_dump($this->input->post());
 
                 $taille_jours = (sizeof($this->input->post())-15)/2;
                 $jours = array();
@@ -379,7 +379,7 @@ class Destinations  extends CI_Controller{
 
                     redirect('walkadmin/destinations');
                 }
-            }else{var_dump(validation_errors());
+            }else{
                 $data['pays']=$this->pays->getPays();
                 $data['page'] = "add_travel";
                 $data['title']='Ajout de destination';
@@ -403,5 +403,6 @@ class Destinations  extends CI_Controller{
         }
 
     }
+    
 }
 

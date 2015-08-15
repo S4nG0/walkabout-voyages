@@ -65,13 +65,13 @@
                     </div>
                 </div>
             </div>
-            <?php echo form_close(); ?>
 
             <div class="row">
                 <div class="col-sm-12">
                     <input class="button black" type="submit" value="Modifier">
                 </div>
             </div>
+            <?php echo form_close(); ?>
 
         </div>
     </div>

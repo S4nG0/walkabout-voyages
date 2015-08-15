@@ -35,6 +35,15 @@ class Dashboard extends CI_Controller {
         $this->db->where('etat','Marche pas');
         $this->db->from('test');
         $data['count_5'] = $this->db->count_all_results();
+        $this->db->where('categorie','Front office');
+        $this->db->from('test');
+        $data['count_6'] = $this->db->count_all_results();
+        $this->db->where('categorie','Back office');
+        $this->db->from('test');
+        $data['count_7'] = $this->db->count_all_results();
+        $this->db->where('categorie','Mission');
+        $this->db->from('test');
+        $data['count_8'] = $this->db->count_all_results();
         $this->load->model('test');
         $data['front'] = $this->test->getFront();
         $data['back'] = $this->test->getBack();
@@ -72,7 +81,7 @@ class Dashboard extends CI_Controller {
         
         $test = new stdClass();
         $test->etat = "En cours de test";
-        $test->testeur = $testeur;
+        $test->testeur = str_replace("%20", " ", $testeur);
         
         $result = $this->test->modify($test,$id);
         echo json_encode($result);        

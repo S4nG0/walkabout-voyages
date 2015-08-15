@@ -55,7 +55,10 @@ $step = 'payment';
                                         <span class="price" id="price"><span id="prix_personne"><?php echo $voyage->prix; ?></span><sup> €</sup></span>
                                     </td>
                                     <td>
-                                        <input type="number" name="nb_personne" id="nb_personne" step="1" value="1" min="1" max="<?php echo $nb_places_restantes; ?>"/>
+                                        <i class="fa fa-minus" style="font-size:20px;cursor:pointer;"></i>
+                                        <span id="nombre_participants" style="padding-left:10px;padding-right:10px;">1</span>
+                                        <i class="fa fa-plus" style="font-size:20px;cursor:pointer;"></i>
+                                        <input type="hidden" name="nb_personne" id="nb_personne" value="1"/>
                                         <br /><span class="small">(places restantes : <?php echo $nb_places_restantes; ?>)</span>
                                         <input type="hidden" id="nb_places" value="<?php echo $nb_places_restantes; ?>"/>
                                     </td>
@@ -154,3 +157,36 @@ $step = 'payment';
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    window.onload = function (){
+        
+        var price = <?php echo $voyage->prix; ?>;
+        
+        $('.fa-plus').on('click', function(){
+        
+            var value = $('#nombre_participants').text();
+            if(value == <?php echo $nb_places_restantes; ?>){
+                alert('Le nombre de participants ne peut pas être supérieur, il ne reste que <?php echo $nb_places_restantes; ?> de places');
+            }else{
+                value++;
+                $('#nombre_participants').text(value);
+                $('#nb_personne').val(value);
+                var total = price * value;
+                $('#result_total').text(total);
+            }
+        });
+        
+        $('.fa-minus').on('click', function(){
+            var value = $('#nombre_participants').text();
+            if(value == 1){
+                alert('Le nombre de participants ne peut pas être inférieur à 1');
+            }else{
+                value--;
+                $('#nombre_participants').text(value);
+                $('#nb_personne').val(value);
+                var total = price * value;
+                $('#result_total').text(total);
+            }
+        });
+    }
+</script>

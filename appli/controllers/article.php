@@ -56,6 +56,24 @@ class Article extends CI_Controller {
             }
         }
 
+        
+        public function publier($id = 0){
+            if($id == 0){
+                return false;
+            }
+            
+            $data['connecte'] = connecte($this->session->userdata('user')[0]);
+            if($data['connecte'] == false){
+                redirect('/connexion');
+            }
+            
+            $article = new stdClass();
+            $article->etat = "En attente de modération";
+            $this->articles->modify($article,$id);
+            redirect($_SERVER["HTTP_REFERER"]);
+        }
+        
+        
         public function down($id = 0){
             if($id == 0){
                 return false;

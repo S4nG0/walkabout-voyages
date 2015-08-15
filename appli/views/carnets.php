@@ -67,7 +67,7 @@
                     echo '<h4 style="text-align:center;vertical-align:middle;padding:60px;">Aucun utilisateur n\'a enregistré son histoire, revenez plus tard! </h4>';
                 }
             ?>
-    <?php if(isset($favoris) && sizeof($nonfavoris)>0){ ?>
+    <?php if(sizeof($nonfavoris)>0){ ?>
 
     <div class="see-more-block">
         <a href="<?php echo base_url(); ?>tous-les-carnets" class="button">Voir tous les carnets</a>
