@@ -34,13 +34,13 @@ class Connexion extends CI_Controller {
                     $this->session->set_userdata('admin',$admin);
                     redirect(base_url().'walkadmin/dashboard');
                 }else{
-                    echo '<script>alert("Votre mot de passe est incorrect!");</script>';
+                    echo '<script>alert("Votre mot de passe est incorrect.");</script>';
                 }
             }else{
-                echo '<script>alert("Votre identifiant ou email n\'appartient a aucun compte!");</script>';
+                echo '<script>alert("Votre identifiant ou email n\'appartient à aucun compte.");</script>';
             }
         }
-        
+
         $data['error'] = $this->session->flashdata('errorrecovery');
 
         $data['title'] = "Connexion";
@@ -49,13 +49,13 @@ class Connexion extends CI_Controller {
         $this->load->view('wadmin/template/footer');
 
     }
-    
+
     public function recoverpassword()
     {
         if($this->session->userdata('admin')){
             redirect(base_url().'walkadmin/dashboard');
         }
-        
+
         if(!$this->input->post()){
             redirect(base_url().'walkadmin');
         }
@@ -66,15 +66,15 @@ class Connexion extends CI_Controller {
         }else{
             $admin = $this->admin->getFromEmail($this->input->post('email'));
             if(empty($admin)){
-                $this->session->set_flashdata('errorrecovery','Aucun administrateur n\'est enregistré sous ce pseudo ou adresse mail.');
+                $this->session->set_flashdata('errorrecovery','<p class="text-center error"><i class="fa fa-exclamation-circle"></i>&nbsp;Aucun administrateur n\'est enregistré sous ce pseudo ou adresse mail.</p>');
             }else{
                 $mdp = code();
                 $administrateur = new StdClass();
                 $administrateur->mdp = hash('sha256',$mdp);
-                
+
                 $result = $this->admin->modify($administrateur, $admin[0]->idAdministrateur);
                 if($result == false){
-                    $this->session->set_flashdata('errorrecovery','Il y a eu une erreur lors de la procédure du changement de mot de passe, veuillez contacter l\'administrateur du site.');
+                    $this->session->set_flashdata('errorrecovery','<p class="text-center error"><i class="fa fa-exclamation-circle"></i>&nbsp;Il y a eu une erreur lors de la procédure du changement de mot de passe, veuillez contacter l\'administrateur du site.</p>');
                 }else{
                     //Envoie du mot de passe par email
                     $result = generate_email_forget_password($mdp,$admin[0]);
@@ -86,9 +86,9 @@ class Connexion extends CI_Controller {
                     $this->email->message($result);
                     $result = $this->email->send();
                     if($result){
-                        $this->session->set_flashdata('errorrecovery','Votre nouveau mot de passe vous a été envoyé sur votre boite mail, pensez à vérifier vos spams!');
+                        $this->session->set_flashdata('errorrecovery','<p class="text-center checked"><i class="fa fa-check"></i>&nbsp;Votre nouveau mot de passe vous a été envoyé sur votre boite mail, pensez à vérifier vos spams.</p>');
                     }else{
-                        $this->session->set_flashdata('errorrecovery','Il y a eu un incident lors de l\'envoie de l\'email, veuillez contacter un administrateur du site.');
+                        $this->session->set_flashdata('errorrecovery','<p class="text-center error"><i class="fa fa-exclamation-circle"></i>&nbsp;Il y a eu un problème lors de l\'envoi de l\'email, veuillez contacter un administrateur du site.</p>');
                     }
                 }
             }

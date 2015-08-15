@@ -311,6 +311,19 @@ body.admin {
 
             .panel-form {
 
+                .error, .checked {
+                    margin: 0 auto 25px auto;
+                }
+
+                .error {
+                    color: red;
+                }
+
+
+                .checked {
+                    color: green;
+                }
+
                 .form-group {
                     margin-bottom: 25px;
                     text-align: center;
@@ -335,6 +348,14 @@ body.admin {
                         margin-top: 10px;
                         font-size: 80%;
                         text-align: center;
+
+                        > a {
+                            color: $blanc;
+
+                            &:hover, &:focus {
+                                color: $jaune-or;
+                            }
+                        }
                     }
                 }
 

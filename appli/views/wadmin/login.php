@@ -21,9 +21,7 @@
                                 <label for="password">Mot de passe</label>
                                 <input id="password" name="password" value="<?php echo set_value('password'); ?>" type="password" />
                                 <?php echo form_error('password'); ?>
-                                <p class="forgotten-pwd">
-                                    Vous avez oublié votre mot de passe ?<br /><a class="fancybox" href="#recover-pwd">Cliquez-ici</a>
-                                </p>
+                                <p class="forgotten-pwd">Vous avez oublié votre mot de passe ?<br /><a class="fancybox" href="#recover-pwd">Cliquez-ici</a></p>
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
                             <input type="submit" class="button" value="Se connecter"/>
