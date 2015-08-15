@@ -43,7 +43,7 @@ $step = 'payment';
                                         <td>Destination choisie</td>
                                         <td>Prix</td>
                                         <td>Participants</td>
-                                        <td>Total</td>
+                                        <td class="price__total"><span class="price pull-right">Total</span></td>
                                     </tr>
                                 </thead>
                                 <tr>
@@ -55,15 +55,23 @@ $step = 'payment';
                                         <span class="price" id="price"><span id="prix_personne"><?php echo $voyage->prix; ?></span><sup> €</sup></span>
                                     </td>
                                     <td>
-                                        <i class="fa fa-minus" style="font-size:20px;cursor:pointer;"></i>
-                                        <span id="nombre_participants" style="padding-left:10px;padding-right:10px;">1</span>
-                                        <i class="fa fa-plus" style="font-size:20px;cursor:pointer;"></i>
-                                        <input type="hidden" name="nb_personne" id="nb_personne" value="1"/>
-                                        <br /><span class="small">(places restantes : <?php echo $nb_places_restantes; ?>)</span>
-                                        <input type="hidden" id="nb_places" value="<?php echo $nb_places_restantes; ?>"/>
+                                        <div class="participants noselect">
+                                            <span class="substractParticipants">
+                                                <i class="fa fa-minus" title="Supprimer un participant"></i>
+                                            </span>
+                                            <span id="nombre_participants">1</span>
+                                            <span class="addParticipants">
+                                                <i class="fa fa-plus" title="Ajouter un participant"></i>
+                                            </span>
+                                            <input type="hidden" name="nb_personne" id="nb_personne" value="1"/>
+                                            <br /><span class="small">(places restantes : <?php echo $nb_places_restantes; ?>)</span>
+                                            <input type="hidden" id="nb_places" value="<?php echo $nb_places_restantes; ?>"/>
+                                        </div>
                                     </td>
-                                    <td>
-                                        <span class="price" id="total"><span id="result_total"><?php echo $voyage->prix; ?></span><sup> €</sup></span>
+                                    <td class="price__total">
+                                        <span class="price" id="total">
+                                            <span class="pull-right" id="result_total"><?php echo $voyage->prix; ?><sup>&nbsp;€</sup></span>
+                                        </span>
                                     </td>
                                 </tr>
                             </table>
@@ -159,14 +167,14 @@ $step = 'payment';
 </div>
 <script type="text/javascript">
     window.onload = function (){
-        
+
         var price = <?php echo $voyage->prix; ?>;
-        
-        $('.fa-plus').on('click', function(){
-        
+
+        $('.addParticipants').on('click', function(){
+
             var value = $('#nombre_participants').text();
             if(value == <?php echo $nb_places_restantes; ?>){
-                alert('Le nombre de participants ne peut pas être supérieur, il ne reste que <?php echo $nb_places_restantes; ?> de places');
+                alert('Le nombre de places restantes a été atteint. Vous ne pouvez pas assigner plus de participants.');
             }else{
                 value++;
                 $('#nombre_participants').text(value);
@@ -175,8 +183,8 @@ $step = 'payment';
                 $('#result_total').text(total);
             }
         });
-        
-        $('.fa-minus').on('click', function(){
+
+        $('.substractParticipants').on('click', function(){
             var value = $('#nombre_participants').text();
             if(value == 1){
                 alert('Le nombre de participants ne peut pas être inférieur à 1');
