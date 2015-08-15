@@ -6435,6 +6435,15 @@ body.admin .submenu li .active {
   margin: 0 auto;
   width: 80px;
 }
+.admin-log-on > .container .login-panel .panel-form .error, .admin-log-on > .container .login-panel .panel-form .checked {
+  margin: 0 auto 25px auto;
+}
+.admin-log-on > .container .login-panel .panel-form .error {
+  color: red;
+}
+.admin-log-on > .container .login-panel .panel-form .checked {
+  color: green;
+}
 .admin-log-on > .container .login-panel .panel-form .form-group {
   margin-bottom: 25px;
   text-align: center;
@@ -6456,6 +6465,12 @@ body.admin .submenu li .active {
   margin-top: 10px;
   font-size: 80%;
   text-align: center;
+}
+.admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd > a {
+  color: #fff;
+}
+.admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd > a:hover, .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd > a:focus {
+  color: #f0c041;
 }
 .admin-log-on > .container .login-panel .panel-form .button {
   margin: 0 auto;

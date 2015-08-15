@@ -60,7 +60,7 @@
                         <div class="help-block">
                             <span class="small">Obligatoire</span>
                         </div>
-                        <input placeholder="Saississez votre texte" name="confirm-password" type="confirm-password" value="<?php echo set_value('confirm-password'); ?>">
+                        <input placeholder="Saississez votre texte" name="confirm-password" type="password" value="<?php echo set_value('confirm-password'); ?>">
                         <?php echo form_error('confirm-password'); ?>
                     </div>
                 </div>
