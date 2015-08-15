@@ -19,9 +19,7 @@ $page = "editing-article";
                     </a>
                 </div>
                 <?php } ?>
-                <h2 class="no-sep titre--article" contenteditable="true" placeholder="Titre de l'article">
-                    <?php echo $article[0]->titre; ?>
-                </h2>
+                <h2 class="no-sep titre--article" contenteditable="true" placeholder="Titre de l'article"><?php echo $article[0]->titre; ?></h2>
             </div>
         </div>
     </div>
