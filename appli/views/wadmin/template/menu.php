@@ -26,7 +26,7 @@
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-user-md fa-fw"></i>
-                    Bonjour <?php echo ucfirst(strtolower($admin[0]->prenom)) . ' ' . ucfirst(strtolower($admin[0]->nom)); ?>
+                    Bonjour <?php echo ucfirst(mb_strtolower($admin[0]->prenom)) . ' ' . ucfirst(mb_strtolower($admin[0]->nom)); ?>
                     <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">

@@ -4,28 +4,21 @@ $page = "editing-article";
 
 <body class="espace-voyageur editing">
     <form action="<?php echo (base_url().'article/modifier/'.$article[0]->idArticles); ?>" method="post" name="form_article" accept-charset="utf-8">
-    <div class="main banner modification article">
+    <div class="main banner modification article" <?php if($article[0]->etat == "Brouillon"){?>style="height: 400px;"<?php } ?>>
         <div class="container-fluid noPadding">
             <!-- Navbar -->
             <?php include 'template/menu.php'; ?>
         </div>
-            <div class="row">
-            <?php if($article[0]->etat == "Brouillon"){?>
-                <p>Cet article est enregistré en tant que brouillon, publiez le! :)</p>
-                <a href="<?php echo base_url().'article/publier/'.$article[0]->idArticles; ?>" class="button back-to-account">
-                    Demander la publication de cet article
-                </a>
-            <?php } ?>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-        </div>
         <div class="big-title-wrapper">
             <div class="big-title">
+                <?php if($article[0]->etat == "Brouillon"){?>
+                <div class="article__publication">
+                    <p>Votre article n'est actuellement pas visible, envoyez-le en modération&nbsp;!</p>
+                    <a class="button" href="<?php echo base_url().'article/publier/'.$article[0]->idArticles; ?>">
+                        Demander la publication de cet article
+                    </a>
+                </div>
+                <?php } ?>
                 <h2 class="no-sep titre--article" contenteditable="true" placeholder="Titre de l'article">
                     <?php echo $article[0]->titre; ?>
                 </h2>
