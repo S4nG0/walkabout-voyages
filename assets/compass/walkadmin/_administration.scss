@@ -100,6 +100,10 @@ body.admin {
         }
     }
 
+    p > .required {
+        color: red;
+    }
+
     .pagination {
         display: block;
         width: 100%;

@@ -6235,6 +6235,9 @@ body.admin .alert {
 body.admin .alert > p {
   color: #a94442;
 }
+body.admin p > .required {
+  color: red;
+}
 body.admin .pagination {
   display: block;
   width: 100%;
