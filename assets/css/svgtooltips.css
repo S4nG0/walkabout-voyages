@@ -1,0 +1,16 @@
+g.tooltip:not(.css) {
+  fill:#F0C041;
+}
+g.tooltip rect {
+    padding:10px;
+    fill: black;
+    stroke: #F0C041;
+}
+circle:hover + g.tooltip.css {
+  opacity:1;
+}
+dt {
+  font-weight:bold;
+  display:run-in;
+  padding-right:1em;
+}
