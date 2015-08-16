@@ -25,7 +25,7 @@ switch ($newsletter) {
 
             <!-- Navbar -->
 
-<?php include 'template/menu.php'; ?>
+            <?php include 'template/menu.php'; ?>
 
 
 
@@ -96,10 +96,11 @@ switch ($newsletter) {
 
                     <h2>Nos actualités</h2>
 
-<?php if(sizeof($actus) >0){
-foreach ($actus as $actu) {
+                    <?php
+                    if (sizeof($actus) > 0) {
+                        foreach ($actus as $actu) {
 
-    echo '<div class="row news">
+                            echo '<div class="row news">
 
                                         <div class="col-md-8">
 
@@ -114,10 +115,11 @@ foreach ($actus as $actu) {
                                         </div>
 
                                     </div>';
-}}else{
-    echo '<div class="row news"> <h4 style=text-align:center;vertical-align:middle;"> Aucune actualité pour l\'instant</h4></div>';
-}
-?>
+                        }
+                    } else {
+                        echo '<div class="row news"> <h4 style=text-align:center;vertical-align:middle;"> Aucune actualité pour l\'instant</h4></div>';
+                    }
+                    ?>
 
                 </div>
 
@@ -135,10 +137,9 @@ foreach ($actus as $actu) {
 
 
 
-<?php
-
-if(sizeof($carnets) > 0){
-    echo '    <div class="content travel-logs noPadding" id="travel-logs">
+    <?php
+    if (sizeof($carnets) > 0) {
+        echo '    <div class="content travel-logs noPadding" id="travel-logs">
 
         <div class="container-fluid">
 
@@ -147,9 +148,9 @@ if(sizeof($carnets) > 0){
                 <div class="travel-logs__slider">';
 
 
-foreach ($carnets as $carnet) {
+        foreach ($carnets as $carnet) {
 
-    echo '<div class="slider__item">
+            echo '<div class="slider__item">
 
                             <div class="row noPadding">
 
@@ -191,25 +192,24 @@ foreach ($carnets as $carnet) {
                             </div>
 
                         </div>';
-}
-echo'  </div>
+        }
+        echo'  </div>
 
             </div>
 
         </div>
 
     </div>';
-
-}
-?>
-
-
-
-               
+    }
+    ?>
 
 
 
-    <div class="content block_destinations" style="background-color: #efd48d !important;background-image:none !important;">
+
+
+
+
+    <div class="content block_destinations countries" style="background-color: #efd48d !important;background-image:none !important;">
 
         <div class="container-fluid">
 
@@ -223,11 +223,12 @@ echo'  </div>
 
                 <div class="col-md-12">
 
-                    <div class="contain-svg" style="margin:0 auto;text-align:center;">
+                    <div class="contain-svg">
                         <?php
-                            echo file_get_contents(img_url('walkadmin/worldtest.svg'));
+                            echo file_get_contents(img_url('map.svg'));
                         ?>
                     </div>
+
                 </div>
 
             </div>
@@ -235,17 +236,48 @@ echo'  </div>
         </div>
 
     </div>
-    
-<script type="text/javascript">
-    window.onload = function(){
-    <?php foreach($pays as $paysActuel){?>
-        $('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("class", "land active");
-        $('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("onclick", "document.location.href='<?php echo base_url().'walkadmin/pays_admin/detail/'.$paysActuel->idPays; ?>'");
-    <?php } ?>
-        
-        $.each($('[data-toggle="tooltip"]'), function(){
-            console.log(this);
-            $(this).tooltip();
-        });
-    }
-</script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            
+            <?php foreach($pays as $paysActuel){?>
+                $('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("class", "land active");
+            <?php } ?>
+            var tooltip = d3.select(".tooltip");
+            var SVGmouseTip = d3.select("g.tooltip.mouse");
+            
+            d3.select("svg").select("g").selectAll("path")
+
+                    .on("mouseover", function () {
+                        if($(this).attr('class').indexOf('active') != '-1'){
+                            tooltip.style("opacity", "1");
+                            $('#test').text($(this).data('pays'));
+                        }
+                    })
+                    .on("mousemove", function () {
+                        var mouseCoords = d3.mouse(SVGmouseTip.node().parentElement);
+                        
+                        SVGmouseTip.attr("transform", "translate("
+                                        + (mouseCoords[0] + 50) + ","
+                                        + (mouseCoords[1]) + ")");                        
+                    })
+                    .on("mouseout", function () {
+                        return tooltip.style("opacity", "0");
+                    });
+
+    //        var options = {
+    //            center: [48.856614, 2.352222],
+    //            zoom: 2
+    //        };
+    //        
+    //        var map = L.map('map', options);
+    //        var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
+    //            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    //            subdomains: ['a','b','c','d'],
+    //            mapId : 't4gad4.018270ef',
+    //            token : 'pk.eyJ1IjoidDRnYWQ0IiwiYSI6IjAxMTg3Zjk4MzIwN2UyMGU5YTFjZjA1ZTdiYjVhOWIxIn0.Sgz1QzW2JR3l3Abryt1PnA',
+    //            continuousWorld: false,
+    //            noWrap: true
+    //        }).addTo(map);
+        }
+    </script>

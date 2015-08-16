@@ -56,7 +56,7 @@
                                 <div class="panel-group searchable" id="accordion"  data-search="<?php echo $contact->nom . ' ' . $contact->prenom . ' ' . $contact->mail . ' ' . $contact->telephone . ' ' . $contact->message ?>" role="tablist" aria-multiselectable="true">
                                     <div class="panel panel-default contact">
                                         <div class="panel-heading" role="tab" id="heading<?php echo $contact->idContact; ?>">
-                                            <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $contact->idContact; ?>" aria-expanded="false" aria-controls="collapse<?php echo $contact->idContact; ?>">
+                                            <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_non_lus<?php echo $contact->idContact; ?>" aria-expanded="false" aria-controls="collapse<?php echo $contact->idContact; ?>">
                                                 <div class="contact__content">
                                                     <p class="content__name"><?php echo ucfirst(mb_strtolower($contact->nom)) . '&nbsp;' . ucfirst(mb_strtolower($contact->prenom)); ?></p>
                                                     <p class="published">Envoyé le <?php echo conv_date($contact->date); ?></p>
@@ -66,7 +66,7 @@
                                                 </div>
                                             </a>
                                         </div>
-                                        <div id="collapse<?php echo $contact->idContact; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $contact->idContact; ?>">
+                                        <div id="collapse_non_lus<?php echo $contact->idContact; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $contact->idContact; ?>">
                                             <div class="panel-body contact__message">
                                                 <div class="contact__status">
                                                     <a href="<?php echo base_url() . 'walkadmin/contact/lu/' . $contact->idContact; ?>" class="button black small">Marquer comme lu</a>
@@ -100,7 +100,7 @@
                                 <div class="panel-group searchable" id="accordion"  data-search="<?php echo $contact->nom . ' ' . $contact->prenom . ' ' . $contact->mail . ' ' . $contact->telephone . ' ' . $contact->message ?>" role="tablist" aria-multiselectable="true">
                                     <div class="panel panel-default contact">
                                         <div class="panel-heading" role="tab" id="headingOne">
-                                            <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_lus<?php echo $contact->idContact; ?>" aria-expanded="false" aria-controls="collapseOne">
                                                 <div class="contact__content">
                                                     <p class="content__name"><?php echo ucfirst(mb_strtolower($contact->nom)) . '&nbsp;' . ucfirst(mb_strtolower($contact->prenom)); ?></p>
                                                     <p class="published">Envoyé le <?php echo conv_date($contact->date); ?></p>
@@ -110,7 +110,7 @@
                                                 </div>
                                             </a>
                                         </div>
-                                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                        <div id="collapse_lus<?php echo $contact->idContact; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                             <div class="panel-body contact__message">
                                                 <div class="contact__status">
                                                     <a href="<?php echo base_url() . 'walkadmin/contact/nonlu/' . $contact->idContact; ?>" class="button black small">Marquer comme  non lu</a>
@@ -129,7 +129,7 @@
                                 </div>
 
                             <?php
-                            }
+                           }
                         } else {
                             echo '<p class="no-entry">Aucun message marqué comme lu !</p>';
                         }
@@ -144,7 +144,7 @@ if (sizeof($importants) > 0) {
                                 <div class="panel-group searchable" id="accordion"  data-search="<?php echo $contact->nom . ' ' . $contact->prenom . ' ' . $contact->mail . ' ' . $contact->telephone . ' ' . $contact->message ?>" role="tablist" aria-multiselectable="true">
                                     <div class="panel panel-default contact">
                                         <div class="panel-heading" role="tab" id="headingOne">
-                                            <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_importants<?php echo $contact->idContact; ?>" aria-expanded="false" aria-controls="collapseOne">
                                                 <div class="contact__content">
                                                     <p class="content__name"><?php echo ucfirst(mb_strtolower($contact->nom)) . '&nbsp;' . ucfirst(mb_strtolower($contact->prenom)); ?></p>
                                                     <p class="published">Envoyé le <?php echo conv_date($contact->date); ?></p>
@@ -154,7 +154,7 @@ if (sizeof($importants) > 0) {
                                                 </div>
                                             </a>
                                         </div>
-                                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                        <div id="collapse_importants<?php echo $contact->idContact; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                             <div class="panel-body contact__message">
                                                 <div class="contact__status">
                                                     <a href="<?php echo base_url() . 'walkadmin/contact/lu/' . $contact->idContact; ?>" class="button black small active"><i class="fa fa-remove"></i>&nbsp;Important</a>
@@ -188,7 +188,7 @@ if (sizeof($archives) > 0) {
                                 <div class="panel-group searchable" id="accordion"  data-search="<?php echo $contact->nom . ' ' . $contact->prenom . ' ' . $contact->mail . ' ' . $contact->telephone . ' ' . $contact->message ?>" role="tablist" aria-multiselectable="true">
                                     <div class="panel panel-default contact">
                                         <div class="panel-heading" role="tab" id="headingOne">
-                                            <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_archives<?php echo $contact->idContact; ?>" aria-expanded="false" aria-controls="collapseOne">
                                                 <div class="contact__content">
                                                     <p class="content__name"><?php echo ucfirst(mb_strtolower($contact->nom)) . '&nbsp;' . ucfirst(mb_strtolower($contact->prenom)); ?></p>
                                                     <p class="published">Envoyé le <?php echo conv_date($contact->date); ?></p>
@@ -198,7 +198,7 @@ if (sizeof($archives) > 0) {
                                                 </div>
                                             </a>
                                         </div>
-                                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                        <div id="collapse_archives<?php echo $contact->idContact; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                             <div class="panel-body contact__message">
                                                 <div class="contact__status">
                                                     <a href="<?php echo base_url() . 'walkadmin/contact/lu/' . $contact->idContact; ?>" class="button black small active"><i class="fa fa-remove"></i>&nbsp;Archivé</a>

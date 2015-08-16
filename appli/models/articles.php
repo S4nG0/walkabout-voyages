@@ -61,7 +61,7 @@ class Articles extends CI_Model {
         $articles = $this->db->select('*')
                            ->from($this->table)
                            ->where('idCarnet', $id_carnet)
-                           ->where('etat <> "Brouillon" and etat <> "Supprimes"')
+                           ->where('etat <> "Brouillon" and etat <> "En attente de modération" and etat <> "Supprimes"')
                            ->order_by("ordre", "ASC")
                            ->get()
                            ->result();

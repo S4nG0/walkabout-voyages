@@ -108,10 +108,10 @@ $page = "contact";
                         <label for="sujet">Sujet</label>
                         <span class="required">Obligatoire</span>
                         <select name="sujet" id="sujet">
-                            <option value="0"  selected="selected">Choisissez votre sujet</option>
-                            <option value="Destination">Question sur une destination</option>
-                            <option value="Carnet de voyage">Question sur un carnet de voyage</option>
-                            <option value="Prix">Question sur les prix</option>
+                            <option value="0" <?php if(set_value('sujet') == 0 || empty(set_value('sujet'))){echo ' selected';} ?>>Choisissez votre sujet</option>
+                            <option value="Destination" <?php if(set_value('sujet') == "Destination"){echo ' selected';} ?>>Question sur une destination</option>
+                            <option value="Carnet de voyage" <?php if(set_value('sujet') == "Carnet de voyage"){echo ' selected';} ?>>Question sur un carnet de voyage</option>
+                            <option value="Prix" <?php if(set_value('sujet') == "Prix"){echo ' selected';} ?>>Question sur les prix</option>
                         </select>
                         <?php echo form_error('sujet'); ?>
                     </div>
@@ -134,7 +134,7 @@ $page = "contact";
                         <span class="required">Obligatoire</span>
                         <div class="g-recaptcha" data-sitekey="6Lf5ygYTAAAAAH4TFzuywIHLQieSVV_wK_B99nJa"></div>
                         <?php
-                        if ($result == "erreur captcha") {
+                        if (isset($result) && $result == "erreur captcha") {
                             echo '<span class="erreur_form">Êtes-vous sûr de ne pas être un robot?</span>';
                         }
                         ?>
