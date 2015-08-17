@@ -29,6 +29,9 @@ class Accueil extends CI_Controller {
             $data['actus'] = $this->actualites->get_actus();
             $data['newsletter'] = $this->session->flashdata('newsletter');
             $data['destinations'] = $this->destination->get_all();
+            foreach($data['destinations'] as $destination){
+                $destination->pays = $this->pays->constructeur($destination->idPays)[0];
+            }
             $data['pays']=$this->pays->getPays();
             $data['title'] = "Accueil";
             foreach($data['actus'] as $actu){
