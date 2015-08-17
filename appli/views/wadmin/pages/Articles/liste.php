@@ -47,7 +47,7 @@
                                 <div class="single__block infoBlock">
                                     <h4><?php echo $article->titre; ?></h4>
                                     <p>
-                                        <?php echo substr(strip_tags($article->texte), 0, 200) . '&nbsp;... ' ?>
+                                        <?php echo splitText(strip_tags($article->texte), 300) . '&nbsp;... ' ?>
                                     </p>
                                     <a class="button black small" href="<?php echo base_url().'walkadmin/lire-article/'.$article->idArticles; ?>"><i class="fa fa-eye"></i>&nbsp;Lire plus...</a>
                                 </div>
