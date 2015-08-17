@@ -51,7 +51,7 @@ $page = "editing-carnet";
 
                     <?php
                     foreach($articles as $article){
-                        $texte = substr(strip_tags($article->texte), 0, 95).' ... ' ;
+                        $texte = splitText(strip_tags($article->texte), 150).' ... ' ;
                     ?>
                     <!-- begin:Article -->
                     <div class="article">
