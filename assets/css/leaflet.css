@@ -476,3 +476,9 @@
 	background: #fff;
 	border: 1px solid #666;
 	}
+        
+        
+/*suppression de l'attribution leaftlet */
+.leaflet-control-attribution{
+    display:none;
+}

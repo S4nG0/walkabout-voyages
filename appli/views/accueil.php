@@ -271,17 +271,35 @@ switch ($newsletter) {
                 scrollWheelZoom: false,
                 doubleClickZoom : false,
                 boxZoom : false,
+                zoomControl:false,
                 tap:false,
             };
             
             var map = L.map('map', options);
             var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
-                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-                subdomains: ['a','b','c','d'],
                 mapId : 't4gad4.018270ef',
                 token : 'pk.eyJ1IjoidDRnYWQ0IiwiYSI6IjAxMTg3Zjk4MzIwN2UyMGU5YTFjZjA1ZTdiYjVhOWIxIn0.Sgz1QzW2JR3l3Abryt1PnA',
                 continuousWorld: false,
-                noWrap: true
+                noWrap: true,
+                zoomControl:false
             }).addTo(map);
+            
+            var myIcon = L.icon({
+                iconUrl: '<?php echo img_url("marker.png"); ?>',
+                iconRetinaUrl: '<?php echo img_url("marker.png"); ?>',
+                iconSize: [40, 25],
+                iconAnchor: [20, 25],
+                popupAnchor: [1.5, -25],
+            });
+            var $i = 0;
+            var marker = [];
+            <?php foreach($destinations as $destination){ 
+                $latitude = explode(',',$destination->coordonnees)[0];
+                $longitude = explode(',',$destination->coordonnees)[1];
+            ?>
+                marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map);
+                marker[$i].bindPopup("<p style='color:black;'><?php echo $destination->titre; ?></p>");
+                $i++;
+            <?php } ?>
         }
     </script>
