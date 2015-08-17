@@ -40,7 +40,7 @@ class Dashboard extends CI_Controller {
         $data['admin'] = $this->session->userdata('admin');
         
         //On va calculer le nb de reservation par pays pour le pie chart
-        $data['payss'] = $this->pays->getPays();
+        $data['payss'] = $this->pays->getPaysWhereDestination();
         foreach($data['payss'] as $pays){
             $reservations = 0;
             $destinations = $this->destination->getFromPays($pays->idPays);

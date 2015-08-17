@@ -31,6 +31,16 @@ class Pays extends CI_Model {
         return $pays;
     }
     
+    
+    public function getPaysWhereDestination(){
+        $pays = $this->db->select('*')
+                         ->from($this->table)
+                         ->where('idPays in (SELECT idPays FROM wa__destination)')
+                         ->get()
+                         ->result();
+        return $pays;
+    }
+    
     public function insertPays($data){
         if($data=='')
             return false;
