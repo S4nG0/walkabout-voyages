@@ -58,15 +58,11 @@ class Moncompte extends CI_Controller {
             foreach ($data['voyages_sans_carnets'] as $voyage_sans_carnet) {
                 $voyage_sans_carnet->destination = $this->destination->constructeur($voyage_sans_carnet->idDestination)[0];
             }
-            $this->load->view('template/header', $data);
-            $this->load->view('moncompte', $data);
-            $this->load->view('template/footer');
-        }
-    }
-
-    public function majUser() {
-        if ($this->input->post() != false) {
-            $this->form_validation->set_rules('email', '"email"', 'trim|required|valid_email|encode_php_tags|xss_clean');
+            
+            if ($this->input->post() != false) {
+            $this->form_validation->set_rules('email', '"email"', 'update_unique[users.mail.idUsers.'.$this->session->userdata('user')[0]->idUsers.']|trim|required|valid_email|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('confirmation_password', '"Confirmation du mot de passe"', 'matches[new_password]');
+            $this->form_validation->set_rules('new_password', '"Nouveau mot de passe"', 'matches[confirmation_password]');
             if ($this->form_validation->run()) {
                 $mail = $this->input->post('email');
                 $user = array(
@@ -90,10 +86,21 @@ class Moncompte extends CI_Controller {
                     }
                 }
                 redirect($this->index());
-            } else {
-                redirect($this->index());
+            }else{
+                $this->load->view('template/header', $data);
+                $this->load->view('moncompte', $data);
+                $this->load->view('template/footer');
+                echo '<script>'
+                . 'window.onload = function () {$("#infos").click();alert("Des erreurs se sont produites lors de la modification de votre compte!");}'
+                        . '</script>';
             }
+        }else{
+            $this->load->view('template/header', $data);
+            $this->load->view('moncompte', $data);
+            $this->load->view('template/footer');
         }
+        }
+        
     }
 
 }

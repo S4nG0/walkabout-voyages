@@ -223,11 +223,7 @@ switch ($newsletter) {
 
                 <div class="col-md-12">
 
-                    <div class="contain-svg">
-                        <?php
-                            echo file_get_contents(img_url('map.svg'));
-                        ?>
-                    </div>
+                    <div id="map" style="width: 100%;height:600px;"></div>
 
                 </div>
 
@@ -240,44 +236,52 @@ switch ($newsletter) {
     <script type="text/javascript">
         window.onload = function () {
             
-            <?php foreach($pays as $paysActuel){?>
-                $('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("class", "land active");
-            <?php } ?>
-            var tooltip = d3.select(".tooltip");
-            var SVGmouseTip = d3.select("g.tooltip.mouse");
+            //<?php foreach($pays as $paysActuel){?>
+                //$('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("class", "land active");
+            //<?php } ?>
+//            var tooltip = d3.select(".tooltip");
+//            var SVGmouseTip = d3.select("g.tooltip.mouse");
+//            
+//            d3.select("svg").select("g").selectAll("path")
+//
+//                    .on("mouseover", function () {
+//                        if($(this).attr('class').indexOf('active') != '-1'){
+//                            tooltip.style("opacity", "1");
+//                            $('#test').text($(this).data('pays'));
+//                        }
+//                    })
+//                    .on("mousemove", function () {
+//                        var mouseCoords = d3.mouse(SVGmouseTip.node().parentElement);
+//                        
+//                        SVGmouseTip.attr("transform", "translate("
+//                                        + (mouseCoords[0] + 50) + ","
+//                                        + (mouseCoords[1]) + ")");                        
+//                    })
+//                    .on("mouseout", function () {
+//                        return tooltip.style("opacity", "0");
+//                    });
+
+            var options = {
+                center: [48.856614, 2.352222],
+                zoom: 2,
+                minZoom:2,
+                maxZoom:2,
+                dragging : false,
+                touchZoom:false,
+                scrollWheelZoom: false,
+                doubleClickZoom : false,
+                boxZoom : false,
+                tap:false,
+            };
             
-            d3.select("svg").select("g").selectAll("path")
-
-                    .on("mouseover", function () {
-                        if($(this).attr('class').indexOf('active') != '-1'){
-                            tooltip.style("opacity", "1");
-                            $('#test').text($(this).data('pays'));
-                        }
-                    })
-                    .on("mousemove", function () {
-                        var mouseCoords = d3.mouse(SVGmouseTip.node().parentElement);
-                        
-                        SVGmouseTip.attr("transform", "translate("
-                                        + (mouseCoords[0] + 50) + ","
-                                        + (mouseCoords[1]) + ")");                        
-                    })
-                    .on("mouseout", function () {
-                        return tooltip.style("opacity", "0");
-                    });
-
-    //        var options = {
-    //            center: [48.856614, 2.352222],
-    //            zoom: 2
-    //        };
-    //        
-    //        var map = L.map('map', options);
-    //        var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
-    //            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    //            subdomains: ['a','b','c','d'],
-    //            mapId : 't4gad4.018270ef',
-    //            token : 'pk.eyJ1IjoidDRnYWQ0IiwiYSI6IjAxMTg3Zjk4MzIwN2UyMGU5YTFjZjA1ZTdiYjVhOWIxIn0.Sgz1QzW2JR3l3Abryt1PnA',
-    //            continuousWorld: false,
-    //            noWrap: true
-    //        }).addTo(map);
+            var map = L.map('map', options);
+            var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                subdomains: ['a','b','c','d'],
+                mapId : 't4gad4.018270ef',
+                token : 'pk.eyJ1IjoidDRnYWQ0IiwiYSI6IjAxMTg3Zjk4MzIwN2UyMGU5YTFjZjA1ZTdiYjVhOWIxIn0.Sgz1QzW2JR3l3Abryt1PnA',
+                continuousWorld: false,
+                noWrap: true
+            }).addTo(map);
         }
     </script>

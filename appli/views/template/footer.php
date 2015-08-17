@@ -83,11 +83,15 @@
 <!-- Jquery & jQUI -->
 <script type="text/javascript" src="<?php echo js_url('jquery') ?>"></script>
 
-<!-- D3 -->
+<!-- D3 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.3.10/d3.min.js"></script>
+-->
+
+<!-- Leaflet --> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.3.10/d3.min.js"></script>
 
 <!-- Google reCaptcha-->
-<script src='<?php echo js_url('vendors/recaptcha'); ?>'></script>
+<script src='<?php echo js_url('vendors/leaflet'); ?>'></script>
 
 <!-- Vendors -->
 <script type="text/javascript" src="<?php echo js_url('vendors/bootstrap.min'); ?>"></script>
