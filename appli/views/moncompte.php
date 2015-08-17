@@ -218,19 +218,23 @@ $page = "moncompte";
                                 <span><?php if(gettype($uploader) != "boolean")echo '<script> alert("'.strip_tags (html_entity_decode($upload)).'"); </script>';?></span>
                             <?php }} ?>
                         </div>
-                        <?php echo form_open('moncompte/majuser') ?>
+                        <?php echo form_open('moncompte/') ?>
                         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                             <h3>Changer vos informations de connexion</h3>
                             <div class="form-group">
                                 <input type="email" name="email" id="email" value="<?php echo $user->mail; ?>">
+                                <?php echo form_error('email'); ?>
                                 <div class="change-pwd-wrapper">
                                         <input type="password" name="old_password" id="former-password" placeholder="Entrez votre ancien mot de passe">
+                                    
                                     <button class="change-pwd-button">
                                         Modifiez votre mot de passe
                                     </button>
                                 </div>
                                     <input type="password" name="new_password" id="new-password" placeholder="Entrez votre nouveau mot de passe">
+                                    <?php echo form_error('new_password'); ?>
                                     <input type="password" name="confirmation_password" id="new-password-confirmation" placeholder="Confirmez votre nouveau mot de passe">
+                                    <?php echo form_error('confirmation_password'); ?>
                             </div>
                         </div>
 

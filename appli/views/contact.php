@@ -108,7 +108,7 @@ $page = "contact";
                         <label for="sujet">Sujet</label>
                         <span class="required">Obligatoire</span>
                         <select name="sujet" id="sujet">
-                            <option value="0" <?php if(set_value('sujet') == 0 || empty(set_value('sujet'))){echo ' selected';} ?>>Choisissez votre sujet</option>
+                            <option value="0" <?php  if(set_value('sujet') == "" || set_value('sujet') == 0 || !set_value('sujet')){echo ' selected';} ?>>Choisissez votre sujet</option>
                             <option value="Destination" <?php if(set_value('sujet') == "Destination"){echo ' selected';} ?>>Question sur une destination</option>
                             <option value="Carnet de voyage" <?php if(set_value('sujet') == "Carnet de voyage"){echo ' selected';} ?>>Question sur un carnet de voyage</option>
                             <option value="Prix" <?php if(set_value('sujet') == "Prix"){echo ' selected';} ?>>Question sur les prix</option>
