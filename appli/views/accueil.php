@@ -174,7 +174,7 @@ switch ($newsletter) {
 
                                             <h3>' . $carnet->titre . '</h3>
 
-                                            <p class="published">Publié par <a href="utilisateur/' . $carnet->user[0]->slug . '">' . $carnet->user[0]->prenom . ' ' . $carnet->user[0]->nom . '</a>, le ' . $carnet->date . '.</p>
+                                            <p class="published">Publié par <a href="utilisateur/' . $carnet->user[0]->slug . '">' . ucfirst(mb_strtolower($carnet->user[0]->prenom)) . ' ' . ucfirst(mb_strtolower($carnet->user[0]->nom)) . '</a>, le ' . $carnet->date . '.</p>
 
                                             <blockquote>' . $carnet->description . '</blockquote>
 
@@ -209,39 +209,25 @@ switch ($newsletter) {
 
 
 
-    <div class="content block_destinations countries" style="background-color: #efd48d !important;background-image:none !important;">
+    <div class="destinations__map noselect">
 
-        <div class="container-fluid">
-
-            <div class="row noPadding">
-
-                <h2>Nos destinations</h2>
-
+        <div class="map__wrapper text-center">
+                <h2 class="no-sep black">Explorez nos destinations</h2>
+                <div id="map"></div>
             </div>
-
-            <div class="row noPadding">
-
-                <div class="col-md-12">
-
-                    <div id="map" style="width: 100%;height:720px;"></div>
-
-                </div>
-
-            </div>
-
         </div>
 
     </div>
 
     <script type="text/javascript">
         window.onload = function () {
-            
+
             //<?php foreach($pays as $paysActuel){?>
                 //$('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("class", "land active");
             //<?php } ?>
 //            var tooltip = d3.select(".tooltip");
 //            var SVGmouseTip = d3.select("g.tooltip.mouse");
-//            
+//
 //            d3.select("svg").select("g").selectAll("path")
 //
 //                    .on("mouseover", function () {
@@ -252,10 +238,10 @@ switch ($newsletter) {
 //                    })
 //                    .on("mousemove", function () {
 //                        var mouseCoords = d3.mouse(SVGmouseTip.node().parentElement);
-//                        
+//
 //                        SVGmouseTip.attr("transform", "translate("
 //                                        + (mouseCoords[0] + 50) + ","
-//                                        + (mouseCoords[1]) + ")");                        
+//                                        + (mouseCoords[1]) + ")");
 //                    })
 //                    .on("mouseout", function () {
 //                        return tooltip.style("opacity", "0");
@@ -264,8 +250,8 @@ switch ($newsletter) {
             var options = {
                 center: [48.856614, 2.352222],
                 zoom: 2,
-                minZoom:2,
-                maxZoom:2,
+                // minZoom:3,
+                // maxZoom:3,
                 dragging : false,
                 touchZoom:false,
                 scrollWheelZoom: false,
@@ -274,7 +260,7 @@ switch ($newsletter) {
                 zoomControl:false,
                 tap:false,
             };
-            
+
             var map = L.map('map', options);
             var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
                 mapId : 't4gad4.0d77ef41',
@@ -283,27 +269,39 @@ switch ($newsletter) {
                 noWrap: true,
                 zoomControl:false
             }).addTo(map);
-            
+
             var myIcon = L.icon({
                 iconUrl: '<?php echo img_url("marker.png"); ?>',
                 iconRetinaUrl: '<?php echo img_url("marker.png"); ?>',
-                iconSize: [40, 25],
-                iconAnchor: [20, 25],
-                popupAnchor: [1.5, -25],
+                iconSize: [80, 45],
+                iconAnchor: [40, 45],
+                popupAnchor: [1.5, -50],
             });
             var $i = 0;
             var marker = [];
-            <?php foreach($destinations as $destination){ 
+
+            <?php foreach($destinations as $destination){
                 $latitude = explode(',',$destination->coordonnees)[0];
                 $longitude = explode(',',$destination->coordonnees)[1];
             ?>
-                var texte ='<img src="<?php echo img_url($destination->banner); ?>"/><h5><?php echo $destination->titre; ?></h5><hr/><p><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p><a class="button" href="<?php echo base_url('nos-destinations/'.$destination->url); ?>">Voyager</a>';
-                            
-                marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map);
-                marker[$i].bindPopup(texte,{
-                    className : "popup_map"
-                });
-                $i++;
+
+            var popUp =''+
+            '<a class="no-style" href="<?php echo base_url('nos-destinations/'.$destination->url); ?>" title="Découvrez la destination">'+
+                '<div class="popup_map__image-wrapper">'+
+                    '<div class="popup_map__image" style="background-image: url(\'<?php echo img_url($destination->banner);?>\')"></div>'+
+                '</div>'+
+                '<div class="popup_map__text">'+
+                    '<p class="popup_map__text--title"><?php echo $destination->titre; ?></p>'+
+                    '<p class="popup_map__text--description"><?php echo splitText($destination->description, 94); ?>...</p>'+
+                    '<p class="popup_map__text--location"><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p>'+
+                '</div>'+
+            '</a>';
+
+            marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map);
+            marker[$i].bindPopup(popUp,{
+                className : "popup_map"
+            });
+            $i++;
             <?php } ?>
         }
     </script>

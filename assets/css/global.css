@@ -9450,6 +9450,9 @@ h1, h2, h3, h4 {
   color: #f0c041;
   letter-spacing: 1px;
 }
+h1.black, h2.black, h3.black, h4.black {
+  color: #242424;
+}
 
 h1 {
   text-transform: uppercase;
@@ -10086,119 +10089,89 @@ body.single-carnet .content {
   background-size: cover;
 }
 
-.content.block_destinations {
-  min-height: 500px;
-  background: url("../images/world-map.jpg") 0% 50% no-repeat;
-  background-size: cover;
-}
-.content.block_destinations .block_destinations__button {
+.destinations__map {
   display: block;
-  width: 200px;
-  margin: 0 auto;
-  padding: 8px;
-  background-color: #f0c041;
-  border: solid 1px #242424;
-  color: #242424;
-  font-size: 16px;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 600;
-}
-.content.block_destinations .block_destinations__button:hover {
-  background-color: #242424;
-  border: solid 1px #f0c041;
-  color: #fff;
-}
-.content.block_destinations h2 {
-  margin-bottom: 50px;
-  padding-bottom: 0;
-  text-align: center;
-  font-weight: 700;
-  color: #242424;
-  border-bottom: none;
-}
-.content.block_destinations .block_destinations__list {
-  margin: 0;
-  padding: 0;
+  padding-top: 50px;
+  padding-bottom: 15px;
   width: 100%;
-  height: 100%;
-  list-style-type: none;
+  min-height: 800px;
+  background: #efd48d;
 }
-.content.block_destinations .block_destinations__list .block_destinations__item {
-  position: relative;
-  float: left;
-  margin: 0 0 50px 0;
-  width: 20%;
-  min-height: 200px;
-  cursor: pointer;
-  font-family: "Dosis", sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-}
-.content.block_destinations .block_destinations__list .block_destinations__item h3 {
-  position: absolute;
-  margin-top: 25px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: #242424;
-}
-.content.block_destinations .block_destinations__list .block_destinations__item:hover h3, .content.block_destinations .block_destinations__list .block_destinations__item:focus h3 {
+.destinations__map h2 {
+  margin-bottom: 0;
+  font-size: 36px;
+  font-style: italic;
+  text-transform: none;
   font-weight: 600;
 }
-.content.block_destinations .block_destinations__list .block_destinations__item:last-child {
-  margin-right: 0;
+.destinations__map #map {
+  height: 800px;
+  padding-bottom: 50px;
 }
-.content.block_destinations .block_destinations__list #peru {
-  background: url("../images/destinations/peru1.png") 50% 25% no-repeat;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+.destinations__map #map .popup_map {
+  width: 300px;
 }
-.content.block_destinations .block_destinations__list #peru:hover, .content.block_destinations .block_destinations__list #peru:focus {
-  background: url("../images/destinations/peru2.png") 50% 25% no-repeat;
+.destinations__map #map .popup_map .leaflet-popup-content {
+  position: relative;
 }
-.content.block_destinations .block_destinations__list #australia {
-  background: url("../images/destinations/australia1.png") 50% 25% no-repeat;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+.destinations__map #map .popup_map .leaflet-popup-content p {
+  text-align: left;
+  margin: 0;
 }
-.content.block_destinations .block_destinations__list #australia:hover, .content.block_destinations .block_destinations__list #australia:focus {
-  background: url("../images/destinations/australia2.png") 50% 25% no-repeat;
+.destinations__map #map .popup_map .leaflet-popup-content:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
 }
-.content.block_destinations .block_destinations__list #benin {
-  background: url("../images/destinations/benin1.png") 50% 25% no-repeat;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+.destinations__map #map .popup_map .leaflet-popup-content:before {
+  border-top-color: #242424;
+  border-width: 12px;
+  margin-left: -12px;
 }
-.content.block_destinations .block_destinations__list #benin:hover, .content.block_destinations .block_destinations__list #benin:focus {
-  background: url("../images/destinations/benin2.png") 50% 25% no-repeat;
+.destinations__map #map .popup_map .leaflet-popup-content-wrapper {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
-.content.block_destinations .block_destinations__list #vietnam {
-  background: url("../images/destinations/vietnam1.png") 50% 25% no-repeat;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+.destinations__map #map .popup_map .leaflet-popup-tip {
+  display: none;
 }
-.content.block_destinations .block_destinations__list #vietnam:hover, .content.block_destinations .block_destinations__list #vietnam:focus {
-  background: url("../images/destinations/vietnam2.png") 50% 25% no-repeat;
+.destinations__map #map .popup_map .popup_map__image-wrapper {
+  position: relative;
+  width: 100%;
+  display: block;
 }
-.content.block_destinations .block_destinations__list #ecuador {
-  background: url("../images/destinations/ecuador1.png") 50% 25% no-repeat;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+.destinations__map #map .popup_map .popup_map__image-wrapper .popup_map__image {
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding-top: 50%;
 }
-.content.block_destinations .block_destinations__list #ecuador:hover, .content.block_destinations .block_destinations__list #ecuador:focus {
-  background: url("../images/destinations/ecuador2.png") 50% 25% no-repeat;
+.destinations__map #map .popup_map .popup_map__text {
+  padding: 15px;
+  text-align: left;
+}
+.destinations__map #map .popup_map .popup_map__text .popup_map__text--title {
+  font-family: "Dosis", sans-serif;
+  color: #f0c041 !important;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+.destinations__map #map .popup_map .popup_map__text .popup_map__text--description,
+.destinations__map #map .popup_map .popup_map__text .popup_map__text--location {
+  margin-top: 10px;
+  font-size: 13px !important;
+  line-height: 23px;
 }
 
 .articles-block {
@@ -10745,10 +10718,6 @@ body.single-carnet .content {
     background-size: 100%;
   }
 
-  .content.block_destinations .block_destinations__list .block_destinations__item {
-    width: 33%;
-  }
-
   .content.travel-logs .travel-logs__slider .owl-dots {
     position: static;
     display: block;
@@ -10786,10 +10755,6 @@ body.single-carnet .content {
     height: 450px;
   }
 
-  .content.block_destinations .block_destinations__list .block_destinations__item {
-    width: 100%;
-  }
-
   .container-fluid.discussion .comment .profile-picture {
     margin-bottom: 50px;
   }
@@ -10825,11 +10790,6 @@ body.single-carnet .content {
   .content.parallax {
     min-height: 150px;
     background-position: 0px -1600px;
-  }
-
-  .content.block_destinations {
-    background-image: none;
-    background-color: #efd48d;
   }
 
   .content .introduction {

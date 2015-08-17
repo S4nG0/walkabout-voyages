@@ -933,7 +933,7 @@ function recoverPasswordUser($mdp,$user){
 }
 
 function generate_email_forget_password($mdp,$admin){
-    
+
     $email = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -1886,4 +1886,29 @@ function traitementChaineDataUser($chaine){
     $tabNom = explode('"',$nom);
     $tabPrenom = explode('"',$prenom);
     return utf8_decode($tabNom[1]." ".$tabPrenom[1]);//retourne la chaine avec le nom suivi du prénom de la personne
+}
+
+function splitText($text, $maxLength)
+{
+    /* Make sure that the string will not be longer
+       than $maxLength.
+     */
+    if(strlen($text) > $maxLength)
+    {
+        /* Trim the text to $maxLength characters */
+        $text = substr($text, 0, $maxLength - 1);
+
+        /* Split words only at boundaries. This will be
+           accomplished by moving back each character from
+           the end of the split string until a space is found.
+         */
+        while(substr($text,-1) != ' ')
+        {
+            $text = substr($text, 0, -1);
+        }
+
+        /* Remove the whitespace at the end. */
+        $text = rtrim($text);
+    }
+    return $text;
 }

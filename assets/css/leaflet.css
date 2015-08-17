@@ -19,7 +19,7 @@
 	top: 0;
 	}
 .leaflet-container {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	-ms-touch-action: none;
 	}
 .leaflet-tile,
@@ -390,8 +390,8 @@
 .leaflet-popup-content-wrapper {
 	padding: 1px;
 	text-align: left;
-	border-radius: 12px;
-        overflow:hidden;
+	border-radius: 0;
+        /*overflow:hidden;*/
 	}
 .leaflet-popup-content {
 	margin: 13px 19px;
@@ -485,7 +485,7 @@
 
 .leaflet-popup-content{
     margin:0;
-    overflow:hidden;
+    /*overflow:hidden;*/
 }
 
 .leaflet-popup-content img{
