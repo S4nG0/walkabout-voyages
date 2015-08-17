@@ -223,7 +223,7 @@ switch ($newsletter) {
 
                 <div class="col-md-12">
 
-                    <div id="map" style="width: 100%;height:600px;"></div>
+                    <div id="map" style="width: 100%;height:720px;"></div>
 
                 </div>
 
@@ -277,7 +277,7 @@ switch ($newsletter) {
             
             var map = L.map('map', options);
             var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
-                mapId : 't4gad4.018270ef',
+                mapId : 't4gad4.0d77ef41',
                 token : 'pk.eyJ1IjoidDRnYWQ0IiwiYSI6IjAxMTg3Zjk4MzIwN2UyMGU5YTFjZjA1ZTdiYjVhOWIxIn0.Sgz1QzW2JR3l3Abryt1PnA',
                 continuousWorld: false,
                 noWrap: true,
@@ -297,8 +297,12 @@ switch ($newsletter) {
                 $latitude = explode(',',$destination->coordonnees)[0];
                 $longitude = explode(',',$destination->coordonnees)[1];
             ?>
+                var texte ='<img src="<?php echo img_url($destination->banner); ?>"/><h5><?php echo $destination->titre; ?></h5><hr/><p><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p>';
+                            
                 marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map);
-                marker[$i].bindPopup("<p style='color:black;'><?php echo $destination->titre; ?></p>");
+                marker[$i].bindPopup(texte,{
+                    className : "popup_map"
+                });
                 $i++;
             <?php } ?>
         }

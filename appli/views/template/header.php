@@ -21,11 +21,13 @@
     <link href='http://fonts.googleapis.com/css?family=Dosis:400,300,600,500,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 
-    <!-- Leaflet -->
-    <link rel="stylesheet" href="<?php echo css_url('leaflet'); ?>" />
     
     <!-- Vendors -->
     <link rel="stylesheet" href="<?php echo css_url('bootstrap.min'); ?>">
+    
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="<?php echo css_url('leaflet'); ?>" />
+    
     <link rel="stylesheet" href="<?php echo css_url('font-awesome');?>">
     <link rel="stylesheet" href="<?php echo css_url('fancybox');?>">
     <link rel="stylesheet" href="<?php echo css_url('helpers/fancybox-thumbs');?>">
