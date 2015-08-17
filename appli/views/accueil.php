@@ -297,7 +297,7 @@ switch ($newsletter) {
                 $latitude = explode(',',$destination->coordonnees)[0];
                 $longitude = explode(',',$destination->coordonnees)[1];
             ?>
-                var texte ='<img src="<?php echo img_url($destination->banner); ?>"/><h5><?php echo $destination->titre; ?></h5><hr/><p><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p>';
+                var texte ='<img src="<?php echo img_url($destination->banner); ?>"/><h5><?php echo $destination->titre; ?></h5><hr/><p><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p><a class="button" href="<?php echo base_url('nos-destinations/'.$destination->url); ?>">Voyager</a>';
                             
                 marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map);
                 marker[$i].bindPopup(texte,{
