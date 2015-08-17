@@ -174,7 +174,7 @@ switch ($newsletter) {
 
                                             <h3>' . $carnet->titre . '</h3>
 
-                                            <p class="published">Publié par <a href="utilisateur/' . $carnet->user[0]->slug . '">' . $carnet->user[0]->prenom . ' ' . $carnet->user[0]->nom . '</a>, le ' . $carnet->date . '.</p>
+                                            <p class="published">Publié par <a href="utilisateur/' . $carnet->user[0]->slug . '">' . ucfirst(mb_strtolower($carnet->user[0]->prenom)) . ' ' . ucfirst(mb_strtolower($carnet->user[0]->nom)) . '</a>, le ' . $carnet->date . '.</p>
 
                                             <blockquote>' . $carnet->description . '</blockquote>
 
