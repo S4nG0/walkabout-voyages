@@ -56,6 +56,7 @@
                                         </div>
                                         <?php echo form_close() ?>
                                     </div>
+                                </div>
                                 <?php } ?>
                             </div>
                         </div>
