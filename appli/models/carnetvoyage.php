@@ -7,7 +7,6 @@ class Carnetvoyage extends CI_Model {
 
     protected $table = 'carnetdevoyage';
 
-
     public function constructeur($id = 0){
         if($id == 0){
             return false;
@@ -265,7 +264,7 @@ class Carnetvoyage extends CI_Model {
 
         return $carnets;
     }
-    
+
     public function countWhereArticlesSearch($search){
         $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> \"Brouillon\" and titre LIKE '%$search%' OR texte LIKE '%$search%')";
         $carnets = $this->db->query($query)->result();
@@ -297,7 +296,7 @@ class Carnetvoyage extends CI_Model {
 
         return $carnets;
     }
-    
+
     public function getCarnetsAndUsers(){
         $carnets = $this->db->select('carnetdevoyage.*,users.nom AS nomUsers,users.prenom AS prenomUsers')
                             ->from($this->table)

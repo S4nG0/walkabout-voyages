@@ -262,6 +262,8 @@ switch ($newsletter) {
             };
 
             var map = L.map('map', options);
+
+
             var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
                 mapId : 't4gad4.0d77ef41',
                 token : 'pk.eyJ1IjoidDRnYWQ0IiwiYSI6IjAxMTg3Zjk4MzIwN2UyMGU5YTFjZjA1ZTdiYjVhOWIxIn0.Sgz1QzW2JR3l3Abryt1PnA',
@@ -269,6 +271,7 @@ switch ($newsletter) {
                 noWrap: true,
                 zoomControl:false
             }).addTo(map);
+
 
             var myIcon = L.icon({
                 iconUrl: '<?php echo img_url("marker.png"); ?>',
@@ -279,6 +282,7 @@ switch ($newsletter) {
             });
             var $i = 0;
             var marker = [];
+
 
             <?php foreach($destinations as $destination){
                 $latitude = explode(',',$destination->coordonnees)[0];

@@ -34,7 +34,7 @@
                             </div>
                             <div class="single__block infoBlock">
                                 <h3><?php echo $destination->titre; ?></h3>
-                                <p><?php echo $destination->nom; ?>&nbsp;&bull;&nbsp;<?php echo $destination->ville; ?></p>
+                                <p><?php echo ucfirst($destination->ville); ?></p>
                             </div>
                             <div class="single__block buttonsBlock">
                                 <a class="button black check" id="restore" href="<?php echo base_url().'walkadmin/destinations/restaurer/'.$destination->idDestination;?>">
