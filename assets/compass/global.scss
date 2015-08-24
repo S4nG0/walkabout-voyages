@@ -413,6 +413,17 @@ input[type="radio"]:not(old):checked + label {
     }
 }
 
+//Error reporting
+.error {
+    margin-top: 10px;
+    font-size: 16px;
+    color: $error;
+}
+
+.alert {
+    margin: 25px auto 0 auto;
+}
+
 /*------------------------------------*\
     #LAYOUT
 \*------------------------------------*/

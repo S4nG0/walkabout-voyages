@@ -10,10 +10,10 @@ class Contact extends CI_Controller {
      *
      * Maps to the following URL
      * 		http://example.com/index.php/welcome
-     * 	- or -  
+     * 	- or -
      * 		http://example.com/index.php/welcome/index
      * 	- or -
-     * Since this controller is set as the default controller in 
+     * Since this controller is set as the default controller in
      * config/routes.php, it's displayed at http://example.com/
      *
      * So any other public methods not prefixed with an underscore will
@@ -43,13 +43,13 @@ class Contact extends CI_Controller {
                 }
             }
 
-            
+            $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
             $this->form_validation->set_rules('nom', '"Nom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('prenom', '"Prénom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('mail', '"E-mail"', 'trim|required|min_length[5]|valid_email|max_length[52]|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('tel', '"Téléphone"', 'trim|min_length[10]|max_length[15]|encode_php_tags|xss_clean|numeric');
             $this->form_validation->set_rules('sujet', '"Sujet"', 'required|callback___check_default');
-            $this->form_validation->set_message('__check_default', 'Vous devez choisir obligatoirement une valeur!');
+            $this->form_validation->set_message('__check_default', '<span class="small"><i class="fa fa-exclamation-circle"></i>&nbspVeuillez choisir une valeur dans la liste.</span>');
             $this->form_validation->set_rules('message', '"Message"', 'trim|required|min_length[50]|max_length[6000]|encode_php_tags|xss_clean');
 
             if ($this->form_validation->run() && $result == "captcha ok") {
@@ -66,7 +66,7 @@ class Contact extends CI_Controller {
                 $result = $this->__construct_email($form);
 
                 $this->email->from($form['mail'], $form['prenom'].' '.$form['nom']);
-                $this->email->to('capi.aurelien@gmail.com'); 
+                $this->email->to('capi.aurelien@gmail.com');
 
                 $this->email->subject('Nouveau contact Walkabout');
                 $this->email->set_mailtype("html");
@@ -87,8 +87,8 @@ class Contact extends CI_Controller {
                 $contact->date = date('Y-m-d');
 
                 $this->contacts->insert($contact);
-                
-                
+
+
                 $result = "ok";
                 $data['result'] = $result;
                 $data['connecte'] = connecte($this->session->userdata('user')[0]);
@@ -137,7 +137,7 @@ class Contact extends CI_Controller {
                     redirect('nos-destinations');
                 }
                 */
-                
+
             }else{
                 $result = validation_errors();
                 echo output($result);
@@ -166,47 +166,47 @@ class Contact extends CI_Controller {
 
             /* Client-specific Styles & Reset */
 
-            #outlook a { 
-                padding:0; 
-            } 
-
-            body{ 
-                width:100% !important; 
-                min-width: 100%;
-                -webkit-text-size-adjust:100%; 
-                -ms-text-size-adjust:100%; 
-                margin:0; 
+            #outlook a {
                 padding:0;
             }
 
-            .ExternalClass { 
-                width:100%;
-            } 
-
-            .ExternalClass, 
-            .ExternalClass p, 
-            .ExternalClass span, 
-            .ExternalClass font, 
-            .ExternalClass td, 
-            .ExternalClass div { 
-                line-height: 100%; 
-            } 
-
-            #backgroundTable { 
-                margin:0; 
-                padding:0; 
-                width:100% !important; 
-                line-height: 100% !important; 
+            body{
+                width:100% !important;
+                min-width: 100%;
+                -webkit-text-size-adjust:100%;
+                -ms-text-size-adjust:100%;
+                margin:0;
+                padding:0;
             }
 
-            img { 
-                outline:none; 
-                text-decoration:none; 
+            .ExternalClass {
+                width:100%;
+            }
+
+            .ExternalClass,
+            .ExternalClass p,
+            .ExternalClass span,
+            .ExternalClass font,
+            .ExternalClass td,
+            .ExternalClass div {
+                line-height: 100%;
+            }
+
+            #backgroundTable {
+                margin:0;
+                padding:0;
+                width:100% !important;
+                line-height: 100% !important;
+            }
+
+            img {
+                outline:none;
+                text-decoration:none;
                 -ms-interpolation-mode: bicubic;
                 width: auto;
-                max-width: 100%; 
-                float: left; 
-                clear: both; 
+                max-width: 100%;
+                float: left;
+                clear: both;
                 display: block;
             }
 
@@ -215,7 +215,7 @@ class Contact extends CI_Controller {
                 min-width: 580px;
             }
 
-            a img { 
+            a img {
                 border: none;
             }
 
@@ -228,12 +228,12 @@ class Contact extends CI_Controller {
                 border-collapse: collapse;
             }
 
-            td { 
+            td {
                 word-break: break-word;
                 -webkit-hyphens: auto;
                 -moz-hyphens: auto;
                 hyphens: auto;
-                border-collapse: collapse !important; 
+                border-collapse: collapse !important;
             }
 
             table, tr, td {
@@ -243,9 +243,9 @@ class Contact extends CI_Controller {
             }
 
             hr {
-                color: #f0c041; 
-                background-color: #f0c041; 
-                height: 1px; 
+                color: #f0c041;
+                background-color: #f0c041;
+                height: 1px;
                 border: none;
             }
 
@@ -263,8 +263,8 @@ class Contact extends CI_Controller {
                 text-align: inherit;
             }
 
-            table.row { 
-                padding: 0px; 
+            table.row {
+                padding: 0px;
                 width: 100%;
                 position: relative;
             }
@@ -285,7 +285,7 @@ class Contact extends CI_Controller {
 
             table.columns td,
             table.column td {
-                padding: 0px 0px 10px; 
+                padding: 0px 0px 10px;
             }
 
             table.columns td.sub-columns,
@@ -460,7 +460,7 @@ class Contact extends CI_Controller {
             h6.center {
                 text-align: center;
             }
-            
+
             .message p{
                 text-align:justify !important;
             }
@@ -470,7 +470,7 @@ class Contact extends CI_Controller {
                 width: 100%;
                 text-align: center;
             }
-            
+
             td.center p {
                 display: block;
                 width: 100%;
@@ -489,13 +489,13 @@ class Contact extends CI_Controller {
 
             /* Typography */
 
-            body, table.body, h1, h2, h3, h4, h5, h6, p, td { 
+            body, table.body, h1, h2, h3, h4, h5, h6, p, td {
                 color: #222222;
-                font-family: "Helvetica", "Arial", sans-serif; 
-                font-weight: normal; 
-                padding:0; 
+                font-family: "Helvetica", "Arial", sans-serif;
+                font-weight: normal;
+                padding:0;
                 margin: 0;
-                text-align: left; 
+                text-align: left;
                 line-height: 1.3;
             }
 
@@ -516,7 +516,7 @@ class Contact extends CI_Controller {
                 line-height:21px;
             }
 
-            p { 
+            p {
                 margin-bottom: 10px;
             }
 
@@ -525,48 +525,48 @@ class Contact extends CI_Controller {
             }
 
             a {
-                color: #2ba6cb; 
+                color: #2ba6cb;
                 text-decoration: none;
             }
 
-            a:hover { 
+            a:hover {
                 color: #2795b6 !important;
             }
 
-            a:active { 
+            a:active {
                 color: #2795b6 !important;
             }
 
-            a:visited { 
+            a:visited {
                 color: #2ba6cb !important;
             }
 
-            h1 a, 
-            h2 a, 
-            h3 a, 
-            h4 a, 
-            h5 a, 
+            h1 a,
+            h2 a,
+            h3 a,
+            h4 a,
+            h5 a,
             h6 a {
                 color: #2ba6cb;
             }
 
-            h1 a:active, 
-            h2 a:active,  
-            h3 a:active, 
-            h4 a:active, 
-            h5 a:active, 
-            h6 a:active { 
-                color: #2ba6cb !important; 
-            } 
+            h1 a:active,
+            h2 a:active,
+            h3 a:active,
+            h4 a:active,
+            h5 a:active,
+            h6 a:active {
+                color: #2ba6cb !important;
+            }
 
-            h1 a:visited, 
-            h2 a:visited,  
-            h3 a:visited, 
-            h4 a:visited, 
-            h5 a:visited, 
-            h6 a:visited { 
-                color: #2ba6cb !important; 
-            } 
+            h1 a:visited,
+            h2 a:visited,
+            h3 a:visited,
+            h4 a:visited,
+            h5 a:visited,
+            h6 a:visited {
+                color: #2ba6cb !important;
+            }
 
             /* Panels */
 
@@ -689,7 +689,7 @@ class Contact extends CI_Controller {
             table.large-button:hover td a,
             table.large-button:active td a,
             table.large-button td a:visited {
-                color: #ffffff !important; 
+                color: #ffffff !important;
             }
 
             table.secondary td {
@@ -988,19 +988,19 @@ class Contact extends CI_Controller {
                                 </td>
                             </tr>
                         </table>
-                        
+
                          <table class="container">
                             <tr>
                                 <td class="wrapper last">
 
                                     <table class="twelve columns">
-                                        
+
                                         <tr>
                                             <td class="twelve columns">
                                                 <h1 class="center">Contact Walkabout</h1>
                                             </td>
                                         </tr>
-                                    
+
                                     </table>
                                 </td>
                             </tr>
@@ -1012,7 +1012,7 @@ class Contact extends CI_Controller {
                                 <td class="wrapper last">
 
                                     <table class="twelve columns">
-                                        
+
                                         <tr>
                                             <td class="six sub-columns">
                                                 <p><span class="lead">Nom : </span>' . $data['nom'] . '</p>

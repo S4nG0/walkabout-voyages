@@ -210,9 +210,18 @@ switch ($newsletter) {
 
 
     <div class="destinations__map noselect">
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <h2 class="no-sep black">Explorez nos destinations</h2>
+                <div class="help-block">
+                    <span class="small">
+                        Cliquez sur une des icônes pour découvrir la destination...
+                    </span>
+                </div>
+            </div>
+        </div>
 
         <div class="map__wrapper text-center">
-                <h2 class="no-sep black">Explorez nos destinations</h2>
                 <div id="map"></div>
             </div>
         </div>
@@ -289,7 +298,7 @@ switch ($newsletter) {
                 $longitude = explode(',',$destination->coordonnees)[1];
             ?>
 
-            var popUp =''+
+            var popUp = L.popup({ autoPan: false}).setContent(''+
             '<a class="no-style" href="<?php echo base_url('nos-destinations/'.$destination->url); ?>" title="Découvrez la destination">'+
                 '<div class="popup_map__image-wrapper">'+
                     '<div class="popup_map__image" style="background-image: url(\'<?php echo img_url($destination->banner);?>\')"></div>'+
@@ -299,7 +308,7 @@ switch ($newsletter) {
                     '<p class="popup_map__text--description"><?php echo splitText($destination->description, 94); ?>...</p>'+
                     '<p class="popup_map__text--location"><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p>'+
                 '</div>'+
-            '</a>';
+            '</a>');
 
             marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map);
             marker[$i].bindPopup(popUp,{
