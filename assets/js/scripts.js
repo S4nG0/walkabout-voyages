@@ -1,7 +1,7 @@
 var body = $('body');
 
+// var base_url = "http://walkabout-voyages.fr/";
 var base_url = "http://dev.walkabout-voyages.fr/";
-// var base_url = "http://localhost/walkabout-voyages/";
 
 /***
  * Gives two column the same height
