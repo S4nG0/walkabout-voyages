@@ -908,6 +908,8 @@ body.admin {
 
     .destinations__coordinates,
     .destinations__deroulement,
+    .destinations__priceMinus,
+    .destinations__pricePlus,
     .voyages__detailsPrix {
         label {
             display: block;
@@ -974,7 +976,9 @@ body.admin {
         }
     }
 
-    .destinations__deroulement.fieldBlock {
+    .destinations__deroulement.fieldBlock,
+    .destinations__pricePlus.fieldBlock,
+    .destinations__priceMinus.fieldBlock {
         position: relative;
         margin-top: 25px;
         margin-bottom: 50px;
