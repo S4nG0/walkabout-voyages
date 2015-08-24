@@ -276,6 +276,24 @@ $('#add').on('click', function(){
     i++;
 });
 
+$('#add-pricePlus').on('click', function(){
+    if(typeof i == 'undefined'){
+        i = 0 ;
+    }
+    $('#container_pricePlus').append($('<div class="form-group destinations__pricePlus fieldBlock" id="detail'+i+'"><textarea name="pricePlus'+i+'" id="pricePlus" rows="2" maxlength="75" placeholder="Saisissez votre information"></textarea><span class="destinations__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>').hide().fadeIn(300));
+    i++;
+});
+
+
+$('#add-priceMinus').on('click', function(){
+    if(typeof i == 'undefined'){
+        i = 0 ;
+    }
+    $('#container_priceMinus').append($('<div class="form-group destinations__priceMinus fieldBlock" id="detail'+i+'"><textarea name="priceMinus'+i+'" id="priceMinus" rows="2" maxlength="75" placeholder="Saisissez votre information"></textarea><span class="destinations__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>').hide().fadeIn(300));
+    i++;
+});
+
+
 });
 
 $('input[name=star]').on('click',function(){
