@@ -7,10 +7,10 @@ class Connexion extends CI_Controller {
 	 *
 	 * Maps to the following URL
 	 * 		http://example.com/index.php/welcome
-	 *	- or -  
+	 *	- or -
 	 * 		http://example.com/index.php/welcome/index
 	 *	- or -
-	 * Since this controller is set as the default controller in 
+	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
@@ -22,11 +22,12 @@ class Connexion extends CI_Controller {
             $data = array();
             $data['title'] = "Connexion";
             $data['result'] = null;
-            
+
             if ($this->input->post() != false) {
+                $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
                 $this->form_validation->set_rules('email', '"Email"', 'trim|required|valid_email|encode_php_tags|xss_clean');
                 $this->form_validation->set_rules('password', '"Mot de passe"', 'trim|required|encode_php_tags|xss_clean');
-                
+
                 if($this->form_validation->run()){
                     $mail = $this->input->post('email');
                     $password = $this->input->post('password');
@@ -51,20 +52,20 @@ class Connexion extends CI_Controller {
                             $this->load->view('template/footer');
                             return false;
                         }
-                        
+
                     }else{
                         $data['result'] = false;
                     }
                 }
             }
-            
+
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $this->load->view('template/header', $data);
             $this->load->view('connexion',$data);
             $this->load->view('template/footer');
             //$this->output->enable_profiler(true);
 	}
-        
+
     public function oublieMdp(){
         if($this->input->post()!=false){
             $this->form_validation->set_rules('pwd-recover-email', '"pwd-recover-email"', 'trim|required|valid_email|encode_php_tags|xss_clean');

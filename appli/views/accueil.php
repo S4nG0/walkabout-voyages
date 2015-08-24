@@ -209,43 +209,35 @@ switch ($newsletter) {
 
 
 
-    <div class="destinations__map noselect">
-
-        <div class="map__wrapper text-center">
+    <div class="destinations__map noselect hidden-xs">
+        <div class="row text-center noPadding">
+            <div class="col-sm-12">
                 <h2 class="no-sep black">Explorez nos destinations</h2>
-                <div id="map"></div>
+                <div class="help-block">
+                    <span class="small">
+                        Cliquez sur une des icônes pour découvrir la destination...
+                    </span>
+                </div>
             </div>
         </div>
 
+        <div class="row noPadding">
+            <div class="map__wrapper text-center">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="destinations__buttonBlock hidden-sm hidden-md hidden-lg">
+        <div class="destinations__buttonBlock__content text-center">
+            <h2 class="no-sep black">Découvrez nos destinations...</h2>
+            <a href="<?php echo base_url().'/nos-destinations'; ?>" class="button black">Tous nos voyages</a>
+        </div>
     </div>
 
     <script type="text/javascript">
         window.onload = function () {
-
-            //<?php foreach($pays as $paysActuel){?>
-                //$('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("class", "land active");
-            //<?php } ?>
-//            var tooltip = d3.select(".tooltip");
-//            var SVGmouseTip = d3.select("g.tooltip.mouse");
-//
-//            d3.select("svg").select("g").selectAll("path")
-//
-//                    .on("mouseover", function () {
-//                        if($(this).attr('class').indexOf('active') != '-1'){
-//                            tooltip.style("opacity", "1");
-//                            $('#test').text($(this).data('pays'));
-//                        }
-//                    })
-//                    .on("mousemove", function () {
-//                        var mouseCoords = d3.mouse(SVGmouseTip.node().parentElement);
-//
-//                        SVGmouseTip.attr("transform", "translate("
-//                                        + (mouseCoords[0] + 50) + ","
-//                                        + (mouseCoords[1]) + ")");
-//                    })
-//                    .on("mouseout", function () {
-//                        return tooltip.style("opacity", "0");
-//                    });
 
             var options = {
                 center: [48.856614, 2.352222],
@@ -289,7 +281,7 @@ switch ($newsletter) {
                 $longitude = explode(',',$destination->coordonnees)[1];
             ?>
 
-            var popUp =''+
+            var popUp = L.popup({ autoPan: false}).setContent(''+
             '<a class="no-style" href="<?php echo base_url('nos-destinations/'.$destination->url); ?>" title="Découvrez la destination">'+
                 '<div class="popup_map__image-wrapper">'+
                     '<div class="popup_map__image" style="background-image: url(\'<?php echo img_url($destination->banner);?>\')"></div>'+
@@ -299,7 +291,7 @@ switch ($newsletter) {
                     '<p class="popup_map__text--description"><?php echo splitText($destination->description, 94); ?>...</p>'+
                     '<p class="popup_map__text--location"><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p>'+
                 '</div>'+
-            '</a>';
+            '</a>');
 
             marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map);
             marker[$i].bindPopup(popUp,{

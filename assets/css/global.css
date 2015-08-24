@@ -9819,6 +9819,16 @@ input[type="radio"]:not(old):checked + label > span {
   border-color: #f0c041;
 }
 
+.error {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ca2d2d;
+}
+
+.alert {
+  margin: 25px auto 0 auto;
+}
+
 /*------------------------------------*\
     #LAYOUT
 \*------------------------------------*/
@@ -10089,7 +10099,8 @@ body.single-carnet .content {
   background-size: cover;
 }
 
-.destinations__map {
+.destinations__map,
+.destinations__buttonBlock {
   display: block;
   padding-top: 50px;
   padding-bottom: 15px;
@@ -10097,28 +10108,34 @@ body.single-carnet .content {
   min-height: 800px;
   background: #efd48d;
 }
-.destinations__map h2 {
+.destinations__map h2,
+.destinations__buttonBlock h2 {
   margin-bottom: 0;
   font-size: 36px;
   font-style: italic;
   text-transform: none;
   font-weight: 600;
 }
-.destinations__map #map {
+.destinations__map #map,
+.destinations__buttonBlock #map {
   height: 800px;
   padding-bottom: 50px;
 }
-.destinations__map #map .popup_map {
+.destinations__map #map .popup_map,
+.destinations__buttonBlock #map .popup_map {
   width: 300px;
 }
-.destinations__map #map .popup_map .leaflet-popup-content {
+.destinations__map #map .popup_map .leaflet-popup-content,
+.destinations__buttonBlock #map .popup_map .leaflet-popup-content {
   position: relative;
 }
-.destinations__map #map .popup_map .leaflet-popup-content p {
+.destinations__map #map .popup_map .leaflet-popup-content p,
+.destinations__buttonBlock #map .popup_map .leaflet-popup-content p {
   text-align: left;
   margin: 0;
 }
-.destinations__map #map .popup_map .leaflet-popup-content:before {
+.destinations__map #map .popup_map .leaflet-popup-content:before,
+.destinations__buttonBlock #map .popup_map .leaflet-popup-content:before {
   top: 100%;
   left: 50%;
   border: solid transparent;
@@ -10128,25 +10145,30 @@ body.single-carnet .content {
   position: absolute;
   pointer-events: none;
 }
-.destinations__map #map .popup_map .leaflet-popup-content:before {
+.destinations__map #map .popup_map .leaflet-popup-content:before,
+.destinations__buttonBlock #map .popup_map .leaflet-popup-content:before {
   border-top-color: #242424;
   border-width: 12px;
   margin-left: -12px;
 }
-.destinations__map #map .popup_map .leaflet-popup-content-wrapper {
+.destinations__map #map .popup_map .leaflet-popup-content-wrapper,
+.destinations__buttonBlock #map .popup_map .leaflet-popup-content-wrapper {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.destinations__map #map .popup_map .leaflet-popup-tip {
+.destinations__map #map .popup_map .leaflet-popup-tip,
+.destinations__buttonBlock #map .popup_map .leaflet-popup-tip {
   display: none;
 }
-.destinations__map #map .popup_map .popup_map__image-wrapper {
+.destinations__map #map .popup_map .popup_map__image-wrapper,
+.destinations__buttonBlock #map .popup_map .popup_map__image-wrapper {
   position: relative;
   width: 100%;
   display: block;
 }
-.destinations__map #map .popup_map .popup_map__image-wrapper .popup_map__image {
+.destinations__map #map .popup_map .popup_map__image-wrapper .popup_map__image,
+.destinations__buttonBlock #map .popup_map .popup_map__image-wrapper .popup_map__image {
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-origin: border-box;
@@ -10156,11 +10178,13 @@ body.single-carnet .content {
   background-size: cover;
   padding-top: 50%;
 }
-.destinations__map #map .popup_map .popup_map__text {
+.destinations__map #map .popup_map .popup_map__text,
+.destinations__buttonBlock #map .popup_map .popup_map__text {
   padding: 15px;
   text-align: left;
 }
-.destinations__map #map .popup_map .popup_map__text .popup_map__text--title {
+.destinations__map #map .popup_map .popup_map__text .popup_map__text--title,
+.destinations__buttonBlock #map .popup_map .popup_map__text .popup_map__text--title {
   font-family: "Dosis", sans-serif;
   color: #f0c041 !important;
   font-size: 20px;
@@ -10168,10 +10192,34 @@ body.single-carnet .content {
   text-transform: uppercase;
 }
 .destinations__map #map .popup_map .popup_map__text .popup_map__text--description,
-.destinations__map #map .popup_map .popup_map__text .popup_map__text--location {
+.destinations__map #map .popup_map .popup_map__text .popup_map__text--location,
+.destinations__buttonBlock #map .popup_map .popup_map__text .popup_map__text--description,
+.destinations__buttonBlock #map .popup_map .popup_map__text .popup_map__text--location {
   margin-top: 10px;
   font-size: 13px !important;
   line-height: 23px;
+}
+
+.destinations__buttonBlock {
+  position: relative;
+  min-height: 300px;
+  padding: 50px 0;
+  background-image: url("../images/world-map.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.destinations__buttonBlock .button {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .articles-block {
