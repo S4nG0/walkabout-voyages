@@ -712,7 +712,8 @@ body.single-carnet {
     }
 }
 
-.destinations__map {
+.destinations__map,
+.destinations__buttonBlock {
     display: block;
     padding-top: 50px;
     padding-bottom: 15px;
@@ -803,6 +804,23 @@ body.single-carnet {
             }
         }
 
+    }
+}
+
+.destinations__buttonBlock {
+    position: relative;
+    min-height: 300px;
+    padding: 50px 0;
+    background-image: url('../images/world-map.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include background-size(cover);
+
+    .button {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        @include translateX(-50%);
     }
 }
 
