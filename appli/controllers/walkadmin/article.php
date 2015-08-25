@@ -41,7 +41,7 @@ class Article extends CI_Controller{
         $start = ($page*$nb_articles)-$nb_articles;
 
 
-        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_admin($start, $nb_articles);
+        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_administrateur($start, $nb_articles);
         foreach($data['carnets'] as $carnet){
             $carnet->articles = $this->articles->getFromCarnetWherePublie($carnet->idCarnetDeVoyage);
         }
