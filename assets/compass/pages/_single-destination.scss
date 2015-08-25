@@ -400,6 +400,15 @@ body.single-destination {
                     }
                 }
             }
+
+
+            .info-details {
+                .row {
+                    > .col-md-6:last-child {
+                        margin-top: 25px;
+                    }
+                }
+            }
         }
     }
 }

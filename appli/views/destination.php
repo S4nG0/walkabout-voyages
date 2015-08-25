@@ -116,36 +116,36 @@
                             <div class="col-md-6">
                                 <h3>Accompagnement</h3>
                                 <p>
-<?php if (isset($infos->accompagnement)) {
-    echo $infos->accompagnement;
-} ?>
+                                <?php if (isset($infos->accompagnement)) {
+                                    echo $infos->accompagnement;
+                                } ?>
                                 </p>
                             </div>
                             <div class="col-md-6">
                                 <h3>Déplacements</h3>
                                 <p>
-<?php if (isset($infos->deplacement)) {
-    echo $infos->deplacement;
-} ?>
-                                </p>
+                                <?php if (isset($infos->deplacement)) {
+                                    echo $infos->deplacement;
+                                } ?>
+                                                                </p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <h3>Hébergement</h3>
                                 <p>
-<?php if (isset($infos->hebergement)) {
-    echo $infos->hebergement;
-} ?>
-                                </p>
+                                <?php if (isset($infos->hebergement)) {
+                                    echo $infos->hebergement;
+                                } ?>
+                                                                </p>
                             </div>
                             <div class="col-md-6">
                                 <h3>Repas & boissons</h3>
                                 <p>
-<?php if (isset($infos->repas_boissons)) {
-    echo $infos->repas_boissons;
-} ?>
-                                </p>
+                                <?php if (isset($infos->repas_boissons)) {
+                                    echo $infos->repas_boissons;
+                                } ?>
+                                                                </p>
                             </div>
                         </div>
                         <div class="row">
@@ -195,7 +195,7 @@
 foreach ($voyages as $voyage) {
     ?>
                                         <li>
-                                            du <?php echo $voyage->date_depart; ?>  au <?php echo $voyage->date_retour; ?>
+                                            du <?php echo $voyage->date_depart; ?>  au <?php echo $voyage->date_retour; ?><br />
                                             <span class="small">(places restantes: <?php echo $voyage->nb_reserves; ?>)</span>
                                         </li>
 
