@@ -23,7 +23,7 @@ $page='destinations';
         <div class="container-fluid noPadding">
 
 
-            <?php 
+            <?php
             if(sizeof($destinations) > 0){
             foreach($destinations as $destination){ $image = img_url($destination->banner); ?>
 
@@ -37,8 +37,8 @@ $page='destinations';
                         <div class="text-container">
                             <a class="no-style" href="<?php echo base_url() . 'nos-destinations/' . slugify($destination->titre); ?>">
                                 <h2><?php echo $destination->titre; ?></h2>
-                                <h3><?php echo $destination->pays[0]->nom; ?>&nbsp;&bull;&nbsp;<?php echo $destination->ville; ?></h3>
-                                <p><?php echo $destination->nom; ?></p>
+                                <h3><?php echo ucfirst(mb_strtolower($destination->pays[0]->nom)); ?>&nbsp;&bull;&nbsp;<?php echo ucfirst(mb_strtolower($destination->ville)); ?></h3>
+                                <p><?php echo ucfirst(mb_strtolower($destination->nom)); ?></p>
 
                                 <?php if(isset($destination->prix_min)){ ?>
 
@@ -59,13 +59,13 @@ $page='destinations';
                 </div>
 
             <?php }}else{ ?>
-            
+
             <div class="destination-block">
                 <div class="row noPadding">
                     <h4 style="text-align:center;vertical-align:middle;padding:60px;">Il n'y a aucune destination de prévue, revenez plus tard! </h4>
                 </div>
             </div>
-            
+
             <?php } ?>
 
         </div>

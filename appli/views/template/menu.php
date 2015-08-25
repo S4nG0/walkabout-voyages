@@ -43,70 +43,81 @@
     <div class="navbar-collapse collapse" id="navbar">
         <ul class="nav navbar-nav navbar-right">
 
-            <?php if ($page == "destinations" || $page == "single-destination") { ?>
-                <li>
-                    <a class="nav_links active" href="<?php echo base_url(); ?>nos-destinations" title="Consultez nos destinations">Nos destinations</a>
-                </li>
-            <?php } else { ?>
-                <li>
-                    <a class="nav_links" href="<?php echo base_url(); ?>nos-destinations" title="Consultez nos destinations">Nos destinations</a>
-                </li>
-            <?php }; ?>
+        <?php if ($page == "destinations" || $page == "single-destination") { ?>
+            <li>
+                <a class="nav__links active" href="<?php echo base_url(); ?>nos-destinations" title="Consultez nos destinations">Nos destinations</a>
+            </li>
+        <?php } else { ?>
+            <li>
+                <a class="nav__links" href="<?php echo base_url(); ?>nos-destinations" title="Consultez nos destinations">Nos destinations</a>
+            </li>
+        <?php }; ?>
 
-            <?php if ($page == "carnets" || $page == "single-carnet" || $page == "tous-les-carnets") { ?>
-                <li>
-                    <a class="nav_links active" href="<?php echo base_url(); ?>carnets-de-voyage" title="Consultez les carnets de voyages">Carnets de voyages</a>
-                </li>
-            <?php } else { ?>
-                <li>
-                    <a class="nav_links" href="<?php echo base_url(); ?>carnets-de-voyage" title="Consultez les carnets de voyages">Carnets de voyages</a>
-                </li>
-            <?php }; ?>
+        <?php if ($page == "carnets" || $page == "single-carnet" || $page == "tous-les-carnets") { ?>
+            <li>
+                <a class="nav__links active" href="<?php echo base_url(); ?>carnets-de-voyage" title="Consultez les carnets de voyages">Carnets de voyages</a>
+            </li>
+        <?php } else { ?>
+            <li>
+                <a class="nav__links" href="<?php echo base_url(); ?>carnets-de-voyage" title="Consultez les carnets de voyages">Carnets de voyages</a>
+            </li>
+        <?php }; ?>
 
-            <?php if ($page == "esprit") { ?>
-                <li>
-                    <a class="nav_links active" href="<?php echo base_url(); ?>qui-sommes-nous" title="En savoir plus sur Walkabout">Notre esprit</a>
-                </li>
-            <?php } else { ?>
-                <li>
-                    <a class="nav_links" href="<?php echo base_url(); ?>qui-sommes-nous" title="En savoir plus sur Walkabout">Notre esprit</a>
-                </li>
-            <?php }; ?>
+        <?php if ($page == "esprit") { ?>
+            <li>
+                <a class="nav__links active" href="<?php echo base_url(); ?>qui-sommes-nous" title="En savoir plus sur Walkabout">Notre esprit</a>
+            </li>
+        <?php } else { ?>
+            <li>
+                <a class="nav__links" href="<?php echo base_url(); ?>qui-sommes-nous" title="En savoir plus sur Walkabout">Notre esprit</a>
+            </li>
+        <?php }; ?>
 
-            <?php if ($page == "actualites") { ?>
-                <li>
-                    <a class="nav_links active" href="<?php echo base_url(); ?>nos-actualites" title="Lire nos actualités">Nos actualités</a>
-                </li>
-            <?php } else { ?>
-                <li>
-                    <a class="nav_links" href="<?php echo base_url(); ?>nos-actualites" title="Lire nos actualités">Nos actualités</a>
-                </li>
-            <?php }; ?>
+        <?php if ($page == "actualites") { ?>
+            <li>
+                <a class="nav__links active" href="<?php echo base_url(); ?>nos-actualites" title="Lire nos actualités">Nos actualités</a>
+            </li>
+        <?php } else { ?>
+            <li>
+                <a class="nav__links" href="<?php echo base_url(); ?>nos-actualites" title="Lire nos actualités">Nos actualités</a>
+            </li>
+        <?php }; ?>
 
-            <?php if ($page == "contact") { ?>
-                <li>
-                    <a class="nav_links active" href="<?php echo base_url(); ?>contact" title="Contactez-nous !">Nous contacter</a>
-                </li>
-            <?php } else { ?>
-                <li>
-                    <a class="nav_links" href="<?php echo base_url(); ?>contact" title="Contactez-nous !">Nous contacter</a>
-                </li>
-            <?php }; ?>
+        <?php if ($page == "contact") { ?>
+            <li>
+                <a class="nav__links active" href="<?php echo base_url(); ?>contact" title="Contactez-nous !">Nous contacter</a>
+            </li>
+        <?php } else { ?>
+            <li>
+                <a class="nav__links" href="<?php echo base_url(); ?>contact" title="Contactez-nous !">Nous contacter</a>
+            </li>
+        <?php }; ?>
 
-            <?php if($connecte == true) {
-                if ($page == "moncompte") {
-                    echo ' <li><a class="nav_links active" href="'.base_url().'deconnexion" title="Déconnexion"><i class="fa fa-sign-in"></i>Se déconnecter</a></li>';
-                } else {
-                    echo '<li><a class="nav_links" href="'.base_url().'moncompte" title="Accédez à votre compte"><i class="fa fa-sign-in"></i>Mon compte</a></li>';
-                }
-            } else {
-                if ($page == "account") {
-                    echo '<li><a class="nav_links active" href="'.base_url().'connexion" title="Accédez à votre compte"><i class="fa fa-sign-in"></i>Se connecter</a></li>';
-                } else {
-                    echo '<li><a class="nav_links" href="'.base_url().'connexion" title="Accèdez à votre compte"><i class="fa fa-sign-in"></i>Se connecter</a></li>';
-                }
-            }; ?>
-
+        <?php if($connecte == true) {
+                if ($page == "moncompte") { ?>
+                <li>
+                    <a class="nav__links" href="<?php echo base_url().'deconnexion'; ?>" title="Déconnexion">
+                        <i class="fa fa-sign-out"></i>&nbsp;&nbsp;Déconnexion
+                    </a>
+                </li>
+                <?php } else { ?>
+                <li>
+                    <a class="nav__links nav__links--icon" href="<?php echo base_url().'moncompte'; ?>" title="Mon compte">
+                        <i class="fa fa-user"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav__links nav__links--icon" href="<?php echo base_url().'deconnexion'; ?>" title="Déconnexion">
+                        <i class="fa fa-sign-out"></i>
+                    </a>
+                </li>
+                <?php } } else { ?>
+                <li>
+                    <a class="nav__links" href="<?php echo base_url().'connexion'; ?>" title="Identifiez-vous">
+                        <i class="fa fa-sign-in"></i>&nbsp;&nbsp;Se connecter
+                    </a>
+                </li>
+            <?php } ?>
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
