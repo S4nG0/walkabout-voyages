@@ -84,6 +84,11 @@
                     <a class="button black" href="<?php echo base_url().'carnets-de-voyage/'.$carnet->url;?>" target="_blank">
                         <i class="fa fa-eye"></i>&nbsp;Aperçu du carnet
                     </a>
+                    <?php if($carnet->publie=="false"){ ?>
+                        <a class="button black check" href="<?php echo base_url().'walkadmin/carnets/publie/'.$carnet->idCarnetDeVoyage;?>">
+                            <i class="fa fa-check"></i>&nbsp;Publication du carnet
+                        </a>
+                    <?php } ?>
                     <a class="button black denied" id="delete" href="<?php echo base_url().'walkadmin/carnets/supprimer/'.$carnet->idCarnetDeVoyage;?>">
                         <i class="fa fa-remove"></i>&nbsp;
                         Supprimer

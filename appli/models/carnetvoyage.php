@@ -124,8 +124,9 @@ class Carnetvoyage extends CI_Model {
 
         $carnets = $this->db->select('*')
                            ->from($this->table)
-                           ->where('publie', 'true')
+                           ->where('publie <> "Suppr"')
                            ->where('favoris <> "true"')
+                           ->order_by('publie')
                            ->limit($nb, $start)
                            ->get()
                            ->result();
@@ -138,9 +139,10 @@ class Carnetvoyage extends CI_Model {
 
         $carnets = $this->db->select('*')
                            ->from($this->table)
-                           ->where('publie', 'true')
+                           ->where('publie <> "Suppr"')
                            ->like('titre' ,$search)
                            ->limit($nb, $start)
+                           ->order_by('publie')
                            ->get()
                            ->result();
 
