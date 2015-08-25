@@ -165,6 +165,19 @@ class Carnetvoyage extends CI_Model {
 
     }
 
+    public function get_carnet_pagination_administrateur($start,$nb){
+
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> "Brouillon" and etat <> "Supprimes")')
+                           ->limit($nb, $start)
+                           ->get()
+                           ->result();
+
+        return $carnets;
+
+    }
+
     public function get_carnet_pagination_admin_search($search, $start,$nb){
 
         $carnets = $this->db->select('*')
