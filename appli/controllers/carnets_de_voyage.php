@@ -77,7 +77,9 @@ class Carnets_de_voyage extends CI_Controller {
                 $carnet->destination = $this->destination->constructeur($carnet->idDestination);
                 $carnet->pays = $this->pays->constructeur($carnet->destination[0]->idPays);
             }
-            $data['favoris'] = $this->carnetvoyage->getFavoris()[0];
+            $favoris = $this->carnetvoyage->getFavoris();
+            if(!empty($favoris))
+                $data['favoris'] = $favoris[0];
             if(!empty($data['favoris'])){
                 $data['favoris']->date = conv_date($data['favoris']->date);
                 $data['favoris']->user = $this->user->constructeur($data['favoris']->idUsers);
