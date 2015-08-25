@@ -33,7 +33,7 @@ $step = 'choice';
                 <?php echo form_open('checkout/identification')?>
 
                 <div class="help-block">
-                    <p>Cliquez sur une des bulles pour sélectionner le séjour qui vous intéresse.</p>
+                    <p>Cliquez sur une des bulles pour sélectionner le séjour qui vous intéresse puis cliquez sur "Je réserve" en fin de page.</p>
                 </div>
 
                 <ul class="date-list">
