@@ -12,7 +12,7 @@ class Article extends CI_Controller{
         /*Parametrage de la pagination*/
         $config['base_url'] = base_url().'walkadmin/article/';
         $config['total_rows'] = $count;// faire attention taille totale
-        $nb_articles = $config['per_page'] = 10;
+        $nb_articles = $config['per_page'] = 2;
         $config['num_links'] = 3;
         $config['use_page_numbers'] = true;
         $config['full_tag_open'] = '<ul class="pagination">';
@@ -45,7 +45,7 @@ class Article extends CI_Controller{
         foreach($data['carnets'] as $carnet){
             $carnet->articles = $this->articles->getFromCarnetWherePublie($carnet->idCarnetDeVoyage);
         }
-
+        var_dump($count);
 
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
