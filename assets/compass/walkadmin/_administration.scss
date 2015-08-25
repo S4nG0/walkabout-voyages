@@ -1283,17 +1283,15 @@ body.admin {
 @media screen and (min-width: 1200px) {
     body.admin {
         .admin-log-on {
-            > .container {
-                .login-panel {
-                    .panel-form {
-                        .form-group {
-                            input {
-                                width: 75%;
-                            }
+            .login-panel {
+                .panel-form {
+                    .form-group {
+                        input {
+                            width: 75%;
+                        }
 
-                            .forgotten-pwd {
-                                width: 75%;
-                            }
+                        .forgotten-pwd {
+                            width: 75%;
                         }
                     }
                 }
@@ -1505,17 +1503,15 @@ body.admin {
         }
 
         .admin-log-on {
-            > .container {
-                .login-panel {
-                    .panel-form {
-                        .form-group {
-                            input {
-                                width: 50%;
-                            }
+            .login-panel {
+                .panel-form {
+                    .form-group {
+                        input {
+                            width: 50%;
+                        }
 
-                            .forgotten-pwd {
-                                width: 50%;
-                            }
+                        .forgotten-pwd {
+                            width: 50%;
                         }
                     }
                 }
@@ -1573,17 +1569,24 @@ body.admin {
 @media screen and (max-width: 480px) {
     body.admin {
         .admin-log-on {
-            > .container {
-                .login-panel {
-                    .panel-form {
-                        .form-group {
-                            input {
-                                width: 100%;
-                            }
+            .login-panel {
+                .panel-logo {
+                    > img {
+                        width: 45px;
+                    }
+                }
+                .panel-form {
+                    .form-group {
+                        input {
+                            width: 100%;
+                        }
 
-                            .forgotten-pwd {
-                                width: 100%;
-                            }
+                        .forgotten-pwd {
+                            width: 100%;
+                        }
+
+                        .button {
+                            width: 50%;
                         }
                     }
                 }

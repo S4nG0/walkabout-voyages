@@ -8902,10 +8902,10 @@ body.admin .charts h3 {
     #RESPONSIVE
 \*------------------------------------*/
 @media screen and (min-width: 1200px) {
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group input {
+  body.admin .admin-log-on .login-panel .panel-form .form-group input {
     width: 75%;
   }
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {
+  body.admin .admin-log-on .login-panel .panel-form .form-group .forgotten-pwd {
     width: 75%;
   }
 }
@@ -9737,10 +9737,10 @@ body.admin .charts h3 {
   body.admin #page-wrapper {
     padding: 0;
   }
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group input {
+  body.admin .admin-log-on .login-panel .panel-form .form-group input {
     width: 50%;
   }
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {
+  body.admin .admin-log-on .login-panel .panel-form .form-group .forgotten-pwd {
     width: 50%;
   }
 
@@ -9779,11 +9779,17 @@ body.admin .charts h3 {
   }
 }
 @media screen and (max-width: 480px) {
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group input {
+  body.admin .admin-log-on .login-panel .panel-logo > img {
+    width: 45px;
+  }
+  body.admin .admin-log-on .login-panel .panel-form .form-group input {
     width: 100%;
   }
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {
+  body.admin .admin-log-on .login-panel .panel-form .form-group .forgotten-pwd {
     width: 100%;
+  }
+  body.admin .admin-log-on .login-panel .panel-form .form-group .button {
+    width: 50%;
   }
   body.admin .custom-search.isFocused {
     width: 250px;
