@@ -54,7 +54,7 @@ body.espace-voyageur {
     }
 
     .main.banner {
-        height: 425px;
+        height: 475px;
 
         &.modification {
             &.article {
@@ -959,13 +959,6 @@ body.espace-voyageur {
 @media screen and (max-width: 992px) {
     body.espace-voyageur {
         .main {
-            .big-title-wrapper {
-                .big-title {
-                    .button.small {
-                        width: auto;
-                    }
-                }
-            }
 
             &.banner.modification.article {
                 .big-title-wrapper {
@@ -1032,7 +1025,9 @@ body.espace-voyageur {
 
 @media screen and (max-width: 768px) {
     body.espace-voyageur {
-        .main {
+        .main.banner {
+            height: 425px;
+
             .big-title-wrapper {
                 .big-title {
                     .button {

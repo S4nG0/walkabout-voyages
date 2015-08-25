@@ -421,7 +421,32 @@ input[type="radio"]:not(old):checked + label {
 }
 
 .alert {
+    position: relative;
     margin: 25px auto 0 auto;
+    @include border-radius(0);
+    border: 1px solid $noir;
+    background-color: $blanc;
+
+    .close {
+        position: absolute;
+        top: -13px;
+        right: -13px;
+
+        width: 25px;
+        height: 25px;
+
+        @include border-radius(100%);
+        border: 1px solid $noir;
+        background-color: $jaune-or;
+        color: $noir;
+        text-shadow: none;
+
+        @include opacity(1);
+
+        &:hover, &:focus {
+            @include opacity(1);
+        }
+    }
 }
 
 /*------------------------------------*\

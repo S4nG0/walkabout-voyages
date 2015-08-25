@@ -251,6 +251,7 @@ switch ($newsletter) {
                 boxZoom : false,
                 zoomControl:false,
                 tap:false,
+                keyboard: false
             };
 
             var map = L.map('map', options);

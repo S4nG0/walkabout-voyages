@@ -37,10 +37,12 @@ body.sign-in {
         display: none;
         text-align: center;
 
-        .button {
-            width: 250px;
-            margin-top: 0;
-            margin-bottom: 25px;
+        .login-panel {
+            width: 300px;
+
+            .button {
+                width: auto;
+            }
         }
     }
 
