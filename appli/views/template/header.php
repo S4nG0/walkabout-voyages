@@ -40,5 +40,5 @@
 
     <!-- Custom styles -->
     <link rel="stylesheet" href="<?php echo css_url('global');?>">
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
