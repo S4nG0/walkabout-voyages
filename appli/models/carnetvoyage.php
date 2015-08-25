@@ -123,13 +123,13 @@ class Carnetvoyage extends CI_Model {
     public function get_carnet_pagination($start,$nb){
 
         $carnets = $this->db->select('*')
-                           ->from($this->table)
-                           ->where('publie <> "Suppr"')
-                           ->where('favoris <> "true"')
-                           ->order_by('publie')
-                           ->limit($nb, $start)
-                           ->get()
-                           ->result();
+            ->from($this->table)
+            ->where('publie', 'true')
+            ->where('favoris <> "true"')
+            ->order_by('publie')
+            ->limit($nb, $start)
+            ->get()
+            ->result();
 
         return $carnets;
 
@@ -154,8 +154,10 @@ class Carnetvoyage extends CI_Model {
 
         $carnets = $this->db->select('*')
                            ->from($this->table)
+                           ->where('favoris <> "true"')
                            ->where('idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> "Brouillon" and etat <> "Supprimes")')
                            ->limit($nb, $start)
+                           ->order_by('publie')
                            ->get()
                            ->result();
 
