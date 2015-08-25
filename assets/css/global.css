@@ -5037,6 +5037,7 @@ body.checkout footer {
     font-size: 18px;
   }
   body.checkout .content .choice-block .date-list li .form-group .button.small {
+    display: block;
     margin-top: 15px;
     margin-left: auto;
   }

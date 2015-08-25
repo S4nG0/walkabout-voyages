@@ -350,31 +350,29 @@ foreach ($details_prix as $detail) {
             <div class="container">
                 <h2 class="sep">Ont participé à ce voyage...</h2>
                 <div class="travel-logs-slider owl-carousel">
-                    <?php
-                    foreach ($carnets as $carnet) {
-                        echo '<div class="travel-logs__item">
+                    <?php foreach ($carnets as $carnet) { ?>
+                        <div class="travel-logs__item">
                             <!-- block:Travel-log -->
                             <div class="travel-log">
-                                <a class="no-style" href="#">
+                                <a class="no-style" href="<?php echo base_url().'utilisateur/'.$carnet->user[0]->slug; ?>">
                                     <div class="profile-picture">
-                                        <img src="' . img_url($carnet->user[0]->photo) . '" alt="profile_picture">
+                                        <img src="<?php echo img_url($carnet->user[0]->photo); ?>" alt="profile_picture">
                                     </div>
                                 </a>
                                 <div class="excerpt">
-                                    <h3>' . $carnet->titre . '</h2>
+                                    <h3><?php echo $carnet->titre ?></h2>
                                     <p class="published">
-                                        par <a href="#">' . ucfirst(mb_strtolower($carnet->user[0]->prenom)) . ' ' . ucfirst(mb_strtolower($carnet->user[0]->nom)) . '</a>, le ' . $carnet->date . '
+                                        par <a href="<?php echo base_url().'utilisateur/'.$carnet->user[0]->slug; ?>"><?php echo ucfirst(mb_strtolower($carnet->user[0]->prenom))." ".ucfirst(mb_strtolower($carnet->user[0]->nom)); ?></a>, le <?php echo $carnet->date; ?>
                                     </p>
                                     <p>
-                                        &laquo;&nbsp;' . $carnet->description . '&nbsp;&raquo;
+                                        &laquo;&nbsp;<?php echo $carnet->description; ?>&nbsp;&raquo;
                                     </p>
-                                    <a class="button black" href="' . base_url() . 'carnets-de-voyage/' . slugify($carnet->titre) . '">Feuilletez le carnet&nbsp;</a>
+                                    <a class="button black" href="<?php echo base_url().'carnets-de-voyage/'.slugify($carnet->titre); ?>">Feuilletez le carnet&nbsp;</a>
                                 </div>
                             </div>
                             <!-- endblock:Travel-log -->
-                        </div>';
-                    }
-                    ?>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
