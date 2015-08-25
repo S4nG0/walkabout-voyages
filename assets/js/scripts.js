@@ -194,7 +194,7 @@ $(document).ready(function () {
      * Sticky navbar
      */
     var navHeight = 77;
-    if (!body.hasClass('sign-in'), !body.hasClass('checkout'), !body.hasClass('admin')) {
+    if (!body.hasClass('sign-in') && !body.hasClass('checkout') && !body.hasClass('admin')) {
         $('.navbar').affix({
             offset: {
                 top: navHeight,

@@ -3841,6 +3841,9 @@ body.single-destination .travel-logs .travel-logs-slider .travel-log .excerpt .b
     width: 200px;
     margin: 25px auto 0 auto;
   }
+  body.single-destination .content .info-details .row > .col-md-6:last-child {
+    margin-top: 25px;
+  }
 }
 @media screen and (max-width: 768px) {
   body.single-destination .content .introduction {
@@ -4461,6 +4464,8 @@ body.checkout .content .choice-block {
   padding: 0;
 }
 body.checkout .content .choice-block .help-block p {
+  padding-right: 25px;
+  padding-left: 25px;
   margin-bottom: 25px;
   font-style: italic;
 }
@@ -4507,6 +4512,7 @@ body.checkout .content .choice-block .date-list li .form-group p:last-child {
   margin-bottom: 0;
 }
 body.checkout .content .choice-block .date-list li .form-group hr {
+  border-color: #242424;
   margin: 25px 0;
 }
 body.checkout .content .choice-block .date-list li .form-group h3 {
@@ -4946,6 +4952,9 @@ body.checkout footer {
     padding-left: 15px;
     padding-right: 15px;
   }
+  body.checkout .content .choice-block {
+    margin: 25px 0;
+  }
   body.checkout .content .choice-block .date-list {
     margin-top: 25px;
   }
@@ -5006,15 +5015,30 @@ body.checkout footer {
   }
   body.checkout .content .choice-block .date-list {
     margin-top: 25px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0;
   }
   body.checkout .content .choice-block .date-list li {
     text-align: center;
-    padding: 0;
+    padding: 25px;
     margin: 0;
     margin-bottom: 25px;
     width: 100%;
+  }
+  body.checkout .content .choice-block .date-list li .form-group label {
+    font-size: 14px;
+  }
+  body.checkout .content .choice-block .date-list li .form-group p {
+    font-size: 12px;
+  }
+  body.checkout .content .choice-block .date-list li .form-group p span {
+    display: block;
+  }
+  body.checkout .content .choice-block .date-list li .form-group h3 {
+    font-size: 18px;
+  }
+  body.checkout .content .choice-block .date-list li .form-group .button.small {
+    margin-top: 15px;
+    margin-left: auto;
   }
   body.checkout .content .sign-in-block .user-log-in .button,
   body.checkout .content .sign-in-block .new-user .button {
@@ -5627,10 +5651,10 @@ body.espace-voyageur .content .infos-block .buttons-wrapper .button {
   display: inline-block;
   float: none;
   width: 200px;
-  margin-right: 15px;
 }
 body.espace-voyageur .content .infos-block .buttons-wrapper .button:first-child {
   margin-top: 15px;
+  margin-right: 15px;
   margin-bottom: 15px;
 }
 body.espace-voyageur .content.edit-travel-log {
