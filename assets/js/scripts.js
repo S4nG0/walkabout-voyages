@@ -92,7 +92,7 @@ $(document).ready(function () {
         dots: false,
         nav: true,
         navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
-        loop: true
+        loop: false
     });
 
     $('.list-carnet .stories').owlCarousel({
