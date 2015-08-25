@@ -3,24 +3,26 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Moncompte extends CI_Controller {
+class Moncompte extends CI_Controller
+{
 
     /**
      * Index Page for this controller.
      *
      * Maps to the following URL
-     * 		http://example.com/index.php/welcome
-     * 	- or -  
-     * 		http://example.com/index.php/welcome/index
-     * 	- or -
-     * Since this controller is set as the default controller in 
+     *        http://example.com/index.php/welcome
+     *    - or -
+     *        http://example.com/index.php/welcome/index
+     *    - or -
+     * Since this controller is set as the default controller in
      * config/routes.php, it's displayed at http://example.com/
      *
      * So any other public methods not prefixed with an underscore will
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
-    public function index() {
+    public function index()
+    {
         $this->session->unset_userdata('voyage');
         $data['connecte'] = connecte($this->session->userdata('user')[0]);
         $data['title'] = "Compte";
@@ -58,49 +60,61 @@ class Moncompte extends CI_Controller {
             foreach ($data['voyages_sans_carnets'] as $voyage_sans_carnet) {
                 $voyage_sans_carnet->destination = $this->destination->constructeur($voyage_sans_carnet->idDestination)[0];
             }
-            
+
             if ($this->input->post() != false) {
-            $this->form_validation->set_rules('email', '"email"', 'update_unique[users.mail.idUsers.'.$this->session->userdata('user')[0]->idUsers.']|trim|required|valid_email|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('confirmation_password', '"Confirmation du mot de passe"', 'matches[new_password]');
-            $this->form_validation->set_rules('new_password', '"Nouveau mot de passe"', 'matches[confirmation_password]');
-            if ($this->form_validation->run()) {
-                $mail = $this->input->post('email');
-                $user = array(
-                    "mail" => $mail,
-                    "mdp" => hash('sha256', $this->input->post('new_password'))
-                );
-                if ($this->input->post('old_password') != '') {
-                    $old_password = hash('sha256', $this->input->post('old_password'));
-                    if ($this->session->userdata('user')[0]->mdp == $old_password && $this->input->post('new_password') == $this->input->post('confirmation_password')) {
-                        $this->user->modify($user, $this->session->userdata('user')[0]->idUsers);
+                $this->form_validation->set_rules('email', '"email"', 'update_unique[users.mail.idUsers.' . $this->session->userdata('user')[0]->idUsers . ']|trim|required|valid_email|encode_php_tags|xss_clean');
+                $this->form_validation->set_rules('confirmation_password', '"Confirmation du mot de passe"', 'matches[new_password]');
+                $this->form_validation->set_rules('new_password', '"Nouveau mot de passe"', 'matches[confirmation_password]');
+                if ($this->form_validation->run()) {
+                    $mail = $this->input->post('email');
+                    $user = array(
+                        "mail" => $mail,
+                        "mdp" => hash('sha256', $this->input->post('new_password'))
+                    );
+                    $success = true;
+                    if ($this->input->post('old_password') != '') {
+                        $old_password = hash('sha256', $this->input->post('old_password'));
+                        if ($this->session->userdata('user')[0]->mdp == $old_password && $this->input->post('new_password') == $this->input->post('confirmation_password')) {
+                            $this->user->modify($user, $this->session->userdata('user')[0]->idUsers);
+                        } else {
+                            $success = false;
+                        }
                     }
-                }
-                $newsPost = $this->input->post('newsletter');
-                if (isset($newsPost)) {
-                    $newsletters = $this->newsletters->constructeur($mail);
-                    if (empty($newsletters)) {
-                        $news['email'] = $mail;
-                        $this->newsletters->insert($news);
-                    } else {
-                        $this->newsletters->deleteNews($mail);
+                    $newsPost = $this->input->post('newsletter');
+                    if (isset($newsPost)) {
+                        $newsletters = $this->newsletters->constructeur($mail);
+                        if (empty($newsletters)) {
+                            $news['email'] = $mail;
+                            $this->newsletters->insert($news);
+                        } else {
+                            $this->newsletters->deleteNews($mail);
+                        }
                     }
+                    if($success)
+                        redirect('moncompte');
+                    else{
+                        $this->load->view('template/header', $data);
+                        $this->load->view('moncompte', $data);
+                        $this->load->view('template/footer');
+                        echo '<script>'
+                            . 'window.onload = function () {$("#infos").click();alert("Des erreurs se sont produites lors de la modification de votre compte!");}'
+                            . '</script>';
+                    }
+                } else {
+                    $this->load->view('template/header', $data);
+                    $this->load->view('moncompte', $data);
+                    $this->load->view('template/footer');
+                    echo '<script>'
+                        . 'window.onload = function () {$("#infos").click();alert("Des erreurs se sont produites lors de la modification de votre compte!");}'
+                        . '</script>';
                 }
-                redirect($this->index());
-            }else{
+            } else {
                 $this->load->view('template/header', $data);
                 $this->load->view('moncompte', $data);
                 $this->load->view('template/footer');
-                echo '<script>'
-                . 'window.onload = function () {$("#infos").click();alert("Des erreurs se sont produites lors de la modification de votre compte!");}'
-                        . '</script>';
             }
-        }else{
-            $this->load->view('template/header', $data);
-            $this->load->view('moncompte', $data);
-            $this->load->view('template/footer');
         }
-        }
-        
+
     }
 
 }
