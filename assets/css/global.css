@@ -4237,57 +4237,14 @@ body.sign-in .button {
   margin: 0 auto;
   margin-top: 30px;
 }
-body.sign-in .main {
-  background: transparent;
-  padding-bottom: 50px;
-  border-bottom: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-body.sign-in .main .navbar {
-  margin-top: 0;
-  background-color: transparent;
-}
-body.sign-in .main .navbar .navbar-brand {
-  padding: 15px 25px;
-}
-body.sign-in .main .navbar .navbar-brand .logo {
-  width: 150px;
-}
-body.sign-in .main .navbar .navbar-toggle {
-  margin: 15px 25px 0 25px;
-}
-body.sign-in .main .navbar .navbar-collapse .nav li a {
-  margin: 25px 25px 10px 0;
-}
-body.sign-in .main .caption-wrapper {
-  position: absolute;
-  text-align: center;
-}
-body.sign-in .main .caption-wrapper .caption {
-  padding-top: 35px;
-  vertical-align: middle;
-}
-body.sign-in .main .caption-wrapper .caption h1 {
-  margin-bottom: 25px;
-  font-style: 26px;
-  line-height: 36px;
-  font-style: normal;
-  text-align: center;
-  text-transform: uppercase;
-}
-body.sign-in .main .caption-wrapper .caption p {
-  line-height: 18px;
-  margin: 0;
-  margin-top: 10px;
-}
-body.sign-in .main .caption-wrapper .caption .forgotten-pwd {
+body.sign-in .login-panel {
   display: block;
-  font-size: 80%;
-  color: #848484;
+  margin: 0 auto;
+  width: 320px;
+  padding: 8% 0;
 }
 body.sign-in .recover-pwd-block {
+  display: none;
   text-align: center;
 }
 body.sign-in .recover-pwd-block .button {
@@ -8902,10 +8859,10 @@ body.admin .charts h3 {
     #RESPONSIVE
 \*------------------------------------*/
 @media screen and (min-width: 1200px) {
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group input {
+  body.admin .admin-log-on .login-panel .panel-form .form-group input {
     width: 75%;
   }
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {
+  body.admin .admin-log-on .login-panel .panel-form .form-group .forgotten-pwd {
     width: 75%;
   }
 }
@@ -9737,10 +9694,10 @@ body.admin .charts h3 {
   body.admin #page-wrapper {
     padding: 0;
   }
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group input {
+  body.admin .admin-log-on .login-panel .panel-form .form-group input {
     width: 50%;
   }
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {
+  body.admin .admin-log-on .login-panel .panel-form .form-group .forgotten-pwd {
     width: 50%;
   }
 
@@ -9779,11 +9736,17 @@ body.admin .charts h3 {
   }
 }
 @media screen and (max-width: 480px) {
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group input {
+  body.admin .admin-log-on .login-panel .panel-logo > img {
+    width: 25px;
+  }
+  body.admin .admin-log-on .login-panel .panel-form .form-group input {
     width: 100%;
   }
-  body.admin .admin-log-on > .container .login-panel .panel-form .form-group .forgotten-pwd {
+  body.admin .admin-log-on .login-panel .panel-form .form-group .forgotten-pwd {
     width: 100%;
+  }
+  body.admin .admin-log-on .login-panel .panel-form .form-group .button {
+    width: 50%;
   }
   body.admin .custom-search.isFocused {
     width: 250px;
