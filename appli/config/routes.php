@@ -48,6 +48,7 @@ $route['walkadmin/lire-article/(:num)'] = "walkadmin/article/voir/$1";
 $route['walkadmin/comments/recherche/(:any)'] = "walkadmin/comments/recherche/$1";
 $route['walkadmin/comments/(:num)'] = "walkadmin/comments/index/$1";
 $route['walkadmin/carnets/(:num)'] = "walkadmin/carnets/index/$1";
+$route['walkadmin/carnets/recherche/(:any)'] = "walkadmin/carnets/recherche/$1";
 $route['walkadmin/actualite/(:num)'] = "walkadmin/actualite/index/$1";
 $route['walkadmin/administrateur/(:num)'] = "walkadmin/administrateur/index/$1";
 $route['walkadmin/administrateur/recherche/(:num)'] = "walkadmin/administrateur/recherche/$1";
