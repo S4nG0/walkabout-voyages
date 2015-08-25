@@ -2,68 +2,49 @@
 
 <body class="sign-in">
 
-    <div class="main" id="main">
-        <div class="container-fluid noPadding">
-            <!-- Navbar -->
-            <?php include 'template/menu.php'; ?>
+    <div class="container-fluid noPadding">
 
-            <div class="caption-wrapper">
-                <div class="caption">
-                    <div class="row noPadding">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h1 class="sep">Espace voyageur</h1>
-                        </div>
+        <div class="row">
+            <div class="login-panel text-center">
+                <h1 class="no-sep">Espace voyageur</h1>
+                <!-- FORM -->
+                <?php echo form_open('connexion'); ?>
+
+                <?php if ($result === false) { ?>
+                <div class="row noPadding text-center">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i>&nbsp;Une des informations que vous avez saisi n'est pas reconnue. Veuillez réessayer.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>
                     </div>
-
-                    <!-- FORM -->
-                    <?php echo form_open('connexion'); ?>
-
-                    <?php if ($result === false) { ?>
-                    <div class="row noPadding">
-                        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
-                            <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i>&nbsp;Une des informations que vous avez saisi n'est pas reconnue. Veuillez réessayer.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></div>
-                        </div>
-                    </div>
-                    <?php } ?>
-
-                    <div class="row noPadding">
-                        <div class="container">
-                            <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                                <div class="form-group">
-                                    <label for="email">E-mail</label>
-                                    <input type="email" name="email" value="<?php echo set_value('email'); ?>" id="email" placeholder="Votre e-mail">
-                                    <?php echo form_error('email'); ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row noPadding">
-                        <div class="container">
-                            <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                                <div class="form-group">
-                                    <label for="password">Mot de passe</label>
-                                    <input type="password" name="password" id="password" placeholder="Votre mot de passe">
-                                    <?php echo form_error('password'); ?>
-                                    <p class="forgotten-pwd">
-                                        Vous avez oublié votre mot de passe ? <a class="fancybox" href="#recover-pwd">Cliquez-ici</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row noPadding">
-                        <div class="container">
-                            <div class="col-xs-12">
-                                <input type="submit" class="button" value="Je me connecte">
-                            </div>
-                        </div>
-                    </div>
-
-                    <?php echo form_close(); ?>
-                    <!-- /FORM -->
-
                 </div>
+                <?php } ?>
+
+                <div class="row noPadding text-center">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" value="<?php echo set_value('email'); ?>" id="email" placeholder="Votre e-mail">
+                        <?php echo form_error('email'); ?>
+                    </div>
+                </div>
+                <div class="row noPadding text-center">
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" name="password" id="password" placeholder="Votre mot de passe">
+                        <?php echo form_error('password'); ?>
+                        <p class="forgotten-pwd">
+                            <span class="small">Vous avez oublié votre mot de passe ? <a class="fancybox" href="#recover-pwd">Cliquez-ici</a></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row noPadding">
+                    <div class="col-xs-12">
+                        <input type="submit" class="button" value="Je me connecte">
+                    </div>
+                </div>
+
+                <?php echo form_close(); ?>
+                <!-- /FORM -->
             </div>
+
         </div>
     </div>
 
