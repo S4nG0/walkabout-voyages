@@ -77,7 +77,9 @@ class Carnets_de_voyage extends CI_Controller {
                 $carnet->destination = $this->destination->constructeur($carnet->idDestination);
                 $carnet->pays = $this->pays->constructeur($carnet->destination[0]->idPays);
             }
-            $data['favoris'] = $this->carnetvoyage->getFavoris()[0];
+            $favoris = $this->carnetvoyage->getFavoris();
+            if(!empty($favoris))
+                $data['favoris'] = $favoris[0];
             if(!empty($data['favoris'])){
                 $data['favoris']->date = conv_date($data['favoris']->date);
                 $data['favoris']->user = $this->user->constructeur($data['favoris']->idUsers);
@@ -164,19 +166,19 @@ class Carnets_de_voyage extends CI_Controller {
             $this->load->view('modif_carnet', $data);
             $this->load->view('template/footer');
         }
-        
+
         public function creer(){
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             if($data['connecte'] == false){
                 redirect('/connexion');
             }
-            
+
             $this->form_validation->set_rules('voyage', '"Voyage"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('titre', '"Titre"', 'trim|min_length[10]|max_length[150]|required|encode_php_tags|xss_clean|is_unique[carnetdevoyage.titre]');
-            
+
             if($this->form_validation->run()){
                 $user = $this->session->userdata('user')[0];
-                $carnet = new stdClass();   
+                $carnet = new stdClass();
                 $carnet->date = Date('Y-m-d');
                 $carnet->publie = "false";
                 $carnet->titre = $this->input->post('titre');

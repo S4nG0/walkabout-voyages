@@ -19,15 +19,15 @@ $page = "contact";
                     <h1 class="sep">Envie de nous contacter ?</h1>
                 </div>
             </div>
+
             <?php
                 echo form_open('contact');
             ?>
 
-
             <?php if(isset($result)){ switch($result) { case "erreur mail" : ?>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-8 col-md-offset-2">
                     <div class="alert alert-danger" role="alert">
                         Une erreur s'est produite. Votre email ne s'est pas envoyé correctement, veuillez réessayer ultérieurement.
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -40,7 +40,7 @@ $page = "contact";
                 <?php break; case "ok": ?>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-8 col-md-offset-2">
                     <div class="alert alert-success" role="alert">Nous vous remercions pour votre demande.<br />Vous allez recevoir une réponse sous peu.
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -51,7 +51,7 @@ $page = "contact";
                  <?php break; case "erreur form": ?>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-8 col-md-offset-2">
                     <div class="alert alert-danger" role="alert">
                         Des erreurs se sont glissées dans le formulaire, veuillez les corriger!
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -78,9 +78,7 @@ $page = "contact";
                     </div>
                 </div>
                 <div class="col-md-4 hidden-xs">
-                    <span class="helper"></span>
                     <img class="img-responsive" src="<?php echo img_url('logo-wk-icon.png'); ?>" alt="Walkabout">
-
                 </div>
             </div>
             <div class="row">

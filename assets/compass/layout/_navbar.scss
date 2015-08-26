@@ -46,10 +46,6 @@ body:not(.admin) {
                             @include transition(background-color 300ms ease-in-out);
                         }
 
-                        .fa{
-                            margin-right: 10px;
-                        }
-
                         &:last-child {
                             margin-right: 25px;
                         }
@@ -60,7 +56,39 @@ body:not(.admin) {
                                 background-color: $jaune-or;
                             }
                         }
+
                     }
+
+                    .nav__links--icon {
+                        position: relative;
+                        padding: 0;
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: -5px;
+                            left: 50%;
+                            width: 30px;
+                            height: 30px;
+                            @include border-radius(100%);
+                            background-color: transparent;
+                            @include translateX(-50%);
+                            @include transition($default-transition);
+                        }
+
+                        &:hover, &:focus {
+                            color: $noir;
+
+                            &:before {
+                                background-color: $jaune-or;
+                            }
+                        }
+
+                        &:after {
+                            display: none;
+                        }
+                    }
+
                     a.active {
                         &:after {
                             background-color: $jaune-or;

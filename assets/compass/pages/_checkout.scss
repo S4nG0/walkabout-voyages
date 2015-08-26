@@ -187,6 +187,8 @@ body.checkout {
 
             .help-block {
                 p {
+                    padding-right: 25px;
+                    padding-left: 25px;
                     margin-bottom: 25px;
                     font-style: italic;
                 }
@@ -240,6 +242,7 @@ body.checkout {
                         }
 
                         hr {
+                            border-color: $noir;
                             margin: 25px 0;
                         }
 
@@ -865,6 +868,7 @@ body.checkout {
             }
 
             .choice-block {
+                margin: 25px 0;
 
                 .date-list {
                     margin-top: 25px;
@@ -960,14 +964,37 @@ body.checkout {
             .choice-block {
                 .date-list {
                     margin-top: 25px;
-                    padding-left: 15px;
-                    padding-right: 15px;
+                    padding: 0;
                     li {
                         text-align: center;
-                        padding: 0;
+                        padding: 25px;
                         margin: 0;
                         margin-bottom: 25px;
                         width: 100%;
+
+                        .form-group {
+                            label {
+                                font-size: 14px;
+                            }
+
+                            p {
+                                font-size: 12px;
+
+                                span {
+                                    display: block;
+                                }
+                            }
+
+                            h3 {
+                                font-size: 18px;
+                            }
+
+                            .button.small {
+                                display: block;
+                                margin-top: 15px;
+                                margin-left: auto;
+                            }
+                        }
                     }
                 }
             }

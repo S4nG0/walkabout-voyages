@@ -1,7 +1,7 @@
 var body = $('body');
 
+// var base_url = "http://walkabout-voyages.fr/";
 var base_url = "http://dev.walkabout-voyages.fr/";
-// var base_url = "http://localhost/walkabout-voyages/";
 
 /***
  * Gives two column the same height
@@ -92,7 +92,7 @@ $(document).ready(function () {
         dots: false,
         nav: true,
         navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
-        loop: true
+        loop: false
     });
 
     $('.list-carnet .stories').owlCarousel({
@@ -180,7 +180,7 @@ $(document).ready(function () {
         animation: 'fadeOutTop'
     }
 
-    if(!body.hasClass('checkout') && !body.hasClass('espace-voyageur editing') && !body.hasClass('admin')) {
+    if(!body.hasClass('checkout') && !body.hasClass('espace-voyageur editing') && !body.hasClass('admin') && !body.hasClass('sign-in')) {
         navbarToggle.addEventListener('click', function () {
             iconate(icon, options, function() {
                 var temp = options.from;
@@ -194,7 +194,7 @@ $(document).ready(function () {
      * Sticky navbar
      */
     var navHeight = 77;
-    if (!body.hasClass('sign-in'), !body.hasClass('checkout'), !body.hasClass('admin')) {
+    if (!body.hasClass('sign-in') && !body.hasClass('checkout') && !body.hasClass('admin')) {
         $('.navbar').affix({
             offset: {
                 top: navHeight,

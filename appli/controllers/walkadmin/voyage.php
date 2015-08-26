@@ -84,17 +84,46 @@ class Voyage extends CI_Controller{
             if ($this->form_validation->run()) {
                 $details = array_values($details);
                 $details = json_encode($details);
-
-                $voyage=array(
-                    "idDestination" => $idDestination,
-                    "date_depart" => $this->input->post('date_debut'),
-                    "date_retour" => $this->input->post('date_fin'),
-                    "prix" => $this->input->post('prix'),
-                    "nb_places" => $this->input->post('nb_personne'),
-                    "details" => $details
-                );
-                $this->voyages->insertVoyage($voyage);
-                redirect('walkadmin/voyage/'.$idDestination);
+                $dateDebut = new DateTime($this->input->post('date_debut'));
+                $dateFin = new DateTime($this->input->post('date_fin'));
+                $dateActuelle = new DateTime('now');
+                if($dateDebut<=$dateFin){
+                    if(($dateDebut > $dateActuelle || $dateActuelle == $dateActuelle) && $dateFin>=$dateActuelle){
+                        $voyage=array(
+                            "idDestination" => $idDestination,
+                            "date_depart" => $this->input->post('date_debut'),
+                            "date_retour" => $this->input->post('date_fin'),
+                            "prix" => $this->input->post('prix'),
+                            "nb_places" => $this->input->post('nb_personne'),
+                            "details" => $details
+                        );
+                        $this->voyages->insertVoyage($voyage);
+                        redirect('walkadmin/voyage/'.$idDestination);
+                    }else{
+                        echo '<script type="text/javascript">alert("La date de début ou de fin ne peuvent pas être inférieures à la date de actuelle");</script>';
+                        $data['title'] = 'Destination - Ajout de séjour';
+                        $data['idDestination']=$idDestination;
+                        $data['destination']=$this->destination->constructeur($idDestination);
+                        $data['admin'] = $this->session->userdata('admin');
+                        $data['details'] = $this->session->flashdata('details');
+                        $this->load->view('wadmin/template/header', $data);
+                        $this->load->view('wadmin/template/menu', $data);
+                        $this->load->view('wadmin/pages/Voyages/creer',$data);
+                        $this->load->view('wadmin/template/footer');
+                        return false;
+                    }
+                }else{
+                    echo '<script type="text/javascript">alert("La date de fin ne peut pas être inférieure à la date de début");</script>';$data['title'] = 'Destination - Ajout de séjour';
+                    $data['idDestination']=$idDestination;
+                    $data['destination']=$this->destination->constructeur($idDestination);
+                    $data['admin'] = $this->session->userdata('admin');
+                    $data['details'] = $this->session->flashdata('details');
+                    $this->load->view('wadmin/template/header', $data);
+                    $this->load->view('wadmin/template/menu', $data);
+                    $this->load->view('wadmin/pages/Voyages/creer',$data);
+                    $this->load->view('wadmin/template/footer');
+                    return false;
+                }
             }else{
                 $data['title'] = 'Destination - Ajout de séjour';
                 $data['idDestination']=$idDestination;

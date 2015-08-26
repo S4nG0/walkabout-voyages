@@ -22,11 +22,11 @@
             </div>
         </div>
     </div>
-    
+
     <?php if(sizeof($favoris) > 0){ ?>
         <div class="row carnets__single searchable" data-search="<?php echo $favoris->titre.' '.$favoris->user[0]->nom.''.$favoris->user[0]->prenom;?>">
         <div class="col-md-12">
-            <div class="well" style="border-color:gold;box-shadow:none;">
+            <div class="well">
                 <div class="carnets__header">
                     <h3 class="text-center">&nbsp;&nbsp;Carnet favori&nbsp;&nbsp;</h3>
                 </div>
@@ -84,6 +84,11 @@
                     <a class="button black" href="<?php echo base_url().'carnets-de-voyage/'.$carnet->url;?>" target="_blank">
                         <i class="fa fa-eye"></i>&nbsp;Aperçu du carnet
                     </a>
+                    <?php if($carnet->publie=="false"){ ?>
+                        <a class="button black check" href="<?php echo base_url().'walkadmin/carnets/publie/'.$carnet->idCarnetDeVoyage;?>">
+                            <i class="fa fa-check"></i>&nbsp;Publication du carnet
+                        </a>
+                    <?php } ?>
                     <a class="button black denied" id="delete" href="<?php echo base_url().'walkadmin/carnets/supprimer/'.$carnet->idCarnetDeVoyage;?>">
                         <i class="fa fa-remove"></i>&nbsp;
                         Supprimer

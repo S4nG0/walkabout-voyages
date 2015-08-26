@@ -159,8 +159,6 @@ echo form_open_multipart('walkadmin/destinations/creer');
             <div class="col-md-6 col-md-offset-3">
                 <div class="form-group">
                     <label for="deroulement">Déroulement</label>
-                    <!-- <textarea name="deroulement" id="deroulement" rows="10" placeholder="Saississez vos informations"><?php echo set_value('deroulement'); ?></textarea> -->
-
                     <div class="help-block">
                         <span class="small">Veuillez indiquer les activités par jours</span>
                     </div>
@@ -170,6 +168,34 @@ echo form_open_multipart('walkadmin/destinations/creer');
                     </div>
 
                     <?php echo form_error('deroulement'); ?>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row text-center">
+            <h2 class="no-sep">Prix</h2>
+            <div class="col-md-4 col-md-offset-2">
+                <div class="form-group">
+                    <label for="pricePlus">Ce prix comprend :</label>
+                    <div id="container_pricePlus"></div>
+                    <div class="form-group destinations__pricePlus">
+                        <span title="Ajouter" class="destinations__icon add" id="add-pricePlus"></span><span>Ajouter un détail</span>
+                    </div>
+
+                    <?php echo form_error('pricePlus'); ?>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="priceMinus">Ce prix ne comprend pas :</label>
+                    <div id="container_priceMinus"></div>
+                    <div class="form-group destinations__priceMinus">
+                        <span title="Ajouter" class="destinations__icon add" id="add-priceMinus"></span><span>Ajouter un détail</span>
+                    </div>
+
+                    <?php echo form_error('priceMinus'); ?>
                 </div>
             </div>
         </div>

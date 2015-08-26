@@ -209,19 +209,36 @@ switch ($newsletter) {
 
 
 
-    <div class="destinations__map noselect">
-
-        <div class="map__wrapper text-center">
+    <div class="destinations__map noselect hidden-xs">
+        <div class="row text-center noPadding">
+            <div class="col-sm-12">
                 <h2 class="no-sep black">Explorez nos destinations</h2>
-                <div id="map"></div>
+                <div class="help-block">
+                    <span class="small">
+                        Cliquez sur une des icônes pour découvrir la destination...
+                    </span>
+                </div>
             </div>
         </div>
 
+        <div class="row noPadding">
+            <div class="map__wrapper text-center">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="destinations__buttonBlock hidden-sm hidden-md hidden-lg">
+        <div class="destinations__buttonBlock__content text-center">
+            <h2 class="no-sep black">Découvrez nos destinations...</h2>
+            <a href="<?php echo base_url().'/nos-destinations'; ?>" class="button black">Tous nos voyages</a>
+        </div>
     </div>
 
     <script type="text/javascript">
         window.onload = function () {
-            
+
             var options = {
                 center: [48.856614, 2.352222],
                 zoom: 2,
@@ -234,9 +251,12 @@ switch ($newsletter) {
                 boxZoom : false,
                 zoomControl:false,
                 tap:false,
+                keyboard: false
             };
 
             var map = L.map('map', options);
+
+
             var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
                 mapId : 't4gad4.0d77ef41',
                 token : 'pk.eyJ1IjoidDRnYWQ0IiwiYSI6IjAxMTg3Zjk4MzIwN2UyMGU5YTFjZjA1ZTdiYjVhOWIxIn0.Sgz1QzW2JR3l3Abryt1PnA',
@@ -244,6 +264,7 @@ switch ($newsletter) {
                 noWrap: true,
                 zoomControl:false
             }).addTo(map);
+
 
             var myIcon = L.icon({
                 iconUrl: '<?php echo img_url("marker.png"); ?>',
@@ -255,13 +276,14 @@ switch ($newsletter) {
             var $i = 0;
             var marker = [];
 
+
             <?php foreach($destinations as $destination){
                 $latitude = explode(',',$destination->coordonnees)[0];
                 $longitude = explode(',',$destination->coordonnees)[1];
             ?>
 
-            var popUp = '';
-             popUp += '<a class="no-style" href="<?php echo base_url('nos-destinations/'.$destination->url); ?>" title="Découvrez la destination">'+
+            var popUp = L.popup({ autoPan: false}).setContent(''+
+            '<a class="no-style" href="<?php echo base_url('nos-destinations/'.$destination->url); ?>" title="Découvrez la destination">'+
                 '<div class="popup_map__image-wrapper">'+
                     '<div class="popup_map__image" style="background-image: url(\'<?php echo img_url($destination->banner);?>\')"></div>'+
                 '</div>'+
@@ -270,7 +292,7 @@ switch ($newsletter) {
                     '<p class="popup_map__text--description"><?php echo splitText($destination->description, 94); ?>...</p>'+
                     '<p class="popup_map__text--location"><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p>'+
                 '</div>'+
-            '</a>';
+            '</a>');
 
             marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map);
             marker[$i].bindPopup(popUp,{

@@ -26,77 +26,23 @@ body.sign-in {
         margin-top: 30px;
     }
 
-    .main {
-        background: transparent;
-        padding-bottom: 50px;
-        border-bottom: none;
-        @include box-shadow(none);
-
-        .navbar {
-            margin-top: 0;
-            background-color: transparent;
-
-            .navbar-brand {
-                padding: 15px 25px;
-                .logo {
-                    width: 150px;
-                }
-            }
-
-            .navbar-toggle {
-                margin: 15px 25px 0 25px;
-            }
-
-            .navbar-collapse {
-                .nav {
-                    li {
-                        a {
-                            margin: 25px 25px 10px 0;
-                        }
-                    }
-                }
-            }
-        }
-
-        .caption-wrapper {
-            position: absolute;
-            text-align: center;
-
-            .caption {
-                padding-top: 35px;
-                vertical-align: middle;
-
-                h1 {
-                    margin-bottom: 25px;
-                    font-style: 26px;
-                    line-height: 36px;
-                    font-style: normal;
-                    text-align: center;
-                    text-transform: uppercase;
-                }
-
-                p {
-                    line-height: 18px;
-                    margin: 0;
-                    margin-top: 10px;
-                }
-
-                .forgotten-pwd {
-                    display: block;
-                    font-size: 80%;
-                    color: $gris-clair;
-                }
-            }
-        }
+    .login-panel {
+        display: block;
+        margin: 0 auto;
+        width: 320px;
+        padding: 8% 0;
     }
 
     .recover-pwd-block {
+        display: none;
         text-align: center;
 
-        .button {
-            width: 250px;
-            margin-top: 0;
-            margin-bottom: 25px;
+        .login-panel {
+            width: 300px;
+
+            .button {
+                width: auto;
+            }
         }
     }
 

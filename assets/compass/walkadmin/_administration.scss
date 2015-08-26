@@ -26,10 +26,26 @@ body.admin {
         margin-bottom: 25px;
     }
 
+    a {
+        color: $noir;
+
+        &:hover, &:focus {
+            color: $gris-clair;
+        }
+    }
+
     .button {
         margin: 0 auto;
         width: 250px;
+
+        border-color: $blanc;
+        color: $blanc;
         letter-spacing: 1px;
+
+        &:hover, &:focus {
+            color: $jaune-or;
+            border-color: $jaune-or;
+        }
     }
 
     .button.small {
@@ -59,14 +75,6 @@ body.admin {
     .button.black.active {
         background-color: $noir;
         color: $blanc;
-    }
-
-    a {
-        color: $noir;
-
-        &:hover, &:focus {
-            color: $gris-clair;
-        }
     }
 
     input, textarea {
@@ -292,82 +300,70 @@ body.admin {
     #LOG-IN
 \*------------------------------------*/
 .admin-log-on {
-    display: table;
-    width: 100%;
-    height: 100%;
 
-    > .container {
-        display: table-cell;
-        vertical-align: middle;
+    .login-panel {
+        display: block;
+        width: 320px;
+        margin: 0 auto;
+        padding: 8% 0;
 
-        .login-panel {
-            margin-top: 0;
+        .panel-logo {
+            margin-bottom: 8%;
 
-            .panel-logo {
-                margin-bottom: 50px;
+            > img {
+                display: block;
+                margin: 0 auto;
+                width: 80px;
+            }
+        }
 
-                > img {
-                    display: block;
-                    margin: 0 auto;
-                    width: 80px;
-                }
+        .panel-form {
+
+            .error, .checked {
+                margin: 0 auto 25px auto;
             }
 
-            .panel-form {
+            .checked {
+                color: green;
+            }
 
-                .error, .checked {
-                    margin: 0 auto 25px auto;
+            .form-group {
+                margin-bottom: 25px;
+                text-align: center;
+
+                label {
+                    color: $jaune-or;
                 }
 
-                .error {
-                    color: red;
+                input {
+                    display: block;
+                    margin: 0 auto;
+                    text-align: center;
                 }
 
-
-                .checked {
-                    color: green;
+                &:last-child {
+                    margin-bottom: 0 !important;
                 }
 
-                .form-group {
-                    margin-bottom: 25px;
+                .forgotten-pwd {
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 10px;
+                    font-size: 80%;
                     text-align: center;
 
-                    label {
-                        color: $jaune-or;
-                    }
+                    > a {
+                        color: $blanc;
 
-                    input {
-                        display: block;
-                        margin: 0 auto;
-                        text-align: center;
-                    }
-
-                    &:last-child {
-                        margin-bottom: 0 !important;
-                    }
-
-                    .forgotten-pwd {
-                        display: block;
-                        margin: 0 auto;
-                        margin-top: 10px;
-                        font-size: 80%;
-                        text-align: center;
-
-                        > a {
-                            color: $blanc;
-
-                            &:hover, &:focus {
-                                color: $jaune-or;
-                            }
+                        &:hover, &:focus {
+                            color: $jaune-or;
                         }
                     }
                 }
+            }
 
-                .button {
-                    margin: 0 auto;
-                    margin-top: 50px;
-                    width: 200px;
-                }
+            .button {
+                width: 200px;
             }
         }
     }
@@ -908,6 +904,8 @@ body.admin {
 
     .destinations__coordinates,
     .destinations__deroulement,
+    .destinations__priceMinus,
+    .destinations__pricePlus,
     .voyages__detailsPrix {
         label {
             display: block;
@@ -974,7 +972,9 @@ body.admin {
         }
     }
 
-    .destinations__deroulement.fieldBlock {
+    .destinations__deroulement.fieldBlock,
+    .destinations__pricePlus.fieldBlock,
+    .destinations__priceMinus.fieldBlock {
         position: relative;
         margin-top: 25px;
         margin-bottom: 50px;
@@ -1283,17 +1283,15 @@ body.admin {
 @media screen and (min-width: 1200px) {
     body.admin {
         .admin-log-on {
-            > .container {
-                .login-panel {
-                    .panel-form {
-                        .form-group {
-                            input {
-                                width: 75%;
-                            }
+            .login-panel {
+                .panel-form {
+                    .form-group {
+                        input {
+                            width: 75%;
+                        }
 
-                            .forgotten-pwd {
-                                width: 75%;
-                            }
+                        .forgotten-pwd {
+                            width: 75%;
                         }
                     }
                 }
@@ -1505,17 +1503,15 @@ body.admin {
         }
 
         .admin-log-on {
-            > .container {
-                .login-panel {
-                    .panel-form {
-                        .form-group {
-                            input {
-                                width: 50%;
-                            }
+            .login-panel {
+                .panel-form {
+                    .form-group {
+                        input {
+                            width: 50%;
+                        }
 
-                            .forgotten-pwd {
-                                width: 50%;
-                            }
+                        .forgotten-pwd {
+                            width: 50%;
                         }
                     }
                 }
@@ -1573,17 +1569,24 @@ body.admin {
 @media screen and (max-width: 480px) {
     body.admin {
         .admin-log-on {
-            > .container {
-                .login-panel {
-                    .panel-form {
-                        .form-group {
-                            input {
-                                width: 100%;
-                            }
+            .login-panel {
+                .panel-logo {
+                    > img {
+                        width: 25px;
+                    }
+                }
+                .panel-form {
+                    .form-group {
+                        input {
+                            width: 100%;
+                        }
 
-                            .forgotten-pwd {
-                                width: 100%;
-                            }
+                        .forgotten-pwd {
+                            width: 100%;
+                        }
+
+                        .button {
+                            width: 50%;
                         }
                     }
                 }

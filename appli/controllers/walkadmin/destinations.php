@@ -241,13 +241,12 @@ class Destinations  extends CI_Controller{
 
         //On charge la librairie
         $this->load->library('upload');
-
         if($this->input->post()){
             $this->form_validation->set_rules('pays', '"pays"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('titre', '"titre"', 'is_unique[destination.titre]|trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('description', '"description"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('ville', '"ville"', 'trim|required|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('banner', '"Banniére"', 'required');
+            //$this->form_validation->set_rules('banner', '"Banniére"', 'required');
             $this->form_validation->set_rules('latitude', '"latitude"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('longitude', '"longitude"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('climat', '"Climat"', 'trim|required|encode_php_tags|xss_clean');
@@ -259,7 +258,7 @@ class Destinations  extends CI_Controller{
             $this->form_validation->set_rules('deplacement', '"Déplacement"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('hebergement', '"Hébergement"', 'trim|required|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('accompagnement', '"Accompagnement"', 'trim|required|encode_php_tags|xss_clean');
-            if($this->form_validation->run()){
+            if($this->form_validation->run()  && isset($_FILES['banner'])){
 
                 $taille_jours = (sizeof($this->input->post())-15)/2;
                 $jours = array();
@@ -317,7 +316,6 @@ class Destinations  extends CI_Controller{
                     return false;
                 }else{
                     $destination['banner']='destinations/'.  slugify($this->input->post('titre')).'/cover/'.$this->upload->data()['file_name'];
-
                     //On va envoyer les photos de la destination
 
                     //On défii le chemin d'upload des photos

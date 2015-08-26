@@ -1,34 +1,30 @@
 <div class="admin-log-on">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-                <div class="login-panel">
-                    <div class="panel-logo">
-                        <img src="<?php echo img_url('logo-wk-icon.png') ?>" alt="Walkabout" />
-                    </div>
-                    <div class="panel-form">
-                        <?php if($error){
-                            echo $error;
-                        }
-                        echo form_open(base_url().'walkadmin/');
-                        ?>
-                            <div class="form-group">
-                                <label for="pseudo">Identifiant</label>
-                                <input id="pseudo" name="pseudo" type="text" value="<?php echo set_value('pseudo'); ?>" autofocus />
-                                <?php echo form_error('pseudo'); ?>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Mot de passe</label>
-                                <input id="password" name="password" value="<?php echo set_value('password'); ?>" type="password" />
-                                <?php echo form_error('password'); ?>
-                                <p class="forgotten-pwd">Vous avez oublié votre mot de passe ?<br /><a class="fancybox" href="#recover-pwd">Cliquez-ici</a></p>
-                            </div>
-                            <!-- Change this to a button or input when using this as a form -->
-                            <input type="submit" class="button" value="Se connecter"/>
-                        <?php echo form_close(); ?>
-                    </div>
+    <div class="login-panel">
+        <div class="panel-logo">
+            <img src="<?php echo img_url('logo-wk-icon.png') ?>" alt="Walkabout" />
+        </div>
+        <div class="panel-form">
+            <?php if($error){
+                echo $error;
+            }
+            echo form_open(base_url().'walkadmin/');
+            ?>
+                <div class="form-group">
+                    <label for="pseudo">Identifiant</label>
+                    <input id="pseudo" name="pseudo" type="text" value="<?php echo set_value('pseudo'); ?>" autofocus />
+                    <?php echo form_error('pseudo'); ?>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input id="password" name="password" value="<?php echo set_value('password'); ?>" type="password" />
+                    <?php echo form_error('password'); ?>
+                    <p class="forgotten-pwd">Vous avez oublié votre mot de passe ?<br /><a class="fancybox" href="#recover-pwd">Cliquez-ici</a></p>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="button" value="Se connecter"/>
+                    <a class="button small mt25" href="<?php echo base_url(); ?>"><i class="fa fa-caret-left"></i>&nbsp;Retour sur Walkabout</a>
+                </div>
+            <?php echo form_close(); ?>
         </div>
     </div>
 </div>

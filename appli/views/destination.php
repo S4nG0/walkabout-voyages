@@ -116,36 +116,36 @@
                             <div class="col-md-6">
                                 <h3>Accompagnement</h3>
                                 <p>
-<?php if (isset($infos->accompagnement)) {
-    echo $infos->accompagnement;
-} ?>
+                                <?php if (isset($infos->accompagnement)) {
+                                    echo $infos->accompagnement;
+                                } ?>
                                 </p>
                             </div>
                             <div class="col-md-6">
                                 <h3>Déplacements</h3>
                                 <p>
-<?php if (isset($infos->deplacement)) {
-    echo $infos->deplacement;
-} ?>
-                                </p>
+                                <?php if (isset($infos->deplacement)) {
+                                    echo $infos->deplacement;
+                                } ?>
+                                                                </p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <h3>Hébergement</h3>
                                 <p>
-<?php if (isset($infos->hebergement)) {
-    echo $infos->hebergement;
-} ?>
-                                </p>
+                                <?php if (isset($infos->hebergement)) {
+                                    echo $infos->hebergement;
+                                } ?>
+                                                                </p>
                             </div>
                             <div class="col-md-6">
                                 <h3>Repas & boissons</h3>
                                 <p>
-<?php if (isset($infos->repas_boissons)) {
-    echo $infos->repas_boissons;
-} ?>
-                                </p>
+                                <?php if (isset($infos->repas_boissons)) {
+                                    echo $infos->repas_boissons;
+                                } ?>
+                                                                </p>
                             </div>
                         </div>
                         <div class="row">
@@ -195,7 +195,7 @@
 foreach ($voyages as $voyage) {
     ?>
                                         <li>
-                                            du <?php echo $voyage->date_depart; ?>  au <?php echo $voyage->date_retour; ?>
+                                            du <?php echo $voyage->date_depart; ?>  au <?php echo $voyage->date_retour; ?><br />
                                             <span class="small">(places restantes: <?php echo $voyage->nb_reserves; ?>)</span>
                                         </li>
 
@@ -350,31 +350,29 @@ foreach ($details_prix as $detail) {
             <div class="container">
                 <h2 class="sep">Ont participé à ce voyage...</h2>
                 <div class="travel-logs-slider owl-carousel">
-                    <?php
-                    foreach ($carnets as $carnet) {
-                        echo '<div class="travel-logs__item">
+                    <?php foreach ($carnets as $carnet) { ?>
+                        <div class="travel-logs__item">
                             <!-- block:Travel-log -->
                             <div class="travel-log">
-                                <a class="no-style" href="#">
+                                <a class="no-style" href="<?php echo base_url().'utilisateur/'.$carnet->user[0]->slug; ?>">
                                     <div class="profile-picture">
-                                        <img src="' . img_url($carnet->user[0]->photo) . '" alt="profile_picture">
+                                        <img src="<?php echo img_url($carnet->user[0]->photo); ?>" alt="profile_picture">
                                     </div>
                                 </a>
                                 <div class="excerpt">
-                                    <h3>' . $carnet->titre . '</h2>
+                                    <h3><?php echo $carnet->titre ?></h2>
                                     <p class="published">
-                                        par <a href="#">' . ucfirst(mb_strtolower($carnet->user[0]->prenom)) . ' ' . ucfirst(mb_strtolower($carnet->user[0]->nom)) . '</a>, le ' . $carnet->date . '
+                                        par <a href="<?php echo base_url().'utilisateur/'.$carnet->user[0]->slug; ?>"><?php echo ucfirst(mb_strtolower($carnet->user[0]->prenom))." ".ucfirst(mb_strtolower($carnet->user[0]->nom)); ?></a>, le <?php echo $carnet->date; ?>
                                     </p>
                                     <p>
-                                        &laquo;&nbsp;' . $carnet->description . '&nbsp;&raquo;
+                                        &laquo;&nbsp;<?php echo $carnet->description; ?>&nbsp;&raquo;
                                     </p>
-                                    <a class="button black" href="' . base_url() . 'carnets-de-voyage/' . slugify($carnet->titre) . '">Feuilletez le carnet&nbsp;</a>
+                                    <a class="button black" href="<?php echo base_url().'carnets-de-voyage/'.slugify($carnet->titre); ?>">Feuilletez le carnet&nbsp;</a>
                                 </div>
                             </div>
                             <!-- endblock:Travel-log -->
-                        </div>';
-                    }
-                    ?>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

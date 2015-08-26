@@ -33,7 +33,7 @@ $step = 'choice';
                 <?php echo form_open('checkout/identification')?>
 
                 <div class="help-block">
-                    <p>Cliquez sur une des bulles pour sélectionner le séjour qui vous intéresse.</p>
+                    <p>Cliquez sur une des bulles pour sélectionner le séjour qui vous intéresse puis cliquez sur "Je réserve" en fin de page.</p>
                 </div>
 
                 <ul class="date-list">
@@ -63,15 +63,15 @@ $step = 'choice';
                             <input <?php echo $disable ?> class="radio" type="radio" name="date" value="<?php echo $voyage->idVoyage; ?>" id="date<?php echo $x; ?>" value="<?php echo $voyage->idVoyage; ?>" <?php echo $checked; ?>/>
                             <label for="date<?php echo $x; ?>"><span></span><?php echo "Destination&nbsp;:&nbsp;<i>" . $destination->titre . "</i>"; ?></label>
                             <p>
-                                <strong>Départ</strong>&nbsp;:&nbsp;<?php echo $voyage->date_depart; ?>&nbsp;&bull;&nbsp;
-                                <strong>Retour</strong>&nbsp;:&nbsp;<?php echo $voyage->date_retour; ?>
+                                <span><strong>Départ</strong>&nbsp;:&nbsp;<?php echo $voyage->date_depart; ?></span><span class="hidden-xs">&nbsp;&bull;&nbsp;</span>
+                                <span><strong>Retour</strong>&nbsp;:&nbsp;<?php echo $voyage->date_retour; ?></span>
                             </p>
                             <p>
                                 <strong>Prix</strong>&nbsp;:&nbsp;<?php echo $voyage->prix; ?>&nbsp;€ par personnes&nbsp;&nbsp;&nbsp;
-                                <?php 
+                                <?php
                                 $details = json_decode($voyage->details);
                                 if(sizeof($details) > 0) {
-                                    echo '&bull;
+                                    echo '<span class="hidden-xs">&bull;</span>
                                 <a href="#details'.$x.'" class="button black small" id="showDetails'.$x.'">Voir détails</a>';
                                 }
                                 ?>

@@ -7,7 +7,6 @@ class Carnetvoyage extends CI_Model {
 
     protected $table = 'carnetdevoyage';
 
-
     public function constructeur($id = 0){
         if($id == 0){
             return false;
@@ -124,12 +123,13 @@ class Carnetvoyage extends CI_Model {
     public function get_carnet_pagination($start,$nb){
 
         $carnets = $this->db->select('*')
-                           ->from($this->table)
-                           ->where('publie', 'true')
-                           ->where('favoris <> "true"')
-                           ->limit($nb, $start)
-                           ->get()
-                           ->result();
+            ->from($this->table)
+            ->where('publie', 'true')
+            ->where('favoris <> "true"')
+            ->order_by('publie')
+            ->limit($nb, $start)
+            ->get()
+            ->result();
 
         return $carnets;
 
@@ -139,9 +139,10 @@ class Carnetvoyage extends CI_Model {
 
         $carnets = $this->db->select('*')
                            ->from($this->table)
-                           ->where('publie', 'true')
+                           ->where('publie <> "Suppr"')
                            ->like('titre' ,$search)
                            ->limit($nb, $start)
+                           ->order_by('publie')
                            ->get()
                            ->result();
 
@@ -150,6 +151,21 @@ class Carnetvoyage extends CI_Model {
     }
 
     public function get_carnet_pagination_admin($start,$nb){
+
+        $carnets = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('favoris <> "true"')
+                           ->where('idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> "Brouillon" and etat <> "Supprimes")')
+                           ->limit($nb, $start)
+                           ->order_by('publie')
+                           ->get()
+                           ->result();
+
+        return $carnets;
+
+    }
+
+    public function get_carnet_pagination_administrateur($start,$nb){
 
         $carnets = $this->db->select('*')
                            ->from($this->table)
@@ -265,7 +281,7 @@ class Carnetvoyage extends CI_Model {
 
         return $carnets;
     }
-    
+
     public function countWhereArticlesSearch($search){
         $query = "SELECT count(*) AS nb_carnets FROM `wa__carnetdevoyage` WHERE idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> \"Brouillon\" and titre LIKE '%$search%' OR texte LIKE '%$search%')";
         $carnets = $this->db->query($query)->result();
@@ -297,7 +313,7 @@ class Carnetvoyage extends CI_Model {
 
         return $carnets;
     }
-    
+
     public function getCarnetsAndUsers(){
         $carnets = $this->db->select('carnetdevoyage.*,users.nom AS nomUsers,users.prenom AS prenomUsers')
                             ->from($this->table)

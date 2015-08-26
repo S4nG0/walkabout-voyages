@@ -50,7 +50,7 @@
                     <?php } ?>
                 </div>
                 <div class="single__block buttonsBlock">
-                    <a class="button black check" id="restore" href="<?php echo base_url().'walkadmin/carnets/publie/'.$carnet->idCarnetDeVoyage;?>">
+                    <a class="button black check" id="restore" href="<?php echo base_url().'walkadmin/carnets/restaure/'.$carnet->idCarnetDeVoyage;?>">
                         <i class="fa fa-check"></i>&nbsp;
                         Restaurer
                     </a>
