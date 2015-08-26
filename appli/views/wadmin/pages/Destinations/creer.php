@@ -183,7 +183,7 @@ echo form_open_multipart('walkadmin/destinations/creer');
                     <div class="form-group destinations__pricePlus">
                         <span title="Ajouter" class="destinations__icon add" id="add-pricePlus"></span><span>Ajouter un détail</span>
                     </div>
-
+                    <input type="hidden" name="plus" id="plus" value="0">
                     <?php echo form_error('pricePlus'); ?>
                 </div>
             </div>
@@ -194,7 +194,7 @@ echo form_open_multipart('walkadmin/destinations/creer');
                     <div class="form-group destinations__priceMinus">
                         <span title="Ajouter" class="destinations__icon add" id="add-priceMinus"></span><span>Ajouter un détail</span>
                     </div>
-
+                    <input type="hidden" name="minus" id="minus" value="0">
                     <?php echo form_error('priceMinus'); ?>
                 </div>
             </div>

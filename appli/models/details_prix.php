@@ -21,6 +21,13 @@ class Details_prix extends CI_Model {
         
         return $details_prix;
     }
+
+    public function insert($data = ''){
+        if($data=='')
+            return false;
+        $details_prix = $this->db->insert($this->table,$data);
+        return $details_prix;
+    }
   
     
     

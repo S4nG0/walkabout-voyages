@@ -45,7 +45,6 @@ class Article extends CI_Controller{
         foreach($data['carnets'] as $carnet){
             $carnet->articles = $this->articles->getFromCarnetWherePublie($carnet->idCarnetDeVoyage);
         }
-        var_dump($count);
 
         $data['admin'] = $this->session->userdata('admin');
         $this->load->view('wadmin/template/header', $data);
