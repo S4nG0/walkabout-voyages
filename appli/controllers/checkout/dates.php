@@ -36,11 +36,15 @@ class Dates extends CI_Controller {
             }
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $data['voyages'] = $this->voyages->get_voyage_reservation($id);
+            $voyages = array();
             foreach($data['voyages'] as $voyage){
                 $voyage->date_depart = conv_date($voyage->date_depart);
                 $voyage->date_retour = conv_date($voyage->date_retour);
                 $voyage->nb_reservés = $voyage->nb_places - $this->reservations->count($voyage->idVoyage);
+                if($voyage->nb_reservés!=0)
+                    array_push($voyages,$voyage);
             }
+            $data['voyages'] = $voyages;
             if(sizeof($data['voyages']) == 0){
                 $data['no_voyage'] = true;
             }else{
