@@ -12,24 +12,26 @@
     <link rel="icon" href="<?php echo img_url('favicon.png'); ?>" type="image/png">
     <link rel="apple-touch-icon" href="<?php echo img_url('apple-touch-icon.png'); ?>">
     <link rel="alternate" hreflang="fr" href="http://fr.walkabout-voyages.fr/" />
+    <link href="https://plus.google.com/114606485962340409388" rel="publisher" />
+    
+    
+    <meta property="og:title" content="<?php echo "$title"; ?>" />
+    <meta property="og:type" content="The type" />
+    <meta property="og:url" content="<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" />
+    <meta property="og:image" content="<?php if(isset($destination[0]->banner) && $destination[0]->banner != ''){echo img_url($destination[0]->banner);}else{echo img_url("background.jpg");}?>" />
+    
 
     <!-- Viewport -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Dosis:400,300,600,500,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-
+    <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,600,700|Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300' rel='stylesheet' type='text/css'>
 
     <!-- Vendors -->
     <link rel="stylesheet" href="<?php echo css_url('bootstrap.min'); ?>">
-
-    <link rel="stylesheet" href="<?php echo css_url('leaflet'); ?>" />
     <link rel="stylesheet" href="<?php echo css_url('font-awesome');?>">
     <link rel="stylesheet" href="<?php echo css_url('fancybox');?>">
-    <link rel="stylesheet" href="<?php echo css_url('helpers/fancybox-thumbs');?>">
-    <link rel="stylesheet" href="<?php echo css_url('helpers/fancybox-buttons');?>">
     <link rel="stylesheet" href="<?php echo css_url('iconate.min');?>">
     <link rel="stylesheet" href="<?php echo css_url('owl.carousel');?>">
 

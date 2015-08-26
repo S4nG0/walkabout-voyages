@@ -221,32 +221,7 @@ switch ($newsletter) {
 
     <script type="text/javascript">
         window.onload = function () {
-
-            //<?php foreach($pays as $paysActuel){?>
-                //$('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("class", "land active");
-            //<?php } ?>
-//            var tooltip = d3.select(".tooltip");
-//            var SVGmouseTip = d3.select("g.tooltip.mouse");
-//
-//            d3.select("svg").select("g").selectAll("path")
-//
-//                    .on("mouseover", function () {
-//                        if($(this).attr('class').indexOf('active') != '-1'){
-//                            tooltip.style("opacity", "1");
-//                            $('#test').text($(this).data('pays'));
-//                        }
-//                    })
-//                    .on("mousemove", function () {
-//                        var mouseCoords = d3.mouse(SVGmouseTip.node().parentElement);
-//
-//                        SVGmouseTip.attr("transform", "translate("
-//                                        + (mouseCoords[0] + 50) + ","
-//                                        + (mouseCoords[1]) + ")");
-//                    })
-//                    .on("mouseout", function () {
-//                        return tooltip.style("opacity", "0");
-//                    });
-
+            
             var options = {
                 center: [48.856614, 2.352222],
                 zoom: 2,
@@ -285,8 +260,8 @@ switch ($newsletter) {
                 $longitude = explode(',',$destination->coordonnees)[1];
             ?>
 
-            var popUp =''+
-            '<a class="no-style" href="<?php echo base_url('nos-destinations/'.$destination->url); ?>" title="Découvrez la destination">'+
+            var popUp = '';
+             popUp += '<a class="no-style" href="<?php echo base_url('nos-destinations/'.$destination->url); ?>" title="Découvrez la destination">'+
                 '<div class="popup_map__image-wrapper">'+
                     '<div class="popup_map__image" style="background-image: url(\'<?php echo img_url($destination->banner);?>\')"></div>'+
                 '</div>'+
