@@ -260,7 +260,7 @@ class Destinations  extends CI_Controller{
             $this->form_validation->set_rules('accompagnement', '"Accompagnement"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()  && isset($_FILES['banner'])){
 
-                $taille_jours = (sizeof($this->input->post())-15)/2;
+                $taille_jours = (sizeof($this->input->post())-intval($this->input->post('plus'))-intval($this->input->post('minus'))-17)/2;
                 $jours = array();
                 $i = 0;
                 $k = 0;
@@ -357,8 +357,35 @@ class Destinations  extends CI_Controller{
                     }
                     $destination['photos'] = $chaine;
                     $idinsert = $this->destination->insertDestination($destination);
-
-
+                    $compteurPrixPlus = intval($this->input->post('plus'));
+                    $compteurPrixMinus = intval($this->input->post('minus'));
+                    $i = 0;
+                    $k = 0;
+                    $tableauDetailPrix = array();
+                    do{
+                        if($this->input->post("pricePlus$i") != false){
+                            $this->form_validation->set_rules("pricePlus$i", "pricePlus", 'trim|required|encode_php_tags|xss_clean');
+                            $tableauDetailPrix["idDestination"] = $idinsert;
+                            $tableauDetailPrix["plusoumoins"] = "plus";
+                            $tableauDetailPrix["valeur"] = $this->input->post("pricePlus$i");
+                            $this->details_prix->insert($tableauDetailPrix);
+                            $k++;
+                        }
+                        $i++;
+                    }while($k != $compteurPrixPlus);
+                    $i = 0;
+                    $k = 0;
+                    do{
+                        if($this->input->post("priceMinus$i") != false){
+                            $this->form_validation->set_rules("priceMinus$i", "priceMinus", 'trim|required|encode_php_tags|xss_clean');
+                            $tableauDetailPrix["idDestination"] = $idinsert;
+                            $tableauDetailPrix["plusoumoins"] = "moins";
+                            $tableauDetailPrix["valeur"] = $this->input->post("priceMinus$i");
+                            $this->details_prix->insert($tableauDetailPrix);
+                            $k++;
+                        }
+                        $i++;
+                    }while($k != $compteurPrixMinus);
 
                     $infos = new stdClass();
                     $infos->idDestination = $idinsert;

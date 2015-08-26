@@ -280,8 +280,10 @@ $('#add-pricePlus').on('click', function(){
     if(typeof i == 'undefined'){
         i = 0 ;
     }
-    $('#container_pricePlus').append($('<div class="form-group destinations__pricePlus fieldBlock" id="detail'+i+'"><textarea name="pricePlus'+i+'" id="pricePlus" rows="2" maxlength="75" placeholder="Saisissez votre information"></textarea><span class="destinations__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>').hide().fadeIn(300));
+    var type = "plus";
+    $('#container_pricePlus').append($('<div class="form-group destinations__pricePlus fieldBlock" id="detail'+i+'"><textarea name="pricePlus'+i+'" id="pricePlus" rows="2" maxlength="75" placeholder="Saisissez votre information"></textarea><span class="destinations__icon remove" onclick="javascript:remove_detail('+i+','+type+')"></span></div>').hide().fadeIn(300));
     i++;
+    document.getElementById('plus').value=parseInt(document.getElementById('plus').value)+1;
 });
 
 
@@ -289,8 +291,10 @@ $('#add-priceMinus').on('click', function(){
     if(typeof i == 'undefined'){
         i = 0 ;
     }
-    $('#container_priceMinus').append($('<div class="form-group destinations__priceMinus fieldBlock" id="detail'+i+'"><textarea name="priceMinus'+i+'" id="priceMinus" rows="2" maxlength="75" placeholder="Saisissez votre information"></textarea><span class="destinations__icon remove" onclick="javascript:remove_detail('+i+')"></span></div>').hide().fadeIn(300));
+    var type = "minus";
+    $('#container_priceMinus').append($('<div class="form-group destinations__priceMinus fieldBlock" id="detail'+i+'"><textarea name="priceMinus'+i+'" id="priceMinus" rows="2" maxlength="75" placeholder="Saisissez votre information"></textarea><span class="destinations__icon remove" onclick="javascript:remove_detail('+i+','+type+')"></span></div>').hide().fadeIn(300));
     i++;
+    document.getElementById('minus').value=parseInt(document.getElementById('minus').value)+1;
 });
 
 
@@ -302,6 +306,11 @@ $('input[name=star]').on('click',function(){
 });
 
 
-function remove_detail(i){
+function remove_detail(i,type){
+    if(type.id=="plus"){
+        document.getElementById('plus').value=parseInt(document.getElementById('plus').value)-1;
+    }else if(type.id=="minus"){
+        document.getElementById('minus').value=parseInt(document.getElementById('minus').value)-1;
+    }
     $('#detail'+i).fadeOut(300, function(){this.remove();});
 }
