@@ -55,6 +55,9 @@ class Destinations  extends CI_Controller{
         if($this->infos_destination->constructeur($idDestination)){
             $data['infos'] = $this->infos_destination->constructeur($idDestination)[0];
         }
+        if($this->infos_destination->constructeur($idDestination)){
+            $data['detailPrix'] = $this->details_prix->constructeur($idDestination);
+        }
         $pays = $this->pays->constructeur($data['destination']->idPays)[0];
 
         //On charge la librairie d'upload
@@ -89,9 +92,8 @@ class Destinations  extends CI_Controller{
                 );
 
                 $id_infos = $this->infos_destination->constructeur($idDestination)[0]->idInfosDestinations;
-
-
-                $taille_jours = (sizeof($this->input->post())-16)/2;
+                $nbDetailprix = $this->details_prix->countDetailPrixByDestination($idDestination)[0]->nbDetailPrix;
+                $taille_jours = (sizeof($this->input->post())-intval($this->input->post('plus'))-intval($this->input->post('minus'))-18)/2;
                 $jours = array();
                 $i = 0;
                 $k = 0;
@@ -127,6 +129,38 @@ class Destinations  extends CI_Controller{
                 }else{
                     $this->infos_destination->update($id_infos,$infos);
                 }
+                if($nbDetailprix!=0){
+                    $this->details_prix->deleteDetailPrixByDestination($idDestination);
+                }
+                $compteurPrixPlus = intval($this->input->post('plus'));
+                $compteurPrixMinus = intval($this->input->post('minus'));
+                $i = 0;
+                $k = 0;
+                $tableauDetailPrix = array();
+                do{
+                    if($this->input->post("pricePlus$i") != false){
+                        $this->form_validation->set_rules("pricePlus$i", "pricePlus", 'trim|required|encode_php_tags|xss_clean');
+                        $tableauDetailPrix["idDestination"] = $idDestination;
+                        $tableauDetailPrix["plusoumoins"] = "plus";
+                        $tableauDetailPrix["valeur"] = $this->input->post("pricePlus$i");
+                        $this->details_prix->insert($tableauDetailPrix);
+                        $k++;
+                    }
+                    $i++;
+                }while($k != $compteurPrixPlus);
+                $i = 0;
+                $k = 0;
+                do{
+                    if($this->input->post("priceMinus$i") != false){
+                        $this->form_validation->set_rules("priceMinus$i", "priceMinus", 'trim|required|encode_php_tags|xss_clean');
+                        $tableauDetailPrix["idDestination"] = $idDestination;
+                        $tableauDetailPrix["plusoumoins"] = "moins";
+                        $tableauDetailPrix["valeur"] = $this->input->post("priceMinus$i");
+                        $this->details_prix->insert($tableauDetailPrix);
+                        $k++;
+                    }
+                    $i++;
+                }while($k != $compteurPrixMinus);
                 //Upload chemin for cover
                 $upload_path = 'assets/images/destinations/'. slugify($this->input->post('titre')).'/cover';
 

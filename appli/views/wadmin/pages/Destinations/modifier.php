@@ -217,10 +217,29 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
                 <div class="form-group">
                     <label for="pricePlus">Ce prix comprend :</label>
                     <div id="container_pricePlus"></div>
+                    <?php
+                    $plus = 0;
+                    if(isset($detailPrix)){
+                        foreach($detailPrix as $prix) {
+                            if($prix->plusoumoins == "plus") {
+                                ?>
+                                <div class="form-group destinations__pricePlus fieldBlock" id="detail<?php echo $iteration; ?>">
+                                        <textarea name="pricePlus<?php echo $iteration; ?>" id="pricePlus" rows="2" maxlength="75"
+                                                  placeholder="Saisissez votre information"><?php echo $prix->valeur; ?></textarea>
+                                        <span class="destinations__icon remove"
+                                              onclick="javascript:remove_detail(<?php echo $iteration; ?>,plus)"></span>
+                                </div>
+                                <?php
+                                $iteration++;
+                                $plus++;
+                            }
+                        }
+                    }
+                    ?>
+                    <input type="hidden" name="plus" id="plus" value="<?php echo $plus; ?>">
                     <div class="form-group destinations__pricePlus">
                         <span title="Ajouter" class="destinations__icon add" id="add-pricePlus"></span><span>Ajouter un détail</span>
                     </div>
-
                     <?php echo form_error('pricePlus'); ?>
                 </div>
             </div>
@@ -228,6 +247,26 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
                 <div class="form-group">
                     <label for="priceMinus">Ce prix ne comprend pas :</label>
                     <div id="container_priceMinus"></div>
+                    <?php
+                    $minus = 0;
+                    if(isset($detailPrix)){
+                        foreach($detailPrix as $prix) {
+                            if($prix->plusoumoins == "moins") {
+                                ?>
+                                <div class="form-group destinations__priceMinus fieldBlock" id="detail<?php echo $iteration; ?>">
+                                        <textarea name="priceMinus  <?php echo $iteration; ?>" id="priceMinus" rows="2" maxlength="75"
+                                                  placeholder="Saisissez votre information"><?php echo $prix->valeur; ?></textarea>
+                                        <span class="destinations__icon remove"
+                                              onclick="javascript:remove_detail(<?php echo $iteration; ?>,plus)"></span>
+                                </div>
+                                <?php
+                                $iteration++;
+                                $minus++;
+                            }
+                        }
+                    }
+                    ?>
+                    <input type="hidden" name="minus" id="minus" value="<?php echo $minus; ?>">
                     <div class="form-group destinations__priceMinus">
                         <span title="Ajouter" class="destinations__icon add" id="add-priceMinus"></span><span>Ajouter un détail</span>
                     </div>
