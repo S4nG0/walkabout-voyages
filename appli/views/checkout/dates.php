@@ -61,7 +61,7 @@ $step = 'choice';
                     <li>
                         <div class="form-group">
                             <input <?php echo $disable ?> class="radio" type="radio" name="date" value="<?php echo $voyage->idVoyage; ?>" id="date<?php echo $x; ?>" value="<?php echo $voyage->idVoyage; ?>" <?php echo $checked; ?>/>
-                            <label for="date<?php echo $x; ?>"><span></span><?php echo "Destination&nbsp;:&nbsp;<i>" . $destination->titre . "</i>"; ?></label>
+                            <label for="date<?php echo $x; ?>"><span></span><?php echo "Destination&nbsp;:&nbsp;<i>" . $destination[0]->titre . "</i>"; ?></label>
                             <p>
                                 <span><strong>Départ</strong>&nbsp;:&nbsp;<?php echo $voyage->date_depart; ?></span><span class="hidden-xs">&nbsp;&bull;&nbsp;</span>
                                 <span><strong>Retour</strong>&nbsp;:&nbsp;<?php echo $voyage->date_retour; ?></span>
