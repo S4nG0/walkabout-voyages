@@ -2,7 +2,7 @@
 echo form_open_multipart('walkadmin/actualite/modifier/'.$actualite[0]->idActualites);
 ?>
 <div id="page-wrapper">
-    <div class="actualites">
+    <div class="main-content actualites">
         <div class="row text-center">
             <h1 class="page-header sep">Modification d'une actualité</h1>
         </div>

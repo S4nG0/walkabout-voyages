@@ -1,7 +1,7 @@
 
 <div id="page-wrapper">
 
-<div class="destinations">
+<div class="main-content destinations">
     <div class="row text-center">
         <div class="col-lg-12">
             <h1 class="page-header sep">Corbeille</h1>

@@ -3,7 +3,7 @@
 
 <div class="container-fluid">
 
-<div class="carnets">
+<div class="main-content carnets">
     <div class="row text-center">
         <div class="col-lg-12">
             <h1 class="page-header sep">Carnets de voyages</h1>

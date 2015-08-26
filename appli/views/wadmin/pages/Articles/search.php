@@ -3,7 +3,7 @@
 
     <div class="container-fluid">
 
-        <div class="articles">
+        <div class="main-content articles">
             <div class="row text-center">
                 <div class="col-lg-12">
                     <h1 class="page-header sep">Modération<br /><span class="small">Articles de carnet</span></h1>

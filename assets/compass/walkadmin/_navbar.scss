@@ -19,8 +19,35 @@ body.admin {
         }
     }
 
+    .navbar-toggle {
+        width: 50px;
+        height: 35px;
+        padding: 6px;
+        @include border-radius(0);
+        color: $blanc;
+        @include transition($default-transition);
+
+        .fa {
+            font-size: 1.5em;
+            margin: 0 auto;
+        }
+
+        &:hover, &:focus {
+            color: $noir;
+            background-color: $blanc;
+        }
+    }
+
+    .navbar-top-links {
+        text-align: center;
+    }
+
     .navbar-default {
         background: $texture;
+
+        .navbar-collapse {
+            border: 0px;
+        }
     }
 
     .navbar-default.sidebar {

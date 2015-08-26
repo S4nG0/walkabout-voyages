@@ -3,7 +3,7 @@
 
 <div class="container-fluid">
 
-<div class="destinations">
+<div class="main-content destinations">
     <div class="row text-center">
         <div class="col-lg-12">
             <h1 class="page-header sep">Liste des destinations</h1>

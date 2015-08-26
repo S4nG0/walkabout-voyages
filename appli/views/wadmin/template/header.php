@@ -21,6 +21,7 @@
     <!-- Vendors -->
     <link rel="stylesheet" href="<?php echo css_url('metisMenu.min'); ?>">
     <link rel="stylesheet" href="<?php echo css_url('fancybox'); ?>">
+    <link rel="stylesheet" href="<?php echo css_url('iconate.min'); ?>">
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Dosis:400,300,600,500,700' rel='stylesheet' type='text/css'>

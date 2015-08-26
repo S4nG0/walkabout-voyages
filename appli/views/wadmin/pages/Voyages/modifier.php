@@ -6,7 +6,7 @@ echo form_open('walkadmin/voyage/modifier/' . $voyage[0]->idVoyage);
 
     <div class="container-fluid">
 
-        <div class="voyages">
+        <div class="main-content voyages">
 
             <?php
             echo validation_errors();
@@ -48,7 +48,7 @@ echo form_open('walkadmin/voyage/modifier/' . $voyage[0]->idVoyage);
                         <span class="small">Veuillez ajouter tous les détails pour le prix du séjour</span>
                     </div>
                     <div id="container_details">
-                        <?php $i = 0; if($voyage[0]->details){ 
+                        <?php $i = 0; if($voyage[0]->details){
                             $details = json_decode($voyage[0]->details);
                             foreach($details as $detail){
                             ?>

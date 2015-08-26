@@ -1,6 +1,6 @@
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="commentaires">
+        <div class="main-content commentaires">
             <div class="row text-center">
                 <div class="col-lg-12">
                     <h1 class="page-header sep">Commentaires</h1>
@@ -36,7 +36,7 @@
             </div>
 
            <?php var_dump($commentaires); ?>
-<!-- 
+<!--
             <div class="row carnets__single searchable">
                 <div class="col-sm-12 col-md-10 col-md-offset-1">
                     <div class="carnets__single">

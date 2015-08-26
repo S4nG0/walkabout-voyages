@@ -6,7 +6,7 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
 
 <div class="container-fluid">
 
-    <div class="destinations">
+    <div class="main-content destinations">
         <div class="row text-center">
             <div class="col-md-12">
                 <h1 class="page-header sep"><?php echo $destination->titre; ?></h1>

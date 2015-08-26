@@ -6194,13 +6194,7 @@ body.admin a:hover, body.admin a:focus {
 body.admin .button {
   margin: 0 auto;
   width: 250px;
-  border-color: #fff;
-  color: #fff;
   letter-spacing: 1px;
-}
-body.admin .button:hover, body.admin .button:focus {
-  color: #f0c041;
-  border-color: #f0c041;
 }
 body.admin .button.small {
   width: auto;
@@ -6488,6 +6482,12 @@ body.admin .submenu li .active {
 }
 .admin-log-on .login-panel .panel-form .button {
   width: 200px;
+  border-color: #fff;
+  color: #fff;
+}
+.admin-log-on .login-panel .panel-form .button:hover, .admin-log-on .login-panel .panel-form .button:focus {
+  color: #f0c041;
+  border-color: #f0c041;
 }
 
 .recover-pwd-block {
@@ -6627,222 +6627,82 @@ body.admin .charts h3 {
 /*--------------------------------------------*\
     #CONTENT
 \*--------------------------------------------*/
-.destinations,
-.actualites,
-.voyages,
-.carnets,
-.articles,
-.commentaires,
-.utilisateurs {
+.main-content {
   position: relative;
 }
-.destinations h2,
-.actualites h2,
-.voyages h2,
-.carnets h2,
-.articles h2,
-.commentaires h2,
-.utilisateurs h2 {
+.main-content h2 {
   margin-bottom: 50px !important;
 }
-.destinations blockquote,
-.actualites blockquote,
-.voyages blockquote,
-.carnets blockquote,
-.articles blockquote,
-.commentaires blockquote,
-.utilisateurs blockquote {
+.main-content blockquote {
   color: #848484;
 }
-.destinations input, .destinations textarea,
-.actualites input,
-.actualites textarea,
-.voyages input,
-.voyages textarea,
-.carnets input,
-.carnets textarea,
-.articles input,
-.articles textarea,
-.commentaires input,
-.commentaires textarea,
-.utilisateurs input,
-.utilisateurs textarea {
+.main-content input, .main-content textarea {
   text-align: center;
 }
-.destinations input[type="submit"].button,
-.actualites input[type="submit"].button,
-.voyages input[type="submit"].button,
-.carnets input[type="submit"].button,
-.articles input[type="submit"].button,
-.commentaires input[type="submit"].button,
-.utilisateurs input[type="submit"].button {
+.main-content input[type="submit"].button {
   width: 250px;
 }
-.destinations select,
-.actualites select,
-.voyages select,
-.carnets select,
-.articles select,
-.commentaires select,
-.utilisateurs select {
+.main-content select {
   display: block;
   width: 100%;
   padding: 15px;
   text-align: center;
 }
-.destinations select option,
-.actualites select option,
-.voyages select option,
-.carnets select option,
-.articles select option,
-.commentaires select option,
-.utilisateurs select option {
+.main-content select option {
   text-align: center;
 }
-.destinations .form-group.required label,
-.actualites .form-group.required label,
-.voyages .form-group.required label,
-.carnets .form-group.required label,
-.articles .form-group.required label,
-.commentaires .form-group.required label,
-.utilisateurs .form-group.required label {
+.main-content .form-group.required label {
   margin-bottom: 3px;
 }
-.destinations .form-group .button,
-.actualites .form-group .button,
-.voyages .form-group .button,
-.carnets .form-group .button,
-.articles .form-group .button,
-.commentaires .form-group .button,
-.utilisateurs .form-group .button {
+.main-content .form-group .button {
   margin-top: 25px;
   width: 100%;
 }
-.destinations .form-group .help-block,
-.actualites .form-group .help-block,
-.voyages .form-group .help-block,
-.carnets .form-group .help-block,
-.articles .form-group .help-block,
-.commentaires .form-group .help-block,
-.utilisateurs .form-group .help-block {
+.main-content .form-group .help-block {
   margin-top: 0;
 }
-.destinations .form-group .help-block--gallery,
-.actualites .form-group .help-block--gallery,
-.voyages .form-group .help-block--gallery,
-.carnets .form-group .help-block--gallery,
-.articles .form-group .help-block--gallery,
-.commentaires .form-group .help-block--gallery,
-.utilisateurs .form-group .help-block--gallery {
+.main-content .form-group .help-block--gallery {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.destinations .well,
-.actualites .well,
-.voyages .well,
-.carnets .well,
-.articles .well,
-.commentaires .well,
-.utilisateurs .well {
+.main-content .well {
   -moz-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
 }
-.destinations .destinations__previewBlock,
-.actualites .destinations__previewBlock,
-.voyages .destinations__previewBlock,
-.carnets .destinations__previewBlock,
-.articles .destinations__previewBlock,
-.commentaires .destinations__previewBlock,
-.utilisateurs .destinations__previewBlock {
+.main-content .destinations__previewBlock {
   margin-bottom: 50px;
 }
-.destinations .module__tools,
-.actualites .module__tools,
-.voyages .module__tools,
-.carnets .module__tools,
-.articles .module__tools,
-.commentaires .module__tools,
-.utilisateurs .module__tools {
+.main-content .module__tools {
   display: table;
   width: 100%;
   margin-bottom: 50px;
   text-align: center;
 }
-.destinations .module__tools input,
-.actualites .module__tools input,
-.voyages .module__tools input,
-.carnets .module__tools input,
-.articles .module__tools input,
-.commentaires .module__tools input,
-.utilisateurs .module__tools input {
+.main-content .module__tools input {
   display: inline-block;
   width: 300px;
   margin-right: 15px;
   vertical-align: middle;
 }
-.destinations .module__tools input:focus,
-.actualites .module__tools input:focus,
-.voyages .module__tools input:focus,
-.carnets .module__tools input:focus,
-.articles .module__tools input:focus,
-.commentaires .module__tools input:focus,
-.utilisateurs .module__tools input:focus {
+.main-content .module__tools input:focus {
   border-color: #848484;
 }
-.destinations .module__tools .button,
-.actualites .module__tools .button,
-.voyages .module__tools .button,
-.carnets .module__tools .button,
-.articles .module__tools .button,
-.commentaires .module__tools .button,
-.utilisateurs .module__tools .button {
+.main-content .module__tools .button {
   display: inline-block;
   width: auto;
   padding: 15px;
   margin-right: 15px;
   vertical-align: middle;
 }
-.destinations .articles__help-block,
-.actualites .articles__help-block,
-.voyages .articles__help-block,
-.carnets .articles__help-block,
-.articles .articles__help-block,
-.commentaires .articles__help-block,
-.utilisateurs .articles__help-block {
+.main-content .articles__help-block {
   margin: 0 auto 25px auto;
 }
-.destinations .articles__help-block > p,
-.actualites .articles__help-block > p,
-.voyages .articles__help-block > p,
-.carnets .articles__help-block > p,
-.articles .articles__help-block > p,
-.commentaires .articles__help-block > p,
-.utilisateurs .articles__help-block > p {
+.main-content .articles__help-block > p {
   color: #848484;
   margin: 0;
 }
-.destinations .destinations__single .well,
-.destinations .actualites__single .well,
-.destinations .carnets__single .well,
-.actualites .destinations__single .well,
-.actualites .actualites__single .well,
-.actualites .carnets__single .well,
-.voyages .destinations__single .well,
-.voyages .actualites__single .well,
-.voyages .carnets__single .well,
-.carnets .destinations__single .well,
-.carnets .actualites__single .well,
-.carnets .carnets__single .well,
-.articles .destinations__single .well,
-.articles .actualites__single .well,
-.articles .carnets__single .well,
-.commentaires .destinations__single .well,
-.commentaires .actualites__single .well,
-.commentaires .carnets__single .well,
-.utilisateurs .destinations__single .well,
-.utilisateurs .actualites__single .well,
-.utilisateurs .carnets__single .well {
+.main-content .well {
   display: table;
   width: 100%;
   -moz-border-radius: 0;
@@ -6850,74 +6710,14 @@ body.admin .charts h3 {
   border-radius: 0;
   border-color: #242424;
 }
-.destinations .destinations__single .well .single__block,
-.destinations .actualites__single .well .single__block,
-.destinations .carnets__single .well .single__block,
-.actualites .destinations__single .well .single__block,
-.actualites .actualites__single .well .single__block,
-.actualites .carnets__single .well .single__block,
-.voyages .destinations__single .well .single__block,
-.voyages .actualites__single .well .single__block,
-.voyages .carnets__single .well .single__block,
-.carnets .destinations__single .well .single__block,
-.carnets .actualites__single .well .single__block,
-.carnets .carnets__single .well .single__block,
-.articles .destinations__single .well .single__block,
-.articles .actualites__single .well .single__block,
-.articles .carnets__single .well .single__block,
-.commentaires .destinations__single .well .single__block,
-.commentaires .actualites__single .well .single__block,
-.commentaires .carnets__single .well .single__block,
-.utilisateurs .destinations__single .well .single__block,
-.utilisateurs .actualites__single .well .single__block,
-.utilisateurs .carnets__single .well .single__block {
+.main-content .well .single__block {
   display: table-cell;
   vertical-align: middle;
 }
-.destinations .destinations__single .imageBlock,
-.destinations .actualites__single .imageBlock,
-.destinations .carnets__single .imageBlock,
-.actualites .destinations__single .imageBlock,
-.actualites .actualites__single .imageBlock,
-.actualites .carnets__single .imageBlock,
-.voyages .destinations__single .imageBlock,
-.voyages .actualites__single .imageBlock,
-.voyages .carnets__single .imageBlock,
-.carnets .destinations__single .imageBlock,
-.carnets .actualites__single .imageBlock,
-.carnets .carnets__single .imageBlock,
-.articles .destinations__single .imageBlock,
-.articles .actualites__single .imageBlock,
-.articles .carnets__single .imageBlock,
-.commentaires .destinations__single .imageBlock,
-.commentaires .actualites__single .imageBlock,
-.commentaires .carnets__single .imageBlock,
-.utilisateurs .destinations__single .imageBlock,
-.utilisateurs .actualites__single .imageBlock,
-.utilisateurs .carnets__single .imageBlock {
+.main-content .imageBlock {
   width: 30%;
 }
-.destinations .destinations__single .imageBlock .imageBlock__wrapper,
-.destinations .actualites__single .imageBlock .imageBlock__wrapper,
-.destinations .carnets__single .imageBlock .imageBlock__wrapper,
-.actualites .destinations__single .imageBlock .imageBlock__wrapper,
-.actualites .actualites__single .imageBlock .imageBlock__wrapper,
-.actualites .carnets__single .imageBlock .imageBlock__wrapper,
-.voyages .destinations__single .imageBlock .imageBlock__wrapper,
-.voyages .actualites__single .imageBlock .imageBlock__wrapper,
-.voyages .carnets__single .imageBlock .imageBlock__wrapper,
-.carnets .destinations__single .imageBlock .imageBlock__wrapper,
-.carnets .actualites__single .imageBlock .imageBlock__wrapper,
-.carnets .carnets__single .imageBlock .imageBlock__wrapper,
-.articles .destinations__single .imageBlock .imageBlock__wrapper,
-.articles .actualites__single .imageBlock .imageBlock__wrapper,
-.articles .carnets__single .imageBlock .imageBlock__wrapper,
-.commentaires .destinations__single .imageBlock .imageBlock__wrapper,
-.commentaires .actualites__single .imageBlock .imageBlock__wrapper,
-.commentaires .carnets__single .imageBlock .imageBlock__wrapper,
-.utilisateurs .destinations__single .imageBlock .imageBlock__wrapper,
-.utilisateurs .actualites__single .imageBlock .imageBlock__wrapper,
-.utilisateurs .carnets__single .imageBlock .imageBlock__wrapper {
+.main-content .imageBlock .imageBlock__wrapper {
   background-position: 50% 0;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6926,233 +6726,51 @@ body.admin .charts h3 {
   background-repeat: no-repeat;
   padding-bottom: 56%;
 }
-.destinations .destinations__single .infoBlock,
-.destinations .actualites__single .infoBlock,
-.destinations .carnets__single .infoBlock,
-.actualites .destinations__single .infoBlock,
-.actualites .actualites__single .infoBlock,
-.actualites .carnets__single .infoBlock,
-.voyages .destinations__single .infoBlock,
-.voyages .actualites__single .infoBlock,
-.voyages .carnets__single .infoBlock,
-.carnets .destinations__single .infoBlock,
-.carnets .actualites__single .infoBlock,
-.carnets .carnets__single .infoBlock,
-.articles .destinations__single .infoBlock,
-.articles .actualites__single .infoBlock,
-.articles .carnets__single .infoBlock,
-.commentaires .destinations__single .infoBlock,
-.commentaires .actualites__single .infoBlock,
-.commentaires .carnets__single .infoBlock,
-.utilisateurs .destinations__single .infoBlock,
-.utilisateurs .actualites__single .infoBlock,
-.utilisateurs .carnets__single .infoBlock {
+.main-content .infoBlock {
   padding: 0 25px;
   text-align: center;
 }
-.destinations .destinations__single .infoBlock .published,
-.destinations .actualites__single .infoBlock .published,
-.destinations .carnets__single .infoBlock .published,
-.actualites .destinations__single .infoBlock .published,
-.actualites .actualites__single .infoBlock .published,
-.actualites .carnets__single .infoBlock .published,
-.voyages .destinations__single .infoBlock .published,
-.voyages .actualites__single .infoBlock .published,
-.voyages .carnets__single .infoBlock .published,
-.carnets .destinations__single .infoBlock .published,
-.carnets .actualites__single .infoBlock .published,
-.carnets .carnets__single .infoBlock .published,
-.articles .destinations__single .infoBlock .published,
-.articles .actualites__single .infoBlock .published,
-.articles .carnets__single .infoBlock .published,
-.commentaires .destinations__single .infoBlock .published,
-.commentaires .actualites__single .infoBlock .published,
-.commentaires .carnets__single .infoBlock .published,
-.utilisateurs .destinations__single .infoBlock .published,
-.utilisateurs .actualites__single .infoBlock .published,
-.utilisateurs .carnets__single .infoBlock .published {
+.main-content .infoBlock .published {
   margin-top: 10px;
 }
-.destinations .destinations__single .infoBlock p,
-.destinations .actualites__single .infoBlock p,
-.destinations .carnets__single .infoBlock p,
-.actualites .destinations__single .infoBlock p,
-.actualites .actualites__single .infoBlock p,
-.actualites .carnets__single .infoBlock p,
-.voyages .destinations__single .infoBlock p,
-.voyages .actualites__single .infoBlock p,
-.voyages .carnets__single .infoBlock p,
-.carnets .destinations__single .infoBlock p,
-.carnets .actualites__single .infoBlock p,
-.carnets .carnets__single .infoBlock p,
-.articles .destinations__single .infoBlock p,
-.articles .actualites__single .infoBlock p,
-.articles .carnets__single .infoBlock p,
-.commentaires .destinations__single .infoBlock p,
-.commentaires .actualites__single .infoBlock p,
-.commentaires .carnets__single .infoBlock p,
-.utilisateurs .destinations__single .infoBlock p,
-.utilisateurs .actualites__single .infoBlock p,
-.utilisateurs .carnets__single .infoBlock p {
+.main-content .infoBlock p {
   color: #242424;
   margin-top: 15px;
   margin-bottom: 0;
 }
-.destinations .destinations__single .infoBlock .button,
-.destinations .actualites__single .infoBlock .button,
-.destinations .carnets__single .infoBlock .button,
-.actualites .destinations__single .infoBlock .button,
-.actualites .actualites__single .infoBlock .button,
-.actualites .carnets__single .infoBlock .button,
-.voyages .destinations__single .infoBlock .button,
-.voyages .actualites__single .infoBlock .button,
-.voyages .carnets__single .infoBlock .button,
-.carnets .destinations__single .infoBlock .button,
-.carnets .actualites__single .infoBlock .button,
-.carnets .carnets__single .infoBlock .button,
-.articles .destinations__single .infoBlock .button,
-.articles .actualites__single .infoBlock .button,
-.articles .carnets__single .infoBlock .button,
-.commentaires .destinations__single .infoBlock .button,
-.commentaires .actualites__single .infoBlock .button,
-.commentaires .carnets__single .infoBlock .button,
-.utilisateurs .destinations__single .infoBlock .button,
-.utilisateurs .actualites__single .infoBlock .button,
-.utilisateurs .carnets__single .infoBlock .button {
+.main-content .infoBlock .button {
   margin-top: 25px;
 }
-.destinations .destinations__single .buttonsBlock,
-.destinations .actualites__single .buttonsBlock,
-.destinations .carnets__single .buttonsBlock,
-.actualites .destinations__single .buttonsBlock,
-.actualites .actualites__single .buttonsBlock,
-.actualites .carnets__single .buttonsBlock,
-.voyages .destinations__single .buttonsBlock,
-.voyages .actualites__single .buttonsBlock,
-.voyages .carnets__single .buttonsBlock,
-.carnets .destinations__single .buttonsBlock,
-.carnets .actualites__single .buttonsBlock,
-.carnets .carnets__single .buttonsBlock,
-.articles .destinations__single .buttonsBlock,
-.articles .actualites__single .buttonsBlock,
-.articles .carnets__single .buttonsBlock,
-.commentaires .destinations__single .buttonsBlock,
-.commentaires .actualites__single .buttonsBlock,
-.commentaires .carnets__single .buttonsBlock,
-.utilisateurs .destinations__single .buttonsBlock,
-.utilisateurs .actualites__single .buttonsBlock,
-.utilisateurs .carnets__single .buttonsBlock {
+.main-content .buttonsBlock {
   width: 30%;
 }
-.destinations .destinations__single .buttonsBlock .button,
-.destinations .actualites__single .buttonsBlock .button,
-.destinations .carnets__single .buttonsBlock .button,
-.actualites .destinations__single .buttonsBlock .button,
-.actualites .actualites__single .buttonsBlock .button,
-.actualites .carnets__single .buttonsBlock .button,
-.voyages .destinations__single .buttonsBlock .button,
-.voyages .actualites__single .buttonsBlock .button,
-.voyages .carnets__single .buttonsBlock .button,
-.carnets .destinations__single .buttonsBlock .button,
-.carnets .actualites__single .buttonsBlock .button,
-.carnets .carnets__single .buttonsBlock .button,
-.articles .destinations__single .buttonsBlock .button,
-.articles .actualites__single .buttonsBlock .button,
-.articles .carnets__single .buttonsBlock .button,
-.commentaires .destinations__single .buttonsBlock .button,
-.commentaires .actualites__single .buttonsBlock .button,
-.commentaires .carnets__single .buttonsBlock .button,
-.utilisateurs .destinations__single .buttonsBlock .button,
-.utilisateurs .actualites__single .buttonsBlock .button,
-.utilisateurs .carnets__single .buttonsBlock .button {
+.main-content .buttonsBlock .button {
   margin-bottom: 10px;
 }
-.destinations .destinations__single .buttonsBlock .button:last-child,
-.destinations .actualites__single .buttonsBlock .button:last-child,
-.destinations .carnets__single .buttonsBlock .button:last-child,
-.actualites .destinations__single .buttonsBlock .button:last-child,
-.actualites .actualites__single .buttonsBlock .button:last-child,
-.actualites .carnets__single .buttonsBlock .button:last-child,
-.voyages .destinations__single .buttonsBlock .button:last-child,
-.voyages .actualites__single .buttonsBlock .button:last-child,
-.voyages .carnets__single .buttonsBlock .button:last-child,
-.carnets .destinations__single .buttonsBlock .button:last-child,
-.carnets .actualites__single .buttonsBlock .button:last-child,
-.carnets .carnets__single .buttonsBlock .button:last-child,
-.articles .destinations__single .buttonsBlock .button:last-child,
-.articles .actualites__single .buttonsBlock .button:last-child,
-.articles .carnets__single .buttonsBlock .button:last-child,
-.commentaires .destinations__single .buttonsBlock .button:last-child,
-.commentaires .actualites__single .buttonsBlock .button:last-child,
-.commentaires .carnets__single .buttonsBlock .button:last-child,
-.utilisateurs .destinations__single .buttonsBlock .button:last-child,
-.utilisateurs .actualites__single .buttonsBlock .button:last-child,
-.utilisateurs .carnets__single .buttonsBlock .button:last-child {
+.main-content .buttonsBlock .button:last-child {
   margin-bottom: 0;
 }
-.destinations .carnets__single,
-.actualites .carnets__single,
-.voyages .carnets__single,
-.carnets .carnets__single,
-.articles .carnets__single,
-.commentaires .carnets__single,
-.utilisateurs .carnets__single {
+.main-content .carnets__single {
   position: relative;
 }
-.destinations .carnets__single .well,
-.actualites .carnets__single .well,
-.voyages .carnets__single .well,
-.carnets .carnets__single .well,
-.articles .carnets__single .well,
-.commentaires .carnets__single .well,
-.utilisateurs .carnets__single .well {
+.main-content .carnets__single .well {
   margin-bottom: 50px;
   padding: 50px;
 }
-.destinations .carnets__single .carnets__header,
-.actualites .carnets__single .carnets__header,
-.voyages .carnets__single .carnets__header,
-.carnets .carnets__single .carnets__header,
-.articles .carnets__single .carnets__header,
-.commentaires .carnets__single .carnets__header,
-.utilisateurs .carnets__single .carnets__header {
+.main-content .carnets__single .carnets__header {
   position: absolute;
   top: -20px;
   left: 25px;
   background-color: #f5f5f5;
 }
-.destinations .carnets__single .carnets__article,
-.destinations .carnets__single .carnets__commentaire,
-.actualites .carnets__single .carnets__article,
-.actualites .carnets__single .carnets__commentaire,
-.voyages .carnets__single .carnets__article,
-.voyages .carnets__single .carnets__commentaire,
-.carnets .carnets__single .carnets__article,
-.carnets .carnets__single .carnets__commentaire,
-.articles .carnets__single .carnets__article,
-.articles .carnets__single .carnets__commentaire,
-.commentaires .carnets__single .carnets__article,
-.commentaires .carnets__single .carnets__commentaire,
-.utilisateurs .carnets__single .carnets__article,
-.utilisateurs .carnets__single .carnets__commentaire {
+.main-content .carnets__single .carnets__article,
+.main-content .carnets__single .carnets__commentaire {
   position: relative;
   padding-bottom: 50px;
   margin-bottom: 50px;
 }
-.destinations .carnets__single .carnets__article:after,
-.destinations .carnets__single .carnets__commentaire:after,
-.actualites .carnets__single .carnets__article:after,
-.actualites .carnets__single .carnets__commentaire:after,
-.voyages .carnets__single .carnets__article:after,
-.voyages .carnets__single .carnets__commentaire:after,
-.carnets .carnets__single .carnets__article:after,
-.carnets .carnets__single .carnets__commentaire:after,
-.articles .carnets__single .carnets__article:after,
-.articles .carnets__single .carnets__commentaire:after,
-.commentaires .carnets__single .carnets__article:after,
-.commentaires .carnets__single .carnets__commentaire:after,
-.utilisateurs .carnets__single .carnets__article:after,
-.utilisateurs .carnets__single .carnets__commentaire:after {
+.main-content .carnets__single .carnets__article:after,
+.main-content .carnets__single .carnets__commentaire:after {
   content: '';
   position: absolute;
   left: 50%;
@@ -7165,232 +6783,76 @@ body.admin .charts h3 {
   transform: translateX(-50%);
   background-color: #848484;
 }
-.destinations .carnets__single .carnets__article:last-child,
-.destinations .carnets__single .carnets__commentaire:last-child,
-.actualites .carnets__single .carnets__article:last-child,
-.actualites .carnets__single .carnets__commentaire:last-child,
-.voyages .carnets__single .carnets__article:last-child,
-.voyages .carnets__single .carnets__commentaire:last-child,
-.carnets .carnets__single .carnets__article:last-child,
-.carnets .carnets__single .carnets__commentaire:last-child,
-.articles .carnets__single .carnets__article:last-child,
-.articles .carnets__single .carnets__commentaire:last-child,
-.commentaires .carnets__single .carnets__article:last-child,
-.commentaires .carnets__single .carnets__commentaire:last-child,
-.utilisateurs .carnets__single .carnets__article:last-child,
-.utilisateurs .carnets__single .carnets__commentaire:last-child {
+.main-content .carnets__single .carnets__article:last-child,
+.main-content .carnets__single .carnets__commentaire:last-child {
   padding-bottom: 0;
   margin-bottom: 0;
 }
-.destinations .carnets__single .carnets__article:last-child:after,
-.destinations .carnets__single .carnets__commentaire:last-child:after,
-.actualites .carnets__single .carnets__article:last-child:after,
-.actualites .carnets__single .carnets__commentaire:last-child:after,
-.voyages .carnets__single .carnets__article:last-child:after,
-.voyages .carnets__single .carnets__commentaire:last-child:after,
-.carnets .carnets__single .carnets__article:last-child:after,
-.carnets .carnets__single .carnets__commentaire:last-child:after,
-.articles .carnets__single .carnets__article:last-child:after,
-.articles .carnets__single .carnets__commentaire:last-child:after,
-.commentaires .carnets__single .carnets__article:last-child:after,
-.commentaires .carnets__single .carnets__commentaire:last-child:after,
-.utilisateurs .carnets__single .carnets__article:last-child:after,
-.utilisateurs .carnets__single .carnets__commentaire:last-child:after {
+.main-content .carnets__single .carnets__article:last-child:after,
+.main-content .carnets__single .carnets__commentaire:last-child:after {
   display: none;
 }
-.destinations .carnets__single .carnets__article .infoBlock .button.small,
-.destinations .carnets__single .carnets__commentaire .infoBlock .button.small,
-.actualites .carnets__single .carnets__article .infoBlock .button.small,
-.actualites .carnets__single .carnets__commentaire .infoBlock .button.small,
-.voyages .carnets__single .carnets__article .infoBlock .button.small,
-.voyages .carnets__single .carnets__commentaire .infoBlock .button.small,
-.carnets .carnets__single .carnets__article .infoBlock .button.small,
-.carnets .carnets__single .carnets__commentaire .infoBlock .button.small,
-.articles .carnets__single .carnets__article .infoBlock .button.small,
-.articles .carnets__single .carnets__commentaire .infoBlock .button.small,
-.commentaires .carnets__single .carnets__article .infoBlock .button.small,
-.commentaires .carnets__single .carnets__commentaire .infoBlock .button.small,
-.utilisateurs .carnets__single .carnets__article .infoBlock .button.small,
-.utilisateurs .carnets__single .carnets__commentaire .infoBlock .button.small {
+.main-content .carnets__single .carnets__article .infoBlock .button.small,
+.main-content .carnets__single .carnets__commentaire .infoBlock .button.small {
   display: block;
   margin-left: 25px;
   width: 150px;
 }
-.destinations .carnets__single .carnets__article .buttonsBlock,
-.destinations .carnets__single .carnets__commentaire .buttonsBlock,
-.actualites .carnets__single .carnets__article .buttonsBlock,
-.actualites .carnets__single .carnets__commentaire .buttonsBlock,
-.voyages .carnets__single .carnets__article .buttonsBlock,
-.voyages .carnets__single .carnets__commentaire .buttonsBlock,
-.carnets .carnets__single .carnets__article .buttonsBlock,
-.carnets .carnets__single .carnets__commentaire .buttonsBlock,
-.articles .carnets__single .carnets__article .buttonsBlock,
-.articles .carnets__single .carnets__commentaire .buttonsBlock,
-.commentaires .carnets__single .carnets__article .buttonsBlock,
-.commentaires .carnets__single .carnets__commentaire .buttonsBlock,
-.utilisateurs .carnets__single .carnets__article .buttonsBlock,
-.utilisateurs .carnets__single .carnets__commentaire .buttonsBlock {
+.main-content .carnets__single .carnets__article .buttonsBlock,
+.main-content .carnets__single .carnets__commentaire .buttonsBlock {
   width: 17%;
 }
-.destinations .carnets__single .carnets__article h4,
-.destinations .carnets__single .carnets__commentaire h4,
-.actualites .carnets__single .carnets__article h4,
-.actualites .carnets__single .carnets__commentaire h4,
-.voyages .carnets__single .carnets__article h4,
-.voyages .carnets__single .carnets__commentaire h4,
-.carnets .carnets__single .carnets__article h4,
-.carnets .carnets__single .carnets__commentaire h4,
-.articles .carnets__single .carnets__article h4,
-.articles .carnets__single .carnets__commentaire h4,
-.commentaires .carnets__single .carnets__article h4,
-.commentaires .carnets__single .carnets__commentaire h4,
-.utilisateurs .carnets__single .carnets__article h4,
-.utilisateurs .carnets__single .carnets__commentaire h4 {
+.main-content .carnets__single .carnets__article h4,
+.main-content .carnets__single .carnets__commentaire h4 {
   color: #848484;
   font-size: 18px;
   font-weight: 600;
   text-align: left;
 }
-.destinations .carnets__single .carnets__article h4 span,
-.destinations .carnets__single .carnets__commentaire h4 span,
-.actualites .carnets__single .carnets__article h4 span,
-.actualites .carnets__single .carnets__commentaire h4 span,
-.voyages .carnets__single .carnets__article h4 span,
-.voyages .carnets__single .carnets__commentaire h4 span,
-.carnets .carnets__single .carnets__article h4 span,
-.carnets .carnets__single .carnets__commentaire h4 span,
-.articles .carnets__single .carnets__article h4 span,
-.articles .carnets__single .carnets__commentaire h4 span,
-.commentaires .carnets__single .carnets__article h4 span,
-.commentaires .carnets__single .carnets__commentaire h4 span,
-.utilisateurs .carnets__single .carnets__article h4 span,
-.utilisateurs .carnets__single .carnets__commentaire h4 span {
+.main-content .carnets__single .carnets__article h4 span,
+.main-content .carnets__single .carnets__commentaire h4 span {
   color: #242424;
   font-style: normal;
 }
-.destinations .carnets__single .carnets__article p,
-.destinations .carnets__single .carnets__commentaire p,
-.actualites .carnets__single .carnets__article p,
-.actualites .carnets__single .carnets__commentaire p,
-.voyages .carnets__single .carnets__article p,
-.voyages .carnets__single .carnets__commentaire p,
-.carnets .carnets__single .carnets__article p,
-.carnets .carnets__single .carnets__commentaire p,
-.articles .carnets__single .carnets__article p,
-.articles .carnets__single .carnets__commentaire p,
-.commentaires .carnets__single .carnets__article p,
-.commentaires .carnets__single .carnets__commentaire p,
-.utilisateurs .carnets__single .carnets__article p,
-.utilisateurs .carnets__single .carnets__commentaire p {
+.main-content .carnets__single .carnets__article p,
+.main-content .carnets__single .carnets__commentaire p {
   color: #242424;
   padding-left: 25px;
   text-align: left;
 }
-.destinations .carnets__single .carnets__article p.check,
-.destinations .carnets__single .carnets__commentaire p.check,
-.actualites .carnets__single .carnets__article p.check,
-.actualites .carnets__single .carnets__commentaire p.check,
-.voyages .carnets__single .carnets__article p.check,
-.voyages .carnets__single .carnets__commentaire p.check,
-.carnets .carnets__single .carnets__article p.check,
-.carnets .carnets__single .carnets__commentaire p.check,
-.articles .carnets__single .carnets__article p.check,
-.articles .carnets__single .carnets__commentaire p.check,
-.commentaires .carnets__single .carnets__article p.check,
-.commentaires .carnets__single .carnets__commentaire p.check,
-.utilisateurs .carnets__single .carnets__article p.check,
-.utilisateurs .carnets__single .carnets__commentaire p.check {
+.main-content .carnets__single .carnets__article p.check,
+.main-content .carnets__single .carnets__commentaire p.check {
   margin-top: 0;
   color: green;
 }
-.destinations .carnets__single .carnets__article p.denied,
-.destinations .carnets__single .carnets__commentaire p.denied,
-.actualites .carnets__single .carnets__article p.denied,
-.actualites .carnets__single .carnets__commentaire p.denied,
-.voyages .carnets__single .carnets__article p.denied,
-.voyages .carnets__single .carnets__commentaire p.denied,
-.carnets .carnets__single .carnets__article p.denied,
-.carnets .carnets__single .carnets__commentaire p.denied,
-.articles .carnets__single .carnets__article p.denied,
-.articles .carnets__single .carnets__commentaire p.denied,
-.commentaires .carnets__single .carnets__article p.denied,
-.commentaires .carnets__single .carnets__commentaire p.denied,
-.utilisateurs .carnets__single .carnets__article p.denied,
-.utilisateurs .carnets__single .carnets__commentaire p.denied {
+.main-content .carnets__single .carnets__article p.denied,
+.main-content .carnets__single .carnets__commentaire p.denied {
   margin-top: 0;
   color: red;
 }
-.destinations .carnets__single .carnets__article select,
-.destinations .carnets__single .carnets__commentaire select,
-.actualites .carnets__single .carnets__article select,
-.actualites .carnets__single .carnets__commentaire select,
-.voyages .carnets__single .carnets__article select,
-.voyages .carnets__single .carnets__commentaire select,
-.carnets .carnets__single .carnets__article select,
-.carnets .carnets__single .carnets__commentaire select,
-.articles .carnets__single .carnets__article select,
-.articles .carnets__single .carnets__commentaire select,
-.commentaires .carnets__single .carnets__article select,
-.commentaires .carnets__single .carnets__commentaire select,
-.utilisateurs .carnets__single .carnets__article select,
-.utilisateurs .carnets__single .carnets__commentaire select {
+.main-content .carnets__single .carnets__article select,
+.main-content .carnets__single .carnets__commentaire select {
   display: block;
   width: 100%;
   margin: 0 auto;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire,
-.actualites .carnets__single.all-comments .carnets__commentaire,
-.voyages .carnets__single.all-comments .carnets__commentaire,
-.carnets .carnets__single.all-comments .carnets__commentaire,
-.articles .carnets__single.all-comments .carnets__commentaire,
-.commentaires .carnets__single.all-comments .carnets__commentaire,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire {
+.main-content .carnets__single.all-comments .carnets__commentaire {
   display: block;
   width: 100%;
   padding-bottom: 0;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire p, .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__status,
-.actualites .carnets__single.all-comments .carnets__commentaire p,
-.actualites .carnets__single.all-comments .carnets__commentaire .commentaire__status,
-.voyages .carnets__single.all-comments .carnets__commentaire p,
-.voyages .carnets__single.all-comments .carnets__commentaire .commentaire__status,
-.carnets .carnets__single.all-comments .carnets__commentaire p,
-.carnets .carnets__single.all-comments .carnets__commentaire .commentaire__status,
-.articles .carnets__single.all-comments .carnets__commentaire p,
-.articles .carnets__single.all-comments .carnets__commentaire .commentaire__status,
-.commentaires .carnets__single.all-comments .carnets__commentaire p,
-.commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__status,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire p,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__status {
+.main-content .carnets__single.all-comments .carnets__commentaire p, .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__status {
   padding-left: 0;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:after,
-.actualites .carnets__single.all-comments .carnets__commentaire:after,
-.voyages .carnets__single.all-comments .carnets__commentaire:after,
-.carnets .carnets__single.all-comments .carnets__commentaire:after,
-.articles .carnets__single.all-comments .carnets__commentaire:after,
-.commentaires .carnets__single.all-comments .carnets__commentaire:after,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:after {
+.main-content .carnets__single.all-comments .carnets__commentaire:after {
   display: none;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content,
-.actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content,
-.voyages .carnets__single.all-comments .carnets__commentaire .commentaire__content,
-.carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content,
-.articles .carnets__single.all-comments .carnets__commentaire .commentaire__content,
-.commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content {
+.main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content {
   position: relative;
   background-color: #fff;
   padding: 25px;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content .profile-picture,
-.actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content .profile-picture,
-.voyages .carnets__single.all-comments .carnets__commentaire .commentaire__content .profile-picture,
-.carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content .profile-picture,
-.articles .carnets__single.all-comments .carnets__commentaire .commentaire__content .profile-picture,
-.commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content .profile-picture,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content .profile-picture {
+.main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content .profile-picture {
   position: absolute;
   top: 50%;
   -moz-transform: translateY(-50%);
@@ -7398,28 +6860,10 @@ body.admin .charts h3 {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content .published,
-.actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content .published,
-.voyages .carnets__single.all-comments .carnets__commentaire .commentaire__content .published,
-.carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content .published,
-.articles .carnets__single.all-comments .carnets__commentaire .commentaire__content .published,
-.commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content .published,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content .published {
+.main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content .published {
   margin-top: 5px;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:after, .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:before,
-.actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:after,
-.actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:before,
-.voyages .carnets__single.all-comments .carnets__commentaire .commentaire__content:after,
-.voyages .carnets__single.all-comments .carnets__commentaire .commentaire__content:before,
-.carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:after,
-.carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:before,
-.articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:after,
-.articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:before,
-.commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:after,
-.commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:before,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:after,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:before {
+.main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:after, .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:before {
   top: 50%;
   border: solid transparent;
   content: " ";
@@ -7428,422 +6872,128 @@ body.admin .charts h3 {
   position: absolute;
   pointer-events: none;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content {
   text-align: left;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content .profile-picture,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content .profile-picture,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content .profile-picture,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content .profile-picture,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content .profile-picture,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content .profile-picture,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content .profile-picture {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content .profile-picture {
   left: -150px;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content p,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content p,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content p,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content p,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content p,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content p,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content p {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content p {
   text-align: left;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after, .destinations .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after, .main-content .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before {
   right: 100%;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:after {
   border-color: rgba(255, 255, 255, 0);
   border-right-color: #fff;
   border-width: 15px;
   margin-top: -15px;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(odd) .commentaire__content:before {
   border-color: rgba(255, 255, 255, 0);
   border-right-color: #fff;
   border-width: 15px;
   margin-top: -15px;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content {
   text-align: right;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content p,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content p,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content p,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content p,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content p,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content p,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content p {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content p {
   text-align: right;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content .profile-picture,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content .profile-picture,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content .profile-picture,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content .profile-picture,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content .profile-picture,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content .profile-picture,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content .profile-picture {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content .profile-picture {
   position: absolute;
   right: -150px;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after, .destinations .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after, .main-content .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before {
   left: 100%;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:after {
   border-color: rgba(255, 255, 255, 0);
   border-left-color: #fff;
   border-width: 15px;
   margin-top: -15px;
 }
-.destinations .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.actualites .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.voyages .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.carnets .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.articles .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.commentaires .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before,
-.utilisateurs .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before {
+.main-content .carnets__single.all-comments .carnets__commentaire:nth-child(even) .commentaire__content:before {
   border-color: rgba(255, 255, 255, 0);
   border-left-color: #fff;
   border-width: 15px;
   margin-top: -15px;
 }
-.destinations .carnets__single .carnets__commentaire .commentaire__status,
-.actualites .carnets__single .carnets__commentaire .commentaire__status,
-.voyages .carnets__single .carnets__commentaire .commentaire__status,
-.carnets .carnets__single .carnets__commentaire .commentaire__status,
-.articles .carnets__single .carnets__commentaire .commentaire__status,
-.commentaires .carnets__single .carnets__commentaire .commentaire__status,
-.utilisateurs .carnets__single .carnets__commentaire .commentaire__status {
+.main-content .carnets__single .carnets__commentaire .commentaire__status {
   padding-left: 25px;
   margin-top: 25px;
 }
-.destinations .destinations__thumbnail,
-.destinations .actualites__thumbnail,
-.actualites .destinations__thumbnail,
-.actualites .actualites__thumbnail,
-.voyages .destinations__thumbnail,
-.voyages .actualites__thumbnail,
-.carnets .destinations__thumbnail,
-.carnets .actualites__thumbnail,
-.articles .destinations__thumbnail,
-.articles .actualites__thumbnail,
-.commentaires .destinations__thumbnail,
-.commentaires .actualites__thumbnail,
-.utilisateurs .destinations__thumbnail,
-.utilisateurs .actualites__thumbnail {
+.main-content .destinations__thumbnail,
+.main-content .actualites__thumbnail {
   margin-bottom: 25px;
 }
-.destinations .destinations__thumbnail > img,
-.destinations .actualites__thumbnail > img,
-.actualites .destinations__thumbnail > img,
-.actualites .actualites__thumbnail > img,
-.voyages .destinations__thumbnail > img,
-.voyages .actualites__thumbnail > img,
-.carnets .destinations__thumbnail > img,
-.carnets .actualites__thumbnail > img,
-.articles .destinations__thumbnail > img,
-.articles .actualites__thumbnail > img,
-.commentaires .destinations__thumbnail > img,
-.commentaires .actualites__thumbnail > img,
-.utilisateurs .destinations__thumbnail > img,
-.utilisateurs .actualites__thumbnail > img {
+.main-content .destinations__thumbnail > img,
+.main-content .actualites__thumbnail > img {
   display: block;
   width: 100%;
   margin: 0 auto;
 }
-.destinations .destinations__infoIcons,
-.actualites .destinations__infoIcons,
-.voyages .destinations__infoIcons,
-.carnets .destinations__infoIcons,
-.articles .destinations__infoIcons,
-.commentaires .destinations__infoIcons,
-.utilisateurs .destinations__infoIcons {
+.main-content .destinations__infoIcons {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-.destinations .destinations__infoIcons li,
-.actualites .destinations__infoIcons li,
-.voyages .destinations__infoIcons li,
-.carnets .destinations__infoIcons li,
-.articles .destinations__infoIcons li,
-.commentaires .destinations__infoIcons li,
-.utilisateurs .destinations__infoIcons li {
+.main-content .destinations__infoIcons li {
   display: block;
   float: left;
   width: 20%;
   padding: 25px;
 }
-.destinations .destinations__infoIcons li img,
-.actualites .destinations__infoIcons li img,
-.voyages .destinations__infoIcons li img,
-.carnets .destinations__infoIcons li img,
-.articles .destinations__infoIcons li img,
-.commentaires .destinations__infoIcons li img,
-.utilisateurs .destinations__infoIcons li img {
+.main-content .destinations__infoIcons li img {
   display: block;
   margin: 0 auto;
   margin-bottom: 25px;
 }
-.destinations .destinations__infoIcons li p,
-.actualites .destinations__infoIcons li p,
-.voyages .destinations__infoIcons li p,
-.carnets .destinations__infoIcons li p,
-.articles .destinations__infoIcons li p,
-.commentaires .destinations__infoIcons li p,
-.utilisateurs .destinations__infoIcons li p {
+.main-content .destinations__infoIcons li p {
   display: block;
   margin: 0;
   text-align: center;
   text-transform: uppercase;
   color: #242424;
 }
-.destinations .destinations__infoIcons li input,
-.actualites .destinations__infoIcons li input,
-.voyages .destinations__infoIcons li input,
-.carnets .destinations__infoIcons li input,
-.articles .destinations__infoIcons li input,
-.commentaires .destinations__infoIcons li input,
-.utilisateurs .destinations__infoIcons li input {
+.main-content .destinations__infoIcons li input {
   margin-top: 15px;
 }
-.destinations .destinations__coordinates label,
-.destinations .destinations__deroulement label,
-.destinations .destinations__priceMinus label,
-.destinations .destinations__pricePlus label,
-.destinations .voyages__detailsPrix label,
-.actualites .destinations__coordinates label,
-.actualites .destinations__deroulement label,
-.actualites .destinations__priceMinus label,
-.actualites .destinations__pricePlus label,
-.actualites .voyages__detailsPrix label,
-.voyages .destinations__coordinates label,
-.voyages .destinations__deroulement label,
-.voyages .destinations__priceMinus label,
-.voyages .destinations__pricePlus label,
-.voyages .voyages__detailsPrix label,
-.carnets .destinations__coordinates label,
-.carnets .destinations__deroulement label,
-.carnets .destinations__priceMinus label,
-.carnets .destinations__pricePlus label,
-.carnets .voyages__detailsPrix label,
-.articles .destinations__coordinates label,
-.articles .destinations__deroulement label,
-.articles .destinations__priceMinus label,
-.articles .destinations__pricePlus label,
-.articles .voyages__detailsPrix label,
-.commentaires .destinations__coordinates label,
-.commentaires .destinations__deroulement label,
-.commentaires .destinations__priceMinus label,
-.commentaires .destinations__pricePlus label,
-.commentaires .voyages__detailsPrix label,
-.utilisateurs .destinations__coordinates label,
-.utilisateurs .destinations__deroulement label,
-.utilisateurs .destinations__priceMinus label,
-.utilisateurs .destinations__pricePlus label,
-.utilisateurs .voyages__detailsPrix label {
+.main-content .destinations__coordinates label,
+.main-content .destinations__deroulement label,
+.main-content .destinations__priceMinus label,
+.main-content .destinations__pricePlus label,
+.main-content .voyages__detailsPrix label {
   display: block;
 }
-.destinations .destinations__coordinates input,
-.destinations .destinations__deroulement input,
-.destinations .destinations__priceMinus input,
-.destinations .destinations__pricePlus input,
-.destinations .voyages__detailsPrix input,
-.actualites .destinations__coordinates input,
-.actualites .destinations__deroulement input,
-.actualites .destinations__priceMinus input,
-.actualites .destinations__pricePlus input,
-.actualites .voyages__detailsPrix input,
-.voyages .destinations__coordinates input,
-.voyages .destinations__deroulement input,
-.voyages .destinations__priceMinus input,
-.voyages .destinations__pricePlus input,
-.voyages .voyages__detailsPrix input,
-.carnets .destinations__coordinates input,
-.carnets .destinations__deroulement input,
-.carnets .destinations__priceMinus input,
-.carnets .destinations__pricePlus input,
-.carnets .voyages__detailsPrix input,
-.articles .destinations__coordinates input,
-.articles .destinations__deroulement input,
-.articles .destinations__priceMinus input,
-.articles .destinations__pricePlus input,
-.articles .voyages__detailsPrix input,
-.commentaires .destinations__coordinates input,
-.commentaires .destinations__deroulement input,
-.commentaires .destinations__priceMinus input,
-.commentaires .destinations__pricePlus input,
-.commentaires .voyages__detailsPrix input,
-.utilisateurs .destinations__coordinates input,
-.utilisateurs .destinations__deroulement input,
-.utilisateurs .destinations__priceMinus input,
-.utilisateurs .destinations__pricePlus input,
-.utilisateurs .voyages__detailsPrix input {
+.main-content .destinations__coordinates input,
+.main-content .destinations__deroulement input,
+.main-content .destinations__priceMinus input,
+.main-content .destinations__pricePlus input,
+.main-content .voyages__detailsPrix input {
   display: inline-block;
   width: 35%;
   margin-right: 25px;
 }
-.destinations .destinations__coordinates textarea,
-.destinations .destinations__deroulement textarea,
-.destinations .destinations__priceMinus textarea,
-.destinations .destinations__pricePlus textarea,
-.destinations .voyages__detailsPrix textarea,
-.actualites .destinations__coordinates textarea,
-.actualites .destinations__deroulement textarea,
-.actualites .destinations__priceMinus textarea,
-.actualites .destinations__pricePlus textarea,
-.actualites .voyages__detailsPrix textarea,
-.voyages .destinations__coordinates textarea,
-.voyages .destinations__deroulement textarea,
-.voyages .destinations__priceMinus textarea,
-.voyages .destinations__pricePlus textarea,
-.voyages .voyages__detailsPrix textarea,
-.carnets .destinations__coordinates textarea,
-.carnets .destinations__deroulement textarea,
-.carnets .destinations__priceMinus textarea,
-.carnets .destinations__pricePlus textarea,
-.carnets .voyages__detailsPrix textarea,
-.articles .destinations__coordinates textarea,
-.articles .destinations__deroulement textarea,
-.articles .destinations__priceMinus textarea,
-.articles .destinations__pricePlus textarea,
-.articles .voyages__detailsPrix textarea,
-.commentaires .destinations__coordinates textarea,
-.commentaires .destinations__deroulement textarea,
-.commentaires .destinations__priceMinus textarea,
-.commentaires .destinations__pricePlus textarea,
-.commentaires .voyages__detailsPrix textarea,
-.utilisateurs .destinations__coordinates textarea,
-.utilisateurs .destinations__deroulement textarea,
-.utilisateurs .destinations__priceMinus textarea,
-.utilisateurs .destinations__pricePlus textarea,
-.utilisateurs .voyages__detailsPrix textarea {
+.main-content .destinations__coordinates textarea,
+.main-content .destinations__deroulement textarea,
+.main-content .destinations__priceMinus textarea,
+.main-content .destinations__pricePlus textarea,
+.main-content .voyages__detailsPrix textarea {
   margin-top: 25px;
 }
-.destinations .destinations__coordinates .voyages__icon,
-.destinations .destinations__coordinates .destinations__icon,
-.destinations .destinations__deroulement .voyages__icon,
-.destinations .destinations__deroulement .destinations__icon,
-.destinations .destinations__priceMinus .voyages__icon,
-.destinations .destinations__priceMinus .destinations__icon,
-.destinations .destinations__pricePlus .voyages__icon,
-.destinations .destinations__pricePlus .destinations__icon,
-.destinations .voyages__detailsPrix .voyages__icon,
-.destinations .voyages__detailsPrix .destinations__icon,
-.actualites .destinations__coordinates .voyages__icon,
-.actualites .destinations__coordinates .destinations__icon,
-.actualites .destinations__deroulement .voyages__icon,
-.actualites .destinations__deroulement .destinations__icon,
-.actualites .destinations__priceMinus .voyages__icon,
-.actualites .destinations__priceMinus .destinations__icon,
-.actualites .destinations__pricePlus .voyages__icon,
-.actualites .destinations__pricePlus .destinations__icon,
-.actualites .voyages__detailsPrix .voyages__icon,
-.actualites .voyages__detailsPrix .destinations__icon,
-.voyages .destinations__coordinates .voyages__icon,
-.voyages .destinations__coordinates .destinations__icon,
-.voyages .destinations__deroulement .voyages__icon,
-.voyages .destinations__deroulement .destinations__icon,
-.voyages .destinations__priceMinus .voyages__icon,
-.voyages .destinations__priceMinus .destinations__icon,
-.voyages .destinations__pricePlus .voyages__icon,
-.voyages .destinations__pricePlus .destinations__icon,
-.voyages .voyages__detailsPrix .voyages__icon,
-.voyages .voyages__detailsPrix .destinations__icon,
-.carnets .destinations__coordinates .voyages__icon,
-.carnets .destinations__coordinates .destinations__icon,
-.carnets .destinations__deroulement .voyages__icon,
-.carnets .destinations__deroulement .destinations__icon,
-.carnets .destinations__priceMinus .voyages__icon,
-.carnets .destinations__priceMinus .destinations__icon,
-.carnets .destinations__pricePlus .voyages__icon,
-.carnets .destinations__pricePlus .destinations__icon,
-.carnets .voyages__detailsPrix .voyages__icon,
-.carnets .voyages__detailsPrix .destinations__icon,
-.articles .destinations__coordinates .voyages__icon,
-.articles .destinations__coordinates .destinations__icon,
-.articles .destinations__deroulement .voyages__icon,
-.articles .destinations__deroulement .destinations__icon,
-.articles .destinations__priceMinus .voyages__icon,
-.articles .destinations__priceMinus .destinations__icon,
-.articles .destinations__pricePlus .voyages__icon,
-.articles .destinations__pricePlus .destinations__icon,
-.articles .voyages__detailsPrix .voyages__icon,
-.articles .voyages__detailsPrix .destinations__icon,
-.commentaires .destinations__coordinates .voyages__icon,
-.commentaires .destinations__coordinates .destinations__icon,
-.commentaires .destinations__deroulement .voyages__icon,
-.commentaires .destinations__deroulement .destinations__icon,
-.commentaires .destinations__priceMinus .voyages__icon,
-.commentaires .destinations__priceMinus .destinations__icon,
-.commentaires .destinations__pricePlus .voyages__icon,
-.commentaires .destinations__pricePlus .destinations__icon,
-.commentaires .voyages__detailsPrix .voyages__icon,
-.commentaires .voyages__detailsPrix .destinations__icon,
-.utilisateurs .destinations__coordinates .voyages__icon,
-.utilisateurs .destinations__coordinates .destinations__icon,
-.utilisateurs .destinations__deroulement .voyages__icon,
-.utilisateurs .destinations__deroulement .destinations__icon,
-.utilisateurs .destinations__priceMinus .voyages__icon,
-.utilisateurs .destinations__priceMinus .destinations__icon,
-.utilisateurs .destinations__pricePlus .voyages__icon,
-.utilisateurs .destinations__pricePlus .destinations__icon,
-.utilisateurs .voyages__detailsPrix .voyages__icon,
-.utilisateurs .voyages__detailsPrix .destinations__icon {
+.main-content .destinations__coordinates .voyages__icon,
+.main-content .destinations__coordinates .destinations__icon,
+.main-content .destinations__deroulement .voyages__icon,
+.main-content .destinations__deroulement .destinations__icon,
+.main-content .destinations__priceMinus .voyages__icon,
+.main-content .destinations__priceMinus .destinations__icon,
+.main-content .destinations__pricePlus .voyages__icon,
+.main-content .destinations__pricePlus .destinations__icon,
+.main-content .voyages__detailsPrix .voyages__icon,
+.main-content .voyages__detailsPrix .destinations__icon {
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -7862,145 +7012,25 @@ body.admin .charts h3 {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.destinations .destinations__coordinates .voyages__icon.add:after, .destinations .destinations__coordinates .voyages__icon.remove:after,
-.destinations .destinations__coordinates .destinations__icon.add:after,
-.destinations .destinations__coordinates .destinations__icon.remove:after,
-.destinations .destinations__deroulement .voyages__icon.add:after,
-.destinations .destinations__deroulement .voyages__icon.remove:after,
-.destinations .destinations__deroulement .destinations__icon.add:after,
-.destinations .destinations__deroulement .destinations__icon.remove:after,
-.destinations .destinations__priceMinus .voyages__icon.add:after,
-.destinations .destinations__priceMinus .voyages__icon.remove:after,
-.destinations .destinations__priceMinus .destinations__icon.add:after,
-.destinations .destinations__priceMinus .destinations__icon.remove:after,
-.destinations .destinations__pricePlus .voyages__icon.add:after,
-.destinations .destinations__pricePlus .voyages__icon.remove:after,
-.destinations .destinations__pricePlus .destinations__icon.add:after,
-.destinations .destinations__pricePlus .destinations__icon.remove:after,
-.destinations .voyages__detailsPrix .voyages__icon.add:after,
-.destinations .voyages__detailsPrix .voyages__icon.remove:after,
-.destinations .voyages__detailsPrix .destinations__icon.add:after,
-.destinations .voyages__detailsPrix .destinations__icon.remove:after,
-.actualites .destinations__coordinates .voyages__icon.add:after,
-.actualites .destinations__coordinates .voyages__icon.remove:after,
-.actualites .destinations__coordinates .destinations__icon.add:after,
-.actualites .destinations__coordinates .destinations__icon.remove:after,
-.actualites .destinations__deroulement .voyages__icon.add:after,
-.actualites .destinations__deroulement .voyages__icon.remove:after,
-.actualites .destinations__deroulement .destinations__icon.add:after,
-.actualites .destinations__deroulement .destinations__icon.remove:after,
-.actualites .destinations__priceMinus .voyages__icon.add:after,
-.actualites .destinations__priceMinus .voyages__icon.remove:after,
-.actualites .destinations__priceMinus .destinations__icon.add:after,
-.actualites .destinations__priceMinus .destinations__icon.remove:after,
-.actualites .destinations__pricePlus .voyages__icon.add:after,
-.actualites .destinations__pricePlus .voyages__icon.remove:after,
-.actualites .destinations__pricePlus .destinations__icon.add:after,
-.actualites .destinations__pricePlus .destinations__icon.remove:after,
-.actualites .voyages__detailsPrix .voyages__icon.add:after,
-.actualites .voyages__detailsPrix .voyages__icon.remove:after,
-.actualites .voyages__detailsPrix .destinations__icon.add:after,
-.actualites .voyages__detailsPrix .destinations__icon.remove:after,
-.voyages .destinations__coordinates .voyages__icon.add:after,
-.voyages .destinations__coordinates .voyages__icon.remove:after,
-.voyages .destinations__coordinates .destinations__icon.add:after,
-.voyages .destinations__coordinates .destinations__icon.remove:after,
-.voyages .destinations__deroulement .voyages__icon.add:after,
-.voyages .destinations__deroulement .voyages__icon.remove:after,
-.voyages .destinations__deroulement .destinations__icon.add:after,
-.voyages .destinations__deroulement .destinations__icon.remove:after,
-.voyages .destinations__priceMinus .voyages__icon.add:after,
-.voyages .destinations__priceMinus .voyages__icon.remove:after,
-.voyages .destinations__priceMinus .destinations__icon.add:after,
-.voyages .destinations__priceMinus .destinations__icon.remove:after,
-.voyages .destinations__pricePlus .voyages__icon.add:after,
-.voyages .destinations__pricePlus .voyages__icon.remove:after,
-.voyages .destinations__pricePlus .destinations__icon.add:after,
-.voyages .destinations__pricePlus .destinations__icon.remove:after,
-.voyages .voyages__detailsPrix .voyages__icon.add:after,
-.voyages .voyages__detailsPrix .voyages__icon.remove:after,
-.voyages .voyages__detailsPrix .destinations__icon.add:after,
-.voyages .voyages__detailsPrix .destinations__icon.remove:after,
-.carnets .destinations__coordinates .voyages__icon.add:after,
-.carnets .destinations__coordinates .voyages__icon.remove:after,
-.carnets .destinations__coordinates .destinations__icon.add:after,
-.carnets .destinations__coordinates .destinations__icon.remove:after,
-.carnets .destinations__deroulement .voyages__icon.add:after,
-.carnets .destinations__deroulement .voyages__icon.remove:after,
-.carnets .destinations__deroulement .destinations__icon.add:after,
-.carnets .destinations__deroulement .destinations__icon.remove:after,
-.carnets .destinations__priceMinus .voyages__icon.add:after,
-.carnets .destinations__priceMinus .voyages__icon.remove:after,
-.carnets .destinations__priceMinus .destinations__icon.add:after,
-.carnets .destinations__priceMinus .destinations__icon.remove:after,
-.carnets .destinations__pricePlus .voyages__icon.add:after,
-.carnets .destinations__pricePlus .voyages__icon.remove:after,
-.carnets .destinations__pricePlus .destinations__icon.add:after,
-.carnets .destinations__pricePlus .destinations__icon.remove:after,
-.carnets .voyages__detailsPrix .voyages__icon.add:after,
-.carnets .voyages__detailsPrix .voyages__icon.remove:after,
-.carnets .voyages__detailsPrix .destinations__icon.add:after,
-.carnets .voyages__detailsPrix .destinations__icon.remove:after,
-.articles .destinations__coordinates .voyages__icon.add:after,
-.articles .destinations__coordinates .voyages__icon.remove:after,
-.articles .destinations__coordinates .destinations__icon.add:after,
-.articles .destinations__coordinates .destinations__icon.remove:after,
-.articles .destinations__deroulement .voyages__icon.add:after,
-.articles .destinations__deroulement .voyages__icon.remove:after,
-.articles .destinations__deroulement .destinations__icon.add:after,
-.articles .destinations__deroulement .destinations__icon.remove:after,
-.articles .destinations__priceMinus .voyages__icon.add:after,
-.articles .destinations__priceMinus .voyages__icon.remove:after,
-.articles .destinations__priceMinus .destinations__icon.add:after,
-.articles .destinations__priceMinus .destinations__icon.remove:after,
-.articles .destinations__pricePlus .voyages__icon.add:after,
-.articles .destinations__pricePlus .voyages__icon.remove:after,
-.articles .destinations__pricePlus .destinations__icon.add:after,
-.articles .destinations__pricePlus .destinations__icon.remove:after,
-.articles .voyages__detailsPrix .voyages__icon.add:after,
-.articles .voyages__detailsPrix .voyages__icon.remove:after,
-.articles .voyages__detailsPrix .destinations__icon.add:after,
-.articles .voyages__detailsPrix .destinations__icon.remove:after,
-.commentaires .destinations__coordinates .voyages__icon.add:after,
-.commentaires .destinations__coordinates .voyages__icon.remove:after,
-.commentaires .destinations__coordinates .destinations__icon.add:after,
-.commentaires .destinations__coordinates .destinations__icon.remove:after,
-.commentaires .destinations__deroulement .voyages__icon.add:after,
-.commentaires .destinations__deroulement .voyages__icon.remove:after,
-.commentaires .destinations__deroulement .destinations__icon.add:after,
-.commentaires .destinations__deroulement .destinations__icon.remove:after,
-.commentaires .destinations__priceMinus .voyages__icon.add:after,
-.commentaires .destinations__priceMinus .voyages__icon.remove:after,
-.commentaires .destinations__priceMinus .destinations__icon.add:after,
-.commentaires .destinations__priceMinus .destinations__icon.remove:after,
-.commentaires .destinations__pricePlus .voyages__icon.add:after,
-.commentaires .destinations__pricePlus .voyages__icon.remove:after,
-.commentaires .destinations__pricePlus .destinations__icon.add:after,
-.commentaires .destinations__pricePlus .destinations__icon.remove:after,
-.commentaires .voyages__detailsPrix .voyages__icon.add:after,
-.commentaires .voyages__detailsPrix .voyages__icon.remove:after,
-.commentaires .voyages__detailsPrix .destinations__icon.add:after,
-.commentaires .voyages__detailsPrix .destinations__icon.remove:after,
-.utilisateurs .destinations__coordinates .voyages__icon.add:after,
-.utilisateurs .destinations__coordinates .voyages__icon.remove:after,
-.utilisateurs .destinations__coordinates .destinations__icon.add:after,
-.utilisateurs .destinations__coordinates .destinations__icon.remove:after,
-.utilisateurs .destinations__deroulement .voyages__icon.add:after,
-.utilisateurs .destinations__deroulement .voyages__icon.remove:after,
-.utilisateurs .destinations__deroulement .destinations__icon.add:after,
-.utilisateurs .destinations__deroulement .destinations__icon.remove:after,
-.utilisateurs .destinations__priceMinus .voyages__icon.add:after,
-.utilisateurs .destinations__priceMinus .voyages__icon.remove:after,
-.utilisateurs .destinations__priceMinus .destinations__icon.add:after,
-.utilisateurs .destinations__priceMinus .destinations__icon.remove:after,
-.utilisateurs .destinations__pricePlus .voyages__icon.add:after,
-.utilisateurs .destinations__pricePlus .voyages__icon.remove:after,
-.utilisateurs .destinations__pricePlus .destinations__icon.add:after,
-.utilisateurs .destinations__pricePlus .destinations__icon.remove:after,
-.utilisateurs .voyages__detailsPrix .voyages__icon.add:after,
-.utilisateurs .voyages__detailsPrix .voyages__icon.remove:after,
-.utilisateurs .voyages__detailsPrix .destinations__icon.add:after,
-.utilisateurs .voyages__detailsPrix .destinations__icon.remove:after {
+.main-content .destinations__coordinates .voyages__icon.add:after, .main-content .destinations__coordinates .voyages__icon.remove:after,
+.main-content .destinations__coordinates .destinations__icon.add:after,
+.main-content .destinations__coordinates .destinations__icon.remove:after,
+.main-content .destinations__deroulement .voyages__icon.add:after,
+.main-content .destinations__deroulement .voyages__icon.remove:after,
+.main-content .destinations__deroulement .destinations__icon.add:after,
+.main-content .destinations__deroulement .destinations__icon.remove:after,
+.main-content .destinations__priceMinus .voyages__icon.add:after,
+.main-content .destinations__priceMinus .voyages__icon.remove:after,
+.main-content .destinations__priceMinus .destinations__icon.add:after,
+.main-content .destinations__priceMinus .destinations__icon.remove:after,
+.main-content .destinations__pricePlus .voyages__icon.add:after,
+.main-content .destinations__pricePlus .voyages__icon.remove:after,
+.main-content .destinations__pricePlus .destinations__icon.add:after,
+.main-content .destinations__pricePlus .destinations__icon.remove:after,
+.main-content .voyages__detailsPrix .voyages__icon.add:after,
+.main-content .voyages__detailsPrix .voyages__icon.remove:after,
+.main-content .voyages__detailsPrix .destinations__icon.add:after,
+.main-content .voyages__detailsPrix .destinations__icon.remove:after {
   font-family: 'FontAwesome';
   font-size: 2em;
   position: absolute;
@@ -8014,492 +7044,96 @@ body.admin .charts h3 {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-.destinations .destinations__coordinates .voyages__icon.add:after,
-.destinations .destinations__coordinates .destinations__icon.add:after,
-.destinations .destinations__deroulement .voyages__icon.add:after,
-.destinations .destinations__deroulement .destinations__icon.add:after,
-.destinations .destinations__priceMinus .voyages__icon.add:after,
-.destinations .destinations__priceMinus .destinations__icon.add:after,
-.destinations .destinations__pricePlus .voyages__icon.add:after,
-.destinations .destinations__pricePlus .destinations__icon.add:after,
-.destinations .voyages__detailsPrix .voyages__icon.add:after,
-.destinations .voyages__detailsPrix .destinations__icon.add:after,
-.actualites .destinations__coordinates .voyages__icon.add:after,
-.actualites .destinations__coordinates .destinations__icon.add:after,
-.actualites .destinations__deroulement .voyages__icon.add:after,
-.actualites .destinations__deroulement .destinations__icon.add:after,
-.actualites .destinations__priceMinus .voyages__icon.add:after,
-.actualites .destinations__priceMinus .destinations__icon.add:after,
-.actualites .destinations__pricePlus .voyages__icon.add:after,
-.actualites .destinations__pricePlus .destinations__icon.add:after,
-.actualites .voyages__detailsPrix .voyages__icon.add:after,
-.actualites .voyages__detailsPrix .destinations__icon.add:after,
-.voyages .destinations__coordinates .voyages__icon.add:after,
-.voyages .destinations__coordinates .destinations__icon.add:after,
-.voyages .destinations__deroulement .voyages__icon.add:after,
-.voyages .destinations__deroulement .destinations__icon.add:after,
-.voyages .destinations__priceMinus .voyages__icon.add:after,
-.voyages .destinations__priceMinus .destinations__icon.add:after,
-.voyages .destinations__pricePlus .voyages__icon.add:after,
-.voyages .destinations__pricePlus .destinations__icon.add:after,
-.voyages .voyages__detailsPrix .voyages__icon.add:after,
-.voyages .voyages__detailsPrix .destinations__icon.add:after,
-.carnets .destinations__coordinates .voyages__icon.add:after,
-.carnets .destinations__coordinates .destinations__icon.add:after,
-.carnets .destinations__deroulement .voyages__icon.add:after,
-.carnets .destinations__deroulement .destinations__icon.add:after,
-.carnets .destinations__priceMinus .voyages__icon.add:after,
-.carnets .destinations__priceMinus .destinations__icon.add:after,
-.carnets .destinations__pricePlus .voyages__icon.add:after,
-.carnets .destinations__pricePlus .destinations__icon.add:after,
-.carnets .voyages__detailsPrix .voyages__icon.add:after,
-.carnets .voyages__detailsPrix .destinations__icon.add:after,
-.articles .destinations__coordinates .voyages__icon.add:after,
-.articles .destinations__coordinates .destinations__icon.add:after,
-.articles .destinations__deroulement .voyages__icon.add:after,
-.articles .destinations__deroulement .destinations__icon.add:after,
-.articles .destinations__priceMinus .voyages__icon.add:after,
-.articles .destinations__priceMinus .destinations__icon.add:after,
-.articles .destinations__pricePlus .voyages__icon.add:after,
-.articles .destinations__pricePlus .destinations__icon.add:after,
-.articles .voyages__detailsPrix .voyages__icon.add:after,
-.articles .voyages__detailsPrix .destinations__icon.add:after,
-.commentaires .destinations__coordinates .voyages__icon.add:after,
-.commentaires .destinations__coordinates .destinations__icon.add:after,
-.commentaires .destinations__deroulement .voyages__icon.add:after,
-.commentaires .destinations__deroulement .destinations__icon.add:after,
-.commentaires .destinations__priceMinus .voyages__icon.add:after,
-.commentaires .destinations__priceMinus .destinations__icon.add:after,
-.commentaires .destinations__pricePlus .voyages__icon.add:after,
-.commentaires .destinations__pricePlus .destinations__icon.add:after,
-.commentaires .voyages__detailsPrix .voyages__icon.add:after,
-.commentaires .voyages__detailsPrix .destinations__icon.add:after,
-.utilisateurs .destinations__coordinates .voyages__icon.add:after,
-.utilisateurs .destinations__coordinates .destinations__icon.add:after,
-.utilisateurs .destinations__deroulement .voyages__icon.add:after,
-.utilisateurs .destinations__deroulement .destinations__icon.add:after,
-.utilisateurs .destinations__priceMinus .voyages__icon.add:after,
-.utilisateurs .destinations__priceMinus .destinations__icon.add:after,
-.utilisateurs .destinations__pricePlus .voyages__icon.add:after,
-.utilisateurs .destinations__pricePlus .destinations__icon.add:after,
-.utilisateurs .voyages__detailsPrix .voyages__icon.add:after,
-.utilisateurs .voyages__detailsPrix .destinations__icon.add:after {
+.main-content .destinations__coordinates .voyages__icon.add:after,
+.main-content .destinations__coordinates .destinations__icon.add:after,
+.main-content .destinations__deroulement .voyages__icon.add:after,
+.main-content .destinations__deroulement .destinations__icon.add:after,
+.main-content .destinations__priceMinus .voyages__icon.add:after,
+.main-content .destinations__priceMinus .destinations__icon.add:after,
+.main-content .destinations__pricePlus .voyages__icon.add:after,
+.main-content .destinations__pricePlus .destinations__icon.add:after,
+.main-content .voyages__detailsPrix .voyages__icon.add:after,
+.main-content .voyages__detailsPrix .destinations__icon.add:after {
   content: '\f067';
 }
-.destinations .destinations__coordinates .voyages__icon.remove:after,
-.destinations .destinations__coordinates .destinations__icon.remove:after,
-.destinations .destinations__deroulement .voyages__icon.remove:after,
-.destinations .destinations__deroulement .destinations__icon.remove:after,
-.destinations .destinations__priceMinus .voyages__icon.remove:after,
-.destinations .destinations__priceMinus .destinations__icon.remove:after,
-.destinations .destinations__pricePlus .voyages__icon.remove:after,
-.destinations .destinations__pricePlus .destinations__icon.remove:after,
-.destinations .voyages__detailsPrix .voyages__icon.remove:after,
-.destinations .voyages__detailsPrix .destinations__icon.remove:after,
-.actualites .destinations__coordinates .voyages__icon.remove:after,
-.actualites .destinations__coordinates .destinations__icon.remove:after,
-.actualites .destinations__deroulement .voyages__icon.remove:after,
-.actualites .destinations__deroulement .destinations__icon.remove:after,
-.actualites .destinations__priceMinus .voyages__icon.remove:after,
-.actualites .destinations__priceMinus .destinations__icon.remove:after,
-.actualites .destinations__pricePlus .voyages__icon.remove:after,
-.actualites .destinations__pricePlus .destinations__icon.remove:after,
-.actualites .voyages__detailsPrix .voyages__icon.remove:after,
-.actualites .voyages__detailsPrix .destinations__icon.remove:after,
-.voyages .destinations__coordinates .voyages__icon.remove:after,
-.voyages .destinations__coordinates .destinations__icon.remove:after,
-.voyages .destinations__deroulement .voyages__icon.remove:after,
-.voyages .destinations__deroulement .destinations__icon.remove:after,
-.voyages .destinations__priceMinus .voyages__icon.remove:after,
-.voyages .destinations__priceMinus .destinations__icon.remove:after,
-.voyages .destinations__pricePlus .voyages__icon.remove:after,
-.voyages .destinations__pricePlus .destinations__icon.remove:after,
-.voyages .voyages__detailsPrix .voyages__icon.remove:after,
-.voyages .voyages__detailsPrix .destinations__icon.remove:after,
-.carnets .destinations__coordinates .voyages__icon.remove:after,
-.carnets .destinations__coordinates .destinations__icon.remove:after,
-.carnets .destinations__deroulement .voyages__icon.remove:after,
-.carnets .destinations__deroulement .destinations__icon.remove:after,
-.carnets .destinations__priceMinus .voyages__icon.remove:after,
-.carnets .destinations__priceMinus .destinations__icon.remove:after,
-.carnets .destinations__pricePlus .voyages__icon.remove:after,
-.carnets .destinations__pricePlus .destinations__icon.remove:after,
-.carnets .voyages__detailsPrix .voyages__icon.remove:after,
-.carnets .voyages__detailsPrix .destinations__icon.remove:after,
-.articles .destinations__coordinates .voyages__icon.remove:after,
-.articles .destinations__coordinates .destinations__icon.remove:after,
-.articles .destinations__deroulement .voyages__icon.remove:after,
-.articles .destinations__deroulement .destinations__icon.remove:after,
-.articles .destinations__priceMinus .voyages__icon.remove:after,
-.articles .destinations__priceMinus .destinations__icon.remove:after,
-.articles .destinations__pricePlus .voyages__icon.remove:after,
-.articles .destinations__pricePlus .destinations__icon.remove:after,
-.articles .voyages__detailsPrix .voyages__icon.remove:after,
-.articles .voyages__detailsPrix .destinations__icon.remove:after,
-.commentaires .destinations__coordinates .voyages__icon.remove:after,
-.commentaires .destinations__coordinates .destinations__icon.remove:after,
-.commentaires .destinations__deroulement .voyages__icon.remove:after,
-.commentaires .destinations__deroulement .destinations__icon.remove:after,
-.commentaires .destinations__priceMinus .voyages__icon.remove:after,
-.commentaires .destinations__priceMinus .destinations__icon.remove:after,
-.commentaires .destinations__pricePlus .voyages__icon.remove:after,
-.commentaires .destinations__pricePlus .destinations__icon.remove:after,
-.commentaires .voyages__detailsPrix .voyages__icon.remove:after,
-.commentaires .voyages__detailsPrix .destinations__icon.remove:after,
-.utilisateurs .destinations__coordinates .voyages__icon.remove:after,
-.utilisateurs .destinations__coordinates .destinations__icon.remove:after,
-.utilisateurs .destinations__deroulement .voyages__icon.remove:after,
-.utilisateurs .destinations__deroulement .destinations__icon.remove:after,
-.utilisateurs .destinations__priceMinus .voyages__icon.remove:after,
-.utilisateurs .destinations__priceMinus .destinations__icon.remove:after,
-.utilisateurs .destinations__pricePlus .voyages__icon.remove:after,
-.utilisateurs .destinations__pricePlus .destinations__icon.remove:after,
-.utilisateurs .voyages__detailsPrix .voyages__icon.remove:after,
-.utilisateurs .voyages__detailsPrix .destinations__icon.remove:after {
+.main-content .destinations__coordinates .voyages__icon.remove:after,
+.main-content .destinations__coordinates .destinations__icon.remove:after,
+.main-content .destinations__deroulement .voyages__icon.remove:after,
+.main-content .destinations__deroulement .destinations__icon.remove:after,
+.main-content .destinations__priceMinus .voyages__icon.remove:after,
+.main-content .destinations__priceMinus .destinations__icon.remove:after,
+.main-content .destinations__pricePlus .voyages__icon.remove:after,
+.main-content .destinations__pricePlus .destinations__icon.remove:after,
+.main-content .voyages__detailsPrix .voyages__icon.remove:after,
+.main-content .voyages__detailsPrix .destinations__icon.remove:after {
   content: '\f00d';
 }
-.destinations .destinations__coordinates .voyages__icon:hover,
-.destinations .destinations__coordinates .destinations__icon:hover,
-.destinations .destinations__deroulement .voyages__icon:hover,
-.destinations .destinations__deroulement .destinations__icon:hover,
-.destinations .destinations__priceMinus .voyages__icon:hover,
-.destinations .destinations__priceMinus .destinations__icon:hover,
-.destinations .destinations__pricePlus .voyages__icon:hover,
-.destinations .destinations__pricePlus .destinations__icon:hover,
-.destinations .voyages__detailsPrix .voyages__icon:hover,
-.destinations .voyages__detailsPrix .destinations__icon:hover,
-.actualites .destinations__coordinates .voyages__icon:hover,
-.actualites .destinations__coordinates .destinations__icon:hover,
-.actualites .destinations__deroulement .voyages__icon:hover,
-.actualites .destinations__deroulement .destinations__icon:hover,
-.actualites .destinations__priceMinus .voyages__icon:hover,
-.actualites .destinations__priceMinus .destinations__icon:hover,
-.actualites .destinations__pricePlus .voyages__icon:hover,
-.actualites .destinations__pricePlus .destinations__icon:hover,
-.actualites .voyages__detailsPrix .voyages__icon:hover,
-.actualites .voyages__detailsPrix .destinations__icon:hover,
-.voyages .destinations__coordinates .voyages__icon:hover,
-.voyages .destinations__coordinates .destinations__icon:hover,
-.voyages .destinations__deroulement .voyages__icon:hover,
-.voyages .destinations__deroulement .destinations__icon:hover,
-.voyages .destinations__priceMinus .voyages__icon:hover,
-.voyages .destinations__priceMinus .destinations__icon:hover,
-.voyages .destinations__pricePlus .voyages__icon:hover,
-.voyages .destinations__pricePlus .destinations__icon:hover,
-.voyages .voyages__detailsPrix .voyages__icon:hover,
-.voyages .voyages__detailsPrix .destinations__icon:hover,
-.carnets .destinations__coordinates .voyages__icon:hover,
-.carnets .destinations__coordinates .destinations__icon:hover,
-.carnets .destinations__deroulement .voyages__icon:hover,
-.carnets .destinations__deroulement .destinations__icon:hover,
-.carnets .destinations__priceMinus .voyages__icon:hover,
-.carnets .destinations__priceMinus .destinations__icon:hover,
-.carnets .destinations__pricePlus .voyages__icon:hover,
-.carnets .destinations__pricePlus .destinations__icon:hover,
-.carnets .voyages__detailsPrix .voyages__icon:hover,
-.carnets .voyages__detailsPrix .destinations__icon:hover,
-.articles .destinations__coordinates .voyages__icon:hover,
-.articles .destinations__coordinates .destinations__icon:hover,
-.articles .destinations__deroulement .voyages__icon:hover,
-.articles .destinations__deroulement .destinations__icon:hover,
-.articles .destinations__priceMinus .voyages__icon:hover,
-.articles .destinations__priceMinus .destinations__icon:hover,
-.articles .destinations__pricePlus .voyages__icon:hover,
-.articles .destinations__pricePlus .destinations__icon:hover,
-.articles .voyages__detailsPrix .voyages__icon:hover,
-.articles .voyages__detailsPrix .destinations__icon:hover,
-.commentaires .destinations__coordinates .voyages__icon:hover,
-.commentaires .destinations__coordinates .destinations__icon:hover,
-.commentaires .destinations__deroulement .voyages__icon:hover,
-.commentaires .destinations__deroulement .destinations__icon:hover,
-.commentaires .destinations__priceMinus .voyages__icon:hover,
-.commentaires .destinations__priceMinus .destinations__icon:hover,
-.commentaires .destinations__pricePlus .voyages__icon:hover,
-.commentaires .destinations__pricePlus .destinations__icon:hover,
-.commentaires .voyages__detailsPrix .voyages__icon:hover,
-.commentaires .voyages__detailsPrix .destinations__icon:hover,
-.utilisateurs .destinations__coordinates .voyages__icon:hover,
-.utilisateurs .destinations__coordinates .destinations__icon:hover,
-.utilisateurs .destinations__deroulement .voyages__icon:hover,
-.utilisateurs .destinations__deroulement .destinations__icon:hover,
-.utilisateurs .destinations__priceMinus .voyages__icon:hover,
-.utilisateurs .destinations__priceMinus .destinations__icon:hover,
-.utilisateurs .destinations__pricePlus .voyages__icon:hover,
-.utilisateurs .destinations__pricePlus .destinations__icon:hover,
-.utilisateurs .voyages__detailsPrix .voyages__icon:hover,
-.utilisateurs .voyages__detailsPrix .destinations__icon:hover {
+.main-content .destinations__coordinates .voyages__icon:hover,
+.main-content .destinations__coordinates .destinations__icon:hover,
+.main-content .destinations__deroulement .voyages__icon:hover,
+.main-content .destinations__deroulement .destinations__icon:hover,
+.main-content .destinations__priceMinus .voyages__icon:hover,
+.main-content .destinations__priceMinus .destinations__icon:hover,
+.main-content .destinations__pricePlus .voyages__icon:hover,
+.main-content .destinations__pricePlus .destinations__icon:hover,
+.main-content .voyages__detailsPrix .voyages__icon:hover,
+.main-content .voyages__detailsPrix .destinations__icon:hover {
   background-color: #242424;
 }
-.destinations .destinations__coordinates .voyages__icon:hover:after,
-.destinations .destinations__coordinates .destinations__icon:hover:after,
-.destinations .destinations__deroulement .voyages__icon:hover:after,
-.destinations .destinations__deroulement .destinations__icon:hover:after,
-.destinations .destinations__priceMinus .voyages__icon:hover:after,
-.destinations .destinations__priceMinus .destinations__icon:hover:after,
-.destinations .destinations__pricePlus .voyages__icon:hover:after,
-.destinations .destinations__pricePlus .destinations__icon:hover:after,
-.destinations .voyages__detailsPrix .voyages__icon:hover:after,
-.destinations .voyages__detailsPrix .destinations__icon:hover:after,
-.actualites .destinations__coordinates .voyages__icon:hover:after,
-.actualites .destinations__coordinates .destinations__icon:hover:after,
-.actualites .destinations__deroulement .voyages__icon:hover:after,
-.actualites .destinations__deroulement .destinations__icon:hover:after,
-.actualites .destinations__priceMinus .voyages__icon:hover:after,
-.actualites .destinations__priceMinus .destinations__icon:hover:after,
-.actualites .destinations__pricePlus .voyages__icon:hover:after,
-.actualites .destinations__pricePlus .destinations__icon:hover:after,
-.actualites .voyages__detailsPrix .voyages__icon:hover:after,
-.actualites .voyages__detailsPrix .destinations__icon:hover:after,
-.voyages .destinations__coordinates .voyages__icon:hover:after,
-.voyages .destinations__coordinates .destinations__icon:hover:after,
-.voyages .destinations__deroulement .voyages__icon:hover:after,
-.voyages .destinations__deroulement .destinations__icon:hover:after,
-.voyages .destinations__priceMinus .voyages__icon:hover:after,
-.voyages .destinations__priceMinus .destinations__icon:hover:after,
-.voyages .destinations__pricePlus .voyages__icon:hover:after,
-.voyages .destinations__pricePlus .destinations__icon:hover:after,
-.voyages .voyages__detailsPrix .voyages__icon:hover:after,
-.voyages .voyages__detailsPrix .destinations__icon:hover:after,
-.carnets .destinations__coordinates .voyages__icon:hover:after,
-.carnets .destinations__coordinates .destinations__icon:hover:after,
-.carnets .destinations__deroulement .voyages__icon:hover:after,
-.carnets .destinations__deroulement .destinations__icon:hover:after,
-.carnets .destinations__priceMinus .voyages__icon:hover:after,
-.carnets .destinations__priceMinus .destinations__icon:hover:after,
-.carnets .destinations__pricePlus .voyages__icon:hover:after,
-.carnets .destinations__pricePlus .destinations__icon:hover:after,
-.carnets .voyages__detailsPrix .voyages__icon:hover:after,
-.carnets .voyages__detailsPrix .destinations__icon:hover:after,
-.articles .destinations__coordinates .voyages__icon:hover:after,
-.articles .destinations__coordinates .destinations__icon:hover:after,
-.articles .destinations__deroulement .voyages__icon:hover:after,
-.articles .destinations__deroulement .destinations__icon:hover:after,
-.articles .destinations__priceMinus .voyages__icon:hover:after,
-.articles .destinations__priceMinus .destinations__icon:hover:after,
-.articles .destinations__pricePlus .voyages__icon:hover:after,
-.articles .destinations__pricePlus .destinations__icon:hover:after,
-.articles .voyages__detailsPrix .voyages__icon:hover:after,
-.articles .voyages__detailsPrix .destinations__icon:hover:after,
-.commentaires .destinations__coordinates .voyages__icon:hover:after,
-.commentaires .destinations__coordinates .destinations__icon:hover:after,
-.commentaires .destinations__deroulement .voyages__icon:hover:after,
-.commentaires .destinations__deroulement .destinations__icon:hover:after,
-.commentaires .destinations__priceMinus .voyages__icon:hover:after,
-.commentaires .destinations__priceMinus .destinations__icon:hover:after,
-.commentaires .destinations__pricePlus .voyages__icon:hover:after,
-.commentaires .destinations__pricePlus .destinations__icon:hover:after,
-.commentaires .voyages__detailsPrix .voyages__icon:hover:after,
-.commentaires .voyages__detailsPrix .destinations__icon:hover:after,
-.utilisateurs .destinations__coordinates .voyages__icon:hover:after,
-.utilisateurs .destinations__coordinates .destinations__icon:hover:after,
-.utilisateurs .destinations__deroulement .voyages__icon:hover:after,
-.utilisateurs .destinations__deroulement .destinations__icon:hover:after,
-.utilisateurs .destinations__priceMinus .voyages__icon:hover:after,
-.utilisateurs .destinations__priceMinus .destinations__icon:hover:after,
-.utilisateurs .destinations__pricePlus .voyages__icon:hover:after,
-.utilisateurs .destinations__pricePlus .destinations__icon:hover:after,
-.utilisateurs .voyages__detailsPrix .voyages__icon:hover:after,
-.utilisateurs .voyages__detailsPrix .destinations__icon:hover:after {
+.main-content .destinations__coordinates .voyages__icon:hover:after,
+.main-content .destinations__coordinates .destinations__icon:hover:after,
+.main-content .destinations__deroulement .voyages__icon:hover:after,
+.main-content .destinations__deroulement .destinations__icon:hover:after,
+.main-content .destinations__priceMinus .voyages__icon:hover:after,
+.main-content .destinations__priceMinus .destinations__icon:hover:after,
+.main-content .destinations__pricePlus .voyages__icon:hover:after,
+.main-content .destinations__pricePlus .destinations__icon:hover:after,
+.main-content .voyages__detailsPrix .voyages__icon:hover:after,
+.main-content .voyages__detailsPrix .destinations__icon:hover:after {
   color: #fff;
 }
-.destinations .destinations__coordinates span,
-.destinations .destinations__deroulement span,
-.destinations .destinations__priceMinus span,
-.destinations .destinations__pricePlus span,
-.destinations .voyages__detailsPrix span,
-.actualites .destinations__coordinates span,
-.actualites .destinations__deroulement span,
-.actualites .destinations__priceMinus span,
-.actualites .destinations__pricePlus span,
-.actualites .voyages__detailsPrix span,
-.voyages .destinations__coordinates span,
-.voyages .destinations__deroulement span,
-.voyages .destinations__priceMinus span,
-.voyages .destinations__pricePlus span,
-.voyages .voyages__detailsPrix span,
-.carnets .destinations__coordinates span,
-.carnets .destinations__deroulement span,
-.carnets .destinations__priceMinus span,
-.carnets .destinations__pricePlus span,
-.carnets .voyages__detailsPrix span,
-.articles .destinations__coordinates span,
-.articles .destinations__deroulement span,
-.articles .destinations__priceMinus span,
-.articles .destinations__pricePlus span,
-.articles .voyages__detailsPrix span,
-.commentaires .destinations__coordinates span,
-.commentaires .destinations__deroulement span,
-.commentaires .destinations__priceMinus span,
-.commentaires .destinations__pricePlus span,
-.commentaires .voyages__detailsPrix span,
-.utilisateurs .destinations__coordinates span,
-.utilisateurs .destinations__deroulement span,
-.utilisateurs .destinations__priceMinus span,
-.utilisateurs .destinations__pricePlus span,
-.utilisateurs .voyages__detailsPrix span {
+.main-content .destinations__coordinates span,
+.main-content .destinations__deroulement span,
+.main-content .destinations__priceMinus span,
+.main-content .destinations__pricePlus span,
+.main-content .voyages__detailsPrix span {
   line-height: 50px;
 }
-.destinations .destinations__deroulement.fieldBlock,
-.destinations .destinations__pricePlus.fieldBlock,
-.destinations .destinations__priceMinus.fieldBlock,
-.actualites .destinations__deroulement.fieldBlock,
-.actualites .destinations__pricePlus.fieldBlock,
-.actualites .destinations__priceMinus.fieldBlock,
-.voyages .destinations__deroulement.fieldBlock,
-.voyages .destinations__pricePlus.fieldBlock,
-.voyages .destinations__priceMinus.fieldBlock,
-.carnets .destinations__deroulement.fieldBlock,
-.carnets .destinations__pricePlus.fieldBlock,
-.carnets .destinations__priceMinus.fieldBlock,
-.articles .destinations__deroulement.fieldBlock,
-.articles .destinations__pricePlus.fieldBlock,
-.articles .destinations__priceMinus.fieldBlock,
-.commentaires .destinations__deroulement.fieldBlock,
-.commentaires .destinations__pricePlus.fieldBlock,
-.commentaires .destinations__priceMinus.fieldBlock,
-.utilisateurs .destinations__deroulement.fieldBlock,
-.utilisateurs .destinations__pricePlus.fieldBlock,
-.utilisateurs .destinations__priceMinus.fieldBlock {
+.main-content .destinations__deroulement.fieldBlock,
+.main-content .destinations__pricePlus.fieldBlock,
+.main-content .destinations__priceMinus.fieldBlock {
   position: relative;
   margin-top: 25px;
   margin-bottom: 50px;
   border: 1px solid #848484;
   background-color: #fff;
 }
-.destinations .destinations__deroulement.fieldBlock:focus,
-.destinations .destinations__pricePlus.fieldBlock:focus,
-.destinations .destinations__priceMinus.fieldBlock:focus,
-.actualites .destinations__deroulement.fieldBlock:focus,
-.actualites .destinations__pricePlus.fieldBlock:focus,
-.actualites .destinations__priceMinus.fieldBlock:focus,
-.voyages .destinations__deroulement.fieldBlock:focus,
-.voyages .destinations__pricePlus.fieldBlock:focus,
-.voyages .destinations__priceMinus.fieldBlock:focus,
-.carnets .destinations__deroulement.fieldBlock:focus,
-.carnets .destinations__pricePlus.fieldBlock:focus,
-.carnets .destinations__priceMinus.fieldBlock:focus,
-.articles .destinations__deroulement.fieldBlock:focus,
-.articles .destinations__pricePlus.fieldBlock:focus,
-.articles .destinations__priceMinus.fieldBlock:focus,
-.commentaires .destinations__deroulement.fieldBlock:focus,
-.commentaires .destinations__pricePlus.fieldBlock:focus,
-.commentaires .destinations__priceMinus.fieldBlock:focus,
-.utilisateurs .destinations__deroulement.fieldBlock:focus,
-.utilisateurs .destinations__pricePlus.fieldBlock:focus,
-.utilisateurs .destinations__priceMinus.fieldBlock:focus {
+.main-content .destinations__deroulement.fieldBlock:focus,
+.main-content .destinations__pricePlus.fieldBlock:focus,
+.main-content .destinations__priceMinus.fieldBlock:focus {
   -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 }
-.destinations .destinations__deroulement.fieldBlock input, .destinations .destinations__deroulement.fieldBlock textarea,
-.destinations .destinations__pricePlus.fieldBlock input,
-.destinations .destinations__pricePlus.fieldBlock textarea,
-.destinations .destinations__priceMinus.fieldBlock input,
-.destinations .destinations__priceMinus.fieldBlock textarea,
-.actualites .destinations__deroulement.fieldBlock input,
-.actualites .destinations__deroulement.fieldBlock textarea,
-.actualites .destinations__pricePlus.fieldBlock input,
-.actualites .destinations__pricePlus.fieldBlock textarea,
-.actualites .destinations__priceMinus.fieldBlock input,
-.actualites .destinations__priceMinus.fieldBlock textarea,
-.voyages .destinations__deroulement.fieldBlock input,
-.voyages .destinations__deroulement.fieldBlock textarea,
-.voyages .destinations__pricePlus.fieldBlock input,
-.voyages .destinations__pricePlus.fieldBlock textarea,
-.voyages .destinations__priceMinus.fieldBlock input,
-.voyages .destinations__priceMinus.fieldBlock textarea,
-.carnets .destinations__deroulement.fieldBlock input,
-.carnets .destinations__deroulement.fieldBlock textarea,
-.carnets .destinations__pricePlus.fieldBlock input,
-.carnets .destinations__pricePlus.fieldBlock textarea,
-.carnets .destinations__priceMinus.fieldBlock input,
-.carnets .destinations__priceMinus.fieldBlock textarea,
-.articles .destinations__deroulement.fieldBlock input,
-.articles .destinations__deroulement.fieldBlock textarea,
-.articles .destinations__pricePlus.fieldBlock input,
-.articles .destinations__pricePlus.fieldBlock textarea,
-.articles .destinations__priceMinus.fieldBlock input,
-.articles .destinations__priceMinus.fieldBlock textarea,
-.commentaires .destinations__deroulement.fieldBlock input,
-.commentaires .destinations__deroulement.fieldBlock textarea,
-.commentaires .destinations__pricePlus.fieldBlock input,
-.commentaires .destinations__pricePlus.fieldBlock textarea,
-.commentaires .destinations__priceMinus.fieldBlock input,
-.commentaires .destinations__priceMinus.fieldBlock textarea,
-.utilisateurs .destinations__deroulement.fieldBlock input,
-.utilisateurs .destinations__deroulement.fieldBlock textarea,
-.utilisateurs .destinations__pricePlus.fieldBlock input,
-.utilisateurs .destinations__pricePlus.fieldBlock textarea,
-.utilisateurs .destinations__priceMinus.fieldBlock input,
-.utilisateurs .destinations__priceMinus.fieldBlock textarea {
+.main-content .destinations__deroulement.fieldBlock input, .main-content .destinations__deroulement.fieldBlock textarea,
+.main-content .destinations__pricePlus.fieldBlock input,
+.main-content .destinations__pricePlus.fieldBlock textarea,
+.main-content .destinations__priceMinus.fieldBlock input,
+.main-content .destinations__priceMinus.fieldBlock textarea {
   border: none;
 }
-.destinations .destinations__deroulement.fieldBlock input:focus, .destinations .destinations__deroulement.fieldBlock textarea:focus,
-.destinations .destinations__pricePlus.fieldBlock input:focus,
-.destinations .destinations__pricePlus.fieldBlock textarea:focus,
-.destinations .destinations__priceMinus.fieldBlock input:focus,
-.destinations .destinations__priceMinus.fieldBlock textarea:focus,
-.actualites .destinations__deroulement.fieldBlock input:focus,
-.actualites .destinations__deroulement.fieldBlock textarea:focus,
-.actualites .destinations__pricePlus.fieldBlock input:focus,
-.actualites .destinations__pricePlus.fieldBlock textarea:focus,
-.actualites .destinations__priceMinus.fieldBlock input:focus,
-.actualites .destinations__priceMinus.fieldBlock textarea:focus,
-.voyages .destinations__deroulement.fieldBlock input:focus,
-.voyages .destinations__deroulement.fieldBlock textarea:focus,
-.voyages .destinations__pricePlus.fieldBlock input:focus,
-.voyages .destinations__pricePlus.fieldBlock textarea:focus,
-.voyages .destinations__priceMinus.fieldBlock input:focus,
-.voyages .destinations__priceMinus.fieldBlock textarea:focus,
-.carnets .destinations__deroulement.fieldBlock input:focus,
-.carnets .destinations__deroulement.fieldBlock textarea:focus,
-.carnets .destinations__pricePlus.fieldBlock input:focus,
-.carnets .destinations__pricePlus.fieldBlock textarea:focus,
-.carnets .destinations__priceMinus.fieldBlock input:focus,
-.carnets .destinations__priceMinus.fieldBlock textarea:focus,
-.articles .destinations__deroulement.fieldBlock input:focus,
-.articles .destinations__deroulement.fieldBlock textarea:focus,
-.articles .destinations__pricePlus.fieldBlock input:focus,
-.articles .destinations__pricePlus.fieldBlock textarea:focus,
-.articles .destinations__priceMinus.fieldBlock input:focus,
-.articles .destinations__priceMinus.fieldBlock textarea:focus,
-.commentaires .destinations__deroulement.fieldBlock input:focus,
-.commentaires .destinations__deroulement.fieldBlock textarea:focus,
-.commentaires .destinations__pricePlus.fieldBlock input:focus,
-.commentaires .destinations__pricePlus.fieldBlock textarea:focus,
-.commentaires .destinations__priceMinus.fieldBlock input:focus,
-.commentaires .destinations__priceMinus.fieldBlock textarea:focus,
-.utilisateurs .destinations__deroulement.fieldBlock input:focus,
-.utilisateurs .destinations__deroulement.fieldBlock textarea:focus,
-.utilisateurs .destinations__pricePlus.fieldBlock input:focus,
-.utilisateurs .destinations__pricePlus.fieldBlock textarea:focus,
-.utilisateurs .destinations__priceMinus.fieldBlock input:focus,
-.utilisateurs .destinations__priceMinus.fieldBlock textarea:focus {
+.main-content .destinations__deroulement.fieldBlock input:focus, .main-content .destinations__deroulement.fieldBlock textarea:focus,
+.main-content .destinations__pricePlus.fieldBlock input:focus,
+.main-content .destinations__pricePlus.fieldBlock textarea:focus,
+.main-content .destinations__priceMinus.fieldBlock input:focus,
+.main-content .destinations__priceMinus.fieldBlock textarea:focus {
   -moz-box-shadow: 0px 0px 10px 0px transparent;
   -webkit-box-shadow: 0px 0px 10px 0px transparent;
   box-shadow: 0px 0px 10px 0px transparent;
 }
-.destinations .destinations__deroulement.fieldBlock input,
-.destinations .destinations__pricePlus.fieldBlock input,
-.destinations .destinations__priceMinus.fieldBlock input,
-.actualites .destinations__deroulement.fieldBlock input,
-.actualites .destinations__pricePlus.fieldBlock input,
-.actualites .destinations__priceMinus.fieldBlock input,
-.voyages .destinations__deroulement.fieldBlock input,
-.voyages .destinations__pricePlus.fieldBlock input,
-.voyages .destinations__priceMinus.fieldBlock input,
-.carnets .destinations__deroulement.fieldBlock input,
-.carnets .destinations__pricePlus.fieldBlock input,
-.carnets .destinations__priceMinus.fieldBlock input,
-.articles .destinations__deroulement.fieldBlock input,
-.articles .destinations__pricePlus.fieldBlock input,
-.articles .destinations__priceMinus.fieldBlock input,
-.commentaires .destinations__deroulement.fieldBlock input,
-.commentaires .destinations__pricePlus.fieldBlock input,
-.commentaires .destinations__priceMinus.fieldBlock input,
-.utilisateurs .destinations__deroulement.fieldBlock input,
-.utilisateurs .destinations__pricePlus.fieldBlock input,
-.utilisateurs .destinations__priceMinus.fieldBlock input {
+.main-content .destinations__deroulement.fieldBlock input,
+.main-content .destinations__pricePlus.fieldBlock input,
+.main-content .destinations__priceMinus.fieldBlock input {
   position: relative;
   display: block;
   width: 100%;
@@ -8509,52 +7143,16 @@ body.admin .charts h3 {
   font-weight: 600;
   border-bottom: 1px solid #f5f5f5;
 }
-.destinations .destinations__deroulement.fieldBlock textarea,
-.destinations .destinations__pricePlus.fieldBlock textarea,
-.destinations .destinations__priceMinus.fieldBlock textarea,
-.actualites .destinations__deroulement.fieldBlock textarea,
-.actualites .destinations__pricePlus.fieldBlock textarea,
-.actualites .destinations__priceMinus.fieldBlock textarea,
-.voyages .destinations__deroulement.fieldBlock textarea,
-.voyages .destinations__pricePlus.fieldBlock textarea,
-.voyages .destinations__priceMinus.fieldBlock textarea,
-.carnets .destinations__deroulement.fieldBlock textarea,
-.carnets .destinations__pricePlus.fieldBlock textarea,
-.carnets .destinations__priceMinus.fieldBlock textarea,
-.articles .destinations__deroulement.fieldBlock textarea,
-.articles .destinations__pricePlus.fieldBlock textarea,
-.articles .destinations__priceMinus.fieldBlock textarea,
-.commentaires .destinations__deroulement.fieldBlock textarea,
-.commentaires .destinations__pricePlus.fieldBlock textarea,
-.commentaires .destinations__priceMinus.fieldBlock textarea,
-.utilisateurs .destinations__deroulement.fieldBlock textarea,
-.utilisateurs .destinations__pricePlus.fieldBlock textarea,
-.utilisateurs .destinations__priceMinus.fieldBlock textarea {
+.main-content .destinations__deroulement.fieldBlock textarea,
+.main-content .destinations__pricePlus.fieldBlock textarea,
+.main-content .destinations__priceMinus.fieldBlock textarea {
   display: block;
   margin-top: 0;
   resize: none;
 }
-.destinations .destinations__deroulement.fieldBlock .destinations__icon.remove,
-.destinations .destinations__pricePlus.fieldBlock .destinations__icon.remove,
-.destinations .destinations__priceMinus.fieldBlock .destinations__icon.remove,
-.actualites .destinations__deroulement.fieldBlock .destinations__icon.remove,
-.actualites .destinations__pricePlus.fieldBlock .destinations__icon.remove,
-.actualites .destinations__priceMinus.fieldBlock .destinations__icon.remove,
-.voyages .destinations__deroulement.fieldBlock .destinations__icon.remove,
-.voyages .destinations__pricePlus.fieldBlock .destinations__icon.remove,
-.voyages .destinations__priceMinus.fieldBlock .destinations__icon.remove,
-.carnets .destinations__deroulement.fieldBlock .destinations__icon.remove,
-.carnets .destinations__pricePlus.fieldBlock .destinations__icon.remove,
-.carnets .destinations__priceMinus.fieldBlock .destinations__icon.remove,
-.articles .destinations__deroulement.fieldBlock .destinations__icon.remove,
-.articles .destinations__pricePlus.fieldBlock .destinations__icon.remove,
-.articles .destinations__priceMinus.fieldBlock .destinations__icon.remove,
-.commentaires .destinations__deroulement.fieldBlock .destinations__icon.remove,
-.commentaires .destinations__pricePlus.fieldBlock .destinations__icon.remove,
-.commentaires .destinations__priceMinus.fieldBlock .destinations__icon.remove,
-.utilisateurs .destinations__deroulement.fieldBlock .destinations__icon.remove,
-.utilisateurs .destinations__pricePlus.fieldBlock .destinations__icon.remove,
-.utilisateurs .destinations__priceMinus.fieldBlock .destinations__icon.remove {
+.main-content .destinations__deroulement.fieldBlock .destinations__icon.remove,
+.main-content .destinations__pricePlus.fieldBlock .destinations__icon.remove,
+.main-content .destinations__priceMinus.fieldBlock .destinations__icon.remove {
   position: absolute;
   background-color: #fff;
   top: -25px;
@@ -8562,83 +7160,23 @@ body.admin .charts h3 {
   display: block;
   margin: 0 auto;
 }
-.destinations .destinations__deroulement.fieldBlock .destinations__icon.remove:hover, .destinations .destinations__deroulement.fieldBlock .destinations__icon.remove:focus,
-.destinations .destinations__pricePlus.fieldBlock .destinations__icon.remove:hover,
-.destinations .destinations__pricePlus.fieldBlock .destinations__icon.remove:focus,
-.destinations .destinations__priceMinus.fieldBlock .destinations__icon.remove:hover,
-.destinations .destinations__priceMinus.fieldBlock .destinations__icon.remove:focus,
-.actualites .destinations__deroulement.fieldBlock .destinations__icon.remove:hover,
-.actualites .destinations__deroulement.fieldBlock .destinations__icon.remove:focus,
-.actualites .destinations__pricePlus.fieldBlock .destinations__icon.remove:hover,
-.actualites .destinations__pricePlus.fieldBlock .destinations__icon.remove:focus,
-.actualites .destinations__priceMinus.fieldBlock .destinations__icon.remove:hover,
-.actualites .destinations__priceMinus.fieldBlock .destinations__icon.remove:focus,
-.voyages .destinations__deroulement.fieldBlock .destinations__icon.remove:hover,
-.voyages .destinations__deroulement.fieldBlock .destinations__icon.remove:focus,
-.voyages .destinations__pricePlus.fieldBlock .destinations__icon.remove:hover,
-.voyages .destinations__pricePlus.fieldBlock .destinations__icon.remove:focus,
-.voyages .destinations__priceMinus.fieldBlock .destinations__icon.remove:hover,
-.voyages .destinations__priceMinus.fieldBlock .destinations__icon.remove:focus,
-.carnets .destinations__deroulement.fieldBlock .destinations__icon.remove:hover,
-.carnets .destinations__deroulement.fieldBlock .destinations__icon.remove:focus,
-.carnets .destinations__pricePlus.fieldBlock .destinations__icon.remove:hover,
-.carnets .destinations__pricePlus.fieldBlock .destinations__icon.remove:focus,
-.carnets .destinations__priceMinus.fieldBlock .destinations__icon.remove:hover,
-.carnets .destinations__priceMinus.fieldBlock .destinations__icon.remove:focus,
-.articles .destinations__deroulement.fieldBlock .destinations__icon.remove:hover,
-.articles .destinations__deroulement.fieldBlock .destinations__icon.remove:focus,
-.articles .destinations__pricePlus.fieldBlock .destinations__icon.remove:hover,
-.articles .destinations__pricePlus.fieldBlock .destinations__icon.remove:focus,
-.articles .destinations__priceMinus.fieldBlock .destinations__icon.remove:hover,
-.articles .destinations__priceMinus.fieldBlock .destinations__icon.remove:focus,
-.commentaires .destinations__deroulement.fieldBlock .destinations__icon.remove:hover,
-.commentaires .destinations__deroulement.fieldBlock .destinations__icon.remove:focus,
-.commentaires .destinations__pricePlus.fieldBlock .destinations__icon.remove:hover,
-.commentaires .destinations__pricePlus.fieldBlock .destinations__icon.remove:focus,
-.commentaires .destinations__priceMinus.fieldBlock .destinations__icon.remove:hover,
-.commentaires .destinations__priceMinus.fieldBlock .destinations__icon.remove:focus,
-.utilisateurs .destinations__deroulement.fieldBlock .destinations__icon.remove:hover,
-.utilisateurs .destinations__deroulement.fieldBlock .destinations__icon.remove:focus,
-.utilisateurs .destinations__pricePlus.fieldBlock .destinations__icon.remove:hover,
-.utilisateurs .destinations__pricePlus.fieldBlock .destinations__icon.remove:focus,
-.utilisateurs .destinations__priceMinus.fieldBlock .destinations__icon.remove:hover,
-.utilisateurs .destinations__priceMinus.fieldBlock .destinations__icon.remove:focus {
+.main-content .destinations__deroulement.fieldBlock .destinations__icon.remove:hover, .main-content .destinations__deroulement.fieldBlock .destinations__icon.remove:focus,
+.main-content .destinations__pricePlus.fieldBlock .destinations__icon.remove:hover,
+.main-content .destinations__pricePlus.fieldBlock .destinations__icon.remove:focus,
+.main-content .destinations__priceMinus.fieldBlock .destinations__icon.remove:hover,
+.main-content .destinations__priceMinus.fieldBlock .destinations__icon.remove:focus {
   background-color: #242424;
 }
-.destinations .voyages__detailsPrix,
-.actualites .voyages__detailsPrix,
-.voyages .voyages__detailsPrix,
-.carnets .voyages__detailsPrix,
-.articles .voyages__detailsPrix,
-.commentaires .voyages__detailsPrix,
-.utilisateurs .voyages__detailsPrix {
+.main-content .voyages__detailsPrix {
   margin-bottom: 25px;
 }
-.destinations .voyages__detailsPrix:last-child,
-.actualites .voyages__detailsPrix:last-child,
-.voyages .voyages__detailsPrix:last-child,
-.carnets .voyages__detailsPrix:last-child,
-.articles .voyages__detailsPrix:last-child,
-.commentaires .voyages__detailsPrix:last-child,
-.utilisateurs .voyages__detailsPrix:last-child {
+.main-content .voyages__detailsPrix:last-child {
   margin-bottom: 50px;
 }
-.destinations .voyages__detailsPrix .button,
-.actualites .voyages__detailsPrix .button,
-.voyages .voyages__detailsPrix .button,
-.carnets .voyages__detailsPrix .button,
-.articles .voyages__detailsPrix .button,
-.commentaires .voyages__detailsPrix .button,
-.utilisateurs .voyages__detailsPrix .button {
+.main-content .voyages__detailsPrix .button {
   width: 250px;
 }
-.destinations .destinations__gallery .custom-file-input,
-.actualites .destinations__gallery .custom-file-input,
-.voyages .destinations__gallery .custom-file-input,
-.carnets .destinations__gallery .custom-file-input,
-.articles .destinations__gallery .custom-file-input,
-.commentaires .destinations__gallery .custom-file-input,
-.utilisateurs .destinations__gallery .custom-file-input {
+.main-content .destinations__gallery .custom-file-input {
   width: 50%;
   margin: 0 auto;
 }
@@ -8872,648 +7410,148 @@ body.admin .charts h3 {
   /*------------------------------------*\
       #DESTINATIONS || #ACTUALITES
   \*------------------------------------*/
-  .destinations .module__tools .custom-search,
-  .actualites .module__tools .custom-search,
-  .carnets .module__tools .custom-search,
-  .articles .module__tools .custom-search,
-  .commentaires .module__tools .custom-search,
-  .utilisateurs .module__tools .custom-search {
+  .main-content .module__tools .custom-search {
     margin-right: 0;
     width: 200px;
   }
-  .destinations .module__tools input, .destinations .module__tools .button,
-  .actualites .module__tools input,
-  .actualites .module__tools .button,
-  .carnets .module__tools input,
-  .carnets .module__tools .button,
-  .articles .module__tools input,
-  .articles .module__tools .button,
-  .commentaires .module__tools input,
-  .commentaires .module__tools .button,
-  .utilisateurs .module__tools input,
-  .utilisateurs .module__tools .button {
+  .main-content .module__tools input, .main-content .module__tools .button {
     display: block;
     width: 200px;
     margin-right: auto;
     margin-bottom: 15px;
   }
-  .destinations .module__tools .button:last-child,
-  .actualites .module__tools .button:last-child,
-  .carnets .module__tools .button:last-child,
-  .articles .module__tools .button:last-child,
-  .commentaires .module__tools .button:last-child,
-  .utilisateurs .module__tools .button:last-child {
+  .main-content .module__tools .button:last-child {
     margin-bottom: 0;
   }
-  .destinations .destinations__single .well,
-  .destinations .actualites__single .well,
-  .destinations .carnets__single .well,
-  .actualites .destinations__single .well,
-  .actualites .actualites__single .well,
-  .actualites .carnets__single .well,
-  .carnets .destinations__single .well,
-  .carnets .actualites__single .well,
-  .carnets .carnets__single .well,
-  .articles .destinations__single .well,
-  .articles .actualites__single .well,
-  .articles .carnets__single .well,
-  .commentaires .destinations__single .well,
-  .commentaires .actualites__single .well,
-  .commentaires .carnets__single .well,
-  .utilisateurs .destinations__single .well,
-  .utilisateurs .actualites__single .well,
-  .utilisateurs .carnets__single .well {
+  .main-content .destinations__single .well,
+  .main-content .actualites__single .well,
+  .main-content .carnets__single .well {
     display: block;
     padding: 25px;
   }
-  .destinations .destinations__single .well .single__block,
-  .destinations .actualites__single .well .single__block,
-  .destinations .carnets__single .well .single__block,
-  .actualites .destinations__single .well .single__block,
-  .actualites .actualites__single .well .single__block,
-  .actualites .carnets__single .well .single__block,
-  .carnets .destinations__single .well .single__block,
-  .carnets .actualites__single .well .single__block,
-  .carnets .carnets__single .well .single__block,
-  .articles .destinations__single .well .single__block,
-  .articles .actualites__single .well .single__block,
-  .articles .carnets__single .well .single__block,
-  .commentaires .destinations__single .well .single__block,
-  .commentaires .actualites__single .well .single__block,
-  .commentaires .carnets__single .well .single__block,
-  .utilisateurs .destinations__single .well .single__block,
-  .utilisateurs .actualites__single .well .single__block,
-  .utilisateurs .carnets__single .well .single__block {
+  .main-content .destinations__single .well .single__block,
+  .main-content .actualites__single .well .single__block,
+  .main-content .carnets__single .well .single__block {
     display: block;
   }
-  .destinations .destinations__single .carnets__header,
-  .destinations .actualites__single .carnets__header,
-  .destinations .carnets__single .carnets__header,
-  .actualites .destinations__single .carnets__header,
-  .actualites .actualites__single .carnets__header,
-  .actualites .carnets__single .carnets__header,
-  .carnets .destinations__single .carnets__header,
-  .carnets .actualites__single .carnets__header,
-  .carnets .carnets__single .carnets__header,
-  .articles .destinations__single .carnets__header,
-  .articles .actualites__single .carnets__header,
-  .articles .carnets__single .carnets__header,
-  .commentaires .destinations__single .carnets__header,
-  .commentaires .actualites__single .carnets__header,
-  .commentaires .carnets__single .carnets__header,
-  .utilisateurs .destinations__single .carnets__header,
-  .utilisateurs .actualites__single .carnets__header,
-  .utilisateurs .carnets__single .carnets__header {
+  .main-content .destinations__single .carnets__header,
+  .main-content .actualites__single .carnets__header,
+  .main-content .carnets__single .carnets__header {
     left: 25px;
     right: 25px;
     text-align: center;
   }
-  .destinations .destinations__single .carnets__header h3,
-  .destinations .actualites__single .carnets__header h3,
-  .destinations .carnets__single .carnets__header h3,
-  .actualites .destinations__single .carnets__header h3,
-  .actualites .actualites__single .carnets__header h3,
-  .actualites .carnets__single .carnets__header h3,
-  .carnets .destinations__single .carnets__header h3,
-  .carnets .actualites__single .carnets__header h3,
-  .carnets .carnets__single .carnets__header h3,
-  .articles .destinations__single .carnets__header h3,
-  .articles .actualites__single .carnets__header h3,
-  .articles .carnets__single .carnets__header h3,
-  .commentaires .destinations__single .carnets__header h3,
-  .commentaires .actualites__single .carnets__header h3,
-  .commentaires .carnets__single .carnets__header h3,
-  .utilisateurs .destinations__single .carnets__header h3,
-  .utilisateurs .actualites__single .carnets__header h3,
-  .utilisateurs .carnets__single .carnets__header h3 {
+  .main-content .destinations__single .carnets__header h3,
+  .main-content .actualites__single .carnets__header h3,
+  .main-content .carnets__single .carnets__header h3 {
     font-size: 20px;
     line-height: 30px;
   }
-  .destinations .destinations__single .carnets__article,
-  .destinations .destinations__single .carnets__commentaire,
-  .destinations .actualites__single .carnets__article,
-  .destinations .actualites__single .carnets__commentaire,
-  .destinations .carnets__single .carnets__article,
-  .destinations .carnets__single .carnets__commentaire,
-  .actualites .destinations__single .carnets__article,
-  .actualites .destinations__single .carnets__commentaire,
-  .actualites .actualites__single .carnets__article,
-  .actualites .actualites__single .carnets__commentaire,
-  .actualites .carnets__single .carnets__article,
-  .actualites .carnets__single .carnets__commentaire,
-  .carnets .destinations__single .carnets__article,
-  .carnets .destinations__single .carnets__commentaire,
-  .carnets .actualites__single .carnets__article,
-  .carnets .actualites__single .carnets__commentaire,
-  .carnets .carnets__single .carnets__article,
-  .carnets .carnets__single .carnets__commentaire,
-  .articles .destinations__single .carnets__article,
-  .articles .destinations__single .carnets__commentaire,
-  .articles .actualites__single .carnets__article,
-  .articles .actualites__single .carnets__commentaire,
-  .articles .carnets__single .carnets__article,
-  .articles .carnets__single .carnets__commentaire,
-  .commentaires .destinations__single .carnets__article,
-  .commentaires .destinations__single .carnets__commentaire,
-  .commentaires .actualites__single .carnets__article,
-  .commentaires .actualites__single .carnets__commentaire,
-  .commentaires .carnets__single .carnets__article,
-  .commentaires .carnets__single .carnets__commentaire,
-  .utilisateurs .destinations__single .carnets__article,
-  .utilisateurs .destinations__single .carnets__commentaire,
-  .utilisateurs .actualites__single .carnets__article,
-  .utilisateurs .actualites__single .carnets__commentaire,
-  .utilisateurs .carnets__single .carnets__article,
-  .utilisateurs .carnets__single .carnets__commentaire {
+  .main-content .destinations__single .carnets__article,
+  .main-content .destinations__single .carnets__commentaire,
+  .main-content .actualites__single .carnets__article,
+  .main-content .actualites__single .carnets__commentaire,
+  .main-content .carnets__single .carnets__article,
+  .main-content .carnets__single .carnets__commentaire {
     text-align: center;
   }
-  .destinations .destinations__single .carnets__article .infoBlock,
-  .destinations .destinations__single .carnets__commentaire .infoBlock,
-  .destinations .actualites__single .carnets__article .infoBlock,
-  .destinations .actualites__single .carnets__commentaire .infoBlock,
-  .destinations .carnets__single .carnets__article .infoBlock,
-  .destinations .carnets__single .carnets__commentaire .infoBlock,
-  .actualites .destinations__single .carnets__article .infoBlock,
-  .actualites .destinations__single .carnets__commentaire .infoBlock,
-  .actualites .actualites__single .carnets__article .infoBlock,
-  .actualites .actualites__single .carnets__commentaire .infoBlock,
-  .actualites .carnets__single .carnets__article .infoBlock,
-  .actualites .carnets__single .carnets__commentaire .infoBlock,
-  .carnets .destinations__single .carnets__article .infoBlock,
-  .carnets .destinations__single .carnets__commentaire .infoBlock,
-  .carnets .actualites__single .carnets__article .infoBlock,
-  .carnets .actualites__single .carnets__commentaire .infoBlock,
-  .carnets .carnets__single .carnets__article .infoBlock,
-  .carnets .carnets__single .carnets__commentaire .infoBlock,
-  .articles .destinations__single .carnets__article .infoBlock,
-  .articles .destinations__single .carnets__commentaire .infoBlock,
-  .articles .actualites__single .carnets__article .infoBlock,
-  .articles .actualites__single .carnets__commentaire .infoBlock,
-  .articles .carnets__single .carnets__article .infoBlock,
-  .articles .carnets__single .carnets__commentaire .infoBlock,
-  .commentaires .destinations__single .carnets__article .infoBlock,
-  .commentaires .destinations__single .carnets__commentaire .infoBlock,
-  .commentaires .actualites__single .carnets__article .infoBlock,
-  .commentaires .actualites__single .carnets__commentaire .infoBlock,
-  .commentaires .carnets__single .carnets__article .infoBlock,
-  .commentaires .carnets__single .carnets__commentaire .infoBlock,
-  .utilisateurs .destinations__single .carnets__article .infoBlock,
-  .utilisateurs .destinations__single .carnets__commentaire .infoBlock,
-  .utilisateurs .actualites__single .carnets__article .infoBlock,
-  .utilisateurs .actualites__single .carnets__commentaire .infoBlock,
-  .utilisateurs .carnets__single .carnets__article .infoBlock,
-  .utilisateurs .carnets__single .carnets__commentaire .infoBlock {
+  .main-content .destinations__single .carnets__article .infoBlock,
+  .main-content .destinations__single .carnets__commentaire .infoBlock,
+  .main-content .actualites__single .carnets__article .infoBlock,
+  .main-content .actualites__single .carnets__commentaire .infoBlock,
+  .main-content .carnets__single .carnets__article .infoBlock,
+  .main-content .carnets__single .carnets__commentaire .infoBlock {
     padding-top: 0;
   }
-  .destinations .destinations__single .carnets__article .infoBlock h4, .destinations .destinations__single .carnets__article .infoBlock p,
-  .destinations .destinations__single .carnets__commentaire .infoBlock h4,
-  .destinations .destinations__single .carnets__commentaire .infoBlock p,
-  .destinations .actualites__single .carnets__article .infoBlock h4,
-  .destinations .actualites__single .carnets__article .infoBlock p,
-  .destinations .actualites__single .carnets__commentaire .infoBlock h4,
-  .destinations .actualites__single .carnets__commentaire .infoBlock p,
-  .destinations .carnets__single .carnets__article .infoBlock h4,
-  .destinations .carnets__single .carnets__article .infoBlock p,
-  .destinations .carnets__single .carnets__commentaire .infoBlock h4,
-  .destinations .carnets__single .carnets__commentaire .infoBlock p,
-  .actualites .destinations__single .carnets__article .infoBlock h4,
-  .actualites .destinations__single .carnets__article .infoBlock p,
-  .actualites .destinations__single .carnets__commentaire .infoBlock h4,
-  .actualites .destinations__single .carnets__commentaire .infoBlock p,
-  .actualites .actualites__single .carnets__article .infoBlock h4,
-  .actualites .actualites__single .carnets__article .infoBlock p,
-  .actualites .actualites__single .carnets__commentaire .infoBlock h4,
-  .actualites .actualites__single .carnets__commentaire .infoBlock p,
-  .actualites .carnets__single .carnets__article .infoBlock h4,
-  .actualites .carnets__single .carnets__article .infoBlock p,
-  .actualites .carnets__single .carnets__commentaire .infoBlock h4,
-  .actualites .carnets__single .carnets__commentaire .infoBlock p,
-  .carnets .destinations__single .carnets__article .infoBlock h4,
-  .carnets .destinations__single .carnets__article .infoBlock p,
-  .carnets .destinations__single .carnets__commentaire .infoBlock h4,
-  .carnets .destinations__single .carnets__commentaire .infoBlock p,
-  .carnets .actualites__single .carnets__article .infoBlock h4,
-  .carnets .actualites__single .carnets__article .infoBlock p,
-  .carnets .actualites__single .carnets__commentaire .infoBlock h4,
-  .carnets .actualites__single .carnets__commentaire .infoBlock p,
-  .carnets .carnets__single .carnets__article .infoBlock h4,
-  .carnets .carnets__single .carnets__article .infoBlock p,
-  .carnets .carnets__single .carnets__commentaire .infoBlock h4,
-  .carnets .carnets__single .carnets__commentaire .infoBlock p,
-  .articles .destinations__single .carnets__article .infoBlock h4,
-  .articles .destinations__single .carnets__article .infoBlock p,
-  .articles .destinations__single .carnets__commentaire .infoBlock h4,
-  .articles .destinations__single .carnets__commentaire .infoBlock p,
-  .articles .actualites__single .carnets__article .infoBlock h4,
-  .articles .actualites__single .carnets__article .infoBlock p,
-  .articles .actualites__single .carnets__commentaire .infoBlock h4,
-  .articles .actualites__single .carnets__commentaire .infoBlock p,
-  .articles .carnets__single .carnets__article .infoBlock h4,
-  .articles .carnets__single .carnets__article .infoBlock p,
-  .articles .carnets__single .carnets__commentaire .infoBlock h4,
-  .articles .carnets__single .carnets__commentaire .infoBlock p,
-  .commentaires .destinations__single .carnets__article .infoBlock h4,
-  .commentaires .destinations__single .carnets__article .infoBlock p,
-  .commentaires .destinations__single .carnets__commentaire .infoBlock h4,
-  .commentaires .destinations__single .carnets__commentaire .infoBlock p,
-  .commentaires .actualites__single .carnets__article .infoBlock h4,
-  .commentaires .actualites__single .carnets__article .infoBlock p,
-  .commentaires .actualites__single .carnets__commentaire .infoBlock h4,
-  .commentaires .actualites__single .carnets__commentaire .infoBlock p,
-  .commentaires .carnets__single .carnets__article .infoBlock h4,
-  .commentaires .carnets__single .carnets__article .infoBlock p,
-  .commentaires .carnets__single .carnets__commentaire .infoBlock h4,
-  .commentaires .carnets__single .carnets__commentaire .infoBlock p,
-  .utilisateurs .destinations__single .carnets__article .infoBlock h4,
-  .utilisateurs .destinations__single .carnets__article .infoBlock p,
-  .utilisateurs .destinations__single .carnets__commentaire .infoBlock h4,
-  .utilisateurs .destinations__single .carnets__commentaire .infoBlock p,
-  .utilisateurs .actualites__single .carnets__article .infoBlock h4,
-  .utilisateurs .actualites__single .carnets__article .infoBlock p,
-  .utilisateurs .actualites__single .carnets__commentaire .infoBlock h4,
-  .utilisateurs .actualites__single .carnets__commentaire .infoBlock p,
-  .utilisateurs .carnets__single .carnets__article .infoBlock h4,
-  .utilisateurs .carnets__single .carnets__article .infoBlock p,
-  .utilisateurs .carnets__single .carnets__commentaire .infoBlock h4,
-  .utilisateurs .carnets__single .carnets__commentaire .infoBlock p {
+  .main-content .destinations__single .carnets__article .infoBlock h4, .main-content .destinations__single .carnets__article .infoBlock p,
+  .main-content .destinations__single .carnets__commentaire .infoBlock h4,
+  .main-content .destinations__single .carnets__commentaire .infoBlock p,
+  .main-content .actualites__single .carnets__article .infoBlock h4,
+  .main-content .actualites__single .carnets__article .infoBlock p,
+  .main-content .actualites__single .carnets__commentaire .infoBlock h4,
+  .main-content .actualites__single .carnets__commentaire .infoBlock p,
+  .main-content .carnets__single .carnets__article .infoBlock h4,
+  .main-content .carnets__single .carnets__article .infoBlock p,
+  .main-content .carnets__single .carnets__commentaire .infoBlock h4,
+  .main-content .carnets__single .carnets__commentaire .infoBlock p {
     text-align: center;
   }
-  .destinations .destinations__single .carnets__article .infoBlock > h4,
-  .destinations .destinations__single .carnets__commentaire .infoBlock > h4,
-  .destinations .actualites__single .carnets__article .infoBlock > h4,
-  .destinations .actualites__single .carnets__commentaire .infoBlock > h4,
-  .destinations .carnets__single .carnets__article .infoBlock > h4,
-  .destinations .carnets__single .carnets__commentaire .infoBlock > h4,
-  .actualites .destinations__single .carnets__article .infoBlock > h4,
-  .actualites .destinations__single .carnets__commentaire .infoBlock > h4,
-  .actualites .actualites__single .carnets__article .infoBlock > h4,
-  .actualites .actualites__single .carnets__commentaire .infoBlock > h4,
-  .actualites .carnets__single .carnets__article .infoBlock > h4,
-  .actualites .carnets__single .carnets__commentaire .infoBlock > h4,
-  .carnets .destinations__single .carnets__article .infoBlock > h4,
-  .carnets .destinations__single .carnets__commentaire .infoBlock > h4,
-  .carnets .actualites__single .carnets__article .infoBlock > h4,
-  .carnets .actualites__single .carnets__commentaire .infoBlock > h4,
-  .carnets .carnets__single .carnets__article .infoBlock > h4,
-  .carnets .carnets__single .carnets__commentaire .infoBlock > h4,
-  .articles .destinations__single .carnets__article .infoBlock > h4,
-  .articles .destinations__single .carnets__commentaire .infoBlock > h4,
-  .articles .actualites__single .carnets__article .infoBlock > h4,
-  .articles .actualites__single .carnets__commentaire .infoBlock > h4,
-  .articles .carnets__single .carnets__article .infoBlock > h4,
-  .articles .carnets__single .carnets__commentaire .infoBlock > h4,
-  .commentaires .destinations__single .carnets__article .infoBlock > h4,
-  .commentaires .destinations__single .carnets__commentaire .infoBlock > h4,
-  .commentaires .actualites__single .carnets__article .infoBlock > h4,
-  .commentaires .actualites__single .carnets__commentaire .infoBlock > h4,
-  .commentaires .carnets__single .carnets__article .infoBlock > h4,
-  .commentaires .carnets__single .carnets__commentaire .infoBlock > h4,
-  .utilisateurs .destinations__single .carnets__article .infoBlock > h4,
-  .utilisateurs .destinations__single .carnets__commentaire .infoBlock > h4,
-  .utilisateurs .actualites__single .carnets__article .infoBlock > h4,
-  .utilisateurs .actualites__single .carnets__commentaire .infoBlock > h4,
-  .utilisateurs .carnets__single .carnets__article .infoBlock > h4,
-  .utilisateurs .carnets__single .carnets__commentaire .infoBlock > h4 {
+  .main-content .destinations__single .carnets__article .infoBlock > h4,
+  .main-content .destinations__single .carnets__commentaire .infoBlock > h4,
+  .main-content .actualites__single .carnets__article .infoBlock > h4,
+  .main-content .actualites__single .carnets__commentaire .infoBlock > h4,
+  .main-content .carnets__single .carnets__article .infoBlock > h4,
+  .main-content .carnets__single .carnets__commentaire .infoBlock > h4 {
     font-size: 16px;
     line-height: 26px;
   }
-  .destinations .destinations__single .carnets__article .infoBlock > p,
-  .destinations .destinations__single .carnets__commentaire .infoBlock > p,
-  .destinations .actualites__single .carnets__article .infoBlock > p,
-  .destinations .actualites__single .carnets__commentaire .infoBlock > p,
-  .destinations .carnets__single .carnets__article .infoBlock > p,
-  .destinations .carnets__single .carnets__commentaire .infoBlock > p,
-  .actualites .destinations__single .carnets__article .infoBlock > p,
-  .actualites .destinations__single .carnets__commentaire .infoBlock > p,
-  .actualites .actualites__single .carnets__article .infoBlock > p,
-  .actualites .actualites__single .carnets__commentaire .infoBlock > p,
-  .actualites .carnets__single .carnets__article .infoBlock > p,
-  .actualites .carnets__single .carnets__commentaire .infoBlock > p,
-  .carnets .destinations__single .carnets__article .infoBlock > p,
-  .carnets .destinations__single .carnets__commentaire .infoBlock > p,
-  .carnets .actualites__single .carnets__article .infoBlock > p,
-  .carnets .actualites__single .carnets__commentaire .infoBlock > p,
-  .carnets .carnets__single .carnets__article .infoBlock > p,
-  .carnets .carnets__single .carnets__commentaire .infoBlock > p,
-  .articles .destinations__single .carnets__article .infoBlock > p,
-  .articles .destinations__single .carnets__commentaire .infoBlock > p,
-  .articles .actualites__single .carnets__article .infoBlock > p,
-  .articles .actualites__single .carnets__commentaire .infoBlock > p,
-  .articles .carnets__single .carnets__article .infoBlock > p,
-  .articles .carnets__single .carnets__commentaire .infoBlock > p,
-  .commentaires .destinations__single .carnets__article .infoBlock > p,
-  .commentaires .destinations__single .carnets__commentaire .infoBlock > p,
-  .commentaires .actualites__single .carnets__article .infoBlock > p,
-  .commentaires .actualites__single .carnets__commentaire .infoBlock > p,
-  .commentaires .carnets__single .carnets__article .infoBlock > p,
-  .commentaires .carnets__single .carnets__commentaire .infoBlock > p,
-  .utilisateurs .destinations__single .carnets__article .infoBlock > p,
-  .utilisateurs .destinations__single .carnets__commentaire .infoBlock > p,
-  .utilisateurs .actualites__single .carnets__article .infoBlock > p,
-  .utilisateurs .actualites__single .carnets__commentaire .infoBlock > p,
-  .utilisateurs .carnets__single .carnets__article .infoBlock > p,
-  .utilisateurs .carnets__single .carnets__commentaire .infoBlock > p {
+  .main-content .destinations__single .carnets__article .infoBlock > p,
+  .main-content .destinations__single .carnets__commentaire .infoBlock > p,
+  .main-content .actualites__single .carnets__article .infoBlock > p,
+  .main-content .actualites__single .carnets__commentaire .infoBlock > p,
+  .main-content .carnets__single .carnets__article .infoBlock > p,
+  .main-content .carnets__single .carnets__commentaire .infoBlock > p {
     padding: 0;
   }
-  .destinations .destinations__single .carnets__article .infoBlock .button.small,
-  .destinations .destinations__single .carnets__commentaire .infoBlock .button.small,
-  .destinations .actualites__single .carnets__article .infoBlock .button.small,
-  .destinations .actualites__single .carnets__commentaire .infoBlock .button.small,
-  .destinations .carnets__single .carnets__article .infoBlock .button.small,
-  .destinations .carnets__single .carnets__commentaire .infoBlock .button.small,
-  .actualites .destinations__single .carnets__article .infoBlock .button.small,
-  .actualites .destinations__single .carnets__commentaire .infoBlock .button.small,
-  .actualites .actualites__single .carnets__article .infoBlock .button.small,
-  .actualites .actualites__single .carnets__commentaire .infoBlock .button.small,
-  .actualites .carnets__single .carnets__article .infoBlock .button.small,
-  .actualites .carnets__single .carnets__commentaire .infoBlock .button.small,
-  .carnets .destinations__single .carnets__article .infoBlock .button.small,
-  .carnets .destinations__single .carnets__commentaire .infoBlock .button.small,
-  .carnets .actualites__single .carnets__article .infoBlock .button.small,
-  .carnets .actualites__single .carnets__commentaire .infoBlock .button.small,
-  .carnets .carnets__single .carnets__article .infoBlock .button.small,
-  .carnets .carnets__single .carnets__commentaire .infoBlock .button.small,
-  .articles .destinations__single .carnets__article .infoBlock .button.small,
-  .articles .destinations__single .carnets__commentaire .infoBlock .button.small,
-  .articles .actualites__single .carnets__article .infoBlock .button.small,
-  .articles .actualites__single .carnets__commentaire .infoBlock .button.small,
-  .articles .carnets__single .carnets__article .infoBlock .button.small,
-  .articles .carnets__single .carnets__commentaire .infoBlock .button.small,
-  .commentaires .destinations__single .carnets__article .infoBlock .button.small,
-  .commentaires .destinations__single .carnets__commentaire .infoBlock .button.small,
-  .commentaires .actualites__single .carnets__article .infoBlock .button.small,
-  .commentaires .actualites__single .carnets__commentaire .infoBlock .button.small,
-  .commentaires .carnets__single .carnets__article .infoBlock .button.small,
-  .commentaires .carnets__single .carnets__commentaire .infoBlock .button.small,
-  .utilisateurs .destinations__single .carnets__article .infoBlock .button.small,
-  .utilisateurs .destinations__single .carnets__commentaire .infoBlock .button.small,
-  .utilisateurs .actualites__single .carnets__article .infoBlock .button.small,
-  .utilisateurs .actualites__single .carnets__commentaire .infoBlock .button.small,
-  .utilisateurs .carnets__single .carnets__article .infoBlock .button.small,
-  .utilisateurs .carnets__single .carnets__commentaire .infoBlock .button.small {
+  .main-content .destinations__single .carnets__article .infoBlock .button.small,
+  .main-content .destinations__single .carnets__commentaire .infoBlock .button.small,
+  .main-content .actualites__single .carnets__article .infoBlock .button.small,
+  .main-content .actualites__single .carnets__commentaire .infoBlock .button.small,
+  .main-content .carnets__single .carnets__article .infoBlock .button.small,
+  .main-content .carnets__single .carnets__commentaire .infoBlock .button.small {
     margin-left: auto;
   }
-  .destinations .destinations__single .carnets__article .buttonsBlock,
-  .destinations .destinations__single .carnets__commentaire .buttonsBlock,
-  .destinations .actualites__single .carnets__article .buttonsBlock,
-  .destinations .actualites__single .carnets__commentaire .buttonsBlock,
-  .destinations .carnets__single .carnets__article .buttonsBlock,
-  .destinations .carnets__single .carnets__commentaire .buttonsBlock,
-  .actualites .destinations__single .carnets__article .buttonsBlock,
-  .actualites .destinations__single .carnets__commentaire .buttonsBlock,
-  .actualites .actualites__single .carnets__article .buttonsBlock,
-  .actualites .actualites__single .carnets__commentaire .buttonsBlock,
-  .actualites .carnets__single .carnets__article .buttonsBlock,
-  .actualites .carnets__single .carnets__commentaire .buttonsBlock,
-  .carnets .destinations__single .carnets__article .buttonsBlock,
-  .carnets .destinations__single .carnets__commentaire .buttonsBlock,
-  .carnets .actualites__single .carnets__article .buttonsBlock,
-  .carnets .actualites__single .carnets__commentaire .buttonsBlock,
-  .carnets .carnets__single .carnets__article .buttonsBlock,
-  .carnets .carnets__single .carnets__commentaire .buttonsBlock,
-  .articles .destinations__single .carnets__article .buttonsBlock,
-  .articles .destinations__single .carnets__commentaire .buttonsBlock,
-  .articles .actualites__single .carnets__article .buttonsBlock,
-  .articles .actualites__single .carnets__commentaire .buttonsBlock,
-  .articles .carnets__single .carnets__article .buttonsBlock,
-  .articles .carnets__single .carnets__commentaire .buttonsBlock,
-  .commentaires .destinations__single .carnets__article .buttonsBlock,
-  .commentaires .destinations__single .carnets__commentaire .buttonsBlock,
-  .commentaires .actualites__single .carnets__article .buttonsBlock,
-  .commentaires .actualites__single .carnets__commentaire .buttonsBlock,
-  .commentaires .carnets__single .carnets__article .buttonsBlock,
-  .commentaires .carnets__single .carnets__commentaire .buttonsBlock,
-  .utilisateurs .destinations__single .carnets__article .buttonsBlock,
-  .utilisateurs .destinations__single .carnets__commentaire .buttonsBlock,
-  .utilisateurs .actualites__single .carnets__article .buttonsBlock,
-  .utilisateurs .actualites__single .carnets__commentaire .buttonsBlock,
-  .utilisateurs .carnets__single .carnets__article .buttonsBlock,
-  .utilisateurs .carnets__single .carnets__commentaire .buttonsBlock {
+  .main-content .destinations__single .carnets__article .buttonsBlock,
+  .main-content .destinations__single .carnets__commentaire .buttonsBlock,
+  .main-content .actualites__single .carnets__article .buttonsBlock,
+  .main-content .actualites__single .carnets__commentaire .buttonsBlock,
+  .main-content .carnets__single .carnets__article .buttonsBlock,
+  .main-content .carnets__single .carnets__commentaire .buttonsBlock {
     width: 100%;
   }
-  .destinations .destinations__single .carnets__article .commentaire__content h4,
-  .destinations .destinations__single .carnets__commentaire .commentaire__content h4,
-  .destinations .actualites__single .carnets__article .commentaire__content h4,
-  .destinations .actualites__single .carnets__commentaire .commentaire__content h4,
-  .destinations .carnets__single .carnets__article .commentaire__content h4,
-  .destinations .carnets__single .carnets__commentaire .commentaire__content h4,
-  .actualites .destinations__single .carnets__article .commentaire__content h4,
-  .actualites .destinations__single .carnets__commentaire .commentaire__content h4,
-  .actualites .actualites__single .carnets__article .commentaire__content h4,
-  .actualites .actualites__single .carnets__commentaire .commentaire__content h4,
-  .actualites .carnets__single .carnets__article .commentaire__content h4,
-  .actualites .carnets__single .carnets__commentaire .commentaire__content h4,
-  .carnets .destinations__single .carnets__article .commentaire__content h4,
-  .carnets .destinations__single .carnets__commentaire .commentaire__content h4,
-  .carnets .actualites__single .carnets__article .commentaire__content h4,
-  .carnets .actualites__single .carnets__commentaire .commentaire__content h4,
-  .carnets .carnets__single .carnets__article .commentaire__content h4,
-  .carnets .carnets__single .carnets__commentaire .commentaire__content h4,
-  .articles .destinations__single .carnets__article .commentaire__content h4,
-  .articles .destinations__single .carnets__commentaire .commentaire__content h4,
-  .articles .actualites__single .carnets__article .commentaire__content h4,
-  .articles .actualites__single .carnets__commentaire .commentaire__content h4,
-  .articles .carnets__single .carnets__article .commentaire__content h4,
-  .articles .carnets__single .carnets__commentaire .commentaire__content h4,
-  .commentaires .destinations__single .carnets__article .commentaire__content h4,
-  .commentaires .destinations__single .carnets__commentaire .commentaire__content h4,
-  .commentaires .actualites__single .carnets__article .commentaire__content h4,
-  .commentaires .actualites__single .carnets__commentaire .commentaire__content h4,
-  .commentaires .carnets__single .carnets__article .commentaire__content h4,
-  .commentaires .carnets__single .carnets__commentaire .commentaire__content h4,
-  .utilisateurs .destinations__single .carnets__article .commentaire__content h4,
-  .utilisateurs .destinations__single .carnets__commentaire .commentaire__content h4,
-  .utilisateurs .actualites__single .carnets__article .commentaire__content h4,
-  .utilisateurs .actualites__single .carnets__commentaire .commentaire__content h4,
-  .utilisateurs .carnets__single .carnets__article .commentaire__content h4,
-  .utilisateurs .carnets__single .carnets__commentaire .commentaire__content h4 {
+  .main-content .destinations__single .carnets__article .commentaire__content h4,
+  .main-content .destinations__single .carnets__commentaire .commentaire__content h4,
+  .main-content .actualites__single .carnets__article .commentaire__content h4,
+  .main-content .actualites__single .carnets__commentaire .commentaire__content h4,
+  .main-content .carnets__single .carnets__article .commentaire__content h4,
+  .main-content .carnets__single .carnets__commentaire .commentaire__content h4 {
     text-align: center;
   }
-  .destinations .destinations__single .carnets__article .commentaire__status,
-  .destinations .destinations__single .carnets__commentaire .commentaire__status,
-  .destinations .actualites__single .carnets__article .commentaire__status,
-  .destinations .actualites__single .carnets__commentaire .commentaire__status,
-  .destinations .carnets__single .carnets__article .commentaire__status,
-  .destinations .carnets__single .carnets__commentaire .commentaire__status,
-  .actualites .destinations__single .carnets__article .commentaire__status,
-  .actualites .destinations__single .carnets__commentaire .commentaire__status,
-  .actualites .actualites__single .carnets__article .commentaire__status,
-  .actualites .actualites__single .carnets__commentaire .commentaire__status,
-  .actualites .carnets__single .carnets__article .commentaire__status,
-  .actualites .carnets__single .carnets__commentaire .commentaire__status,
-  .carnets .destinations__single .carnets__article .commentaire__status,
-  .carnets .destinations__single .carnets__commentaire .commentaire__status,
-  .carnets .actualites__single .carnets__article .commentaire__status,
-  .carnets .actualites__single .carnets__commentaire .commentaire__status,
-  .carnets .carnets__single .carnets__article .commentaire__status,
-  .carnets .carnets__single .carnets__commentaire .commentaire__status,
-  .articles .destinations__single .carnets__article .commentaire__status,
-  .articles .destinations__single .carnets__commentaire .commentaire__status,
-  .articles .actualites__single .carnets__article .commentaire__status,
-  .articles .actualites__single .carnets__commentaire .commentaire__status,
-  .articles .carnets__single .carnets__article .commentaire__status,
-  .articles .carnets__single .carnets__commentaire .commentaire__status,
-  .commentaires .destinations__single .carnets__article .commentaire__status,
-  .commentaires .destinations__single .carnets__commentaire .commentaire__status,
-  .commentaires .actualites__single .carnets__article .commentaire__status,
-  .commentaires .actualites__single .carnets__commentaire .commentaire__status,
-  .commentaires .carnets__single .carnets__article .commentaire__status,
-  .commentaires .carnets__single .carnets__commentaire .commentaire__status,
-  .utilisateurs .destinations__single .carnets__article .commentaire__status,
-  .utilisateurs .destinations__single .carnets__commentaire .commentaire__status,
-  .utilisateurs .actualites__single .carnets__article .commentaire__status,
-  .utilisateurs .actualites__single .carnets__commentaire .commentaire__status,
-  .utilisateurs .carnets__single .carnets__article .commentaire__status,
-  .utilisateurs .carnets__single .carnets__commentaire .commentaire__status {
+  .main-content .destinations__single .carnets__article .commentaire__status,
+  .main-content .destinations__single .carnets__commentaire .commentaire__status,
+  .main-content .actualites__single .carnets__article .commentaire__status,
+  .main-content .actualites__single .carnets__commentaire .commentaire__status,
+  .main-content .carnets__single .carnets__article .commentaire__status,
+  .main-content .carnets__single .carnets__commentaire .commentaire__status {
     padding-left: 0;
   }
-  .destinations .destinations__single .imageBlock, .destinations .destinations__single .infoBlock, .destinations .destinations__single .buttonsBlock,
-  .destinations .actualites__single .imageBlock,
-  .destinations .actualites__single .infoBlock,
-  .destinations .actualites__single .buttonsBlock,
-  .destinations .carnets__single .imageBlock,
-  .destinations .carnets__single .infoBlock,
-  .destinations .carnets__single .buttonsBlock,
-  .actualites .destinations__single .imageBlock,
-  .actualites .destinations__single .infoBlock,
-  .actualites .destinations__single .buttonsBlock,
-  .actualites .actualites__single .imageBlock,
-  .actualites .actualites__single .infoBlock,
-  .actualites .actualites__single .buttonsBlock,
-  .actualites .carnets__single .imageBlock,
-  .actualites .carnets__single .infoBlock,
-  .actualites .carnets__single .buttonsBlock,
-  .carnets .destinations__single .imageBlock,
-  .carnets .destinations__single .infoBlock,
-  .carnets .destinations__single .buttonsBlock,
-  .carnets .actualites__single .imageBlock,
-  .carnets .actualites__single .infoBlock,
-  .carnets .actualites__single .buttonsBlock,
-  .carnets .carnets__single .imageBlock,
-  .carnets .carnets__single .infoBlock,
-  .carnets .carnets__single .buttonsBlock,
-  .articles .destinations__single .imageBlock,
-  .articles .destinations__single .infoBlock,
-  .articles .destinations__single .buttonsBlock,
-  .articles .actualites__single .imageBlock,
-  .articles .actualites__single .infoBlock,
-  .articles .actualites__single .buttonsBlock,
-  .articles .carnets__single .imageBlock,
-  .articles .carnets__single .infoBlock,
-  .articles .carnets__single .buttonsBlock,
-  .commentaires .destinations__single .imageBlock,
-  .commentaires .destinations__single .infoBlock,
-  .commentaires .destinations__single .buttonsBlock,
-  .commentaires .actualites__single .imageBlock,
-  .commentaires .actualites__single .infoBlock,
-  .commentaires .actualites__single .buttonsBlock,
-  .commentaires .carnets__single .imageBlock,
-  .commentaires .carnets__single .infoBlock,
-  .commentaires .carnets__single .buttonsBlock,
-  .utilisateurs .destinations__single .imageBlock,
-  .utilisateurs .destinations__single .infoBlock,
-  .utilisateurs .destinations__single .buttonsBlock,
-  .utilisateurs .actualites__single .imageBlock,
-  .utilisateurs .actualites__single .infoBlock,
-  .utilisateurs .actualites__single .buttonsBlock,
-  .utilisateurs .carnets__single .imageBlock,
-  .utilisateurs .carnets__single .infoBlock,
-  .utilisateurs .carnets__single .buttonsBlock {
+  .main-content .destinations__single .imageBlock, .main-content .destinations__single .infoBlock, .main-content .destinations__single .buttonsBlock,
+  .main-content .actualites__single .imageBlock,
+  .main-content .actualites__single .infoBlock,
+  .main-content .actualites__single .buttonsBlock,
+  .main-content .carnets__single .imageBlock,
+  .main-content .carnets__single .infoBlock,
+  .main-content .carnets__single .buttonsBlock {
     width: 100%;
   }
-  .destinations .destinations__single .infoBlock,
-  .destinations .actualites__single .infoBlock,
-  .destinations .carnets__single .infoBlock,
-  .actualites .destinations__single .infoBlock,
-  .actualites .actualites__single .infoBlock,
-  .actualites .carnets__single .infoBlock,
-  .carnets .destinations__single .infoBlock,
-  .carnets .actualites__single .infoBlock,
-  .carnets .carnets__single .infoBlock,
-  .articles .destinations__single .infoBlock,
-  .articles .actualites__single .infoBlock,
-  .articles .carnets__single .infoBlock,
-  .commentaires .destinations__single .infoBlock,
-  .commentaires .actualites__single .infoBlock,
-  .commentaires .carnets__single .infoBlock,
-  .utilisateurs .destinations__single .infoBlock,
-  .utilisateurs .actualites__single .infoBlock,
-  .utilisateurs .carnets__single .infoBlock {
+  .main-content .destinations__single .infoBlock,
+  .main-content .actualites__single .infoBlock,
+  .main-content .carnets__single .infoBlock {
     padding-top: 25px;
     padding-bottom: 25px;
   }
-  .destinations .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd), .destinations .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .destinations .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .destinations .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .actualites .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .actualites .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .actualites .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .actualites .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .carnets .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .carnets .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .carnets .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .carnets .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .articles .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .articles .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .articles .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .articles .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .commentaires .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .commentaires .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .commentaires .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .commentaires .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .utilisateurs .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .utilisateurs .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .utilisateurs .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .utilisateurs .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
-  .utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
-  .utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) {
+  .main-content .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd), .main-content .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
+  .main-content .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
+  .main-content .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even),
+  .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd),
+  .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) {
     text-align: center;
   }
-  .destinations .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture, .destinations .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .destinations .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .destinations .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .actualites .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .actualites .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .actualites .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .actualites .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .carnets .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .carnets .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .carnets .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .carnets .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .articles .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .articles .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .articles .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .articles .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .commentaires .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .commentaires .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .commentaires .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .commentaires .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .utilisateurs .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .utilisateurs .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .utilisateurs .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .utilisateurs .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
-  .utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
-  .utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture {
+  .main-content .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture, .main-content .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
+  .main-content .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
+  .main-content .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture,
+  .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) .profile-picture,
+  .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) .profile-picture {
     position: relative;
     top: auto;
     left: auto;
@@ -9524,112 +7562,22 @@ body.admin .charts h3 {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  .destinations .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p, .destinations .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .destinations .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .destinations .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .actualites .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .actualites .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .actualites .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .actualites .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .carnets .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .carnets .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .carnets .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .carnets .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .articles .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .articles .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .articles .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .articles .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .commentaires .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .commentaires .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .commentaires .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .commentaires .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .utilisateurs .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .utilisateurs .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .utilisateurs .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .utilisateurs .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
-  .utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
-  .utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p {
+  .main-content .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p, .main-content .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
+  .main-content .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
+  .main-content .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p,
+  .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd) p,
+  .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even) p {
     text-align: center;
   }
-  .destinations .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after, .destinations .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before, .destinations .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after, .destinations .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .destinations .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .destinations .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .destinations .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .destinations .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .destinations .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .actualites .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .actualites .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .actualites .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .actualites .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .actualites .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .actualites .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .actualites .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .actualites .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .actualites .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .carnets .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .carnets .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .carnets .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .carnets .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .carnets .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .carnets .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .carnets .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .carnets .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .carnets .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .articles .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .articles .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .articles .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .articles .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .articles .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .articles .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .articles .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .articles .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .articles .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .commentaires .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .commentaires .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .commentaires .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .commentaires .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .commentaires .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .commentaires .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .commentaires .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .commentaires .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .commentaires .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .utilisateurs .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .utilisateurs .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .utilisateurs .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .utilisateurs .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .utilisateurs .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .utilisateurs .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .utilisateurs .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .utilisateurs .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
-  .utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
-  .utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
-  .utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
-  .utilisateurs .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before {
+  .main-content .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after, .main-content .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before, .main-content .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after, .main-content .destinations__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
+  .main-content .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
+  .main-content .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
+  .main-content .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
+  .main-content .actualites__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before,
+  .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):after,
+  .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(odd):before,
+  .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):after,
+  .main-content .carnets__single.all-comments .carnets__commentaire .commentaire__content:nth-child(even):before {
     top: 50%;
     border: solid transparent;
     content: " ";
@@ -9638,30 +7586,15 @@ body.admin .charts h3 {
     position: absolute;
     pointer-events: none;
   }
-  .destinations .destinations__infoIcons,
-  .actualites .destinations__infoIcons,
-  .carnets .destinations__infoIcons,
-  .articles .destinations__infoIcons,
-  .commentaires .destinations__infoIcons,
-  .utilisateurs .destinations__infoIcons {
+  .main-content .destinations__infoIcons {
     text-align: center;
   }
-  .destinations .destinations__infoIcons li,
-  .actualites .destinations__infoIcons li,
-  .carnets .destinations__infoIcons li,
-  .articles .destinations__infoIcons li,
-  .commentaires .destinations__infoIcons li,
-  .utilisateurs .destinations__infoIcons li {
+  .main-content .destinations__infoIcons li {
     display: inline-block;
     float: none;
     width: 48%;
   }
-  .destinations .destinations__gallery .custom-file-input,
-  .actualites .destinations__gallery .custom-file-input,
-  .carnets .destinations__gallery .custom-file-input,
-  .articles .destinations__gallery .custom-file-input,
-  .commentaires .destinations__gallery .custom-file-input,
-  .utilisateurs .destinations__gallery .custom-file-input {
+  .main-content .destinations__gallery .custom-file-input {
     width: 100%;
   }
 
@@ -9683,19 +7616,19 @@ body.admin .charts h3 {
     width: 50%;
   }
 
-  .destinations .destinations__single .infoBlock {
+  .main-content.destinations .destinations__single .infoBlock {
     padding-right: 0;
     padding-left: 0;
   }
 
-  .articles .carnets__single .well,
-  .commentaires .carnets__single .well {
+  .main-content.articles .carnets__single .well,
+  .main-content.commentaires .carnets__single .well {
     padding-top: 50px;
   }
-  .articles .carnets__single .carnets__article,
-  .articles .carnets__single .carnets__commentaire,
-  .commentaires .carnets__single .carnets__article,
-  .commentaires .carnets__single .carnets__commentaire {
+  .main-content.articles .carnets__single .carnets__article,
+  .main-content.articles .carnets__single .carnets__commentaire,
+  .main-content.commentaires .carnets__single .carnets__article,
+  .main-content.commentaires .carnets__single .carnets__commentaire {
     padding-bottom: 25px;
     margin-bottom: 25px;
   }
@@ -9734,13 +7667,13 @@ body.admin .charts h3 {
     width: 250px;
   }
 
-  .utilisateurs .utilisateurs__infos label, .utilisateurs .utilisateurs__infos input {
+  .main-content.utilisateurs .utilisateurs__infos label, .main-content.utilisateurs .utilisateurs__infos input {
     display: block;
     width: 100%;
     padding-right: 0;
     text-align: center;
   }
-  .utilisateurs .utilisateurs__infos .col-lg-6:nth-child(2) {
+  .main-content.utilisateurs .utilisateurs__infos .col-lg-6:nth-child(2) {
     margin-top: 50px;
   }
 }
@@ -9760,8 +7693,35 @@ body.admin .navbar-brand {
 body.admin .navbar-brand:hover, body.admin .navbar-brand:focus {
   color: #f5f5f5;
 }
+body.admin .navbar-toggle {
+  width: 50px;
+  height: 35px;
+  padding: 6px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  color: #fff;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+body.admin .navbar-toggle .fa {
+  font-size: 1.5em;
+  margin: 0 auto;
+}
+body.admin .navbar-toggle:hover, body.admin .navbar-toggle:focus {
+  color: #242424;
+  background-color: #fff;
+}
+body.admin .navbar-top-links {
+  text-align: center;
+}
 body.admin .navbar-default {
   background: url("../images/texture.png");
+}
+body.admin .navbar-default .navbar-collapse {
+  border: 0px;
 }
 body.admin .navbar-default.sidebar {
   background: url("../images/texture.png");
