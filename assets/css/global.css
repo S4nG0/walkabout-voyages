@@ -6230,6 +6230,10 @@ body.admin input:focus, body.admin textarea:focus {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
 }
+body.admin label[for="pricePlus"],
+body.admin label[for="priceMinus"] {
+  margin-bottom: 25px;
+}
 body.admin hr {
   margin: 50px 0;
   border-top-color: #ccc;
@@ -7034,11 +7038,12 @@ body.admin .charts h3 {
   font-family: 'FontAwesome';
   font-size: 2em;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  line-height: 50px;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -moz-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
@@ -7103,7 +7108,6 @@ body.admin .charts h3 {
 .main-content .destinations__pricePlus.fieldBlock,
 .main-content .destinations__priceMinus.fieldBlock {
   position: relative;
-  margin-top: 25px;
   margin-bottom: 50px;
   border: 1px solid #848484;
   background-color: #fff;
@@ -7155,10 +7159,17 @@ body.admin .charts h3 {
 .main-content .destinations__priceMinus.fieldBlock .destinations__icon.remove {
   position: absolute;
   background-color: #fff;
-  top: -25px;
-  right: -25px;
+  width: 25px;
+  height: 25px;
+  top: -10px;
+  right: -10px;
   display: block;
   margin: 0 auto;
+}
+.main-content .destinations__deroulement.fieldBlock .destinations__icon.remove:after,
+.main-content .destinations__pricePlus.fieldBlock .destinations__icon.remove:after,
+.main-content .destinations__priceMinus.fieldBlock .destinations__icon.remove:after {
+  font-size: 1em;
 }
 .main-content .destinations__deroulement.fieldBlock .destinations__icon.remove:hover, .main-content .destinations__deroulement.fieldBlock .destinations__icon.remove:focus,
 .main-content .destinations__pricePlus.fieldBlock .destinations__icon.remove:hover,
