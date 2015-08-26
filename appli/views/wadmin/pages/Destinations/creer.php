@@ -166,7 +166,7 @@ echo form_open_multipart('walkadmin/destinations/creer');
                     <div class="form-group destinations__deroulement">
                         <span title="Ajouter" class="destinations__icon add" id="add"></span><span>Ajouter un détail</span>
                     </div>
-
+                    <input type="hidden" name="jours" id="jours" value="0">
                     <?php echo form_error('deroulement'); ?>
                 </div>
             </div>

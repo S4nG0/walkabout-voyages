@@ -93,7 +93,7 @@ class Destinations  extends CI_Controller{
 
                 $id_infos = $this->infos_destination->constructeur($idDestination)[0]->idInfosDestinations;
                 $nbDetailprix = $this->details_prix->countDetailPrixByDestination($idDestination)[0]->nbDetailPrix;
-                $taille_jours = (sizeof($this->input->post())-intval($this->input->post('plus'))-intval($this->input->post('minus'))-18)/2;
+                $taille_jours = intval($this->input->post('jours'));
                 $jours = array();
                 $i = 0;
                 $k = 0;
@@ -294,7 +294,7 @@ class Destinations  extends CI_Controller{
             $this->form_validation->set_rules('accompagnement', '"Accompagnement"', 'trim|required|encode_php_tags|xss_clean');
             if($this->form_validation->run()  && isset($_FILES['banner'])){
 
-                $taille_jours = (sizeof($this->input->post())-intval($this->input->post('plus'))-intval($this->input->post('minus'))-17)/2;
+                $taille_jours = intval($this->input->post('jours'));
                 $jours = array();
                 $i = 0;
                 $k = 0;

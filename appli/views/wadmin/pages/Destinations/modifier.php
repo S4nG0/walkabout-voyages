@@ -179,6 +179,7 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
 
                         <?php
                         $iteration = 0;
+                        $jours = 0;
                         if(isset($infos->deroulement)){
                         $informations = json_decode($infos->deroulement);
                         }
@@ -189,15 +190,16 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
                         <div class="form-group destinations__deroulement fieldBlock" id="detail<?php echo $iteration; ?>">
                             <input type="text" placeholder="Jour" name="jour<?php echo $iteration; ?>" id="jour" value="<?php echo $info->titre; ?>"/>
                             <textarea type="text" name="jour_valeur<?php echo $iteration; ?>" id="jour_valeur" rows="5" placeholder="Décrivez l'évènement du jour"><?php echo $info->valeur; ?></textarea>
-                            <span class="destinations__icon remove" onclick="javascript:remove_detail(<?php echo $iteration; ?>);"></span>
+                            <span class="destinations__icon remove" onclick="javascript:remove_detail(<?php echo $iteration; ?>,jours);"></span>
                         </div>
 
                         <?php
                                 $iteration++;
+                                $jours++;
                             }
                         }
                         ?>
-
+                        <input type="hidden" name="jours" id="jours" value="<?php echo $jours; ?>">
                     </div>
 
                     <div class="form-group destinations__deroulement">
