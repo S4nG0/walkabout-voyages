@@ -282,17 +282,17 @@ switch ($newsletter) {
                 $longitude = explode(',',$destination->coordonnees)[1];
             ?>
 
-            var popUp = L.popup({ autoPan: false}).setContent(''+
-            '<a class="no-style" href="<?php echo base_url('nos-destinations/'.$destination->url); ?>" title="Découvrez la destination">'+
-                '<div class="popup_map__image-wrapper">'+
-                    '<div class="popup_map__image" style="background-image: url(\'<?php echo img_url($destination->banner);?>\')"></div>'+
-                '</div>'+
-                '<div class="popup_map__text">'+
-                    '<p class="popup_map__text--title"><?php echo $destination->titre; ?></p>'+
-                    '<p class="popup_map__text--description"><?php echo splitText($destination->description, 94); ?>...</p>'+
-                    '<p class="popup_map__text--location"><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p>'+
-                '</div>'+
-            '</a>').setLatLng(<?php echo $latitude.','.$longitude; ?>);
+            var popUp = L.popup({ autoPan: false}).setContent(""+
+            "<a class='no-style' href='<?php echo base_url('nos-destinations/'.$destination->url); ?>' title='Découvrez la destination'>"+
+                "<div class='popup_map__image-wrapper'>"+
+                    "<div class='popup_map__image' style='background-image: url(<?php echo img_url($destination->banner);?>)'></div>"+
+                "</div>"+
+                "<div class='popup_map__text'>"+
+                    "<p class='popup_map__text--title'><?php echo $destination->titre; ?></p>"+
+                    "<p class='popup_map__text--description'><?php echo splitText($destination->description, 94); ?>...</p>"+
+                    "<p class='popup_map__text--location'><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p>"+
+                "</div>"+
+            "</a>").setLatLng(<?php echo $latitude.",".$longitude; ?>);
 
             marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map).bindPopup(popUp,{
                 className : "popup_map"
