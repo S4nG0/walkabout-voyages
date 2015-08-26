@@ -13,13 +13,13 @@
     <link rel="apple-touch-icon" href="<?php echo img_url('apple-touch-icon.png'); ?>">
     <link rel="alternate" hreflang="fr" href="http://fr.walkabout-voyages.fr/" />
     <link href="https://plus.google.com/114606485962340409388" rel="publisher" />
-    
-    
+
+
     <meta property="og:title" content="<?php echo "$title"; ?>" />
     <meta property="og:type" content="The type" />
     <meta property="og:url" content="<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" />
     <meta property="og:image" content="<?php if(isset($destination[0]->banner) && $destination[0]->banner != ''){echo img_url($destination[0]->banner);}else{echo img_url("background.jpg");}?>" />
-    
+
 
     <!-- Viewport -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,6 +29,7 @@
     <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,600,700|Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300' rel='stylesheet' type='text/css'>
 
     <!-- Vendors -->
+    <link rel="stylesheet" href="<?php echo css_url('leaflet'); ?>">
     <link rel="stylesheet" href="<?php echo css_url('bootstrap.min'); ?>">
     <link rel="stylesheet" href="<?php echo css_url('font-awesome');?>">
     <link rel="stylesheet" href="<?php echo css_url('fancybox');?>">
