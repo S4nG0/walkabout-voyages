@@ -292,10 +292,9 @@ switch ($newsletter) {
                     '<p class="popup_map__text--description"><?php echo splitText($destination->description, 94); ?>...</p>'+
                     '<p class="popup_map__text--location"><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p>'+
                 '</div>'+
-            '</a>');
+            '</a>').setLatLng(<?php echo $latitude.','.$longitude; ?>);
 
-            marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map);
-            marker[$i].bindPopup(popUp,{
+            marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map).bindPopup(popUp,{
                 className : "popup_map"
             });
             $i++;
