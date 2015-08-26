@@ -155,7 +155,7 @@ class Carnetvoyage extends CI_Model {
         $carnets = $this->db->select('*')
                            ->from($this->table)
                            ->where('favoris <> "true"')
-                           ->where('idCarnetDeVoyage IN (Select idCarnet from wa__articles WHERE etat <> "Brouillon" and etat <> "Supprimes")')
+                           ->where('publie <> "Brouillon" and publie <> "Supprimes"')
                            ->limit($nb, $start)
                            ->order_by('publie')
                            ->get()
