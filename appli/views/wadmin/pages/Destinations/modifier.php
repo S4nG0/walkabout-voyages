@@ -259,7 +259,7 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
                                         <textarea name="priceMinus  <?php echo $iteration; ?>" id="priceMinus" rows="2" maxlength="75"
                                                   placeholder="Saisissez votre information"><?php echo $prix->valeur; ?></textarea>
                                         <span class="destinations__icon remove"
-                                              onclick="javascript:remove_detail(<?php echo $iteration; ?>,plus)"></span>
+                                              onclick="javascript:remove_detail(<?php echo $iteration; ?>,minus)"></span>
                                 </div>
                                 <?php
                                 $iteration++;
