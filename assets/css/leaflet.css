@@ -384,7 +384,6 @@
 /* popup */
 
 .leaflet-popup {
-	position: absolute;
 	text-align: center;
 	}
 .leaflet-popup-content-wrapper {
@@ -542,10 +541,4 @@
 
 .leaflet-popup-close-button{
     color : #f0c041 !important;
-}
-
-
-
-.leaflet-popup{
-    position:absolute;
 }

@@ -12,8 +12,7 @@
             <div class="col-md-12">
                 <div class="contain-svg">
                     <?php
-                        $svg = file_get_contents(img_url('walkadmin/world.svg'));
-                        echo $svg;
+                        echo file_get_contents(img_url('walkadmin/world.svg'));
                     ?>
                 </div>
             </div>

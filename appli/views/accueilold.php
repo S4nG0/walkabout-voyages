@@ -25,7 +25,7 @@ switch ($newsletter) {
 
             <!-- Navbar -->
 
-            <?php include 'template/menu.php'; ?>
+<?php include 'template/menu.php'; ?>
 
 
 
@@ -96,11 +96,10 @@ switch ($newsletter) {
 
                     <h2>Nos actualités</h2>
 
-                    <?php
-                    if (sizeof($actus) > 0) {
-                        foreach ($actus as $actu) {
+<?php if(sizeof($actus) >0){
+foreach ($actus as $actu) {
 
-                            echo '<div class="row news">
+    echo '<div class="row news">
 
                                         <div class="col-md-8">
 
@@ -115,11 +114,10 @@ switch ($newsletter) {
                                         </div>
 
                                     </div>';
-                        }
-                    } else {
-                        echo '<div class="row news"> <h4 style=text-align:center;vertical-align:middle;"> Aucune actualité pour l\'instant</h4></div>';
-                    }
-                    ?>
+}}else{
+    echo '<div class="row news"> <h4 style=text-align:center;vertical-align:middle;"> Aucune actualité pour l\'instant</h4></div>';
+}
+?>
 
                 </div>
 
@@ -137,9 +135,10 @@ switch ($newsletter) {
 
 
 
-    <?php
-    if (sizeof($carnets) > 0) {
-        echo '    <div class="content travel-logs noPadding" id="travel-logs">
+<?php
+
+if(sizeof($carnets) > 0){
+    echo '    <div class="content travel-logs noPadding" id="travel-logs">
 
         <div class="container-fluid">
 
@@ -148,9 +147,9 @@ switch ($newsletter) {
                 <div class="travel-logs__slider">';
 
 
-        foreach ($carnets as $carnet) {
+foreach ($carnets as $carnet) {
 
-            echo '<div class="slider__item">
+    echo '<div class="slider__item">
 
                             <div class="row noPadding">
 
@@ -174,7 +173,7 @@ switch ($newsletter) {
 
                                             <h3>' . $carnet->titre . '</h3>
 
-                                            <p class="published">Publié par <a href="utilisateur/' . $carnet->user[0]->slug . '">' . ucfirst(mb_strtolower($carnet->user[0]->prenom)) . ' ' . ucfirst(mb_strtolower($carnet->user[0]->nom)) . '</a>, le ' . $carnet->date . '.</p>
+                                            <p class="published">Publié par <a href="utilisateur/' . $carnet->user[0]->slug . '">' . $carnet->user[0]->prenom . ' ' . $carnet->user[0]->nom . '</a>, le ' . $carnet->date . '.</p>
 
                                             <blockquote>' . $carnet->description . '</blockquote>
 
@@ -192,113 +191,61 @@ switch ($newsletter) {
                             </div>
 
                         </div>';
-        }
-        echo'  </div>
+}
+echo'  </div>
 
             </div>
 
         </div>
 
     </div>';
+
+}
+?>
+
+
+
+               
+
+
+
+    <div class="content block_destinations" style="background-color: #efd48d !important;background-image:none !important;">
+
+        <div class="container-fluid">
+
+            <div class="row noPadding">
+
+                <h2>Nos destinations</h2>
+
+            </div>
+
+            <div class="row noPadding">
+
+                <div class="col-md-12">
+
+                    <div style="margin:0 auto;text-align:center;width:100%;">
+                        <?php
+                            echo file_get_contents(img_url('map.svg'));
+                        ?>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+<script type="text/javascript">
+    window.onload = function(){
+    <?php foreach($pays as $paysActuel){?>
+        $('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("class", "land active");
+        $('#<?php echo $paysActuel->code_pays; ?>')[0].setAttribute("onclick", "document.location.href='<?php echo base_url().'walkadmin/pays_admin/detail/'.$paysActuel->idPays; ?>'");
+    <?php } ?>
+        
+        $.each($('[data-toggle="tooltip"]'), function(){
+            console.log(this);
+            $(this).tooltip();
+        });
     }
-    ?>
-
-
-
-
-
-
-
-    <div class="destinations__map noselect hidden-xs">
-        <div class="row text-center noPadding">
-            <div class="col-sm-12">
-                <h2 class="no-sep black">Explorez nos destinations</h2>
-                <div class="help-block">
-                    <span class="small">
-                        Cliquez sur une des icônes pour découvrir la destination...
-                    </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="row noPadding">
-            <div class="map__wrapper text-center">
-                    <div id="map"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="destinations__buttonBlock hidden-sm hidden-md hidden-lg">
-        <div class="destinations__buttonBlock__content text-center">
-            <h2 class="no-sep black">Découvrez nos destinations...</h2>
-            <a href="<?php echo base_url().'/nos-destinations'; ?>" class="button black">Tous nos voyages</a>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        window.onload = function () {
-
-            var options = {
-                center: [48.856614, 2.352222],
-                zoom: 2,
-                // minZoom:3,
-                // maxZoom:3,
-                dragging : false,
-                touchZoom:false,
-                scrollWheelZoom: false,
-                doubleClickZoom : false,
-                boxZoom : false,
-                zoomControl:false,
-                tap:false,
-                keyboard: false
-            };
-
-            var map = L.map('map', options);
-
-
-            var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
-                mapId : 't4gad4.0d77ef41',
-                token : 'pk.eyJ1IjoidDRnYWQ0IiwiYSI6IjAxMTg3Zjk4MzIwN2UyMGU5YTFjZjA1ZTdiYjVhOWIxIn0.Sgz1QzW2JR3l3Abryt1PnA',
-                continuousWorld: false,
-                noWrap: true,
-                zoomControl:false
-            }).addTo(map);
-
-
-            var myIcon = L.icon({
-                iconUrl: '<?php echo img_url("marker.png"); ?>',
-                iconRetinaUrl: '<?php echo img_url("marker.png"); ?>',
-                iconSize: [80, 45],
-                iconAnchor: [40, 45],
-                popupAnchor: [1.5, -50],
-            });
-            var $i = 0;
-            var marker = [];
-
-
-            <?php foreach($destinations as $destination){
-                $latitude = explode(',',$destination->coordonnees)[0];
-                $longitude = explode(',',$destination->coordonnees)[1];
-            ?>
-
-            var popUp = L.popup({ autoPan: false}).setContent(''+
-            '<a class="no-style" href="<?php echo base_url('nos-destinations/'.$destination->url); ?>" title="Découvrez la destination">'+
-                '<div class="popup_map__image-wrapper">'+
-                    '<div class="popup_map__image" style="background-image: url(\'<?php echo img_url($destination->banner);?>\')"></div>'+
-                '</div>'+
-                '<div class="popup_map__text">'+
-                    '<p class="popup_map__text--title"><?php echo $destination->titre; ?></p>'+
-                    '<p class="popup_map__text--description"><?php echo splitText($destination->description, 94); ?>...</p>'+
-                    '<p class="popup_map__text--location"><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p>'+
-                '</div>'+
-            '</a>');
-
-            marker[$i] = L.marker([<?php echo $latitude.','.$longitude; ?>],{icon : myIcon}).addTo(map);
-            marker[$i].bindPopup(popUp,{
-                className : "popup_map"
-            });
-            $i++;
-            <?php } ?>
-        }
-    </script>
+</script>
