@@ -256,7 +256,7 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
                             if($prix->plusoumoins == "moins") {
                                 ?>
                                 <div class="form-group destinations__priceMinus fieldBlock" id="detail<?php echo $iteration; ?>">
-                                        <textarea name="priceMinus  <?php echo $iteration; ?>" id="priceMinus" rows="2" maxlength="75"
+                                        <textarea name="priceMinus<?php echo $iteration; ?>" id="priceMinus" rows="2" maxlength="75"
                                                   placeholder="Saisissez votre information"><?php echo $prix->valeur; ?></textarea>
                                         <span class="destinations__icon remove"
                                               onclick="javascript:remove_detail(<?php echo $iteration; ?>,minus)"></span>
