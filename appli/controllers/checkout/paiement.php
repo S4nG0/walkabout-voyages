@@ -37,8 +37,8 @@ class  Paiement extends CI_Controller {
             $data['voyage'] = $this->voyages->constructeur($data['voyage'])[0];
             $data['voyage']->date_depart = conv_date($data['voyage']->date_depart);
             $data['voyage']->date_retour = conv_date($data['voyage']->date_retour);
-            $data['destination'] = $this->destination->constructeur($data['destination'])[0];
-            $data['pays'] = $this->pays->constructeur($data['destination']->idPays)[0];
+            $data['destination'] = $this->destination->constructeur($data['destination']);
+            $data['pays'] = $this->pays->constructeur($data['destination'][0]->idPays)[0];
             $this->load->view('template/header',$data);
             $this->load->view('checkout/paiement',$data);
             $this->load->view('template/footer');

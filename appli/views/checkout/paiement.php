@@ -47,8 +47,9 @@ $step = 'payment';
                                     </tr>
                                 </thead>
                                 <tr>
+                                <tr>
                                     <td>
-                                        <h3><?php echo $destination->titre; ?></h3>
+                                        <h3><?php echo $destination[0]->titre; ?></h3>
                                         <p><?php echo $pays->nom; ?>&nbsp;&bull;&nbsp;du <?php echo $voyage->date_depart; ?> au <?php echo $voyage->date_retour; ?></p>
                                     </td>
                                     <td>

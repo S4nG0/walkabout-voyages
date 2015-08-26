@@ -46,7 +46,7 @@ class Dates extends CI_Controller {
             }else{
                 $data['no_voyage'] = false;
             }
-            $data['destination'] = $this->destination->constructeur($data['destination'])[0];
+            $data['destination'] = $this->destination->constructeur($data['destination']);
             $this->load->view('template/header',$data);
             $this->load->view('checkout/dates',$data);
             $this->load->view('template/footer');
