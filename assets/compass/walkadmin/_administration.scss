@@ -37,15 +37,7 @@ body.admin {
     .button {
         margin: 0 auto;
         width: 250px;
-
-        border-color: $blanc;
-        color: $blanc;
         letter-spacing: 1px;
-
-        &:hover, &:focus {
-            color: $jaune-or;
-            border-color: $jaune-or;
-        }
     }
 
     .button.small {
@@ -364,6 +356,15 @@ body.admin {
 
             .button {
                 width: 200px;
+
+                border-color: $blanc;
+                color: $blanc;
+
+
+                &:hover, &:focus {
+                    color: $jaune-or;
+                    border-color: $jaune-or;
+                }
             }
         }
     }
@@ -498,13 +499,7 @@ body.admin {
 /*--------------------------------------------*\
     #CONTENT
 \*--------------------------------------------*/
-.destinations,
-.actualites,
-.voyages,
-.carnets,
-.articles,
-.commentaires,
-.utilisateurs {
+.main-content {
     position: relative;
 
     h2 {
@@ -598,60 +593,56 @@ body.admin {
         > p { color: $gris-clair; margin: 0; }
     }
 
-    .destinations__single,
-    .actualites__single,
-    .carnets__single {
-        .well {
-            display: table;
-            width: 100%;
-            @include border-radius(0);
-            border-color: $noir;
+    .well {
+        display: table;
+        width: 100%;
+        @include border-radius(0);
+        border-color: $noir;
 
-            .single__block {
-                display: table-cell;
-                vertical-align: middle;
-            }
+        .single__block {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+
+    .imageBlock {
+        width: 30%;
+
+        .imageBlock__wrapper {
+            background-position: 50% 0;
+            @include background-size(cover);
+            background-repeat: no-repeat;
+            padding-bottom: 56%;
+        }
+    }
+
+    .infoBlock {
+        padding: 0 25px;
+        text-align: center;
+
+        .published {
+            margin-top: 10px;
         }
 
-        .imageBlock {
-            width: 30%;
-
-            .imageBlock__wrapper {
-                background-position: 50% 0;
-                @include background-size(cover);
-                background-repeat: no-repeat;
-                padding-bottom: 56%;
-            }
+        p {
+            color: $noir;
+            margin-top: 15px;
+            margin-bottom: 0;
         }
 
-        .infoBlock {
-            padding: 0 25px;
-            text-align: center;
+        .button {
+            margin-top: 25px;
+        }
+    }
 
-            .published {
-                margin-top: 10px;
-            }
+    .buttonsBlock {
+        width: 30%;
 
-            p {
-                color: $noir;
-                margin-top: 15px;
+        .button {
+            margin-bottom: 10px;
+
+            &:last-child {
                 margin-bottom: 0;
-            }
-
-            .button {
-                margin-top: 25px;
-            }
-        }
-
-        .buttonsBlock {
-            width: 30%;
-
-            .button {
-                margin-bottom: 10px;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
             }
         }
     }
@@ -1332,12 +1323,7 @@ body.admin {
     /*------------------------------------*\
         #DESTINATIONS || #ACTUALITES
     \*------------------------------------*/
-    .destinations,
-    .actualites,
-    .carnets,
-    .articles,
-    .commentaires,
-    .utilisateurs {
+    .main-content {
 
         .module__tools {
             .custom-search { margin-right: 0; width: 200px; }
@@ -1518,7 +1504,7 @@ body.admin {
             }
         }
     }
-    .destinations {
+    .main-content.destinations {
         .destinations__single {
             .infoBlock {
                 padding-right: 0;
@@ -1526,8 +1512,8 @@ body.admin {
             }
         }
     }
-    .articles,
-    .commentaires {
+    .main-content.articles,
+    .main-content.commentaires {
         .carnets__single {
             .well {
                 padding-top: 50px;
@@ -1598,7 +1584,7 @@ body.admin {
             }
         }
     }
-    .utilisateurs {
+    .main-content.utilisateurs {
         .utilisateurs__infos {
             label, input {
                 display: block;

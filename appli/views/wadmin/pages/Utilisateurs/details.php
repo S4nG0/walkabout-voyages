@@ -1,6 +1,6 @@
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="utilisateurs">
+        <div class="main-content utilisateurs">
             <div class="row text-center">
                 <div class="col-sm-12">
                     <div class="page-header">

@@ -1,6 +1,6 @@
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="commentaires">
+        <div class="main-content commentaires">
             <div class="row text-center">
                 <div class="col-lg-12">
                     <h1 class="page-header sep">Commentaires</h1>
@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <?php if(sizeof($commentaires) > 0) { 
+            <?php if(sizeof($commentaires) > 0) {
                 foreach ($commentaires as $commentaire) { ?>
 
             <div class="row carnets__single searchable">
@@ -82,13 +82,13 @@
             </div>
 
             <?php }}else{ ?>
-            
+
                 <div class="row">
                     <div class="col-md-12">
                         <p class="no-entry">Il n'y a aucun commentaire correspondant à la recherche : <blockquote><?php echo $search; ?></blockquote></p>
                     </div>
                 </div>
-            
+
             <?php } ?>
 
             <div class="row">

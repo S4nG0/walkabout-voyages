@@ -1,5 +1,5 @@
 <div id="page-wrapper">
-    <div class="actualites">
+    <div class="main-content actualites">
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-lg-12">

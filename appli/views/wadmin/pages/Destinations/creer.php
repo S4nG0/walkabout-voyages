@@ -6,7 +6,7 @@ echo form_open_multipart('walkadmin/destinations/creer');
 
 <div class="container-fluid">
 
-    <div class="destinations">
+    <div class="main-content destinations">
         <div class="row text-center">
             <h1 class="page-header sep">Ajout d'une destination</h1>
         </div>

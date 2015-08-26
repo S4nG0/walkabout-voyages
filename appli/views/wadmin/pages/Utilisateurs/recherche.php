@@ -1,6 +1,6 @@
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="utilisateurs">
+        <div class="main-content utilisateurs">
 
             <div class="row text-center">
                 <div class="col-lg-12">
@@ -59,15 +59,15 @@
                     </div>
                 </div>
             </div>
-            
+
             <?php }else{ ?>
-            
+
                 <div class="row">
                     <div class="col-md-12">
                         <p class="no-entry">Il n'y a aucun utilisateur correspondant à la recherche : <blockquote><?php echo $search; ?></blockquote></p>
                     </div>
                 </div>
-            
+
             <?php } ?>
         </div>
         <div class="row">

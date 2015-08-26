@@ -3,7 +3,7 @@
 
 <div class="container-fluid">
 
-<div class="destinations">
+<div class="main-content destinations">
     <div class="row text-center">
         <div class="col-lg-12">
             <h1 class="page-header sep">Séjours prévus pour&nbsp;:<br /><span class="small"><?php echo $destination[0]->titre; ?></span></h1>

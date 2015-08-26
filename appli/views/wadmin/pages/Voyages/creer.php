@@ -6,7 +6,7 @@ echo form_open('walkadmin/voyage/creer/' . $idDestination);
 
     <div class="container-fluid">
 
-        <div class="voyages">
+        <div class="main-content voyages">
 
             <?php
             echo validation_errors();
@@ -49,7 +49,7 @@ echo form_open('walkadmin/voyage/creer/' . $idDestination);
                     </div>
                     <div id="container_details"></div>
                     <div class="form-group voyages__detailsPrix toBeRemoved">
-                        <?php $i = 0; if($details){ 
+                        <?php $i = 0; if($details){
                             foreach($details as $detail){
                             ?>
                                 <div class="form-group voyages__detailsPrix" id="detail<?php echo $i; ?>"><input type="text" placeholder="Titre du détail" name="detail_nom<?php echo $i; ?>" id="detail_prix" value="<?php echo $detail['titre']; ?>"/><input type="text" name="detail_valeur<?php echo $i; ?>" id="detail_prix" placeholder="Insérer le texte du détail"  value="<?php echo $detail['valeur']; ?>"/><span class="voyages__icon remove" onclick="javascript:remove_detail(<?php echo $i; ?>);"></span></div>

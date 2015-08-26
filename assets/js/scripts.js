@@ -180,7 +180,7 @@ $(document).ready(function () {
         animation: 'fadeOutTop'
     }
 
-    if(!body.hasClass('checkout') && !body.hasClass('espace-voyageur editing') && !body.hasClass('admin') && !body.hasClass('sign-in')) {
+    if(navbarToggle != null) {
         navbarToggle.addEventListener('click', function () {
             iconate(icon, options, function() {
                 var temp = options.from;

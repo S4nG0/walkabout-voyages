@@ -1,7 +1,7 @@
 
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="utilisateurs">
+        <div class="main-content utilisateurs">
             <div class="row text-center">
                 <div class="col-lg-12">
                     <h1 class="page-header sep">Réservations</h1>
