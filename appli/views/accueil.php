@@ -232,7 +232,7 @@ switch ($newsletter) {
     <div class="destinations__buttonBlock hidden-sm hidden-md hidden-lg">
         <div class="destinations__buttonBlock__content text-center">
             <h2 class="no-sep black">Découvrez nos destinations...</h2>
-            <a href="<?php echo base_url().'/nos-destinations'; ?>" class="button black">Tous nos voyages</a>
+            <a href="<?php echo base_url().'nos-destinations'; ?>" class="button black">Tous nos voyages</a>
         </div>
     </div>
 

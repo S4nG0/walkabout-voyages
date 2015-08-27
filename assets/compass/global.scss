@@ -72,29 +72,6 @@ h1 {
     border-bottom: $gold-border;
 }
 
-h1.sep {
-    position: relative;
-    padding-bottom: 0;
-    border-bottom: none;
-
-    &:after {
-        content: '';
-        position: absolute;
-        display: block;
-        left: 50%;
-        width: 100px;
-        height: 1px;
-        bottom: -15px;
-        background-color: $jaune-or;
-        @include translateX(-50%);
-    }
-}
-
-h1.no-sep,
-h2.no-sep {
-    border-bottom: none;
-    padding: 0;
-}
 
 h2 {
     text-transform: uppercase;
@@ -102,24 +79,6 @@ h2 {
     line-height: 36px;
     padding-bottom: 10px;
     border-bottom: $gold-border;
-}
-
-h2.sep {
-    position: relative;
-    padding-bottom: 0;
-    border-bottom: none;
-
-    &:after {
-        content: '';
-        position: absolute;
-        display: block;
-        left: 50%;
-        width: 100px;
-        height: 1px;
-        bottom: -15px;
-        background-color: $jaune-or;
-        @include translateX(-50%);
-    }
 }
 
 h3 {
@@ -135,6 +94,34 @@ h4 {
     font-size: 18px;
     line-height: 28px;
 }
+
+.sep {
+    position: relative;
+    padding-bottom: 0;
+    border-bottom: none;
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 50%;
+        width: 100px;
+        height: 1px;
+        bottom: -15px;
+        background-color: $jaune-or;
+        @include translateX(-50%);
+    }
+}
+
+.sep--black:after {
+    background-color: $noir;
+}
+
+.no-sep {
+    border-bottom: none;
+    padding: 0;
+}
+
 
 /*
  * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
@@ -850,7 +837,7 @@ body.single-carnet {
 }
 
 .articles-block {
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .tb-article {
@@ -987,11 +974,19 @@ body.single-carnet {
 }
 
 .container-fluid.discussion {
-    padding-top: 50px;
     background-color: $fond-blanc;
     .comment {
         color: $gris-clair;
         margin-bottom: 50px;
+
+        &:first-child {
+            padding-top: 50px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
         .profile-picture {
             position: relative;
             margin: 0 auto;
@@ -1003,6 +998,7 @@ body.single-carnet {
                 width: 100%;
             }
         }
+
         .comment--content {
             position: relative;
             padding: 25px;
@@ -1010,6 +1006,7 @@ body.single-carnet {
 
             p {
                 margin: 25px 0;
+                color: $noir;
             }
 
             .arrow {
@@ -1053,10 +1050,6 @@ body.single-carnet {
             .published {
                 display: inline-block;
             }
-
-            p {
-                color: $noir;
-            }
         }
     }
 }
@@ -1072,16 +1065,6 @@ body.single-carnet {
         padding-bottom: 25px;
         font-size: 32px;
         color: $noir;
-
-        &:before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background-color: $noir;
-        }
     }
 
     .button {
@@ -1172,6 +1155,55 @@ body.single-carnet {
     }
 }
 
+//Pagination
+.pagination {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    > li > a,
+    > li > span {
+        display: inline-block;
+        float: none;
+        border-color: $jaune-or;
+        background-color: $noir;
+
+        color: $jaune-or;
+
+        &:hover {
+            background-color: $jaune-or;
+            border-color: $jaune-or;
+            color: $noir;
+        }
+    }
+
+    > li.active > span {
+        background-color: $jaune-or;
+        border-color: $jaune-or;
+        color: $noir;
+
+        &:hover, &:focus {
+            background-color: $jaune-or;
+            border-color: $jaune-or;
+            color: $noir;
+        }
+    }
+
+    > li:first-child > a,
+    > li:first-child > span {
+        @include border-top-left-radius(0);
+        @include border-bottom-left-radius(0);
+    }
+
+    > li:last-child > a,
+    > li:last-child > span {
+        @include border-top-right-radius(0);
+        @include border-bottom-right-radius(0);
+    }
+}
+
 //Spinner
 #spinner{
   display : none;
@@ -1208,6 +1240,86 @@ body.single-carnet {
   100%{
       transform : rotate(0deg);
   }
+}
+
+//Fancybox styling
+.fancybox-margin {
+    margin-right: 0 !important;
+}
+
+.fancybox-overlay {
+    .fancybox-skin {
+        background-color: $noir;
+        background: $texture;
+        @include border-radius(0);
+
+        .destination__form {
+
+            h2 {
+                position: relative;
+                margin-bottom: 50px;
+                padding-bottom: 0;
+                text-align: center;
+                border-bottom: none;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    left: 50%;
+                    width: 100px;
+                    height: 1px;
+                    bottom: -15px;
+                    background-color: $jaune-or;
+                    @include translateX(-50%);
+                }
+            }
+
+            .form-group {
+                margin-bottom: 25px;
+                text-align: center;
+
+                label {
+                    color: $jaune-or;
+                }
+
+                .button {
+                    display: block;
+                    width: 200px;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        #create-carnet {
+            label {
+                display: block;
+                margin: 50px auto 15px auto;
+                color: $jaune-or;
+                text-align: center;
+            }
+
+            select {
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+                padding: 15px;
+            }
+
+            input[type="submit"] {
+                width: 200px;
+                margin: 25px auto 0 auto;
+            }
+        }
+
+        #cgv-pop-up {
+            padding: 50px;
+        }
+    }
+}
+
+.fancybox-overlay {
+    z-index: 6000;
 }
 
 /*------------------------------------*\
@@ -1443,13 +1555,23 @@ body.single-carnet {
         font-size: 12px;
     }
 
+    .lead, blockquote {
+        &:before, &:after {
+            font-size: 36px;
+        }
+
+        &:before {
+            margin-left: -20px;
+        }
+    }
+
     body.single-carnet {
         .main {
             .caption-wrapper {
                 .bottom-wrapper {
                     .details {
-                        padding-bottom: 25px;
-                        font-size: 18px;
+                        padding-bottom: 15px;
+                        font-size: 14px;
                         text-align: center;
                     }
                 }
@@ -1493,6 +1615,15 @@ body.single-carnet {
                 }
                 .comment--reply { text-align: center; }
             }
+        }
+    }
+    .comment-form {
+        h3 {
+            font-size: 24px;
+        }
+
+        .sep:after {
+            bottom: 0;
         }
     }
 }

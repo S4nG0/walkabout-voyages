@@ -11,7 +11,7 @@
                 <h2 class="no-sep">Mises à jour récentes</h2>
             </div>
             <div class="row text-center">
-                <div class="col-md-offset-2 col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -35,7 +35,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -59,9 +59,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-offset-2 col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -85,7 +83,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -119,7 +117,7 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-lg-8">
                     <div class="panel panel-default">
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -133,9 +131,7 @@
                     </div>
                     <!-- /.panel -->
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
+                <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <h3>Voyages préférés des utilisateurs</h3>
@@ -262,7 +258,7 @@ foreach ($payss as $pays) {
                 tooltip: true,
                 tooltipOpts: {
                     content: function () {
-                        var tooltip = '<h4 style="color:black;">%s</h4>';
+                        var tooltip = '<h4>%s</h4>';
                         tooltip += '<span style="color:black;text-align:center;">%p.001 %';
                         return tooltip;
                     },

@@ -74,7 +74,11 @@ body.about {
     }
 
     .spirit {
-        background: url('../images/spirit.jpg') 0 0 fixed;
+        background-image: url('../images/spirit.jpg');
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+        @include background-size(100%);
+
         height: 450px;
         font-size: 16px;
 
@@ -135,7 +139,8 @@ body.about {
 
         .spirit {
 
-            background-position: bottom left;
+            background-position: 0 0;
+            @include background-size(cover);
             font-size: 16px;
 
             .spirit-content-wrapper {

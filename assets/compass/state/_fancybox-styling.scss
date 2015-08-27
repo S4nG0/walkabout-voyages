@@ -5,6 +5,7 @@
 
 .fancybox-overlay {
     .fancybox-skin {
+        background-color: $noir;
         background: $texture;
         @include border-radius(0);
 
@@ -74,5 +75,5 @@
 }
 
 .fancybox-overlay {
-    z-index: 9999;
+    z-index: 6000;
 }

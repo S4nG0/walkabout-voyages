@@ -21,19 +21,14 @@
                 <!-- /.dropdown-alerts -->
             </li>
             <!-- /.dropdown -->
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user-md fa-fw"></i>
-                    Bonjour <?php echo ucfirst(mb_strtolower($admin[0]->prenom)) . ' ' . ucfirst(mb_strtolower($admin[0]->nom)); ?>
-                    <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-                    <li><a href="<?php echo base_url() . 'walkadmin/deconnexion'; ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Déconnexion</a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-user -->
+            <li>
+                <i class="fa fa-user-md fa-fw"></i>
+                Bonjour <?php echo ucfirst(mb_strtolower($admin[0]->prenom)) . ' ' . ucfirst(mb_strtolower($admin[0]->nom)); ?>
+                <i class="fa fa-caret-down"></i>
             </li>
-            <!-- /.dropdown -->
+            <li>
+                <a href="<?php echo base_url() . 'walkadmin/deconnexion'; ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Déconnexion</a>
+            </li>
         </ul>
         <!-- /.navbar-top-links -->
 
