@@ -2,10 +2,10 @@
 
     switch($commentaire){
         case "reussi":
-            echo '<script>alert("Votre commentaire est bien enregistré, il sera modéré sous peu");</script>';
+            echo '<script>alert("Merci ! Votre commentaire a été soumis pour modération et sera publié sous peu !");</script>';
             break;
         case "fail":
-            echo '<script>alert("Une erreur est survenue lors de l\'enregistrement de votre commentaire, veuillez contacter le service technique.");</script>';
+            echo '<script>alert("Une erreur est survenue lors de l\'enregistrement de votre commentaire, veuillez contacter un administrateur du site".");</script>';
             break;
     };
 
@@ -129,7 +129,7 @@
                                 <div class="arrow"></div>
                                 <div class="row">
                                     <div class="col-sm-12">';
-            
+
             if($commentaire->idUsers != null){ echo '<span class="username"><a href="'.base_url().'utilisateur/'.$commentaire->user->slug.'">' . ucfirst(mb_strtolower($commentaire->user->prenom)) . ' ' . ucfirst(mb_strtolower($commentaire->user->nom)) . '</a></span>';}
             else{
                 echo '<span class="username"><a href="#">' . ucfirst(mb_strtolower($commentaire->user->prenom)) . ' ' . ucfirst(mb_strtolower($commentaire->user->nom)) . '</a></span>';
@@ -144,7 +144,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="comment--reply">
-                                            <a class="reply-link" href="#comment-form">
+                                            <a class="button black small" href="#comment-form">
                                                 Participez à la discussion
                                             </a>
                                         </div>
@@ -170,7 +170,7 @@
                         echo form_open('commentaire/add/' . $carnet[0]->idCarnetDeVoyage);
                         ?>
 
-                        <h3 class="col-md-12 align-center">Laissez un commentaire !</h3>
+                        <h3 class="col-md-12 align-center sep sep--black">Laissez un commentaire !</h3>
                         <?php
                         if($connecte !== true){
                         ?>
@@ -190,7 +190,7 @@
                             <input type="text" name="email" value="" placeholder="Entrez votre email" id="email">
                             <?php echo form_error('email'); ?>
                             <div class="help-block">
-                                Déjà un compte ? <a href="<?php echo base_url(); ?>connexion">Connectez-vous pour discuter !</a>
+                                <span class="small">Déjà un compte ?<br /><a href="<?php echo base_url(); ?>connexion">Connectez-vous pour discuter !</a></span>
                             </div>
                         </div>
                         <?php } ?>

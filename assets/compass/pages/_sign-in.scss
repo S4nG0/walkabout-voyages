@@ -15,6 +15,7 @@ body.sign-in {
     }
 
     input {
+        display: block;
         margin-top: 15px;
     }
 
@@ -23,26 +24,32 @@ body.sign-in {
         float: none;
         width: 200px;
         margin: 0 auto;
-        margin-top: 30px;
+        margin-top: 25px;
     }
 
     .login-panel {
         display: block;
         margin: 0 auto;
         width: 320px;
-        padding: 8% 0;
+        padding: 8% 15px 0 15px;
     }
 
     .recover-pwd-block {
         display: none;
+        position: relative;
+        background: $texture;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         text-align: center;
 
-        .login-panel {
-            width: 300px;
+        .form-group {
+            padding-top: 0;
+        }
 
-            .button {
-                width: auto;
-            }
+        .button {
+            width: auto;
         }
     }
 
@@ -54,74 +61,12 @@ body.sign-in {
 /*------------------------------------*\
     #RESPONSIVE
 \*------------------------------------*/
-@media screen and (max-width: 1200px) {
-    body.sign-in {
-        .main {
-            .navbar {
-                .navbar-collapse {
-                    .nav {
-                        li {
-                            a {
-                                margin: 25px auto;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .navbar.affix {
-                .navbar-toggle {
-                    margin: 18px 25px;
-                }
-            }
-        }
-    }
-}
-
 @media screen and (max-width: 480px) {
     body.sign-in {
-        .main {
-            .caption-wrapper {
-                text-align: center;
 
-                .caption {
-                    h1 {text-align: center;}
-
-                    .button {
-                        display: block;
-                        margin: 0 auto;
-                        margin-top: 30px;
-                    }
-                }
-            }
-        }
-
-        .recover-pwd-block {
-            width: 100%;
-
-            .button {
-                width: 200px;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 330px) {
-    body.sign-in {
-        .main {
-            .navbar {
-                .navbar-toggle {
-                    margin: 25px;
-                }
-
-                .navbar-brand {
-                    padding: 20px 25px;
-                }
-            }
-            .caption-wrapper {
-                position: relative;
-                padding-bottom: 25px;
-            }
+        h1 {
+            font-size: 20px;
+            line-height: 20px;
         }
     }
 }

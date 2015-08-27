@@ -46,5 +46,10 @@ $page = "tous-les-carnets";
                 </div>';
             } ?>
         </div>
-        <?php echo "<br/><center>$pagination</center><br/>"; ?>
+    </div>
+
+    <div class="container-fluid noPadding">
+        <div class="row noPadding text-center">
+            <?php echo $pagination; ?>
+        </div>
     </div>

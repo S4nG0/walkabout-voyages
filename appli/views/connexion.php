@@ -34,15 +34,13 @@
 
     <div class="recover-pwd-block" id="recover-pwd">
         <?php echo form_open('connexion/oublieMdp') ?>
-            <div class="login-panel">
-                <div class="form-group">
-                    <label for="pwd-recover-email">E-mail lié à votre compte</label>
-                    <input type="email" placeholder="Saisissez votre e-mail" name="pwd-recover-email" id="pwd-recover-email" value="<?php if($this->input->get('pwd-recover-email')!=false) echo $this->input->get('pwd-recover-email');?>">
-                    <?php echo form_error('pwd-recover-email') ?>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="button">Récupérer votre mot de passe</button>
-                </div>
+            <div class="form-group">
+                <label for="pwd-recover-email">E-mail lié à votre compte</label>
+                <input type="email" placeholder="Saisissez votre e-mail" name="pwd-recover-email" id="pwd-recover-email" value="<?php if($this->input->get('pwd-recover-email')!=false) echo $this->input->get('pwd-recover-email');?>">
+                <?php echo form_error('pwd-recover-email') ?>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="button">Récupérer votre mot de passe</button>
             </div>
         <?php echo form_close() ?>
     </div>
