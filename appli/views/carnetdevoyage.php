@@ -12,96 +12,90 @@
 ?>
 
 <body class="single-carnet">
-    <div class="main" id="main" data-stellar-background-ratio="0.5" style="background-image: url('<?php echo img_url($carnet[0]->image_carnet); ?>')">
-        <div class="overlay"></div>
-        <div class="container-fluid noPadding">
-            <!-- Navbar -->
-            <?php include 'template/menu.php'; ?>
 
-            <div class="caption-wrapper">
-                <div class="caption">
-                    <div class="row noPadding">
-                        <div class="col-md-8 col-md-offset-2">
-                            <div class="profile-picture">
-                                <img src="<?php echo img_url($user->photo); ?>" alt="Profil" />
-                            </div>
+<div class="main" id="main" data-stellar-background-ratio="0.5" style="background-image: url('<?php echo img_url($carnet[0]->image_carnet); ?>')">
+    <div class="overlay"></div>
+    <div class="container-fluid noPadding">
+        <!-- Navbar -->
+        <?php include 'template/menu.php'; ?>
 
-                            <h1 class="no-sep">
-                                <?php
-                                    echo $carnet[0]->titre;
-                                ?>
-                            </h1>
-                            <p>
-                                <?php
-                                    echo $carnet[0]->description;
-                                ?>
-                            </p>
+        <div class="caption-wrapper">
+            <div class="caption">
+                <div class="row noPadding">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="profile-picture">
+                            <img src="<?php echo img_url($user->photo); ?>" alt="Profil" />
+                        </div>
+
+                        <h1 class="no-sep">
+                            <?php
+                                echo $carnet[0]->titre;
+                            ?>
+                        </h1>
+                        <p>
+                            <?php
+                                echo $carnet[0]->description;
+                            ?>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bottom-wrapper">
+                    <div class="col-xs-12 col-sm-4 col-md-4 details">
+                        <span class="author">
+                            <a href="<?php echo base_url() . 'utilisateur/' . $user->slug; ?>"><?php echo ucfirst(mb_strtolower($user->prenom)) . ' ' . ucfirst(mb_strtolower($user->nom)) ?></a>
+                        </span>
+                        <span class="bull">&bull;</span>
+                        <span class="location">
+                            <?php echo $pays[0]->nom ?>, <?php echo 'le ' . $carnet[0]->date ?>
+                        </span>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <div class="arrow-wrapper">
+                            <a href="#content"><i class="fa fa-angle-down"></i></a>
                         </div>
                     </div>
 
-                    <div class="bottom-wrapper">
-                        <div class="col-xs-12 col-sm-4 col-md-4 details">
-                            <span class="author">
-                                <a href="<?php echo base_url() . 'utilisateur/' . $user->slug; ?>"><?php echo ucfirst(mb_strtolower($user->prenom)) . ' ' . ucfirst(mb_strtolower($user->nom)) ?></a>
-                            </span>
-                            <span class="bull">&bull;</span>
-                            <span class="location">
-                                <?php echo $pays[0]->nom ?>, <?php echo 'le ' . $carnet[0]->date ?>
-                            </span>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-4 col-md-4">
-                            <div class="arrow-wrapper">
-                                <a href="#content"><i class="fa fa-angle-down"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="hidden-xs col-sm-4 col-md-4 social">
-                            <a class="item_fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a class="item_tw" href="http://twitter.com/intent/tweet/?url=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a class="item_gp" href="https://plus.google.com/share?url=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                        </div>
+                    <div class="hidden-xs col-sm-4 col-md-4 social">
+                        <a class="item_fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a class="item_tw" href="http://twitter.com/intent/tweet/?url=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a class="item_gp" href="https://plus.google.com/share?url=<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" target="blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
+<div class="content" id="content">
+    <div class="container-fluid noPadding">
+        <div class="articles-block">
+            <?php $i = 1; foreach ($articles as $article) { ?>
 
-
-    <div class="content" id="content">
-        <div class="container-fluid noPadding">
-            <div class="articles-block">
-                <!-- begin:article -->
-                <?php
-                $i = 1;
-                foreach ($articles as $article) {
-
-                    echo '<div class="row noPadding">
-                        <article class="tb-article">
-                            <h2 class="tb-article--title">
-                                ' . $article->titre . '
-                            </h2>
-                            <div class="tb-article--content">
-                            '.$article->texte.'
-                            </div>';
-                    echo '
-                        </article>
-                                ';
-                    $i++;
-                }
-                ?>
-
-            </div>
+                <div class="row noPadding">
+                    <article class="tb-article">
+                        <h2 class="tb-article--title">
+                            <?php echo $article->titre; ?>
+                        </h2>
+                        <div class="tb-article--content">
+                            <?php echo $article->texte; ?>
+                        </div>
+                    </article>
+                </div>
+                <?php $i++; ?>
+            <?php } ?>
         </div>
     </div>
 </div>
+
+<!-- Comments -->
 <div class="container-fluid discussion">
     <div class="row noPadding">
 
@@ -160,6 +154,7 @@
     </div>
 </div>
 
+<!-- Comment-form -->
 <div class="container-fuild">
     <div class="row noPadding">
         <section class="comment-form" id="comment-form">
@@ -170,7 +165,7 @@
                         echo form_open('commentaire/add/' . $carnet[0]->idCarnetDeVoyage);
                         ?>
 
-                        <h3 class="col-md-12 align-center sep sep--black">Laissez un commentaire !</h3>
+                        <h3 class="col-md-12 align-center sep sep--black">Laissez un commentaire sur le carnet</h3>
                         <?php
                         if($connecte !== true){
                         ?>

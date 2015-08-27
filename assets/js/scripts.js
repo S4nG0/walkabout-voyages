@@ -243,6 +243,12 @@ $(document).ready(function () {
                     'background': 'rgba(22, 22, 22, 0.9)',
                 }
             }
+        },
+        beforeShow: function() {
+            $('.fancybox-skin')
+                .css('backgroundColor','#212121')
+                .css('border-radius','0')
+                .closest('h2').css('font-size','18px');
         }
     });
 
@@ -261,7 +267,12 @@ $(document).ready(function () {
         nextEffect: 'fade',
         prevEffect: 'fade',
         openEffect: 'fade',
-        closeEffect: 'fade'
+        closeEffect: 'fade',
+        beforeShow: function() {
+            $('.fancybox-skin')
+                .css('backgroundColor','#212121')
+                .css('border-radius','0');
+        }
     });
 
 

@@ -6,19 +6,19 @@ if (!defined('BASEPATH'))
 class Actualites extends CI_Model {
 
     protected $table = 'actualites';
-    
+
     public function constructeur($id = 0){
         if($id == 0){
             return false;
         }
-        
+
         $actu = $this->db->select('*')
                            ->from($this->table)
                            ->where('idActualites', $id)
                            ->limit(1)
                            ->get()
                            ->result();
-        
+
         return $actu;
     }
 
@@ -27,13 +27,13 @@ class Actualites extends CI_Model {
                 ->from($this->table)
                 ->where('publie', 'true')
                 ->limit(3)
-                ->order_by('idActualites','DESC')
+                ->order_by('idActualites','ASC')
                 ->get()
                 ->result();
-        
+
         return $actus;
     }
-    
+
     public function get_all_actus_non_supprimes($start, $nb) {
         $actus = $this->db->select('*')
                 ->from($this->table)
@@ -42,10 +42,10 @@ class Actualites extends CI_Model {
                 ->order_by('idActualites','DESC')
                 ->get()
                 ->result();
-        
+
         return $actus;
     }
-    
+
     public function get_all_actus_search($search,$nb,$start) {
         $actus = $this->db->select('*')
                 ->from($this->table)
@@ -55,10 +55,10 @@ class Actualites extends CI_Model {
                 ->order_by('idActualites','DESC')
                 ->get()
                 ->result();
-        
+
         return $actus;
     }
-    
+
     public function get_all_actus_supprimes($start, $nb) {
         $actus = $this->db->select('*')
                 ->from($this->table)
@@ -67,7 +67,7 @@ class Actualites extends CI_Model {
                 ->order_by('idActualites','DESC')
                 ->get()
                 ->result();
-        
+
         return $actus;
     }
 
