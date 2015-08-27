@@ -7,10 +7,10 @@ class Nos_actualites extends CI_Controller {
 	 *
 	 * Maps to the following URL
 	 * 		http://example.com/index.php/welcome
-	 *	- or -  
+	 *	- or -
 	 * 		http://example.com/index.php/welcome/index
 	 *	- or -
-	 * Since this controller is set as the default controller in 
+	 * Since this controller is set as the default controller in
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
@@ -19,33 +19,33 @@ class Nos_actualites extends CI_Controller {
 	 */
 	public function index()
 	{
-            $data = array();
+        $data = array();
         $data['title'] = "Actualités";
             /*
              * Chargement de actualités
              * Chargement des administrateurs de actualités
-             * 
+             *
              */
             $data['actus'] = $this->actualites->get_actus();
             foreach($data['actus'] as $actu){
-                $actu->date = conv_date($actu->date); 
+                $actu->date = conv_date($actu->date);
                 $actu->admin = $this->admin->constructeur($actu->idAdministrateur);
             }
             /*
              * Chargement des carnets
              * Chargement des utilisateurs du carnet
-             * 
+             *
              */
-             
+
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $this->load->view('template/header', $data);
             $this->load->view('actualites',$data);
             $this->load->view('template/footer');
             //$this->output->enable_profiler(true);
 	}
-        
-        
-              
+
+
+
         /* Exemple de requete SQL executé dans le controller
         public function requete()
         {
@@ -56,13 +56,13 @@ class Nos_actualites extends CI_Controller {
                                 ->result();
             var_dump($result);
         }*/
-        
-        
+
+
         /* Exemple de control de formulaire
         public function test(){
             $data[] = array();
             $data['form'] = false;
-            
+
             $pseudo = $this->input->post('pseudo');
             $mdp = $this->input->post('mdp');
             $this->form_validation->set_rules('pseudo', '"Nom d\'utilisateur"', 'trim|required|min_length[5]|max_length[52]|alpha_dash|encode_php_tags|xss_clean');

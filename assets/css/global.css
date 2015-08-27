@@ -4027,17 +4027,58 @@ body.contact .contact-form .row .buttons-block .button:first-child {
 \*------------------------------------*/
 body.actualites h1 {
   text-align: center;
+  margin-bottom: 25px;
+}
+body.actualites h2 {
+  font-size: 24px;
+  line-height: 34px;
+}
+body.actualites .published {
+  margin-top: 10px;
 }
 body.actualites .button {
   margin-top: 25px;
+  width: 250px;
 }
 body.actualites .content {
   padding: 50px 0;
 }
-body.actualites .content .block-actualite {
+body.actualites .content .block-actualites .actualite {
+  position: relative;
   padding: 50px 0;
 }
+body.actualites .content .block-actualites .actualite:first-child:after {
+  height: 0;
+}
+body.actualites .content .block-actualites .actualite:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
 
+/*------------------------------------*\
+    #ACTUALITES
+\*------------------------------------*/
+@media screen and (max-width: 992px) {
+  body.actualites .content .actualite {
+    text-align: center;
+  }
+  body.actualites .content .actualite img {
+    display: block;
+    margin: 0 auto;
+  }
+  body.actualites .content .actualite h2 {
+    margin-top: 25px;
+  }
+}
 /*------------------------------------*\
     #NOTRE ESPRIT
 \*------------------------------------*/
@@ -4467,17 +4508,6 @@ body.checkout .content .choice-block .date-list {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
-}
-body.checkout .content .choice-block .date-list .no-entry {
-  color: #f0c041;
-  font-size: 24px;
-  line-height: 34px;
-  text-align: center;
-}
-body.checkout .content .choice-block .date-list .no-entry .fa {
-  display: block;
-  font-size: 3em;
-  margin-bottom: 25px;
 }
 body.checkout .content .choice-block .date-list li {
   vertical-align: top;
@@ -6091,7 +6121,7 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
 }
 
 .fancybox-overlay .fancybox-skin {
-  background-color: #242424;
+  background-color: #242424 !important;
   background: url("../images/texture.png");
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
@@ -8058,15 +8088,6 @@ strong {
   font-style: italic;
 }
 
-.username {
-  margin: 0;
-  color: #f0c041;
-  font-size: 20px;
-}
-.username a {
-  text-decoration: none;
-}
-
 .bull {
   margin: 5px;
 }
@@ -8105,6 +8126,18 @@ input:focus {
 
 .help-block {
   margin-top: 10px;
+}
+
+.no-entry {
+  color: #f0c041;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: center;
+}
+.no-entry .fa {
+  display: block;
+  font-size: 3em;
+  margin-bottom: 25px;
 }
 
 textarea {
@@ -8369,6 +8402,9 @@ input[type="radio"]:not(old):checked + label > span {
   background-size: cover;
 }
 
+body.single-carnet {
+  background: #e4e4e4;
+}
 body.single-carnet .main {
   background-image: url("../images/carnets/peru.jpg");
   background-position: center 0;
@@ -8382,6 +8418,7 @@ body.single-carnet .main .caption-wrapper .caption {
   vertical-align: middle;
 }
 body.single-carnet .content {
+  background: url("../images/texture.png");
   padding: 0;
   margin: 0;
 }
@@ -8660,8 +8697,8 @@ body.single-carnet .content {
   display: block;
   margin: 0 auto;
   padding-top: 50px;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 15px;
+  padding-right: 15px;
   padding-bottom: 0;
 }
 
@@ -8789,6 +8826,13 @@ body.single-carnet .content {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+.container-fluid.discussion .comment .comment--content .username a {
+  font-size: 20px;
+  text-decoration: none;
+}
+.container-fluid.discussion .comment .comment--content .username a:hover, .container-fluid.discussion .comment .comment--content .username a:focus {
+  color: #242424;
+}
 .container-fluid.discussion .comment .comment--content .comment--reply {
   text-align: right;
 }
@@ -8821,6 +8865,7 @@ body.single-carnet .content {
 }
 
 .comment-form {
+  position: relative;
   background-color: #e4e4e4;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -8834,6 +8879,20 @@ body.single-carnet .content {
 }
 .comment-form .button {
   width: 100%;
+}
+.comment-form:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 75%;
+  height: 1px;
+  top: 0;
+  left: 50%;
+  background-color: #848484;
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .container-fluid.share {

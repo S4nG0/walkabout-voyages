@@ -283,15 +283,6 @@ strong {
     font-style: italic;
 }
 
-.username {
-    margin: 0;
-    color: $jaune-or;
-    font-size: 20px;
-    a {
-        text-decoration: none;
-    }
-}
-
 .bull {
     margin: 5px;
 }
@@ -326,6 +317,19 @@ input {
 
 .help-block {
     margin-top: 10px;
+}
+
+.no-entry {
+    color: $jaune-or;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: center;
+
+    .fa {
+        display: block;
+        font-size: 3em;
+        margin-bottom: 25px;
+    }
 }
 
 textarea {
@@ -581,6 +585,7 @@ input[type="radio"]:not(old):checked + label {
 }
 
 body.single-carnet {
+    background: $fond-blanc;
     .main {
         background-image: url('../images/carnets/peru.jpg');
         background-position: center 0;
@@ -594,6 +599,7 @@ body.single-carnet {
         }
     }
     .content {
+        background: $texture;
         padding: 0;
         margin: 0;
     }
@@ -888,8 +894,8 @@ body.single-carnet {
             display: block;
             margin: 0 auto;
             padding-top: 50px;
-            padding-left: 0;
-            padding-right: 0;
+            padding-left: 15px;
+            padding-right: 15px;
             padding-bottom: 0;
         }
     }
@@ -1021,6 +1027,17 @@ body.single-carnet {
                 @include rotate(45);
             }
 
+            .username {
+                a {
+                    font-size: 20px;
+                    text-decoration: none;
+                }
+
+                a:hover, a:focus {
+                    color: $noir;
+                }
+            }
+
             .comment--reply {
                 text-align: right;
 
@@ -1055,6 +1072,7 @@ body.single-carnet {
 }
 
 .comment-form {
+    position: relative;
     background-color: $fond-blanc;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -1069,6 +1087,19 @@ body.single-carnet {
 
     .button {
         width: 100%;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 75%;
+        height: 1px;
+        top: 0;
+        left: 50%;
+        background-color: $gris-clair;
+
+        @include translateX(-50%);
     }
 }
 
