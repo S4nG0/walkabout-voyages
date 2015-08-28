@@ -5539,6 +5539,10 @@ body.espace-voyageur .content .reservations-block tbody tr td p {
   margin: 0;
   margin-top: 15px;
 }
+body.espace-voyageur .content .reservations-block .button {
+  width: 200px;
+  margin: 0 auto;
+}
 body.espace-voyageur .content .carnets-block {
   display: table;
   width: 100%;

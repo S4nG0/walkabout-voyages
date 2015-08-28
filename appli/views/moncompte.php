@@ -30,9 +30,9 @@ $page = "moncompte";
                     <input type="file" name="userimage" class="input-upload hidden"/>
                     <input type="submit" class="submit-cover hidden"/>
                 <?php echo  form_close(); ?>
-                    <span><?php if(gettype($upload) != "boolean")echo '<script> alert("'.strip_tags (html_entity_decode($upload)).'"); </script>';?></span>
+                    <?php if(gettype($upload) != "boolean")echo '<script> alert("'.strip_tags (html_entity_decode($upload)).'"); </script>';?>
                 <p>
-                    Bonjour&nbsp;<?php echo ucfirst(mb_strtolower($user->prenom)) . '&nbsp;' . ucfirst(mb_strtolower($user->nom)) . "</a>"; ?>
+                    Bonjour <?php echo ucfirst(mb_strtolower($user->prenom)) . '&nbsp;' . ucfirst(mb_strtolower($user->nom)) . "</a>"; ?>
                 </p>
                 <a class="button small" href="<?php echo base_url() . 'utilisateur/' . $user->slug ?>">Voir mon mur</a>
             </div>
@@ -95,7 +95,7 @@ $page = "moncompte";
                             </table>
                         </div>';
                         } else {
-                            echo '<p class="no-entry">Il n\'y a aucune réservation enregistrée pour votre compte !</p>';
+                            echo '<p class="no-entry">Il n\'y a aucune réservation enregistrée pour votre compte !</p><a class="button" href="'.base_url().'nos-destinations">Lancez-vous !</a>';
                         } ?>
 
                     </div>
