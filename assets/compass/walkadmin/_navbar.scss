@@ -40,6 +40,11 @@ body.admin {
 
     .navbar-top-links {
         text-align: center;
+
+        li.hello-msg {
+            padding: 4px;
+            color: $blanc;
+        }
     }
 
     .navbar-default {

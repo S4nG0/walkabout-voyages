@@ -3,7 +3,7 @@
 ?>
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="countries">
+        <div class="main-content countries">
             <div class="row text-center">
                 <h1 class="panel-header sep"><?php echo $pays[0]->nom; ?></h1>
             </div>

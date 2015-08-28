@@ -59,13 +59,13 @@
                                         <?php echo $commentaire->texte; ?>
                                     </p>
 
-                                    <p>
-                                        Provenance&nbsp;:&nbsp;
-                                        <a href="<?php echo base_url() . 'carnets-de-voyage/' . $commentaire->carnet->url; ?>"><?php echo $commentaire->carnet->titre; ?></a>&nbsp;&nbsp;&bull;&nbsp;
-                                        <a href="<?php echo base_url() . 'walkadmin/comments/carnet/'.$commentaire->carnet->idCarnetDeVoyage; ?>" class="button black small">
+                                    <div class="content__from">
+                                        <h4>Provenance&nbsp;:</h4>
+                                        <a href="<?php echo base_url() . 'carnets-de-voyage/' . $commentaire->carnet->url; ?>"><?php echo $commentaire->carnet->titre; ?></a><span class="hidden-sm hidden-xs hidden-md">&nbsp;&nbsp;&bull;&nbsp;</span>
+                                        <a class="button black small" href="<?php echo base_url() . 'walkadmin/comments/carnet/'.$commentaire->carnet->idCarnetDeVoyage; ?>">
                                             Voir tous les commentaires pour ce carnet
                                         </a>
-                                    </p>
+                                    </div>
                                 </div>
                                 <?php if($commentaire->modere != "suppr"){ ?>
                                 <div class="commentaire__status">

@@ -14,21 +14,8 @@
         <!-- /.navbar-header -->
 
         <ul class="nav navbar-top-links navbar-right">
-            <li>
-                <a href="<?php echo base_url() . 'walkadmin/administrateur/modifier/'.$admin[0]->idAdministrateur; ?>">
-                    <i class="fa fa-wrench fa-fw"></i>
-                </a>
-                <!-- /.dropdown-alerts -->
-            </li>
-            <!-- /.dropdown -->
-            <li>
-                <i class="fa fa-user-md fa-fw"></i>
-                Bonjour <?php echo ucfirst(mb_strtolower($admin[0]->prenom)) . ' ' . ucfirst(mb_strtolower($admin[0]->nom)); ?>
-                <i class="fa fa-caret-down"></i>
-            </li>
-            <li>
-                <a href="<?php echo base_url() . 'walkadmin/deconnexion'; ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Déconnexion</a>
-            </li>
+            <li class="hello-msg"><i class="fa fa-user-md fa-fw"></i>Bonjour <?php echo ucfirst(mb_strtolower($admin[0]->prenom)) . ' ' . ucfirst(mb_strtolower($admin[0]->nom)); ?></li>
+            <li><a href="<?php echo base_url() . 'walkadmin/deconnexion'; ?>"><i class="fa fa-sign-out fa-fw"></i>&nbsp;Déconnexion</a></li>
         </ul>
         <!-- /.navbar-top-links -->
 

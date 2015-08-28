@@ -1101,6 +1101,10 @@ body.espace-voyageur {
                         display: block;
                         margin-right: auto;
                         margin-left: auto;
+
+                        &:first-child {
+                            margin-right: auto;
+                        }
                     }
                 }
             }

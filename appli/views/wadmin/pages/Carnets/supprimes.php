@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="module__tools">
-                <a href="<?php echo base_url() . 'walkadmin/carnets/'; ?>" class="button black"><i class="fa fa-hand-o-left"></i>&nbsp;Revenir aux carnets</a>
+                <a href="<?php echo base_url() . 'walkadmin/carnets/'; ?>" class="button black"><i class="fa fa-hand-o-left"></i>&nbsp;Retour aux carnets</a>
                 <div class="custom-search">
                     <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
                     <button class="custom-search-button"><i class="fa fa-search"></i></button>
@@ -63,7 +63,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <p class="no-entry">Aucun carnet supprimés actuellement !</p>
+            <p class="no-entry">La corbeille est vide.</p>
         </div>
     </div>
 

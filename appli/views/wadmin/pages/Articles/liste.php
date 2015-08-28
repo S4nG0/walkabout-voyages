@@ -25,7 +25,8 @@
             <div class="row text-center">
                 <div class="col-md-12">
                     <div class="articles__help-block">
-                        <p class="small">Sélectionner une option pour changer le statut de l'article.</p>
+                        <i class="fa fa-info-circle fa-3x"></i>
+                        <p class="small">Sélectionner une option dans la liste déroulante de droite pour changer le statut de l'article.</p>
                     </div>
                 </div>
             </div>

@@ -1,25 +1,27 @@
 
 <div id="page-wrapper">
-    <div class="countries">
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <h1 class="page-header sep">Liste des pays</h1>
+    <div class="main-content countries">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <h1 class="page-header sep">Liste des pays</h1>
+                </div>
+                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="contain-svg">
-                    <?php
-                        echo file_get_contents(img_url('walkadmin/world.svg'));
-                    ?>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="contain-svg">
+                        <?php
+                            echo file_get_contents(img_url('walkadmin/world.svg'));
+                        ?>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row button-block">
-            <div class="col-lg-12">
-                 <a class="button black" href="<?php echo base_url() . 'walkadmin/pays/creer'; ?>"><i class="fa fa-plus"></i> Ajouter un pays</a>
+            <div class="row button-block">
+                <div class="col-lg-12">
+                     <a class="button black" href="<?php echo base_url() . 'walkadmin/pays/creer'; ?>"><i class="fa fa-plus"></i> Ajouter un pays</a>
+                </div>
             </div>
         </div>
     </div>
