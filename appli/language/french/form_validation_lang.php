@@ -17,7 +17,7 @@ $lang['is_numeric']			= "<span class='small'><i class='fa fa-exclamation-circle'
 $lang['integer']			= "<span class='small'><i class='fa fa-exclamation-circle'></i>&nbsp;Le champ %s doit contenir un integer.</span>";
 $lang['regex_match']  	= "<span class='small'><i class='fa fa-exclamation-circle'></i>&nbsp;Le champ %s n'est pas au format attendu.</span>";
 $lang['matches']			= "<span class='small'><i class='fa fa-exclamation-circle'></i>&nbsp;Le champ %s doit correspondre &nbsp;au champ %s.</span>";
-$lang['is_unique']   			= "<span class='small'><i class='fa fa-exclamation-circle'></i>&nbsp;Le champ %s doit contenir une valeur unique.</span>";
+$lang['is_unique']   			= "<span class='small'><i class='fa fa-exclamation-circle'></i>&nbsp;L'adresse renseignée existe déjà, veuillez utiliser une autre adresse.</span>";
 $lang['is_natural']			= "<span class='small'><i class='fa fa-exclamation-circle'></i>&nbsp;Le champ %s ne peut contenir que des nombres positifs.</span>";
 $lang['is_natural_no_zero']	= "<span class='small'><i class='fa fa-exclamation-circle'></i>&nbsp;Le champ %s ne peut contenir que des nombres plus grand que z&eacute;ro.</span>";
 $lang['decimal']  			= "<span class='small'><i class='fa fa-exclamation-circle'></i>&nbsp;Le champ %s doit contenir un nombre d&eacute;cimal.</span>";

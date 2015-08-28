@@ -30,10 +30,8 @@ $step = 'inscription';
         <?php
             if($erreur == true){
                 echo '<p class="error"><i class="fa fa-exclamation-circle"></i>Une erreur s\'est produite lors de l\'enregistrement de vos informations, veuillez vérifier les champs !</p>';
-            }
-            echo form_open('inscription/reservation')
-        ?>
-
+            } ?>
+                <?php echo form_open('inscription/reservation') ?>
                     <div class="row">
                         <div class="col-sm-6 infos-block__personal sameHeight">
 
@@ -131,15 +129,14 @@ $step = 'inscription';
 
                         </div>
                     </div>
-
-
                 </div>
 
                 <div class="buttons-block">
                     <a class="button prev" href="<?php echo base_url(); ?>checkout/identification">Retour</a>
                     <input class="button next" type="submit" value="Je m'inscris !">
                 </div>
-            </form>
+
+            <?php form_close(); ?>
         </div>
     </div>
 </div>
