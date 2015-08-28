@@ -24,14 +24,16 @@ $step = 'sign-in';
         </div>
     </div>
     <div class="container">
-        <!-- Sign-in Block -->
-        <?php
-        if(isset($erreur) && $erreur == ""){
-            echo '<div class="row"><p class="success"><i class="fa fa-check-circle">Votre compte à bien été créé, vous allez recevoir un mail de confirmation grâce auquel vous devrez activer le compte avant de pouvoir continuer!</p></div>';
-        }
-        ?>
         <div class="row">
             <div class="sign-in-block">
+                <!-- Sign-in Block -->
+                <?php if(isset($erreur) && $erreur == ""){ ?>
+                <div class="col-sm-12">
+                    <p class="success">
+                        <i class="fa fa-check-circle"></i>Votre compte a bien été créé, vous allez recevoir un e-mail de confirmation grâce auquel vous devrez activer le compte avant de pouvoir continuer...
+                    </p>
+                </div>
+                <?php } ?>
                 <div class="col-sm-6">
                     <div class="user-log-in sameHeight">
                         <h2 class="sep">Déjà inscrit&nbsp;?<br />Identifiez-vous&nbsp;!</h2>
@@ -46,12 +48,12 @@ $step = 'sign-in';
                                 <input type="password" name="password" id="password">
                                 <?php echo form_error('password'); ?>
                                 <p class="forgotten-pwd">
-                                    Vous avez oublié votre mot de passe&nbsp;? <a class="fancybox" href="#recover-pwd">Cliquez-ici</a>
+                                    Vous avez oublié votre mot de passe&nbsp;?<br /><a class="fancybox" href="#recover-pwd">Cliquez-ici</a>
                                 </p>
                             </div>
                             <!-- Form submitted via jQuery -->
                             <input type="submit" class="button submit-form black" value="Je me connecte !" />
-                        </form>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
 
@@ -65,7 +67,7 @@ $step = 'sign-in';
                             </div>
                             <!-- Form submitted via jQuery -->
                             <input type="submit" class="button submit-form black" value="Je m'inscris !"/>
-                        </form>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>

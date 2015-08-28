@@ -8220,16 +8220,21 @@ input:focus {
   margin-top: 10px;
 }
 
-.no-entry {
+.no-entry, .success {
   color: #f0c041;
   font-size: 24px;
   line-height: 34px;
   text-align: center;
 }
-.no-entry .fa {
+.no-entry .fa, .success .fa {
   display: block;
   font-size: 3em;
   margin-bottom: 25px;
+}
+
+.success {
+  color: green;
+  margin-bottom: 50px;
 }
 
 textarea {

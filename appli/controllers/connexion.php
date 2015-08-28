@@ -87,7 +87,7 @@ class Connexion extends CI_Controller {
                         $this->email->from("password_recovery@walkabout-voyages.fr");
                         $this->email->to($user[0]->mail);
 
-                        $this->email->subject('Mot de passe oublié');
+                        $this->email->subject('Récupération de mot de passe - Walkabout');
                         $this->email->set_mailtype("html");
                         $this->email->message($result);
                         $result = $this->email->send();

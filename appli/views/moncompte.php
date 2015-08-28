@@ -183,7 +183,8 @@ $page = "moncompte";
 
                         <div class="travel-log">
                             <div class="col-md-12">
-                                <p class="no-entry">Il n\'y a aucun carnet enregistré pour votre compte !</p>
+                                <p class="no-entry">Aucun carnet enregistré sur votre compte...</p>
+                                <p class="small">Rappel : vous devez avoir réalisé au moins un voyage chez Walkabout pour pouvoir ouvrir votre carnet de voyage.</p>
                             </div>
                         </div>
 
@@ -226,7 +227,7 @@ $page = "moncompte";
                                 <?php echo form_error('email'); ?>
                                 <div class="change-pwd-wrapper">
                                         <input type="password" name="old_password" id="former-password" placeholder="Entrez votre ancien mot de passe">
-                                    
+
                                     <button class="change-pwd-button">
                                         Modifiez votre mot de passe
                                     </button>
