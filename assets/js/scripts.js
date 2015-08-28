@@ -51,6 +51,8 @@ function magicHeight() {
 
 $(document).ready(function () {
 
+
+
     /***
      * Carousel initalizers
      */
