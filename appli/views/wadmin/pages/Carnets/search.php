@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="module__tools">
-                <a href="<?php echo base_url() . 'walkadmin/carnets/'; ?>" class="button black"><i class="fa fa-hand-o-left"></i>&nbsp;Retour en arrière</a>
+                <a href="<?php echo base_url() . 'walkadmin/carnets/'; ?>" class="button black"><i class="fa fa-hand-o-left"></i>&nbsp;Retour aux carnets</a>
                 <div class="custom-search">
                 <?php echo form_open('walkadmin/carnets/recherche'); ?>
                     <input class="custom-search-input" type="search" name="search" placeholder="Rechercher" value="<?php echo $search; ?>"/>

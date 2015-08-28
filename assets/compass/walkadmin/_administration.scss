@@ -89,7 +89,7 @@ body.admin {
     }
 
     .no-entry {
-        margin-bottom: 25px;
+        margin: 0;
         color: $noir;
         font-size: 24px;
         font-style: italic;
@@ -118,12 +118,13 @@ body.admin {
         width: 100%;
         text-align: center;
         margin-top: 0;
-        margin-bottom: 50px;
+        margin-bottom: 0;
 
         > li > a,
         > li > span {
             display: inline-block;
             float: none;
+            color: $noir;
             border-color: $gris-clair;
             background-color: $gris-tres-clair;
 
@@ -417,7 +418,6 @@ body.admin {
 .reservations,
 .utilisateurs,
 .commentaires {
-    margin-bottom: 50px;
 
     input[type="submit"] {
         margin-top: 50px;
@@ -506,6 +506,7 @@ body.admin {
 \*--------------------------------------------*/
 .main-content {
     position: relative;
+    padding-bottom: 50px;
 
     h2 {
         margin-bottom: 50px !important;
@@ -1305,11 +1306,14 @@ body.admin {
 
         .submenu {
             .submenu__header {
-                border-right: none;
+                display: block;
+                width: 200px;
+                margin-right: auto;
+                margin-left: auto;
+                border: none;
             }
 
             li {
-                display: block;
                 margin-bottom: 10px;
             }
         }
@@ -1320,19 +1324,82 @@ body.admin {
     }
 }
 
+@media screen and (max-width: 1230px) {
+    .main-content {
+        .carnets__single {
+            .carnets__commentaire {
+                h4 {
+                    text-align: center;
+                }
+
+                p {
+                    padding-left: 0;
+                    text-align: center;
+                }
+
+                .commentaire__status {
+                    padding-left: 0;
+                }
+            }
+
+            .content__from {
+                > h4 {
+                    text-align: center;
+                }
+
+                > a {
+                    display: block;
+                    margin: 0 auto;
+                    text-align: center;
+
+                    &.button {
+                        width: 200px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 @media screen and (max-width: 992px) {
+    body.admin {
+        .submenu {
+            li {
+                display: block;
+                margin-right: auto;
+            }
+        }
+    }
     /*------------------------------------*\
         #CONTACT
     \*------------------------------------*/
     .contacts {
+        .nav.nav-tabs {
+            margin-top: 0;
+        }
+
         .contact {
             margin-top: 25px;
+
+            .contact__status {
+                .button.small {
+                    display: block;
+                    width: 150px;
+                    margin-bottom: 15px;
+                }
+            }
         }
     }
     /*------------------------------------*\
         #DESTINATIONS || #ACTUALITES
     \*------------------------------------*/
     .main-content {
+
+        .articles__help-block {
+            margin-bottom: 50px;
+        }
 
         .module__tools {
             .custom-search { margin-right: 0; width: 200px; }
@@ -1400,16 +1467,6 @@ body.admin {
                     width: 100%;
                 }
 
-                .commentaire__content {
-                    h4 {
-                        text-align: center;
-                    }
-                }
-
-                .commentaire__status {
-                    padding-left: 0;
-                }
-
 
             }
 
@@ -1474,21 +1531,6 @@ body.admin {
             }
         }
     }
-
-    body.admin {
-        .commentaires {
-            .submenu {
-                .submenu__header {
-                    border-right: 1px solid $noir;
-                }
-
-                > li {
-                    display: inline-block;
-                }
-            }
-        }
-    }
-
 }
 
 @media screen and (max-width: 768px) {

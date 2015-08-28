@@ -12,14 +12,11 @@
                         <input class="custom-search-input" type="search" id="search" name="search" placeholder="Rechercher"/>
                         <button class="custom-search-button"><i class="fa fa-search"></i></button>
                     </div>
-                    <a class="button black" href="<?php echo base_url() . 'walkadmin/actualite/creer/'; ?>">
-                        <i class="fa fa-plus"></i>&nbsp;Ajouter
-                    </a>
-                    <a href="<?php echo base_url() . 'walkadmin/actualite/supprimes'; ?>" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
+                    <a href="<?php echo base_url() . 'walkadmin/actualite'; ?>" class="button black"><i class="fa fa-hand-o-left"></i>&nbsp;Retour aux actualités</a>
                 </div>
+            </div>
 
-                <?php if (sizeof($actualites) > 0) {
-                    foreach ($actualites as $actualite) { ?>
+            <?php if (sizeof($actualites) > 0) { foreach ($actualites as $actualite) { ?>
 
             <div class="row actualites__single searchable" data-search="<?php echo $actualite->titre; ?>">
                 <div class="col-md-12">
@@ -29,20 +26,19 @@
                         <div class="single__block imageBlock" style="background: url('<?php echo img_url($actualite->photos); ?>');background-size:cover;">
                         </div>
                         <?php } else {?>
-                            <div class="single__block imageBlock" style="background: url('<?php echo img_url('default.png'); ?>');background-size:cover;">
-                            </div>
-                            <?php } ?>
-                            <div class="single__block infoBlock">
-                                <h3><?php echo $actualite->titre; ?></h3>
-                                <p class="published"><?php echo 'Publié le&nbsp;' . $actualite->date; ?></p>
-                                <p><?php echo $actualite->description; ?></p>
-                            </div>
-                            <div class="single__block buttonsBlock">
-                                <a class="button black check" href="<?php echo base_url().'walkadmin/actualite/restaurer/'.$actualite->idActualites;?>">
-                                    <i class="fa fa-check"></i>&nbsp;
-                                    Restaurer
-                                </a>
-                            </div>
+                        <div class="single__block imageBlock" style="background: url('<?php echo img_url('default.png'); ?>');background-size:cover;">
+                        </div>
+                        <?php } ?>
+                        <div class="single__block infoBlock">
+                            <h3><?php echo $actualite->titre; ?></h3>
+                            <p class="published"><?php echo 'Publié le&nbsp;' . $actualite->date; ?></p>
+                            <p><?php echo $actualite->description; ?></p>
+                        </div>
+                        <div class="single__block buttonsBlock">
+                            <a class="button black check" href="<?php echo base_url().'walkadmin/actualite/restaurer/'.$actualite->idActualites;?>">
+                                <i class="fa fa-check"></i>&nbsp;
+                                Restaurer
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +47,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="no-entry">Il n'y a aucune actualité enregistrée actuellement !</p>
+                        <p class="no-entry">La corbeille est vide.</p>
                     </div>
                 </div>
 

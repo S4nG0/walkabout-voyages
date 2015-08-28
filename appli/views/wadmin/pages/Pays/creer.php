@@ -3,7 +3,7 @@ echo form_open_multipart('walkadmin/pays_admin/creer');
 ?>
 <div id="page-wrapper">
     <div class="container-fluid">
-        <div class="countries">
+        <div class="main-content countries">
             <div class="row text-center">
                 <h1 class="panel-header sep">Ajout d'un pays</h1>
             </div>

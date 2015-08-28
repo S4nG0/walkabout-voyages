@@ -217,7 +217,7 @@ echo form_open_multipart('walkadmin/destinations/creer');
 
         <div class="row">
             <div class="col-md-12">
-                <div class="form-group mb50">
+                <div class="form-group">
                     <input type="submit" class="button black" value="Ajouter la destination"/>
                 </div>
             </div>

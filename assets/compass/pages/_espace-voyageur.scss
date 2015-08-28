@@ -1089,6 +1089,20 @@ body.espace-voyageur {
                     }
                 }
             }
+
+            .infos-block {
+                .buttons-wrapper {
+                    .button {
+                        display: block;
+                        margin-right: auto;
+                        margin-left: auto;
+
+                        &:first-child {
+                            margin-right: auto;
+                        }
+                    }
+                }
+            }
         }
 
         .content {

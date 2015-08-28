@@ -12,13 +12,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="module__tools">
+                        <a href="<?php echo base_url() . 'walkadmin/article/'; ?>" class="button black"><i class="fa fa-hand-o-left"></i>&nbsp;Retour aux articles</a>
                         <div class="custom-search">
                             <?php echo form_open('walkadmin/article/recherche'); ?>
                                 <input class="custom-search-input" type="search" name="search" placeholder="Rechercher" value="<?php echo $search; ?>"/>
                                 <button class="custom-search-button"><i class="fa fa-search"></i></button>
                             <?php echo form_close(); ?>
                         </div>
-                        <a href="<?php echo base_url() . 'walkadmin/article/supprimes'; ?>" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,8 @@
             <div class="row text-center">
                 <div class="col-md-12">
                     <div class="articles__help-block">
-                        <p class="small">Sélectionner une option pour changer le statut de l'article.</p>
+                        <i class="fa fa-info-circle fa-3x"></i>
+                        <p class="small">Sélectionner une option dans la liste déroulante de droite pour changer le statut de l'article.</p>
                     </div>
                 </div>
             </div>
