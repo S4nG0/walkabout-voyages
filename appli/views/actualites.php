@@ -19,7 +19,7 @@ $page = "actualites"
             <div class="block-actualites">
                 <?php if(sizeof($actus) > 0){ foreach($actus as $actu){ if($actu->photos != null){ ?>
 
-                        <section class="actualite" id="actu<?php echo $actu->idActualites; ?>">
+                        <section class="actualite" id="<?php echo slugify($actu->titre); ?>">
                             <div class="row">
                                 <div class="col-md-4">
                                     <img class="img-responsive" src="<?php echo img_url($actu->photos); ?>" alt="actualité">
@@ -37,7 +37,7 @@ $page = "actualites"
 
                     <?php } else { ?>
 
-                        <section class="actualite" id="actu<?php echo $actu->idActualites; ?>">
+                        <section class="actualite" id="<?php echo slugify($actu->titre); ?>">
                             <div class="row">
                                 <div class="col-md-4">
                                     <img class="img-responsive" src="<?php echo img_url('logo-2.png'); ?>" alt="Walkabout">

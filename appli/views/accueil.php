@@ -66,17 +66,11 @@ switch ($newsletter) {
 
 
     <div class="content" id="content">
-
         <div class="container-fluid noPadding">
-
             <div class="row">
-
                 <div class="col-md-6 content_block_left sameHeight">
-
                     <h2>Notre esprit</h2>
-
                     <p>
-
                         Walkabout est né d'une rencontre entre deux passionnés de  voyage, au détour d'un voyage en Chine.
                         L'un aventurier et ethnologue, a parcouru les continents pendant plus de
                         30 ans à la recherche de population reculé. L'autre professionnel du voyage, fabrique
@@ -85,57 +79,35 @@ switch ($newsletter) {
                         Nous donnons à nos client la possibilité de vivre une expérience inoubliable et
                         enrichissante et de la partager avec la communauté des voyageurs à travers
                         un carnet de voyage modulable.
-
                     </p>
-
                     <a href="<?php echo base_url() . 'qui-sommes-nous'; ?>" class="button">En savoir plus</a>
-
                 </div>
 
                 <div class="col-md-6 content_block_right sameHeight">
-
                     <h2>Nos actualités</h2>
-
                     <?php
                     if (sizeof($actus) > 0) {
                         foreach ($actus as $actu) {
 
                             echo '<div class="row news">
-
                                         <div class="col-md-8">
-
-                                            <p>' . $actu->titre . '</p><p><span class="published">par ' . $actu->admin[0]->prenom . ' ' . $actu->admin[0]->nom . ', le ' . $actu->date . '' . '</span></p>
-
+                                            <p>' . ucfirst(mb_strtolower($actu->titre)) . '</p><p><span class="published">par ' . ucfirst(mb_strtolower($actu->admin[0]->prenom)) . ' ' . ucfirst(mb_strtolower($actu->admin[0]->nom)) . ', le ' . $actu->date . '' . '</span></p>
                                         </div>
-
                                         <div class="col-md-4">
-
-                                            <a href="' . base_url() . 'nos-actualites" class="button">LIRE LA SUITE</a>
-
+                                            <a href="'.base_url().'nos-actualites#'.slugify($actu->titre).'" class="button">LIRE LA SUITE</a>
                                         </div>
-
                                     </div>';
                         }
                     } else {
                         echo '<div class="row news"> <h4 style=text-align:center;vertical-align:middle;"> Aucune actualité pour l\'instant</h4></div>';
                     }
                     ?>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
-
-
     <div class="content parallax" data-stellar-background-ratio="0.2"></div>
-
-
-
-
 
     <?php
     if (sizeof($carnets) > 0) {
@@ -203,12 +175,6 @@ switch ($newsletter) {
     }
     ?>
 
-
-
-
-
-
-
     <div class="destinations__map noselect hidden-xs">
         <div class="row text-center noPadding">
             <div class="col-sm-12">
@@ -220,7 +186,6 @@ switch ($newsletter) {
                 </div>
             </div>
         </div>
-
         <div class="row noPadding">
             <div class="map__wrapper text-center">
                     <div id="map"></div>
