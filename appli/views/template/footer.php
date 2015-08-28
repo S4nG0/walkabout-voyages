@@ -63,11 +63,39 @@
             </div>
         </div>
         <div id="newsletter-block">
-            <h2 class="sep">Inscription à la newsletter Walkabout</h2>
             <?php echo form_open("newsletter/add") ?>
-                <label for="newsletter">Votre e-mail</label>
-                <input type="email" name="newsletter" id="newsletter" placeholder="Entrez votre e-mail...">
-                <input class="button" type="submit" value="Je m'inscris !">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="sep">Inscription à la newsletter Walkabout</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group mt50">
+                            <label for="newsletter">Votre e-mail</label>
+                            <input type="email" name="newsletter" id="newsletter" placeholder="Entrez votre e-mail...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="newsletter_name">Votre prénom</label>
+                            <input type="text" name="newsletter_name" id="newsletter_name" placeholder="Entrez votre nom...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="newsletter_password">Votre nom</label>
+                            <input type="text" name="newsletter_password" id="newsletter_password" placeholder="Entrez votre prénom...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input class="button" type="submit" value="Je m'inscris !">
+                    </div>
+                </div>
+            </div>
             <?php echo form_close(); ?>
         </div>
     </footer>
@@ -83,11 +111,11 @@
 <!-- Jquery & jQUI -->
 <script type="text/javascript" src="<?php echo js_url('jquery') ?>"></script>
 
-<!-- D3 
+<!-- D3
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.3.10/d3.min.js"></script>
 -->
 
-<!-- Leaflet --> 
+<!-- Leaflet -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.3.10/d3.min.js"></script>
 
 <!-- Google reCaptcha-->

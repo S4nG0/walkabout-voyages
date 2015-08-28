@@ -111,15 +111,20 @@ footer {
     text-align: center;
     margin: 35px;
 
+    .row:first-child {
+        label {
+            margin-top: 50px;
+        }
+    }
+
     label {
         display: block;
-        margin-top: 50px;
         color: $jaune-or;
     }
 
     input {
         display: block;
-        margin-top: 25px;
+        margin-top: 10px;
         text-align: center;
     }
 
