@@ -5589,6 +5589,10 @@ body.espace-voyageur .content .reservations-block tbody tr td p {
   margin: 0;
   margin-top: 15px;
 }
+body.espace-voyageur .content .reservations-block .button {
+  width: 200px;
+  margin: 0 auto;
+}
 body.espace-voyageur .content .carnets-block {
   display: table;
   width: 100%;
@@ -6082,6 +6086,11 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .medium-ed
   body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .image-wrapper {
     width: 100%;
     padding-bottom: 50%;
+  }
+  body.espace-voyageur .content .infos-block .buttons-wrapper .button {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
   }
   body.espace-voyageur .content .submenu li {
     display: block;
