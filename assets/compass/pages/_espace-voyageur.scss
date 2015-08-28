@@ -435,6 +435,11 @@ body.espace-voyageur {
                     }
                 }
             }
+
+            .button {
+                width: 200px;
+                margin: 0 auto;
+            }
         }
 
         .carnets-block {
@@ -1086,6 +1091,16 @@ body.espace-voyageur {
                             width: 100%;
                             padding-bottom: 50%;
                         }
+                    }
+                }
+            }
+
+            .infos-block {
+                .buttons-wrapper {
+                    .button {
+                        display: block;
+                        margin-right: auto;
+                        margin-left: auto;
                     }
                 }
             }
