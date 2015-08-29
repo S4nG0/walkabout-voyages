@@ -1,6 +1,6 @@
 <html>
     <head>
-        <meta charset="UTF-8"/>
+        <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>"/>
         <style>
             .modal-backdrop{
@@ -444,7 +444,7 @@
                             function (data) {
                                 document.location.reload();
                             }
-                });// you have missed this bracket
+                });
                 return false;
             }
         }

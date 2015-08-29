@@ -1,4 +1,11 @@
-<?php $page = "single-destination"; ?>
+<?php $page = "single-destination"; 
+function ponctuation($phrase){
+   if (!preg_match('#[\.?!]$#', $phrase)){
+      $phrase = $phrase . '.';
+   }
+   return $phrase;
+}
+?>
 
 <body class="single-destination">
     <div class="main banner" data-stellar-background-ratio="0.5" style="background-image: url(<?php echo img_url($destination[0]->banner) ?>) !important;">
@@ -213,7 +220,7 @@ foreach ($voyages as $voyage) {
                                     foreach ($details_prix as $detail) {
                                         if ($detail->plusoumoins == "plus") {
                                             ?>
-                                            <li><?php echo $detail->valeur; ?></li>
+                                            <li><?php echo ucfirst(ponctuation($detail->valeur)); ?></li>
     <?php }
 } ?>
                                 </ul>
@@ -227,7 +234,7 @@ foreach ($voyages as $voyage) {
 foreach ($details_prix as $detail) {
     if ($detail->plusoumoins == "moins") {
         ?>
-                                            <li><?php echo $detail->valeur; ?></li>
+                                            <li><?php echo ucfirst(ponctuation($detail->valeur)); ?></li>
     <?php }
 } ?>
                                 </ul>
@@ -261,20 +268,21 @@ foreach ($details_prix as $detail) {
                     <div class="col-md-12">
                         <h2 class="sep">Nous sommes à votre écoute !</h2>
                     </div>
-                    <?php if($this->input->get('error')!= false){ ?>
-                        <div class="alert alert-danger" role="alert">Une erreur s'est produite dans le formulaire</div>
-                    <?php } ?>
+                    <div class='col-md-8 col-md-offset-2'>
+                        <div class="alert hidden" id='message_formulaire_demande' role="alert"></div>
+                    </div>
                     <div class="col-md-4 col-md-offset-2">
                         <div class="form-group">
                             <label for="nom">Votre nom</label>
-                            <input type="text" name="nom" id="nom" placeholder="Entrez votre nom" value="<?php set_value('nom') ?>">
+                            <input type="hidden" name="destination" id="form_destination" value="<?php echo $destination[0]->titre; ?>">
+                            <input type="text" name="nom" id="form_nom" placeholder="Entrez votre nom" value="<?php set_value('nom') ?>">
                             <?php echo form_error('nom') ?>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="prenom">Votre prénom</label>
-                            <input type="text" name="prenom" id="prenom" placeholder="Entrez votre prénom" value="<?php set_value('prenom') ?>">
+                            <input type="text" name="prenom" id="form_prenom" placeholder="Entrez votre prénom" value="<?php set_value('prenom') ?>">
                             <?php echo form_error('prenom') ?>
                         </div>
                     </div>
@@ -283,14 +291,14 @@ foreach ($details_prix as $detail) {
                     <div class="col-md-8 col-md-offset-2">
                         <div class="form-group">
                             <label for="email">Votre e-mail</label>
-                            <input type="email" name="email" id="email" placeholder="Entrez votre e-mail" value="<?php set_value('email') ?>">
+                            <input type="email" name="email" id="form_email" placeholder="Entrez votre e-mail" value="<?php set_value('email') ?>">
                             <?php echo form_error('email') ?>
                         </div>
                     </div>
                     <div class="col-md-8 col-md-offset-2">
                         <div class="form-group">
                             <label for="message">Votre demande</label>
-                            <textarea name="message" id="message" rows="10" placeholder="Écrivez votre message ici..."><?php set_value('message') ?></textarea>
+                            <textarea name="message" id="form_message" rows="10" placeholder="Écrivez votre message ici..."><?php set_value('message') ?></textarea>
                             <?php echo form_error('message') ?>
                         </div>
                     </div>

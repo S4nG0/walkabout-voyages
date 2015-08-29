@@ -6,7 +6,7 @@
 
 <head>
 
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="description" content="Partez dans des contrées reculées et partagez une expérience inoubliable">
     <title><?php echo "$title - Walkabout"; ?></title>
     <link rel="icon" href="<?php echo img_url('favicon.png'); ?>" type="image/png">

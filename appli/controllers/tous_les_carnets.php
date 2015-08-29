@@ -23,6 +23,7 @@ class Tous_les_carnets extends CI_Controller {
     {
         $data = array();
         $data['title'] = "Carnets de voyage";
+        $data['newsletter'] = $this->session->flashdata('newsletter');
         $count = $this->db->where('publie','true')->from('carnetdevoyage')->count_all_results();
         /*Load des helpers et librairies*/
         $this->load->library('pagination');

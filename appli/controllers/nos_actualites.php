@@ -21,6 +21,7 @@ class Nos_actualites extends CI_Controller {
 	{
         $data = array();
         $data['title'] = "Actualités";
+        $data['newsletter'] = $this->session->flashdata('newsletter');
             /*
              * Chargement de actualités
              * Chargement des administrateurs de actualités

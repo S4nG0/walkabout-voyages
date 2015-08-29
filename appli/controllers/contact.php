@@ -1,5 +1,5 @@
 <?php
-
+header('Content-Type: text/html; charset=utf-8'); 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
@@ -22,6 +22,7 @@ class Contact extends CI_Controller {
      */
     public function index() {
         $data = Array();
+        $data['newsletter'] = $this->session->flashdata('newsletter');
         $data['title'] =  "Contact";
         $data['page'] = "contact";
         $result = '';
@@ -113,9 +114,7 @@ class Contact extends CI_Controller {
         }
     }
 
-    public function requestInformation($urlDestination=''){
-        if($urlDestination=='')
-            redirect('nos-destinations');
+    public function requestInformation(){
         if($this->input->post()){
             $this->form_validation->set_rules('nom', '"Nom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('prenom', '"Prénom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
@@ -126,25 +125,25 @@ class Contact extends CI_Controller {
                 $contact->nom = $this->input->post('nom');
                 $contact->prenom = $this->input->post('prenom');
                 $contact->mail = $this->input->post('email');
-                $contact->sujet = "Demande d'information sur la destination ".$urlDestination;
-                $contact->telephone = "";
+                $contact->sujet = "Demande d'information sur la destination ".$this->input->post('destination');
                 $contact->message = $this->input->post('message');
                 $contact->ouvert = "false";
                 $contact->date = date('Y-m-d');
                 $result = $this->contacts->insert($contact);
-                echo output($result);
-                /*if($this->input->post('sign-up')==false){
-                    redirect('nos-destinations');
+                
+                if($result == true){
+                    $result = new stdClass();
+                    $result->erreur = false;
+                    $result->message = "Votre demande nous est bien parvenu, nous vous répondrons dans les meilleurs délais.";
+                    echo output($result);
                 }
-                */
-
+                
             }else{
-                $result = validation_errors();
+                $result = new stdClass();
+                $result->erreur = true;
+                $result->message = strip_tags(validation_errors());
                 echo output($result);
-                redirect('nos-destinations/'.$urlDestination.'?error=true');
             }
-        }else{
-            redirect('nos-destinations/'.$urlDestination);
         }
     }
     //Fonction de callback

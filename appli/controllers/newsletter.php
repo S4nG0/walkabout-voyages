@@ -20,11 +20,15 @@ class Newsletter extends CI_Controller {
 	public function add()
 	{
             $this->form_validation->set_rules('newsletter','"Email"', 'trim|required|is_unique[newsletter.email]|xss_clean');
+            $this->form_validation->set_rules('newsletter_nom','"Nom"', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('newsletter_prenom','"Prenom"', 'trim|required|xss_clean');
             
             if($this->form_validation->run()){
                 $data = array();
                 $newsletter = new stdClass();
                 $newsletter->email = $this->input->post('newsletter');
+                $newsletter->nom = $this->input->post('newsletter_nom');
+                $newsletter->prenom = $this->input->post('newsletter_prenom');
                 
                 $array = get_object_vars($newsletter);
                 
@@ -37,10 +41,10 @@ class Newsletter extends CI_Controller {
                     $this->session->set_flashdata('newsletter', 'fail');
                     redirect('/accueil');
                 }
+            }else{
+                $this->session->set_flashdata('newsletter', 'erreur champs');
+                redirect($_SERVER["HTTP_REFERER"]);
             }
-            
-            redirect($_SERVER["HTTP_REFERER"]);
-           
 	}
 }
 

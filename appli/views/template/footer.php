@@ -48,7 +48,7 @@
                             <i class="fa fa-google-plus"></i>
                         </a>
                     </div>
-                    <a class="fancybox" href="#newsletter-block">Inscrivez-vous à notre newsletter</a>
+                    <a class="fancybox" id='newsletter-btn' href="#newsletter-block">Inscrivez-vous à notre newsletter</a>
                 </div>
             </div>
             <div class="row">
@@ -80,13 +80,13 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="newsletter_name">Votre prénom</label>
-                            <input type="text" name="newsletter_name" id="newsletter_name" placeholder="Entrez votre nom...">
+                            <input type="text" name="newsletter_prenom" id="newsletter_name" placeholder="Entrez votre nom...">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="newsletter_password">Votre nom</label>
-                            <input type="text" name="newsletter_password" id="newsletter_password" placeholder="Entrez votre prénom...">
+                            <input type="text" name="newsletter_nom" id="newsletter_password" placeholder="Entrez votre prénom...">
                         </div>
                     </div>
                 </div>
@@ -158,6 +158,21 @@
   ga('send', 'pageview');
 
 </script>
+
+<?php
+
+switch ($newsletter) {
+    case "reussi":
+        echo '<script>alert("Votre inscription à notre newsletter à bien été prise en compte");</script>';
+        break;
+    case "fail":
+        echo '<script>alert("Une erreur est survenue lors de l\'enregistrement de vos préférences, veuillez contacter le service technique.");</script>';
+        break;
+    case "erreur champs":
+        echo '<script>alert("Les champs Email, Nom, Prénom sont obligatoires, vous avez oublié de remplir certains champs du formulaire d\'inscription, veuillez recommencer.");</script>';
+        break;
+};
+?>
 
 </body>
 </html>
