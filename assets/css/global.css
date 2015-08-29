@@ -8272,6 +8272,11 @@ input[type="radio"]:not(old):checked + label > span {
   color: green;
 }
 
+#info_form .alert {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
 .alert {
   position: relative;
   margin: 25px auto 0 auto;
@@ -8835,7 +8840,7 @@ body.single-carnet .content {
   padding-top: 50px;
 }
 .container-fluid.discussion .comment:last-child {
-  margin-bottom: 0;
+  margin-bottom: 50px;
 }
 .container-fluid.discussion .comment .profile-picture {
   position: relative;

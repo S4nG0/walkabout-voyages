@@ -423,6 +423,13 @@ input[type="radio"]:not(old):checked + label {
     }
 }
 
+#info_form {
+    .alert {
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
+}
+
 .alert {
     position: relative;
     margin: 25px auto 0 auto;
@@ -1002,7 +1009,7 @@ body.single-carnet {
         }
 
         &:last-child {
-            margin-bottom: 0;
+            margin-bottom: 50px;
         }
 
         .profile-picture {

@@ -1,4 +1,4 @@
-<?php $page = "single-destination"; 
+<?php $page = "single-destination";
 function ponctuation($phrase){
    if (!preg_match('#[\.?!]$#', $phrase)){
       $phrase = $phrase . '.';
@@ -268,9 +268,13 @@ foreach ($details_prix as $detail) {
                     <div class="col-md-12">
                         <h2 class="sep">Nous sommes à votre écoute !</h2>
                     </div>
+                </div>
+                <div class="row">
                     <div class='col-md-8 col-md-offset-2'>
                         <div class="alert hidden" id='message_formulaire_demande' role="alert"></div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-md-4 col-md-offset-2">
                         <div class="form-group">
                             <label for="nom">Votre nom</label>
