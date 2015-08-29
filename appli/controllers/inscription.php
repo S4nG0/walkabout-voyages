@@ -78,7 +78,7 @@ class Inscription extends CI_Controller {
                     $data['erreur'] == false;
                     //envoyer un mail!
                     $result = $this->__construct_email($donnee);
-                    $this->email->from("capi.aurelien@gmail.com");
+                    $this->email->from("inscription@walkabout-voyages.fr");
                     $this->email->to($donnee['mail']);
 
                     $this->email->subject('Inscription Walkabout');
