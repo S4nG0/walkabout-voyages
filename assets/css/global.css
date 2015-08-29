@@ -6489,6 +6489,17 @@ body.admin .submenu li .active {
 /*------------------------------------*\
     #LOG-IN
 \*------------------------------------*/
+.admin-log-on p {
+  line-height: 18px;
+}
+.admin-log-on a.small {
+  display: block;
+  color: #fff;
+  margin-top: 25px;
+}
+.admin-log-on a.small:hover, .admin-log-on a.small:focus {
+  color: #f0c041;
+}
 .admin-log-on .login-panel {
   display: block;
   width: 320px;
@@ -6527,7 +6538,8 @@ body.admin .submenu li .active {
 .admin-log-on .login-panel .panel-form .form-group .forgotten-pwd {
   display: block;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
   font-size: 80%;
   text-align: center;
 }

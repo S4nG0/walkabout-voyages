@@ -299,6 +299,20 @@ body.admin {
 \*------------------------------------*/
 .admin-log-on {
 
+    p {
+        line-height: 18px;
+    }
+
+    a.small {
+        display: block;
+        color: $blanc;
+        margin-top: 25px;
+
+        &:hover, &:focus {
+            color: $jaune-or;
+        }
+    }
+
     .login-panel {
         display: block;
         width: 320px;
@@ -346,7 +360,8 @@ body.admin {
                 .forgotten-pwd {
                     display: block;
                     margin: 0 auto;
-                    margin-top: 10px;
+                    margin-top: 0;
+                    margin-bottom: 10px;
                     font-size: 80%;
                     text-align: center;
 

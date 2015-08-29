@@ -16,13 +16,13 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Mot de passe</label>
+                    <p class="forgotten-pwd">Vous avez oublié votre mot de passe ?<br /><a class="fancybox" href="#recover-pwd">Cliquez-ici</a></p>
                     <input id="password" name="password" value="<?php echo set_value('password'); ?>" type="password" />
                     <?php echo form_error('password'); ?>
-                    <p class="forgotten-pwd">Vous avez oublié votre mot de passe ?<br /><a class="fancybox" href="#recover-pwd">Cliquez-ici</a></p>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="button" value="Se connecter"/>
-                    <a class="button small mt25" href="<?php echo base_url(); ?>"><i class="fa fa-caret-left"></i>&nbsp;Retour sur Walkabout</a>
+                    <a class="small mt25" href="<?php echo base_url(); ?>">Retour sur Walkabout</a>
                 </div>
             <?php echo form_close(); ?>
         </div>
