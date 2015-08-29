@@ -20,24 +20,23 @@ class Inscription extends CI_Controller {
      * map to /index.php/welcome/<method_name>
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
-    public function reservation() {
+    public function index(){
         $data = Array();
         $data['title'] = "Inscription";
+        $data['newsletter'] = $this->session->flashdata('newsletter');
         $data['erreur'] = "";
-        $data['voyage'] = $this->session->userdata('voyage');
         $data['connecte'] = connecte($this->session->userdata('user')[0]);
-        $data['destination'] = $this->session->userdata('destination');
         if ($data['connecte'] != false) {
             redirect($_SERVER["HTTP_REFERER"]);
             return false;
         }
-        if ($this->input->post() != false) {
+        if ($this->input->post()) {
 
             $this->form_validation->set_rules('nom', '"Nom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('prenom', '"Prénom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
             $this->form_validation->set_rules('email', '"E-mail"', 'trim|required|min_length[5]|valid_email|max_length[52]|encode_php_tags|xss_clean|is_unique[users.mail]');
-            $this->form_validation->set_rules('password', '"Mot de passe"', 'trim|required|min_length[10]|max_length[15]|encode_php_tags|xss_clean');
-            $this->form_validation->set_rules('password_match', '"Confirmation de mot de passe"', 'trim|required|min_length[10]|max_length[15]|encode_php_tags|xss_clean|matches[password]');
+            $this->form_validation->set_rules('password', '"Mot de passe"', 'trim|required|min_length[5]|max_length[20]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('password_match', '"Confirmation de mot de passe"', 'trim|required|encode_php_tags|xss_clean|matches[password]');
             $this->form_validation->set_rules('tel_fixe', '"Téléphone fixe"', 'trim|min_length[10]|max_length[15]|encode_php_tags|xss_clean|numeric');
             $this->form_validation->set_rules('tel_portable', '"Téléphone portable"', 'trim|min_length[10]|max_length[15]|encode_php_tags|xss_clean|numeric');
             $this->form_validation->set_rules('adresse1', '"Adresse"', 'trim|required|min_length[5]|max_length[70]|encode_php_tags|xss_clean');
@@ -78,7 +77,92 @@ class Inscription extends CI_Controller {
                 if($result != false){
                     $data['erreur'] == false;
                     //envoyer un mail!
-                    $result = $result = $this->__construct_email($donnee);
+                    $result = $this->__construct_email($donnee);
+                    $this->email->from("capi.aurelien@gmail.com");
+                    $this->email->to($donnee['mail']);
+
+                    $this->email->subject('Inscription Walkabout');
+                    $this->email->set_mailtype("html");
+                    $this->email->message($result);
+                    $result = $this->email->send();
+                    
+                    $this->load->view('template/header', $data);
+                    $this->load->view('validation_inscription', $data);
+                    $this->load->view('template/footer');
+                }
+            }else{
+                $this->load->view('template/header', $data);
+                $this->load->view('inscription', $data);
+                $this->load->view('template/footer');
+            }
+        }else{
+            $this->load->view('template/header', $data);
+            $this->load->view('inscription', $data);
+            $this->load->view('template/footer');
+        }
+
+    }
+    
+    public function reservation() {
+        $data = Array();
+        $data['title'] = "Inscription";
+        $data['newsletter'] = $this->session->flashdata('newsletter');
+        $data['erreur'] = "";
+        $data['voyage'] = $this->session->userdata('voyage');
+        $data['connecte'] = connecte($this->session->userdata('user')[0]);
+        $data['destination'] = $this->session->userdata('destination');
+        if ($data['connecte'] != false) {
+            redirect($_SERVER["HTTP_REFERER"]);
+            return false;
+        }
+        if ($this->input->post() != false) {
+
+            $this->form_validation->set_rules('nom', '"Nom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('prenom', '"Prénom"', 'trim|required|max_length[52]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('email', '"E-mail"', 'trim|required|min_length[5]|valid_email|max_length[52]|encode_php_tags|xss_clean|is_unique[users.mail]');
+            $this->form_validation->set_rules('password', '"Mot de passe"', 'trim|required|min_length[5]|max_length[20]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('password_match', '"Confirmation de mot de passe"', 'trim|required|encode_php_tags|xss_clean|matches[password]');
+            $this->form_validation->set_rules('tel_fixe', '"Téléphone fixe"', 'trim|min_length[10]|max_length[15]|encode_php_tags|xss_clean|numeric');
+            $this->form_validation->set_rules('tel_portable', '"Téléphone portable"', 'trim|min_length[10]|max_length[15]|encode_php_tags|xss_clean|numeric');
+            $this->form_validation->set_rules('adresse1', '"Adresse"', 'trim|required|min_length[5]|max_length[70]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('adresse2', '"Complément d\'adresse"', 'trim|min_length[5]|max_length[70]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('CP', '"Code postal"', 'trim|required|min_length[4]|max_length[10]|encode_php_tags|xss_clean|numeric');
+            $this->form_validation->set_rules('ville', '"Ville"', 'trim|required|min_length[3]|max_length50]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('pays', '"Pays"', 'trim|required|min_length[3]|max_length[50]|encode_php_tags|xss_clean');
+            $this->form_validation->set_rules('naissance', '"Date de naissance"', 'trim|min_length[10]|max_length[10]|encode_php_tags|xss_clean');
+
+            if ($this->form_validation->run()) {
+                $rand = code();
+                $donnee = array(
+                    'active' => 'false',
+                    'adresse1' => $this->input->post('adresse1'),
+                    'adresse2' => $this->input->post('adresse2'),
+                    'CP' => $this->input->post('CP'),
+                    'date_naissance' => $this->input->post('naissance'),
+                    'idLevel' => 1,
+                    'mail' => $this->input->post('email'),
+                    'mdp' => hash('sha256', $this->input->post('password')),
+                    'nom' => $this->input->post('nom'),
+                    'num_activation' => $rand,
+                    'pays' => $this->input->post('pays'),
+                    'photo' => 'unsigned_user.jpg',
+                    'prenom' => $this->input->post('prenom'),
+                    'tel_fixe' => $this->input->post('tel_fixe'),
+                    'tel_port' => $this->input->post('tel_portable'),
+                    'ville' => $this->input->post('ville')
+                );
+                $data['email'] = $donnee["mail"];
+                $id = $this->user->insert($donnee);
+
+                $user = array(
+                    "slug" => slugify($id."-".$this->input->post('nom')."-".$this->input->post('prenom'))
+                );
+
+                $result = $this->user->modify($user,$id);
+                if($result != false){
+                    $data['erreur'] == false;
+                    //envoyer un mail!
+                    $result = $this->__construct_email($donnee);
                     $this->email->from("inscription@walkabout-voyages.fr");
                     $this->email->to($donnee['mail']);
 

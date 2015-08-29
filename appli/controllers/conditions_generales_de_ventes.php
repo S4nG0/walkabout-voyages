@@ -21,6 +21,7 @@ class Conditions_generales_de_ventes extends CI_Controller {
 	{
             $data = array();
                 $data['title'] = "Conditions générales de ventes";
+                $data['newsletter'] = $this->session->flashdata('newsletter');
             /*
              * Chargement des carnets
              * Chargement des utilisateurs du carnet

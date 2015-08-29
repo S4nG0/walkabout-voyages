@@ -20,6 +20,7 @@ class Destinations extends CI_Controller {
 	public function index()
 	{
             $data = array();
+            $data['newsletter'] = $this->session->flashdata('newsletter');
             $data['title'] = "Nos destinations";
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             
@@ -37,6 +38,7 @@ class Destinations extends CI_Controller {
         public function load_voyage($name)
         {
             $data = array();
+            $data['newsletter'] = $this->session->flashdata('newsletter');
             $data['destination'] = $this->destination->getFromName($name);
             if($data['destination'][0]->active == "false"){
                 redirect(base_url().'nos-destinations');

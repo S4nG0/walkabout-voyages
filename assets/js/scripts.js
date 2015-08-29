@@ -658,6 +658,69 @@ $(document).ready(function () {
         var sb = $(window).scrollTop();
         $('.spirit-content').css({'opacity': (-650 + sb) / 1000});
     });
+    
+    /*
+     * 
+     * Ajax pour la demande information
+     * 
+     */
+    $('form.destination__form').on('submit',function(e){
+        e.preventDefault();
+        var data = {};
+        data.nom = $('#form_nom').val();
+        data.prenom = $('#form_prenom').val();
+        data.email = $('#form_email').val();
+        data.message = $('#form_message').val();
+        data.destination = $('#form_destination').val();
+        var signup = $('#sign-up').is(":checked");
+        
+        $.ajax({
+            type: "POST",
+            url : base_url+"contact/requestInformation/",
+            data : data
+        }).success(function(data){
+            var result = JSON.parse(data).result;
+            $('#message_formulaire_demande').removeClass('hidden');
+            if(result.erreur == true){
+                $('#message_formulaire_demande').empty();
+                $('.fancybox').stop().animate({
+                    scrollTop : $("#info_form").offset().top
+                }, 300, function () {
+                    location.hash = "#info_form";
+                });
+                $('#message_formulaire_demande').addClass('alert-danger').fadeIn( "slow");
+                $('#message_formulaire_demande').append("<i class='fa fa-exclamation-triangle'></i> "+result.message);
+            }else{
+                $('#message_formulaire_demande').empty();
+                $('.fancybox').stop().animate({
+                    scrollTop : $("#info_form").offset().top
+                }, 300, function () {
+                    location.hash = "#info_form";
+                });
+                $('#message_formulaire_demande').addClass('alert-success').fadeIn( "slow");
+                
+                
+                if(signup == true){
+                    $('#message_formulaire_demande').append("<i class='fa fa-check'></i> "+result.message+" Vous allez être redirigé vers le formulaire d'inscription dans 5 secondes.");
+                    setTimeout(function(){
+                        document.location.href = "/inscription";                        
+                    }, 5000); 
+                }else{
+                    $('#message_formulaire_demande').append("<i class='fa fa-check'></i> "+result.message);
+                }
+            }
+        }).fail(function(data){
+            $('#message_formulaire_demande').empty();
+                $('.fancybox').stop().animate({
+                    scrollTop : $("#info_form").offset().top
+                }, 300, function () {
+                    location.hash = "#info_form";
+                });
+                $('#message_formulaire_demande').addClass('alert-danger').fadeIn( "slow");
+                $('#message_formulaire_demande').append("<i class='fa fa-exclamation-triangle'></i> une erreur s'est produite lors de l'envoi de la demande, veuillez réessayer ultérieurement.");
+        });
+    });
+    
 });
 
 $(window).load(function(){
@@ -670,4 +733,4 @@ $(window).load(function(){
             columnWidth: '.grid__sizer'
         })
     });
-})
+});

@@ -21,6 +21,7 @@ class Mentions extends CI_Controller {
 	{
             $data = array();
         $data['title'] = "Mentions légales";
+        $data['newsletter'] = $this->session->flashdata('newsletter');
             /*
              * Chargement des carnets
              * Chargement des utilisateurs du carnet

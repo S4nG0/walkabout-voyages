@@ -26,6 +26,7 @@
             </div>
 
             <input type="submit" class="button" value="Je me connecte">
+            <a href="<?php echo base_url('inscription'); ?>" class="button small">S'inscrire</a>
             <a href="<?php echo base_url(); ?>" class="button small">Retour sur Walkabout</a>
 
         <?php echo form_close(); ?>

@@ -21,6 +21,7 @@ class Connexion extends CI_Controller {
 	{
             $data = array();
             $data['title'] = "Connexion";
+            $data['newsletter'] = $this->session->flashdata('newsletter');
             $data['result'] = null;
 
             if ($this->input->post() != false) {
