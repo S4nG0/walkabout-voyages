@@ -4,6 +4,19 @@
 body.sign-in {
     background: $texture;
 
+    p {
+        line-height: 18px;
+    }
+
+    .forgotten-pwd {
+        margin-top: 10px;
+    }
+
+    a.small {
+        display: block;
+        margin-top: 25px;
+    }
+
     .form-group {
         padding-top: 30px;
         margin-bottom: 0;
@@ -37,6 +50,7 @@ body.sign-in {
     .recover-pwd-block {
         display: none;
         position: relative;
+        width: 300px;
         background: $texture;
         top: 0;
         right: 0;
@@ -45,10 +59,11 @@ body.sign-in {
         text-align: center;
 
         .form-group {
-            padding-top: 0;
+            padding-top: 50px;
         }
 
         .button {
+            margin-top: 25px;
             width: auto;
         }
     }
@@ -67,6 +82,10 @@ body.sign-in {
         h1 {
             font-size: 20px;
             line-height: 20px;
+        }
+
+        .recover-pwd-block {
+            width: 250px;
         }
     }
 }

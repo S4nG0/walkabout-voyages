@@ -18,16 +18,16 @@
 
             <div class="form-group">
                 <label for="password">Mot de passe</label>
-                <input type="password" name="password" id="password" placeholder="Votre mot de passe">
-                <?php echo form_error('password'); ?>
                 <p class="forgotten-pwd">
                     <span class="small">Vous avez oublié votre mot de passe&nbsp;?<br /><a class="fancybox" href="#recover-pwd">Cliquez-ici</a></span>
                 </p>
+                <input type="password" name="password" id="password" placeholder="Votre mot de passe">
+                <?php echo form_error('password'); ?>
             </div>
 
             <input type="submit" class="button" value="Je me connecte">
-            <a href="<?php echo base_url('inscription'); ?>" class="button small">S'inscrire</a>
-            <a href="<?php echo base_url(); ?>" class="button small">Retour sur Walkabout</a>
+            <a class="button" href="<?php echo base_url('inscription'); ?>">Je m'inscris</a>
+            <a class="small" href="<?php echo base_url(); ?>">Retour sur Walkabout</a>
 
         <?php echo form_close(); ?>
         <!-- /FORM -->
@@ -35,13 +35,12 @@
 
     <div class="recover-pwd-block" id="recover-pwd">
         <?php echo form_open('connexion/oublieMdp') ?>
+            <h2 class="sep">Oubli de mot de passe</h2>
             <div class="form-group">
-                <label for="pwd-recover-email">E-mail lié à votre compte</label>
+                <label for="pwd-recover-email">Entrez l'e-mail lié à votre compte</label>
                 <input type="email" placeholder="Saisissez votre e-mail" name="pwd-recover-email" id="pwd-recover-email" value="<?php if($this->input->get('pwd-recover-email')!=false) echo $this->input->get('pwd-recover-email');?>">
                 <?php echo form_error('pwd-recover-email') ?>
             </div>
-            <div class="form-group">
-                <button type="submit" class="button">Récupérer votre mot de passe</button>
-            </div>
+            <button type="submit" class="button">Recevoir mon mot de passe</button>
         <?php echo form_close() ?>
     </div>

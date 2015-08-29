@@ -1,7 +1,7 @@
 var body = $('body');
 
-// var base_url = "http://walkabout-voyages.fr/";
-var base_url = "http://dev.walkabout-voyages.fr/";
+var base_url = "http://walkabout-voyages.fr/";
+// var base_url = "http://dev.walkabout-voyages.fr/";
 
 /***
  * Gives two column the same height
@@ -658,11 +658,11 @@ $(document).ready(function () {
         var sb = $(window).scrollTop();
         $('.spirit-content').css({'opacity': (-650 + sb) / 1000});
     });
-    
+
     /*
-     * 
+     *
      * Ajax pour la demande information
-     * 
+     *
      */
     $('form.destination__form').on('submit',function(e){
         e.preventDefault();
@@ -673,7 +673,7 @@ $(document).ready(function () {
         data.message = $('#form_message').val();
         data.destination = $('#form_destination').val();
         var signup = $('#sign-up').is(":checked");
-        
+
         $.ajax({
             type: "POST",
             url : base_url+"contact/requestInformation/",
@@ -698,13 +698,13 @@ $(document).ready(function () {
                     location.hash = "#info_form";
                 });
                 $('#message_formulaire_demande').addClass('alert-success').fadeIn( "slow");
-                
-                
+
+
                 if(signup == true){
                     $('#message_formulaire_demande').append("<i class='fa fa-check'></i> "+result.message+" Vous allez être redirigé vers le formulaire d'inscription dans 5 secondes.");
                     setTimeout(function(){
-                        document.location.href = "/inscription";                        
-                    }, 5000); 
+                        document.location.href = "/inscription";
+                    }, 5000);
                 }else{
                     $('#message_formulaire_demande').append("<i class='fa fa-check'></i> "+result.message);
                 }
@@ -720,7 +720,7 @@ $(document).ready(function () {
                 $('#message_formulaire_demande').append("<i class='fa fa-exclamation-triangle'></i> une erreur s'est produite lors de l'envoi de la demande, veuillez réessayer ultérieurement.");
         });
     });
-    
+
 });
 
 $(window).load(function(){

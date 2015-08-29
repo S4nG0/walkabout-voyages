@@ -4274,6 +4274,16 @@ body.conditions .content ul {
 body.sign-in {
   background: url("../images/texture.png");
 }
+body.sign-in p {
+  line-height: 18px;
+}
+body.sign-in .forgotten-pwd {
+  margin-top: 10px;
+}
+body.sign-in a.small {
+  display: block;
+  margin-top: 25px;
+}
 body.sign-in .form-group {
   padding-top: 30px;
   margin-bottom: 0;
@@ -4302,6 +4312,7 @@ body.sign-in .login-panel {
 body.sign-in .recover-pwd-block {
   display: none;
   position: relative;
+  width: 300px;
   background: url("../images/texture.png");
   top: 0;
   right: 0;
@@ -4310,9 +4321,10 @@ body.sign-in .recover-pwd-block {
   text-align: center;
 }
 body.sign-in .recover-pwd-block .form-group {
-  padding-top: 0;
+  padding-top: 50px;
 }
 body.sign-in .recover-pwd-block .button {
+  margin-top: 25px;
   width: auto;
 }
 body.sign-in footer {
@@ -4326,6 +4338,9 @@ body.sign-in footer {
   body.sign-in h1 {
     font-size: 20px;
     line-height: 20px;
+  }
+  body.sign-in .recover-pwd-block {
+    width: 250px;
   }
 }
 /*------------------------------------*\
