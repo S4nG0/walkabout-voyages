@@ -413,7 +413,14 @@ input[type="radio"]:not(old):checked + label {
 .error {
     margin-top: 10px;
     font-size: 16px;
-    color: $error;
+    color: $error !important;
+}
+
+.success {
+    color: green;
+    > .required {
+        color: green;
+    }
 }
 
 .alert {

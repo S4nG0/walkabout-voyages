@@ -8262,7 +8262,14 @@ input[type="radio"]:not(old):checked + label > span {
 .error {
   margin-top: 10px;
   font-size: 16px;
-  color: #ca2d2d;
+  color: #ca2d2d !important;
+}
+
+.success {
+  color: green;
+}
+.success > .required {
+  color: green;
 }
 
 .alert {
