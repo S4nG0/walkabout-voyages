@@ -1,5 +1,6 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+<?php 
+header('Content-Type: text/html; charset=utf-8'); 
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Newsletter extends CI_Controller {
 
 	/**
@@ -34,16 +35,19 @@ class Newsletter extends CI_Controller {
                 
                 //envoyer le commentaire! :)
                 $result = $this->newsletters->insert($array);
+                
                 if($result == true){
-                    $this->session->set_flashdata('newsletter', 'reussi');
-                    redirect('/accueil');
-                }else{
-                    $this->session->set_flashdata('newsletter', 'fail');
-                    redirect('/accueil');
+                    $result = new stdClass();
+                    $result->erreur = false;
+                    $result->message = "Votre inscription à notre newsletter à bien été enregistré!";
+                    echo output($result);
                 }
+                
             }else{
-                $this->session->set_flashdata('newsletter', 'erreur champs');
-                redirect($_SERVER["HTTP_REFERER"]);
+                $result = new stdClass();
+                $result->erreur = true;
+                $result->message = strip_tags(validation_errors());
+                echo output($result);
             }
 	}
 }

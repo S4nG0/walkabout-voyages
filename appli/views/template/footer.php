@@ -64,35 +64,40 @@
         </div>
         <div id="newsletter-block">
             <?php echo form_open("newsletter/add") ?>
-            <div class="container-fluid">
+            <div class="container-fluid" id='newsletter_form'>
                 <div class="row">
                     <div class="col-sm-12">
                         <h2 class="sep">Inscription à la newsletter Walkabout</h2>
                     </div>
                 </div>
                 <div class="row">
+                    <div class='col-md-12'>
+                        <div class="alert hidden" id='message_formulaire_newsletter' role="alert"></div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group mt50">
                             <label for="newsletter">Votre e-mail</label>
-                            <input type="email" name="newsletter" id="newsletter" placeholder="Entrez votre e-mail...">
+                            <input type="email" name="newsletter" id="newsletter_email" placeholder="Entrez votre e-mail...">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="newsletter_name">Votre prénom</label>
-                            <input type="text" name="newsletter_prenom" id="newsletter_name" placeholder="Entrez votre nom...">
+                            <input type="text" name="newsletter_prenom" id="newsletter_prenom" placeholder="Entrez votre nom...">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="newsletter_password">Votre nom</label>
-                            <input type="text" name="newsletter_nom" id="newsletter_password" placeholder="Entrez votre prénom...">
+                            <input type="text" name="newsletter_nom" id="newsletter_nom" placeholder="Entrez votre prénom...">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <input class="button" type="submit" value="Je m'inscris !">
+                        <input class="button" type="submit" id='newsletter_submit' value="Je m'inscris !">
                     </div>
                 </div>
             </div>

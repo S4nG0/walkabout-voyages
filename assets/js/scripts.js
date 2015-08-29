@@ -1,7 +1,7 @@
 var body = $('body');
 
-var base_url = "http://walkabout-voyages.fr/";
-// var base_url = "http://dev.walkabout-voyages.fr/";
+// var base_url = "http://walkabout-voyages.fr/";
+var base_url = "http://dev.walkabout-voyages.fr/";
 
 /***
  * Gives two column the same height
@@ -708,6 +708,51 @@ $(document).ready(function () {
                 }else{
                     $('#message_formulaire_demande').append("<i class='fa fa-check'></i> "+result.message);
                 }
+            }
+        }).fail(function(data){
+            $('#message_formulaire_demande').empty();
+                $('.fancybox').stop().animate({
+                    scrollTop : $("#info_form").offset().top
+                }, 300, function () {
+                    location.hash = "#info_form";
+                });
+                $('#message_formulaire_demande').addClass('alert-danger').fadeIn( "slow");
+                $('#message_formulaire_demande').append("<i class='fa fa-exclamation-triangle'></i> une erreur s'est produite lors de l'envoi de la demande, veuillez réessayer ultérieurement.");
+        });
+    });
+    
+    $('#newsletter_submit').on('click',function(e){
+        e.preventDefault();
+        var data = {};
+        data.newsletter = $('#newsletter_email').val();
+        data.newsletter_prenom = $('#newsletter_prenom').val();
+        data.newsletter_nom = $('#newsletter_nom').val();
+
+        $.ajax({
+            type: "POST",
+            url : base_url+"newsletter/add",
+            data : data
+        }).success(function(data){
+            var result = JSON.parse(data).result;
+            $('#message_formulaire_newsletter').removeClass('hidden');
+            if(result.erreur == true){
+                $('#message_formulaire_newsletter').empty();
+                $('.fancybox').stop().animate({
+                    scrollTop : $("#newsletter_form").offset().top
+                }, 300, function () {
+                    location.hash = "#newsletter_form";
+                });
+                $('#message_formulaire_newsletter').addClass('alert-danger').fadeIn( "slow");
+                $('#message_formulaire_newsletter').append("<i class='fa fa-exclamation-triangle'></i> "+result.message);
+            }else{
+                $('#message_formulaire_newsletter').empty();
+                $('.fancybox').stop().animate({
+                    scrollTop : $("#newsletter_form").offset().top
+                }, 300, function () {
+                    location.hash = "#newsletter_form";
+                });
+                $('#message_formulaire_newsletter').addClass('alert-success').fadeIn( "slow");
+                $('#message_formulaire_newsletter').append("<i class='fa fa-check'></i> "+result.message);
             }
         }).fail(function(data){
             $('#message_formulaire_demande').empty();
