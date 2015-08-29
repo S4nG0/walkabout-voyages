@@ -1,4 +1,4 @@
-<?php 
+<?php
 $page = "inscription";
 ?>
 <body class="checkout">
@@ -16,9 +16,14 @@ $page = "inscription";
 
 <div class="content">
     <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="sep">Rejoignez la communauté de voyageurs Walkabout !</h1>
+            </div>
+        </div>
         <!-- Adress block -->
         <div class="row">
-            <div class="infos-block clearfix">
+            <div class="infos-block clearfix mt25">
         <?php
             if($erreur == true){
                 echo '<p class="error"><i class="fa fa-exclamation-circle"></i>Une erreur s\'est produite lors de l\'enregistrement de vos informations, veuillez vérifier les champs !</p>';
