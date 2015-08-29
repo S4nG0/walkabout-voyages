@@ -1,20 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.3
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Client :  localhost
--- Généré le :  Mer 26 Août 2015 à 15:49
--- Version du serveur :  5.6.24
--- Version de PHP :  5.6.8
+-- Client :  127.0.0.1
+-- Généré le :  Sam 29 Août 2015 à 23:31
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données :  `walkabout-voyages`
@@ -27,7 +21,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `wa__actualites` (
-  `idActualites` int(11) NOT NULL,
+  `idActualites` int(11) NOT NULL AUTO_INCREMENT,
   `titre` varchar(400) NOT NULL,
   `date` date DEFAULT NULL,
   `texte` mediumtext,
@@ -36,8 +30,10 @@ CREATE TABLE IF NOT EXISTS `wa__actualites` (
   `description` varchar(150) NOT NULL,
   `publie` varchar(5) DEFAULT NULL,
   `photos` longtext,
-  `idAdministrateur` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+  `idAdministrateur` int(11) NOT NULL,
+  PRIMARY KEY (`idActualites`),
+  KEY `idAdministrateur` (`idAdministrateur`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `wa__actualites`
@@ -56,20 +52,21 @@ INSERT INTO `wa__actualites` (`idActualites`, `titre`, `date`, `texte`, `btn_nam
 --
 
 CREATE TABLE IF NOT EXISTS `wa__administrateur` (
-  `idAdministrateur` int(11) NOT NULL,
+  `idAdministrateur` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(100) DEFAULT NULL,
   `prenom` varchar(100) DEFAULT NULL,
   `email` varchar(500) NOT NULL,
   `identifiant` varchar(45) DEFAULT NULL,
-  `mdp` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+  `mdp` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`idAdministrateur`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Contenu de la table `wa__administrateur`
 --
 
 INSERT INTO `wa__administrateur` (`idAdministrateur`, `nom`, `prenom`, `email`, `identifiant`, `mdp`) VALUES
-(2, 'Julien', 'VANDERMEERSCH', '', 'ju.vdm', '4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2'),
+(2, 'Julien', 'VANDERMEERSCH', 'julien.vdm@gmail.com', 'ju.vdm', '4fdee5ff6b9e76f9f7ff8b322c86bd84ce0ee143fb2369646f55c7f978377a34'),
 (7, 'Mignot', 'Steph', 'mignotsteph@gmail.com', 's.mignot', '3acbd4b47c3c242c6622647001c218386dbcd3a6054b193ba51e58ab118356b7'),
 (8, 'vano', 'celine', 'celine.vano@gmail.com', 'celine', '32a1a0f84ebf6e1726b5009a5dd1a9d5aae077e2d9eb31ef473416050c05a220'),
 (9, 'Lamoot', 'Alexandre', 'lamootalexandre@gmail.com', 'dev', '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08'),
@@ -82,28 +79,30 @@ INSERT INTO `wa__administrateur` (`idAdministrateur`, `nom`, `prenom`, `email`, 
 --
 
 CREATE TABLE IF NOT EXISTS `wa__articles` (
-  `idArticles` int(11) NOT NULL,
+  `idArticles` int(11) NOT NULL AUTO_INCREMENT,
   `idCarnet` int(11) NOT NULL,
   `date` date DEFAULT NULL,
   `ordre` varchar(45) DEFAULT NULL,
   `titre` text,
   `texte` longtext,
-  `etat` varchar(50) NOT NULL DEFAULT 'Brouillon'
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+  `etat` varchar(50) NOT NULL DEFAULT 'Brouillon',
+  PRIMARY KEY (`idArticles`),
+  KEY `idCarnet` (`idCarnet`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Contenu de la table `wa__articles`
 --
 
 INSERT INTO `wa__articles` (`idArticles`, `idCarnet`, `date`, `ordre`, `titre`, `texte`, `etat`) VALUES
-(1, 1, '2015-08-14', '2', 'JOUR 1: Départ de paris', '<p>Ce n’etait pas le point culminant de nos centres d’intérêt, mais nous y avons quand même passé trente six heures ce qui nous a permis de faire une rapide visite du couvent San Francisco(avec de superbes azuleros) du Museo Postal du patio du Ministère Des Affaires Etrangères. Nous avons eu le temps d’assister à une cérémonie sur les marches du Palais du Gouvernement: les maires étaient reçus par le Président de la République (dont la femme est d’origine française, nous a précisé un policier posté devant les grilles - Il se trompait, Eliana Karp est d''origine belge :-) De l’autre côté de la Plaza de Armas nous avons pu entendre une chorale de plusieurs centaines de jeunes chantant pour le rétablissement du Pape.</p><div class="medium-insert-images"><figure>\n    <img src="http://walkabout-voyages.fr/assets/images/carnets/mon-experience-chez-les-pygmees-du-congo/articles/immersion-pygmee(2).jpg" alt="">\n        \n</figure></div><div class="medium-insert-images"><figure>\n    <img k=" alt=">\n        \n</figure></div><blockquote>De l’autre côté de la Plaza de Armas nous avons pu entendre une chorale de plusieurs centaines de jeunes chantant pour le rétablissement du Pape.</blockquote><div class="medium-insert-images"><figure class="">\n    <img src="http://walkabout-voyages.fr/assets/images/carnets/mon-experience-chez-les-pygmees-du-congo/articles/Capture d’écran (27).png" alt="" class="">\n        \n</figure></div><p>Notre hôtel situé à Miraflores se trouve pas très loin d’un centre commercial moderne et assez luxueux, surplombant la mer au dessus des falaises. De nombreux restaurants servent d’excellents poissons. Pour manger une bonneceviche il vaut mieux choisir les restaurants situés sur les niveaux les plus élevés. C’est dans ce centre commercial que nous avons découvert les magasins d’alpaga et de vigogne les plus chics.</p>', 'En attente de modération'),
-(3, 1, '2015-08-14', '3', 'Jour 2 : Découverte', '<p class="">La voiture qui nous emmène vers le sud et Nazca traverse des paysages étonnants, tantôt le long du Pacifique, tantôt s’enfonçant dans les terres, tantôt lunaires, tantôt laissant penser que la route file dans un gigantesque tableau impressionniste, avec une palette de couleurs tendres variant à l’infini, à chaque virage, à chaque changement de lumière. Nous avons voulu éviter l’arrêt aux îles Ballestas. Nous avons fait connaissance avec le Pisco Sur, cette boisson traditionnelle que nous avons vu fabriquer dans une bodega près d’Ica, capitale du Pisco. Le goût du pisco ne nous a pas convaincu, mais peut-être faut-il habituer son palais? Nous en avons cependant acheté une petite fiole qui rejoindra dans un placard à alcool la tequila mexicaine et l’ouzo grec.</p><p class="">En arrivant à Nazca, un petit avion, retenu par l’agence,nous a fait survoler pendant une demi-heure les étranges lignes. Le pilote prenant soin de tourner au-dessus de chaque dessin dans un sens puis dans l’autre nous a permis de très bien voir ces messages mystérieux, mais il vaut mieux avoir l’estomac bien accroché (l’un de nous en a souffert)</p><p>Départ pour Saraguro, à la rencontre de cette communauté dans le petit village de Quisquinchir,  un assez long périple en voiture qui nous permet de découvrir des paysages andins  sous la brume, mais ça rajoute un peu de magie aux montagnes. Nous faisons également plus ample connaissance avec notre guide-interprète qui nous raconte l’histoire de son pays. Une pause " fruits " est organisée et nous voilà  devant un étal de couleurs, saveurs, odeurs à nous "gaver" de fruits connus et inconnus, tous excellents. </p><p>Arrivée le soir dans nos familles, installation et rapide visite des lieux : que de sourires partout !!</p><img <="" div="">', 'En attente de modération'),
+(1, 1, '2015-08-14', '2', 'JOUR 1: Départ de paris', '<p>Ce n’etait pas le point culminant de nos centres d’intérêt, mais nous y avons quand même passé trente six heures ce qui nous a permis de faire une rapide visite du couvent San Francisco(avec de superbes azuleros) du Museo Postal du patio du Ministère Des Affaires Etrangères. Nous avons eu le temps d’assister à une cérémonie sur les marches du Palais du Gouvernement: les maires étaient reçus par le Président de la République (dont la femme est d’origine française, nous a précisé un policier posté devant les grilles - Il se trompait, Eliana Karp est d''origine belge :-) De l’autre côté de la Plaza de Armas nous avons pu entendre une chorale de plusieurs centaines de jeunes chantant pour le rétablissement du Pape.</p><div class="medium-insert-images"><figure>\n    <img src="http://walkabout-voyages.fr/assets/images/carnets/mon-experience-chez-les-pygmees-du-congo/articles/immersion-pygmee(2).jpg" alt="">\n        \n</figure></div><div class="medium-insert-images"><figure>\n    <img k=" alt=">\n        \n</figure></div><blockquote>De l’autre côté de la Plaza de Armas nous avons pu entendre une chorale de plusieurs centaines de jeunes chantant pour le rétablissement du Pape.</blockquote><div class="medium-insert-images"><figure class="">\n    <img src="http://walkabout-voyages.fr/assets/images/carnets/mon-experience-chez-les-pygmees-du-congo/articles/Capture d’écran (27).png" alt="" class="">\n        \n</figure></div><p>Notre hôtel situé à Miraflores se trouve pas très loin d’un centre commercial moderne et assez luxueux, surplombant la mer au dessus des falaises. De nombreux restaurants servent d’excellents poissons. Pour manger une bonneceviche il vaut mieux choisir les restaurants situés sur les niveaux les plus élevés. C’est dans ce centre commercial que nous avons découvert les magasins d’alpaga et de vigogne les plus chics.</p>', 'En attente de modération'),
+(3, 1, '2015-08-14', '3', 'Jour 2 : Découverte', '<p class="">La voiture qui nous emmène vers le sud et Nazca traverse des paysages étonnants, tantôt le long du Pacifique, tantôt s’enfonçant dans les terres, tantôt lunaires, tantôt laissant penser que la route file dans un gigantesque tableau impressionniste, avec une palette de couleurs tendres variant à l’infini, à chaque virage, à chaque changement de lumière. Nous avons voulu éviter l’arrêt aux îles Ballestas. Nous avons fait connaissance avec le Pisco Sur, cette boisson traditionnelle que nous avons vu fabriquer dans une bodega près d’Ica, capitale du Pisco. Le goût du pisco ne nous a pas convaincu, mais peut-être faut-il habituer son palais? Nous en avons cependant acheté une petite fiole qui rejoindra dans un placard à alcool la tequila mexicaine et l’ouzo grec.</p><p class="">En arrivant à Nazca, un petit avion, retenu par l’agence,nous a fait survoler pendant une demi-heure les étranges lignes. Le pilote prenant soin de tourner au-dessus de chaque dessin dans un sens puis dans l’autre nous a permis de très bien voir ces messages mystérieux, mais il vaut mieux avoir l’estomac bien accroché (l’un de nous en a souffert)</p><p>Départ pour Saraguro, à la rencontre de cette communauté dans le petit village de Quisquinchir,  un assez long périple en voiture qui nous permet de découvrir des paysages andins  sous la brume, mais ça rajoute un peu de magie aux montagnes. Nous faisons également plus ample connaissance avec notre guide-interprète qui nous raconte l’histoire de son pays. Une pause " fruits " est organisée et nous voilà  devant un étal de couleurs, saveurs, odeurs à nous "gaver" de fruits connus et inconnus, tous excellents. </p><p>Arrivée le soir dans nos familles, installation et rapide visite des lieux : que de sourires partout !!</p><img <="" div="">', 'En attente de modération'),
 (4, 2, '2015-08-14', '1', 'Le Jour de mon arrivée', '<p>Je suis arrivé au petit matin au village. La nuit noire et le froid m''ont tout se suite mis dans l''ambiance. Mon séjour allait être une expérience hors du commun. Le 4x4 qui nous transportât était d''un modèle spécialement aménagé pour les grands froid. Le conducteur qui allait être notre guide pendant 2 semaines se nommait <i>Gruschko</i>. Je serai bien incapable de dire de quel origine il était <u>issu</u>. Le voyage démarre</p>', 'En attente de modération'),
-(5, 2, '2015-08-14', '3', 'Le deuxième jour', '<p class="">La famille qui m''héberge ainsi que deux autres voyageurs nous a préparé un petit déjeuner typique de la région. Un café bouillant ainsi que de la graisse de phoque en guise de beurre. Il faut dire que le pain ici est assez épais et difficile à avaler. La famille est composée des parents ainsi que de deux filles et d''un garçon. Tous sont très sympathiques. Aucun ne parlent français mais les enfants se débrouillent en anglais. C''est donc en anglais que je discute avec eux, les enfants servant d''interprètes. </p>', 'Publie'),
+(5, 2, '2015-08-14', '3', 'Le deuxième jour', '<p class="">La famille qui m''héberge ainsi que deux autres voyageurs nous a préparé un petit déjeuner typique de la région. Un café bouillant ainsi que de la graisse de phoque en guise de beurre. Il faut dire que le pain ici est assez épais et difficile à avaler. La famille est composée des parents ainsi que de deux filles et d''un garçon. Tous sont très sympathiques. Aucun ne parlent français mais les enfants se débrouillent en anglais. C''est donc en anglais que je discute avec eux, les enfants servant d''interprètes. </p>', 'Publie'),
 (7, 1, '2015-08-15', '4', 'Super journée !', '<p class="">On s''éclate !</p>', 'En attente de modération'),
-(8, 2, '2015-08-15', '2', 'La partie de pêche', '<p class="">Le mardi suivant notre arrivée, les hommes nous conduisirent sur un lac gel. des trous dans la glace permettent d''y plonger un hameçon. L''attente dans le froid polaire est assez dure à supporter malgré nos équipements. Je me suis occupé des chiens de traîneaux pendant que le reste de l''équipe attendait patiemment la prise de poisson. </p>', 'Publie'),
-(9, 4, '2015-08-15', '1', 'Un peuple très accueillant', '<p class="">Notre groupe de voyageurs est installé dans une hutte en bois à l''extrémité nord du village. Les habitants sont pratiquement tous venus nous saluer à notre arrivée. Notre guide nous a expliqué comment se comporter pour ne pas paraître ridicule ou irrévérencieux lors de nos échanges avec les habitants. Ces conseils nous ont permis de nouer des rapports amicaux avec l''ensemble des pygmées. La barrière linguistique nous a forcer à nous adapter aux rituels des signes.  Voilà une journée bien remplie.</p>', 'Publie'),
-(10, 2, '2015-08-15', '4', 'La chasse aux phoques', '<p>Deux jours après avoir péché sur le lac gelé, nos hôtes nous ont conduit en traineau à une trentaine de kms du village au bord de l''océan gelé. Ils étaient tous armés d''une carabine car aujourd''hui c''était la journée de la chasse. Nous arrivâmes à l''aurore la température devait être de -50 degrés. Les phoques étaient tous regroupés sur une partie de la côte d''une longueur de 2 kms environ. Les chasseurs nous ont demandé de nous mettre un peu à l''écart. <b>Le carnage a commencé.... </b></p>', 'En attente de modération'),
+(8, 2, '2015-08-15', '2', 'La partie de pêche', '<p class="">Le mardi suivant notre arrivée, les hommes nous conduisirent sur un lac gel. des trous dans la glace permettent d''y plonger un hameçon. L''attente dans le froid polaire est assez dure à supporter malgré nos équipements. Je me suis occupé des chiens de traîneaux pendant que le reste de l''équipe attendait patiemment la prise de poisson. </p>', 'Publie'),
+(9, 4, '2015-08-15', '1', 'Un peuple très accueillant', '<p class="">Notre groupe de voyageurs est installé dans une hutte en bois à l''extrémité nord du village. Les habitants sont pratiquement tous venus nous saluer à notre arrivée. Notre guide nous a expliqué comment se comporter pour ne pas paraître ridicule ou irrévérencieux lors de nos échanges avec les habitants. Ces conseils nous ont permis de nouer des rapports amicaux avec l''ensemble des pygmées. La barrière linguistique nous a forcer à nous adapter aux rituels des signes.  Voilà une journée bien remplie.</p>', 'Publie'),
+(10, 2, '2015-08-15', '4', 'La chasse aux phoques', '<p>Deux jours après avoir péché sur le lac gelé, nos hôtes nous ont conduit en traineau à une trentaine de kms du village au bord de l''océan gelé. Ils étaient tous armés d''une carabine car aujourd''hui c''était la journée de la chasse. Nous arrivâmes à l''aurore la température devait être de -50 degrés. Les phoques étaient tous regroupés sur une partie de la côte d''une longueur de 2 kms environ. Les chasseurs nous ont demandé de nous mettre un peu à l''écart. <b>Le carnage a commencé.... </b></p>', 'En attente de modération'),
 (11, 2, '2015-08-15', '5', 'Le scooter des neiges', '<p class="">L''un des garçon a un scooter des neiges. Il m''a proposé de l''essayer. J''avoues que je n''étais pas bien rassuré. Mais pour ne pas perdre la face je me suis lancé sur la piste enneigée. 5 minutes après j''étais par terre. J''ai eu très peur, peur de me blessé mais aussi peur de lui casser son bolide. Mais s''il le fallait je recommencerai.</p>', 'En attente de modération'),
 (21, 2, '2015-08-19', '6', 'Le dernier jour', '<p class="">voilà c''est fini...</p><img >', 'En attente de modération'),
 (22, 2, '2015-08-19', '7', 'le retour', '<p class="">me voilà dans l''avion. J espère revenir.</p><img >', 'En attente de modération'),
@@ -118,7 +117,7 @@ INSERT INTO `wa__articles` (`idArticles`, `idCarnet`, `date`, `ordre`, `titre`, 
 --
 
 CREATE TABLE IF NOT EXISTS `wa__carnetdevoyage` (
-  `idCarnetDeVoyage` int(11) NOT NULL,
+  `idCarnetDeVoyage` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `publie` varchar(5) NOT NULL DEFAULT 'false',
   `titre` varchar(100) DEFAULT NULL,
@@ -128,8 +127,13 @@ CREATE TABLE IF NOT EXISTS `wa__carnetdevoyage` (
   `idVoyage` int(11) NOT NULL,
   `idDestination` int(11) NOT NULL,
   `image_carnet` varchar(800) NOT NULL,
-  `favoris` varchar(5) NOT NULL DEFAULT 'false'
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `favoris` varchar(5) NOT NULL DEFAULT 'false',
+  PRIMARY KEY (`idCarnetDeVoyage`),
+  UNIQUE KEY `titre` (`titre`),
+  KEY `idUsers` (`idUsers`,`idVoyage`),
+  KEY `idVoyage` (`idVoyage`),
+  KEY `idDestination` (`idDestination`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `wa__carnetdevoyage`
@@ -139,9 +143,9 @@ INSERT INTO `wa__carnetdevoyage` (`idCarnetDeVoyage`, `date`, `publie`, `titre`,
 (1, '2015-08-14', 'true', 'Mon expérience chez les pygmées du Congo', 'mon-experience-chez-les-pygmees-du-congo', 'Mon aventure chez les pygmées du Congo', 1, 1, 1, 'carnets/mon-experience-chez-les-pygmees-du-congo/Lighthouse.jpg', 'true'),
 (2, '2015-08-14', 'true', 'Un voyage inoubliable dans le froid polaire', 'un-voyage-inoubliable-dans-le-froid-polaire', 'Ma vie avec les Inuits', 2, 8, 2, 'carnets/un-voyage-inoubliable-dans-le-froid-polaire/inuits8.jpg', 'false'),
 (3, '2015-08-14', 'true', '2 semaines en immersion au groenland', '2-semaines-en-immersion-au-groenland', '', 1, 8, 2, '', 'false'),
-(4, '2015-08-15', 'false', 'Une aventure en Afrique avec les pygmées', 'une-aventure-en-afrique-avec-les-pygmees', '', 2, 3, 1, 'carnets/une-aventure-en-afrique-avec-les-pygmees/pygmées5.jpg', 'false'),
-(5, '2015-08-19', 'false', 'Je pars avec mon équipe de travail chez les Pygmées', 'je-pars-avec-mon-equipe-de-travail-chez-les-pygmees', 'Un voyage chez les pygmées pour souder mon équipe', 2, 1, 1, 'carnets/je-pars-avec-mon-equipe-de-travail-chez-les-pygmees/groupe.jpg', 'false'),
-(6, '2015-08-20', 'true', 'Mon super voyage au Pygmées du Congo', 'mon-super-voyage-au-pygmees-du-congo', '', 3, 2, 1, '', 'false'),
+(4, '2015-08-15', 'true', 'Une aventure en Afrique avec les pygmées', 'une-aventure-en-afrique-avec-les-pygmees', '', 2, 3, 1, 'carnets/une-aventure-en-afrique-avec-les-pygmees/pygmées5.jpg', 'false'),
+(5, '2015-08-19', 'true', 'Je pars avec mon équipe de travail chez les Pygmées', 'je-pars-avec-mon-equipe-de-travail-chez-les-pygmees', 'Un voyage chez les pygmées pour souder mon équipe', 2, 1, 1, 'carnets/je-pars-avec-mon-equipe-de-travail-chez-les-pygmees/groupe.jpg', 'false'),
+(6, '2015-08-20', 'false', 'Mon super voyage au Pygmées du Congo', 'mon-super-voyage-au-pygmees-du-congo', '', 3, 2, 1, '', 'false'),
 (7, '2015-08-25', 'false', 'Mon voyage chez les pygmées Congo', 'mon-voyage-chez-les-pygmees-congo', 'Mon super voyage de dingue', 1, 2, 1, '', 'false');
 
 -- --------------------------------------------------------
@@ -151,9 +155,10 @@ INSERT INTO `wa__carnetdevoyage` (`idCarnetDeVoyage`, `date`, `publie`, `titre`,
 --
 
 CREATE TABLE IF NOT EXISTS `wa__civilite` (
-  `idCivilite` int(11) NOT NULL,
-  `civilite` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `idCivilite` int(11) NOT NULL AUTO_INCREMENT,
+  `civilite` varchar(45) NOT NULL,
+  PRIMARY KEY (`idCivilite`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -162,14 +167,17 @@ CREATE TABLE IF NOT EXISTS `wa__civilite` (
 --
 
 CREATE TABLE IF NOT EXISTS `wa__commentaires` (
-  `idCommentaires` int(11) NOT NULL,
+  `idCommentaires` int(11) NOT NULL AUTO_INCREMENT,
   `idCarnet` int(11) NOT NULL,
   `idUsers` int(11) DEFAULT NULL,
   `date` date NOT NULL,
   `texte` longtext,
   `modere` varchar(5) DEFAULT NULL,
-  `data` varchar(500) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+  `data` varchar(500) NOT NULL,
+  PRIMARY KEY (`idCommentaires`),
+  KEY `idCarnet` (`idCarnet`,`idUsers`),
+  KEY `idUsers` (`idUsers`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- Contenu de la table `wa__commentaires`
@@ -194,7 +202,8 @@ INSERT INTO `wa__commentaires` (`idCommentaires`, `idCarnet`, `idUsers`, `date`,
 (16, 2, 2, '2015-08-19', 'Vous m''avez donné envie de voyager', 'suppr', '{"nom":"mignot","prenom":"stephane","email":"mignot.steph@wanadoo.fr"}'),
 (17, 2, NULL, '2015-08-19', 'c''est vraiment bien rédigé, ça donne envie de partir chez les inuits', 'suppr', '{"nom":"steph","prenom":"steph","email":"mignot.steph@wanadoo.fr"}'),
 (18, 1, 2, '2015-08-19', 'Votre carnet de voyage m''a donné envie de partir comme vous, chez les pygmées.', 'true', '{"nom":"mignot","prenom":"stephane","email":"mignot.steph@wanadoo.fr"}'),
-(19, 2, NULL, '2015-08-19', 'Super voyage :)', 'false', '{"nom":"LAMOOT","prenom":"Alexandre","email":"lamootalexandre@gmail.com"}');
+(19, 2, NULL, '2015-08-19', 'Super voyage :)', 'false', '{"nom":"LAMOOT","prenom":"Alexandre","email":"lamootalexandre@gmail.com"}'),
+(20, 1, 1, '2015-08-27', 'Test', 'false', '{"nom":"LAMOOT","prenom":"Alexandre","email":"lamootalexandre@gmail.com"}');
 
 -- --------------------------------------------------------
 
@@ -203,7 +212,7 @@ INSERT INTO `wa__commentaires` (`idCommentaires`, `idCarnet`, `idUsers`, `date`,
 --
 
 CREATE TABLE IF NOT EXISTS `wa__contact` (
-  `idContact` int(11) NOT NULL,
+  `idContact` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(45) DEFAULT NULL,
   `prenom` varchar(255) NOT NULL,
   `telephone` varchar(25) NOT NULL,
@@ -211,8 +220,9 @@ CREATE TABLE IF NOT EXISTS `wa__contact` (
   `sujet` varchar(45) DEFAULT NULL,
   `message` longtext,
   `ouvert` varchar(25) NOT NULL DEFAULT 'false',
-  `date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+  `date` date NOT NULL,
+  PRIMARY KEY (`idContact`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
 
 --
 -- Contenu de la table `wa__contact`
@@ -226,10 +236,39 @@ INSERT INTO `wa__contact` (`idContact`, `nom`, `prenom`, `telephone`, `mail`, `s
 (5, 'mignot', 'stephane', '06000000000000', 'mignotsteph@gmail.com', 'Prix', 'bonjour, est ce qu''on peut payer en dollars ou en toute autres devises?', 'true', '2015-08-14'),
 (6, 'mignot', 'stephane', '06000000000000', 'mignotsteph@gmail.com', 'Prix', 'bonjour, est ce qu''on peut payer en dollars ou en toute autres devises?', 'important', '2015-08-14'),
 (7, 'vano', 'celine', '', 'celine.vano@gmail.com', 'Destination', 'Faut il un passeport ou un visa pour partir au Congo ?', 'false', '2015-08-15'),
-(8, 'mignot', 'stephane', '0600000000', 'mignotsteph@gmail.com', 'Carnet de voyage', 'J''ai vu dans un article du carnet de voyage de M.Mignot chez les Inuits, que votre guide était un imbécile. Vous en avez changé?', 'false', '2015-08-15'),
-(9, 'mignot', 'stephane', '0600000000', 'mignotsteph@gmail.com', 'Carnet de voyage', 'J''ai vu dans un article du carnet de voyage de M.Mignot chez les Inuits, que votre guide était un imbécile. Vous en avez changé?', 'true', '2015-08-15'),
+(8, 'mignot', 'stephane', '0600000000', 'mignotsteph@gmail.com', 'Carnet de voyage', 'J''ai vu dans un article du carnet de voyage de M.Mignot chez les Inuits, que votre guide était un imbécile. Vous en avez changé?', 'archives', '2015-08-15'),
+(9, 'mignot', 'stephane', '0600000000', 'mignotsteph@gmail.com', 'Carnet de voyage', 'J''ai vu dans un article du carnet de voyage de M.Mignot chez les Inuits, que votre guide était un imbécile. Vous en avez changé?', 'archives', '2015-08-15'),
 (10, 'LAMOOT', 'Alexandre', '', 'lamootalexandre@gmail.com', 'Demande d''information sur la destination les-', 'test', 'true', '2015-08-19'),
-(11, 'LAMOOT', 'Alexandre', '0320778899', 'lamootalexandre@gmail.com', 'Carnet de voyage', 'J''ai vu dans un article du carnet de voyage de M.Mignot chez les Inuits, que votre guide était un imbécile. Vous en avez changé?', 'false', '2015-08-25');
+(11, 'LAMOOT', 'Alexandre', '0320778899', 'lamootalexandre@gmail.com', 'Carnet de voyage', 'J''ai vu dans un article du carnet de voyage de M.Mignot chez les Inuits, que votre guide était un imbécile. Vous en avez changé?', 'false', '2015-08-25'),
+(12, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination chez', 'bdbzabdnkjza d az dbozandaz dazbld azhdnazk dza ihdnza dza hjdbk dbaz jdza kd b djaz d ad an', 'false', '2015-08-29'),
+(13, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination chez', 'bdbzabdnkjza d az dbozandaz dazbld azhdnazk dza ihdnza dza hjdbk dbaz jdza kd b djaz d ad an', 'false', '2015-08-29'),
+(14, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination chez', 'bdbzabdnkjza d az dbozandaz dazbld azhdnazk dza ihdnza dza hjdbk dbaz jdza kd b djaz d ad an', 'false', '2015-08-29'),
+(15, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination chez', 'bdbzabdnkjza d az dbozandaz dazbld azhdnazk dza ihdnza dza hjdbk dbaz jdza kd b djaz d ad an', 'false', '2015-08-29'),
+(16, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination chez', 'bdbzabdnkjza d az dbozandaz dazbld azhdnazk dza ihdnza dza hjdbk dbaz jdza kd b djaz d ad an', 'false', '2015-08-29'),
+(17, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination chez', 'bdbzabdnkjza d az dbozandaz dazbld azhdnazk dza ihdnza dza hjdbk dbaz jdza kd b djaz d ad an', 'false', '2015-08-29'),
+(18, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination chez', 'bdbzabdnkjza d az dbozandaz dazbld azhdnazk dza ihdnza dza hjdbk dbaz jdza kd b djaz d ad an', 'false', '2015-08-29'),
+(19, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination chez', 'bdbzabdnkjza d az dbozandaz dazbld azhdnazk dza ihdnza dza hjdbk dbaz jdza kd b djaz d ad an', 'false', '2015-08-29'),
+(20, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination chez', 'bdbzabdnkjza d az dbozandaz dazbld azhdnazk dza ihdnza dza hjdbk dbaz jdza kd b djaz d ad an', 'false', '2015-08-29'),
+(21, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination chez', 'bdbzabdnkjza d az dbozandaz dazbld azhdnazk dza ihdnza dza hjdbk dbaz jdza kd b djaz d ad an', 'false', '2015-08-29'),
+(22, 'hhbjj', 'dzda', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination ', 'jbkz adza', 'false', '2015-08-29'),
+(23, 'hhbjj', 'test', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination ', 'jbkz adza', 'false', '2015-08-29'),
+(24, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination ', 'jbkz adza', 'false', '2015-08-29'),
+(25, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination ', 'dnzadznandza  djza jd j kd z dkza d za dazb kjd azd za dlza jdza kdazk', 'false', '2015-08-29'),
+(26, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination ', 'dnzadznandza  djza jd j kd z dkza d za dazb kjd azd za dlza jdza kdazk', 'false', '2015-08-29'),
+(27, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination ', 'dnzadznandza  djza jd j kd z dkza d za dazb kjd azd za dlza jdza kdazk', 'false', '2015-08-29'),
+(28, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination ', 'zadzdzadza dzadzadzadazdad adazdzadza', 'false', '2015-08-29'),
+(29, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination Chez', 'zadzdzadza dzadzadzadazdad adazdzadza', 'false', '2015-08-29'),
+(30, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination Chez', 'zadzdzadza dzadzadzadazdad adazdzadza', 'false', '2015-08-29'),
+(31, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination Chez', 'zadzdzadza dzadzadzadazdad adazdzadza', 'false', '2015-08-29'),
+(32, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination Chez', 'zadzdzadza dzadzadzadazdad adazdzadza', 'false', '2015-08-29'),
+(33, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination Chez', 'zadzdzadza dzadzadzadazdad adazdzadza', 'false', '2015-08-29'),
+(34, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination Chez', 'zadzdzadza dzadzadzadazdad adazdzadza', 'false', '2015-08-29'),
+(35, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination Chez', 'zadzdzadza dzadzadzadazdad adazdzadza', 'false', '2015-08-29'),
+(36, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination Chez', 'zadzdzadza dzadzadzadazdad adazdzadza', 'false', '2015-08-29'),
+(37, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination Chez', 'zadzdzadza dzadzadzadazdad adazdzadza', 'false', '2015-08-29'),
+(38, 'CAPI', 'Aurélien', '', 'capi.aurelien@gmail.com', 'Demande d''information sur la destination Chez', 'zadzdzadza dzadzadzadazdad adazdzadza', 'false', '2015-08-29'),
+(39, 'Vano', 'Céline', '', 'celine.vano@gmail.com', 'Demande d''information sur la destination Chez', 'Bonjour, je souhaiterai savoir si vous vendez des voyages en Amérique du Sud. \n\nMerci d''avance!\n\nCordialement, \nCéline VANO', 'false', '2015-08-29'),
+(40, 'Vano', 'Céline', '', 'celine.vano@gmail.com', 'Demande d''information sur la destination Chez', 'Bonjour, je souhaiterai savoir si vous vendez des voyages en Amérique du Sud. \n\nMerci d''avance!\n\nCordialement, \nCéline VANO', 'false', '2015-08-29');
 
 -- --------------------------------------------------------
 
@@ -238,7 +277,7 @@ INSERT INTO `wa__contact` (`idContact`, `nom`, `prenom`, `telephone`, `mail`, `s
 --
 
 CREATE TABLE IF NOT EXISTS `wa__destination` (
-  `idDestination` int(11) NOT NULL,
+  `idDestination` int(11) NOT NULL AUTO_INCREMENT,
   `idPays` int(11) NOT NULL,
   `titre` varchar(100) NOT NULL,
   `url` varchar(500) NOT NULL,
@@ -248,8 +287,10 @@ CREATE TABLE IF NOT EXISTS `wa__destination` (
   `coordonnees` varchar(50) NOT NULL,
   `photos` longtext,
   `banner` longtext NOT NULL,
-  `active` varchar(6) NOT NULL DEFAULT 'true'
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `active` varchar(6) NOT NULL DEFAULT 'true',
+  PRIMARY KEY (`idDestination`),
+  KEY `idPays` (`idPays`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `wa__destination`
@@ -257,7 +298,9 @@ CREATE TABLE IF NOT EXISTS `wa__destination` (
 
 INSERT INTO `wa__destination` (`idDestination`, `idPays`, `titre`, `url`, `nom`, `description`, `ville`, `coordonnees`, `photos`, `banner`, `active`) VALUES
 (1, 1, 'Chez les Pygmées du Congo', 'chez-les-pygmees-du-congo', '', 'Walkabout vous propose de partager la vie des pygmées du Congo. Vous aurez la chance de partager leur gite, leurs parties de chasse et de pêche.\nVous pourrez aussi découvrir la faune et la flore extraordinaire de cette région d''Afrique. \nLes pygmées sont les peuples autochtones de la grande forêt équatoriale d’Afrique. La forêt occupe une place fondamentale dans leur culture, leur alimentation et leur histoire. Ils y vivent de chasse et de cueillette et s’y déplacent en petits groupes.\nVivez une expérience inoubliable.', 'isiro', '2.7720642,27.6208305', 'destinations/10-jours-chez-les-pygmees-du-congo/pygmées1.jpg;destinations/10-jours-chez-les-pygmees-du-congo/pygmées.jpg;destinations/10-jours-chez-les-pygmees-du-congo/pygmées2.jpg;destinations/les-pygmees-du-congo/pygmées4.jpg;destinations/les-pygmees-du-congo/pygmées5.jpg;', 'destinations/les-pygmees-du-congo/cover/pygmées3.jpg', 'true'),
-(2, 2, '2 semaines chez les Inuits du Groenland', '2-semaines-chez-les-inuits-du-groenland', '', 'Venez vivre une expérience inoubliables chez les Inuits du Groenland. Les Inuits sont les habitants autochtones de l''Arctique nord-américain, du détroit de Béring à l''est du Groenland, un territoire de plus de 6000 kilomètres. En plus de vivre dans l''Arctique canadien, les Inuits vivent aussi dans le nord de l''Alaska et le Groenland,  Jusqu’a récemment, les étrangers appelaient les Inuits «Eskimos».Maintenant, ils préfèrent leur propre terme «Inuit», qui signifie simplement «les gens». \nWalkabout vous propose de partager la vie quotidienne d''une famille Inuit. Vos hotes habitent dans un village traditionnel et vous pourrez accompagner les chasseurs et les pécheurs dans leur quête de nourriture. Les paysages grandioses, la faune si rare et si merveilleuse du pôle nord vous charmeront forcément.', 'upernavik', '72.7868814,-56.1397077', 'destinations/2-semaines-chez-les-inuits-du-groenland/inuits2.jpg;destinations/2-semaines-chez-les-inuits-du-groenland/inuits3.jpg;destinations/2-semaines-chez-les-inuits-du-groenland/inuits4.jpg;destinations/2-semaines-chez-les-inuits-du-groenland/inuits5.jpg;', 'destinations/2-semaines-chez-les-inuits-du-groenland/cover/inuits3.jpg', 'true');
+(2, 2, '2 semaines chez les Inuits du Groenland', '2-semaines-chez-les-inuits-du-groenland', '', 'Venez vivre une expérience inoubliables chez les Inuits du Groenland. Les Inuits sont les habitants autochtones de l''Arctique nord-américain, du détroit de Béring à l''est du Groenland, un territoire de plus de 6000 kilomètres. En plus de vivre dans l''Arctique canadien, les Inuits vivent aussi dans le nord de l''Alaska et le Groenland,  Jusqu’a récemment, les étrangers appelaient les Inuits «Eskimos».Maintenant, ils préfèrent leur propre terme «Inuit», qui signifie simplement «les gens». \nWalkabout vous propose de partager la vie quotidienne d''une famille Inuit. Vos hotes habitent dans un village traditionnel et vous pourrez accompagner les chasseurs et les pécheurs dans leur quête de nourriture. Les paysages grandioses, la faune si rare et si merveilleuse du pôle nord vous charmeront forcément.', 'upernavik', '72.7868814,-56.1397077', 'destinations/2-semaines-chez-les-inuits-du-groenland/inuits2.jpg;destinations/2-semaines-chez-les-inuits-du-groenland/inuits3.jpg;destinations/2-semaines-chez-les-inuits-du-groenland/inuits4.jpg;destinations/2-semaines-chez-les-inuits-du-groenland/inuits5.jpg;', 'destinations/2-semaines-chez-les-inuits-du-groenland/cover/inuits3.jpg', 'true'),
+(3, 3, '2 semaines chez les aborigènes', '2-semaines-chez-les-aborigenes', '', 'Les Aborigènes d’Australie sont les premiers humains connus pour en avoir peuplé la partie continentale. Ils constituent, avec les indigènes du détroit de Torrès, la population autochtone de cet État océanien. Le mot commun aborigène désigne plus généralement celui dont les ancêtres sont les premiers habitants connus de sa terre natale. \nWalkabout vous propose de passer 2 semaines dans une tribu aborigène d''Australie. Vous pourrez découvrir les rites ancestraux de ce peuple. Vous serez logé chez l''habitant. Vous découvrirez aussi la faune et la flore fantastique de ce pays.', 'Kaltukatjara', '-24.8777835,129.0894039', 'destinations/2-semaines-chez-les-aborigenes/aborigene1.jpg;destinations/2-semaines-chez-les-aborigenes/aborigene2.jpg;destinations/2-semaines-chez-les-aborigenes/aborigene4.jpg;destinations/2-semaines-chez-les-aborigenes/aborigene5.jpg;destinations/2-semaines-chez-les-aborigenes/aborigene6.jpg;', 'destinations/2-semaines-chez-les-aborigenes/cover/aborigene2.jpg', 'true'),
+(4, 7, '20 jours chez les Mongols', '20-jours-chez-les-mongols', '', 'À l''origine d''un des plus grands empires de tous les temps, qui s''étendit de la mer de Chine jusqu''au-delà de la Volga2 au xiiie siècle et au xive siècle, les Mongols conservent encore leur culture, malgré leur éclatement en quatre entités politiques distinctes ; outre la langue et l''histoire, cette culture profondément originale couvre des domaines tels la musique, la religion, les fêtes, les sports, le mode de vie, et enfin l''organisation sociale.\nNous vous invitons a partager leur quotidien pendant 20 jours', 'oulan-bator', '47.8916501,106.9018714', 'destinations/20-jours-chez-les-mongols/mongol1.jpg;destinations/20-jours-chez-les-mongols/mongol2.jpg;destinations/20-jours-chez-les-mongols/mongol3.jpg;destinations/20-jours-chez-les-mongols/mongol4.jpg;destinations/20-jours-chez-les-mongols/mongol5.jpg;destinations/20-jours-chez-les-mongols/mongol6.jpg;', 'destinations/20-jours-chez-les-mongols/cover/mongol3.jpg', 'true');
 
 -- --------------------------------------------------------
 
@@ -266,18 +309,30 @@ INSERT INTO `wa__destination` (`idDestination`, `idPays`, `titre`, `url`, `nom`,
 --
 
 CREATE TABLE IF NOT EXISTS `wa__details_prix` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idDestination` int(11) NOT NULL,
   `plusoumoins` varchar(5) NOT NULL,
-  `valeur` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `valeur` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idVoyage` (`idDestination`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
 
 --
 -- Contenu de la table `wa__details_prix`
 --
 
 INSERT INTO `wa__details_prix` (`id`, `idDestination`, `plusoumoins`, `valeur`) VALUES
-(1, 1, 'plus', 'logement');
+(46, 1, 'plus', 'le transport par avion. '),
+(47, 1, 'plus', 'l''hebergement'),
+(48, 1, 'moins', 'les assurances'),
+(49, 1, 'moins', 'les excursions en supplement'),
+(56, 4, 'plus', 'Le voyage en avion'),
+(57, 4, 'plus', 'l''hebergement'),
+(58, 4, 'plus', 'les repas '),
+(59, 4, 'plus', 'les visites guidées'),
+(60, 4, 'plus', 'les assurances'),
+(61, 4, 'moins', 'les assurances annulation'),
+(62, 4, 'moins', 'les suppléments lors des déplacements');
 
 -- --------------------------------------------------------
 
@@ -286,10 +341,12 @@ INSERT INTO `wa__details_prix` (`id`, `idDestination`, `plusoumoins`, `valeur`) 
 --
 
 CREATE TABLE IF NOT EXISTS `wa__etatreservation` (
-  `idEtatReservation` int(11) NOT NULL,
+  `idEtatReservation` int(11) NOT NULL AUTO_INCREMENT,
   `idReservation` int(11) NOT NULL,
-  `etat` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `etat` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`idEtatReservation`),
+  KEY `idReservation` (`idReservation`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `wa__etatreservation`
@@ -311,7 +368,7 @@ INSERT INTO `wa__etatreservation` (`idEtatReservation`, `idReservation`, `etat`)
 --
 
 CREATE TABLE IF NOT EXISTS `wa__infosdestinations` (
-  `idInfosDestinations` int(11) NOT NULL,
+  `idInfosDestinations` int(11) NOT NULL AUTO_INCREMENT,
   `idDestination` int(11) NOT NULL,
   `climat` varchar(100) NOT NULL,
   `monnaie` varchar(100) NOT NULL,
@@ -322,16 +379,20 @@ CREATE TABLE IF NOT EXISTS `wa__infosdestinations` (
   `deplacement` longtext NOT NULL,
   `hebergement` longtext NOT NULL,
   `repas_boissons` longtext NOT NULL,
-  `deroulement` longtext NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `deroulement` longtext NOT NULL,
+  PRIMARY KEY (`idInfosDestinations`),
+  KEY `idDestination` (`idDestination`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `wa__infosdestinations`
 --
 
 INSERT INTO `wa__infosdestinations` (`idInfosDestinations`, `idDestination`, `climat`, `monnaie`, `animaux`, `pension`, `passeport`, `accompagnement`, `deplacement`, `hebergement`, `repas_boissons`, `deroulement`) VALUES
-(1, 1, 'Tropical', 'Franc Congolais', 'Interdits', 'Compléte', 'Obligatoire', 'Un premier guide sera présent pendant toute la durée du séjour. \nUn deuxième guide vous accompagnera dans la forêt', 'Voiture tout terrain pour rejoindre le village. Puis excursions à pied ou en pirogue.', 'Chez l''habitant et sous la tente lors des excursions.', 'Tout est compris pendant la durée du séjour.', '[{"titre":"Jour n\\u00b01","valeur":"Parcours en voiture tout terrain de l''a\\u00e9roport au village "},{"titre":"Jour n\\u00b02","valeur":"Pr\\u00e9sentation des membres du village avec danse de bienvenue selon les coutumes ancestrales"},{"titre":"Jour n\\u00b03","valeur":"Parcours des for\\u00eats environnantes accompagn\\u00e9s des chasseurs."},{"titre":"Jour n\\u00b04","valeur":"Les villageois vous emm\\u00e8neront en pirogue visitez le village voisin qui se trouve a 5kms."}]'),
-(2, 2, 'Polaire', 'couronne danoise', 'Non Autorisés', 'compléte', 'obligatoire', 'Un guide vous accompagnera pendant tout le séjour', 'Arrivée au village en voiture tous terrains puis déplacement en traineau', 'dans un village situé à 65 kms de Upernavik et en Igloo lors des excursions de plusieurs jours', 'Tout est compris', '[{"titre":"Jour n\\u00b01","valeur":"arriv\\u00e9 \\u00e0 l''a\\u00e9roport vous serez pris en charge par le guide qui vous conduira en voiture tous terrains au village"},{"titre":"Jour n\\u00b02","valeur":"La famille d\\u2019accueil qui vous h\\u00e9bergera vous fera d\\u00e9couvrir le village et les coutumes locales."},{"titre":"Jour n\\u00b03","valeur":"Un voyage en tra\\u00eeneau sera organis\\u00e9 juqu''au lac gel\\u00e9 d''ou vous pourrez admirer l''immensit\\u00e9 du paysage."}]');
+(1, 1, 'Tropical', 'Franc Congolais', 'non recommandés', 'Compléte', 'Obligatoire', 'Un premier guide sera présent pendant toute la durée du séjour. \nUn deuxième guide vous accompagnera dans la forêt', 'Voiture tout terrain pour rejoindre le village. Puis excursions à pied ou en pirogue.', 'Chez l''habitant et sous la tente lors des excursions.', 'Tout est compris pendant la durée du séjour.', '[{"titre":"Jour n\\u00b02","valeur":"Pr\\u00e9sentation des membres du village avec danse de bienvenue selon les coutumes ancestrales"},{"titre":"Jour n\\u00b03","valeur":"Parcours des for\\u00eats environnantes accompagn\\u00e9s des chasseurs."}]'),
+(2, 2, 'Polaire', 'couronne danoise', 'Non Autorisés', 'compléte', 'obligatoire', 'Un guide vous accompagnera pendant tout le séjour', 'Arrivée au village en voiture tous terrains puis déplacement en traineau', 'dans un village situé à 65 kms de Upernavik et en Igloo lors des excursions de plusieurs jours', 'Tout est compris', '[{"titre":"Jour n\\u00b01","valeur":"arriv\\u00e9 \\u00e0 l''a\\u00e9roport vous serez pris en charge par le guide qui vous conduira en voiture tous terrains au village"},{"titre":"Jour n\\u00b02","valeur":"La famille d\\u2019accueil qui vous h\\u00e9bergera vous fera d\\u00e9couvrir le village et les coutumes locales."},{"titre":"Jour n\\u00b03","valeur":"Un voyage en tra\\u00eeneau sera organis\\u00e9 juqu''au lac gel\\u00e9 d''ou vous pourrez admirer l''immensit\\u00e9 du paysage."}]'),
+(3, 3, 'desertique', 'Dollar Australien', 'interdits', 'compléte', 'obligatoire', 'un guide sera présent durant toute la durée du séjour', 'le groupe se déplacera en voiture tous terrains', 'logement chez l''habitant', 'tout est compris', '[{"titre":"Jour n\\u00b01","valeur":"Acheminement depuis l''a\\u00e9roport en voiture 4x4"}]'),
+(4, 4, 'polaire', 'Tugrik', 'Interdits', 'compléte', 'obligatoire', 'Un guide sera présent pendant toute la durée du séjour', 'en Véhicule tous terrains et à cheval.', 'sous une yourte avec les habitants', 'tout compris', '[{"titre":"Jour n\\u00b01","valeur":"Arriv\\u00e9e au village et  accueil par les habitants"},{"titre":"Jour n\\u00b02","valeur":"Partage d''une journ\\u00e9e avec la famille d''accueil et prise de contact avec les coutumes"},{"titre":"Jour n\\u00b05","valeur":"Visite de la toundra environnante"},{"titre":"Jour n\\u00b010","valeur":"combat de lutte dans la capitale"},{"titre":"Jour n\\u00b013","valeur":"D\\u00e9placement avec les troupeaux de betail"}]');
 
 -- --------------------------------------------------------
 
@@ -340,9 +401,10 @@ INSERT INTO `wa__infosdestinations` (`idInfosDestinations`, `idDestination`, `cl
 --
 
 CREATE TABLE IF NOT EXISTS `wa__level` (
-  `idLevel` int(11) NOT NULL,
-  `level` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `idLevel` int(11) NOT NULL AUTO_INCREMENT,
+  `level` varchar(45) NOT NULL,
+  PRIMARY KEY (`idLevel`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `wa__level`
@@ -359,17 +421,20 @@ INSERT INTO `wa__level` (`idLevel`, `level`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `wa__newsletter` (
-  `idNewsletter` int(11) NOT NULL,
-  `email` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=51777 DEFAULT CHARSET=utf8;
+  `idNewsletter` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `nom` varchar(500) NOT NULL,
+  `prenom` varchar(500) NOT NULL,
+  PRIMARY KEY (`idNewsletter`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51778 ;
 
 --
 -- Contenu de la table `wa__newsletter`
 --
 
-INSERT INTO `wa__newsletter` (`idNewsletter`, `email`) VALUES
-(1, 'celine.vano@gmail.com'),
-(51776, 'mignotsteph@gmail.com');
+INSERT INTO `wa__newsletter` (`idNewsletter`, `email`, `nom`, `prenom`) VALUES
+(1, 'celine.vano@gmail.com', 'VANO', 'Céline'),
+(51777, 'capi.aurelien@gmail.com', 'CAPI', 'Aurélien');
 
 -- --------------------------------------------------------
 
@@ -378,10 +443,12 @@ INSERT INTO `wa__newsletter` (`idNewsletter`, `email`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `wa__payement` (
-  `idPayement` int(11) NOT NULL,
+  `idPayement` int(11) NOT NULL AUTO_INCREMENT,
   `idReservation` int(11) NOT NULL,
-  `typePayement` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `typePayement` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idPayement`),
+  KEY `idReservation` (`idReservation`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -390,7 +457,7 @@ CREATE TABLE IF NOT EXISTS `wa__payement` (
 --
 
 CREATE TABLE IF NOT EXISTS `wa__paypal` (
-  `idPaypal` int(11) NOT NULL,
+  `idPaypal` int(11) NOT NULL AUTO_INCREMENT,
   `idPayement` int(11) NOT NULL,
   `token` varchar(500) NOT NULL,
   `timestamp` varchar(500) NOT NULL,
@@ -398,8 +465,10 @@ CREATE TABLE IF NOT EXISTS `wa__paypal` (
   `ack` varchar(500) NOT NULL,
   `transactionType` varchar(500) NOT NULL,
   `payementType` varchar(500) NOT NULL,
-  `amt` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `amt` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`idPaypal`),
+  KEY `idPayement` (`idPayement`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -408,7 +477,7 @@ CREATE TABLE IF NOT EXISTS `wa__paypal` (
 --
 
 CREATE TABLE IF NOT EXISTS `wa__pays` (
-  `idPays` int(11) NOT NULL,
+  `idPays` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(100) DEFAULT NULL,
   `code_pays` varchar(5) NOT NULL,
   `capitale` varchar(45) NOT NULL,
@@ -418,8 +487,9 @@ CREATE TABLE IF NOT EXISTS `wa__pays` (
   `population` varchar(45) DEFAULT NULL,
   `superficie` varchar(45) DEFAULT NULL,
   `densité` varchar(45) DEFAULT NULL,
-  `climat` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  `climat` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idPays`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `wa__pays`
@@ -431,7 +501,8 @@ INSERT INTO `wa__pays` (`idPays`, `nom`, `code_pays`, `capitale`, `monnaie`, `Di
 (3, 'Australie', 'AU', 'Canberra', 'Dollar Australien', 'Peter John Cosgrove', 'Anglais', '23 500 000 hab', '7 692 024 km²', '3 hab./km²', 'tempéré'),
 (4, 'Argentine', 'AR', 'Buenos Aires', 'Peso argentin', 'Cristina Fernández de Kirchner', 'espagnol', '43 431 886', '2 766 890 km²', '14 hab./km²', 'tropical'),
 (5, 'France', 'FR', 'Paris', 'Euros', 'François Hollande', 'Français', '66,03 millions', '640 679 km²', '26 031 hab. par km2', 'varié'),
-(6, 'Koweït', 'KW', 'koweit', 'Dinar koweïtien', 'Sabah al-Ahmad al-Jabir al-Sabah', 'arabe', '3 369 000', '17 818 km2', '115 hab./km2', 'desertique');
+(6, 'Koweït', 'KW', 'koweit', 'Dinar koweïtien', 'Sabah al-Ahmad al-Jabir al-Sabah', 'arabe', '3 369 000', '17 818 km2', '115 hab./km2', 'desertique'),
+(7, 'Mongolie', 'MN', 'Oulan-Bator', 'Tugrik', 'Elbegdorj Tsakhia', 'mongol', '2 839 000 h', '1 564 116 km2', '1,7 hab./km2', 'extrêmement froid en hiver');
 
 -- --------------------------------------------------------
 
@@ -440,12 +511,14 @@ INSERT INTO `wa__pays` (`idPays`, `nom`, `code_pays`, `capitale`, `monnaie`, `Di
 --
 
 CREATE TABLE IF NOT EXISTS `wa__personnalisation` (
-  `idPersonnalisation` int(11) NOT NULL,
+  `idPersonnalisation` int(11) NOT NULL AUTO_INCREMENT,
   `idCarnet` int(11) NOT NULL,
   `couleur_fond` varchar(45) DEFAULT NULL,
   `couleur_texte` varchar(45) DEFAULT NULL,
-  `couleur_titre` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `couleur_titre` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idPersonnalisation`),
+  KEY `idCarnet` (`idCarnet`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -454,12 +527,15 @@ CREATE TABLE IF NOT EXISTS `wa__personnalisation` (
 --
 
 CREATE TABLE IF NOT EXISTS `wa__reservation` (
-  `idReservation` int(11) NOT NULL,
+  `idReservation` int(11) NOT NULL AUTO_INCREMENT,
   `idVoyage` int(11) NOT NULL,
   `idUsers` int(11) NOT NULL,
   `nb_personnes` int(11) NOT NULL,
-  `date` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `date` varchar(10) NOT NULL,
+  PRIMARY KEY (`idReservation`),
+  KEY `idVoyage` (`idVoyage`),
+  KEY `idUsers` (`idUsers`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `wa__reservation`
@@ -485,7 +561,9 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
   `ip_address` varchar(16) NOT NULL DEFAULT '0',
   `user_agent` varchar(120) NOT NULL,
   `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
-  `user_data` text NOT NULL
+  `user_data` text NOT NULL,
+  PRIMARY KEY (`session_id`),
+  KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -493,8 +571,8 @@ CREATE TABLE IF NOT EXISTS `wa__sessions` (
 --
 
 INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('e1cfa08d8933e79e4b07d2b480b1558f', '::1', 'Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Firefox/31.0 Iceweasel/31.8.0', 1440595117, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"9";s:3:"nom";s:6:"Lamoot";s:6:"prenom";s:9:"Alexandre";s:5:"email";s:25:"lamootalexandre@gmail.com";s:11:"identifiant";s:3:"dev";s:3:"mdp";s:64:"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08";}}}'),
-('2688b690de892ea2c5ccc59d2b88b8c9', '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36', 1440596857, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:1:{i:0;O:8:"stdClass":6:{s:16:"idAdministrateur";s:1:"9";s:3:"nom";s:6:"Lamoot";s:6:"prenom";s:9:"Alexandre";s:5:"email";s:25:"lamootalexandre@gmail.com";s:11:"identifiant";s:3:"dev";s:3:"mdp";s:64:"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08";}}}');
+('edbc52c3c20a778cd00863214c20e9a2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36', 1440875009, ''),
+('05ba047cd2d0726123faea8f4508aaaa', '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0', 1440875743, 'a:1:{s:9:"user_data";s:0:"";}');
 
 -- --------------------------------------------------------
 
@@ -503,15 +581,16 @@ INSERT INTO `wa__sessions` (`session_id`, `ip_address`, `user_agent`, `last_acti
 --
 
 CREATE TABLE IF NOT EXISTS `wa__test` (
-  `idTest` int(11) NOT NULL,
+  `idTest` int(11) NOT NULL AUTO_INCREMENT,
   `titre` longtext NOT NULL,
   `explication` longtext NOT NULL,
   `categorie` longtext NOT NULL,
   `testeur` longtext NOT NULL,
   `statut` longtext NOT NULL,
   `etat` longtext NOT NULL,
-  `commentaire` longtext NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
+  `commentaire` longtext NOT NULL,
+  PRIMARY KEY (`idTest`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=129 ;
 
 --
 -- Contenu de la table `wa__test`
@@ -537,9 +616,9 @@ INSERT INTO `wa__test` (`idTest`, `titre`, `explication`, `categorie`, `testeur`
 (17, 'Google maps pour la localisation', 'Destinations', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (18, 'Réservations', 'Tester les réservations (modification d''un statut, filtres)', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (19, 'le zoom des images', 'Destinations -  le zoom des images dans la page destination', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
-(20, 'Créer une destination', 'Sans remplir tout les champs afin de générer des erreurs puis en remplissant tout les champs afin de la créer vraiment<br/>', 'Back office', 'Alexandre LAMOOT', '', 'Marche pas', 'Impossible d’insérer des photos dans la bannière et au bas de la description.'),
+(20, 'Créer une destination', 'Sans remplir tout les champs afin de générer des erreurs puis en remplissant tout les champs afin de la créer vraiment<br/>', 'Back office', '', '', 'A tester', 'Impossible d’insérer des photos dans la bannière et au bas de la description.'),
 (21, 'possibilité de feuilleter le carnet', 'Destinations', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
-(22, 'le partage des destinations', 'Destinations - le partage de la destination avec vos amis', 'Front office', 'Alexandre LAMOOT', '', 'Bug', 'Impossible de voir la bannière lors du partage sur les réseaux sociaux'),
+(22, 'le partage des destinations', 'Destinations - le partage de la destination avec vos amis', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (23, 'Rechercher une destination', 'Vérifier que les recherches s''effectuent bien', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (24, 'demande d''information', 'Destinations - demande d''infos par rapport à la destination sans création de compte puis avec', 'Front office', 'celine vano', '', 'Marche pas', 'message d''erreur sur une page blanche ("result":true) à l''envoi du formulaire'),
 (25, 'Créer des voyages', 'Sur une destination créer 5 voyages avec des valeurs différentes', 'Back office', '', '', 'A tester', 'Aucun test effectué sur les dates. Par exemple un voyage du 01/01/15 au 15/01/14 est possible. De plus empêcher la saisie de date inférieure à la date actuelle.'),
@@ -565,7 +644,7 @@ INSERT INTO `wa__test` (`idTest`, `titre`, `explication`, `categorie`, `testeur`
 (46, 'Modifier le déroulement du voyage de la destination ', 'Modifier les accompagnement, les repas, le deroulement, <br/><br/><br/>', 'Back office', 'steph', '', 'Marche', ''),
 (47, 'Modifier les valeurs dans les pictos d''une destination', '', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (48, 'Modifier le pays et la ville plus les localisation de la destination', '', 'Back office', 'steph', '', 'Marche', ''),
-(49, 'Modifier le texte de présentation de la destination', '', 'Back office', 'steph', '', 'Bug', 'Le changement de présentation fonctionne bien mais il rest tuoujours sur le front. Un chapitre "ce prix comprend" et "ce prix ne comprend pas" qu''on ne retrouve pas dans le bo. '),
+(49, 'Modifier le texte de présentation de la destination', '', 'Back office', '', '', 'A tester', 'Le changement de présentation fonctionne bien mais il rest tuoujours sur le front. Un chapitre "ce prix comprend" et "ce prix ne comprend pas" qu''on ne retrouve pas dans le bo. '),
 (50, 'Restaurer une destination', '', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (51, 'Créer un pays', 'Sans remplir tout les champs afin de générer des erreurs puis en remplissant tout les champs', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (52, 'Liste pays', 'Vérifier que les pays créés s''affichent bien sur la carte', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
@@ -576,7 +655,7 @@ INSERT INTO `wa__test` (`idTest`, `titre`, `explication`, `categorie`, `testeur`
 (57, 'Faire une recherche d''un carnet de voyage', '', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (58, 'Restaurer un carnet de voyage', 'Vous pouvez restaurer un carnet depuis la corbeille', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (59, 'Pagination des articles', 'vérifier que les liens en bas de page soit bon et que si on clique sur 2 les infos change et le 2 devienne grisé!', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
-(60, 'Modifier l''etat d''un article', '', 'Back office', 'Alexandre LAMOOT', '', 'Marche pas', 'La modification de l’état de l''article fonctionne. Cependant aucune possibilité de voir les articles en "demande de modération"'),
+(60, 'Modifier l''etat d''un article', '', 'Back office', '', '', 'A tester', 'La modification de l’état de l''article fonctionne. Cependant aucune possibilité de voir les articles en "demande de modération"'),
 (61, 'Supprimer un article', '', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (62, 'Restaurer un article', 'Vous pouvez restaurer un article depuis la corbeille', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (63, 'Rechercher un article', '', 'Back office', 'Alexandre LAMOOT', '', 'Marche', ''),
@@ -609,12 +688,12 @@ INSERT INTO `wa__test` (`idTest`, `titre`, `explication`, `categorie`, `testeur`
 (90, 'Accéder à mon mur', 'partie espace voyageur', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (91, 'feuilletez son carnet', 'Possibilité de feuilleter ses carnets depuis son mur', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (92, 'Changer la photo de son mur', '', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
-(93, 'Créer un carnet de voyage', '', 'Front office', 'steph', '', 'Bug', 'on peut créer un carnet de voyage mais il n''est pas publié et on le retrouve pas dans le bo'),
-(94, 'Modifier un article', 'Modifier un article (ajouter photo, supprimer photo, mettre en forme le texte : citations, gras, italique, <br/><br/><br/>)', 'Front office', 'stephane', '', 'Bug', 'toujours aucune modération après la modification d''un article. toujours pas de possibilité dajouter des photos...'),
-(95, 'Ajouter un article', '', 'Front office', 'steph', '', 'Marche pas', 'impossible de rajouter des photos... les articles en demande de publication n''apparaissent pas dans le bo'),
+(93, 'Créer un carnet de voyage', '', 'Front office', '', '', 'A tester', 'on peut créer un carnet de voyage mais il n''est pas publié et on le retrouve pas dans le bo'),
+(94, 'Modifier un article', 'Modifier un article (ajouter photo, supprimer photo, mettre en forme le texte : citations, gras, italique, <br/><br/><br/>)', 'Front office', '', '', 'A tester', 'toujours aucune modération après la modification d''un article. toujours pas de possibilité dajouter des photos...'),
+(95, 'Ajouter un article', '', 'Front office', '', '', 'A tester', 'impossible de rajouter des photos... les articles en demande de publication n''apparaissent pas dans le bo'),
 (96, 'Supprimer un article', '', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (97, 'Changer l''image de couverture du carnet', '', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
-(98, 'Changer les renseignement de votre compte', 'mot de passe, newsletter et photo depuis l''onglet "mes informations"', 'Front office', 'steph', '', 'Marche pas', 'lorsqu''on change le mot de passe et le mail, après validation, ça mouline et on se retrouve sur une page blanche. '),
+(98, 'Changer les renseignement de votre compte', 'mot de passe, newsletter et photo depuis l''onglet "mes informations"', 'Front office', '', '', 'A tester', 'lorsqu''on change le mot de passe et le mail, après validation, ça mouline et on se retrouve sur une page blanche. '),
 (99, 'vérification des commandes', 'Vérifier que les commandes s''affichent bien sur le compte', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (100, 'retour des différentes étapes de commande', 'vérifier chaque retour dans les différentes étapes du tunnel de commande<br/>', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (101, 'Annuler la commande', '', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
@@ -633,17 +712,17 @@ INSERT INTO `wa__test` (`idTest`, `titre`, `explication`, `categorie`, `testeur`
 (114, 'oubli de mot de passe', 'Essayer l''oubli de mot de passe depuis l''espace de connexion<br/> Vous recevrez un mail<br/>', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (115, 'Modifier la description d''un carnet', 'Modifier la description d''un carnet de voyage', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
 (116, 'Client réticent', 'Aller sur la page nos destinations<br/>\nEnsuite le client souhaite aller a la decouverte des quechuas du perou\nLe client décide de reserver ma place pour le Départ : 13 Juillet 2016 •  Retour : 11 Novembre 2016\nIl est nouveau sur le site walkabout et décide de créer un compte<br/>\nUne fois la manipulation faite, il se connecte directement<br/> (blocage compte non activé)\nIl active son compte avec le lien reçu dans son email<br/>\nIl va changer son adresse par 146 rue nationale 59000 Lille\nIl va réserver pour 5 personnes<br/>\nEt vu le prix important, il décide de faire retour jusqu''à l''annulation de la commmande<br/>', 'Mission', 'Alexandre LAMOOT', '', 'Marche', ''),
-(117, 'Steph et les mots de passe:', 'Stephane a oublié son mon de passe -> espace de connexion<br />\nCliquez sur Vous avez oublié votre mot de passe<br />\nSteph a reçu son nouveau mot de passe par mail<br />\nIl se connecte à son espace de voyageur<br />\nEnsuite il se dirige vers mes informations pour changer le mot de passe\nrentrer comme nouveau mot de passe "s.mignot"<br />\nEnsuite déconnexion pour reconnexion avec le mot de passe "s.mignot"', 'Mission', 'steph', '', 'Marche pas', 'Lorsque je change mon mdp que j''ai reçu par mail. le site mouline et je tombe sur une page blanche. Impossible de recevoir le nouveau mdp sur une autre adresse que celle enregistrée. donc si on a aussi oublié son adresse mail impossible de récupérer son mdp.'),
+(117, 'Steph et les mots de passe:', 'Stephane a oublié son mon de passe -> espace de connexion<br />\nCliquez sur Vous avez oublié votre mot de passe<br />\nSteph a reçu son nouveau mot de passe par mail<br />\nIl se connecte à son espace de voyageur<br />\nEnsuite il se dirige vers mes informations pour changer le mot de passe\nrentrer comme nouveau mot de passe "s.mignot"<br />\nEnsuite déconnexion pour reconnexion avec le mot de passe "s.mignot"', 'Mission', '', '', 'A tester', 'Lorsque je change mon mdp que j''ai reçu par mail. le site mouline et je tombe sur une page blanche. Impossible de recevoir le nouveau mdp sur une autre adresse que celle enregistrée. donc si on a aussi oublié son adresse mail impossible de récupérer son mdp.'),
 (118, 'Les anonymous:', 'Vous venez de rentrer dans une célèbre communauté de hackeurs "Les anonymous"<br/> Pour cette mission, vous êtes chargé de hacker les données du site walkabout-voyages, et si possible de mettre le site down<br/> Des indices vous seront donnés pour cette progression<br/>\n  Hack d''un compte voyageur:\n  Dans l''espace connexion, entrez dans le champs email votre adresse mail suivi de " '' OR 1=1--" et ce que vous voulez en mot de passe<br/>\n  Hack des adresses url:\n  Relever les urls dans l''espace voyageurs, et rentrer les dans la barre d''adresse en étant déconnecter!!!', 'Mission', 'steph', '', 'Marche', ''),
-(120, 'Parcours sans faute', '      <br/> -  Se connecter à l''administration\n      <br/> -  Créer Le Groenland\n      <br/> -  Vérifier qu''il s''affiche bien sur la carte\n      <br/> -  Créer une destination pour Nuuk (Capitale du Groenland)\n      <br/> -  Créer sur cette destination 5 voyages\n      <br/> -  Supprimer un voyage sur 5\n      <br/> -  Modifier le prix du voyage 3\n      <br/> -  Modifier les dates du voyage 2', 'Mission', 'Alexandre LAMOOT', '', 'Marche pas', 'Impossible de créer la destination. Même problème que celui décrit dans le test d''ajout de destination.'),
-(121, 'Le serial killer', '      <br/> -  Se connecter à l''administration\n      <br/> -  Supprimer un voyage\n      <br/> -  Supprimer une destination\n      <br/> -  Supprimer un pays\n      <br/> -  Supprimer un administrateur\n      <br/> -  Supprimer un utilisateur\n      <br/> -  Supprimer un carnet\n      <br/> -  Supprimer un article\n      <br/> -  Supprimer un commentaire\n      <br/> -  Supprimer une actualité', 'Mission', 'Alexandre LAMOOT', '', 'Marche pas', 'La suppression du pays est impossible. On peut que modifier ou ajouter un pays.'),
-(122, 'Mon nom est Jésus', '      <br/> -  Se connecter à l''administration\n      <br/> -  Créer un voyage\n      <br/> -  Créer une destination\n      <br/> -  Créer un pays\n      <br/> -  Créer un administrateur\n      <br/> -  Créer un utilisateur\n      <br/> -  Créer un carnet\n      <br/> -  Créer un article\n      <br/> -  Créer un commentaire', 'Mission', 'Alexandre LAMOOT', '', 'Marche pas', 'Impossible de créer une destination. Même problème décrit lors du test ajouter une destination.'),
+(120, 'Parcours sans faute', '      <br/> -  Se connecter à l''administration\n      <br/> -  Créer Le Groenland\n      <br/> -  Vérifier qu''il s''affiche bien sur la carte\n      <br/> -  Créer une destination pour Nuuk (Capitale du Groenland)\n      <br/> -  Créer sur cette destination 5 voyages\n      <br/> -  Supprimer un voyage sur 5\n      <br/> -  Modifier le prix du voyage 3\n      <br/> -  Modifier les dates du voyage 2', 'Mission', '', '', 'A tester', 'Impossible de créer la destination. Même problème que celui décrit dans le test d''ajout de destination.'),
+(121, 'Le serial killer', '      <br/> -  Se connecter à l''administration\n      <br/> -  Supprimer un voyage\n      <br/> -  Supprimer une destination\n      <br/> -  Supprimer un pays\n      <br/> -  Supprimer un administrateur\n      <br/> -  Supprimer un utilisateur\n      <br/> -  Supprimer un carnet\n      <br/> -  Supprimer un article\n      <br/> -  Supprimer un commentaire\n      <br/> -  Supprimer une actualité', 'Mission', '', '', 'A tester', 'La suppression du pays est impossible. On peut que modifier ou ajouter un pays.'),
+(122, 'Mon nom est Jésus', '      <br/> -  Se connecter à l''administration\n      <br/> -  Créer un voyage\n      <br/> -  Créer une destination\n      <br/> -  Créer un pays\n      <br/> -  Créer un administrateur\n      <br/> -  Créer un utilisateur\n      <br/> -  Créer un carnet\n      <br/> -  Créer un article\n      <br/> -  Créer un commentaire', 'Mission', '', '', 'A tester', 'Impossible de créer une destination. Même problème décrit lors du test ajouter une destination.'),
 (123, 'Le necrophile', '      Deterrer = Restaurer/Activer\n      <br/> -  Se connecter à l''administration\n      <br/> -  Déterrer une destination\n      <br/> -  Déterrer un commentaire\n      <br/> -  Déterrer un utilisateur mort\n      <br/> -  Déterrer un article', 'Mission', 'steph', '', 'Marche', ''),
 (124, 'Le Jean-Pierre Pernaut', '      <br/> -  Se connecter à l''administration\n      <br/> -  Ajouter 3 actualités avec photos et boutons', 'Mission', 'Alexandre LAMOOT', '', 'Marche', ''),
 (125, 'Le voyeur', '      <br/> -  Tester l''administration et son responsive design sur tout les navigateurs et appareils possible (chrome, Firefox, IE, Edge, Tablette, Smartphone, Pc portable, PC tour)', 'Mission', '', '', 'A tester', ''),
 (126, 'Changement l''ordre des articles', 'Changer l''odre des articles du carnet de voyage avec les flèches', 'Front office', 'Alexandre LAMOOT', '', 'Marche', ''),
-(127, 'Btn front demande de publication', 'Il manque le bouton de demande de publication sur le front office ( espace voyageur )', 'Front office', 'steph', '', 'Bug', 'l''article apparait bien en attente de publication sur le fo mais on le trouve pas sur le bo'),
-(128, 'Non définition du carnet phare', 'Attention, quand on a pas de carnet phare, on se tape une erreur PHP assez dégueulasse "undefined offset:0".', 'Front office', '', '', 'A tester', '');
+(127, 'Btn front demande de publication', 'Il manque le bouton de demande de publication sur le front office ( espace voyageur )', 'Front office', '', '', 'A tester', 'l''article apparait bien en attente de publication sur le fo mais on le trouve pas sur le bo'),
+(128, 'Non définition du carnet phare', 'Attention, quand on a pas de carnet phare, on se tape une erreur PHP assez dégueulasse "undefined offset:0".', 'Front office', 'Alexandre LAMOOT', '', 'Marche', '');
 
 -- --------------------------------------------------------
 
@@ -652,7 +731,7 @@ INSERT INTO `wa__test` (`idTest`, `titre`, `explication`, `categorie`, `testeur`
 --
 
 CREATE TABLE IF NOT EXISTS `wa__users` (
-  `idUsers` int(11) NOT NULL,
+  `idUsers` int(11) NOT NULL AUTO_INCREMENT,
   `idLevel` int(11) NOT NULL,
   `mail` varchar(45) NOT NULL,
   `mdp` varchar(100) NOT NULL,
@@ -670,17 +749,20 @@ CREATE TABLE IF NOT EXISTS `wa__users` (
   `num_activation` varchar(45) NOT NULL,
   `active` varchar(5) NOT NULL,
   `photo` varchar(500) DEFAULT NULL,
-  `cover` varchar(500) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `cover` varchar(500) NOT NULL,
+  PRIMARY KEY (`idUsers`),
+  KEY `idLevel` (`idLevel`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Contenu de la table `wa__users`
 --
 
 INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `slug`, `adresse1`, `adresse2`, `CP`, `ville`, `pays`, `tel_fixe`, `tel_port`, `date_naissance`, `num_activation`, `active`, `photo`, `cover`) VALUES
-(1, 1, 'lamootalexandre@gmail.com', '08efc7f2fca7e2dbfd376e994b2383af738d3a42c8a08841bdbfc0f062813d45', 'LAMOOT', 'Alexandre', '1-lamoot-alexandre', '146 rue nationale', '', '59000', 'Lille', 'France', '', '', '1994-10-06', '8OS99xKJjCqEvQIouP', 'true', 'unsigned_user.jpg', 'users/1/cover/Penguins.jpg'),
+(1, 1, 'lamootalexandre@gmail.com', 'acc4480b3254a4f48e7bfa2b3638202aa7af0df00181a7abe357f65dd29b3ad8', 'LAMOOT', 'Alexandre', '1-lamoot-alexandre', '146 rue nationale', '', '59000', 'Lille', 'France', '', '', '1994-10-06', '8OS99xKJjCqEvQIouP', 'true', 'unsigned_user.jpg', 'users/1/cover/Penguins.jpg'),
 (2, 1, 'mignot.steph@wanadoo.fr', 'ffd73d6baeb4efb7922347d91daf780335701edb022f86e7363073f714d7e8b0', 'mignot', 'stephane', '2-mignot-stephane', '95, rue de maubeuge', '', '75010', 'paris', 'france', '0303030303', '06000000000000', '1963-12-13', 'UaSCDlv8NjQwTUClHp', 'true', 'users/2/profil1.jpg', ''),
-(3, 1, 'groover.dieu@gmail.com', '247bfe3d4e6ce22be4ac2e5dfb34b5e5d4522899a8df38ec8977156ef696b872', 'dieu', 'steven', '3-dieu-steven', '5 bis rue du 4eme RIC', '', '59000', 'Gury', 'France', '', '', '1992-10-26', 'f68CSGhEeIX1Q8Ivi5', 'true', 'unsigned_user.jpg', '');
+(3, 1, 'groover.dieu@gmail.com', '247bfe3d4e6ce22be4ac2e5dfb34b5e5d4522899a8df38ec8977156ef696b872', 'dieu', 'steven', '3-dieu-steven', '5 bis rue du 4eme RIC', '', '59000', 'Gury', 'France', '', '', '1992-10-26', 'f68CSGhEeIX1Q8Ivi5', 'true', 'unsigned_user.jpg', ''),
+(15, 1, 'chloe.roche@club-internet.fr', 'cadc798f6bf24862c1a224fd31492eb3f8214304ac5a10e726569c19969e6429', 'Roche', 'Chloé', '15-roche-chloe', '97 bd Voltaire', '', '62400', 'Béthune', 'france', '', '', '0000-00-00', 'la8URyjA49pqN50udM', 'false', 'unsigned_user.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -689,15 +771,17 @@ INSERT INTO `wa__users` (`idUsers`, `idLevel`, `mail`, `mdp`, `nom`, `prenom`, `
 --
 
 CREATE TABLE IF NOT EXISTS `wa__voyage` (
-  `idVoyage` int(11) NOT NULL,
+  `idVoyage` int(11) NOT NULL AUTO_INCREMENT,
   `idDestination` int(11) NOT NULL,
   `date_depart` date DEFAULT NULL,
   `date_retour` date DEFAULT NULL,
   `prix` float NOT NULL,
   `nb_places` int(3) NOT NULL,
   `details` longtext NOT NULL,
-  `active` varchar(10) NOT NULL DEFAULT 'true'
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+  `active` varchar(10) NOT NULL DEFAULT 'true',
+  PRIMARY KEY (`idVoyage`),
+  KEY `idDestination` (`idDestination`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Contenu de la table `wa__voyage`
@@ -717,271 +801,6 @@ INSERT INTO `wa__voyage` (`idVoyage`, `idDestination`, `date_depart`, `date_reto
 (11, 1, '2013-01-30', '2014-02-15', 4000, 15, '[]', 'false'),
 (12, 1, '2016-01-01', '2016-01-15', 5000, 10, '[]', 'true');
 
---
--- Index pour les tables exportées
---
-
---
--- Index pour la table `wa__actualites`
---
-ALTER TABLE `wa__actualites`
-  ADD PRIMARY KEY (`idActualites`),
-  ADD KEY `idAdministrateur` (`idAdministrateur`);
-
---
--- Index pour la table `wa__administrateur`
---
-ALTER TABLE `wa__administrateur`
-  ADD PRIMARY KEY (`idAdministrateur`);
-
---
--- Index pour la table `wa__articles`
---
-ALTER TABLE `wa__articles`
-  ADD PRIMARY KEY (`idArticles`),
-  ADD KEY `idCarnet` (`idCarnet`);
-
---
--- Index pour la table `wa__carnetdevoyage`
---
-ALTER TABLE `wa__carnetdevoyage`
-  ADD PRIMARY KEY (`idCarnetDeVoyage`),
-  ADD UNIQUE KEY `titre` (`titre`),
-  ADD KEY `idUsers` (`idUsers`,`idVoyage`),
-  ADD KEY `idVoyage` (`idVoyage`),
-  ADD KEY `idDestination` (`idDestination`);
-
---
--- Index pour la table `wa__civilite`
---
-ALTER TABLE `wa__civilite`
-  ADD PRIMARY KEY (`idCivilite`);
-
---
--- Index pour la table `wa__commentaires`
---
-ALTER TABLE `wa__commentaires`
-  ADD PRIMARY KEY (`idCommentaires`),
-  ADD KEY `idCarnet` (`idCarnet`,`idUsers`),
-  ADD KEY `idUsers` (`idUsers`);
-
---
--- Index pour la table `wa__contact`
---
-ALTER TABLE `wa__contact`
-  ADD PRIMARY KEY (`idContact`);
-
---
--- Index pour la table `wa__destination`
---
-ALTER TABLE `wa__destination`
-  ADD PRIMARY KEY (`idDestination`),
-  ADD KEY `idPays` (`idPays`);
-
---
--- Index pour la table `wa__details_prix`
---
-ALTER TABLE `wa__details_prix`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idVoyage` (`idDestination`);
-
---
--- Index pour la table `wa__etatreservation`
---
-ALTER TABLE `wa__etatreservation`
-  ADD PRIMARY KEY (`idEtatReservation`),
-  ADD KEY `idReservation` (`idReservation`);
-
---
--- Index pour la table `wa__infosdestinations`
---
-ALTER TABLE `wa__infosdestinations`
-  ADD PRIMARY KEY (`idInfosDestinations`),
-  ADD KEY `idDestination` (`idDestination`);
-
---
--- Index pour la table `wa__level`
---
-ALTER TABLE `wa__level`
-  ADD PRIMARY KEY (`idLevel`);
-
---
--- Index pour la table `wa__newsletter`
---
-ALTER TABLE `wa__newsletter`
-  ADD PRIMARY KEY (`idNewsletter`);
-
---
--- Index pour la table `wa__payement`
---
-ALTER TABLE `wa__payement`
-  ADD PRIMARY KEY (`idPayement`),
-  ADD KEY `idReservation` (`idReservation`);
-
---
--- Index pour la table `wa__paypal`
---
-ALTER TABLE `wa__paypal`
-  ADD PRIMARY KEY (`idPaypal`),
-  ADD KEY `idPayement` (`idPayement`);
-
---
--- Index pour la table `wa__pays`
---
-ALTER TABLE `wa__pays`
-  ADD PRIMARY KEY (`idPays`);
-
---
--- Index pour la table `wa__personnalisation`
---
-ALTER TABLE `wa__personnalisation`
-  ADD PRIMARY KEY (`idPersonnalisation`),
-  ADD KEY `idCarnet` (`idCarnet`);
-
---
--- Index pour la table `wa__reservation`
---
-ALTER TABLE `wa__reservation`
-  ADD PRIMARY KEY (`idReservation`),
-  ADD KEY `idVoyage` (`idVoyage`),
-  ADD KEY `idUsers` (`idUsers`);
-
---
--- Index pour la table `wa__sessions`
---
-ALTER TABLE `wa__sessions`
-  ADD PRIMARY KEY (`session_id`),
-  ADD KEY `last_activity_idx` (`last_activity`);
-
---
--- Index pour la table `wa__test`
---
-ALTER TABLE `wa__test`
-  ADD PRIMARY KEY (`idTest`);
-
---
--- Index pour la table `wa__users`
---
-ALTER TABLE `wa__users`
-  ADD PRIMARY KEY (`idUsers`),
-  ADD KEY `idLevel` (`idLevel`);
-
---
--- Index pour la table `wa__voyage`
---
-ALTER TABLE `wa__voyage`
-  ADD PRIMARY KEY (`idVoyage`),
-  ADD KEY `idDestination` (`idDestination`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `wa__actualites`
---
-ALTER TABLE `wa__actualites`
-  MODIFY `idActualites` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT pour la table `wa__administrateur`
---
-ALTER TABLE `wa__administrateur`
-  MODIFY `idAdministrateur` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT pour la table `wa__articles`
---
-ALTER TABLE `wa__articles`
-  MODIFY `idArticles` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
---
--- AUTO_INCREMENT pour la table `wa__carnetdevoyage`
---
-ALTER TABLE `wa__carnetdevoyage`
-  MODIFY `idCarnetDeVoyage` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT pour la table `wa__civilite`
---
-ALTER TABLE `wa__civilite`
-  MODIFY `idCivilite` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `wa__commentaires`
---
-ALTER TABLE `wa__commentaires`
-  MODIFY `idCommentaires` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
---
--- AUTO_INCREMENT pour la table `wa__contact`
---
-ALTER TABLE `wa__contact`
-  MODIFY `idContact` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
---
--- AUTO_INCREMENT pour la table `wa__destination`
---
-ALTER TABLE `wa__destination`
-  MODIFY `idDestination` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT pour la table `wa__details_prix`
---
-ALTER TABLE `wa__details_prix`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT pour la table `wa__etatreservation`
---
-ALTER TABLE `wa__etatreservation`
-  MODIFY `idEtatReservation` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT pour la table `wa__infosdestinations`
---
-ALTER TABLE `wa__infosdestinations`
-  MODIFY `idInfosDestinations` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT pour la table `wa__level`
---
-ALTER TABLE `wa__level`
-  MODIFY `idLevel` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT pour la table `wa__newsletter`
---
-ALTER TABLE `wa__newsletter`
-  MODIFY `idNewsletter` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=51777;
---
--- AUTO_INCREMENT pour la table `wa__payement`
---
-ALTER TABLE `wa__payement`
-  MODIFY `idPayement` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `wa__paypal`
---
-ALTER TABLE `wa__paypal`
-  MODIFY `idPaypal` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `wa__pays`
---
-ALTER TABLE `wa__pays`
-  MODIFY `idPays` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT pour la table `wa__personnalisation`
---
-ALTER TABLE `wa__personnalisation`
-  MODIFY `idPersonnalisation` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT pour la table `wa__reservation`
---
-ALTER TABLE `wa__reservation`
-  MODIFY `idReservation` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT pour la table `wa__test`
---
-ALTER TABLE `wa__test`
-  MODIFY `idTest` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=129;
---
--- AUTO_INCREMENT pour la table `wa__users`
---
-ALTER TABLE `wa__users`
-  MODIFY `idUsers` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT pour la table `wa__voyage`
---
-ALTER TABLE `wa__voyage`
-  MODIFY `idVoyage` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- Contraintes pour les tables exportées
 --
@@ -1073,7 +892,3 @@ ALTER TABLE `wa__users`
 --
 ALTER TABLE `wa__voyage`
   ADD CONSTRAINT `id_voyage_destination` FOREIGN KEY (`idDestination`) REFERENCES `wa__destination` (`idDestination`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
