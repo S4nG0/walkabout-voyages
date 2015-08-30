@@ -6572,6 +6572,12 @@ body.admin .submenu li .active {
 body.admin .quicklook {
   padding-bottom: 50px;
 }
+body.admin .quicklook .huge {
+  display: inline-block;
+}
+body.admin .quicklook .small {
+  display: block;
+}
 body.admin .quicklook .panel-black {
   color: #f0c041;
   background-color: #242424;

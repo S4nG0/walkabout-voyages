@@ -405,6 +405,14 @@ body.admin {
     .quicklook {
         padding-bottom: 50px;
 
+        .huge {
+            display: inline-block;
+        }
+
+        .small {
+            display: block;
+        }
+
         .panel-black {
             color: $jaune-or;
             background-color: $noir;
