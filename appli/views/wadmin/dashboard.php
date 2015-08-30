@@ -35,7 +35,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-10 col-md-offset-1 col-lg-5">
+                <div class="col-md-10 col-lg-5">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -83,7 +83,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-10 col-md-offset-1 col-lg-5">
+                <div class="col-md-10 col-lg-5">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
