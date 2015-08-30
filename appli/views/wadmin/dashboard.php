@@ -11,7 +11,7 @@
                 <h2 class="no-sep">Mises à jour récentes</h2>
             </div>
             <div class="row text-center">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-10 col-md-offset-1 col-lg-5 col-lg-offset-1">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -35,7 +35,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-10 col-md-offset-1 col-lg-5">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -59,7 +59,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-10 col-md-offset-1 col-lg-5 col-lg-offset-1">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -83,7 +83,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-10 col-md-offset-1 col-lg-5">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -131,7 +131,7 @@
                     </div>
                     <!-- /.panel -->
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <h3>Voyages préférés des utilisateurs</h3>
@@ -144,7 +144,7 @@
                     </div>
                     <!-- /.panel -->
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <h3>Nationalité des utilisateurs</h3>
