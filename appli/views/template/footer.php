@@ -164,20 +164,5 @@
 
 </script>
 
-<?php
-
-switch ($newsletter) {
-    case "reussi":
-        echo '<script>alert("Votre inscription à notre newsletter à bien été prise en compte");</script>';
-        break;
-    case "fail":
-        echo '<script>alert("Une erreur est survenue lors de l\'enregistrement de vos préférences, veuillez contacter le service technique.");</script>';
-        break;
-    case "erreur champs":
-        echo '<script>alert("Les champs Email, Nom, Prénom sont obligatoires, vous avez oublié de remplir certains champs du formulaire d\'inscription, veuillez recommencer.");</script>';
-        break;
-};
-?>
-
 </body>
 </html>

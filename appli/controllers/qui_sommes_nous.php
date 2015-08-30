@@ -21,7 +21,7 @@ class Qui_sommes_nous extends CI_Controller {
 	{
             $data = array();
         $data['title'] = "Notre esprit";
-        $data['newsletter'] = $this->session->flashdata('newsletter');
+        
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $this->load->view('template/header', $data);
             $this->load->view('esprit',$data);

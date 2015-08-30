@@ -24,7 +24,7 @@ class Moncompte extends CI_Controller
     public function index()
     {
         $this->session->unset_userdata('voyage');
-        $data['newsletter'] = $this->session->flashdata('newsletter');
+        
         $data['connecte'] = connecte($this->session->userdata('user')[0]);
         $data['title'] = "Compte";
         $data['upload'] = $this->session->flashdata('upload');

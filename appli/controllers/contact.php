@@ -22,7 +22,7 @@ class Contact extends CI_Controller {
      */
     public function index() {
         $data = Array();
-        $data['newsletter'] = $this->session->flashdata('newsletter');
+        
         $data['title'] =  "Contact";
         $data['page'] = "contact";
         $result = '';

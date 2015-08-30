@@ -22,7 +22,7 @@ class Carnets_de_voyage extends CI_Controller {
         public function index()
 	{
             $data = array();
-            $data['newsletter'] = $this->session->flashdata('newsletter');
+            
             $data['title'] = "Carnets de voyage";
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             $this->load->view('template/header', $data);
