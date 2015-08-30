@@ -23,7 +23,7 @@ class Inscription extends CI_Controller {
     public function index(){
         $data = Array();
         $data['title'] = "Inscription";
-        $data['newsletter'] = $this->session->flashdata('newsletter');
+        
         $data['erreur'] = "";
         $data['connecte'] = connecte($this->session->userdata('user')[0]);
         if ($data['connecte'] != false) {
@@ -106,7 +106,7 @@ class Inscription extends CI_Controller {
     public function reservation() {
         $data = Array();
         $data['title'] = "Inscription";
-        $data['newsletter'] = $this->session->flashdata('newsletter');
+        
         $data['erreur'] = "";
         $data['voyage'] = $this->session->userdata('voyage');
         $data['connecte'] = connecte($this->session->userdata('user')[0]);

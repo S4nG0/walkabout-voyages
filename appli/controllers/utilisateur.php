@@ -26,7 +26,7 @@ class Utilisateur extends CI_Controller {
             }
 
             $data = array();
-            $data['newsletter'] = $this->session->flashdata('newsletter');
+            
             $data['user'] = $this->user->getFromName($name)[0];
             $data['uploader'] = $this->session->flashdata('upload');
             $data['utilisateur_connecte'] = $this->session->userdata('user')[0];
