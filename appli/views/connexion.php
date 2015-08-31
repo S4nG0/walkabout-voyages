@@ -18,10 +18,10 @@
 
             <div class="form-group">
                 <label for="password">Mot de passe</label>
+                <input type="password" name="password" id="password" placeholder="Votre mot de passe">
                 <p class="forgotten-pwd">
                     <span class="small">Vous avez oublié votre mot de passe&nbsp;?<br /><a class="fancybox" href="#recover-pwd">Cliquez-ici</a></span>
                 </p>
-                <input type="password" name="password" id="password" placeholder="Votre mot de passe">
                 <?php echo form_error('password'); ?>
             </div>
 

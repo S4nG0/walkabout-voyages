@@ -11,6 +11,13 @@ echo form_open_multipart('walkadmin/destinations/creer');
             <h1 class="page-header sep">Ajout d'une destination</h1>
         </div>
 
+        <div class="row text-center">
+            <div class="col-md-12"></div>
+            <div class="help-block error">
+                <i class="fa fa-exclamation-circle"></i>&nbsp;Vous devez impérativement avoir créé un pays associé avant de pouvoir enregistrer une destination.
+            </div>
+        </div>
+
         <?php if (isset($error)) { ?>
 
             <div class="alert alert-danger" role="alert"><strong>Erreur !</strong><br /><?php echo $error; ?></div>
@@ -50,7 +57,7 @@ echo form_open_multipart('walkadmin/destinations/creer');
             <div class="col-md-4 col-md-offset-2">
                 <div class="form-group">
                     <label for="pays">Pays de la destination</label>
-                    <select name="pays" autofocus>
+                    <select name="pays">
                         <?php foreach($pays as $paysActuel){ ?>
                             <option value="<?php echo $paysActuel->idPays?>">
                                 <?php echo $paysActuel->nom?>
