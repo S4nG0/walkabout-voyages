@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: text/html; charset=utf-8'); 
+header('Content-Type: text/html; charset=utf-8');
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
@@ -22,7 +22,7 @@ class Contact extends CI_Controller {
      */
     public function index() {
         $data = Array();
-        
+
         $data['title'] =  "Contact";
         $data['page'] = "contact";
         $result = '';
@@ -125,19 +125,19 @@ class Contact extends CI_Controller {
                 $contact->nom = $this->input->post('nom');
                 $contact->prenom = $this->input->post('prenom');
                 $contact->mail = $this->input->post('email');
-                $contact->sujet = "Demande d'information sur la destination ".$this->input->post('destination');
+                $contact->sujet = "Demande d'informations sur <strong>".$this->input->post('destination')."</strong>";
                 $contact->message = $this->input->post('message');
                 $contact->ouvert = "false";
                 $contact->date = date('Y-m-d');
                 $result = $this->contacts->insert($contact);
-                
+
                 if($result == true){
                     $result = new stdClass();
                     $result->erreur = false;
                     $result->message = "Votre demande nous est bien parvenu, nous vous répondrons dans les meilleurs délais.";
                     echo output($result);
                 }
-                
+
             }else{
                 $result = new stdClass();
                 $result->erreur = true;
