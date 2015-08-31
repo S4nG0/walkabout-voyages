@@ -609,13 +609,15 @@ $(document).ready(function () {
     });
 
     $('.tb-article--content').on('DOMSubtreeModified', function() {
-        var content = editor.serialize()["element-0"].value;
-        if(content.trim() == ""){
-            $('.content--article').css({'border' :'solid 1px red'});
-            alert('Le contenu de l\'article ne peut pas être vide!');
-            return false;
+        if(editor.serialize()["element-0"]){
+            var content = editor.serialize()["element-0"].value;
+            if(content.trim() == ""){
+                $('.content--article').css({'border' :'solid 1px red'});
+                alert('Le contenu de l\'article ne peut pas être vide!');
+                return false;
+            }
+            $('input[name=content]').val(content);
         }
-        $('input[name=content]').val(content);
     });
 
     //Permet de demander avant de quitter la page carnet et article si modification effectuée !
@@ -758,4 +760,16 @@ $(window).load(function(){
             columnWidth: '.grid__sizer'
         })
     });
+    
+    $.each($('.single-carnet .tb-article--content'),function(){
+        var p = $(this)[0].children;
+        $.each(p, function(){
+          var interieur = ($(this)[0].innerHTML);
+          if(interieur == "" || interieur == null || interieur == "<br>"){
+            $(this).remove();
+          }
+        });
+    });
+    
+    
 });
