@@ -99,6 +99,29 @@ class Destination extends CI_Model {
         return $destinations;
     }
 
+    public function getAllDestinationPagination($start, $nb){
+        $destinations = $this->db->select('*')
+                                 ->from($this->table)
+                                 ->where('active','true')
+                                 ->limit($nb,$start)
+                                 ->get()
+                                 ->result();
+        return $destinations;
+    }
+
+    public function getAllDestinationSearchPagination($search, $start, $nb){
+        $where = "(`wa__destination`.`active` = 'true') AND (`wa__destination`.`titre` LIKE '".$search."' OR
+                 `wa__destination`.`ville` LIKE '%".$search."%' OR `wa__pays`.`nom` LIKE '%".$search."%')";
+        $destinations = $this->db->select('*')
+                                 ->from($this->table)
+                                 ->join('pays','pays.idPays=destination.idPays')
+                                 ->where($where)
+                                 ->limit($nb,$start)
+                                 ->get()
+                                 ->result();
+        return $destinations;
+    }
+
     public function insertDestination($data){
         if($data==''){
             return false;
