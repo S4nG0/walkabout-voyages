@@ -18,7 +18,7 @@ $nbCarnets = count($carnets);
                             <div class="profile-picture">
                                 <img src="<?php echo img_url($user->photo); ?>" alt="Photo de profil">
                             </div>
-                            <h1 class="no-sep"><?php echo $user->prenom . ' ' . $user->nom; ?></h1>
+                            <h1 class="no-sep"><?php echo ucfirst(mb_strtolower($user->prenom)) . ' ' . ucfirst(mb_strtolower($user->nom)); ?></h1>
                             <p><?php if ($nbCarnets > 1) { echo $nbCarnets . '&nbsp;histoires à découvrir'; } elseif ($nbCarnets == 0) { echo 'Aucune histoire pour l\'instant'; } else {echo $nbCarnets . '&nbsp;histoire à découvrir'; } ?></p>
                             <?php
                             if($utilisateur_connecte !=  false){
