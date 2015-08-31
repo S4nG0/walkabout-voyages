@@ -40,7 +40,7 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
                 </div>
                 <div class="form-group">
                     <label for="description">Texte introductif</label>
-                    <textarea name="description" rows="10" placeholder="Description"><?php echo $destination->description; ?></textarea>
+                    <textarea name="description" rows="10" placeholder="Description"><?php echo strip_tags($destination->description); ?></textarea>
                     <?php echo form_error('description'); ?>
                 </div>
             </div>
@@ -146,24 +146,24 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
             <div class="col-md-4 col-md-offset-2">
                 <div class="form-group">
                     <label for="">Accompagnement</label>
-                    <textarea name="accompagnement" id="accompagnement" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->accompagnement)){echo $infos->accompagnement;} ?></textarea>
+                    <textarea name="accompagnement" id="accompagnement" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->accompagnement)){echo strip_tags($infos->accompagnement);} ?></textarea>
                     <?php echo form_error('accompagnement'); ?>
                 </div>
                 <div class="form-group">
                     <label for="">Hébergement</label>
-                    <textarea name="hebergement" id="hebergement" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->hebergement)){echo $infos->hebergement;} ?></textarea>
+                    <textarea name="hebergement" id="hebergement" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->hebergement)){echo strip_tags($infos->hebergement);} ?></textarea>
                     <?php echo form_error('hebergement'); ?>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="">Déplacements</label>
-                    <textarea name="deplacement" id="deplacement" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->deplacement)){echo $infos->deplacement;} ?></textarea>
+                    <textarea name="deplacement" id="deplacement" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->deplacement)){echo strip_tags($infos->deplacement);} ?></textarea>
                     <?php echo form_error('deplacement'); ?>
                 </div>
                 <div class="form-group">
                     <label for="">Repas &amp; boissons</label>
-                    <textarea name="nourriture" id="nourriture" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->repas_boissons)){echo $infos->repas_boissons;} ?></textarea>
+                    <textarea name="nourriture" id="nourriture" rows="5" placeholder="Saississez vos informations"><?php if(isset($infos->repas_boissons)){echo strip_tags($infos->repas_boissons);} ?></textarea>
                     <?php echo form_error('nourriture'); ?>
                 </div>
             </div>
@@ -189,7 +189,7 @@ echo form_open_multipart('walkadmin/destinations/detail/'.$destination->idDestin
 
                         <div class="form-group destinations__deroulement fieldBlock" id="detail<?php echo $iteration; ?>">
                             <input type="text" placeholder="Jour" name="jour<?php echo $iteration; ?>" id="jour" value="<?php echo $info->titre; ?>"/>
-                            <textarea type="text" name="jour_valeur<?php echo $iteration; ?>" id="jour_valeur" rows="5" placeholder="Décrivez l'évènement du jour"><?php echo $info->valeur; ?></textarea>
+                            <textarea type="text" name="jour_valeur<?php echo $iteration; ?>" id="jour_valeur" rows="5" placeholder="Décrivez l'évènement du jour"><?php echo strip_tags($info->valeur); ?></textarea>
                             <span class="destinations__icon remove" onclick="javascript:remove_detail(<?php echo $iteration; ?>,jours);"></span>
                         </div>
 

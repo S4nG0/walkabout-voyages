@@ -109,7 +109,7 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-lg-7">
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -123,7 +123,9 @@
                     </div>
                     <!-- /.panel -->
                 </div>
-                <div class="col-lg-5">
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <h3>Voyages préférés des utilisateurs</h3>
@@ -136,9 +138,7 @@
                     </div>
                     <!-- /.panel -->
                 </div>
-            </div>
-                <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <h3>Nationalité des utilisateurs</h3>
