@@ -113,6 +113,7 @@ class Carnetvoyage extends CI_Model {
         $carnets = $this->db->select('*')
                            ->from($this->table)
                            ->where('idUsers', $id)
+                           ->where('publie', "true")
                            ->get()
                            ->result();
 
