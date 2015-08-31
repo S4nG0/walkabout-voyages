@@ -683,20 +683,12 @@ $(document).ready(function () {
             $('#message_formulaire_demande').removeClass('hidden');
             if(result.erreur == true){
                 $('#message_formulaire_demande').empty();
-                $('.fancybox').stop().animate({
-                    scrollTop : $("#info_form").offset().top
-                }, 300, function () {
-                    location.hash = "#info_form";
-                });
+                location.hash = "#info_form";
                 $('#message_formulaire_demande').addClass('alert-danger').fadeIn( "slow");
                 $('#message_formulaire_demande').append("<i class='fa fa-exclamation-triangle'></i> "+result.message);
             }else{
                 $('#message_formulaire_demande').empty();
-                $('.fancybox').stop().animate({
-                    scrollTop : $("#info_form").offset().top
-                }, 300, function () {
-                    location.hash = "#info_form";
-                });
+                location.hash = "#info_form";
                 $('#message_formulaire_demande').addClass('alert-success').fadeIn( "slow");
 
 
@@ -737,30 +729,18 @@ $(document).ready(function () {
             $('#message_formulaire_newsletter').removeClass('hidden');
             if(result.erreur == true){
                 $('#message_formulaire_newsletter').empty();
-                $('.fancybox').stop().animate({
-                    scrollTop : $("#newsletter_form").offset().top
-                }, 300, function () {
-                    location.hash = "#newsletter_form";
-                });
+                location.hash = "#newsletter_form";
                 $('#message_formulaire_newsletter').addClass('alert-danger').fadeIn( "slow");
                 $('#message_formulaire_newsletter').append("<i class='fa fa-exclamation-triangle'></i> "+result.message);
             }else{
                 $('#message_formulaire_newsletter').empty();
-                $('.fancybox').stop().animate({
-                    scrollTop : $("#newsletter_form").offset().top
-                }, 300, function () {
-                    location.hash = "#newsletter_form";
-                });
+                location.hash = "#newsletter_form";
                 $('#message_formulaire_newsletter').addClass('alert-success').fadeIn( "slow");
                 $('#message_formulaire_newsletter').append("<i class='fa fa-check'></i> "+result.message);
             }
         }).fail(function(data){
             $('#message_formulaire_demande').empty();
-                $('.fancybox').stop().animate({
-                    scrollTop : $("#info_form").offset().top
-                }, 300, function () {
-                    location.hash = "#info_form";
-                });
+                location.hash = "#info_form";
                 $('#message_formulaire_demande').addClass('alert-danger').fadeIn( "slow");
                 $('#message_formulaire_demande').append("<i class='fa fa-exclamation-triangle'></i> une erreur s'est produite lors de l'envoi de la demande, veuillez réessayer ultérieurement.");
         });
