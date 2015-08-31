@@ -161,7 +161,7 @@ class Utilisateur extends CI_Controller{
         $data['title'] = 'Utilisateur - Détails';
         $data['user']=$this->user->constructeur($idUsers);
         $data['admin'] = $this->session->userdata('admin');
-        $data['reservation'] = $this->reservations->getReservation($idUsers);
+        $data['reservation'] = $this->reservations->getReservationAdmin($idUsers);
         $data['carnets'] = $this->carnetvoyage->get_carnet_for_user_join_destination($idUsers);
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);

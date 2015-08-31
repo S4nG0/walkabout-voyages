@@ -38,11 +38,13 @@ class Reservations extends CI_Model {
             return false;
         }
 
-        $reservations = $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays')
+        $reservations = $this->db->select('reservation.*,voyage.*,destination.*,pays.nom AS nomPays,etatreservation.idEtatReservation,
+                                         etatreservation.etat')
             ->from($this->table)
             ->join('voyage','reservation.idVoyage=voyage.idVoyage')
             ->join('destination','destination.idDestination=voyage.idDestination')
             ->join('pays','destination.idPays=pays.idPays')
+            ->join('etatreservation','etatreservation.idReservation=reservation.idReservation')
             ->where('idUsers', $id)
             ->get()
             ->result();
