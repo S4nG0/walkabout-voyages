@@ -45,7 +45,7 @@ class Dashboard extends CI_Controller {
             $reservations = 0;
             $destinations = $this->destination->getFromPays($pays->idPays);
             foreach($destinations as $destination){
-                $voyages = $this->voyages->get_voyages_from_destination($destination->idDestination);
+                $voyages = $this->voyages->get_voyages_from_destination2($destination->idDestination);
                 foreach($voyages as $voyage){
                     $reservations += $this->reservations->countFromVoyage($voyage->idVoyage);
                 }

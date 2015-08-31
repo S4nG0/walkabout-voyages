@@ -21,7 +21,7 @@ class Actualite extends CI_Controller{
         /*Parametrage de la pagination*/
         $config['base_url'] = base_url().'walkadmin/actualite/';
         $config['total_rows'] = $count;// faire attention taille totale
-        $nb_articles = $config['per_page'] = 2;
+        $nb_articles = $config['per_page'] = 10;
         $config['num_links'] = 3;
         $config['use_page_numbers'] = true;
         $config['last_link'] = 'Dernier';
@@ -83,7 +83,7 @@ class Actualite extends CI_Controller{
         /*Parametrage de la pagination*/
         $config['base_url'] = base_url().'walkadmin/actualite/recherche';
         $config['total_rows'] = $count;// faire attention taille totale
-        $nb_articles = $config['per_page'] = 2;
+        $nb_articles = $config['per_page'] = 10;
         $config['num_links'] = 3;
         $config['use_page_numbers'] = true;
         $config['last_link'] = 'Dernier';
@@ -134,7 +134,7 @@ class Actualite extends CI_Controller{
         /*Parametrage de la pagination*/
         $config['base_url'] = base_url().'walkadmin/actualite/supprimes/';
         $config['total_rows'] = $count;// faire attention taille totale
-        $nb_articles = $config['per_page'] = 2;
+        $nb_articles = $config['per_page'] = 10;
         $config['num_links'] = 3;
         $config['uri_segment'] = 4;
         $config['use_page_numbers'] = true;
