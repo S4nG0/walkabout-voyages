@@ -121,7 +121,7 @@ class Destinations  extends CI_Controller{
                     "idPays" => $this->input->post('pays'),
                     "titre" => $this->input->post('titre'),
                     "url" => slugify($this->input->post('titre')),
-                    "description" => $this->input->post('description'),
+                    "description" => nl2br($this->input->post('description')),
                     "ville" => $this->input->post('ville'),
                     "coordonnees" => $this->input->post('longitude').','.$this->input->post('latitude')
                 );
@@ -138,14 +138,14 @@ class Destinations  extends CI_Controller{
                         $this->form_validation->set_rules("jour_valeur$i", "Valeur jour", 'trim|required|encode_php_tags|xss_clean');
 
                         $jours[$i]["titre"] = $this->input->post("jour$i");
-                        $jours[$i]["valeur"] = $this->input->post("jour_valeur$i");
+                        $jours[$i]["valeur"] = nl2br($this->input->post("jour_valeur$i"));
                         $k++;
                     }
                     $i++;
                 }while($k != $taille_jours);
                 $jours = array_values($jours);
                 $deroulement = json_encode($jours);
-
+                
                 $infos = new stdClass();
                 $infos->idDestination = $idDestination;
                 $infos->climat = $this->input->post('climat');
@@ -153,11 +153,11 @@ class Destinations  extends CI_Controller{
                 $infos->animaux = $this->input->post('animaux');
                 $infos->pension = $this->input->post('pension');
                 $infos->passeport = $this->input->post('passeport');
-                $infos->repas_boissons = $this->input->post('nourriture');
+                $infos->repas_boissons = nl2br($this->input->post('nourriture'));
                 $infos->deroulement = $deroulement;
-                $infos->hebergement = $this->input->post('hebergement');
-                $infos->deplacement = $this->input->post('deplacement');
-                $infos->accompagnement = $this->input->post('accompagnement');
+                $infos->hebergement = nl2br($this->input->post('hebergement'));
+                $infos->deplacement = nl2br($this->input->post('deplacement'));
+                $infos->accompagnement = nl2br($this->input->post('accompagnement'));
 
                 if(!$id_infos){
                     $this->infos_destination->insert($infos);
@@ -339,7 +339,7 @@ class Destinations  extends CI_Controller{
                         $this->form_validation->set_rules("jour_valeur$i", "Valeur détail", 'trim|required|encode_php_tags|xss_clean');
 
                         $jours[$i]["titre"] = $this->input->post("jour$i");
-                        $jours[$i]["valeur"] = $this->input->post("jour_valeur$i");
+                        $jours[$i]["valeur"] = nl2br($this->input->post("jour_valeur$i"));
                         $k++;
                     }
                     $i++;
@@ -350,7 +350,7 @@ class Destinations  extends CI_Controller{
                     "idPays" => $this->input->post('pays'),
                     "titre" => $this->input->post('titre'),
                     "url" => slugify($this->input->post('titre')),
-                    "description" => $this->input->post('description'),
+                    "description" => nl2br($this->input->post('description')),
                     "ville" => $this->input->post('ville'),
                     "coordonnees" => $this->input->post('longitude').','.$this->input->post('latitude')
                 );
@@ -463,11 +463,11 @@ class Destinations  extends CI_Controller{
                     $infos->animaux = $this->input->post('animaux');
                     $infos->pension = $this->input->post('pension');
                     $infos->passeport = $this->input->post('passeport');
-                    $infos->repas_boissons = $this->input->post('nourriture');
+                    $infos->repas_boissons = nl2br($this->input->post('nourriture'));
                     $infos->deroulement = $deroulement;
-                    $infos->hebergement = $this->input->post('hebergement');
-                    $infos->deplacement = $this->input->post('deplacement');
-                    $infos->accompagnement = $this->input->post('accompagnement');
+                    $infos->hebergement = nl2br($this->input->post('hebergement'));
+                    $infos->deplacement = nl2br($this->input->post('deplacement'));
+                    $infos->accompagnement = nl2br($this->input->post('accompagnement'));
 
                     $this->infos_destination->insert($infos);
 

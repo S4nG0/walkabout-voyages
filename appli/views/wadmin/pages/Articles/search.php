@@ -16,6 +16,7 @@
                         <div class="custom-search">
                             <?php echo form_open('walkadmin/article/recherche'); ?>
                                 <input class="custom-search-input" type="search" name="search" placeholder="Rechercher" value="<?php echo $search; ?>"/>
+                                <input class="custom-search-input" type="hidden" name="categorie"value="<?php echo $categorie ?>"/>
                                 <button class="custom-search-button"><i class="fa fa-search"></i></button>
                             <?php echo form_close(); ?>
                         </div>

@@ -15,11 +15,30 @@
                         <div class="custom-search">
                             <?php echo form_open('walkadmin/article/recherche'); ?>
                                 <input class="custom-search-input" type="search" name="search" placeholder="Rechercher"/>
+                                <input class="custom-search-input" type="hidden" name="categorie"value="<?php echo $page ?>"/>
                                 <button class="custom-search-button"><i class="fa fa-search"></i></button>
                             <?php echo form_close(); ?>
                         </div>
                         <a href="<?php echo base_url() . 'walkadmin/article/supprimes'; ?>" class="button black"><i class="fa fa-trash"></i>&nbsp;Corbeille</a>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="submenu">
+                        <li class="submenu__header small">
+                            Catégories
+                        </li>
+                        <li>
+                            <a class="button black small<?php if($page == "tous"){echo ' active';} ?>" href="<?php echo base_url('walkadmin/article/'); ?>">Tous</a>
+                        </li>
+                        <li>
+                            <a class="button black small<?php if($page == "moderation"){echo ' active';} ?>" href="<?php echo base_url('walkadmin/article/moderation'); ?>">En attente de modération</a>
+                        </li>
+                        <li>
+                            <a class="button black small<?php if($page == "publie"){echo ' active';} ?>" href="<?php echo base_url('walkadmin/article/publies'); ?>">Publiés</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="row text-center">
