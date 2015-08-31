@@ -39,7 +39,7 @@ class Comments extends CI_Controller {
         /*Parametrage de la pagination*/
 
         $config['total_rows'] = $count;// faire attention taille totale
-        $nb_commentaires = $config['per_page'] = 3;
+        $nb_commentaires = $config['per_page'] = 10;
         $config['base_url'] = base_url().'walkadmin/comments/'.$value.'/';
         $config['num_links'] = 3;
         $config['use_page_numbers'] = true;

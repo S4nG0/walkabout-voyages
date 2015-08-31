@@ -63,6 +63,20 @@ class Voyages extends CI_Model {
 
         return $voyages;
     }
+    public function get_voyages_from_destination2($idDestination = 0){
+
+        if($idDestination == 0){
+            return false;
+        }
+
+        $voyages = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idDestination', $idDestination)
+                           ->get()
+                           ->result();
+
+        return $voyages;
+    }
 
 
     public function get_voyages_from_destination_supprimes($idDestination = 0){

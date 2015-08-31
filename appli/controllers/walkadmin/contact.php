@@ -23,16 +23,21 @@ class Contact extends CI_Controller{
         $this->load->view('wadmin/template/footer');
     }
 
-    public function lu($id = 0){
+    public function lu(){
+        
+        connecte_admin($this->session->userdata('admin'));  
+        
+        $id = $this->input->post('id');
+        
         if($id == 0){
-            return false;
+            $result = false;
+        }else{
+            $contact = new stdClass();
+            $contact->ouvert = 'true';
+            $this->contacts->modify($contact,$id);
+            $result = true;
         }
-
-        connecte_admin($this->session->userdata('admin'));
-        $contact = new stdClass();
-        $contact->ouvert = 'true';
-        $this->contacts->modify($contact,$id);
-        redirect(base_url("walkadmin/contact"));
+        echo output($result);
     }
 
     public function nonlu($id = 0){

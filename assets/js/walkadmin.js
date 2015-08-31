@@ -318,3 +318,18 @@ function remove_detail(i,type){
     }
     $('#detail'+i).fadeOut(300, function(){this.remove();});
 }
+
+
+function lu(id){
+        var data = {};
+        data.id = id;
+        $.ajax({
+            type: "POST",
+            url : "/walkadmin/contact/lu",
+            data : data
+        }).success(function(data){
+            
+        }).fail(function(data){
+            
+        });
+    }

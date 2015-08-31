@@ -61,7 +61,7 @@
                                     <div class="panel-group searchable" id="accordion"  data-search="<?php echo $contact->nom . ' ' . $contact->prenom . ' ' . $contact->mail . ' ' . $contact->telephone . ' ' . $contact->message ?>" role="tablist" aria-multiselectable="true">
                                         <div class="panel panel-default contact">
                                             <div class="panel-heading" role="tab" id="heading<?php echo $contact->idContact; ?>">
-                                                <a class="no-style collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_non_lus<?php echo $contact->idContact; ?>" aria-expanded="false" aria-controls="collapse<?php echo $contact->idContact; ?>">
+                                                <a class="no-style collapsed" role="button" data-toggle="collapse" onclick="lu(<?php echo $contact->idContact; ?>)" data-parent="#accordion" href="#collapse_non_lus<?php echo $contact->idContact; ?>" aria-expanded="false" aria-controls="collapse<?php echo $contact->idContact; ?>">
                                                     <div class="contact__content">
                                                         <p class="content__name"><?php echo ucfirst(mb_strtolower($contact->nom)) . '&nbsp;' . ucfirst(mb_strtolower($contact->prenom)); ?></p>
                                                         <p class="published">Envoyé le <?php echo conv_date($contact->date); ?></p>
@@ -74,7 +74,7 @@
                                             <div id="collapse_non_lus<?php echo $contact->idContact; ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?php echo $contact->idContact; ?>">
                                                 <div class="panel-body contact__message">
                                                     <div class="contact__status">
-                                                        <a href="<?php echo base_url() . 'walkadmin/contact/lu/' . $contact->idContact; ?>" class="button black small">Marquer comme lu</a>
+                                                        <!--<a href="<?php echo base_url() . 'walkadmin/contact/lu/' . $contact->idContact; ?>" class="button black small">Marquer comme lu</a>-->
                                                         <a href="<?php echo base_url() . 'walkadmin/contact/important/' . $contact->idContact; ?>" class="button black small">Important</a>
                                                         <a href="<?php echo base_url() . 'walkadmin/contact/archiver/' . $contact->idContact; ?>" class="button black small">Archiver</a>
                                                     </div>
