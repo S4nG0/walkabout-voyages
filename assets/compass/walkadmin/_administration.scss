@@ -360,8 +360,7 @@ body.admin {
                 .forgotten-pwd {
                     display: block;
                     margin: 0 auto;
-                    margin-top: 0;
-                    margin-bottom: 10px;
+                    margin-top: 10px;
                     font-size: 80%;
                     text-align: center;
 
@@ -615,6 +614,11 @@ body.admin {
 
             vertical-align: middle;
         }
+    }
+
+    .help-block.error {
+        margin-top: 0;
+        margin-bottom: 50px;
     }
 
     .articles__help-block {

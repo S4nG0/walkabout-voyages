@@ -16,8 +16,8 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Mot de passe</label>
-                    <p class="forgotten-pwd">Vous avez oublié votre mot de passe ?<br /><a class="fancybox" href="#recover-pwd">Cliquez-ici</a></p>
                     <input id="password" name="password" value="<?php echo set_value('password'); ?>" type="password" />
+                    <p class="forgotten-pwd">Vous avez oublié votre mot de passe ?<br /><a class="fancybox" href="#recover-pwd">Cliquez-ici</a></p>
                     <?php echo form_error('password'); ?>
                 </div>
                 <div class="form-group">
