@@ -69,6 +69,53 @@ class Articles extends CI_Model {
         return $articles;
     }
 
+    public function getFromCarnetAdminCategorie($categorie,$id_carnet = 0){
+        if($id_carnet == 0){
+            return false;
+        }
+
+        $articles = $this->db->select('*')
+            ->from($this->table)
+            ->where('idCarnet', $id_carnet)
+            ->where('etat = "'.$categorie.'"')
+            ->order_by("ordre", "ASC")
+            ->get()
+            ->result();
+
+        return $articles;
+    }
+
+    public function getFromCarnetWherePublieSearch($search,$id_carnet = 0){
+        if($id_carnet == 0){
+            return false;
+        }
+
+        $articles = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idCarnet', $id_carnet)
+                           ->where('etat =  "Publie" and titre LIKE \'%'.$search.'%\' OR texte LIKE \'%'.$search.'%\'')
+                           ->order_by("ordre", "ASC")
+                           ->get()
+                           ->result();
+        
+        return $articles;
+    }
+    public function getFromCarnetWhereCategorieSearch($categorie,$search,$id_carnet = 0){
+        if($id_carnet == 0){
+            return false;
+        }
+
+        $articles = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idCarnet', $id_carnet)
+                           ->where('etat =  "'.$categorie.'" and titre LIKE \'%'.$search.'%\' OR texte LIKE \'%'.$search.'%\'')
+                           ->order_by("ordre", "ASC")
+                           ->get()
+                           ->result();
+        
+        return $articles;
+    }
+    
     public function getFromCarnetWherePublie($id_carnet = 0){
         if($id_carnet == 0){
             return false;
@@ -78,6 +125,21 @@ class Articles extends CI_Model {
                            ->from($this->table)
                            ->where('idCarnet', $id_carnet)
                            ->where('etat','Publie')
+                           ->order_by("ordre", "ASC")
+                           ->get()
+                           ->result();
+
+        return $articles;
+    }
+    public function getFromCarnetWhereCategorie($id_carnet = 0,$categorie){
+        if($id_carnet == 0){
+            return false;
+        }
+
+        $articles = $this->db->select('*')
+                           ->from($this->table)
+                           ->where('idCarnet', $id_carnet)
+                           ->where('etat',"$categorie")
                            ->order_by("ordre", "ASC")
                            ->get()
                            ->result();

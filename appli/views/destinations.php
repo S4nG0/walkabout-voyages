@@ -46,7 +46,8 @@ $page='destinations';
 
                                 <?php } else { ?>
 
-                                <br/><br/>
+                                <p class="price"><strong>Bientôt disponible&nbsp;!</strong></p>
+
 
                                 <?php } ?>
 

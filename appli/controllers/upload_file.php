@@ -33,8 +33,8 @@ class Upload_file extends CI_Controller {
         
         //Dossier d'upload
         $config['upload_path'] = 'assets/images/carnets/'.$name_folder;
-        $config['min_width']  = '1200';
-        $config['min_height']  = '600';
+        $config['min_width']  = 1000;
+        $config['min_height']  = 500;
         
         //On vérifie si le dossier d'upload existe et si non on le crée
         if (!file_exists($config['upload_path'])) {
@@ -48,10 +48,15 @@ class Upload_file extends CI_Controller {
         //Configuration de la librairie
         $this->upload->initialize($config);
 
+
         $data['upload_data'] = '';
         //if not successful, set the error message
         if (!$this->upload->do_upload('coverimage')) {
-            $this->session->set_flashdata('upload', $this->upload->display_errors());
+            if($this->upload->display_errors() != false){
+                $this->session->set_flashdata('upload', $this->upload->display_errors());
+            }else{
+                $this->session->set_flashdata('upload', "Les dimensions de votre image doivent être supérieur à ".$config['min_width']."x".$config['min_height']);
+            }
         } else { //else, set the success message
             $this->session->set_flashdata('upload', true);
             $data['upload_data'] = $this->upload->data();
@@ -60,17 +65,6 @@ class Upload_file extends CI_Controller {
             $carnet->image_carnet = 'carnets/'.$name_folder.'/'.$data['upload_data']['file_name'];
             $result = $this->carnetvoyage->modify($carnet,$_REQUEST['id_carnet']);
         }
-        
-        $config2['image_library'] = 'gd2';
-        $config2['source_image'] = $config['upload_path']. '/' .$data['upload_data']['file_name'];
-        $config2['maintain_ratio'] = TRUE;
-        $config2['width']	= 2560;
-        $config2['height']	= 1600;
-
-        $this->load->library('image_lib', $config2); 
-
-        $this->image_lib->resize();
-        
         header('Location: ' . $_SERVER['HTTP_REFERER'] );
     }
     

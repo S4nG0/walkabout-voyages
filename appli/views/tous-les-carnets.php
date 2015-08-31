@@ -37,9 +37,11 @@ $page = "tous-les-carnets";
                                     <img src="'.img_url($carnet->user[0]->photo).'" alt="'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'">
                                 </a>
                             </div>
-                            <h2>'.$carnet->titre.'</h2>
-                            <blockquote>'.$carnet->description.'</blockquote>
-                            <p class="published">Publié par <a href="'.base_url().'utilisateur/'.$carnet->user[0]->slug.'">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a>, le '.$carnet->date.'.</p>
+                            <h2>'.$carnet->titre.'</h2>';
+                if($carnet->description){
+                    echo '<blockquote>'.$carnet->description.'</blockquote>';
+                }
+                echo '<p class="published">Publié par <a href="'.base_url().'utilisateur/'.$carnet->user[0]->slug.'">'.$carnet->user[0]->prenom.' '.$carnet->user[0]->nom.'</a>, le '.$carnet->date.'.</p>
                             <a href="'.base_url().'carnets-de-voyage/'.slugify($carnet->titre).'" class="button align-left">Feuilletez le carnet</a>
                         </div>
                     </div>
