@@ -80,6 +80,8 @@ class Moncompte extends CI_Controller
                         } else {
                             $success = false;
                         }
+                    }else{
+                        $success = false;
                     }
                     $newsPost = $this->input->post('newsletter');
                     if (isset($newsPost)) {
