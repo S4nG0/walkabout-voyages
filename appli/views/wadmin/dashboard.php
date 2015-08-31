@@ -46,7 +46,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="" href="<?php echo base_url() . 'walkadmin/carnets'; ?>">
+                        <a href="<?php echo base_url() . 'walkadmin/carnets'; ?>">
                             <div class="panel-footer">
                                 <span class="pull-left">Voir les détails</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
