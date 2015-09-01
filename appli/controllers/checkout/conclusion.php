@@ -60,7 +60,6 @@ class Conclusion extends CI_Controller {
                 
                 //Envoyer le mail de confirmation de reservation
                 $result = $this->__construct_email($var);
-                echo $result;
                 $this->email->from("reservations@walkabout-voyages.fr");
                 $this->email->to($var->user->mail);
 

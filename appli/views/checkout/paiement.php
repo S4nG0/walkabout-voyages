@@ -181,7 +181,7 @@ $step = 'payment';
                 $('#nombre_participants').text(value);
                 $('#nb_personne').val(value);
                 var total = price * value;
-                $('#result_total').text(total);
+                $('#result_total')[0].innerHTML = Math.round(total*100)/100+'<sup>€</sup>';
             }
         });
 
@@ -194,7 +194,7 @@ $step = 'payment';
                 $('#nombre_participants').text(value);
                 $('#nb_personne').val(value);
                 var total = price * value;
-                $('#result_total').text(total);
+                $('#result_total')[0].innerHTML = Math.round(total*100)/100+'<sup>€</sup>';
             }
         });
     }
