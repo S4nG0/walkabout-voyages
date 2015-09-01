@@ -2,23 +2,23 @@
 
 class Conclusion extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
+    /**
+     * Index Page for this controller.
+     *
+     * Maps to the following URL
+     *      http://example.com/index.php/welcome
+     *  - or -
+     *      http://example.com/index.php/welcome/index
+     *  - or -
+     * Since this controller is set as the default controller in
+     * config/routes.php, it's displayed at http://example.com/
+     *
+     * So any other public methods not prefixed with an underscore will
+     * map to /index.php/welcome/<method_name>
+     * @see http://codeigniter.com/user_guide/general/urls.html
+     */
+    public function index()
+    {
             if($this->input->post('gtc') == 'on'){
                 $data = array();
                 $data['connecte'] = connecte($this->session->userdata('user')[0]);
@@ -40,11 +40,11 @@ class Conclusion extends CI_Controller {
                 $var = new stdClass();
                 $var->user = $this->user->constructeur($this->session->userdata('user')[0]->idUsers)[0];
                 $var->destination = $this->destination->constructeur($data['destination'])[0];
-                $var->infos = $this->infos_destination->constructeur($data['destination'])[0];              
-                $var->pays = $this->pays->constructeur($var->destination->idPays)[0];              
-                $var->reservation = $this->reservations->getLastReservationFromUser($var->user->idUsers)[0];              
+                $var->infos = $this->infos_destination->constructeur($data['destination'])[0];
+                $var->pays = $this->pays->constructeur($var->destination->idPays)[0];
+                $var->reservation = $this->reservations->getLastReservationFromUser($var->user->idUsers)[0];
                 $var->voyage = $this->voyages->constructeur($var->reservation->idVoyage)[0];
-                
+
                 $result = $this->reservations->insert($donnee);
 
                  $donnee2 = array(
@@ -56,8 +56,8 @@ class Conclusion extends CI_Controller {
 
                 $this->session->unset_userdata('voyage');
                 $this->session->unset_userdata('destination');
-                
-                
+
+
                 //Envoyer le mail de confirmation de reservation
                 $result = $this->__construct_email($var);
                 $this->email->from("reservations@walkabout-voyages.fr");
@@ -67,8 +67,8 @@ class Conclusion extends CI_Controller {
                 $this->email->set_mailtype("html");
                 $this->email->message($result);
                 $result = $this->email->send();
-                
-                
+
+
 
                 $this->load->view('template/header',$data);
                 $this->load->view('checkout/conclusion',$data);
@@ -77,9 +77,9 @@ class Conclusion extends CI_Controller {
                 $this->session->set_flashdata('cgv',true);
                 redirect('checkout/paiement');
             }
-	}
-        
-        
+    }
+
+
         public function __construct_email($data = '') {
         if ($data != '') {
             $html = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -443,11 +443,12 @@ class Conclusion extends CI_Controller {
 
         a {
             color: #2ba6cb;
-            text-decoration: none;
+            text-decoration: underline;
         }
 
         a:hover {
             color: #2795b6 !important;
+            text-decoration: none !important;
         }
 
         a:active {
@@ -821,6 +822,10 @@ class Conclusion extends CI_Controller {
 
         body, table.body, p, td {font-size: 16px; line-height:24px;}
 
+        .gold {
+            color: #f0c041 !important;
+        }
+
         p {
             color: #e4e4e4;
         }
@@ -865,24 +870,24 @@ class Conclusion extends CI_Controller {
         table.container {
             color: #f0c041;
         }
-        
+
         .center{
             text-align:center;
         }
-        
+
         .right{
             text-align:right;
         }
-        
+
         .left{
             text-align:left;
         }
-        
+
         .box{
             border : solid 1px #f0c041;
             padding:20px;
         }
-        
+
         .noitalic{
             font-style:normal !important;
             padding:10px;
@@ -896,295 +901,616 @@ class Conclusion extends CI_Controller {
                 <td class="center" align="center" valign="top">
                     <center>
 
-                        <table class="row header">
+                        <table class="container">
                             <tr>
-                                <td class="center" align="center">
-                                    <center>
-                                        <table class="container">
-                                            <tr>
-                                                <td class="wrapper last">
+                                <td>
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">&nbsp;</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
 
-                                                    <table class="twelve columns">
+                                    <table class="row">
+                                        <tr>
+                                            <td class="center" align="center">
+                                                <center>
+                                                    <tr>
+                                                        <td class="wrapper last">
+
+                                                            <table class="twelve columns">
+                                                                <tr>
+                                                                    <td class="twelve sub-columns">
+                                                                        <img class="logo logo--main" src="http://walkabout-voyages.fr/assets/images/logo.png">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+
+                                                        </td>
+                                                    </tr>
+                                                </center>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <hr />
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <h1 class="lead center">Confirmation de votre réservation</h1>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <hr />
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper">
+
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns center">
+                                                            <p class="lead center">Bonjour '.ucfirst(mb_strtoupper($data->user->prenom)).' '. ucfirst(mb_strtoupper($data->user->nom)).',</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">&nbsp;</td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <p class="gold">Nous vous confirmons l’enregistrement de votre réservation.</p>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <p class="gold">Vous pouvez consulter les détails de votre réservation ci-dessous ou <a href="'.base_url('moncompte').'" target="_blank">ici</a>.</p>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <p>Ci-dessous, vous trouverez les documents à nous faire parvenir afin de finaliser la constitution de votre dossier, ainsi que les conseils afin de préparer au mieux votre voyage.</p>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <hr />
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
                                                         <tr>
-                                                            <td class="twelve columns">
+                                                            <td class="twelve sub-columns center">
+                                                                <h2 class="center">Récapitulatif :</h2>
                                                             </td>
                                                             <td class="expander"></td>
                                                         </tr>
-                                                    </table>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
 
-                                                </td>
-                                            </tr>
-                                        </table>
+<!--                                     <table class="row">
+                                        <tr>
+                                            <td>
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve columns">
+                                                            <img style="width:100%;margin-top:-75px;" src="'.img_url($data->destination->banner).'"/>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table> -->
 
-                                        <table class="container">
-                                            <tr>
-                                                <td class="wrapper last">
+                                    <table class="row">
+                                        <tr>
+                                            <td>
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <h3 class="lead center"><b>'.$data->destination->titre.'</b></h3>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table class="row">
+                                        <tr>
+                                            <td>
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <p class="center">'.strtoupper($data->pays->nom).' &bull; '.ucfirst($data->destination->ville).'</h4>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
 
-                                                    <table class="twelve columns">
-                                                        <tr>
-                                                            <td class="three sub-columns">
-                                                            </td>
-                                                            <td class="six sub-columns">
-                                                            <img class="logo logo--main" src="http://walkabout-voyages.fr/assets/images/logo.png">
-                                                            </td>
-                                                            <td class="three sub-columns last">
-                                                            </td>
-                                                            <td class="expander"></td>
-                                                        </tr>
-                                                    </table>
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns center">
+                                                            <h4 class="center">Voyage du '.conv_date($data->voyage->date_depart).' au '.conv_date($data->voyage->date_retour).'</h4>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
 
-                                                </td>
-                                            </tr>
-                                        </table>
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper">
 
-                                    </center>
+                                            <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <center>
+
+                                                                &nbsp;
+
+                                                            </center>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                            <td class="wrapper">
+
+                                                <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <center>
+
+                                                                <p class="lead right">Nombre de places :</p>
+
+                                                            </center>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="wrapper last">
+
+                                                <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <center>
+
+                                                                <p class="gold">'.$data->reservation->nb_personnes.' personne';if($data->reservation->nb_personnes > 1){$html .= 's';} $html .= '</p>
+
+                                                            </center>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper">
+
+                                            <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <center>
+
+                                                                &nbsp;
+
+                                                            </center>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                            <td class="wrapper">
+
+                                                <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <center>
+
+                                                                <p class="lead right">Prix unitaire :</p>
+
+                                                            </center>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="wrapper last">
+
+                                                <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <center>
+
+                                                                <p class="gold">'.$data->voyage->prix.' €</p>
+
+                                                            </center>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper">
+
+                                            <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <center>
+
+                                                                &nbsp;
+
+                                                            </center>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                            <td class="wrapper">
+
+                                                <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <center>
+
+                                                                <p class="lead right">Total :</p>
+
+                                                            </center>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="wrapper last">
+
+                                                <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <center>
+
+                                                                <p class="gold">'.$data->reservation->nb_personnes.' personne';if($data->reservation->nb_personnes > 1){$html .= 's';} $html .= '</p>
+
+                                                            </center>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <hr />
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td>
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve columns">
+                                                            <h2 class="center">Constitution de votre dossier</h2>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <p class="lead">Afin de constituer votre dossier, vous devez nous envoyer :</p>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper">
+                                                <table class="one columns">
+                                                    <tr>
+                                                        <td class="one sub-columns"></td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="wrapper last">
+                                                <table class="eleven columns">
+                                                    <tr>
+                                                        <td class="eleven sub-columns">
+                                                            <p>&bull; Une photocopie recto-verso de la pièce d\'identité de chaque voyageur en cours de validité</p>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper">
+                                                <table class="one columns">
+                                                    <tr>
+                                                        <td class="one sub-columns"></td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="wrapper last">
+                                                <table class="eleven columns">
+                                                    <tr>
+                                                        <td class="eleven sub-columns">
+                                                            <p>&bull; Un justificatif de domicile</p>
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <hr />
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns"><h2 class="center">Conseils de voyages</h2></td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper">
+                                                <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <img class="center" src="'.img_url('info-pics/climat_white.png').'">
+                                                            <p class="lead center noitalic">Climat</p>
+                                                            <p class="lead center noitalic">'.ucfirst($data->infos->climat).'</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="wrapper">
+                                                <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <img class="center" src="'.img_url('info-pics/currency_white.png').'">
+                                                            <p class="lead center noitalic">Monnaie</p>
+                                                            <p class="lead center noitalic">'.ucfirst($data->infos->monnaie).'</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="wrapper last">
+                                                <table class="four columns">
+                                                    <tr>
+                                                        <td class="four sub-columns center">
+                                                            <img class="center" src="'.img_url('info-pics/animals_white.png').'">
+                                                            <p class="lead center noitalic">Animaux</p>
+                                                            <p class="lead center noitalic">'.ucfirst($data->infos->animaux).'</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper">
+                                                <table class="six columns">
+                                                    <tr>
+                                                        <td class="six sub-columns center">
+                                                            <img class="center" src="'.img_url('info-pics/pension_white.png').'">
+                                                            <p class="lead center noitalic">Pension</p>
+                                                            <p class="lead center noitalic">'.ucfirst($data->infos->pension).'</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="wrapper last">
+                                                <table class="six columns">
+                                                    <tr>
+                                                        <td class="six sub-columns center">
+                                                            <img class="center" src="'.img_url('info-pics/passport_white.png').'">
+                                                            <p class="lead center noitalic">Passport</p>
+                                                            <p class="lead center noitalic">'.ucfirst($data->infos->passeport).'</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td class="wrapper last">
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td class="twelve sub-columns">
+                                                            <hr />
+                                                        </td>
+                                                        <td class="expander"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table class="row">
+                                        <tr>
+                                            <td>
+                                                <table class="twelve columns">
+                                                    <tr>
+                                                        <td>
+                                                            <p class="lead">Cordialement, l\'équipe Walkabout.</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                             </tr>
                         </table>
 
-                         <table class="container">
+                        <table class="row">
                             <tr>
                                 <td class="wrapper last">
-
-                                    <hr>
-
-                                    <table class="twelve columns">
-
-                                        <tr>
-                                            <td class="twelve columns">
-                                                <h1 class="lead center">Merci pour votre réservation!</h1>
-                                            </td>
-                                        </tr>
-
-                                    </table>
-
-                                    <hr>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <table class="container">
-                            <tr>
-                                <td class="wrapper">
-
                                     <table class="twelve columns">
                                         <tr>
-                                            <td class="twelve columns">
-                                                <p class="left-text-pad">Bonjour '.ucfirst($data->user->prenom).' '.  strtoupper($data->user->nom).',</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="twelve columns">
-                                                <p>Nous vous confirmons l’enregistrement de votre voyage.</p>
-                                                <p>Vous pouvez consulter les détails de votre réservation ci-dessous ou <a href="'.base_url('moncompte').'" target="_blank">ici</a>.</p>
-                                                <p>&nbsp;</p>
-                                                <p><b>Vous trouverez les documents à nous faire parvenir afin de finaliser la constitution de votre dossier ci-dessous.
-                                                 Ainsi que les conseils afin de préparer au mieux votre voyage.</b></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="twelve columns">
-                                                <p>&nbsp;</p>
-                                                <p>&nbsp;</p>
-                                                <p class="lead"><u>Votre commande :</u></p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <div class="box">
-                                        <table class="twelve columns">
-                                            <tr>
-                                                <td class="twelve columns">
-                                                    <div style="height:150px;overflow:hidden;">
-                                                        <img style="width:100%;margin-top:-75px;" src="'.img_url($data->destination->banner).'"/>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <table class="twelve columns">
-                                            <tr>
-                                                <td class="twelve sub-columns">
-                                                    <h3 class="lead center"><b>'.$data->destination->titre.'</b></h3>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <table class="twelve columns">
-                                            <tr>
-                                                <td class="three sub-columns">
-                                                </td>
-                                                <td class="six center sub-columns">
-                                                    <hr style="margin:10px;">
-                                                </td>
-                                                <td class="three sub-columns">
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <table class="twelve columns">
-                                            <tr>
-                                                <td class="twelve sub-columns">
-                                                    <p class="center">'.strtoupper($data->pays->nom).' &bull; '.ucfirst($data->destination->ville).'</h4>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <table class="twelve columns">
-                                            <tr>
-                                                <td class="three sub-columns">
-                                                </td>
-                                                <td class="six center sub-columns">
-                                                    <hr style="margin:10px;">
-                                                </td>
-                                                <td class="three sub-columns">
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <table class="twelve columns">
-                                            <tr>
-                                                <td class="twelve columns">
-                                                    <p class="lead">Voyage du '.conv_date($data->voyage->date_depart).' au '.conv_date($data->voyage->date_retour).'</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <table class="twelve columns">
-                                            <tr>
-                                                <td class="six sub-columns">
-                                                    <p class="lead">'.$data->reservation->nb_personnes.' personne';if($data->reservation->nb_personnes > 1){$html .= 's';} $html .= '</p>
-                                                </td>
-                                                <td class="six sub-columns">
-                                                    <p class="lead right">'.$data->voyage->prix.' € /personne</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <table class="twelve columns">
-                                            <tr>
-                                                <td class="twelve columns">
-                                                    <p class="lead right">&nbsp;</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <table class="twelve columns">
-                                            <tr>
-                                                <td class="twelve columns">
-                                                    <p class="lead right">Total : '.($data->reservation->nb_personnes * $data->voyage->prix).' €</p>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="twelve columns">
-                                                <p class="lead">&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="twelve columns">
-                                                <p class="lead"><u>Constitution de votre dossier :</u></p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="twelve columns">
-                                                <p>Afin de constituer votre dossier, vous devez nous envoyer :</p>
-                                                <p style="text-indent:2em">- Une photocopie recto-verso de la pièce d\'identité de chaque voyageur en cours de validité</p>
-                                                <p style="text-indent:2em">- Un justificatif de domicile</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="twelve columns">
-                                                <p class="lead"><u>Conseils de voyages :</u></p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="twelve columns center">
-                                                <p>&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="four columns center">
-                                                <img class="center" src="'.img_url('info-pics/climat_white.png').'">
-                                                <p class="lead center noitalic">Climat</p>
-                                                <p class="lead center noitalic">'.ucfirst($data->infos->climat).'</p>
-                                            </td>
-                                            <td class="four columns center">
-                                                <img class="center" src="'.img_url('info-pics/currency_white.png').'">
-                                                <p class="lead center noitalic">Monnaie</p>
-                                                <p class="lead center noitalic">'.ucfirst($data->infos->monnaie).'</p>
-                                            </td>
-                                            <td class="four columns center">
-                                                <img class="center" src="'.img_url('info-pics/animals_white.png').'">
-                                                <p class="lead center noitalic">Animaux</p>
-                                                <p class="lead center noitalic">'.ucfirst($data->infos->animaux).'</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="twelve columns center">
-                                                <p>&nbsp;</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="six columns center">
-                                                <img class="center" src="'.img_url('info-pics/pension_white.png').'">
-                                                <p class="lead center noitalic">Pension</p>
-                                                <p class="lead center noitalic">'.ucfirst($data->infos->pension).'</p>
-                                            </td>
-                                            <td class="six columns center">
-                                                <img class="center" src="'.img_url('info-pics/passport_white.png').'">
-                                                <p class="lead center noitalic">Passport</p>
-                                                <p class="lead center noitalic">'.ucfirst($data->infos->passeport).'</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="twelve columns">
-                                                <p></p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="wrapper">
-
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="twelve columns">
-                                                <p>Cordialement, l\'équipe Walkabout.</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="container">
-                            <tr>
-                                <td class="wrapper last">
-
-                                    <table class="twelve columns">
-                                        <tr>
-                                            <td class="four sub-columns">
-                                            </td>
-                                            <td class="four sub-columns">
-                                                <img class="logo logo--small" src="http://walkabout-voyages.fr/assets/images/logo-wk-icon.png">
-                                            </td>
-                                            <td class="four sub-columns last">
+                                            <td class="twelve sub-columns">
+                                                <img class="logo logo--small center" src="http://walkabout-voyages.fr/assets/images/logo-wk-icon.png">
                                             </td>
                                             <td class="expander"></td>
                                         </tr>
                                     </table>
-
                                 </td>
                             </tr>
                         </table>
@@ -1199,7 +1525,7 @@ class Conclusion extends CI_Controller {
             return false;
         }
     }
-        
+
 }
 
 
