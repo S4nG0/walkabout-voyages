@@ -33,7 +33,7 @@ class  Paiement extends CI_Controller {
                 redirect(base_url().'checkout/dates/'.$this->session->userdata('destination'));
             }
             
-            $data['nb_places_restantes'] = $this->voyages->constructeur($data['voyage'])[0]->nb_places - $this->reservations->count($data['destination']);
+            $data['nb_places_restantes'] = $this->voyages->constructeur($data['voyage'])[0]->nb_places - $this->reservations->count($data['voyage']);
             $data['voyage'] = $this->voyages->constructeur($data['voyage'])[0];
             $data['voyage']->date_depart = conv_date($data['voyage']->date_depart);
             $data['voyage']->date_retour = conv_date($data['voyage']->date_retour);
