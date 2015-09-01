@@ -54,8 +54,8 @@ class Conclusion extends CI_Controller {
 
                 $this->etat_reservation->insert($donnee2);
 
-                //$this->session->unset_userdata('voyage');
-                //$this->session->unset_userdata('destination');
+                $this->session->unset_userdata('voyage');
+                $this->session->unset_userdata('destination');
                 
                 
                 //Envoyer le mail de confirmation de reservation
@@ -71,9 +71,9 @@ class Conclusion extends CI_Controller {
                 
                 
 
-                //$this->load->view('template/header',$data);
-                //$this->load->view('checkout/conclusion',$data);
-                //$this->load->view('template/footer');
+                $this->load->view('template/header',$data);
+                $this->load->view('checkout/conclusion',$data);
+                $this->load->view('template/footer');
             }else{
                 $this->session->set_flashdata('cgv',true);
                 redirect('checkout/paiement');
