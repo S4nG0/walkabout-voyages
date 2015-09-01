@@ -10,7 +10,15 @@
     };
 
 ?>
-
+<style>
+    .test{
+        width: 250px;
+margin-top: 25px;
+margin-left: auto;
+margin-right: auto;
+background-color: #242424;
+    }
+</style>
 <body class="single-carnet">
 
 <div class="main" id="main" data-stellar-background-ratio="0.5" style="background-image: url('<?php echo img_url($carnet[0]->image_carnet); ?>')">
@@ -37,6 +45,9 @@
                                 echo $carnet[0]->description;
                             ?>
                         </p>
+                        <?php if($user->idUsers == $user_actuel){ ?>
+                        <a href="<?php echo base_url('carnets-de-voyage/modifier/'.$carnet[0]->url); ?>" class="button test cover-change file-upload">Modifier mon carnet</a>
+                        <?php } ?>
                     </div>
                 </div>
 

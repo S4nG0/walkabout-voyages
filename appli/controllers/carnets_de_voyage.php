@@ -100,6 +100,7 @@ class Carnets_de_voyage extends CI_Controller {
             $data['commentaire'] = $this->session->flashdata('commentaire');
 
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
+            $data['user_actuel'] = $this->session->userdata('user')[0]->idUsers;
             $data['carnet'] = $this->carnetvoyage->getFromName($id_carnet);
             $data['title'] = $data['carnet'][0]->titre;
             $data['carnet'][0]->date = conv_date($data['carnet'][0]->date);

@@ -35,6 +35,12 @@ $page = "editing-carnet";
 
     <div class="content edit-travel-log">
         <div class="container">
+            <?php if(isset($upload) && $upload != false && $upload != true){?>
+                <div class="row">
+                    <p style="color:red !important;text-align:center;"><i class="fa fa-warning"></i> <?php echo strip_tags($upload); ?></p>
+                </div>
+            <?php } ?>
+            
             <div class="row">
                 <div class="travel-log-header">
                     <div class="col-sm-12">
