@@ -44,7 +44,7 @@ class Identification extends CI_Controller {
 	{
             $data = array();
             $data['erreur'] = "";
-            $data['title'] = "Création d'un compte";
+            $data['title'] = "Inscription";
             $data['connecte'] = connecte($this->session->userdata('user')[0]);
             if($data['connecte'] == true){
                 redirect('/checkout/informations');
@@ -52,7 +52,7 @@ class Identification extends CI_Controller {
 
             $data['email'] = $this->input->post('email');
             $data['destination'] = $this->session->userdata('destination');
-            $this->load->view('template/header');
+            $this->load->view('template/header',$data);
             $this->load->view('checkout/inscription',$data);
             $this->load->view('template/footer');
 	}
