@@ -32,6 +32,28 @@ class Reservations extends CI_Model {
 
         return $reservations;
     }
+    
+    public function getLastReservationFromUser($idUser = 0){
+        if($idUser == 0){
+            return false;
+        }
+        
+        $max = $this->db->select('max(idReservation) as idReservation')
+                        ->from($this->table)
+                        ->where('idUsers',$idUser)
+                        ->limit(1)
+                        ->get()
+                        ->result();
+        
+        $reservation = $this->db->select('*')
+                                ->from($this->table)
+                                ->where('idReservation', $max[0]->idReservation)
+                                ->limit(1)
+                                ->get()
+                                ->result();
+        
+        return $reservation;
+    }
 
     public function getReservationAdmin($id= 0){
         if($id == 0){
