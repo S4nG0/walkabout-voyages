@@ -11,6 +11,7 @@ $lang['upload_no_file_selected'] = "Vous n'avez pas s&eacute;lectionn&eacute; de
 $lang['upload_invalid_filetype'] = "Le type de fichier que vous tentez d'envoyer n'est pas autoris&eacute;.";
 $lang['upload_invalid_filesize'] = "Le fichier que vous tentez d'envoyer est plus gros que la taille autoris&eacute;e.";
 $lang['upload_invalid_dimensions'] = "L'image que vous tentez d'envoyer d&eacute;passe les valeurs maximales autoris&eacute;es pour la hauteur ou la largeur.";
+$lang['upload_invalid_min_dimensions'] = "L'image que vous tentez d'envoyer est inférieur aux dimensions requises.";
 $lang['upload_destination_error'] = "Une erreur est survenue lors du d&eacute;placement du fichier envoy&eacute; vers sa destination finale.";
 $lang['upload_no_filepath'] = "Le chemin de destination semble invalide.";
 $lang['upload_no_file_types'] = "Vous n'avez pas sp&eacute;cifi&eacute; les types de fichier autoris&eacute;s.";

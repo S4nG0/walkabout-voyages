@@ -259,6 +259,11 @@ class MY_Upload {
 			$this->set_error('upload_invalid_dimensions');
 			return FALSE;
 		}
+                if ( ! $this->is_allowed_min_dimensions())
+		{
+			$this->set_error('upload_invalid_min_dimensions');
+			return FALSE;
+		}
 
 		// Sanitize the file name for security
 		$CI =& get_instance();
@@ -676,9 +681,6 @@ class MY_Upload {
 		if (function_exists('getimagesize'))
 		{
 			$D = @getimagesize($this->file_temp);
-                        
-                        var_dump($this->min_width);
-                        var_dump($this->min_height);
 
 			if ($this->max_width > 0 AND $D['0'] > $this->max_width)
 			{
@@ -689,6 +691,23 @@ class MY_Upload {
 			{
 				return FALSE;
 			}
+
+			return TRUE;
+		}
+
+		return TRUE;
+	}
+        
+        public function is_allowed_min_dimensions()
+	{
+		if ( ! $this->is_image())
+		{
+			return TRUE;
+		}
+
+		if (function_exists('getimagesize'))
+		{
+			$D = @getimagesize($this->file_temp);
                         
                         if ($this->min_width > 0 AND $D['0'] < $this->min_width)
                         {

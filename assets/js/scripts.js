@@ -557,6 +557,18 @@ $(document).ready(function () {
         e.preventDefault();
         $('.input-upload-cover').click();
     });
+    
+    $( document ).ajaxStart(function() {
+        $('#spinner').css({
+            'display' : 'block'
+        });
+    });
+    
+    $( document ).ajaxComplete(function() {
+        $('#spinner').css({
+            'display' : 'none'
+        });
+    });
 
     $('.input-upload-cover').on('change',function(){
         $('#spinner').css({

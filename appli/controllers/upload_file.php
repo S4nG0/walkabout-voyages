@@ -33,8 +33,8 @@ class Upload_file extends CI_Controller {
         
         //Dossier d'upload
         $config['upload_path'] = 'assets/images/carnets/'.$name_folder;
-        $config['min_width']  = 1000;
-        $config['min_height']  = 500;
+        $config['min_width']  = 800;
+        $config['min_height']  = 400;
         
         //On vérifie si le dossier d'upload existe et si non on le crée
         if (!file_exists($config['upload_path'])) {
