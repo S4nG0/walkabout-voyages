@@ -11,7 +11,7 @@
                 <h2 class="no-sep">Mises à jour récentes</h2>
             </div>
             <div class="row text-center">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -33,7 +33,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -55,7 +55,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -77,7 +77,9 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4 col-md-offset-2">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -99,7 +101,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4">
                     <div class="panel panel-black">
                         <div class="panel-heading">
                             <div class="row">
@@ -108,7 +110,7 @@
                                     <div class="huge">
                                         <?php echo $contacts; ?>
                                     </div>
-                                    <span class="small">Nouvelle<?php if ($contacts > 1) echo's'; ?> demande<?php if ($contacts > 1) echo's'; ?> <?php if ($commentaires > 1) echo's'; ?></span>
+                                    <span class="small">Nouvelle<?php if ($contacts > 1) echo's'; ?> demande<?php if ($contacts > 1) echo's'; ?></span>
                                 </div>
                             </div>
                         </div>
