@@ -1,0 +1,5 @@
+User-Agent: *
+
+Disallow: /connexion
+
+Sitemap: http://walkabout-voyages.fr/sitemap.xml

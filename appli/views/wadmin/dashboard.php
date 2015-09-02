@@ -99,6 +99,28 @@
                         </a>
                     </div>
                 </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="panel panel-black">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <i class="fa fa-comments fa-3x"></i>&nbsp;&nbsp;&nbsp;
+                                    <div class="huge">
+                                        <?php echo $contacts; ?>
+                                    </div>
+                                    <span class="small">Nouvelle<?php if ($contacts > 1) echo's'; ?> demande<?php if ($contacts > 1) echo's'; ?> <?php if ($commentaires > 1) echo's'; ?></span>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="" href="<?php echo base_url() . 'walkadmin/contact'; ?>">
+                            <div class="panel-footer">
+                                <span class="pull-left">Voir les détails</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
