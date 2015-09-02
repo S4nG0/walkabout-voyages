@@ -18,7 +18,7 @@
     <meta property="og:title" content="<?php echo "$title"; ?>" />
     <meta property="og:type" content="The type" />
     <meta property="og:url" content="<?php echo urlencode( "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); ?>" />
-    <meta property="og:image" content="<?php if(isset($destination[0]->banner) && $destination[0]->banner != ''){echo img_url($destination[0]->banner);}else{echo img_url("background.jpg");}?>" />
+    <meta property="og:image" content="<?php if(isset($destination[0]->banner) && $destination[0]->banner != ''){echo img_url($destination[0]->banner);}elseif(isset($carnet[0]->image_carnet) && $carnet[0]->image_carnet != ''){echo img_url($carnet[0]->image_carnetl);}else{echo img_url("background.jpg");}?>" />
 
 
     <!-- Viewport -->
