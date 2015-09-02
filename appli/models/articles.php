@@ -21,6 +21,16 @@ class Articles extends CI_Model {
 
         return $articles;
     }
+    
+    public function getEnAttente(){
+        $carnets = $this->db->select('count(*) AS nb')
+                           ->from($this->table)
+                           ->where('etat', "En attente de modération")
+                           ->get()
+                           ->result();
+
+        return $carnets;
+    }
 
     public function getFromCarnet($id_carnet = 0){
         if($id_carnet == 0){
@@ -92,8 +102,8 @@ class Articles extends CI_Model {
 
         $articles = $this->db->select('*')
                            ->from($this->table)
-                           ->where('idCarnet', $id_carnet)
                            ->where('etat =  "Publie" and titre LIKE \'%'.$search.'%\' OR texte LIKE \'%'.$search.'%\'')
+                           ->where('idCarnet', $id_carnet)
                            ->order_by("ordre", "ASC")
                            ->get()
                            ->result();
@@ -107,8 +117,8 @@ class Articles extends CI_Model {
 
         $articles = $this->db->select('*')
                            ->from($this->table)
-                           ->where('idCarnet', $id_carnet)
                            ->where('etat =  "'.$categorie.'" and titre LIKE \'%'.$search.'%\' OR texte LIKE \'%'.$search.'%\'')
+                           ->where('idCarnet', $id_carnet)
                            ->order_by("ordre", "ASC")
                            ->get()
                            ->result();

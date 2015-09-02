@@ -60,15 +60,15 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <i class="fa fa-comments fa-3x"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-file-text-o fa-3x"></i>&nbsp;&nbsp;&nbsp;
                                     <div class="huge">
-                                        <?php echo $commentaires; ?>
+                                        <?php echo $article_en_attente; ?>
                                     </div>
-                                    <span class="small">Nouveau<?php if ($commentaires > 1) echo'x'; ?> commentaire<?php if ($commentaires > 1) echo's'; ?></span>
+                                    <span class="small">Article<?php if ($article_en_attente > 1) echo's'; ?> à modérer</span>
                                 </div>
                             </div>
                         </div>
-                        <a class="" href="<?php echo base_url() . 'walkadmin/comments'; ?>">
+                        <a class="" href="<?php echo base_url() . 'walkadmin/article/moderation'; ?>">
                             <div class="panel-footer">
                                 <span class="pull-left">Voir les détails</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -82,15 +82,15 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <i class="fa fa-pencil-square-o fa-3x"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-comments fa-3x"></i>&nbsp;&nbsp;&nbsp;
                                     <div class="huge">
-                                        <?php echo $contacts; ?>
+                                        <?php echo $commentaires; ?>
                                     </div>
-                                    <span class="small">Nouvelle<?php if ($contacts > 1) echo's'; ?> demande<?php if ($contacts > 1) echo's'; ?></span>
+                                    <span class="small">Nouveau<?php if ($commentaires > 1) echo'x'; ?> commentaire<?php if ($commentaires > 1) echo's'; ?></span>
                                 </div>
                             </div>
                         </div>
-                        <a class="" href="<?php echo base_url() . 'walkadmin/contact'; ?>">
+                        <a class="" href="<?php echo base_url() . 'walkadmin/comments'; ?>">
                             <div class="panel-footer">
                                 <span class="pull-left">Voir les détails</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
