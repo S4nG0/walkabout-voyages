@@ -29,17 +29,6 @@
                         <a href="<?php echo base_url() . 'walkadmin/reservation'; ?>"><i class="fa fa-shopping-cart fa-fw menu-icons"></i>&nbsp;Réservations</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-plane fa-fw menu-icons"></i>&nbsp;Destinations<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="<?php echo base_url() . 'walkadmin/destinations' ?>">Liste</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url() . 'walkadmin/creer-destination'; ?>">Ajouter</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
                         <a href="#"><i class="fa fa-globe fa-fw menu-icons"></i>&nbsp;Pays<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -47,6 +36,17 @@
                             </li>
                             <li>
                                 <a href="<?php echo base_url() . 'walkadmin/pays/creer'; ?>">Ajouter</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-plane fa-fw menu-icons"></i>&nbsp;Destinations<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/destinations' ?>">Liste</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url() . 'walkadmin/creer-destination'; ?>">Ajouter</a>
                             </li>
                         </ul>
                     </li>
@@ -89,7 +89,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="<?php echo base_url() . 'walkadmin/contact'; ?>"><i class="fa fa-pencil-square-o fa-fw menu-icons"></i>&nbsp;Demandes</a>
+                        <a href="<?php echo base_url() . 'walkadmin/contact'; ?>"><i class="fa fa-envelope fa-fw menu-icons"></i>&nbsp;Demandes</a>
                     </li>
                 </ul>
             </div>
