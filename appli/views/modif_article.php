@@ -1,18 +1,6 @@
 <?php
 $page = "editing-article";
 ?>
-<style>
-    blockquote p{
-        outline:none !important;
-        color: #F0C041;
-        font-family: "Dosis",sans-serif;
-        font-size: 30px;
-        font-style: italic;
-        line-height: 36px !important;
-        text-align: center;
-        border-left: medium none;
-    }
-</style>
 <body class="espace-voyageur editing">
     <form action="<?php echo (base_url().'article/modifier/'.$article[0]->idArticles); ?>" method="post" name="form_article" accept-charset="utf-8">
     <div class="main banner modification article" <?php if($article[0]->etat == "Brouillon"){?>style="height: 400px;"<?php } ?>>
