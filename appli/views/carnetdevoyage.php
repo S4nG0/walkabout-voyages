@@ -13,10 +13,19 @@
 <style>
     .test{
         width: 250px;
-margin-top: 25px;
-margin-left: auto;
-margin-right: auto;
-background-color: #242424;
+        margin-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #242424;
+    }
+    blockquote p{
+        color: #F0C041;
+        font-family: "Dosis",sans-serif;
+        font-size: 30px;
+        font-style: italic;
+        line-height: 36px !important;
+        text-align: center;
+        border-left: medium none;
     }
 </style>
 <body class="single-carnet">
@@ -46,7 +55,7 @@ background-color: #242424;
                             ?>
                         </p>
                         <?php if($user->idUsers == $user_actuel){ ?>
-                        <a href="<?php echo base_url('carnets-de-voyage/modifier/'.$carnet[0]->url); ?>" class="button test cover-change file-upload">Modifier mon carnet</a>
+                        <a href="<?php echo base_url('carnets-de-voyage/modifier/'.$carnet[0]->url); ?>" class="button test">Modifier mon carnet</a>
                         <?php } ?>
                     </div>
                 </div>

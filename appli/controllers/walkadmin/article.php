@@ -118,19 +118,16 @@ class Article extends CI_Controller{
         /*Création des variables de selection des carnets*/
         $start = ($page*$nb_articles)-$nb_articles;
         if(!isset($categorie) || $categorie == false){
-            echo 1;
             $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_admin_search($data['search'], $start, $nb_articles);
             foreach($data['carnets'] as $carnet){
                 $carnet->articles = $this->articles->getFromCarnetWherePublieSearch($data['search'], $carnet->idCarnetDeVoyage);
             }
         }else{
-            echo 2;
             $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_admin_search_categorie($categorie,$data['search'], $start, $nb_articles);
             foreach($data['carnets'] as $carnet){
                 $carnet->articles = $this->articles->getFromCarnetWhereCategorieSearch($categorie,$data['search'],$carnet->idCarnetDeVoyage,$categorie);
             }
         }
-
         $this->load->view('wadmin/template/header', $data);
         $this->load->view('wadmin/template/menu', $data);
         $this->load->view('wadmin/pages/Articles/search',$data);

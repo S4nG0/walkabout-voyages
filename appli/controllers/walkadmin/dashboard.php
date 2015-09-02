@@ -27,6 +27,7 @@ class Dashboard extends CI_Controller {
         $data['commentaires'] = $this->commentaires->count_non_modere();
         $data['reservations'] = $this->reservations->count_en_cours();
         $data['carnets_non_valides'] = $this->carnetvoyage->getNonPublies()[0]->nb;
+        $data['article_en_attente'] = $this->articles->getEnAttente()[0]->nb;
         $data['contacts'] = $this->contacts->getNonLus()[0]->nb;
         $reservations = $this->reservations->getAll();
         $array = Array();
