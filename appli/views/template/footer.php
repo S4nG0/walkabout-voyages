@@ -31,7 +31,7 @@
                         <li><a href="<?php echo base_url(); ?>nos-destinations">Nos destinations</a></li>
                         <li><a href="<?php echo base_url(); ?>carnets-de-voyage">Carnets de voyage</a></li>
                         <li><a href="<?php echo base_url(); ?>qui-sommes-nous">Notre esprit</a></li>
-                        <li><a href="<?php echo base_url(); ?>contact">Nous contacter</a></li>
+                        <li><a rel='nofollow' href="<?php echo base_url(); ?>contact">Nous contacter</a></li>
                         <li><a href="<?php echo base_url(); ?>nos-actualites">Nos actualités</a></li>
                     </ul>
                 </div>
@@ -56,8 +56,8 @@
                     <ul class="footer__copyright">
                         <hr>
                         <li>©&nbsp;Walkabout &bull; 2015</li><br />
-                        <li><a href="<?php echo base_url(); ?>mentions">Mentions légales</a> &bull; </li>
-                        <li><a href="<?php echo base_url(); ?>conditions-generales-de-ventes">Conditions Générales de Vente</a></li>
+                        <li><a rel='nofollow' href="<?php echo base_url(); ?>mentions">Mentions légales</a> &bull; </li>
+                        <li><a rel='nofollow' href="<?php echo base_url(); ?>conditions-generales-de-ventes">Conditions Générales de Vente</a></li>
                     </ul>
                 </div>
             </div>

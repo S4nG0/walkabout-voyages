@@ -85,11 +85,11 @@
 
         <?php if ($page == "contact") { ?>
             <li>
-                <a class="nav__links active" href="<?php echo base_url(); ?>contact" title="Contactez-nous !">Nous contacter</a>
+                <a class="nav__links active" href="<?php echo base_url(); ?>contact" rel='nofollow' title="Contactez-nous !">Nous contacter</a>
             </li>
         <?php } else { ?>
             <li>
-                <a class="nav__links" href="<?php echo base_url(); ?>contact" title="Contactez-nous !">Nous contacter</a>
+                <a class="nav__links" href="<?php echo base_url(); ?>contact" rel='nofollow' title="Contactez-nous !">Nous contacter</a>
             </li>
         <?php }; ?>
 
