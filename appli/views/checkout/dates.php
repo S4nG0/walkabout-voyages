@@ -85,7 +85,7 @@ $step = 'choice';
                                 <h3>Détails du prix pour ce séjour</h3>
                                 <?php foreach($details as $detail) { ?>
                                 <p>
-                                    <strong><?php echo $detail->titre; ?></strong>&nbsp;:&nbsp;<?php echo $detail->valeur; ?>
+                                    <strong><?php echo ucfirst(mb_strtolower($detail->titre)); ?></strong>&nbsp;:&nbsp;<?php echo $detail->valeur.'€'; ?>
                                 </p>
                                 <?php } ?>
                             </div>
