@@ -60,7 +60,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <i class="fa fa-file-text-o fa-3x"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-file-text fa-3x"></i>&nbsp;&nbsp;&nbsp;
                                     <div class="huge">
                                         <?php echo $article_en_attente; ?>
                                     </div>
@@ -106,7 +106,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <i class="fa fa-comments fa-3x"></i>&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-envelope fa-3x"></i>&nbsp;&nbsp;&nbsp;
                                     <div class="huge">
                                         <?php echo $contacts; ?>
                                     </div>
