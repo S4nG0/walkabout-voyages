@@ -55,8 +55,8 @@
                                         <tr>
                                             <td><?php if(isset($reservations[$key])) echo $reservations[$key]->nomClient." ".$reservations[$key]->prenomClient ?></td>
                                             <td><?php if(isset($reservations[$key])) echo $reservations[$key]->titre ?></td>
-                                            <td><?php if(isset($reservations[$key])) echo $reservations[$key]->date_depart ?></td>
-                                            <td><?php if(isset($reservations[$key])) echo $reservations[$key]->date_retour ?></td>
+                                            <td><?php if(isset($reservations[$key])) echo conv_date($reservations[$key]->date_depart) ?></td>
+                                            <td><?php if(isset($reservations[$key])) echo conv_date($reservations[$key]->date_retour) ?></td>
                                             <td><span class="pull-right"><?php if(isset($reservations[$key])) echo $reservations[$key]->nb_personnes ?></span></td>
                                             <td>
                                                 <?php echo form_open('walkadmin/reservation/modifier/'.$reservations[$key]->idEtatReservation) ?>
@@ -104,8 +104,8 @@
                                         <tr>
                                             <td><?php if(isset($reservations[$key])) echo $reservations[$key]->nomClient." ".$reservations[$key]->prenomClient ?></td>
                                             <td><?php if(isset($reservations[$key])) echo $reservations[$key]->titre ?></td>
-                                            <td><?php if(isset($reservations[$key])) echo $reservations[$key]->date_depart ?></td>
-                                            <td><?php if(isset($reservations[$key])) echo $reservations[$key]->date_retour ?></td>
+                                            <td><?php if(isset($reservations[$key])) echo conv_date($reservations[$key]->date_depart) ?></td>
+                                            <td><?php if(isset($reservations[$key])) echo conv_date($reservations[$key]->date_retour) ?></td>
                                             <td><span class="pull-right"><?php if(isset($reservations[$key])) echo $reservations[$key]->nb_personnes ?></span></td>
                                             <td>
                                                 <?php echo form_open('walkadmin/reservation/modifier/'.$reservations[$key]->idEtatReservation) ?>
@@ -153,8 +153,8 @@
                                         <tr>
                                             <td><?php if(isset($reservations[$key])) echo $reservations[$key]->nomClient." ".$reservations[$key]->prenomClient ?></td>
                                             <td><?php if(isset($reservations[$key])) echo $reservations[$key]->titre ?></td>
-                                            <td><?php if(isset($reservations[$key])) echo $reservations[$key]->date_depart ?></td>
-                                            <td><?php if(isset($reservations[$key])) echo $reservations[$key]->date_retour ?></td>
+                                            <td><?php if(isset($reservations[$key])) echo conv_date($reservations[$key]->date_depart) ?></td>
+                                            <td><?php if(isset($reservations[$key])) echo conv_date($reservations[$key]->date_retour) ?></td>
                                             <td><span class="pull-right"><?php if(isset($reservations[$key])) echo $reservations[$key]->nb_personnes ?></span></td>
                                             <td>
                                                 <?php echo form_open('walkadmin/reservation/modifier/'.$reservations[$key]->idEtatReservation) ?>
@@ -202,8 +202,8 @@
                                     <tr>
                                         <td><?php if(isset($reservations[$key])) echo $reservations[$key]->nomClient." ".$reservations[$key]->prenomClient ?></td>
                                         <td><?php if(isset($reservations[$key])) echo $reservations[$key]->titre ?></td>
-                                        <td><?php if(isset($reservations[$key])) echo $reservations[$key]->date_depart ?></td>
-                                        <td><?php if(isset($reservations[$key])) echo $reservations[$key]->date_retour ?></td>
+                                        <td><?php if(isset($reservations[$key])) echo conv_date($reservations[$key]->date_depart) ?></td>
+                                        <td><?php if(isset($reservations[$key])) echo conv_date($reservations[$key]->date_retour) ?></td>
                                         <td><?php if(isset($reservations[$key])) echo $reservations[$key]->nb_personnes ?></td>
                                         <td>
                                             <?php echo form_open('walkadmin/reservation/modifier/'.$reservations[$key]->idEtatReservation) ?>
@@ -250,8 +250,8 @@
                                         <tr>
                                             <td><?php if(isset($reservations[$key])) echo $reservations[$key]->nomClient." ".$reservations[$key]->prenomClient ?></td>
                                             <td><?php if(isset($reservations[$key])) echo $reservations[$key]->titre ?></td>
-                                            <td><?php if(isset($reservations[$key])) echo $reservations[$key]->date_depart ?></td>
-                                            <td><?php if(isset($reservations[$key])) echo $reservations[$key]->date_retour ?></td>
+                                            <td><?php if(isset($reservations[$key])) echo conv_date($reservations[$key]->date_depart) ?></td>
+                                            <td><?php if(isset($reservations[$key])) echo conv_date($reservations[$key]->date_retour) ?></td>
                                             <td><span class="pull-right"><?php if(isset($reservations[$key])) echo $reservations[$key]->nb_personnes ?></span></td>
                                             <td>
                                                 <?php echo form_open('walkadmin/reservation/modifier/'.$reservations[$key]->idEtatReservation) ?>

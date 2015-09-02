@@ -197,6 +197,7 @@ function ponctuation($phrase){
                         <div class="row">
                             <div class="col-md-12">
                                 <h3><?php echo (sizeof($voyages) > 1) ? 'Dates prévues :' : 'Date prévue :'; ?></h3>
+                                <?php if(sizeof($voyages) > 0){ ?>
                                 <ul class="prices-list">
 <?php
 foreach ($voyages as $voyage) {
@@ -210,6 +211,10 @@ foreach ($voyages as $voyage) {
 }
 ?>
                                 </ul>
+                                <?php }else{ ?>
+                                <br/>
+                                    <h4>Des dates de voyage seront bientôt disponible pour cette destination.</h4>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="row">
@@ -360,32 +365,36 @@ foreach ($details_prix as $detail) {
         <!-- block:Travel-logs -->
         <div class="travel-logs" id="travel-logs">
             <div class="container">
+                <?php if(sizeof($carnets) > 0){ ?>
                 <h2 class="sep">Ont participé à ce voyage...</h2>
                 <div class="travel-logs-slider owl-carousel">
-                    <?php foreach ($carnets as $carnet) { ?>
-                        <div class="travel-logs__item">
-                            <!-- block:Travel-log -->
-                            <div class="travel-log">
-                                <a class="no-style" href="<?php echo base_url().'utilisateur/'.$carnet->user[0]->slug; ?>">
-                                    <div class="profile-picture">
-                                        <img src="<?php echo img_url($carnet->user[0]->photo); ?>" alt="profile_picture">
+                        <?php foreach ($carnets as $carnet) { ?>
+                            <div class="travel-logs__item">
+                                <!-- block:Travel-log -->
+                                <div class="travel-log">
+                                    <a class="no-style" href="<?php echo base_url().'utilisateur/'.$carnet->user[0]->slug; ?>">
+                                        <div class="profile-picture">
+                                            <img src="<?php echo img_url($carnet->user[0]->photo); ?>" alt="profile_picture">
+                                        </div>
+                                    </a>
+                                    <div class="excerpt">
+                                        <h3><?php echo $carnet->titre ?></h2>
+                                        <p class="published">
+                                            par <a href="<?php echo base_url().'utilisateur/'.$carnet->user[0]->slug; ?>"><?php echo ucfirst(mb_strtolower($carnet->user[0]->prenom))." ".ucfirst(mb_strtolower($carnet->user[0]->nom)); ?></a>, le <?php echo $carnet->date; ?>
+                                        </p>
+                                        <p>
+                                            &laquo;&nbsp;<?php echo $carnet->description; ?>&nbsp;&raquo;
+                                        </p>
+                                        <a class="button black" href="<?php echo base_url().'carnets-de-voyage/'.slugify($carnet->titre); ?>">Feuilletez le carnet&nbsp;</a>
                                     </div>
-                                </a>
-                                <div class="excerpt">
-                                    <h3><?php echo $carnet->titre ?></h2>
-                                    <p class="published">
-                                        par <a href="<?php echo base_url().'utilisateur/'.$carnet->user[0]->slug; ?>"><?php echo ucfirst(mb_strtolower($carnet->user[0]->prenom))." ".ucfirst(mb_strtolower($carnet->user[0]->nom)); ?></a>, le <?php echo $carnet->date; ?>
-                                    </p>
-                                    <p>
-                                        &laquo;&nbsp;<?php echo $carnet->description; ?>&nbsp;&raquo;
-                                    </p>
-                                    <a class="button black" href="<?php echo base_url().'carnets-de-voyage/'.slugify($carnet->titre); ?>">Feuilletez le carnet&nbsp;</a>
                                 </div>
+                                <!-- endblock:Travel-log -->
                             </div>
-                            <!-- endblock:Travel-log -->
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
                 </div>
+                <?php }else{ ?>
+                    <h2 class="sep">Aucun utilisateur n'a encore écrit de carnet pour ce voyage!</h2>
+                <?php } ?>                
             </div>
         </div>
     </div>
