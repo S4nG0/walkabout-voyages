@@ -58,8 +58,6 @@ class Carnets_de_voyage extends CI_Controller {
             $config['num_tag_close'] = '</li>';
             /*Initialisation de la pagination*/
             $this->pagination->initialize($config);
-            /*Affichage de la pagination*/
-            echo $this->pagination->create_links();
             /*Création des variables de selection des carnets*/
             $page = $this->pagination->cur_page;
             $start = ($page*$nb_articles)-$nb_articles;
@@ -194,6 +192,9 @@ class Carnets_de_voyage extends CI_Controller {
                 $voyage = $this->voyages->constructeur($this->input->post('voyage'))[0];
                 $carnet->idDestination = $voyage->idDestination;
                 $this->carnetvoyage->add($carnet);
+            }else{
+                $this->session->set_flashdata('erreur_carnet', validation_errors());
+                redirect($_SERVER['HTTP_REFERER']);
             }
             redirect(base_url()."carnets-de-voyage/modifier/".$carnet->url);
         }

@@ -1,5 +1,5 @@
 <?php
-
+header('Content-Type: text/html; charset=utf-8');
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
@@ -24,6 +24,8 @@ class Moncompte extends CI_Controller
     public function index()
     {
         $this->session->unset_userdata('voyage');
+        
+        $data['erreur_creation'] = $this->session->flashdata('erreur_carnet');
         
         $data['connecte'] = connecte($this->session->userdata('user')[0]);
         $data['title'] = "Compte";

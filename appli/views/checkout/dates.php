@@ -67,7 +67,7 @@ $step = 'choice';
                                 <span><strong>Retour</strong>&nbsp;:&nbsp;<?php echo $voyage->date_retour; ?></span>
                             </p>
                             <p>
-                                <strong>Prix</strong>&nbsp;:&nbsp;<?php echo $voyage->prix; ?>&nbsp;€ par personnes&nbsp;&nbsp;&nbsp;
+                                <strong>Prix</strong>&nbsp;:&nbsp;<?php echo $voyage->prix; ?>&nbsp;€ par personne&nbsp;&nbsp;&nbsp;
                                 <?php
                                 $details = json_decode($voyage->details);
                                 if(sizeof($details) > 0) {

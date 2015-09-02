@@ -41,6 +41,13 @@ $page = "moncompte";
 
     <div class="content">
         <div class="container">
+            <?php
+            if(gettype($erreur_creation) != "boolean"){
+            ?>
+                <div class="row">
+                    <p style="color:red !important;text-align:center;">Erreur création carnet : <br/> <?php echo str_replace("L'adresse renseignée existe déjà, veuillez utiliser une autre adresse.","Le Titre renseigné existe déjà dans un autre carnet, veuillez utiliser un autre titre.",strip_tags($erreur_creation)); ?></p>
+                </div>
+            <?php } ?>
             <!-- Submenu -->
             <div class="row">
                 <div class="col-md-12">
