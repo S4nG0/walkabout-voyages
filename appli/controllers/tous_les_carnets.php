@@ -67,7 +67,7 @@ class Tous_les_carnets extends CI_Controller {
          *
          */
 
-        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination($start, $nb_articles);
+        $data['carnets'] = $this->carnetvoyage->get_carnet_pagination_favoris($start, $nb_articles);
         foreach($data['carnets'] as $carnet){
             $carnet->date = conv_date($carnet->date);
             $carnet->user = $this->user->constructeur($carnet->idUsers);

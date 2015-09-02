@@ -135,6 +135,19 @@ class Carnetvoyage extends CI_Model {
         return $carnets;
 
     }
+    public function get_carnet_pagination_favoris($start,$nb){
+
+        $carnets = $this->db->select('*')
+            ->from($this->table)
+            ->where('publie', 'true')
+            ->order_by('idCarnetDeVoyage DESC')
+            ->limit($nb, $start)
+            ->get()
+            ->result();
+
+        return $carnets;
+
+    }
 
     public function get_carnet_pagination_search($search,$start,$nb){
 
