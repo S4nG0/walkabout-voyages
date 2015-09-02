@@ -246,7 +246,7 @@ $page = "home";
                 "<div class='popup_map__text'>"+
                     "<p class='popup_map__text--title'><?php echo $destination->titre; ?></p>"+
                     "<p class='popup_map__text--description'><?php echo splitText($destination->description, 94); ?>...</p>"+
-                    "<p class='popup_map__text--location'><?php echo $destination->pays->nom; ?> &bull; <?php echo $destination->ville; ?></p>"+
+                    "<p class='popup_map__text--location'><?php echo ucfirst(mb_strtolower($destination->pays->nom)); ?> &bull; <?php echo ucfirst(mb_strtolower($destination->ville)); ?></p>"+
                 "</div>"+
             "</a>").setLatLng(<?php echo $latitude.",".$longitude; ?>);
 

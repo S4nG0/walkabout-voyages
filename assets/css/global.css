@@ -5429,6 +5429,13 @@ body.espace-voyageur .effect:hover figcaption .caption-content {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
+body.espace-voyageur .profile-picture {
+  position: relative;
+}
+body.espace-voyageur .profile-picture .effect {
+  position: static;
+  overflow: hidden;
+}
 body.espace-voyageur input[type="checkbox"]:not(old),
 body.espace-voyageur input[type="radio"]:not(old) {
   display: none;

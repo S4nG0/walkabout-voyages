@@ -290,6 +290,16 @@ body.espace-voyageur {
         }
     }
 
+    .profile-picture {
+        position: relative;
+
+        .effect {
+            position: static;
+            overflow: hidden;
+
+        }
+    }
+
     //Form radio input styles
     input[type="checkbox"]:not(old),
     input[type="radio"]:not(old) {
