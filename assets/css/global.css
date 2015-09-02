@@ -5617,6 +5617,7 @@ body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .i
   background-size: cover;
 }
 body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .excerpt-wrapper {
+  padding: 15px;
   width: 50%;
 }
 body.espace-voyageur .content .carnets-block .travel-logs-wrapper .travel-log .buttons-wrapper {
@@ -5832,6 +5833,7 @@ body.espace-voyageur .travel-log-aside .thumbnail:hover .caption h3 {
 }
 body.espace-voyageur .content.edit-article .buttons-wrapper {
   width: 100%;
+  margin-top: 25px;
   margin-bottom: 50px;
   text-align: center;
 }
@@ -5885,6 +5887,16 @@ body.espace-voyageur .content.edit-article .article-block .tb-article .tb-articl
   padding: 25px;
   max-width: 600px;
   outline: 1px solid #f0c041;
+}
+body.espace-voyageur .content.edit-article .article-block .tb-article .tb-article--content blockquote p {
+  outline: none !important;
+  color: #F0C041;
+  font-family: "Dosis",sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  line-height: 36px !important;
+  text-align: center;
+  border-left: medium none;
 }
 body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin.medium-editor-placeholder:before, body.espace-voyageur .content.edit-article .article-block .tb-article .medium-editor-insert-plugin.medium-editor-placeholder:empty:before {
   content: attr(placeholder);
@@ -8452,7 +8464,7 @@ input[type="radio"]:not(old):checked + label > span {
   padding: 0;
   padding-top: 10px;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   text-align: left;
 }
 .main .caption-wrapper .caption .bottom-wrapper .arrow-wrapper {
@@ -8503,6 +8515,12 @@ body.single-carnet .main {
 }
 body.single-carnet .main .caption-wrapper .caption {
   vertical-align: middle;
+}
+body.single-carnet .main .caption-wrapper p {
+  margin-top: 15px;
+}
+body.single-carnet .main .caption-wrapper .button.small {
+  margin-top: 25px;
 }
 body.single-carnet .content {
   background: url("../images/texture.png");

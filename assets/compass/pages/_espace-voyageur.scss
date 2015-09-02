@@ -507,6 +507,7 @@ body.espace-voyageur {
                     }
 
                     .excerpt-wrapper {
+                        padding: 15px;
                         width: 50%;
                     }
 
@@ -780,6 +781,7 @@ body.espace-voyageur {
     .content.edit-article {
         .buttons-wrapper {
             width: 100%;
+            margin-top: 25px;
             margin-bottom: 50px;
             text-align: center;
 
@@ -837,6 +839,17 @@ body.espace-voyageur {
                         padding: 25px;
                         max-width: 600px;
                         outline: $gold-border;
+
+                        p {
+                            outline:none !important;
+                            color: #F0C041;
+                            font-family: "Dosis",sans-serif;
+                            font-size: 30px;
+                            font-style: italic;
+                            line-height: 36px !important;
+                            text-align: center;
+                            border-left: medium none;
+                        }
                     }
                 }
 

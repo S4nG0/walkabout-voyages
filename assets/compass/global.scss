@@ -567,7 +567,7 @@ input[type="radio"]:not(old):checked + label {
                     padding: 0;
                     padding-top: 10px;
                     color: $blanc;
-                    font-size: 18px;
+                    font-size: 16px;
                     text-align: left;
                 }
                 .arrow-wrapper {
@@ -614,6 +614,14 @@ body.single-carnet {
         .caption-wrapper {
             .caption {
                 vertical-align: middle;
+            }
+
+            p {
+                margin-top: 15px;
+            }
+
+            .button.small {
+                margin-top: 25px;
             }
         }
     }
